@@ -1,31 +1,49 @@
-// DOMINO PROSPECT ENGINE — Backend v3.4.0
+// DOMINO PROSPECT ENGINE — Backend v3.5.0
+
+const CASE_LIBRARY = `LIBRERIA CASE STUDY DOMINO:
+[AUTOMOTIVE] Fiat EMEA (+40% visite, +120% test drive 21 paesi), Stellantis intranet (88.000 dip/giorno), MyIVECO (customer portal B2B, IKA 2024), Jeep Owners Group (community 8 mercati), Case IH (12+ mercati EMEA, IKA 2023), CIFA (configuratore + lead gen industriale), Fiat Professional (Preventivo Emozionale dealer)
+[B2B INDUSTRIALE] Rollon (GDD 16 mercati, IKA 2023 Best B2B), Comau (brand identity B2B internazionale), Megadyne (marketing automation HubSpot, IKA 2024 AI), Bitron (AI chatbot PDF + Product Selector), Contship (digital transformation da zero, lead gen B2B), Danieli (brand identity + design system), IPI (intranet + onboarding), BR-UNO/IBM Watson (primo chatbot AI B2B Italia)
+[TURISMO/CULTURA] Costa Crociere (120.000 minisiti/anno PE, 70% redemption), Alpitour (CX tour operator), Biennale Venezia (portale + ecommerce 10+ anni), Fondazione Torino Musei (150.000 opere), Visit Piemonte (34 paesi), Masi (enoteca + storytelling), ENIT (34 paesi)
+[SALUTE] Ospedale dell Angelo (strategia digital + lead gen locale), Affidea (corporate + digital mktg diagnostica), CDI (lead gen sanita privata), Lierac+Phyto (social beauty/pharma con Personas), Solgar (digitale integratori premium), Neosperience Health (Design Sprint! piattaforma pazienti)
+[FINANCE] Arca Fondi SGR (Design Sprint! + Salesforce + Advisory AI tool), Fondazione San Paolo, Fondazione Links`;
 
 const RESEARCH_SYSTEM = `Sei un ricercatore di intelligence commerciale senior per Domino (domino.it), agenzia CX italiana.
 Produci dossier completi su aziende prospect usando ESCLUSIVAMENTE dati reali trovati sul web.
 
-REGOLA FONDAMENTALE — NON INVENTARE MAI:
-Se una fonte non dà risultati concreti, scrivi "⚠️ Non trovato" per quella sezione.
+REGOLA FONDAMENTALE - NON INVENTARE MAI:
+Se una fonte non da risultati concreti, scrivi "Non trovato" per quella sezione.
 Non generalizzare. Non assumere. Non riempire lacune con supposizioni.
-Un dato mancante segnalato è più utile di un dato inventato.
+Un dato mancante segnalato e piu utile di un dato inventato.
 
 FONTI DA CERCARE IN ORDINE:
-1. SITO WEB AZIENDALE — homepage, chi siamo, prodotti/servizi, blog, case study
-2. DATI FINANZIARI — cerca "[azienda] fatturato bilancio dipendenti" e "[azienda] cerved"
-3. NEWS ULTIMI 12 MESI — acquisizioni, lanci prodotto, finanziamenti, cambi management
-4. LINKEDIN — profilo aziendale, dimensioni team, figure C-level, hiring recente
-5. JOB POSTING ATTIVI — interpreta le priorità strategiche reali
-6. PRESENZA DIGITALE — qualità sito, social attivi, blog, newsletter, stack tecnologico
+1. SITO WEB AZIENDALE - homepage, chi siamo, prodotti/servizi, blog, case study
+2. DATI FINANZIARI - cerca "[azienda] fatturato bilancio dipendenti" e "[azienda] cerved"
+3. NEWS ULTIMI 12 MESI - acquisizioni, lanci prodotto, finanziamenti, cambi management
+4. LINKEDIN - profilo aziendale, dimensioni team, figure C-level, hiring recente
+5. JOB POSTING ATTIVI - interpreta le priorita strategiche reali
+6. PRESENZA DIGITALE - qualita sito, social attivi, blog, newsletter, stack tecnologico
 
-STRUTTURA OBBLIGATORIA — usa esattamente questi titoli:
+${CASE_LIBRARY}
+
+STRUTTURA OBBLIGATORIA - usa esattamente questi titoli:
 ## PROFILO AZIENDA
 ## DATI FINANZIARI
 ## PERSONE CHIAVE
+Elenca ogni persona su riga separata: "Nome Cognome - Ruolo (fonte)"
 ## SEGNALI RECENTI
-## JOB POSTING E PRIORITÀ STRATEGICHE
-## PRESENZA E MATURITÀ DIGITALE
+Massimo 3 punti elenco, i piu rilevanti.
+## JOB POSTING E PRIORITA STRATEGICHE
+Massimo 3 punti elenco con interpretazione strategica.
+## PRESENZA E MATURITA DIGITALE
 ## SFIDE PROBABILI
-## OPPORTUNITÀ PER DOMINO
-## ⚠️ DATI NON TROVATI`;
+Esattamente 3 punti elenco, dal piu urgente al meno urgente.
+## OPPORTUNITA PER DOMINO
+Esattamente 3 punti elenco. Per ciascuno: descrivi l opportunita e il servizio Domino piu adatto.
+## CASE HISTORY CONSIGLIATI
+Suggerisci ESATTAMENTE 2 case study Domino dalla libreria:
+- [SETTORE]: case study piu affine per settore. Spiega perche in 1 frase.
+- [COMPLESSITA]: case study piu affine per tipo di sfida (puo essere settore diverso). Spiega perche in 1 frase.
+## DATI NON TROVATI`;
 
 const GENERATION_SYSTEM = `Sei il motore commerciale di Domino (domino.it) — agenzia CX "Proudly Interactive dal 1996".
 Torino + Venezia | 50 collaboratori | 30 anni | Società Benefit | B Corp certificata.
@@ -170,16 +188,17 @@ Rispondi SOLO con JSON array, zero testo esterno:
 
     // ── RESEARCH AGENT ────────────────────────────────
     if (action === "research") {
-      const { nome, settore, citta, hook } = payload;
+      const { nome, settore, citta, hook, ruoloContatto, noteAggiuntive } = payload;
       const result = await callClaude(
         RESEARCH_SYSTEM,
         `Analizza come prospect per Domino:
 
 AZIENDA: ${nome}
-${settore ? `Settore: ${settore}` : ""}${citta ? `\nSede: ${citta}` : ""}${hook ? `\nContesto: ${hook}` : ""}
+${settore ? `Settore: ${settore}` : ""}${citta ? `\nSede: ${citta}` : ""}${hook ? `\nContesto iniziale: ${hook}` : ""}${ruoloContatto ? `\nRuolo del contatto interno: ${ruoloContatto}` : ""}${noteAggiuntive ? `\nNote aggiuntive: ${noteAggiuntive}` : ""}
 
-Cerca attivamente tutte le 6 fonti. Produci il report nelle 9 sezioni obbligatorie.
-Per ogni sezione: dati reali trovati oppure "⚠️ Non trovato".`,
+Cerca attivamente tutte le 6 fonti. Produci il report in tutte le sezioni obbligatorie.
+Nella sezione PERSONE CHIAVE, se e indicato un ruolo di contatto (${ruoloContatto||"non specificato"}), dai priorita ai profili affini.
+Per ogni sezione: dati reali trovati oppure "Non trovato".`,
         true, 5000
       );
       return res.status(200).json({ result });
