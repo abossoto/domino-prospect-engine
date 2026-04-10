@@ -1,4 +1,4 @@
-// DOMINO PROSPECT ENGINE — Backend v3.5.0
+// DOMINO PROSPECT ENGINE — Backend v3.6.0
 
 const CASE_LIBRARY = `LIBRERIA CASE STUDY DOMINO:
 [AUTOMOTIVE] Fiat EMEA (+40% visite, +120% test drive 21 paesi), Stellantis intranet (88.000 dip/giorno), MyIVECO (customer portal B2B, IKA 2024), Jeep Owners Group (community 8 mercati), Case IH (12+ mercati EMEA, IKA 2023), CIFA (configuratore + lead gen industriale), Fiat Professional (Preventivo Emozionale dealer)
@@ -17,31 +17,39 @@ Un dato mancante segnalato e piu utile di un dato inventato.
 
 FONTI DA CERCARE IN ORDINE:
 1. SITO WEB AZIENDALE - homepage, chi siamo, prodotti/servizi, blog, case study
-2. DATI FINANZIARI - cerca "[azienda] fatturato bilancio dipendenti" e "[azienda] cerved"
-3. NEWS ULTIMI 12 MESI - acquisizioni, lanci prodotto, finanziamenti, cambi management
-4. LINKEDIN - profilo aziendale, dimensioni team, figure C-level, hiring recente
-5. JOB POSTING ATTIVI - interpreta le priorita strategiche reali
-6. PRESENZA DIGITALE - qualita sito, social attivi, blog, newsletter, stack tecnologico
+2. DATI FINANZIARI CERVED - cerca "[azienda] site:cerved.com" poi "[azienda] bilancio fatturato dipendenti" poi "[azienda] registro imprese"
+3. DATI FINANZIARI ALTERNATIVI - cerca su AIDA, Orbis, Atoka, o articoli che citano fatturato ufficiale
+4. NEWS ULTIMI 12 MESI - acquisizioni, lanci prodotto, finanziamenti, cambi management, espansioni
+5. LINKEDIN - profilo aziendale, dimensioni team, figure C-level con nomi e cognomi
+6. JOB POSTING ATTIVI - interpreta le priorita strategiche reali
+7. PRESENZA DIGITALE - qualita sito, tecnologie (usa BuiltWith se disponibile), social, SEO
 
 ${CASE_LIBRARY}
 
 STRUTTURA OBBLIGATORIA - usa esattamente questi titoli:
 ## PROFILO AZIENDA
+Struttura in 5 sottosezioni esatte su righe separate:
+DESCRIZIONE: [2-3 frasi su cosa fanno, mercato servito, posizionamento]
+FATTURATO: [valore trovato con fonte, es. "~120M euro (Cerved 2023)" oppure "Non trovato"]
+DIPENDENTI: [numero o range con fonte, es. "~450 (LinkedIn)" oppure "Non trovato"]
+INTERNAZIONALIZZAZIONE: [paesi/mercati dove operano, oppure "Solo Italia" se confermato]
+STRATEGIA: [direzione strategica attuale in 1-2 frasi basate su news/sito/job posting]
 ## DATI FINANZIARI
+Ultimi 2-3 anni disponibili: fatturato, EBITDA se disponibile, trend, rating Cerved se trovato.
 ## PERSONE CHIAVE
-Elenca ogni persona su riga separata: "Nome Cognome - Ruolo (fonte)"
+Elenca ogni persona su riga separata: "Nome Cognome - Ruolo (fonte: LinkedIn/sito/news)"
 ## SEGNALI RECENTI
-Massimo 3 punti elenco, i piu rilevanti.
+Massimo 3 punti elenco, i piu rilevanti con data approssimativa.
 ## JOB POSTING E PRIORITA STRATEGICHE
-Massimo 3 punti elenco con interpretazione strategica.
+Massimo 3 punti elenco con interpretazione strategica del segnale.
 ## PRESENZA E MATURITA DIGITALE
 ## SFIDE PROBABILI
 Esattamente 3 punti elenco, dal piu urgente al meno urgente.
 ## OPPORTUNITA PER DOMINO
-Esattamente 3 punti elenco. Per ciascuno: descrivi l opportunita e il servizio Domino piu adatto.
+Esattamente 3 punti elenco. Per ciascuno: problema specifico + servizio Domino + impatto atteso.
 ## CASE HISTORY CONSIGLIATI
 Suggerisci ESATTAMENTE 2 case study Domino dalla libreria:
-- [SETTORE]: case study piu affine per settore. Spiega perche in 1 frase.
+- [SETTORE]: case study piu affine per settore. Spiega perche in 1 frase con risultato numerico.
 - [COMPLESSITA]: case study piu affine per tipo di sfida (puo essere settore diverso). Spiega perche in 1 frase.
 ## DATI NON TROVATI`;
 
@@ -143,10 +151,19 @@ Ideale per: reti dealer/agenti, prodotti complessi, cicli lunghi, competizione s
 ━━━ REGOLE DI GENERAZIONE ━━━
 - Usa SOLO informazioni esplicitamente presenti nel report di intelligence
 - Prima frase: sempre sul PROBLEMA specifico del prospect (non su Domino)
-- Tono: diretto, concreto, umano — no corporate speak
-- Next step: sempre proposta specifica con outcome chiaro
 - Case study: scegli i più vicini per settore, dimensione, sfida — MAI solo Fiat e Costa Crociere
-- Calibra il tono sul profilo dell'azienda: formale/startup/B2B tecnico`;
+- Calibra il tono sul profilo dell'azienda: formale/startup/B2B tecnico
+
+━━━ STILE DOMINO — OBBLIGATORIO ━━━
+Assertivo, asciutto, consulenziale. Come un partner senior, non un venditore.
+VIETATO: "vorremmo", "potremmo", "sarebbe interessante", "ci piacerebbe", "siamo felici di"
+VIETATO: aperture generiche tipo "Gentile X, la contatto perché...", "Spero che questa email la trovi bene"
+USARE: presente indicativo, frasi corte (max 20 parole), un dato numerico concreto per mail
+STRUTTURA MAIL: 1) osservazione specifica su di loro (non su Domino) — 2) problema che ne deriva — 3) cosa faremmo — 4) next step preciso con data/tempo
+ESEMPI TONO CORRETTO:
+"Il vostro sito perde [X]% del traffico prima del contatto commerciale. Lo vediamo spesso nelle aziende con reti distribuite."
+"Tre mesi fa Rollon aveva lo stesso problema su 16 mercati. Oggi il sito genera lead in autonomia."
+"Proponiamo un Design Sprint! di 4 giorni. Output: strategia digitale validata. Investimento: definito prima di iniziare."`;
 
 async function callClaude(system, msg, webSearch = false, tokens = 4000) {
   const body = { model: "claude-sonnet-4-20250514", max_tokens: tokens, system, messages: [{ role: "user", content: msg }] };
