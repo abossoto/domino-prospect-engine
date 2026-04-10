@@ -333,12 +333,43 @@ REGOLE FERREE:
 - Next step sempre specifico ("30 minuti per capire se c'è fit")
 
 CASE STUDY — REGOLA OBBLIGATORIA E NON NEGOZIABILE:
-Nel campo "casi_studio" (array) e nella slide 4 del deck devi SEMPRE citare ESATTAMENTE 3 case study distinti:
-[0] Stesso settore del prospect — es. se è automotive cita Fiat/IVECO/Jeep/CIFA, se è B2B industriale cita Rollon/Comau/Megadyne/Contship/Danieli, se è finance cita Arca Fondi, se è turismo cita Costa Crociere/Biennale/Fondazione Aquileia, se è salute cita Affidea/Ospedale dell'Angelo/Lierac, se è startup cita Gaia/Neosperience/Brainkin, ecc.
-[1] Settore diverso ma sfida simile — es. stesso problema di lead gen B2B → Contship o Megadyne; stesso problema rete vendita → Costa Crociere PE; stessa esigenza intranet → Stellantis o LINKS; stessa necessità brand identity → Comau o MIND.
-[2] Capacità metodologica specifica — es. Design Sprint! (Rollon, Arca Fondi, IPI) / Preventivo Emozionale (Costa Crociere, Jeep, Fiat Pro) / HubSpot CRM (Megadyne, Rollon) / AI B2B (Bitron) / eCommerce (Masi, Biennale) / Internal Comm (Stellantis, IPI).
-Includi numeri reali dove disponibili (+40% visite Fiat, 70% redemption PE, 88.000 dipendenti Stellantis, 120.000 minisiti Costa Crociere, 200 Value Teller, 80% awareness Ethics, ecc.).
-VIETATO citare solo Fiat e Costa Crociere — usa l'intero repertorio dei 14+ case study nel Brain.
+Il campo "casi_studio" è un ARRAY di ESATTAMENTE 3 stringhe. Non è una stringa singola. Non è opzionale.
+Popola SEMPRE tutti e 3 gli elementi, nell'ordine:
+
+[0] STESSO SETTORE del prospect:
+- Farmacia/parafarmacia/salute → Lierac+Phyto (social strategy farmacia), Affidea (micro-campagne territory), Ospedale dell'Angelo (lead gen healthcare)
+- Automotive → Fiat EMEA (+40% visite, +120% test drive), IVECO (IKA 2024), Jeep Owners Group (community 10 mercati)
+- B2B industriale/manifattura → Rollon (16 mercati, IKA 2023), Megadyne (HubSpot + lead gen globale), Contship (digital da zero), CIFA (configuratore prodotto), Comau (brand identity)
+- Finance/assicurazioni → Arca Fondi SGR (Design Sprint! + Salesforce + Advisor Tool, pluriennale)
+- Turismo/cultura → Costa Crociere PE (120.000 minisiti/anno, 70% redemption), Biennale Venezia (ecommerce + archivio), Fondazione Aquileia
+- Startup/scale-up → Gaia, Neosperience Health, Brainkin, Danam
+- Comunicazione interna/HR → Stellantis (88.000 dipendenti, FEIEIA Award), LINKS Foundation (Intranet Design Sprint!), IPI (onboarding plan)
+
+[1] SFIDA SIMILE, settore diverso:
+- Se hanno rete vendita distribuita (dealer, farmacie, agenti) → Costa Crociere PE (70% redemption sul preventivo)
+- Se hanno prodotti complessi da spiegare/configurare → CIFA (configuratore) o Rollon (schede tecniche 3D)
+- Se devono crescere su più mercati internazionali → Case IH (12 mercati EMEA), Jeep (10 mercati), Fiat EMEA (21 paesi)
+- Se hanno difficoltà di lead gen B2B → Megadyne, Contship, Rollon
+- Se hanno identità di brand da rafforzare → Comau (brand identity B2B), Danieli Automation (design system)
+- Se hanno comunicazione interna frammentata → Stellantis, IPI, LINKS Foundation
+
+[2] CAPACITÀ METODOLOGICA specifica più pertinente:
+- Design Sprint! (specificare variante: CX/Website/Intranet/Brand/Digital Marketing/Service)
+- Preventivo Emozionale (Costa Crociere, Jeep, Fiat Pro, CNH)
+- HubSpot CRM (Megadyne, Rollon, Arca Fondi)
+- AI B2B (Bitron: chatbot, product selector, KB multicanale)
+- Internal Communication (Stellantis, IPI, LINKS)
+- eCommerce integrato (Masi, Biennale)
+
+ESEMPIO corretto per prospect farmacia/salute:
+"casi_studio": [
+  "Lierac+Phyto (salute/beauty in farmacia): social strategy con Personas → engagement +X%, profilazione clienti, meno post ma più valore — stesso canale distributivo farmacia",
+  "Costa Crociere (rete distribuita): Preventivo Emozionale → 120.000 minisiti personalizzati/anno EMEA, 70% redemption mail — analogo problema rete agenti/farmacie",
+  "Arca Fondi SGR (metodologia): 3 Design Sprint!/anno integrati in GDD + Salesforce CRM — capacity di partnership pluriennale"
+]
+
+Includi sempre numeri reali dove disponibili.
+VIETATO restituire caso_studio_piu_affine come stringa singola. VIETATO array vuoto o con meno di 3 elementi.
 
 DESIGN SPRINT — SPECIALIZZAZIONE:
 Quando suggerisci il Design Sprint!, specifica SEMPRE la variante più pertinente:
