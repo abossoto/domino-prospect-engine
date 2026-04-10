@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const V   = "v3.6.0";
+const V   = "v3.7.0";
 const RED = "#D0021B";
 const BG  = "#1A1714";
 const C1  = "#242120";
@@ -57,11 +57,75 @@ function parseBullets(text) {
     .filter(l=>l.length>10);
 }
 
-function dlDeck(deck, nome) {
-  const txt = deck.map(s=>`SLIDE ${s.n}: ${s.titolo}\n${"─".repeat(46)}\n${s.contenuto}\n`).join("\n");
-  const blob = new Blob([`DECK — ${nome}\nDomino Prospect Engine ${V}\n${"═".repeat(50)}\n\n${txt}`],{type:"text/plain;charset=utf-8"});
-  const a = Object.assign(document.createElement("a"),{href:URL.createObjectURL(blob),download:`deck_${nome.replace(/\s+/g,"_").toLowerCase()}.txt`});
-  a.click(); URL.revokeObjectURL(a.href);
+async function exportPptx(deck, nome) {
+  // Load PptxGenJS from CDN if not loaded
+  if (!window.PptxGenJS) {
+    await new Promise((res,rej) => {
+      const s = document.createElement("script");
+      s.src = "https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js";
+      s.onload = res; s.onerror = rej;
+      document.head.appendChild(s);
+    });
+  }
+  const pptx = new window.PptxGenJS();
+  pptx.layout = "LAYOUT_WIDE";
+  pptx.title = `${nome} — Domino Prospect Engine`;
+
+  const DARK = "1A1714";
+  const RED_H = "D0021B";
+  const WHITE = "FFFFFF";
+  const GRAY = "AAAAAA";
+
+  deck.forEach((sl, idx) => {
+    const slide = pptx.addSlide();
+    slide.background = { color: DARK };
+
+    // Red accent bar top
+    slide.addShape(pptx.ShapeType.rect, { x:0, y:0, w:"100%", h:0.06, fill:{color:RED_H} });
+
+    // Slide number — top right
+    slide.addText(`${sl.n}`, { x:11.8, y:0.15, w:0.5, h:0.3, fontSize:11, color:RED_H, bold:true, align:"right" });
+
+    // Title
+    slide.addText(sl.titolo, {
+      x:0.6, y:0.7, w:11.5, h:1.0,
+      fontSize: idx===0 ? 32 : 26,
+      bold:true, color:WHITE,
+      fontFace:"Calibri",
+      breakLine:false,
+    });
+
+    // Divider line
+    slide.addShape(pptx.ShapeType.line, { x:0.6, y:1.75, w:11.0, h:0, line:{color:RED_H, width:1.5} });
+
+    // Content — split bullets
+    const bullets = sl.contenuto.split(/
+|;/).map(b=>b.replace(/^[-•*\s]+/,"").trim()).filter(b=>b.length>3);
+    if(bullets.length > 1) {
+      bullets.forEach((b, bi) => {
+        slide.addText(`${b}`, {
+          x:0.6, y:2.0 + bi*0.75, w:11.0, h:0.65,
+          fontSize:15, color:"DDDDDD", fontFace:"Calibri",
+          bullet:{type:"number", color:RED_H},
+        });
+      });
+    } else {
+      slide.addText(sl.contenuto, {
+        x:0.6, y:2.0, w:11.0, h:4.0,
+        fontSize:16, color:"DDDDDD", fontFace:"Calibri",
+        valign:"top", breakLine:true,
+      });
+    }
+
+    // Footer
+    slide.addText(`Domino Prospect Engine — ${nome}`, {
+      x:0.6, y:6.9, w:10.0, h:0.25,
+      fontSize:9, color:"555555", fontFace:"Calibri"
+    });
+    slide.addShape(pptx.ShapeType.rect, { x:0, y:7.1, w:"100%", h:0.05, fill:{color:RED_H} });
+  });
+
+  pptx.writeFile({ fileName: `deck_${nome.replace(/\s+/g,"_").toLowerCase()}.pptx` });
 }
 
 function loadArchive() {
@@ -124,12 +188,33 @@ function IntelligencePage({parsed, onGenerateMats, mats, onViewMats}) {
 
   return (
     <div>
-      {parsed["PROFILO AZIENDA"]&&(
-        <div style={{background:C1,border:`1px solid ${BR}`,borderRadius:12,padding:"20px 22px",marginBottom:14}}>
-          <span style={q.lbl}>Profilo azienda</span>
-          <p style={{fontSize:14,lineHeight:1.78,color:T2,margin:0,whiteSpace:"pre-wrap"}}>{parsed["PROFILO AZIENDA"]}</p>
-        </div>
-      )}
+      {parsed["PROFILO AZIENDA"]&&(()=>{
+        const raw=parsed["PROFILO AZIENDA"]||"";
+        const get=(key)=>{const m=raw.match(new RegExp(key+":\\s*([^\\n]+)","i"));return m?m[1].trim():null;};
+        const descrizione=get("DESCRIZIONE");
+        const fatturato=get("FATTURATO");
+        const dipendenti=get("DIPENDENTI");
+        const internaz=get("INTERNAZIONALIZZAZIONE");
+        const strategia=get("STRATEGIA");
+        const hasStructured=descrizione||fatturato||dipendenti||internaz||strategia;
+        return hasStructured?(
+          <div style={{background:C1,border:`1px solid ${BR}`,borderRadius:12,padding:"20px 22px",marginBottom:14}}>
+            <span style={q.lbl}>Scheda azienda</span>
+            {descrizione&&<p style={{fontSize:14,lineHeight:1.75,color:T2,margin:"0 0 16px",whiteSpace:"pre-wrap"}}>{descrizione}</p>}
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10}}>
+              {fatturato&&<div style={{background:C2,borderRadius:8,padding:"10px 14px"}}><span style={{...q.lbl,marginBottom:4}}>Fatturato</span><p style={{fontSize:14,fontWeight:600,color:T1,margin:0}}>{fatturato}</p></div>}
+              {dipendenti&&<div style={{background:C2,borderRadius:8,padding:"10px 14px"}}><span style={{...q.lbl,marginBottom:4}}>Dipendenti</span><p style={{fontSize:14,fontWeight:600,color:T1,margin:0}}>{dipendenti}</p></div>}
+              {internaz&&<div style={{background:C2,borderRadius:8,padding:"10px 14px",gridColumn:internaz.length>40?"1/-1":"auto"}}><span style={{...q.lbl,marginBottom:4}}>Presenza internazionale</span><p style={{fontSize:13,color:T2,margin:0}}>{internaz}</p></div>}
+              {strategia&&<div style={{background:C2,borderRadius:8,padding:"10px 14px",gridColumn:"1/-1"}}><span style={{...q.lbl,marginBottom:4}}>Strategia attuale</span><p style={{fontSize:13,color:T2,margin:0,lineHeight:1.6}}>{strategia}</p></div>}
+            </div>
+          </div>
+        ):(
+          <div style={{background:C1,border:`1px solid ${BR}`,borderRadius:12,padding:"20px 22px",marginBottom:14}}>
+            <span style={q.lbl}>Profilo azienda</span>
+            <p style={{fontSize:14,lineHeight:1.78,color:T2,margin:0,whiteSpace:"pre-wrap"}}>{raw}</p>
+          </div>
+        );
+      })()}
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:14,marginBottom:14}}>
         <div style={{background:C1,border:`1px solid ${BR}`,borderRadius:12,padding:"18px 20px"}}>
           <span style={q.lbl}>📊 Dati finanziari</span>
@@ -252,25 +337,57 @@ function MissingData({text}) {
 }
 
 // ── MAIL TAB ──────────────────────────────────────────
-function MailTab({mail}) {
+function MailTab({mail, parsedPersone}) {
   const [active,setActive]=useState(0);
   const [cp,setCp]=useState(false);
+  const [targetName,setTargetName]=useState("");
+  const persone = parseBullets(parsedPersone||"");
   const v=mail.varianti[active];
-  const copy=()=>{navigator.clipboard.writeText(`Oggetto: ${v.oggetto}\n\n${v.corpo}`);setCp(true);setTimeout(()=>setCp(false),2000);};
+
+  function applyName(text) {
+    if(!targetName) return text;
+    const fn = targetName.split(/[,\-—]/)[0].trim().split(" ")[0];
+    // Replace generic salutations and decisore references
+    return text
+      .replace(/Gentile\s+\w+/gi, `Gentile ${fn}`)
+      .replace(/\b(il\/la\s+)?(decisore|responsabile marketing|responsabile digital|direttore|direttrice|cmo|cdo|ceo|cto)\b/gi, fn)
+      .replace(/\bVoi\b/g, "Voi")
+      .replace(/^(Buongiorno|Salve|Ciao),?\s*/i, `Buongiorno ${fn},\n\n`);
+  }
+
+  const bodyText = applyName(v.corpo);
+  const copy=()=>{navigator.clipboard.writeText(`Oggetto: ${v.oggetto}\n\n${bodyText}`);setCp(true);setTimeout(()=>setCp(false),2000);};
+
   return (
     <div>
-      <div style={{display:"flex",gap:8,marginBottom:18}}>
+      {/* Variant selector */}
+      <div style={{display:"flex",gap:8,marginBottom:16}}>
         {mail.varianti.map((vv,i)=>(
           <button key={i} onClick={()=>{setActive(i);setCp(false);}} style={{...q.btnO(active===i),fontSize:12,padding:"6px 14px"}}>{vv.tipo}</button>
         ))}
       </div>
+
+      {/* Person selector */}
+      {persone.length>0&&(
+        <div style={{background:C1,border:`1px solid ${BR}`,borderRadius:10,padding:"14px 16px",marginBottom:16}}>
+          <span style={q.lbl}>Personalizza per</span>
+          <div style={{display:"flex",flexWrap:"wrap",gap:6,marginBottom:targetName?"8px":"0"}}>
+            {persone.map((p,i)=>{
+              const name=(p.split(/[—\-,]/)[0]||"").trim();
+              return <span key={i} onClick={()=>setTargetName(targetName===name?"":name)} style={q.pill(targetName===name)}>{name}</span>;
+            })}
+          </div>
+          {targetName&&<p style={{fontSize:11,color:"#60b3f0",margin:"6px 0 0"}}>Mail personalizzata per {targetName}</p>}
+        </div>
+      )}
+
       <div style={{background:C2,border:`1px solid ${BR}`,borderRadius:8,padding:"16px 20px",marginBottom:10}}>
         <span style={q.lbl}>Oggetto</span>
         <p style={{fontSize:15,fontWeight:600,margin:0,color:T1}}>{v.oggetto}</p>
       </div>
       <div style={{background:C2,border:`1px solid ${BR}`,borderRadius:8,padding:"16px 20px",marginBottom:14}}>
         <span style={q.lbl}>Corpo</span>
-        <p style={{fontSize:14,lineHeight:1.8,color:T2,margin:0,whiteSpace:"pre-wrap"}}>{v.corpo}</p>
+        <p style={{fontSize:14,lineHeight:1.85,color:T2,margin:0,whiteSpace:"pre-wrap"}}>{bodyText}</p>
       </div>
       <button onClick={copy} style={q.btnO(false)}>{cp?"✓ Copiata":"Copia email"}</button>
     </div>
@@ -279,6 +396,8 @@ function MailTab({mail}) {
 
 // ── DECK TAB ──────────────────────────────────────────
 function DeckTab({deck,nome}) {
+  const [exporting,setExporting]=useState(false);
+  const doExport=async()=>{setExporting(true);try{await exportPptx(deck,nome);}catch(e){alert("Errore export: "+e.message);}setExporting(false);};
   return (
     <div>
       {deck.map(sl=>(
@@ -290,7 +409,9 @@ function DeckTab({deck,nome}) {
           </div>
         </div>
       ))}
-      <button onClick={()=>dlDeck(deck,nome)} style={q.btnP}>↓ Scarica deck (.txt)</button>
+      <button onClick={doExport} disabled={exporting} style={{...q.btnP,opacity:exporting?0.6:1}}>
+        {exporting?"Generazione in corso...":"↓ Esporta deck (.pptx)"}
+      </button>
     </div>
   );
 }
@@ -714,7 +835,7 @@ export default function App() {
             </div>
 
             {tab==="intelligence"&&dossier&&<IntelligencePage parsed={parsed} onGenerateMats={genMats} mats={mats} onViewMats={()=>setTab("mail")}/>}
-            {tab==="mail"&&mats?.mail&&<MailTab mail={mats.mail}/>}
+            {tab==="mail"&&mats?.mail&&<MailTab mail={mats.mail} parsedPersone={parsed["PERSONE CHIAVE"]}/>}
             {tab==="deck"&&mats?.deck&&<DeckTab deck={mats.deck} nome={nome}/>}
             {tab==="briefing"&&mats&&<BriefingTab b={mats}/>}
             {tab==="linkedin"&&mats?.linkedin&&<LinkedInTab linkedin={mats.linkedin} parsedPersone={parsed["PERSONE CHIAVE"]}/>}
