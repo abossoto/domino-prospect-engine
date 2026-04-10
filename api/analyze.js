@@ -1,35 +1,20 @@
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// DOMINO PROSPECT ENGINE — Backend v3.1.0
-// Vercel serverless proxy per Anthropic API
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// DOMINO PROSPECT ENGINE — Backend v3.2.0
 
 const DOMINO_BRAIN = `Sei il motore di intelligence commerciale di Domino (domino.it) — "Proudly Interactive dal 1996".
 Torino + Venezia | 50 collaboratori | 30 anni | B Corp certificata.
 Payoff: "Semplifichiamo la complessità, liberiamo il potenziale."
-
 4 AREE: Service Design (Design Sprint!), Digital Marketing & CX, Digital Products, IT.
+CLIENTI: Fiat/Stellantis, IVECO, Costa Crociere, Alpitour, Rollon, Comau, Megadyne, Bitron, CNH, Affidea, CDI, Lierac.
+NUMERI: Fiat EMEA +40% visite +120% test drive in 9 mesi. Costa Crociere 120.000 minisiti/anno 70% redemption. IVECO IKA 2024.`;
 
-CLIENTI TIPO:
-- SALUTE: Ospedale dell'Angelo, Affidea, CDI, Lierac+Phyto, Solgar, LARC
-- B2B: Rollon, Comau, Megadyne, Bitron, CNH, Petronas, SKF, Danieli
-- TURISMO: Costa Crociere, Alpitour, Biennale Venezia, Visit Piemonte, Fondazione Torino Musei
-
-CASI DI SUCCESSO:
-- Fiat EMEA: +40% visite, +120% test drive in 9 mesi (21 paesi)
-- Costa Crociere: 120.000 minisiti/anno, 70% redemption col Preventivo Emozionale
-- IVECO.com: Premio IKA 2024`;
-
-async function callClaude(userMsg, useWebSearch = false) {
+async function callClaude(userMsg, useWebSearch = false, maxTokens = 3000) {
   const body = {
     model: "claude-sonnet-4-20250514",
-    max_tokens: 3000,
+    max_tokens: maxTokens,
     system: DOMINO_BRAIN,
     messages: [{ role: "user", content: userMsg }],
   };
-  if (useWebSearch) {
-    body.tools = [{ type: "web_search_20250305", name: "web_search" }];
-  }
-
+  if (useWebSearch) body.tools = [{ type: "web_search_20250305", name: "web_search" }];
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
@@ -39,110 +24,113 @@ async function callClaude(userMsg, useWebSearch = false) {
     },
     body: JSON.stringify(body),
   });
-
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`Anthropic API error ${res.status}: ${err}`);
-  }
-
+  if (!res.ok) throw new Error(`Anthropic API error ${res.status}: ${await res.text()}`);
   const data = await res.json();
   return data.content.filter((b) => b.type === "text").map((b) => b.text).join("\n");
 }
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
-
+  if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
   const { action, payload } = req.body;
 
   try {
-    let result = "";
-
     if (action === "generate_list") {
-      const { sector, sectorLabel, subsectors, minFatturato, segnali } = payload;
-      const prompt = `Sei un analista di intelligence commerciale per Domino (domino.it), agenzia CX B Corp italiana.
+      const { sectorLabel, subsectors, minFatturato, segnali } = payload;
+      const raw = await callClaude(`Sei un analista di intelligence commerciale per Domino (domino.it), agenzia CX B Corp italiana.
 
-Genera una lista di 8 aziende italiane reali e potenzialmente in target per Domino nel settore: ${sectorLabel}
-${subsectors.length ? `Sottosettori preferiti: ${subsectors.join(", ")}` : ""}
+Genera una lista di 8 aziende italiane reali in target per Domino nel settore: ${sectorLabel}
+${subsectors?.length ? `Sottosettori: ${subsectors.join(", ")}` : ""}
 Fatturato minimo: ${minFatturato}M€
-${segnali.length ? `Segnali di acquisto richiesti: ${segnali.join(", ")}` : ""}
+${segnali?.length ? `Segnali di acquisto: ${segnali.join(", ")}` : ""}
 
-REGOLE:
-- Solo aziende REALI esistenti in Italia
-- Nessun cliente attuale di Domino (no Fiat, Costa Crociere, Alpitour, Affidea, Comau, Bitron, Rollon ecc.)
-- Fatturato minimo ${minFatturato}M€ (stima se non noto)
-- Per ogni azienda assegna uno score 0-100 basato su: fit settore (25%), dimensione (25%), gap digitale (20%), segnali acquisto (20%), accessibilità decisore (10%)
+REGOLE FONDAMENTALI:
+- Solo aziende REALI italiane esistenti oggi
+- NON includere clienti Domino: Fiat, Stellantis, IVECO, Costa Crociere, Alpitour, Affidea, Comau, Bitron, Rollon, Megadyne, CNH, Petronas, SKF
+- Fatturato minimo ${minFatturato}M€
+- Score 0-100: fit settore 25%, dimensione 25%, gap digitale 20%, segnali acquisto 20%, accessibilità decisore 10%
 
-Rispondi SOLO con JSON valido, nessun testo prima o dopo:
-[
-  {
-    "nome": "Nome Azienda",
-    "settore": "sottosettore specifico",
-    "citta": "Città, Regione",
-    "fatturato_est": "~XXM€",
-    "dipendenti_est": "~XXX",
-    "score": 72,
-    "hook": "frase breve sul perché è in target Domino",
-    "gap": "gap digitale principale rilevato"
-  }
-]`;
-      result = await callClaude(prompt, false);
+Rispondi SOLO con array JSON valido senza testo aggiuntivo:
+[{"nome":"","settore":"","citta":"","fatturato_est":"~XXM€","dipendenti_est":"~XXX","score":0,"hook":"","gap":""}]`, false, 4000);
+      return res.status(200).json({ result: raw });
     }
 
-    else if (action === "research") {
+    if (action === "research") {
       const { nome, settore, citta, hook } = payload;
-      const prompt = `Analizza questa azienda come prospect per Domino (agenzia CX italiana, domino.it):
+      const result = await callClaude(`Analizza questa azienda come prospect per Domino (agenzia CX italiana):
 
 AZIENDA: ${nome}
-${settore ? `Settore: ${settore}` : ""}
-${citta ? `Sede: ${citta}` : ""}
-${hook ? `Hook rilevato: ${hook}` : ""}
+${settore ? `Settore: ${settore}` : ""}${citta ? `\nSede: ${citta}` : ""}${hook ? `\nHook: ${hook}` : ""}
 
-Cerca sul web informazioni aggiornate e produci un dossier strutturato con:
-1. PROFILO AZIENDA — cosa fanno, mercati, posizionamento
-2. NEWS RECENTI — ultimi 6-12 mesi (annunci, cambi, lanci)
-3. DECISION MAKER — CEO/CMO/CDO: nome, LinkedIn, tono
-4. DIGITAL GAP — stato attuale del digitale vs opportunità Domino
-5. HOOK COMMERCIALE — l'argomento più forte per aprire la conversazione
-6. SERVIZI DOMINO CONSIGLIATI — quale area è più rilevante e perché
-7. LIVELLO DI URGENZA — basso/medio/alto con motivazione`;
-      result = await callClaude(prompt, true);
+Cerca sul web e produci un dossier con questi 7 punti esatti:
+
+## 1. PROFILO AZIENDA
+Cosa fanno, mercati, posizionamento, dimensione stimata.
+
+## 2. NEWS RECENTI (ultimi 12 mesi)
+Annunci, acquisizioni, lanci prodotto, cambi management, finanziamenti. Se non trovi scrivi "Nessuna news rilevante trovata".
+
+## 3. DECISION MAKER TARGET
+Nome CEO/CMO/CDO, profilo LinkedIn se trovato, tono comunicativo. Se non trovi scrivi "Non trovato pubblicamente".
+
+## 4. DIGITAL GAP
+Stato attuale sito/digital: punti deboli evidenti, tecnologie in uso se rilevabili.
+
+## 5. HOOK COMMERCIALE
+L'argomento più forte e specifico per aprire la conversazione con Domino.
+
+## 6. SERVIZI DOMINO PIÙ RILEVANTI
+Quale delle 4 aree (Service Design / Digital Marketing CX / Digital Products / IT) e perché.
+
+## 7. URGENZA STIMATA
+Basso / Medio / Alto — con motivazione in 1 frase.`, true, 3000);
+      return res.status(200).json({ result });
     }
 
-    else if (action === "materials") {
-      const { dossier } = payload;
-      const prompt = `Basandoti su questo dossier del prospect, genera i materiali di vendita per Domino:
+    if (action === "generate_materials") {
+      const { dossier, nomeAzienda } = payload;
+      const raw = await callClaude(`Sei il sales director di Domino (agenzia CX italiana, domino.it). Basandoti su questo dossier, genera tutti i materiali di vendita.
 
+PROSPECT: ${nomeAzienda}
 DOSSIER:
 ${dossier}
 
-Genera:
-
-## MAIL INTRODUTTIVA (variante Pain-first)
-Oggetto: [oggetto]
-Corpo: [corpo mail, max 150 parole, prima persona, firma come "Team Domino"]
-
-## DECK — STRUTTURA 6 SLIDE
-Slide 1: Titolo personalizzato
-Slide 2-3: Specchio dei loro bisogni (non di Domino)
-Slide 4-5: Come Domino risolve — con case study affine
-Slide 6: Proposta di next step concreta
-
-## SEQUENZA LINKEDIN (3 messaggi)
-Messaggio 1 — Connection request (max 50 parole)
-Messaggio 2 — Follow-up Giorno 5 (insight settore)
-Messaggio 3 — Invio valore Giorno 10
-
-## OPENING SCRIPT CALL (max 100 parole)`;
-      result = await callClaude(prompt, false);
+Produci ESATTAMENTE questo JSON (nessun testo fuori dal JSON):
+{
+  "mail": {
+    "oggetto": "oggetto email conciso e personalizzato",
+    "corpo": "corpo email pain-first, max 140 parole, tono consulenziale diretto, prima persona plurale, firma Team Domino. NON usare asterischi o markdown."
+  },
+  "deck": [
+    {"n": 1, "titolo": "titolo slide personalizzato su prospect", "contenuto": "2-3 bullet sintetici"},
+    {"n": 2, "titolo": "Il loro contesto (non Domino)", "contenuto": "sfide e opportunità del prospect"},
+    {"n": 3, "titolo": "Cosa abbiamo visto", "contenuto": "osservazioni specifiche sul loro digital"},
+    {"n": 4, "titolo": "Come lo risolviamo", "contenuto": "servizio Domino più rilevante + approccio"},
+    {"n": 5, "titolo": "Case study affine", "contenuto": "caso Domino più simile per settore/sfida"},
+    {"n": 6, "titolo": "Next step proposto", "contenuto": "proposta concreta di primo incontro"}
+  ],
+  "linkedin": [
+    {"giorno": 1, "tipo": "Connection request", "testo": "max 50 parole, personalizzato, nessun pitch"},
+    {"giorno": 5, "tipo": "Follow-up con insight", "testo": "max 80 parole, porta valore settoriale"},
+    {"giorno": 10, "tipo": "Invio contenuto", "testo": "max 80 parole, link a caso studio o articolo Domino"}
+  ],
+  "workflow": [
+    {"giorno": 1, "canale": "LinkedIn", "azione": "Connection request al decision maker", "note": ""},
+    {"giorno": 3, "canale": "Email", "azione": "Mail introduttiva pain-first", "note": ""},
+    {"giorno": 5, "canale": "LinkedIn", "azione": "Follow-up con insight di settore", "note": ""},
+    {"giorno": 8, "canale": "Email", "azione": "Invio deck personalizzato", "note": ""},
+    {"giorno": 12, "canale": "Phone", "azione": "Chiamata con opening script", "note": "preparare 3 domande aperte"},
+    {"giorno": 18, "canale": "LinkedIn", "azione": "Terzo messaggio con contenuto di valore", "note": ""},
+    {"giorno": 22, "canale": "Email", "azione": "Follow-up finale con proposta sprint", "note": "proponi Design Sprint! o call esplorativa"}
+  ]
+}`, false, 4000);
+      const start = raw.indexOf("{");
+      const end = raw.lastIndexOf("}");
+      if (start === -1 || end === -1) throw new Error("JSON non valido nella risposta");
+      const parsed = JSON.parse(raw.slice(start, end + 1));
+      return res.status(200).json({ result: parsed });
     }
 
-    else {
-      return res.status(400).json({ error: "Unknown action" });
-    }
-
-    return res.status(200).json({ result });
+    return res.status(400).json({ error: "Unknown action" });
   } catch (err) {
     console.error("Handler error:", err);
     return res.status(500).json({ error: err.message });
