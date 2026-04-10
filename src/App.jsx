@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const V   = "v3.5.0";
+const V   = "v3.6.0";
 const RED = "#D0021B";
 const BG  = "#1A1714";
 const C1  = "#242120";
@@ -38,7 +38,7 @@ async function api(action, payload) {
 }
 
 function parseDossier(text) {
-  const keys = ["PROFILO AZIENDA","DATI FINANZIARI","PERSONE CHIAVE","SEGNALI RECENTI","JOB POSTING E PRIORITÀ STRATEGICHE","PRESENZA E MATURITÀ DIGITALE","SFIDE PROBABILI","OPPORTUNITÀ PER DOMINO","⚠️ DATI NON TROVATI"];
+  const keys = ["PROFILO AZIENDA","DATI FINANZIARI","PERSONE CHIAVE","SEGNALI RECENTI","JOB POSTING E PRIORITÀ STRATEGICHE","PRESENZA E MATURITÀ DIGITALE","SFIDE PROBABILI","OPPORTUNITÀ PER DOMINO","CASE HISTORY CONSIGLIATI","DATI NON TROVATI","⚠️ DATI NON TROVATI"];
   const out = {};
   keys.forEach((k,i) => {
     const esc = k.replace(/[⚠️()]/g,c=>"\\"+c);
@@ -114,58 +114,43 @@ function Logo() {
 
 // ── INTELLIGENCE PAGE ─────────────────────────────────
 function IntelligencePage({parsed, onGenerateMats, mats, onViewMats}) {
-  const sfide = parseBullets(parsed["SFIDE PROBABILI"]);
-  const opps  = parseBullets(parsed["OPPORTUNITÀ PER DOMINO"]);
-  const jobs  = parseBullets(parsed["JOB POSTING E PRIORITÀ STRATEGICHE"]);
-  const segnali = parseBullets(parsed["SEGNALI RECENTI"]);
+  const sfide   = parseBullets(parsed["SFIDE PROBABILI"]).slice(0,3);
+  const opps    = parseBullets(parsed["OPPORTUNITA PER DOMINO"]||parsed["OPPORTUNITÀ PER DOMINO"]).slice(0,3);
+  const jobs    = parseBullets(parsed["JOB POSTING E PRIORITA STRATEGICHE"]||parsed["JOB POSTING E PRIORITÀ STRATEGICHE"]).slice(0,3);
+  const segnali = parseBullets(parsed["SEGNALI RECENTI"]).slice(0,3);
   const persone = parseBullets(parsed["PERSONE CHIAVE"]);
-  const missing = parsed["⚠️ DATI NON TROVATI"];
-
-  const InfoCard = ({label, text, accent}) => {
-    const colors = accent==="amber"?{bg:AM,br:AMB,t:"rgba(251,146,60,0.85)"}:accent==="green"?{bg:GN,br:GNB,t:"#4ade80"}:{bg:C1,br:BR,t:T2};
-    return (
-      <div style={{background:colors.bg,border:`1px solid ${colors.br}`,borderRadius:10,padding:"14px 16px",marginBottom:10}}>
-        <span style={{fontSize:10,fontWeight:700,letterSpacing:"0.12em",color:colors.t,textTransform:"uppercase",display:"block",marginBottom:8}}>{label}</span>
-        <p style={{fontSize:13,color:accent?T1:T2,lineHeight:1.7,margin:0,whiteSpace:"pre-wrap"}}>{text}</p>
-      </div>
-    );
-  };
+  const missing = parsed["DATI NON TROVATI"]||parsed["⚠️ DATI NON TROVATI"];
+  const caseHist= parsed["CASE HISTORY CONSIGLIATI"];
 
   return (
     <div>
-      {/* PROFILO */}
-      {parsed["PROFILO AZIENDA"] && (
+      {parsed["PROFILO AZIENDA"]&&(
         <div style={{background:C1,border:`1px solid ${BR}`,borderRadius:12,padding:"20px 22px",marginBottom:14}}>
           <span style={q.lbl}>Profilo azienda</span>
-          <p style={{fontSize:14,lineHeight:1.75,color:T2,margin:0,whiteSpace:"pre-wrap"}}>{parsed["PROFILO AZIENDA"]}</p>
+          <p style={{fontSize:14,lineHeight:1.78,color:T2,margin:0,whiteSpace:"pre-wrap"}}>{parsed["PROFILO AZIENDA"]}</p>
         </div>
       )}
-
-      {/* DATI FINANZIARI + PERSONE CHIAVE — 2 cols */}
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:14,marginBottom:14}}>
         <div style={{background:C1,border:`1px solid ${BR}`,borderRadius:12,padding:"18px 20px"}}>
           <span style={q.lbl}>📊 Dati finanziari</span>
           {parsed["DATI FINANZIARI"]
-            ? <p style={{fontSize:13,color:T2,lineHeight:1.7,margin:0,whiteSpace:"pre-wrap"}}>{parsed["DATI FINANZIARI"]}</p>
-            : <p style={{fontSize:12,color:T3,margin:0,fontStyle:"italic"}}>⚠️ Non trovato</p>}
+            ?<p style={{fontSize:13,color:T2,lineHeight:1.7,margin:0,whiteSpace:"pre-wrap"}}>{parsed["DATI FINANZIARI"]}</p>
+            :<p style={{fontSize:12,color:T3,margin:0,fontStyle:"italic"}}>⚠️ Non trovato</p>}
         </div>
         <div style={{background:C1,border:`1px solid ${BR}`,borderRadius:12,padding:"18px 20px"}}>
           <span style={q.lbl}>👤 Persone chiave</span>
-          {persone.length > 0
-            ? persone.map((p,i)=>(
-                <div key={i} style={{display:"flex",alignItems:"flex-start",gap:8,marginBottom:8}}>
-                  <div style={{width:28,height:28,minWidth:28,background:BL,border:`1px solid ${BLB}`,borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight:700,color:"#60b3f0",marginTop:1}}>
-                    {p[0]?.toUpperCase()||"?"}
-                  </div>
-                  <p style={{fontSize:12,color:T2,margin:0,lineHeight:1.5,paddingTop:5}}>{p}</p>
-                </div>
-              ))
-            : <p style={{fontSize:12,color:T3,margin:0,fontStyle:"italic"}}>⚠️ Non trovato</p>}
+          {persone.length>0
+            ?persone.map((p,i)=>{
+                const initials=(p.split(/[—\-,]/)[0]||"?").trim().split(" ").map(w=>w[0]).slice(0,2).join("").toUpperCase();
+                return(<div key={i} style={{display:"flex",alignItems:"flex-start",gap:8,marginBottom:i<persone.length-1?10:0}}>
+                  <div style={{width:28,height:28,minWidth:28,background:BL,border:`1px solid ${BLB}`,borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontSize:10,fontWeight:700,color:"#60b3f0",marginTop:2}}>{initials||"?"}</div>
+                  <p style={{fontSize:12,color:T2,margin:0,lineHeight:1.5,paddingTop:6}}>{p}</p>
+                </div>);
+              })
+            :<p style={{fontSize:12,color:T3,margin:0,fontStyle:"italic"}}>⚠️ Non trovato</p>}
         </div>
       </div>
-
-      {/* SEGNALI RECENTI */}
-      {segnali.length > 0 && (
+      {segnali.length>0&&(
         <div style={{background:C1,border:`1px solid ${BR}`,borderRadius:12,padding:"18px 20px",marginBottom:14}}>
           <span style={q.lbl}>📡 Segnali recenti</span>
           {segnali.map((s,i)=>(
@@ -176,48 +161,42 @@ function IntelligencePage({parsed, onGenerateMats, mats, onViewMats}) {
           ))}
         </div>
       )}
-
-      {/* JOB POSTING + PRESENZA DIGITALE — 2 cols */}
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:14,marginBottom:14}}>
         <div style={{background:C1,border:`1px solid ${BR}`,borderRadius:12,padding:"18px 20px"}}>
           <span style={q.lbl}>🎯 Job posting attivi</span>
-          {jobs.length > 0
-            ? <div>{jobs.map((j,i)=>(
-                <span key={i} style={{display:"inline-block",background:BL,border:`1px solid ${BLB}`,borderRadius:4,padding:"4px 10px",fontSize:11,color:"#60b3f0",fontWeight:500,margin:"3px 4px 3px 0"}}>{j.length>50?j.slice(0,50)+"…":j}</span>
+          {jobs.length>0
+            ?<div>{jobs.map((j,i)=>(
+                <span key={i} style={{display:"inline-block",background:BL,border:`1px solid ${BLB}`,borderRadius:4,padding:"4px 10px",fontSize:11,color:"#60b3f0",fontWeight:500,margin:"3px 4px 3px 0"}}>{j.length>55?j.slice(0,55)+"...":j}</span>
               ))}</div>
-            : <p style={{fontSize:12,color:T3,margin:0,fontStyle:"italic"}}>⚠️ Non trovato</p>}
+            :<p style={{fontSize:12,color:T3,margin:0,fontStyle:"italic"}}>⚠️ Non trovato</p>}
         </div>
         <div style={{background:C1,border:`1px solid ${BR}`,borderRadius:12,padding:"18px 20px"}}>
           <span style={q.lbl}>💻 Maturità digitale</span>
-          {parsed["PRESENZA E MATURITÀ DIGITALE"]
-            ? <p style={{fontSize:13,color:T2,lineHeight:1.7,margin:0,whiteSpace:"pre-wrap"}}>{parsed["PRESENZA E MATURITÀ DIGITALE"]}</p>
-            : <p style={{fontSize:12,color:T3,margin:0,fontStyle:"italic"}}>⚠️ Non trovato</p>}
+          {(parsed["PRESENZA E MATURITA DIGITALE"]||parsed["PRESENZA E MATURITÀ DIGITALE"])
+            ?<p style={{fontSize:13,color:T2,lineHeight:1.7,margin:0,whiteSpace:"pre-wrap"}}>{parsed["PRESENZA E MATURITA DIGITALE"]||parsed["PRESENZA E MATURITÀ DIGITALE"]}</p>
+            :<p style={{fontSize:12,color:T3,margin:0,fontStyle:"italic"}}>⚠️ Non trovato</p>}
         </div>
       </div>
-
-      {/* SFIDE PROBABILI */}
-      {sfide.length > 0 && (
+      {sfide.length>0&&(
         <div style={{marginBottom:14}}>
           <span style={{...q.lbl,color:"rgba(251,146,60,0.7)"}}>⚡ Sfide probabili</span>
           <div style={{display:"grid",gap:8}}>
             {sfide.map((s,i)=>(
               <div key={i} style={{background:AM,border:`1px solid ${AMB}`,borderRadius:8,padding:"12px 16px",display:"flex",gap:12,alignItems:"flex-start"}}>
-                <span style={{color:"rgba(251,146,60,0.9)",fontWeight:700,fontSize:16,lineHeight:1,marginTop:1}}>{i+1}</span>
+                <span style={{background:"rgba(251,146,60,0.2)",color:"rgba(251,146,60,0.9)",fontWeight:700,fontSize:12,borderRadius:4,padding:"2px 8px",flexShrink:0,marginTop:1}}>{i+1}</span>
                 <p style={{fontSize:13,color:T1,margin:0,lineHeight:1.65}}>{s}</p>
               </div>
             ))}
           </div>
         </div>
       )}
-
-      {/* OPPORTUNITÀ PER DOMINO — prominente */}
-      {opps.length > 0 && (
+      {opps.length>0&&(
         <div style={{marginBottom:14}}>
           <span style={{...q.lbl,color:"rgba(74,222,128,0.75)"}}>🚀 Opportunità per Domino</span>
           <div style={{display:"grid",gap:8}}>
             {opps.map((o,i)=>(
               <div key={i} style={{background:GN,border:`1px solid ${GNB}`,borderRadius:8,padding:"14px 16px",display:"flex",gap:12,alignItems:"flex-start"}}>
-                <div style={{width:22,height:22,minWidth:22,background:"rgba(34,197,94,0.2)",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",marginTop:1}}>
+                <div style={{width:22,height:22,minWidth:22,background:"rgba(34,197,94,0.22)",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,marginTop:2}}>
                   <span style={{color:"#4ade80",fontWeight:700,fontSize:11}}>✓</span>
                 </div>
                 <p style={{fontSize:13,color:T1,margin:0,lineHeight:1.65}}>{o}</p>
@@ -226,21 +205,31 @@ function IntelligencePage({parsed, onGenerateMats, mats, onViewMats}) {
           </div>
         </div>
       )}
-
-      {/* DATI NON TROVATI — collassabile */}
-      {missing && missing.length > 10 && (
-        <MissingData text={missing}/>
+      {caseHist&&(
+        <div style={{marginBottom:14}}>
+          <span style={{...q.lbl,color:"rgba(10,143,209,0.75)"}}>📚 Case history consigliati</span>
+          <div style={{display:"grid",gap:8}}>
+            {parseBullets(caseHist).slice(0,2).map((ch,i)=>{
+              const isS=i===0;
+              return(
+                <div key={i} style={{background:isS?BL:"rgba(139,92,246,0.1)",border:`1px solid ${isS?BLB:"rgba(139,92,246,0.28)"}`,borderRadius:8,padding:"14px 16px",display:"flex",gap:12,alignItems:"flex-start"}}>
+                  <span style={{background:isS?BL:"rgba(139,92,246,0.15)",color:isS?"#60b3f0":"rgba(167,139,250,0.9)",fontSize:10,fontWeight:700,padding:"3px 8px",borderRadius:4,whiteSpace:"nowrap",flexShrink:0,marginTop:2,border:`1px solid ${isS?BLB:"rgba(139,92,246,0.3)"}`}}>{isS?"Settore":"Complessità"}</span>
+                  <p style={{fontSize:13,color:T1,margin:0,lineHeight:1.65}}>{ch.replace(/^\[(SETTORE|COMPLESSIT[A-Z]+)\]:\s*/i,"").trim()}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       )}
-
-      {/* CTA GENERA MATERIALI */}
+      {missing&&missing.length>10&&<MissingData text={missing}/>}
       <div style={{background:C1,border:`1px solid ${BR}`,borderRadius:12,padding:"20px 22px",marginTop:8,display:"flex",alignItems:"center",justifyContent:"space-between",gap:16}}>
         <div>
           <p style={{fontWeight:600,fontSize:15,margin:"0 0 4px"}}>Genera materiali sales</p>
-          <p style={{fontSize:13,color:T2,margin:0}}>Mail × 3 varianti · Deck scaricabile · Briefing call · LinkedIn · Workflow</p>
+          <p style={{fontSize:13,color:T2,margin:0}}>Mail x 3 varianti - Deck scaricabile - Briefing call - LinkedIn - Workflow</p>
         </div>
         {!mats
-          ? <button onClick={onGenerateMats} style={{...q.btnP,whiteSpace:"nowrap"}}>Genera →</button>
-          : <button onClick={onViewMats} style={{...q.btnP,background:"#22c55e",whiteSpace:"nowrap"}}>Vedi materiali →</button>
+          ?<button onClick={onGenerateMats} style={{...q.btnP,whiteSpace:"nowrap"}}>Genera</button>
+          :<button onClick={onViewMats} style={{...q.btnP,background:"#22c55e",whiteSpace:"nowrap"}}>Vedi materiali</button>
         }
       </div>
     </div>
@@ -252,10 +241,10 @@ function MissingData({text}) {
   return (
     <div style={{background:"rgba(255,255,255,0.03)",border:`1px solid ${BR}`,borderRadius:8,overflow:"hidden",marginBottom:14}}>
       <div onClick={()=>setOpen(o=>!o)} style={{padding:"10px 16px",cursor:"pointer",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-        <span style={{fontSize:11,color:T3,fontWeight:600}}>⚠️ Dati non trovati</span>
-        <span style={{fontSize:11,color:T3}}>{open?"▾":"▸"}</span>
+        <span style={{fontSize:11,color:T3,fontWeight:600}}>Dati non trovati</span>
+        <span style={{fontSize:11,color:T3}}>{open?"v":">"}</span>
       </div>
-      {open && <div style={{padding:"0 16px 12px",borderTop:`1px solid ${BR}`,paddingTop:12}}>
+      {open&&<div style={{padding:"0 16px 12px",borderTop:`1px solid ${BR}`,paddingTop:12}}>
         <p style={{fontSize:12,color:T3,margin:0,lineHeight:1.65,whiteSpace:"pre-wrap"}}>{text}</p>
       </div>}
     </div>
@@ -346,22 +335,50 @@ function BriefingTab({b}) {
 }
 
 // ── LINKEDIN TAB ──────────────────────────────────────
-function LinkedInTab({linkedin}) {
+function LinkedInTab({linkedin, parsedPersone}) {
   const [cp,setCp]=useState(null);
+  const [targetName,setTargetName]=useState("");
+  const persone = parseBullets(parsedPersone||"");
+
+  function applyName(msg) {
+    if(!targetName) return msg;
+    const fn = targetName.split(/[,\-—]/)[0].trim().split(" ")[0];
+    return msg.replace(/\b(decisore|il\/la responsabile|il responsabile|il direttore|la direttrice|il ceo|il cmo|il cdo|il manager)\b/gi, fn);
+  }
+
   return (
-    <div style={{display:"grid",gap:12}}>
-      {linkedin.map((m,i)=>(
-        <div key={i} style={{background:C2,border:`1px solid ${BR}`,borderRadius:8,padding:"16px 20px"}}>
-          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
-            <div style={{display:"flex",gap:8,alignItems:"center"}}>
-              <span style={{background:RD,color:RED,fontSize:11,fontWeight:700,padding:"2px 10px",borderRadius:4}}>Giorno {m.giorno}</span>
-              <span style={{fontSize:12,color:T3}}>{m.tipo}</span>
-            </div>
-            <button onClick={()=>{navigator.clipboard.writeText(m.testo);setCp(i);setTimeout(()=>setCp(null),2000);}} style={{...q.btnO(false),padding:"4px 12px",fontSize:11}}>{cp===i?"✓":"Copia"}</button>
+    <div>
+      {persone.length>0&&(
+        <div style={{background:C1,border:`1px solid ${BR}`,borderRadius:10,padding:"16px 18px",marginBottom:18}}>
+          <span style={q.lbl}>Seleziona il destinatario</span>
+          <p style={{fontSize:12,color:T3,margin:"0 0 10px"}}>Scegli dalla lista o scrivi il nome per personalizzare i messaggi</p>
+          <div style={{display:"flex",flexWrap:"wrap",gap:6,marginBottom:10}}>
+            {persone.map((p,i)=>{
+              const name=(p.split(/[—\-,]/)[0]||"").trim();
+              return <span key={i} onClick={()=>setTargetName(targetName===name?"":name)} style={q.pill(targetName===name)}>{name}</span>;
+            })}
           </div>
-          <p style={{fontSize:13,color:T2,lineHeight:1.68,margin:0}}>{m.testo}</p>
+          <input style={{...q.inp,fontSize:12}} type="text" value={targetName} onChange={e=>setTargetName(e.target.value)} placeholder="oppure scrivi nome e cognome..." />
         </div>
-      ))}
+      )}
+      <div style={{display:"grid",gap:12}}>
+        {linkedin.map((m,i)=>{
+          const txt=applyName(m.testo);
+          return(
+            <div key={i} style={{background:C2,border:`1px solid ${BR}`,borderRadius:8,padding:"16px 20px"}}>
+              <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
+                <div style={{display:"flex",gap:8,alignItems:"center"}}>
+                  <span style={{background:RD,color:RED,fontSize:11,fontWeight:700,padding:"2px 10px",borderRadius:4}}>Giorno {m.giorno}</span>
+                  <span style={{fontSize:12,color:T3}}>{m.tipo}</span>
+                  {targetName&&<span style={{fontSize:11,color:"#60b3f0",background:BL,border:`1px solid ${BLB}`,borderRadius:4,padding:"1px 7px"}}>a {targetName.split(" ")[0]}</span>}
+                </div>
+                <button onClick={()=>{navigator.clipboard.writeText(txt);setCp(i);setTimeout(()=>setCp(null),2000);}} style={{...q.btnO(false),padding:"4px 12px",fontSize:11}}>{cp===i?"✓":"Copia"}</button>
+              </div>
+              <p style={{fontSize:13,color:T2,lineHeight:1.68,margin:0}}>{txt}</p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -440,6 +457,8 @@ export default function App() {
   const [tab,setTab]=useState("intelligence");
   const [err,setErr]=useState(null);
   const [saved,setSaved]=useState(false);
+  const [ruoloContatto,setRuoloContatto]=useState("");
+  const [noteAggiuntive,setNoteAggiuntive]=useState("");
 
   useEffect(()=>{
     const l=document.createElement("link");
@@ -491,11 +510,12 @@ export default function App() {
   }
 
   async function research(p) {
-    setSelected(p);setStep("results");setLoading(true);setErr(null);
+    const pObj = typeof p==="string" ? {nome:p} : p;
+    setSelected(pObj);setStep("results");setLoading(true);setErr(null);
     setMats(null);setTab("intelligence");setDossier("");setParsed({});setSaved(false);
     setLoadMsg("Research agent — analisi fonti reali in corso...");
     try {
-      const r=await api("research",{nome:p.nome||p,settore:p.settore||"",citta:p.citta||"",hook:p.hook||""});
+      const r=await api("research",{nome:pObj.nome||pObj,settore:pObj.settore||"",citta:pObj.citta||"",hook:pObj.hook||"",ruoloContatto:pObj.ruoloContatto||ruoloContatto||"",noteAggiuntive:pObj.noteAggiuntive||noteAggiuntive||""});
       setDossier(r);setParsed(parseDossier(r));
     } catch(e){setErr(e.message);}
     setLoading(false);
@@ -514,6 +534,7 @@ export default function App() {
     setStep("entry");setSector(null);setSubs([]);setFatt("20");setSeg([]);
     setProspects([]);setSelected(null);setManual("");setDossier("");setParsed({});
     setMats(null);setTab("intelligence");setErr(null);setSaved(false);
+    setRuoloContatto("");setNoteAggiuntive("");
   }
 
   const archiveCount = loadArchive().length;
@@ -577,9 +598,25 @@ export default function App() {
         {/* MANUAL */}
         {step==="manual"&&(
           <div style={q.card}>
-            <span style={q.lbl}>Nome azienda prospect</span>
-            <input style={{...q.inp,marginBottom:18}} type="text" value={manual} onChange={e=>setManual(e.target.value)} placeholder="es. Humanitas, NH Hotels, Mapei, Fastweb..." onKeyDown={e=>e.key==="Enter"&&manual.trim()&&research(manual.trim())} autoFocus/>
-            <button onClick={()=>research(manual.trim())} disabled={!manual.trim()} style={{...q.btnP,opacity:manual.trim()?1:0.4}}>Analizza prospect →</button>
+            <div style={{marginBottom:18}}>
+              <span style={q.lbl}>Nome azienda prospect</span>
+              <input style={q.inp} type="text" value={manual} onChange={e=>setManual(e.target.value)} placeholder="es. Humanitas, NH Hotels, Mapei, Fastweb..." onKeyDown={e=>e.key==="Enter"&&manual.trim()&&research({nome:manual.trim(),ruoloContatto,noteAggiuntive})} autoFocus/>
+            </div>
+            <div style={{marginBottom:18}}>
+              <span style={q.lbl}>Ruolo del contatto interno (opzionale)</span>
+              <p style={{fontSize:12,color:T3,margin:"0 0 8px"}}>Indica il tipo di interlocutore che già conosci o vuoi raggiungere</p>
+              <div style={{display:"flex",flexWrap:"wrap",gap:6,marginBottom:10}}>
+                {["Marketing Director","Digital Marketing","CMO","CPO","CEO","CTO","IT Director","Sales Director","Comunicazione","HR / Internal Comm","Nessun contatto"].map(r=>(
+                  <span key={r} onClick={()=>setRuoloContatto(ruoloContatto===r?"":r)} style={q.pill(ruoloContatto===r)}>{r}</span>
+                ))}
+              </div>
+              <input style={q.inp} type="text" value={ruoloContatto} onChange={e=>setRuoloContatto(e.target.value)} placeholder="oppure scrivi liberamente il ruolo..." />
+            </div>
+            <div style={{marginBottom:20}}>
+              <span style={q.lbl}>Contesto aggiuntivo (opzionale)</span>
+              <textarea style={{...q.inp,resize:"vertical",minHeight:72,lineHeight:1.6}} value={noteAggiuntive} onChange={e=>setNoteAggiuntive(e.target.value)} placeholder="es. Hanno appena lanciato un nuovo prodotto, stanno aprendo in Francia, siamo già in contatto con il loro CTO..."/>
+            </div>
+            <button onClick={()=>research({nome:manual.trim(),ruoloContatto,noteAggiuntive})} disabled={!manual.trim()} style={{...q.btnP,opacity:manual.trim()?1:0.4}}>Analizza prospect →</button>
           </div>
         )}
 
@@ -680,7 +717,7 @@ export default function App() {
             {tab==="mail"&&mats?.mail&&<MailTab mail={mats.mail}/>}
             {tab==="deck"&&mats?.deck&&<DeckTab deck={mats.deck} nome={nome}/>}
             {tab==="briefing"&&mats&&<BriefingTab b={mats}/>}
-            {tab==="linkedin"&&mats?.linkedin&&<LinkedInTab linkedin={mats.linkedin}/>}
+            {tab==="linkedin"&&mats?.linkedin&&<LinkedInTab linkedin={mats.linkedin} parsedPersone={parsed["PERSONE CHIAVE"]}/>}
             {tab==="workflow"&&mats?.workflow&&<WorkflowTab workflow={mats.workflow}/>}
 
             <div style={{display:"flex",gap:10,marginTop:28}}>
