@@ -487,7 +487,23 @@ function HsModal({ current, onClose, onSave }) {
 }
 
 // ─── Main App ─────────────────────────────────────────────────────────────────
+const VERSION = 'v3.1.0';
+
 const QUICK_PICKS = ['Technogym', 'Humanitas', 'Alpitour', 'Amplifon', 'Pirelli', 'De\'Longhi', 'Fincantieri', 'Tod\'s'];
+
+const SETTORI_OPTIONS = [
+  'Automotive', 'B2B Industriale / Manifatturiero', 'Salute & Sanità',
+  'Turismo & Cultura', 'Finance & Assicurazioni', 'Real Estate',
+  'Pubblica Amministrazione', 'Retail & eCommerce', 'Tecnologia & Software', 'Altro',
+];
+
+const LISTA_MSGS = [
+  'Ricerca aziende nel settore...',
+  'Verifica siti web e presenza digitale...',
+  'Analisi segnali di bisogno digitale...',
+  'Ricerca decisori e struttura aziendale...',
+  'Scoring e ranking prospect...',
+];
 
 const LOADING_MSGS = [
   'Analisi sito web aziendale...',
@@ -513,6 +529,17 @@ export default function App() {
   const [hsMsg, setHsMsg] = useState('');
   const [archCount, setArchCount] = useState(() => loadArchive().length);
 
+  // Lista prospect state
+  const [mode, setMode] = useState('analizza'); // 'analizza' | 'lista'
+  const [listaSettore, setListaSettore] = useState('');
+  const [listaGeo, setListaGeo] = useState('Italia');
+  const [listaDim, setListaDim] = useState([]);
+  const [listaKeywords, setListaKeywords] = useState('');
+  const [listaNumero, setListaNumero] = useState(10);
+  const [listaLoading, setListaLoading] = useState(false);
+  const [listaMsg, setListaMsg] = useState('');
+  const [listaResult, setListaResult] = useState(null);
+
   const analyze = useCallback(async () => {
     if (!input.trim() || loading) return;
     setLoading(true); setResult(null); setTab('intel'); setHsMsg('');
@@ -535,6 +562,23 @@ export default function App() {
       clearInterval(iv); setLoading(false); setLoadMsg('');
     }
   }, [input, note, loading]);
+
+  const generateLista = useCallback(async () => {
+    if (!listaSettore || listaLoading) return;
+    setListaLoading(true); setListaResult(null);
+    let mi = 0;
+    setListaMsg(LISTA_MSGS[0]);
+    const iv = setInterval(() => { mi = Math.min(mi + 1, LISTA_MSGS.length - 1); setListaMsg(LISTA_MSGS[mi]); }, 8000);
+    try {
+      const res = await fetch('/api/prospect-list', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ settore: listaSettore, geografia: listaGeo, dimensione: listaDim, keywords: listaKeywords, numero: listaNumero }),
+      });
+      if (!res.ok) throw new Error(`Errore ${res.status}: ${await res.text()}`);
+      setListaResult(await res.json());
+    } catch (err) { alert(`Errore: ${err.message}`); }
+    finally { clearInterval(iv); setListaLoading(false); setListaMsg(''); }
+  }, [listaSettore, listaGeo, listaDim, listaKeywords, listaNumero, listaLoading]);
 
   const doHsSync = async () => {
     if (!hsToken) { setShowHs(true); return; }
@@ -571,6 +615,154 @@ export default function App() {
       </div>
 
       <div style={{ maxWidth: '920px', margin: '0 auto', padding: '28px 20px' }}>
+
+        {/* Mode switcher */}
+        <div style={{ display: 'flex', gap: '6px', marginBottom: '20px' }}>
+          {[['analizza','🔍 Analizza Prospect'],['lista','📋 Genera Lista Prospect']].map(([m, label]) => (
+            <button key={m} onClick={() => setMode(m)} style={{ padding: '9px 20px', background: mode === m ? C.red : C.card, color: mode === m ? C.white : C.muted, border: `1px solid ${mode === m ? C.red : C.border}`, borderRadius: '8px', cursor: 'pointer', fontSize: '13px', fontWeight: mode === m ? 700 : 400, fontFamily: FONT, transition: 'all 0.15s' }}>
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {/* ─── MODALITÀ LISTA PROSPECT ─────────────────────────────────────── */}
+        {mode === 'lista' && (
+          <>
+            <Card style={{ marginBottom: '20px' }}>
+              <h1 style={{ margin: '0 0 4px', fontSize: '20px', fontWeight: 800, letterSpacing: '-0.02em' }}>Genera Lista Prospect</h1>
+              <p style={{ margin: '0 0 20px', color: C.muted, fontSize: '13px' }}>Scegli settore e filtri → l'AI costruisce una lista qualificata con scoring. Da ogni riga puoi lanciare l'analisi approfondita.</p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '14px' }}>
+                {/* Settore */}
+                <div>
+                  <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Settore *</div>
+                  <select value={listaSettore} onChange={e => setListaSettore(e.target.value)}
+                    style={{ width: '100%', background: '#0d0d0d', border: `1px solid ${C.border}`, color: listaSettore ? C.text : C.muted, padding: '10px 12px', borderRadius: '8px', fontSize: '13px', fontFamily: FONT, outline: 'none', cursor: 'pointer' }}>
+                    <option value="">Seleziona settore...</option>
+                    {SETTORI_OPTIONS.map(s => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                </div>
+                {/* Geografia */}
+                <div>
+                  <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Area geografica</div>
+                  <input value={listaGeo} onChange={e => setListaGeo(e.target.value)} placeholder="es. Italia, Nord Italia, Piemonte, Milano..."
+                    style={{ width: '100%', background: '#0d0d0d', border: `1px solid ${C.border}`, color: C.text, padding: '10px 12px', borderRadius: '8px', fontSize: '13px', fontFamily: FONT, outline: 'none', boxSizing: 'border-box' }} />
+                </div>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '14px' }}>
+                {/* Dimensione */}
+                <div>
+                  <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Dimensione azienda</div>
+                  <div style={{ display: 'flex', gap: '6px' }}>
+                    {['PMI', 'Mid-market', 'Enterprise'].map(d => (
+                      <button key={d} onClick={() => setListaDim(prev => prev.includes(d) ? prev.filter(x => x !== d) : [...prev, d])}
+                        style={{ flex: 1, padding: '8px 6px', background: listaDim.includes(d) ? 'rgba(232,39,42,0.12)' : '#0d0d0d', border: `1px solid ${listaDim.includes(d) ? C.red : C.border}`, color: listaDim.includes(d) ? C.red : C.muted, borderRadius: '7px', cursor: 'pointer', fontSize: '11px', fontWeight: listaDim.includes(d) ? 700 : 400, fontFamily: FONT }}>
+                        {d}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                {/* Numero */}
+                <div>
+                  <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Numero prospect</div>
+                  <div style={{ display: 'flex', gap: '6px' }}>
+                    {[5, 10, 20].map(n => (
+                      <button key={n} onClick={() => setListaNumero(n)}
+                        style={{ flex: 1, padding: '10px', background: listaNumero === n ? 'rgba(232,39,42,0.12)' : '#0d0d0d', border: `1px solid ${listaNumero === n ? C.red : C.border}`, color: listaNumero === n ? C.red : C.muted, borderRadius: '7px', cursor: 'pointer', fontSize: '13px', fontWeight: listaNumero === n ? 700 : 400, fontFamily: FONT }}>
+                        {n}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Keywords */}
+              <div style={{ marginBottom: '16px' }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Parole chiave / focus specifico (opzionale)</div>
+                <input value={listaKeywords} onChange={e => setListaKeywords(e.target.value)} placeholder="es. 'export internazionale', 'in crescita', 'rete vendita indiretta', 'rebranding recente'"
+                  style={{ width: '100%', background: '#0d0d0d', border: `1px solid ${C.border}`, color: C.text, padding: '10px 12px', borderRadius: '8px', fontSize: '13px', fontFamily: FONT, outline: 'none', boxSizing: 'border-box' }} />
+              </div>
+
+              <Btn onClick={generateLista} disabled={listaLoading || !listaSettore} style={{ width: '100%', fontSize: '14px', padding: '12px' }}>
+                {listaLoading ? 'Generazione lista...' : `Genera ${listaNumero} prospect qualificati →`}
+              </Btn>
+            </Card>
+
+            {/* Lista loading */}
+            {listaLoading && (
+              <Card style={{ textAlign: 'center', padding: '36px 24px', marginBottom: '20px' }}>
+                <div style={{ fontSize: '28px', marginBottom: '12px' }}>📋</div>
+                <div style={{ fontSize: '14px', fontWeight: 700, color: C.text, marginBottom: '6px' }}>{listaMsg}</div>
+                <div style={{ fontSize: '12px', color: C.muted, marginBottom: '20px' }}>Ricerca e scoring in corso — questo richiede circa 1-2 minuti</div>
+                <div style={{ background: C.elevated, borderRadius: '4px', height: '3px', overflow: 'hidden' }}>
+                  <div style={{ height: '3px', background: C.red, borderRadius: '4px', animation: 'scan 2.5s ease-in-out infinite' }} />
+                </div>
+              </Card>
+            )}
+
+            {/* Lista results */}
+            {listaResult && !listaLoading && (
+              <div>
+                {/* Header risultati */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                  <div>
+                    <div style={{ fontSize: '15px', fontWeight: 800, color: C.text }}>{listaResult.lista?.length || 0} prospect trovati</div>
+                    <div style={{ fontSize: '12px', color: C.muted, marginTop: '2px' }}>{listaResult.criteri_applicati}</div>
+                  </div>
+                  <Btn variant="ghost" onClick={() => { setListaResult(null); }} style={{ padding: '5px 12px', fontSize: '11px' }}>Nuova ricerca</Btn>
+                </div>
+
+                {/* Cards prospect */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  {(listaResult.lista || []).sort((a, b) => (b.score || 0) - (a.score || 0)).map((item, i) => {
+                    const score = item.score || 0;
+                    const scoreColor = score >= 8 ? '#22c55e' : score >= 6 ? '#f59e0b' : C.muted;
+                    return (
+                      <div key={i} style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: '12px', padding: '16px', display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                        {/* Score */}
+                        <div style={{ textAlign: 'center', minWidth: '52px', background: '#0d0d0d', borderRadius: '8px', padding: '8px 6px' }}>
+                          <div style={{ fontSize: '22px', fontWeight: 800, color: scoreColor, lineHeight: 1 }}>{score}</div>
+                          <div style={{ fontSize: '9px', color: C.muted, marginTop: '2px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>score</div>
+                        </div>
+
+                        {/* Info */}
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px', flexWrap: 'wrap' }}>
+                            <div style={{ fontSize: '14px', fontWeight: 800, color: C.text }}>{item.nome}</div>
+                            {item.sito && <a href={item.sito.startsWith('http') ? item.sito : `https://${item.sito}`} target="_blank" rel="noopener noreferrer" style={{ fontSize: '11px', color: C.muted, textDecoration: 'none' }}>↗ {item.sito}</a>}
+                          </div>
+                          <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '6px' }}>
+                            {[item.settore, item.dimensione, item.sede].filter(Boolean).map((tag, ti) => (
+                              <span key={ti} style={{ fontSize: '10px', color: C.muted, background: C.elevated, padding: '2px 7px', borderRadius: '3px' }}>{tag}</span>
+                            ))}
+                            {item.decisore_probabile && (
+                              <span style={{ fontSize: '10px', color: '#93c5fd', background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)', padding: '2px 7px', borderRadius: '3px' }}>
+                                👤 {item.decisore_probabile}
+                              </span>
+                            )}
+                          </div>
+                          <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '3px' }}><span style={{ color: scoreColor }}>●</span> {item.score_motivazione}</div>
+                          {item.segnale_principale && <div style={{ fontSize: '11px', color: C.muted, fontStyle: 'italic' }}>→ {item.segnale_principale}</div>}
+                        </div>
+
+                        {/* Action */}
+                        <button
+                          onClick={() => { setMode('analizza'); setInput(item.sito || item.nome); setResult(null); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                          style={{ background: C.red, border: 'none', color: C.white, padding: '8px 14px', borderRadius: '7px', cursor: 'pointer', fontSize: '12px', fontWeight: 700, fontFamily: FONT, whiteSpace: 'nowrap', flexShrink: 0 }}>
+                          Analizza →
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </>
+        )}
+
+        {/* ─── MODALITÀ ANALIZZA PROSPECT ──────────────────────────────────── */}
+        {mode === 'analizza' && <>
         {/* Input */}
         <Card style={{ marginBottom: '20px' }}>
           <h1 style={{ margin: '0 0 4px', fontSize: '20px', fontWeight: 800, letterSpacing: '-0.02em' }}>Analizza un prospect</h1>
@@ -649,10 +841,15 @@ export default function App() {
             </Card>
           </>
         )}
+        </> /* end mode analizza */}
       </div>
 
-      {showArchive && <ArchiveModal onClose={() => setShowArchive(false)} onLoad={d => { setResult(d); setTab('intel'); }} />}
+      {showArchive && <ArchiveModal onClose={() => setShowArchive(false)} onLoad={d => { setResult(d); setTab('intel'); setMode('analizza'); }} />}
       {showHs && <HsModal current={hsToken} onClose={() => setShowHs(false)} onSave={t => { setHsToken(t); localStorage.setItem('domino_hs_token', t); }} />}
+      {/* Version footer */}
+      <div style={{ textAlign: 'center', padding: '24px 0 16px', fontSize: '11px', color: '#333' }}>
+        {VERSION} · Domino Prospect Engine · domino.it
+      </div>
     </div>
   );
 }
