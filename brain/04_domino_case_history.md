@@ -1,5 +1,5 @@
 # DOMINO BRAIN — Case History
-> Versione 2.0 — Aprile 2026. Tutti i case documentati da sito, presentazioni e materiali ufficiali. Da usare per settore e tipo di progetto.
+> Versione 3.0 — Aprile 2026. Tutti i case documentati da sito, presentazioni e materiali ufficiali. Da usare per settore e tipo di progetto. Aggiornato con lettura I5.0 dei principali case (Trainstorming aprile 2026).
 
 ---
 
@@ -29,6 +29,7 @@
 **Progetto:** Migrazione da intranet multiple a un unico Employee Portal globale.
 **Approccio:** Assessment processi esistenti, survey su audience specifiche, employee journey mapping.
 **Risultato:** Rete che connette **88.000 dipendenti nel mondo**. Premio **FEIEIA Award – Best European Intranet**. Esteso successivamente a CNH Industrial e Iveco Group.
+**Lettura I5.0:** Case emblematico di "transition program" — non un sito, ma l'infrastruttura di una transizione organizzativa globale. Domino non ha consegnato un deliverable: ha accompagnato una transizione. Il valore non era nell'output, ma nella continuità della relazione.
 
 ### Stellantis — Electrification Days
 **Progetto:** Evento globale (online + offline) sulla mobilità elettrica per dipendenti.
@@ -57,6 +58,12 @@
 ### Case IH — Lead generation Europa + Brand Awareness
 **Progetto:** Campagne di lead generation per il mercato europeo e incremento brand awareness.
 
+### Case IH — IKA 2024 "Innovation Technology"
+**Riconoscimento:** Premio **IKA 2024** — categoria "Premio Speciale Innovation Technology".
+**Cosa ha premiato:** L'integrazione dell'AI nel processo di lead generation tramite campagne di digital marketing. Definisce nuovi standard per l'uso dell'AI nel marketing B2B agricultural/industrial.
+**Nota:** Domino vince due IKA 2024 nello stesso anno: uno con IVECO (sito, categoria Automotive) e uno con Case IH (AI + lead gen, categoria Innovation Technology).
+**Lettura I5.0:** Esempio concreto di "Efficiency to Responsibility as Differentiator" — l'AI non è usata per automatizzare ciecamente, ma per migliorare la pertinenza e la qualità dei contatti generati. AI che produce fiducia, non solo volume.
+
 ### Case IH — Sito con Personas per 18 mercati
 **Progetto:** Nuovo sito web basato su Personas, lanciato in **18 mercati** simultaneamente. Approccio: ricerca qualitativa → personas → UX → design → sviluppo → rollout internazionale.
 
@@ -75,11 +82,13 @@
 **Progetto:** Consulente AI B2B che comprende i bisogni del cliente e suggerisce il prodotto corretto.
 **Come funziona:** L'AI pre-compila il configuratore web con le caratteristiche principali.
 **Extra:** AI Chatbot istruito via PDF e siti web, risponde via chat, audio e video a domande tecniche.
+**Lettura I5.0:** Case exemplare di "Decision Design" — l'AI non sostituisce il buyer, lo aiuta a decidere meglio in un contesto tecnico complesso. Human-in-the-loop by design.
 
 ### Bitron — Customer Experience B2B
 **Progetto:** Nuova customer experience per valorizzare il know-how B2B di Bitron.
 
-### Rollon — "Il prodotto diventa esperienza"
+### Rollon — "Il prodotto diventa esperienza" *(IKA 2023)*
+**Riconoscimento:** Premio **IKA 2023** — categoria "Best Integrated Communication Campaign B2B".
 **Progetto:** Trasformazione del sito B2B in una vera esperienza di prodotto.
 **SEO US:** +**48% traffico organico** USA. "Linear rails" = prima keyword organica US (preceduta solo dal brand "Rollon").
 
@@ -155,8 +164,15 @@
 
 ## AI & INNOVAZIONE
 
+> **Lettura I5.0 di questa sezione:** I case AI di Domino non sono esperimenti di laboratorio — sono esempi concreti di "Responsible AI in produzione": sistemi comprensibili, governabili, con human-in-the-loop. Non vendiamo AI generica: progettiamo le conseguenze di come l'AI viene usata. Questi case dimostrano che è possibile — e che Domino lo fa già.
+
 ### IBM Watson / BR-Uno — Anti-bullying
 **Progetto:** Domino e IBM Watson insieme per affrontare il tema del bullismo con una soluzione di Intelligent Assistant.
+
+### GEDI + Stellantis — Alfabeto del Futuro (2023)
+**Progetto:** Esperienza AI immersiva nelle piazze italiane, nell'ambito del tour "Alfabeto del Futuro" di Gruppo Editoriale GEDI per raccontare l'innovazione in Italia.
+**Cosa ha fatto Domino:** Uso dell'AI per creare un'installazione/esperienza immersiva che rende tangibili le possibilità del progresso tecnologico al grande pubblico.
+**Rilevanza:** Case che dimostra la capacità Domino di portare l'AI fuori dai contesti B2B puri, in esperienze phygital rivolte al consumatore finale.
 
 ---
 

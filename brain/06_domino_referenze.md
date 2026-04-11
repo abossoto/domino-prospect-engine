@@ -1,5 +1,5 @@
 # DOMINO BRAIN — Referenze, Premi e Testimonianze
-> Versione 2.0 — Aprile 2026. Fonti: Sortlist (profilo verificato, 10 recensioni, 4.83/5), sito domino.it, blog Domino25.
+> Versione 3.0 — Aprile 2026. Fonti: Sortlist (profilo verificato, 10 recensioni, 4.83/5), sito domino.it, blog Domino25. Aggiornato con frame I5.0 per le formule di pitch (Trainstorming aprile 2026).
 
 ---
 
@@ -204,6 +204,12 @@
 **Per prospect interessato a AI / innovazione digitale:**
 > "Richmond Italia ci ha scelto per 'rivedere tutta la strategia e i processi di un portale introducendo IA'. Con Case IH abbiamo vinto l'Interactive Key Award 2024 per il miglior uso dell'AI nel digital marketing."
 
+**Per prospect con agenda I5.0 (AI responsabile, transizioni, ESG):**
+> "Lavoriamo con aziende che non vogliono solo essere più veloci — vogliono scegliere meglio dove andare. Con Stellantis abbiamo accompagnato la transizione di 88.000 dipendenti in tutto il mondo. Con Bitron abbiamo costruito un AI che aiuta il buyer B2B a decidere, non solo a comprare. È quello che intendiamo per 'semplificare la complessità'."
+
+**Per prospect che ha paura dell'AI o la percepisce come rischio:**
+> "La fiducia non si scala con l'efficienza. I tool AI che progettiamo sono comprensibili, governabili e centrati sulle persone — non sull'automazione per sé. Il nostro approccio è sempre human-in-the-loop: l'AI serve le decisioni umane, non le sostituisce."
+
 **Per prospect nel turismo / cultura:**
 > "Visit Piemonte apprezza soprattutto la nostra velocità di risposta. Con ENIT coordiniamo campagne in 34 paesi su un'unica dashboard Looker."
 
@@ -219,6 +225,8 @@
 | **Intranet / Internal Comm** | FEIEIA Best Intranet Europa, 88.000 dip. | Andrea Pallard (Stellantis) |
 | **SEO / Lead generation** | Demak +48% organico, +54% lead | Alessandra Manzato (Bitron) |
 | **AI / Digital transformation** | IKA 2024 AI Case IH | Claudio Honegger (Richmond) |
+| **AI responsabile / I5.0 / ESG** | Stellantis EP (88k dip.) + Bitron AI Product Selector | Andrea Pallard (Stellantis) |
+| **Transizioni organizzative** | Stellantis Employee Portal (FEIEIA), IPI Onboarding | Monica Sarri (IPI) |
 | **Real estate / servizi** | IPI (sito + intranet + digital education) | Monica Sarri (IPI) |
 | **Non-profit / PA** | Links Foundation intranet, Action Aid IKA 2008 | Roberto Veronesi (Links) |
 | **Turismo / Cultura** | ENIT 34 paesi, Masi +175% pagine viste | Emanuela Giorgini (Visit Piemonte) |
