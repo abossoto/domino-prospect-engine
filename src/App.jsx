@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import pptxgen from 'pptxgenjs';
 
-// ─── Design System Domino ─────────────────────────────────────────────────────
+// ─── Design System ────────────────────────────────────────────────────────────
 const C = {
   red:      '#E8272A',
   black:    '#0a0a0a',
@@ -10,41 +10,38 @@ const C = {
   border:   '#222222',
   text:     '#e8e8e8',
   muted:    '#666666',
-  subtle:   '#f5f5f5',
   white:    '#FFFFFF',
 };
 const FONT = "'Helvetica Neue', Helvetica, Arial, sans-serif";
 
-// ─── Design Sprint colors ─────────────────────────────────────────────────────
 const DS_COLORS = {
-  'Service':           { bg: 'rgba(99,102,241,0.12)',  bd: 'rgba(99,102,241,0.4)',  tx: '#a5b4fc' },
-  'CX':                { bg: 'rgba(236,72,153,0.12)',  bd: 'rgba(236,72,153,0.4)',  tx: '#f9a8d4' },
-  'Brand':             { bg: 'rgba(245,158,11,0.12)',  bd: 'rgba(245,158,11,0.4)',  tx: '#fcd34d' },
-  'Digital Marketing': { bg: 'rgba(16,185,129,0.12)',  bd: 'rgba(16,185,129,0.4)',  tx: '#6ee7b7' },
-  'Website':           { bg: 'rgba(59,130,246,0.12)',  bd: 'rgba(59,130,246,0.4)',  tx: '#93c5fd' },
-  'Intranet':          { bg: 'rgba(234,88,12,0.12)',   bd: 'rgba(234,88,12,0.4)',   tx: '#fdba74' },
+  'Service':           { bg:'rgba(99,102,241,0.12)',  bd:'rgba(99,102,241,0.4)',  tx:'#a5b4fc' },
+  'CX':                { bg:'rgba(236,72,153,0.12)',  bd:'rgba(236,72,153,0.4)',  tx:'#f9a8d4' },
+  'Brand':             { bg:'rgba(245,158,11,0.12)',  bd:'rgba(245,158,11,0.4)',  tx:'#fcd34d' },
+  'Digital Marketing': { bg:'rgba(16,185,129,0.12)',  bd:'rgba(16,185,129,0.4)',  tx:'#6ee7b7' },
+  'Website':           { bg:'rgba(59,130,246,0.12)',  bd:'rgba(59,130,246,0.4)',  tx:'#93c5fd' },
+  'Intranet':          { bg:'rgba(234,88,12,0.12)',   bd:'rgba(234,88,12,0.4)',   tx:'#fdba74' },
 };
 
 const CANAL_COLORS = { LinkedIn: '#0077B5', Email: C.red, Telefono: '#22c55e' };
 
-// ─── GTM Config v3.2 ──────────────────────────────────────────────────────────
+// ─── GTM Config (v3.2) ────────────────────────────────────────────────────────
 const GTM_LAYERS = [
-  { id: 'vision',    label: 'L1 — Experience Vision', interlocutor: 'CEO / C-Suite',           need: '"Inspirami"',                color: '#7C3AED', bg: 'rgba(124,58,237,0.1)' },
-  { id: 'settori',   label: 'L2 — Settori',           interlocutor: 'Director / VP Marketing', need: '"Connettiti col mio mondo"', color: '#059669', bg: 'rgba(5,150,105,0.1)'   },
-  { id: 'usecases',  label: 'L3 — Use Cases',         interlocutor: 'Director / Head of',      need: '"Rendilo tangibile"',        color: '#2563EB', bg: 'rgba(37,99,235,0.1)'   },
-  { id: 'tech',      label: 'L4 — Tech Categories',   interlocutor: 'Manager / Specialista',   need: '"Trovami dove cerco"',       color: '#D97706', bg: 'rgba(217,119,6,0.1)'   },
-  { id: 'salesplay', label: 'L5 — Sales Play',        interlocutor: 'Manager / Procurement',   need: '"Sei nell\'RFP?"',           color: '#DB2777', bg: 'rgba(219,39,119,0.1)'  },
+  { id:'vision',    label:'L1 — Experience Vision', interlocutor:'CEO / C-Suite',           need:'"Inspirami"',                color:'#7C3AED', bg:'rgba(124,58,237,0.1)' },
+  { id:'settori',   label:'L2 — Settori',           interlocutor:'Director / VP Marketing', need:'"Connettiti col mio mondo"', color:'#059669', bg:'rgba(5,150,105,0.1)'   },
+  { id:'usecases',  label:'L3 — Use Cases',         interlocutor:'Director / Head of',      need:'"Rendilo tangibile"',        color:'#2563EB', bg:'rgba(37,99,235,0.1)'   },
+  { id:'tech',      label:'L4 — Tech Categories',   interlocutor:'Manager / Specialista',   need:'"Trovami dove cerco"',       color:'#D97706', bg:'rgba(217,119,6,0.1)'   },
+  { id:'salesplay', label:'L5 — Sales Play',        interlocutor:'Manager / Procurement',   need:'"Sei nell\'RFP?"',           color:'#DB2777', bg:'rgba(219,39,119,0.1)'  },
 ];
 
 const GTM_MOTIONS = [
-  { id: 'bottomup', label: '⬆ Bottom-up', desc: 'Contatto freddo o inbound — sali se sei rilevante',       sub: 'Pipeline rapida'  },
-  { id: 'topdown',  label: '⬇ Top-down',  desc: 'Referenza CEO / evento — scendi al team con credibilità', sub: 'Deal più grandi'  },
+  { id:'bottomup', label:'⬆ Bottom-up', desc:'Contatto freddo o inbound — sali se sei rilevante',       sub:'Pipeline rapida' },
+  { id:'topdown',  label:'⬇ Top-down',  desc:'Referenza CEO / evento — scendi al team con credibilità', sub:'Deal più grandi'  },
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 function loadArchive() {
-  try { return JSON.parse(localStorage.getItem('domino_pe_arch') || '[]'); }
-  catch { return []; }
+  try { return JSON.parse(localStorage.getItem('domino_pe_arch') || '[]'); } catch { return []; }
 }
 function saveToArchive(r) {
   const a = loadArchive();
@@ -81,7 +78,7 @@ async function syncHubSpot(token, result) {
     });
     companyId = (await cr.json()).id;
   }
-  const noteLines = [
+  const noteBody = [
     `📊 ANALISI DOMINO PROSPECT ENGINE — ${new Date().toLocaleDateString('it-IT')}`,
     `Settore: ${p.settore} | Dimensione: ${p.dimensione} | Fatturato: ${p.fatturato_stimato || 'N/D'}`,
     `Decisore: ${p.decisore_target} | Maturità digitale: ${p.maturita_digitale}`,
@@ -95,7 +92,7 @@ async function syncHubSpot(token, result) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
     body: JSON.stringify({
-      properties: { hs_note_body: noteLines, hs_timestamp: Date.now().toString() },
+      properties: { hs_note_body: noteBody, hs_timestamp: Date.now().toString() },
       associations: [{ to: { id: companyId }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 190 }] }],
     }),
   });
@@ -106,97 +103,83 @@ async function syncHubSpot(token, result) {
 function exportPPT(result) {
   const prs = new pptxgen();
   prs.layout = 'LAYOUT_WIDE';
-  const p = result.prospect;
-  const d = result.deck;
+  const p = result.prospect, d = result.deck;
+  const addNum  = (sl, n) => sl.addText(String(n), { x: 12, y: .15, w: .8, h: .3, fontSize: 9, bold: true, color: 'E8272A', fontFace: 'Helvetica', align: 'right' });
+  const addLogo = (sl)    => sl.addText('domino',   { x: .4, y: .18, w: 1.2, h: .3, fontSize: 11, bold: true, color: 'E8272A', fontFace: 'Helvetica', charSpacing: 2 });
 
-  const addNum = (slide, n) =>
-    slide.addText(String(n), { x: 12.0, y: 0.15, w: 0.8, h: 0.3, fontSize: 9, bold: true, color: 'E8272A', fontFace: 'Helvetica', align: 'right' });
-  const addLogo = (slide) =>
-    slide.addText('domino', { x: 0.4, y: 0.18, w: 1.2, h: 0.3, fontSize: 11, bold: true, color: 'E8272A', fontFace: 'Helvetica', charSpacing: 2 });
+  const s1 = prs.addSlide(); s1.background = { color: '111111' }; addLogo(s1); addNum(s1, 1);
+  s1.addText(p.nome,           { x: .4, y: .6,  w: 12,   h: .4,  fontSize: 11, color: '666666', fontFace: 'Helvetica' });
+  s1.addText(d.slide_1_titolo, { x: .4, y: 1.4, w: 11.5, h: 2.2, fontSize: 34, bold: true, color: 'FFFFFF', fontFace: 'Helvetica', charSpacing: -1 });
+  s1.addText(d.slide_1_contenuto, { x: .4, y: 3.8, w: 10, h: 2.2, fontSize: 15, color: 'AAAAAA', fontFace: 'Helvetica', breakLine: true });
+  s1.addText(`${new Date().toLocaleDateString('it-IT')} · domino.it`, { x: .4, y: 6.8, w: 8, h: .3, fontSize: 9, color: '444444', fontFace: 'Helvetica' });
 
-  // Slide 1 — Cover dark
-  const s1 = prs.addSlide();
-  s1.background = { color: '111111' };
-  addLogo(s1); addNum(s1, 1);
-  s1.addText(p.nome, { x: 0.4, y: 0.6, w: 12, h: 0.4, fontSize: 11, color: '666666', fontFace: 'Helvetica' });
-  s1.addText(d.slide_1_titolo, { x: 0.4, y: 1.4, w: 11.5, h: 2.2, fontSize: 34, bold: true, color: 'FFFFFF', fontFace: 'Helvetica', charSpacing: -1 });
-  s1.addText(d.slide_1_contenuto, { x: 0.4, y: 3.8, w: 10, h: 2.2, fontSize: 15, color: 'AAAAAA', fontFace: 'Helvetica', breakLine: true });
-  s1.addText(`${new Date().toLocaleDateString('it-IT')} · domino.it`, { x: 0.4, y: 6.8, w: 8, h: 0.3, fontSize: 9, color: '444444', fontFace: 'Helvetica' });
+  const s2 = prs.addSlide(); s2.background = { color: 'FFFFFF' }; addLogo(s2); addNum(s2, 2);
+  s2.addShape(prs.ShapeType.rect, { x: .4, y: .65, w: .05, h: .7, fill: { color: 'E8272A' } });
+  s2.addText(d.slide_2_titolo,    { x: .6, y: .6,  w: 11.5, h: .9,  fontSize: 26, bold: true, color: '111111', fontFace: 'Helvetica', charSpacing: -.5 });
+  s2.addText(d.slide_2_contenuto, { x: .4, y: 1.8, w: 12,   h: 4.5, fontSize: 15, color: '444444', fontFace: 'Helvetica', breakLine: true, lineSpacingMultiple: 1.4 });
 
-  // Slide 2 — Problema white
-  const s2 = prs.addSlide();
-  s2.background = { color: 'FFFFFF' };
-  addLogo(s2); addNum(s2, 2);
-  s2.addShape(prs.ShapeType.rect, { x: 0.4, y: 0.65, w: 0.05, h: 0.7, fill: { color: 'E8272A' } });
-  s2.addText(d.slide_2_titolo, { x: 0.6, y: 0.6, w: 11.5, h: 0.9, fontSize: 26, bold: true, color: '111111', fontFace: 'Helvetica', charSpacing: -0.5 });
-  s2.addText(d.slide_2_contenuto, { x: 0.4, y: 1.8, w: 12, h: 4.5, fontSize: 15, color: '444444', fontFace: 'Helvetica', breakLine: true, lineSpacingMultiple: 1.4 });
-
-  // Slide 3 — Soluzione white
-  const s3 = prs.addSlide();
-  s3.background = { color: 'FFFFFF' };
-  addLogo(s3); addNum(s3, 3);
-  s3.addShape(prs.ShapeType.rect, { x: 0.4, y: 0.65, w: 0.05, h: 0.7, fill: { color: 'E8272A' } });
-  s3.addText(d.slide_3_titolo, { x: 0.6, y: 0.6, w: 11.5, h: 0.9, fontSize: 26, bold: true, color: '111111', fontFace: 'Helvetica', charSpacing: -0.5 });
-  s3.addText(d.slide_3_contenuto, { x: 0.4, y: 1.8, w: 12, h: 3.5, fontSize: 15, color: '444444', fontFace: 'Helvetica', breakLine: true, lineSpacingMultiple: 1.4 });
+  const s3 = prs.addSlide(); s3.background = { color: 'FFFFFF' }; addLogo(s3); addNum(s3, 3);
+  s3.addShape(prs.ShapeType.rect, { x: .4, y: .65, w: .05, h: .7, fill: { color: 'E8272A' } });
+  s3.addText(d.slide_3_titolo,    { x: .6, y: .6,  w: 11.5, h: .9,  fontSize: 26, bold: true, color: '111111', fontFace: 'Helvetica', charSpacing: -.5 });
+  s3.addText(d.slide_3_contenuto, { x: .4, y: 1.8, w: 12,   h: 3.5, fontSize: 15, color: '444444', fontFace: 'Helvetica', breakLine: true, lineSpacingMultiple: 1.4 });
   const ss = p.strumenti_suggeriti || {};
-  const tools = [
-    ss.foundation_sprint && 'Foundation Sprint',
-    ss.design_sprint_tipo && `${ss.design_sprint_tipo} Design Sprint!`,
-    ss.preventivo_emozionale && 'Preventivo Emozionale',
-  ].filter(Boolean);
+  const tools = [ss.foundation_sprint && 'Foundation Sprint', ss.design_sprint_tipo && `${ss.design_sprint_tipo} Design Sprint!`, ss.preventivo_emozionale && 'Preventivo Emozionale'].filter(Boolean);
   if (tools.length) {
-    s3.addShape(prs.ShapeType.rect, { x: 0.4, y: 5.4, w: 12, h: 0.06, fill: { color: 'E5E7EB' } });
-    s3.addText('Strumenti suggeriti: ' + tools.join('  ·  '), { x: 0.4, y: 5.6, w: 12, h: 0.4, fontSize: 11, bold: true, color: 'E8272A', fontFace: 'Helvetica' });
+    s3.addShape(prs.ShapeType.rect, { x: .4, y: 5.4, w: 12, h: .06, fill: { color: 'E5E7EB' } });
+    s3.addText('Strumenti suggeriti: ' + tools.join('  ·  '), { x: .4, y: 5.6, w: 12, h: .4, fontSize: 11, bold: true, color: 'E8272A', fontFace: 'Helvetica' });
   }
 
-  // Slide 4 — Case study split
-  const s4 = prs.addSlide();
-  s4.background = { color: 'FFFFFF' };
-  s4.addShape(prs.ShapeType.rect, { x: 0, y: 0, w: 6.2, h: 7.5, fill: { color: '111111' } });
-  addNum(s4, 4);
-  s4.addText('domino', { x: 0.4, y: 0.18, w: 1.5, h: 0.3, fontSize: 11, bold: true, color: 'E8272A', fontFace: 'Helvetica' });
-  s4.addText(d.slide_4_titolo, { x: 6.4, y: 0.4, w: 6.6, h: 0.7, fontSize: 20, bold: true, color: 'E8272A', fontFace: 'Helvetica' });
+  const s4 = prs.addSlide(); s4.background = { color: 'FFFFFF' };
+  s4.addShape(prs.ShapeType.rect, { x: 0, y: 0, w: 6.2, h: 7.5, fill: { color: '111111' } }); addNum(s4, 4);
+  s4.addText('domino', { x: .4, y: .18, w: 1.5, h: .3, fontSize: 11, bold: true, color: 'E8272A', fontFace: 'Helvetica' });
+  s4.addText(d.slide_4_titolo, { x: 6.4, y: .4, w: 6.6, h: .7, fontSize: 20, bold: true, color: 'E8272A', fontFace: 'Helvetica' });
   (p.casi_studio || []).forEach((cs, i) => {
-    const yBase = 0.9 + i * 2.0;
-    s4.addShape(prs.ShapeType.rect, { x: 0.4, y: yBase, w: 0.04, h: 1.4, fill: { color: i === 0 ? 'E8272A' : i === 1 ? '3B82F6' : '888888' } });
-    s4.addText(cs.cliente, { x: 0.6, y: yBase, w: 5.4, h: 0.4, fontSize: 13, bold: true, color: 'FFFFFF', fontFace: 'Helvetica' });
-    s4.addText(cs.progetto, { x: 0.6, y: yBase + 0.38, w: 5.4, h: 0.35, fontSize: 11, color: 'AAAAAA', fontFace: 'Helvetica' });
-    if (cs.kpi) s4.addText('📊 ' + cs.kpi, { x: 0.6, y: yBase + 0.72, w: 5.4, h: 0.3, fontSize: 10, color: '4ADE80', fontFace: 'Helvetica' });
-    if (cs.perche_affine) s4.addText('→ ' + cs.perche_affine, { x: 0.6, y: yBase + 1.0, w: 5.4, h: 0.35, fontSize: 9, color: '888888', fontFace: 'Helvetica' });
+    const yb = .9 + i * 2;
+    s4.addShape(prs.ShapeType.rect, { x: .4, y: yb, w: .04, h: 1.4, fill: { color: i === 0 ? 'E8272A' : i === 1 ? '3B82F6' : '888888' } });
+    s4.addText(cs.cliente, { x: .6, y: yb,       w: 5.4, h: .4,  fontSize: 13, bold: true, color: 'FFFFFF', fontFace: 'Helvetica' });
+    s4.addText(cs.progetto, { x: .6, y: yb + .38, w: 5.4, h: .35, fontSize: 11, color: 'AAAAAA', fontFace: 'Helvetica' });
+    if (cs.kpi)          s4.addText('📊 ' + cs.kpi,          { x: .6, y: yb + .72, w: 5.4, h: .3,  fontSize: 10, color: '4ADE80', fontFace: 'Helvetica' });
+    if (cs.perche_affine) s4.addText('→ ' + cs.perche_affine, { x: .6, y: yb + 1,   w: 5.4, h: .35, fontSize: 9,  color: '888888', fontFace: 'Helvetica' });
   });
   s4.addText(d.slide_4_contenuto, { x: 6.4, y: 1.2, w: 6.4, h: 5.5, fontSize: 13, color: '444444', fontFace: 'Helvetica', breakLine: true, lineSpacingMultiple: 1.5 });
 
-  // Slide 5 — Next step red
-  const s5 = prs.addSlide();
-  s5.background = { color: 'E8272A' };
-  addNum(s5, 5);
-  s5.addText('domino', { x: 0.4, y: 0.18, w: 1.2, h: 0.3, fontSize: 11, bold: true, color: 'FFFFFF', fontFace: 'Helvetica', charSpacing: 2 });
-  s5.addText(d.slide_5_titolo, { x: 0.4, y: 1.6, w: 12.2, h: 1.8, fontSize: 36, bold: true, color: 'FFFFFF', fontFace: 'Helvetica', charSpacing: -1 });
-  s5.addText(d.slide_5_contenuto, { x: 0.4, y: 3.6, w: 10, h: 2.5, fontSize: 16, color: 'FFCCCC', fontFace: 'Helvetica', breakLine: true, lineSpacingMultiple: 1.5 });
-  s5.addText('domino.it  ·  +39 011 544770  ·  Torino & Venezia', { x: 0.4, y: 6.8, w: 10, h: 0.3, fontSize: 10, color: 'FFAAAA', fontFace: 'Helvetica' });
+  const s5 = prs.addSlide(); s5.background = { color: 'E8272A' }; addNum(s5, 5);
+  s5.addText('domino',           { x: .4, y: .18, w: 1.2,  h: .3,  fontSize: 11, bold: true, color: 'FFFFFF', fontFace: 'Helvetica', charSpacing: 2 });
+  s5.addText(d.slide_5_titolo,   { x: .4, y: 1.6, w: 12.2, h: 1.8, fontSize: 36, bold: true, color: 'FFFFFF', fontFace: 'Helvetica', charSpacing: -1 });
+  s5.addText(d.slide_5_contenuto,{ x: .4, y: 3.6, w: 10,   h: 2.5, fontSize: 16, color: 'FFCCCC', fontFace: 'Helvetica', breakLine: true, lineSpacingMultiple: 1.5 });
+  s5.addText('domino.it  ·  +39 011 544770  ·  Torino & Venezia', { x: .4, y: 6.8, w: 10, h: .3, fontSize: 10, color: 'FFAAAA', fontFace: 'Helvetica' });
 
   prs.writeFile({ fileName: `domino-prospect-${(p.nome || 'export').replace(/\s+/g, '-').toLowerCase()}.pptx` });
 }
 
 // ─── UI Primitives ────────────────────────────────────────────────────────────
-function Label({ children }) {
-  return <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.muted, marginBottom: '4px' }}>{children}</div>;
+function SectionLabel({ children }) {
+  return <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.muted, marginBottom: '8px' }}>{children}</div>;
 }
-function Val({ children }) {
-  return <div style={{ fontSize: '13px', fontWeight: 600, color: C.text }}>{children}</div>;
+
+function InfoBox({ label, value }) {
+  return (
+    <div style={{ background: '#0d0d0d', border: `1px solid ${C.border}`, borderRadius: '8px', padding: '10px 12px' }}>
+      <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.muted, marginBottom: '4px' }}>{label}</div>
+      <div style={{ fontSize: '13px', fontWeight: 600, color: C.text, lineHeight: 1.4 }}>{value || '—'}</div>
+    </div>
+  );
 }
+
 function Card({ children, style }) {
   return <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: '12px', padding: '20px', ...style }}>{children}</div>;
 }
+
 function Btn({ children, onClick, disabled, variant = 'primary', style }) {
   const base = { padding: '9px 20px', borderRadius: '7px', cursor: disabled ? 'not-allowed' : 'pointer', fontSize: '13px', fontWeight: 700, fontFamily: FONT, border: 'none', transition: 'opacity 0.15s', ...style };
-  const variants = {
+  const v = {
     primary: { background: disabled ? C.elevated : C.red, color: disabled ? C.muted : C.white },
     ghost:   { background: 'transparent', border: `1px solid ${C.border}`, color: C.muted },
     hs:      { background: 'rgba(255,122,89,0.1)', border: '1px solid rgba(255,122,89,0.3)', color: '#ff7a59' },
   };
-  return <button onClick={onClick} disabled={disabled} style={{ ...base, ...variants[variant] }}>{children}</button>;
+  return <button onClick={onClick} disabled={disabled} style={{ ...base, ...v[variant] }}>{children}</button>;
 }
+
 function TabBtn({ active, onClick, label }) {
   return (
     <button onClick={onClick} style={{ padding: '7px 14px', background: active ? C.red : 'transparent', color: active ? C.white : C.muted, border: `1px solid ${active ? C.red : C.border}`, borderRadius: '6px', cursor: 'pointer', fontSize: '12px', fontWeight: active ? 700 : 400, fontFamily: FONT, transition: 'all 0.15s' }}>
@@ -204,10 +187,12 @@ function TabBtn({ active, onClick, label }) {
     </button>
   );
 }
+
 function Pill({ children, color }) {
   const c = color || { bg: 'rgba(255,255,255,0.05)', bd: C.border, tx: C.muted };
   return <span style={{ display: 'inline-block', padding: '3px 9px', borderRadius: '4px', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: c.bg, border: `1px solid ${c.bd}`, color: c.tx }}>{children}</span>;
 }
+
 function CopyBtn({ text, label = 'Copia' }) {
   const [done, setDone] = useState(false);
   return (
@@ -217,56 +202,51 @@ function CopyBtn({ text, label = 'Copia' }) {
     </button>
   );
 }
-function AccentLine() {
-  return <div style={{ width: '4px', borderRadius: '2px', background: C.red, flexShrink: 0 }} />;
-}
-function Divider() {
-  return <div style={{ width: '1px', height: '30px', background: C.border }} />;
-}
 
-// ─── GTM Selector (v3.2) ─────────────────────────────────────────────────────
-// Posizione nel form: dopo il campo Note, prima del bottone Analizza
+// ─── GTM Selector ─────────────────────────────────────────────────────────────
+// Spec §10a: posizionato tra il campo Note e il bottone Analizza
 function GtmSelector({ layer, setLayer, motion, setMotion }) {
   return (
     <div style={{ background: C.elevated, border: `1px solid ${C.border}`, borderRadius: '10px', padding: '14px 16px', marginBottom: '14px' }}>
-      {/* Layer */}
-      <div style={{ fontSize: '11px', color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: '10px' }}>
+
+      <div style={{ fontSize: '10px', fontWeight: 700, color: C.muted, textTransform: 'uppercase', letterSpacing: '.08em', marginBottom: '10px' }}>
         GTM Layer — chi è il destinatario?
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '14px' }}>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', marginBottom: '14px' }}>
         {GTM_LAYERS.map(l => (
-          <div key={l.id} onClick={() => setLayer(l.id)}
-            style={{
-              display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 12px', borderRadius: '8px',
-              border: `1px solid ${layer === l.id ? l.color : C.border}`,
-              background: layer === l.id ? l.bg : 'transparent',
-              cursor: 'pointer', transition: 'all .12s',
-            }}>
+          <div key={l.id} onClick={() => setLayer(l.id)} style={{
+            display: 'flex', alignItems: 'center', gap: '10px',
+            padding: '8px 12px', borderRadius: '8px', cursor: 'pointer',
+            border: `1px solid ${layer === l.id ? l.color : C.border}`,
+            background: layer === l.id ? l.bg : 'transparent',
+            transition: 'all .12s',
+          }}>
             <div style={{ width: '3px', height: '28px', borderRadius: '2px', background: l.color, flexShrink: 0 }} />
             <div style={{ flex: 1 }}>
               <span style={{ fontSize: '12px', fontWeight: 600, color: C.text }}>{l.label}</span>
               <span style={{ fontSize: '11px', color: C.muted, marginLeft: '8px' }}>{l.interlocutor}</span>
             </div>
-            <span style={{ fontSize: '11px', color: C.muted, fontStyle: 'italic' }}>{l.need}</span>
+            <span style={{ fontSize: '11px', color: C.muted, fontStyle: 'italic', whiteSpace: 'nowrap' }}>{l.need}</span>
           </div>
         ))}
       </div>
-      {/* Motion */}
-      <div style={{ fontSize: '11px', color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: '8px' }}>
+
+      <div style={{ fontSize: '10px', fontWeight: 700, color: C.muted, textTransform: 'uppercase', letterSpacing: '.08em', marginBottom: '8px' }}>
         Motion — come stai entrando?
       </div>
+
       <div style={{ display: 'flex', gap: '8px' }}>
         {GTM_MOTIONS.map(m => (
-          <div key={m.id} onClick={() => setMotion(m.id)}
-            style={{
-              flex: 1, padding: '10px 12px', borderRadius: '8px',
-              border: `1px solid ${motion === m.id ? C.text : C.border}`,
-              background: motion === m.id ? 'rgba(255,255,255,0.05)' : 'transparent',
-              cursor: 'pointer', transition: 'all .12s',
-            }}>
+          <div key={m.id} onClick={() => setMotion(m.id)} style={{
+            flex: 1, padding: '10px 12px', borderRadius: '8px', cursor: 'pointer',
+            border: `1px solid ${motion === m.id ? C.text : C.border}`,
+            background: motion === m.id ? 'rgba(255,255,255,0.05)' : 'transparent',
+            transition: 'all .12s',
+          }}>
             <div style={{ fontSize: '13px', fontWeight: 700, color: C.text, marginBottom: '2px' }}>{m.label}</div>
-            <div style={{ fontSize: '11px', color: C.muted }}>{m.desc}</div>
-            <div style={{ fontSize: '10px', color: C.muted, marginTop: '2px', opacity: .7 }}>{m.sub}</div>
+            <div style={{ fontSize: '11px', color: C.muted, lineHeight: 1.4 }}>{m.desc}</div>
+            <div style={{ fontSize: '10px', color: C.muted, marginTop: '3px', opacity: .6 }}>{m.sub}</div>
           </div>
         ))}
       </div>
@@ -274,84 +254,84 @@ function GtmSelector({ layer, setLayer, motion, setMotion }) {
   );
 }
 
-// ─── Tab: Intelligence ────────────────────────────────────────────────────────
+// ─── Tab Intelligence ─────────────────────────────────────────────────────────
 function IntelTab({ p }) {
-  const ss = p.strumenti_suggeriti || {};
+  const ss    = p.strumenti_suggeriti || {};
   const dsType = ss.design_sprint_tipo;
   const dsCol  = dsType && DS_COLORS[dsType] ? DS_COLORS[dsType] : null;
 
   return (
-    <div>
-      {/* Grid 6 metriche */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '8px', marginBottom: '18px' }}>
-        {[
-          ['Settore',          p.settore],
-          ['Dimensione',       p.dimensione],
-          ['Fatturato',        p.fatturato_stimato || '⚠️ N/D'],
-          ['Mercati',          p.mercati],
-          ['Decisore target',  p.decisore_target],
-          ['Maturità digitale',p.maturita_digitale],
-        ].map(([l, v]) => (
-          <div key={l} style={{ background: '#0d0d0d', borderRadius: '8px', padding: '10px 12px' }}>
-            <Label>{l}</Label><Val>{v}</Val>
-          </div>
-        ))}
-      </div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
 
-      {/* Hook */}
-      <div style={{ background: 'rgba(232,39,42,0.07)', border: '1px solid rgba(232,39,42,0.2)', borderRadius: '8px', padding: '12px 14px', marginBottom: '18px' }}>
-        <Label>Hook — osservazione chiave</Label>
-        <div style={{ fontSize: '14px', color: '#ff9999', lineHeight: 1.55, marginTop: '4px' }}>🎯 {p.hook}</div>
-      </div>
-
-      {/* Strumenti suggeriti */}
-      <div style={{ marginBottom: '18px' }}>
-        <Label>Strumenti suggeriti</Label>
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '8px' }}>
-          {ss.foundation_sprint && (
-            <Pill color={{ bg: 'rgba(168,85,247,0.12)', bd: 'rgba(168,85,247,0.35)', tx: '#c084fc' }}>Foundation Sprint</Pill>
-          )}
-          {dsType && dsCol && (
-            <div>
-              <Pill color={dsCol}>{dsType} Design Sprint!</Pill>
-              {ss.design_sprint_motivazione && (
-                <div style={{ fontSize: '11px', color: C.muted, marginTop: '4px' }}>{ss.design_sprint_motivazione}</div>
-              )}
-            </div>
-          )}
-          {ss.preventivo_emozionale && (
-            <div>
-              <Pill color={{ bg: 'rgba(34,197,94,0.12)', bd: 'rgba(34,197,94,0.35)', tx: '#4ade80' }}>Preventivo Emozionale</Pill>
-              {ss.preventivo_emozionale_motivazione && (
-                <div style={{ fontSize: '11px', color: C.muted, marginTop: '4px' }}>{ss.preventivo_emozionale_motivazione}</div>
-              )}
-            </div>
-          )}
+      {/* Profilo — 6 InfoBox su griglia */}
+      <div>
+        <SectionLabel>Profilo</SectionLabel>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '8px' }}>
+          <InfoBox label="Settore"           value={p.settore} />
+          <InfoBox label="Dimensione"        value={p.dimensione} />
+          <InfoBox label="Fatturato"         value={p.fatturato_stimato || '⚠️ N/D'} />
+          <InfoBox label="Mercati"           value={p.mercati} />
+          <InfoBox label="Decisore target"   value={p.decisore_target} />
+          <InfoBox label="Maturità digitale" value={p.maturita_digitale} />
         </div>
       </div>
 
-      {/* 3 Casi studio */}
-      <div style={{ marginBottom: '18px' }}>
-        <Label>3 Casi studio selezionati</Label>
-        <div style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+      {/* Hook */}
+      <div style={{ background: 'rgba(232,39,42,0.07)', border: '1px solid rgba(232,39,42,0.25)', borderRadius: '10px', padding: '14px 16px' }}>
+        <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(232,39,42,0.8)', marginBottom: '6px' }}>
+          Hook — osservazione chiave
+        </div>
+        <div style={{ fontSize: '14px', color: '#ff9999', lineHeight: 1.6 }}>🎯 {p.hook}</div>
+      </div>
+
+      {/* Strumenti suggeriti */}
+      {(ss.foundation_sprint || dsType || ss.preventivo_emozionale) && (
+        <div>
+          <SectionLabel>Strumenti suggeriti</SectionLabel>
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            {ss.foundation_sprint && (
+              <div style={{ background: 'rgba(168,85,247,0.08)', border: '1px solid rgba(168,85,247,0.3)', borderRadius: '8px', padding: '10px 14px' }}>
+                <Pill color={{ bg: 'rgba(168,85,247,0.12)', bd: 'rgba(168,85,247,0.35)', tx: '#c084fc' }}>Foundation Sprint</Pill>
+              </div>
+            )}
+            {dsType && dsCol && (
+              <div style={{ background: dsCol.bg, border: `1px solid ${dsCol.bd}`, borderRadius: '8px', padding: '10px 14px' }}>
+                <Pill color={dsCol}>{dsType} Design Sprint!</Pill>
+                {ss.design_sprint_motivazione && <div style={{ fontSize: '11px', color: C.muted, marginTop: '6px' }}>{ss.design_sprint_motivazione}</div>}
+              </div>
+            )}
+            {ss.preventivo_emozionale && (
+              <div style={{ background: 'rgba(34,197,94,0.08)', border: '1px solid rgba(34,197,94,0.3)', borderRadius: '8px', padding: '10px 14px' }}>
+                <Pill color={{ bg: 'rgba(34,197,94,0.12)', bd: 'rgba(34,197,94,0.35)', tx: '#4ade80' }}>Preventivo Emozionale</Pill>
+                {ss.preventivo_emozionale_motivazione && <div style={{ fontSize: '11px', color: C.muted, marginTop: '6px' }}>{ss.preventivo_emozionale_motivazione}</div>}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Casi studio */}
+      <div>
+        <SectionLabel>3 Casi studio selezionati</SectionLabel>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {(p.casi_studio || []).map((cs, i) => {
             const accent = i === 0 ? C.red : i === 1 ? '#3b82f6' : '#888';
-            const tagColor = i === 0
+            const tagCol  = i === 0
               ? { bg: 'rgba(232,39,42,0.08)',  bd: 'rgba(232,39,42,0.25)',  tx: '#ff9999' }
               : i === 1
               ? { bg: 'rgba(59,130,246,0.08)', bd: 'rgba(59,130,246,0.25)', tx: '#93c5fd' }
-              : { bg: 'rgba(255,255,255,0.05)', bd: C.border, tx: C.muted };
+              : { bg: 'rgba(255,255,255,0.04)', bd: C.border, tx: C.muted };
             return (
-              <div key={i} style={{ display: 'flex', gap: '12px', background: '#0d0d0d', borderRadius: '8px', padding: '12px', alignItems: 'stretch' }}>
-                <div style={{ width: '4px', borderRadius: '2px', background: accent, flexShrink: 0 }} />
-                <div style={{ flex: 1 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
-                    <span style={{ fontSize: '12px', fontWeight: 700, color: accent }}>{cs.cliente}</span>
-                    <Pill color={tagColor}>{['Più affine', 'Stesso settore', 'Metodologia'][i]}</Pill>
+              <div key={i} style={{ display: 'flex', background: '#0d0d0d', borderRadius: '8px', overflow: 'hidden', border: `1px solid ${C.border}` }}>
+                <div style={{ width: '4px', background: accent, flexShrink: 0 }} />
+                <div style={{ flex: 1, padding: '12px 14px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                    <span style={{ fontSize: '13px', fontWeight: 700, color: accent }}>{cs.cliente}</span>
+                    <Pill color={tagCol}>{['Più affine', 'Stesso settore', 'Metodologia'][i]}</Pill>
                   </div>
-                  <div style={{ fontSize: '12px', color: C.text, marginBottom: '3px' }}>{cs.progetto}</div>
-                  {cs.kpi && <div style={{ fontSize: '11px', color: '#4ade80' }}>📊 {cs.kpi}</div>}
-                  {cs.perche_affine && <div style={{ fontSize: '11px', color: C.muted, marginTop: '3px', fontStyle: 'italic' }}>→ {cs.perche_affine}</div>}
+                  <div style={{ fontSize: '13px', color: C.text, marginBottom: '4px' }}>{cs.progetto}</div>
+                  {cs.kpi         && <div style={{ fontSize: '11px', color: '#4ade80', marginBottom: '2px' }}>📊 {cs.kpi}</div>}
+                  {cs.perche_affine && <div style={{ fontSize: '11px', color: C.muted, fontStyle: 'italic' }}>→ {cs.perche_affine}</div>}
                 </div>
               </div>
             );
@@ -361,12 +341,12 @@ function IntelTab({ p }) {
 
       {/* Persone chiave */}
       {(p.persone_chiave || []).length > 0 && (
-        <div style={{ marginBottom: '18px' }}>
-          <Label>Persone chiave</Label>
-          <div style={{ marginTop: '8px' }}>
+        <div>
+          <SectionLabel>Persone chiave</SectionLabel>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
             {p.persone_chiave.map((pk, i) => (
-              <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'center', padding: '8px 0', borderBottom: `1px solid ${C.border}` }}>
-                <div style={{ width: '30px', height: '30px', background: C.elevated, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', color: C.muted, flexShrink: 0 }}>
+              <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'center', background: '#0d0d0d', border: `1px solid ${C.border}`, borderRadius: '8px', padding: '10px 14px' }}>
+                <div style={{ width: '32px', height: '32px', background: C.elevated, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px', fontWeight: 700, color: C.muted, flexShrink: 0 }}>
                   {pk.nome?.charAt(0) || '?'}
                 </div>
                 <div>
@@ -381,12 +361,13 @@ function IntelTab({ p }) {
 
       {/* Segnali recenti */}
       {(p.segnali_recenti || []).length > 0 && (
-        <div style={{ marginBottom: '18px' }}>
-          <Label>Segnali recenti</Label>
-          <div style={{ marginTop: '8px' }}>
+        <div>
+          <SectionLabel>Segnali recenti</SectionLabel>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
             {p.segnali_recenti.map((sg, i) => (
-              <div key={i} style={{ display: 'flex', gap: '8px', padding: '7px 0', borderBottom: `1px solid ${C.border}`, fontSize: '13px', color: C.text }}>
-                <span style={{ color: C.red, flexShrink: 0 }}>→</span>{sg}
+              <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', background: '#0d0d0d', border: `1px solid ${C.border}`, borderRadius: '8px', padding: '10px 14px' }}>
+                <span style={{ color: C.red, fontWeight: 700, flexShrink: 0 }}>→</span>
+                <span style={{ fontSize: '13px', color: C.text, lineHeight: 1.5 }}>{sg}</span>
               </div>
             ))}
           </div>
@@ -394,21 +375,24 @@ function IntelTab({ p }) {
       )}
 
       {/* Sfide probabili */}
-      <div>
-        <Label>Sfide probabili</Label>
-        <div style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-          {(p.sfide_probabili || []).map((sfida, i) => (
-            <div key={i} style={{ background: 'rgba(232,39,42,0.04)', border: '1px solid rgba(232,39,42,0.12)', borderRadius: '7px', padding: '8px 12px', fontSize: '13px', color: C.text }}>
-              <span style={{ color: C.red, marginRight: '8px', fontWeight: 700 }}>{i + 1}.</span>{sfida}
-            </div>
-          ))}
+      {(p.sfide_probabili || []).length > 0 && (
+        <div>
+          <SectionLabel>Sfide probabili</SectionLabel>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            {p.sfide_probabili.map((sfida, i) => (
+              <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', background: 'rgba(232,39,42,0.04)', border: '1px solid rgba(232,39,42,0.12)', borderRadius: '8px', padding: '10px 14px' }}>
+                <span style={{ fontSize: '12px', fontWeight: 800, color: C.red, flexShrink: 0, minWidth: '16px' }}>{i + 1}.</span>
+                <span style={{ fontSize: '13px', color: C.text, lineHeight: 1.5 }}>{sfida}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
 
-// ─── Tab: Mail ────────────────────────────────────────────────────────────────
+// ─── Tab Mail ─────────────────────────────────────────────────────────────────
 function MailTab({ mail }) {
   if (!mail) return null;
   return (
@@ -418,40 +402,38 @@ function MailTab({ mail }) {
         <CopyBtn text={`Oggetto: ${mail.oggetto}\n\n${mail.corpo}`} label="Copia tutto" />
       </div>
       <Card style={{ marginBottom: '10px' }}>
-        <Label>Oggetto</Label>
-        <div style={{ fontSize: '15px', fontWeight: 700, color: C.text, marginTop: '4px' }}>{mail.oggetto}</div>
+        <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Oggetto</div>
+        <div style={{ fontSize: '15px', fontWeight: 700, color: C.text }}>{mail.oggetto}</div>
       </Card>
       <Card>
-        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
-          <CopyBtn text={mail.corpo} />
-        </div>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}><CopyBtn text={mail.corpo} /></div>
         <div style={{ fontSize: '14px', color: C.text, lineHeight: 1.75, whiteSpace: 'pre-wrap' }}>{mail.corpo}</div>
       </Card>
     </div>
   );
 }
 
-// ─── Tab: Deck ────────────────────────────────────────────────────────────────
+// ─── Tab Deck ─────────────────────────────────────────────────────────────────
 function DeckTab({ deck }) {
   if (!deck) return null;
   const slides = [
-    { n: 1, bg: C.black,   t: deck.slide_1_titolo, c: deck.slide_1_contenuto, accent: false },
-    { n: 2, bg: C.white,   t: deck.slide_2_titolo, c: deck.slide_2_contenuto, accent: true  },
-    { n: 3, bg: C.white,   t: deck.slide_3_titolo, c: deck.slide_3_contenuto, accent: true  },
-    { n: 4, bg: '#f5f5f5', t: deck.slide_4_titolo, c: deck.slide_4_contenuto, accent: true, highlight: true },
-    { n: 5, bg: C.red,     t: deck.slide_5_titolo, c: deck.slide_5_contenuto, accent: false },
+    { n: 1, bg: C.black,   t: deck.slide_1_titolo, c: deck.slide_1_contenuto, dark: true  },
+    { n: 2, bg: C.white,   t: deck.slide_2_titolo, c: deck.slide_2_contenuto              },
+    { n: 3, bg: C.white,   t: deck.slide_3_titolo, c: deck.slide_3_contenuto              },
+    { n: 4, bg: '#f5f5f5', t: deck.slide_4_titolo, c: deck.slide_4_contenuto, highlight: true },
+    { n: 5, bg: C.red,     t: deck.slide_5_titolo, c: deck.slide_5_contenuto, red: true   },
   ];
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-      {slides.map(({ n, bg, t, c, accent, highlight }) => (
-        <div key={n} style={{ background: bg, border: `1px solid ${C.border}`, borderRadius: '8px', padding: '14px 16px', display: 'flex', gap: '12px', alignItems: 'stretch' }}>
-          {accent && <AccentLine />}
+      {slides.map(({ n, bg, t, c, dark, red, highlight }) => (
+        <div key={n} style={{ background: bg, border: `1px solid ${C.border}`, borderRadius: '8px', padding: '14px 16px', display: 'flex', gap: '12px' }}>
+          {!dark && !red && <div style={{ width: '4px', borderRadius: '2px', background: C.red, flexShrink: 0 }} />}
           <div style={{ flex: 1 }}>
-            <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', color: n === 5 ? 'rgba(255,255,255,0.6)' : C.muted, textTransform: 'uppercase', marginBottom: '4px' }}>
-              SLIDE {n}{highlight ? ' — Casi studio' : ''}
+            <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.1em', color: red ? 'rgba(255,255,255,0.5)' : C.muted, textTransform: 'uppercase', marginBottom: '4px' }}>
+              Slide {n}{highlight ? ' — Casi studio' : ''}
             </div>
-            <div style={{ fontSize: '14px', fontWeight: 800, color: n === 5 ? C.white : n <= 1 ? C.white : '#111', marginBottom: '5px' }}>{t}</div>
-            <div style={{ fontSize: '12px', color: n === 5 ? 'rgba(255,255,255,0.8)' : n <= 1 ? C.muted : '#555', lineHeight: 1.6 }}>{c}</div>
+            <div style={{ fontSize: '14px', fontWeight: 800, color: red || dark ? C.white : '#111', marginBottom: '4px' }}>{t}</div>
+            <div style={{ fontSize: '12px', color: red ? 'rgba(255,255,255,0.8)' : dark ? C.muted : '#555', lineHeight: 1.6 }}>{c}</div>
           </div>
         </div>
       ))}
@@ -459,7 +441,7 @@ function DeckTab({ deck }) {
   );
 }
 
-// ─── Tab: Workflow ────────────────────────────────────────────────────────────
+// ─── Tab Workflow ─────────────────────────────────────────────────────────────
 function WorkflowTab({ workflow }) {
   if (!workflow) return null;
   return (
@@ -483,7 +465,7 @@ function WorkflowTab({ workflow }) {
   );
 }
 
-// ─── Tab: LinkedIn ────────────────────────────────────────────────────────────
+// ─── Tab LinkedIn ─────────────────────────────────────────────────────────────
 function LinkedInTab({ linkedin }) {
   if (!linkedin) return null;
   const len = linkedin.messaggio?.length || 0;
@@ -502,7 +484,7 @@ function LinkedInTab({ linkedin }) {
   );
 }
 
-// ─── Tab: Fonti ───────────────────────────────────────────────────────────────
+// ─── Tab Fonti ────────────────────────────────────────────────────────────────
 function FontiTab({ fonti }) {
   return (
     <div>
@@ -575,48 +557,24 @@ function HsModal({ current, onClose, onSave }) {
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 const VERSION = 'v3.2.0';
-
-const QUICK_PICKS = ['Technogym', 'Humanitas', 'Alpitour', 'Amplifon', 'Pirelli', "De'Longhi", 'Fincantieri', "Tod's"];
-
-const SETTORI_OPTIONS = [
-  'Automotive', 'B2B Industriale / Manifatturiero', 'Salute & Sanità',
-  'Turismo & Cultura', 'Finance & Assicurazioni', 'Real Estate',
-  'Pubblica Amministrazione', 'Retail & eCommerce', 'Tecnologia & Software', 'Altro',
-];
-
-const LOADING_MSGS = [
-  'Analisi sito web aziendale...',
-  'Ricerca dati finanziari (Cerved/CCIAA)...',
-  'Raccolta news ultimi 12 mesi...',
-  'Analisi profili LinkedIn...',
-  'Verifica job posting attivi...',
-  'Valutazione presenza digitale...',
-  'Generazione materiali sales personalizzati...',
-];
-
-const LISTA_MSGS = [
-  'Ricerca aziende nel settore...',
-  'Verifica siti web e presenza digitale...',
-  'Analisi segnali di bisogno digitale...',
-  'Ricerca decisori e struttura aziendale...',
-  'Scoring e ranking prospect...',
-];
+const QUICK_PICKS    = ['Technogym', 'Humanitas', 'Alpitour', 'Amplifon', 'Pirelli', "De'Longhi", 'Fincantieri', "Tod's"];
+const SETTORI_OPTIONS = ['Automotive', 'B2B Industriale / Manifatturiero', 'Salute & Sanità', 'Turismo & Cultura', 'Finance & Assicurazioni', 'Real Estate', 'Pubblica Amministrazione', 'Retail & eCommerce', 'Tecnologia & Software', 'Altro'];
+const LOADING_MSGS   = ['Analisi sito web aziendale...', 'Ricerca dati finanziari (Cerved/CCIAA)...', 'Raccolta news ultimi 12 mesi...', 'Analisi profili LinkedIn...', 'Verifica job posting attivi...', 'Valutazione presenza digitale...', 'Generazione materiali sales personalizzati...'];
+const LISTA_MSGS     = ['Ricerca aziende nel settore...', 'Verifica siti web e presenza digitale...', 'Analisi segnali di bisogno digitale...', 'Ricerca decisori e struttura aziendale...', 'Scoring e ranking prospect...'];
 
 // ─── App ──────────────────────────────────────────────────────────────────────
 export default function App() {
   // — mode
   const [mode, setMode] = useState('analizza');
-
   // — analisi
-  const [input,    setInput]    = useState('');
-  const [note,     setNote]     = useState('');
-  const [gtmLayer, setGtmLayer] = useState('usecases');
-  const [gtmMotion,setGtmMotion]= useState('bottomup');
-  const [loading,  setLoading]  = useState(false);
-  const [loadMsg,  setLoadMsg]  = useState('');
-  const [result,   setResult]   = useState(null);
-  const [tab,      setTab]      = useState('intel');
-
+  const [input,      setInput]      = useState('');
+  const [note,       setNote]       = useState('');
+  const [gtmLayer,   setGtmLayer]   = useState('usecases');
+  const [gtmMotion,  setGtmMotion]  = useState('bottomup');
+  const [loading,    setLoading]    = useState(false);
+  const [loadMsg,    setLoadMsg]    = useState('');
+  const [result,     setResult]     = useState(null);
+  const [tab,        setTab]        = useState('intel');
   // — lista
   const [listaSettore,  setListaSettore]  = useState('');
   const [listaGeo,      setListaGeo]      = useState('Italia');
@@ -626,23 +584,19 @@ export default function App() {
   const [listaLoading,  setListaLoading]  = useState(false);
   const [listaMsg,      setListaMsg]      = useState('');
   const [listaResult,   setListaResult]   = useState(null);
-
-  // — HubSpot
+  // — hubspot
   const [hsToken,   setHsToken]   = useState(() => localStorage.getItem('domino_hs_token') || '');
   const [hsSyncing, setHsSyncing] = useState(false);
   const [hsMsg,     setHsMsg]     = useState('');
-
-  // — UI
+  // — ui
   const [showArchive, setShowArchive] = useState(false);
   const [showHs,      setShowHs]      = useState(false);
   const [archCount,   setArchCount]   = useState(() => loadArchive().length);
 
-  // — actions
   const analyze = useCallback(async () => {
     if (!input.trim() || loading) return;
     setLoading(true); setResult(null); setTab('intel'); setHsMsg('');
-    let mi = 0;
-    setLoadMsg(LOADING_MSGS[0]);
+    let mi = 0; setLoadMsg(LOADING_MSGS[0]);
     const iv = setInterval(() => { mi = Math.min(mi + 1, LOADING_MSGS.length - 1); setLoadMsg(LOADING_MSGS[mi]); }, 7500);
     try {
       const res = await fetch('/api/analyze', {
@@ -651,21 +605,15 @@ export default function App() {
       });
       if (!res.ok) throw new Error(`Errore ${res.status}: ${await res.text()}`);
       const data = await res.json();
-      setResult(data);
-      saveToArchive(data);
-      setArchCount(loadArchive().length);
-    } catch (err) {
-      alert(`Errore: ${err.message}`);
-    } finally {
-      clearInterval(iv); setLoading(false); setLoadMsg('');
-    }
+      setResult(data); saveToArchive(data); setArchCount(loadArchive().length);
+    } catch (err) { alert(`Errore: ${err.message}`); }
+    finally { clearInterval(iv); setLoading(false); setLoadMsg(''); }
   }, [input, note, gtmLayer, gtmMotion, loading]);
 
   const generateLista = useCallback(async () => {
     if (!listaSettore || listaLoading) return;
     setListaLoading(true); setListaResult(null);
-    let mi = 0;
-    setListaMsg(LISTA_MSGS[0]);
+    let mi = 0; setListaMsg(LISTA_MSGS[0]);
     const iv = setInterval(() => { mi = Math.min(mi + 1, LISTA_MSGS.length - 1); setListaMsg(LISTA_MSGS[mi]); }, 8000);
     try {
       const res = await fetch('/api/prospect-list', {
@@ -681,10 +629,8 @@ export default function App() {
   const doHsSync = async () => {
     if (!hsToken) { setShowHs(true); return; }
     setHsSyncing(true); setHsMsg('');
-    try {
-      const { isNew } = await syncHubSpot(hsToken, result);
-      setHsMsg(isNew ? '✓ Azienda creata' : '✓ Azienda aggiornata');
-    } catch (err) { setHsMsg(`⚠️ ${err.message}`); }
+    try { const { isNew } = await syncHubSpot(hsToken, result); setHsMsg(isNew ? '✓ Azienda creata' : '✓ Azienda aggiornata'); }
+    catch (err) { setHsMsg(`⚠️ ${err.message}`); }
     finally { setHsSyncing(false); }
   };
 
@@ -693,19 +639,11 @@ export default function App() {
   return (
     <div style={{ minHeight: '100vh', background: C.black, color: C.text, fontFamily: FONT }}>
 
-      {/* ── Header ─────────────────────────────────────────────────────────── */}
-      <div style={{
-        background: '#080808', borderBottom: `1px solid ${C.border}`,
-        height: '52px', display: 'flex', alignItems: 'center',
-        justifyContent: 'space-between', padding: '0 24px',
-        position: 'sticky', top: 0, zIndex: 100,
-      }}>
+      {/* ── HEADER ──────────────────────────────────────────────────────── */}
+      <div style={{ background: '#080808', borderBottom: `1px solid ${C.border}`, height: '52px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px', position: 'sticky', top: 0, zIndex: 100 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          {/* Logo: 4 cerchi alternati ●○●○ */}
           <div style={{ display: 'flex', gap: '3px', alignItems: 'center' }}>
-            {[1,0,1,0].map((r,i) => (
-              <div key={i} style={{ width: '7px', height: '7px', borderRadius: '50%', background: r ? C.red : '#2a2a2a' }} />
-            ))}
+            {[1, 0, 1, 0].map((r, i) => <div key={i} style={{ width: '7px', height: '7px', borderRadius: '50%', background: r ? C.red : '#2a2a2a' }} />)}
           </div>
           <span style={{ fontWeight: 800, fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase' }}>Domino</span>
           <span style={{ color: C.border }}>|</span>
@@ -721,33 +659,23 @@ export default function App() {
         </div>
       </div>
 
-      {/* ── Content ────────────────────────────────────────────────────────── */}
       <div style={{ maxWidth: '920px', margin: '0 auto', padding: '28px 20px' }}>
 
         {/* Mode switcher */}
         <div style={{ display: 'flex', gap: '6px', marginBottom: '20px' }}>
-          {[['analizza','🔍 Analizza Prospect'],['lista','📋 Genera Lista Prospect']].map(([m, lbl]) => (
-            <button key={m} onClick={() => setMode(m)} style={{
-              padding: '9px 20px',
-              background: mode === m ? C.red : C.card,
-              color: mode === m ? C.white : C.muted,
-              border: `1px solid ${mode === m ? C.red : C.border}`,
-              borderRadius: '8px', cursor: 'pointer', fontSize: '13px',
-              fontWeight: mode === m ? 700 : 400, fontFamily: FONT, transition: 'all 0.15s',
-            }}>{lbl}</button>
+          {[['analizza', '🔍 Analizza Prospect'], ['lista', '📋 Genera Lista Prospect']].map(([m, lbl]) => (
+            <button key={m} onClick={() => setMode(m)} style={{ padding: '9px 20px', background: mode === m ? C.red : C.card, color: mode === m ? C.white : C.muted, border: `1px solid ${mode === m ? C.red : C.border}`, borderRadius: '8px', cursor: 'pointer', fontSize: '13px', fontWeight: mode === m ? 700 : 400, fontFamily: FONT, transition: 'all 0.15s' }}>
+              {lbl}
+            </button>
           ))}
         </div>
 
-        {/* ══════════════════════════════════════════════════════════════════ */}
-        {/* MODALITÀ LISTA PROSPECT                                          */}
-        {/* ══════════════════════════════════════════════════════════════════ */}
+        {/* ══════ LISTA ═══════════════════════════════════════════════════ */}
         {mode === 'lista' && (
           <>
             <Card style={{ marginBottom: '20px' }}>
               <h1 style={{ margin: '0 0 4px', fontSize: '20px', fontWeight: 800, letterSpacing: '-0.02em' }}>Genera Lista Prospect</h1>
-              <p style={{ margin: '0 0 20px', color: C.muted, fontSize: '13px' }}>
-                Scegli settore e filtri → l'AI costruisce una lista qualificata con scoring. Da ogni riga puoi lanciare l'analisi approfondita.
-              </p>
+              <p style={{ margin: '0 0 20px', color: C.muted, fontSize: '13px' }}>Scegli settore e filtri → l'AI costruisce una lista qualificata con scoring. Da ogni riga puoi lanciare l'analisi approfondita.</p>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '14px' }}>
                 <div>
@@ -760,16 +688,16 @@ export default function App() {
                 </div>
                 <div>
                   <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Area geografica</div>
-                  <input value={listaGeo} onChange={e => setListaGeo(e.target.value)} placeholder="es. Italia, Nord Italia, Piemonte, Milano..."
+                  <input value={listaGeo} onChange={e => setListaGeo(e.target.value)} placeholder="es. Italia, Nord Italia, Piemonte..."
                     style={{ width: '100%', background: '#0d0d0d', border: `1px solid ${C.border}`, color: C.text, padding: '10px 12px', borderRadius: '8px', fontSize: '13px', fontFamily: FONT, outline: 'none', boxSizing: 'border-box' }} />
                 </div>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '14px' }}>
                 <div>
-                  <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Dimensione azienda</div>
+                  <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Dimensione</div>
                   <div style={{ display: 'flex', gap: '6px' }}>
-                    {['PMI','Mid-market','Enterprise'].map(d => (
+                    {['PMI', 'Mid-market', 'Enterprise'].map(d => (
                       <button key={d} onClick={() => setListaDim(prev => prev.includes(d) ? prev.filter(x => x !== d) : [...prev, d])}
                         style={{ flex: 1, padding: '8px 6px', background: listaDim.includes(d) ? 'rgba(232,39,42,0.12)' : '#0d0d0d', border: `1px solid ${listaDim.includes(d) ? C.red : C.border}`, color: listaDim.includes(d) ? C.red : C.muted, borderRadius: '7px', cursor: 'pointer', fontSize: '11px', fontWeight: listaDim.includes(d) ? 700 : 400, fontFamily: FONT }}>
                         {d}
@@ -780,7 +708,7 @@ export default function App() {
                 <div>
                   <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Numero prospect</div>
                   <div style={{ display: 'flex', gap: '6px' }}>
-                    {[5,10,20].map(n => (
+                    {[5, 10, 20].map(n => (
                       <button key={n} onClick={() => setListaNumero(n)}
                         style={{ flex: 1, padding: '10px', background: listaNumero === n ? 'rgba(232,39,42,0.12)' : '#0d0d0d', border: `1px solid ${listaNumero === n ? C.red : C.border}`, color: listaNumero === n ? C.red : C.muted, borderRadius: '7px', cursor: 'pointer', fontSize: '13px', fontWeight: listaNumero === n ? 700 : 400, fontFamily: FONT }}>
                         {n}
@@ -792,8 +720,7 @@ export default function App() {
 
               <div style={{ marginBottom: '16px' }}>
                 <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Parole chiave / focus specifico (opzionale)</div>
-                <input value={listaKeywords} onChange={e => setListaKeywords(e.target.value)}
-                  placeholder="es. 'export internazionale', 'in crescita', 'rete vendita indiretta', 'rebranding recente'"
+                <input value={listaKeywords} onChange={e => setListaKeywords(e.target.value)} placeholder="es. 'export internazionale', 'in crescita', 'rete vendita indiretta'"
                   style={{ width: '100%', background: '#0d0d0d', border: `1px solid ${C.border}`, color: C.text, padding: '10px 12px', borderRadius: '8px', fontSize: '13px', fontFamily: FONT, outline: 'none', boxSizing: 'border-box' }} />
               </div>
 
@@ -836,30 +763,20 @@ export default function App() {
                         <div style={{ flex: 1, minWidth: 0 }}>
                           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px', flexWrap: 'wrap' }}>
                             <div style={{ fontSize: '14px', fontWeight: 800, color: C.text }}>{item.nome}</div>
-                            {item.sito && (
-                              <a href={item.sito.startsWith('http') ? item.sito : `https://${item.sito}`} target="_blank" rel="noopener noreferrer"
-                                style={{ fontSize: '11px', color: C.muted, textDecoration: 'none' }}>↗ {item.sito}</a>
-                            )}
+                            {item.sito && <a href={item.sito.startsWith('http') ? item.sito : `https://${item.sito}`} target="_blank" rel="noopener noreferrer" style={{ fontSize: '11px', color: C.muted, textDecoration: 'none' }}>↗ {item.sito}</a>}
                           </div>
                           <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '6px' }}>
                             {[item.settore, item.dimensione, item.sede].filter(Boolean).map((tag, ti) => (
                               <span key={ti} style={{ fontSize: '10px', color: C.muted, background: C.elevated, padding: '2px 7px', borderRadius: '3px' }}>{tag}</span>
                             ))}
                             {item.decisore_probabile && (
-                              <span style={{ fontSize: '10px', color: '#93c5fd', background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)', padding: '2px 7px', borderRadius: '3px' }}>
-                                👤 {item.decisore_probabile}
-                              </span>
+                              <span style={{ fontSize: '10px', color: '#93c5fd', background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)', padding: '2px 7px', borderRadius: '3px' }}>👤 {item.decisore_probabile}</span>
                             )}
                           </div>
-                          <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '3px' }}>
-                            <span style={{ color: scoreColor }}>●</span> {item.score_motivazione}
-                          </div>
-                          {item.segnale_principale && (
-                            <div style={{ fontSize: '11px', color: C.muted, fontStyle: 'italic' }}>→ {item.segnale_principale}</div>
-                          )}
+                          <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '3px' }}><span style={{ color: scoreColor }}>●</span> {item.score_motivazione}</div>
+                          {item.segnale_principale && <div style={{ fontSize: '11px', color: C.muted, fontStyle: 'italic' }}>→ {item.segnale_principale}</div>}
                         </div>
-                        <button
-                          onClick={() => { setMode('analizza'); setInput(item.sito || item.nome); setResult(null); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                        <button onClick={() => { setMode('analizza'); setInput(item.sito || item.nome); setResult(null); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                           style={{ background: C.red, border: 'none', color: C.white, padding: '8px 14px', borderRadius: '7px', cursor: 'pointer', fontSize: '12px', fontWeight: 700, fontFamily: FONT, whiteSpace: 'nowrap', flexShrink: 0 }}>
                           Analizza →
                         </button>
@@ -872,45 +789,43 @@ export default function App() {
           </>
         )}
 
-        {/* ══════════════════════════════════════════════════════════════════ */}
-        {/* MODALITÀ ANALIZZA PROSPECT                                       */}
-        {/* ══════════════════════════════════════════════════════════════════ */}
+        {/* ══════ ANALIZZA ════════════════════════════════════════════════ */}
         {mode === 'analizza' && (
           <>
-            {/* ── Form card ──────────────────────────────────────────────── */}
+            {/* Form */}
             <Card style={{ marginBottom: '20px' }}>
               <h1 style={{ margin: '0 0 4px', fontSize: '20px', fontWeight: 800, letterSpacing: '-0.02em' }}>Analizza un prospect</h1>
               <p style={{ margin: '0 0 16px', color: C.muted, fontSize: '13px' }}>
                 Ricerca approfondita su sito · Cerved/bilanci · news · LinkedIn · job posting → materiali sales con il DNA Domino.
               </p>
 
-              {/* Input + bottone */}
-              <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
-                <input
-                  value={input} onChange={e => setInput(e.target.value)}
-                  onKeyDown={e => e.key === 'Enter' && !e.shiftKey && analyze()}
-                  disabled={loading}
-                  placeholder="es. Technogym · Gruppo Humanitas · www.alpitour.it"
-                  style={{ flex: 1, background: '#0d0d0d', border: `2px solid ${C.border}`, color: C.text, padding: '11px 14px', borderRadius: '8px', fontSize: '14px', outline: 'none', fontFamily: FONT, transition: 'border-color 0.15s' }}
-                  onFocus={e => e.target.style.borderColor = C.red}
-                  onBlur={e  => e.target.style.borderColor = C.border}
-                />
-                <Btn onClick={analyze} disabled={loading || !input.trim()} style={{ minWidth: '120px', fontSize: '14px' }}>
-                  {loading ? 'Analisi…' : 'Analizza →'}
-                </Btn>
-              </div>
+              {/* 1. Input azienda */}
+              <input
+                value={input} onChange={e => setInput(e.target.value)}
+                onKeyDown={e => e.key === 'Enter' && !e.shiftKey && analyze()}
+                disabled={loading}
+                placeholder="es. Technogym · Gruppo Humanitas · www.alpitour.it"
+                style={{ width: '100%', background: '#0d0d0d', border: `2px solid ${C.border}`, color: C.text, padding: '12px 14px', borderRadius: '8px', fontSize: '14px', outline: 'none', fontFamily: FONT, transition: 'border-color 0.15s', boxSizing: 'border-box', marginBottom: '10px' }}
+                onFocus={e => e.target.style.borderColor = C.red}
+                onBlur={e => e.target.style.borderColor = C.border}
+              />
 
-              {/* Note */}
+              {/* 2. Note commerciali */}
               <textarea
                 value={note} onChange={e => setNote(e.target.value)} disabled={loading}
                 placeholder="Note per il commerciale (opzionale) — es. 'ci hanno contattato a un evento', 'competitor è X'"
                 style={{ width: '100%', background: '#0d0d0d', border: `1px solid ${C.border}`, color: C.text, padding: '9px 14px', borderRadius: '8px', fontSize: '13px', outline: 'none', fontFamily: FONT, resize: 'vertical', minHeight: '54px', boxSizing: 'border-box', marginBottom: '14px' }}
               />
 
-              {/* GTM Selector — v3.2 — tra Note e bottone Analizza (per start da quick pick) */}
+              {/* 3. GTM Selector — spec §10a: tra Note e bottone Analizza */}
               <GtmSelector layer={gtmLayer} setLayer={setGtmLayer} motion={gtmMotion} setMotion={setGtmMotion} />
 
-              {/* Quick picks */}
+              {/* 4. Bottone Analizza — DOPO GTM selector */}
+              <Btn onClick={analyze} disabled={loading || !input.trim()} style={{ width: '100%', fontSize: '14px', padding: '12px', marginBottom: '14px' }}>
+                {loading ? 'Analisi in corso…' : 'Analizza →'}
+              </Btn>
+
+              {/* 5. Quick picks */}
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', color: C.muted }}>Quick picks:</span>
                 {QUICK_PICKS.map(q => (
@@ -922,7 +837,7 @@ export default function App() {
               </div>
             </Card>
 
-            {/* ── Loading ────────────────────────────────────────────────── */}
+            {/* Loading */}
             {loading && (
               <Card style={{ marginBottom: '20px', textAlign: 'center', padding: '36px 24px' }}>
                 <div style={{ fontSize: '28px', marginBottom: '12px' }}>🔍</div>
@@ -935,27 +850,23 @@ export default function App() {
               </Card>
             )}
 
-            {/* ── Result ─────────────────────────────────────────────────── */}
+            {/* Result */}
             {result && p && (
               <>
-                {/* Result header — identico allo screenshot */}
-                <div style={{
-                  background: '#080808', border: `1px solid ${C.border}`,
-                  borderRadius: '12px', padding: '12px 18px', marginBottom: '12px',
-                  display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap',
-                }}>
+                {/* Result header */}
+                <div style={{ background: '#080808', border: `1px solid ${C.border}`, borderRadius: '12px', padding: '12px 18px', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
                   <div>
-                    <Label>Prospect</Label>
+                    <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.muted, marginBottom: '3px' }}>Prospect</div>
                     <div style={{ fontSize: '15px', fontWeight: 800, color: C.text }}>{p.nome}</div>
                   </div>
-                  <Divider />
+                  <div style={{ width: '1px', height: '30px', background: C.border }} />
                   <div>
-                    <Label>Settore</Label>
+                    <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.muted, marginBottom: '3px' }}>Settore</div>
                     <div style={{ fontSize: '12px', color: '#aaa' }}>{p.settore}</div>
                   </div>
-                  <Divider />
+                  <div style={{ width: '1px', height: '30px', background: C.border }} />
                   <div>
-                    <Label>Decisore</Label>
+                    <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.muted, marginBottom: '3px' }}>Decisore</div>
                     <div style={{ fontSize: '12px', color: '#aaa' }}>{p.decisore_target}</div>
                   </div>
                   <div style={{ marginLeft: 'auto', display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -963,27 +874,17 @@ export default function App() {
                     <Btn variant="hs" onClick={doHsSync} disabled={hsSyncing} style={{ padding: '5px 12px', fontSize: '11px' }}>
                       {hsSyncing ? 'Sync…' : '→ HubSpot'}
                     </Btn>
-                    {hsMsg && (
-                      <span style={{ fontSize: '11px', color: hsMsg.startsWith('✓') ? '#4ade80' : '#f87171' }}>{hsMsg}</span>
-                    )}
+                    {hsMsg && <span style={{ fontSize: '11px', color: hsMsg.startsWith('✓') ? '#4ade80' : '#f87171' }}>{hsMsg}</span>}
                   </div>
                 </div>
 
                 {/* Tabs */}
                 <div style={{ display: 'flex', gap: '6px', marginBottom: '12px', flexWrap: 'wrap' }}>
-                  {[
-                    ['intel',    '🔍 Intelligence'],
-                    ['mail',     '✉️ Mail'],
-                    ['deck',     '📊 Deck'],
-                    ['workflow', '📅 Workflow'],
-                    ['linkedin', '💼 LinkedIn'],
-                    ['fonti',    '📋 Fonti'],
-                  ].map(([id, lbl]) => (
+                  {[['intel', '🔍 Intelligence'], ['mail', '✉️ Mail'], ['deck', '📊 Deck'], ['workflow', '📅 Workflow'], ['linkedin', '💼 LinkedIn'], ['fonti', '📋 Fonti']].map(([id, lbl]) => (
                     <TabBtn key={id} active={tab === id} onClick={() => setTab(id)} label={lbl} />
                   ))}
                 </div>
 
-                {/* Tab content */}
                 <Card>
                   {tab === 'intel'    && <IntelTab    p={p} />}
                   {tab === 'mail'     && <MailTab     mail={result.mail} />}
@@ -998,22 +899,9 @@ export default function App() {
         )}
       </div>
 
-      {/* ── Modals ─────────────────────────────────────────────────────────── */}
-      {showArchive && (
-        <ArchiveModal
-          onClose={() => setShowArchive(false)}
-          onLoad={d => { setResult(d); setTab('intel'); setMode('analizza'); setShowArchive(false); }}
-        />
-      )}
-      {showHs && (
-        <HsModal
-          current={hsToken}
-          onClose={() => setShowHs(false)}
-          onSave={t => { setHsToken(t); localStorage.setItem('domino_hs_token', t); }}
-        />
-      )}
+      {showArchive && <ArchiveModal onClose={() => setShowArchive(false)} onLoad={d => { setResult(d); setTab('intel'); setMode('analizza'); }} />}
+      {showHs && <HsModal current={hsToken} onClose={() => setShowHs(false)} onSave={t => { setHsToken(t); localStorage.setItem('domino_hs_token', t); }} />}
 
-      {/* Footer */}
       <div style={{ textAlign: 'center', padding: '24px 0 16px', fontSize: '11px', color: '#333' }}>
         {VERSION} · Domino Prospect Engine · domino.it
       </div>
