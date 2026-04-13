@@ -1,20 +1,970 @@
-{
-  "name": "domino-prospect-engine",
-  "version": "3.1.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "pptxgenjs": "^3.12.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^5.4.10"
+import { useState, useEffect, useRef } from 'react';
+import pptxgen from 'pptxgenjs';
+
+// ── COLORI ────────────────────────────────────────────────────────────────────
+const C = {
+  bg:       '#0a0a0a',
+  elevated: '#141414',
+  card:     '#1a1a1a',
+  border:   '#2a2a2a',
+  borderHover: '#3a3a3a',
+  text:     '#e0e0e0',
+  muted:    '#666666',
+  subtle:   '#999999',
+  accent:   '#E8001C',
+  accentHover: '#c4001a',
+  success:  '#22c55e',
+  successBg:'rgba(34,197,94,0.1)',
+  blue:     '#3b82f6',
+  blueBg:   'rgba(59,130,246,0.1)',
+};
+
+// ── GTM CONFIG ────────────────────────────────────────────────────────────────
+const GTM_LAYERS = [
+  { id: 'vision',    label: 'L1 — Experience Vision',   interlocutore: 'C-Suite / CEO / CDO',         need: 'Direzione strategica e transizioni',       color: '#7C3AED', bg: 'rgba(124,58,237,0.1)' },
+  { id: 'settori',   label: 'L2 — Settori',             interlocutore: 'Director / VP Marketing',      need: 'Crescita nel proprio verticale',           color: '#0891B2', bg: 'rgba(8,145,178,0.1)' },
+  { id: 'usecases',  label: 'L3 — Use Cases',           interlocutore: 'Head of / Responsabile',       need: 'Risolvere un problema specifico',          color: '#E8001C', bg: 'rgba(232,0,28,0.1)' },
+  { id: 'tech',      label: 'L4 — Tech Categories',     interlocutore: 'Manager / Specialista',        need: 'Strumento o tecnologia specifica',         color: '#059669', bg: 'rgba(5,150,105,0.1)' },
+  { id: 'salesplay', label: 'L5 — Sales Play',          interlocutore: 'Manager / Procurement',        need: 'Soluzione pronta, scelta in corso',        color: '#DB2777', bg: 'rgba(219,39,119,0.1)' },
+];
+
+const GTM_MOTIONS = [
+  { id: 'bottomup', label: '⬆ Bottom-up', desc: 'Contatto freddo o inbound — sali se sei rilevante', sub: 'Pipeline rapida' },
+  { id: 'topdown',  label: '⬇ Top-down',  desc: 'Referenza CEO / evento — scendi al team con credibilità', sub: 'Deal più grandi' },
+];
+
+const QUICK_PICKS = ['Technogym', 'Humanitas', 'Alpitour', 'Amplifon', 'Pirelli', "De'Longhi", 'Fincantieri', "Tod's"];
+
+const SETTORI_OPTIONS = [
+  'Automotive', 'B2B Industriale / Manifatturiero', 'Salute & Sanità',
+  'Turismo & Cultura', 'Finance & Assicurazioni', 'Real Estate',
+  'Pubblica Amministrazione', 'Retail & eCommerce', 'Tecnologia & Software', 'Altro',
+];
+
+const LOADING_MSGS = [
+  'Analisi sito web aziendale...',
+  'Ricerca dati finanziari (Cerved/CCIAA)...',
+  'Raccolta news ultimi 12 mesi...',
+  'Analisi persone chiave...',
+  'Verifica job posting attivi...',
+  'Valutazione presenza digitale...',
+  'Generazione materiali sales personalizzati...',
+];
+
+const LISTA_MSGS = [
+  'Ricerca aziende nel settore...',
+  'Verifica siti web e presenza digitale...',
+  'Analisi segnali di bisogno digitale...',
+  'Ricerca decisori e struttura aziendale...',
+  'Scoring e ranking prospect...',
+];
+
+// ── ARCHIVIO ──────────────────────────────────────────────────────────────────
+function loadArchive() {
+  try { return JSON.parse(localStorage.getItem('domino_pe_arch') || '[]'); }
+  catch { return []; }
+}
+
+// FIX: esclude fonti_ricerca dall'archivio per non saturare localStorage
+function saveToArchive(r) {
+  const a = loadArchive();
+  const { fonti_ricerca, ...rSenza } = r;
+  a.unshift({ ...rSenza, _savedAt: new Date().toISOString() });
+  localStorage.setItem('domino_pe_arch', JSON.stringify(a.slice(0, 50)));
+}
+
+// ── HELPERS UI ────────────────────────────────────────────────────────────────
+function CopyBtn({ text }) {
+  const [copied, setCopied] = useState(false);
+  return (
+    <button
+      onClick={() => { navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 2000); }}
+      style={{ fontSize: 11, padding: '4px 10px', background: copied ? C.successBg : C.elevated,
+        color: copied ? C.success : C.subtle, border: `1px solid ${C.border}`,
+        borderRadius: 6, cursor: 'pointer' }}>
+      {copied ? '✓ Copiato' : 'Copia'}
+    </button>
+  );
+}
+
+function Badge({ label, color, bg }) {
+  return (
+    <span style={{ fontSize: 11, fontWeight: 600, padding: '2px 8px',
+      borderRadius: 4, background: bg || C.elevated, color: color || C.subtle }}>
+      {label}
+    </span>
+  );
+}
+
+function ScoreBar({ score }) {
+  const color = score >= 8 ? C.success : score >= 6 ? '#f59e0b' : C.subtle;
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+      <div style={{ flex: 1, height: 4, background: C.border, borderRadius: 2 }}>
+        <div style={{ width: `${score * 10}%`, height: '100%', background: color, borderRadius: 2 }} />
+      </div>
+      <span style={{ fontSize: 12, fontWeight: 700, color, minWidth: 20 }}>{score}</span>
+    </div>
+  );
+}
+
+// ── GTM SELECTOR ──────────────────────────────────────────────────────────────
+function GtmSelector({ layer, setLayer, motion, setMotion }) {
+  return (
+    <div style={{ background: C.elevated, border: `1px solid ${C.border}`, borderRadius: 10, padding: '14px 16px', marginBottom: 14 }}>
+      <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 10 }}>
+        GTM Layer — chi è il destinatario?
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 14 }}>
+        {GTM_LAYERS.map(l => (
+          <div key={l.id} onClick={() => setLayer(l.id)} style={{
+            display: 'flex', alignItems: 'center', gap: 10, padding: '8px 12px', borderRadius: 8,
+            border: `1px solid ${layer === l.id ? l.color : C.border}`,
+            background: layer === l.id ? l.bg : 'transparent',
+            cursor: 'pointer', transition: 'all .15s',
+          }}>
+            <div style={{ width: 3, height: 32, borderRadius: 2, background: l.color, flexShrink: 0 }} />
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: 12, fontWeight: 600, color: layer === l.id ? C.text : C.subtle }}>{l.label}</div>
+              <div style={{ fontSize: 11, color: C.muted, fontStyle: 'italic' }}>{l.interlocutore} · {l.need}</div>
+            </div>
+            {layer === l.id && <div style={{ width: 8, height: 8, borderRadius: '50%', background: l.color }} />}
+          </div>
+        ))}
+      </div>
+      <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 8 }}>
+        Motion — come stai entrando?
+      </div>
+      <div style={{ display: 'flex', gap: 8 }}>
+        {GTM_MOTIONS.map(m => (
+          <div key={m.id} onClick={() => setMotion(m.id)} style={{
+            flex: 1, padding: '10px 12px', borderRadius: 8, cursor: 'pointer',
+            border: `1px solid ${motion === m.id ? 'rgba(255,255,255,0.3)' : C.border}`,
+            background: motion === m.id ? 'rgba(255,255,255,0.05)' : 'transparent',
+            transition: 'all .15s',
+          }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: C.text }}>{m.label}</div>
+            <div style={{ fontSize: 11, color: C.muted, marginTop: 2 }}>{m.desc}</div>
+            <div style={{ fontSize: 10, color: C.accent, marginTop: 4 }}>{m.sub}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ── TABS ──────────────────────────────────────────────────────────────────────
+function IntelTab({ prospect }) {
+  if (!prospect) return null;
+  const p = prospect;
+
+  const Row = ({ label, value }) => value ? (
+    <div style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: `1px solid ${C.border}` }}>
+      <div style={{ fontSize: 11, color: C.muted, width: 140, flexShrink: 0, paddingTop: 1 }}>{label}</div>
+      <div style={{ fontSize: 13, color: C.text, flex: 1 }}>{value}</div>
+    </div>
+  ) : null;
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+      {/* Header */}
+      <div style={{ background: C.elevated, borderRadius: 10, padding: 16, border: `1px solid ${C.border}` }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12, marginBottom: 12 }}>
+          <div>
+            <div style={{ fontSize: 20, fontWeight: 700, color: C.text }}>{p.nome}</div>
+            <div style={{ fontSize: 13, color: C.subtle, marginTop: 2 }}>{p.settore} · {p.dimensione} · {p.mercati}</div>
+          </div>
+          {p.maturita_digitale && (
+            <Badge
+              label={p.maturita_digitale.split('—')[0].trim()}
+              color={p.maturita_digitale.startsWith('Alta') ? C.success : p.maturita_digitale.startsWith('Media') ? '#f59e0b' : C.subtle}
+              bg={p.maturita_digitale.startsWith('Alta') ? C.successBg : p.maturita_digitale.startsWith('Media') ? 'rgba(245,158,11,0.1)' : C.elevated}
+            />
+          )}
+        </div>
+        {p.hook && (
+          <div style={{ background: 'rgba(232,0,28,0.08)', border: `1px solid rgba(232,0,28,0.2)`, borderRadius: 8, padding: '10px 12px' }}>
+            <div style={{ fontSize: 10, color: C.accent, fontWeight: 600, letterSpacing: '.06em', marginBottom: 4 }}>HOOK COMMERCIALE</div>
+            <div style={{ fontSize: 13, color: C.text, lineHeight: 1.5 }}>{p.hook}</div>
+          </div>
+        )}
+      </div>
+
+      {/* Dati */}
+      <div style={{ background: C.elevated, borderRadius: 10, padding: 16, border: `1px solid ${C.border}` }}>
+        <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 10 }}>Profilo</div>
+        <Row label="Fatturato stimato" value={p.fatturato_stimato} />
+        <Row label="Mercati" value={p.mercati} />
+        <Row label="Decisore target" value={p.decisore_target} />
+        <Row label="Maturità digitale" value={p.maturita_digitale} />
+      </div>
+
+      {/* Persone chiave */}
+      {p.persone_chiave?.length > 0 && (
+        <div style={{ background: C.elevated, borderRadius: 10, padding: 16, border: `1px solid ${C.border}` }}>
+          <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 12 }}>Persone chiave</div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {p.persone_chiave.map((pk, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 10px', background: C.card, borderRadius: 8, border: `1px solid ${C.border}` }}>
+                <div style={{ width: 32, height: 32, borderRadius: '50%', background: C.border, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, color: C.subtle }}>
+                  {pk.nome?.charAt(0) || '?'}
+                </div>
+                <div>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: C.text }}>{pk.nome}</div>
+                  <div style={{ fontSize: 11, color: C.muted }}>{pk.ruolo}{pk.anzianita ? ` · ${pk.anzianita}` : ''}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Segnali + Sfide */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+        {p.segnali_recenti?.length > 0 && (
+          <div style={{ background: C.elevated, borderRadius: 10, padding: 16, border: `1px solid ${C.border}` }}>
+            <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 10 }}>Segnali recenti</div>
+            {p.segnali_recenti.map((s, i) => (
+              <div key={i} style={{ fontSize: 12, color: C.text, padding: '4px 0', borderBottom: i < p.segnali_recenti.length - 1 ? `1px solid ${C.border}` : 'none', lineHeight: 1.4 }}>
+                <span style={{ color: C.accent, marginRight: 6 }}>◆</span>{s}
+              </div>
+            ))}
+          </div>
+        )}
+        {p.sfide_probabili?.length > 0 && (
+          <div style={{ background: C.elevated, borderRadius: 10, padding: 16, border: `1px solid ${C.border}` }}>
+            <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 10 }}>Sfide probabili</div>
+            {p.sfide_probabili.map((s, i) => (
+              <div key={i} style={{ fontSize: 12, color: C.text, padding: '4px 0', borderBottom: i < p.sfide_probabili.length - 1 ? `1px solid ${C.border}` : 'none', lineHeight: 1.4 }}>
+                <span style={{ color: '#f59e0b', marginRight: 6 }}>→</span>{s}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Strumenti suggeriti */}
+      {p.strumenti_suggeriti && (
+        <div style={{ background: C.elevated, borderRadius: 10, padding: 16, border: `1px solid ${C.border}` }}>
+          <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 12 }}>Strumenti suggeriti</div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            {p.strumenti_suggeriti.foundation_sprint && (
+              <div style={{ background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)', borderRadius: 8, padding: '8px 12px' }}>
+                <div style={{ fontSize: 12, fontWeight: 600, color: C.blue }}>Foundation Sprint</div>
+                <div style={{ fontSize: 11, color: C.muted }}>€6.000</div>
+              </div>
+            )}
+            {p.strumenti_suggeriti.design_sprint_tipo && (
+              <div style={{ background: 'rgba(124,58,237,0.1)', border: '1px solid rgba(124,58,237,0.2)', borderRadius: 8, padding: '8px 12px' }}>
+                <div style={{ fontSize: 12, fontWeight: 600, color: '#7C3AED' }}>Design Sprint — {p.strumenti_suggeriti.design_sprint_tipo}</div>
+                <div style={{ fontSize: 11, color: C.muted }}>€10.000{p.strumenti_suggeriti.design_sprint_motivazione ? ` · ${p.strumenti_suggeriti.design_sprint_motivazione}` : ''}</div>
+              </div>
+            )}
+            {p.strumenti_suggeriti.preventivo_emozionale && (
+              <div style={{ background: 'rgba(232,0,28,0.08)', border: '1px solid rgba(232,0,28,0.2)', borderRadius: 8, padding: '8px 12px' }}>
+                <div style={{ fontSize: 12, fontWeight: 600, color: C.accent }}>Preventivo Emozionale</div>
+                {p.strumenti_suggeriti.preventivo_emozionale_motivazione && (
+                  <div style={{ fontSize: 11, color: C.muted }}>{p.strumenti_suggeriti.preventivo_emozionale_motivazione}</div>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Case study */}
+      {p.casi_studio?.length > 0 && (
+        <div style={{ background: C.elevated, borderRadius: 10, padding: 16, border: `1px solid ${C.border}` }}>
+          <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 12 }}>Case study suggeriti</div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {p.casi_studio.map((cs, i) => {
+              const colors = ['#E8001C', '#3b82f6', '#666666'];
+              return (
+                <div key={i} style={{ display: 'flex', gap: 12, padding: '10px 12px', background: C.card, borderRadius: 8, border: `1px solid ${C.border}` }}>
+                  <div style={{ width: 3, borderRadius: 2, background: colors[i], flexShrink: 0 }} />
+                  <div style={{ flex: 1 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                      <span style={{ fontSize: 13, fontWeight: 600, color: C.text }}>{cs.cliente}</span>
+                      <Badge label={cs.tipo} color={colors[i]} bg={`${colors[i]}20`} />
+                    </div>
+                    <div style={{ fontSize: 12, color: C.subtle }}>{cs.progetto}</div>
+                    <div style={{ fontSize: 12, color: C.success, marginTop: 4 }}>{cs.kpi}</div>
+                    <div style={{ fontSize: 11, color: C.muted, fontStyle: 'italic', marginTop: 2 }}>{cs.perche_affine}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function MailTab({ mail }) {
+  if (!mail) return null;
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div style={{ background: C.elevated, borderRadius: 10, padding: 16, border: `1px solid ${C.border}` }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+          <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em' }}>Oggetto</div>
+          <CopyBtn text={mail.oggetto} />
+        </div>
+        <div style={{ fontSize: 14, fontWeight: 600, color: C.text }}>{mail.oggetto}</div>
+      </div>
+      <div style={{ background: C.elevated, borderRadius: 10, padding: 16, border: `1px solid ${C.border}` }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+          <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em' }}>Corpo</div>
+          <CopyBtn text={mail.corpo} />
+        </div>
+        <div style={{ fontSize: 13, color: C.text, lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>{mail.corpo}</div>
+      </div>
+    </div>
+  );
+}
+
+function DeckTab({ deck, prospect }) {
+  if (!deck) return null;
+  const slides = [1,2,3,4,5].map(n => ({
+    n,
+    titolo: deck[`slide_${n}_titolo`],
+    contenuto: deck[`slide_${n}_contenuto`],
+  }));
+
+  const slideColors = ['#111111','#ffffff','#ffffff','#111111','#E8001C'];
+  const slideTextColors = [C.text, '#111111', '#111111', C.text, '#ffffff'];
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+      {slides.map(s => (
+        <div key={s.n} style={{ display: 'flex', gap: 12, background: C.elevated, borderRadius: 10, padding: 14, border: `1px solid ${C.border}` }}>
+          <div style={{ width: 120, height: 68, borderRadius: 6, background: slideColors[s.n-1], flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
+            <div style={{ position: 'absolute', top: 6, right: 8, fontSize: 9, color: s.n <= 2 ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)', fontWeight: 700 }}>{s.n}</div>
+            {s.n !== 2 && s.n !== 3 && <div style={{ width: 3, position: 'absolute', left: 0, top: 0, bottom: 0, background: '#E8001C' }} />}
+            <div style={{ fontSize: 8, fontWeight: 600, color: slideTextColors[s.n-1], textAlign: 'center', padding: '0 8px', lineHeight: 1.3 }}>{s.titolo}</div>
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 13, fontWeight: 600, color: C.text, marginBottom: 4 }}>{s.titolo}</div>
+            <div style={{ fontSize: 12, color: C.subtle, lineHeight: 1.5 }}>{s.contenuto}</div>
+          </div>
+        </div>
+      ))}
+      {prospect && <ExportPptBtn deck={deck} prospect={prospect} />}
+    </div>
+  );
+}
+
+function WorkflowTab({ workflow }) {
+  if (!workflow?.length) return null;
+  const canaleBg = { 'LinkedIn': C.blueBg, 'Email': 'rgba(34,197,94,0.1)', 'Telefono': 'rgba(245,158,11,0.1)' };
+  const canaleColor = { 'LinkedIn': C.blue, 'Email': C.success, 'Telefono': '#f59e0b' };
+  return (
+    <div style={{ background: C.elevated, borderRadius: 10, padding: 16, border: `1px solid ${C.border}` }}>
+      <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 14 }}>
+        Sequenza multicanale · 14 giorni
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        {workflow.map((step, i) => (
+          <div key={i}>
+            <div style={{ display: 'flex', gap: 14, alignItems: 'flex-start', padding: '12px 0' }}>
+              <div style={{ fontSize: 22, fontWeight: 800, color: C.accent, minWidth: 36, lineHeight: 1 }}>
+                {step.giorno}
+              </div>
+              <div style={{ flex: 1 }}>
+                <span style={{ fontSize: 11, fontWeight: 600, padding: '2px 8px', borderRadius: 4, background: canaleBg[step.canale] || C.card, color: canaleColor[step.canale] || C.subtle }}>
+                  {step.canale}
+                </span>
+                <div style={{ fontSize: 13, color: C.text, marginTop: 6, lineHeight: 1.5 }}>{step.azione}</div>
+              </div>
+            </div>
+            {i < workflow.length - 1 && <div style={{ height: 1, background: C.border }} />}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function LinkedInTab({ linkedin }) {
+  if (!linkedin) return null;
+  const len = linkedin.messaggio?.length || 0;
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div style={{ background: C.elevated, borderRadius: 10, padding: 16, border: `1px solid ${C.border}` }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+          <Badge label={linkedin.tipo} color={C.blue} bg={C.blueBg} />
+          <CopyBtn text={linkedin.messaggio} />
+        </div>
+        <div style={{ fontSize: 13, color: C.text, lineHeight: 1.75, whiteSpace: 'pre-wrap' }}>{linkedin.messaggio}</div>
+        <div style={{ fontSize: 11, color: len > 300 ? C.accent : C.muted, marginTop: 10, textAlign: 'right' }}>
+          {len} / 300 caratteri
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// FIX: guard esplicito su result.fonti_ricerca + messaggio di fallback utile
+function FontiTab({ result }) {
+  const testo = result?.fonti_ricerca ||
+    '⚠️ Nessun report disponibile per questa analisi.\n\nPossibili cause:\n• Analisi caricata dall\'archivio (le fonti non vengono salvate localmente per risparmiare spazio)\n• Errore durante la generazione del report\n\nRianalizza il prospect per ottenere il report completo.';
+
+  return (
+    <div>
+      <div style={{ fontSize: 11, color: C.muted, marginBottom: 12 }}>
+        Report grezzo della research — verificabile, usabile per approfondimenti manuali
+      </div>
+      <div style={{
+        fontFamily: 'monospace',
+        fontSize: 12,
+        lineHeight: 1.6,
+        color: C.text,
+        whiteSpace: 'pre-wrap',
+        maxHeight: 520,
+        overflowY: 'auto',
+        background: C.elevated,
+        padding: 16,
+        borderRadius: 8,
+        border: `1px solid ${C.border}`,
+      }}>
+        {testo}
+      </div>
+    </div>
+  );
+}
+
+// ── EXPORT PPT ────────────────────────────────────────────────────────────────
+function ExportPptBtn({ deck, prospect }) {
+  const [exporting, setExporting] = useState(false);
+
+  async function exportPpt() {
+    setExporting(true);
+    try {
+      const pres = new pptxgen();
+      pres.layout = 'LAYOUT_WIDE';
+      const today = new Date().toLocaleDateString('it-IT');
+      const nome = prospect?.nome || 'Prospect';
+
+      const slides = [
+        { bg: '111111', titleColor: 'FFFFFF', bodyColor: 'AAAAAA', dark: true },
+        { bg: 'FFFFFF', titleColor: '111111', bodyColor: '444444', dark: false },
+        { bg: 'FFFFFF', titleColor: '111111', bodyColor: '444444', dark: false },
+        { bg: '111111', titleColor: 'FFFFFF', bodyColor: 'AAAAAA', dark: true },
+        { bg: 'E8001C', titleColor: 'FFFFFF', bodyColor: 'FFCCCC', dark: true },
+      ];
+
+      for (let i = 1; i <= 5; i++) {
+        const s = pres.addSlide();
+        const sc = slides[i-1];
+        s.background = { color: sc.bg };
+        const titolo = deck[`slide_${i}_titolo`] || '';
+        const contenuto = deck[`slide_${i}_contenuto`] || '';
+
+        // Logo
+        s.addText('domino', { x: 0.4, y: 0.25, w: 2, h: 0.3, fontSize: 11, bold: true, color: 'E8001C', charSpacing: 2 });
+        s.addText(`${i}`, { x: 12.7, y: 0.25, w: 0.4, h: 0.3, fontSize: 9, color: 'E8001C', align: 'right' });
+
+        // Barra rossa sinistra (non su slide 1 e 5)
+        if (!sc.dark) {
+          s.addShape('rect', { x: 0.4, y: 0.65, w: 0.05, h: 0.7, fill: { color: 'E8001C' }, line: { color: 'E8001C' } });
+        }
+
+        // Prospect name (grigio piccolo)
+        s.addText(nome, { x: 0.4, y: 0.85, w: 12, h: 0.3, fontSize: 11, color: sc.dark ? '666666' : '999999' });
+
+        // Titolo
+        s.addText(titolo, {
+          x: 0.4, y: 1.3, w: 12.3, h: 1.2,
+          fontSize: 34, bold: true, color: sc.titleColor,
+          charSpacing: -1, wrap: true, valign: 'top',
+        });
+
+        // Contenuto
+        s.addText(contenuto, {
+          x: 0.4, y: 2.8, w: 12.3, h: 3.5,
+          fontSize: 15, color: sc.bodyColor, lineSpacingMultiple: 1.4, wrap: true, valign: 'top',
+        });
+
+        // Case study KPI su slide 4
+        if (i === 4 && prospect?.casi_studio?.length) {
+          const cs = prospect.casi_studio;
+          const csColors = ['E8001C', '3b82f6', '666666'];
+          cs.slice(0, 3).forEach((c, ci) => {
+            const x = 0.4 + ci * 4.3;
+            s.addShape('rect', { x, y: 5.6, w: 4.0, h: 0.05, fill: { color: csColors[ci] }, line: { color: csColors[ci] } });
+            s.addText(c.cliente, { x, y: 5.7, w: 4.0, h: 0.3, fontSize: 12, bold: true, color: 'FFFFFF' });
+            s.addText(c.kpi, { x, y: 6.0, w: 4.0, h: 0.3, fontSize: 11, color: '4ADE80' });
+          });
+        }
+
+        // Footer slide 5
+        if (i === 5) {
+          s.addText('domino.it · +39 011 544770 · Torino & Venezia', {
+            x: 0.4, y: 6.9, w: 12.3, h: 0.3, fontSize: 10, color: 'FFAAAA', align: 'center',
+          });
+        } else {
+          s.addText(`${today} · domino.it`, { x: 0.4, y: 7.1, w: 12, h: 0.2, fontSize: 9, color: '444444' });
+        }
+      }
+
+      const kebab = nome.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      await pres.writeFile({ fileName: `domino-prospect-${kebab}.pptx` });
+    } catch (e) {
+      console.error('PPT export error:', e);
+    }
+    setExporting(false);
   }
+
+  return (
+    <button onClick={exportPpt} disabled={exporting} style={{
+      padding: '10px 18px', background: exporting ? C.elevated : C.accent,
+      color: '#fff', border: 'none', borderRadius: 8, cursor: exporting ? 'not-allowed' : 'pointer',
+      fontSize: 13, fontWeight: 600, alignSelf: 'flex-start',
+    }}>
+      {exporting ? 'Generando PPT...' : '⬇ Esporta PPT'}
+    </button>
+  );
+}
+
+// ── ARCHIVE MODAL ─────────────────────────────────────────────────────────────
+function ArchiveModal({ onClose, onSelect }) {
+  const archive = loadArchive();
+  return (
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.8)', zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={onClose}>
+      <div style={{ background: C.elevated, border: `1px solid ${C.border}`, borderRadius: 12, padding: 24, width: 480, maxHeight: '70vh', overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
+          <div style={{ fontSize: 16, fontWeight: 700, color: C.text }}>Archivio analisi</div>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', color: C.muted, cursor: 'pointer', fontSize: 18 }}>✕</button>
+        </div>
+        {archive.length === 0 ? (
+          <div style={{ fontSize: 13, color: C.muted, textAlign: 'center', padding: '24px 0' }}>Nessuna analisi salvata</div>
+        ) : (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            {archive.map((item, i) => (
+              <div key={i} onClick={() => { onSelect(item); onClose(); }} style={{
+                padding: '10px 12px', borderRadius: 8, cursor: 'pointer',
+                border: `1px solid ${C.border}`, background: C.card,
+                transition: 'border-color .15s',
+              }}
+                onMouseEnter={e => e.currentTarget.style.borderColor = C.accent}
+                onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
+                <div style={{ fontSize: 13, fontWeight: 600, color: C.text }}>{item.prospect?.nome || 'Senza nome'}</div>
+                <div style={{ fontSize: 11, color: C.muted }}>
+                  {item.prospect?.settore} · {item._savedAt ? new Date(item._savedAt).toLocaleDateString('it-IT') : ''}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ── HUBSPOT MODAL ─────────────────────────────────────────────────────────────
+function HsModal({ token, setToken, result, onClose }) {
+  const [syncing, setSyncing] = useState(false);
+  const [msg, setMsg] = useState('');
+
+  async function sync() {
+    if (!token || !result?.prospect) return;
+    setSyncing(true); setMsg('');
+    try {
+      // 1. Search company
+      const searchRes = await fetch('https://api.hubapi.com/crm/v3/objects/companies/search', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filterGroups: [{ filters: [{ propertyName: 'name', operator: 'EQ', value: result.prospect.nome }] }] }),
+      });
+      const searchData = await searchRes.json();
+      let companyId;
+
+      if (searchData.results?.length > 0) {
+        companyId = searchData.results[0].id;
+      } else {
+        // 2. Create company
+        const createRes = await fetch('https://api.hubapi.com/crm/v3/objects/companies', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ properties: { name: result.prospect.nome, industry: result.prospect.settore || '' } }),
+        });
+        const createData = await createRes.json();
+        companyId = createData.id;
+      }
+
+      // 3. Add note
+      const noteBody = `[Domino Prospect Engine]\n\nDecisore: ${result.prospect.decisore_target || ''}\nHook: ${result.prospect.hook || ''}\nMaturità digitale: ${result.prospect.maturita_digitale || ''}\n\nMail oggetto: ${result.mail?.oggetto || ''}`;
+      await fetch('https://api.hubapi.com/crm/v3/objects/notes', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ properties: { hs_note_body: noteBody, hs_timestamp: Date.now() } }),
+      });
+
+      setMsg(`✓ Sincronizzato su HubSpot (company ID: ${companyId})`);
+    } catch (e) {
+      setMsg(`⚠️ Errore: ${e.message}`);
+    }
+    setSyncing(false);
+  }
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.8)', zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={onClose}>
+      <div style={{ background: C.elevated, border: `1px solid ${C.border}`, borderRadius: 12, padding: 24, width: 420 }} onClick={e => e.stopPropagation()}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
+          <div style={{ fontSize: 16, fontWeight: 700, color: C.text }}>HubSpot CRM</div>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', color: C.muted, cursor: 'pointer', fontSize: 18 }}>✕</button>
+        </div>
+        <div style={{ fontSize: 12, color: C.muted, marginBottom: 8 }}>Token HubSpot (pat-eu1-...)</div>
+        <input
+          value={token}
+          onChange={e => { setToken(e.target.value); localStorage.setItem('domino_hs_token', e.target.value); }}
+          placeholder="pat-eu1-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+          style={{ width: '100%', padding: '8px 10px', background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, color: C.text, fontSize: 12, marginBottom: 12, boxSizing: 'border-box' }}
+        />
+        <button onClick={sync} disabled={syncing || !token} style={{
+          width: '100%', padding: '10px', background: syncing ? C.card : C.accent,
+          color: '#fff', border: 'none', borderRadius: 8, cursor: syncing ? 'not-allowed' : 'pointer',
+          fontSize: 13, fontWeight: 600,
+        }}>
+          {syncing ? 'Sincronizzando...' : 'Sincronizza su HubSpot'}
+        </button>
+        {msg && <div style={{ fontSize: 12, color: msg.startsWith('✓') ? C.success : C.accent, marginTop: 10 }}>{msg}</div>}
+      </div>
+    </div>
+  );
+}
+
+// ── LISTA PROSPECT ────────────────────────────────────────────────────────────
+function ListaProspect({ onAnalizza }) {
+  const [settore, setSettore] = useState('');
+  const [geo, setGeo] = useState('Italia');
+  const [dim, setDim] = useState([]);
+  const [keywords, setKeywords] = useState('');
+  const [numero, setNumero] = useState(10);
+  const [loading, setLoading] = useState(false);
+  const [loadMsg, setLoadMsg] = useState('');
+  const [result, setResult] = useState(null);
+  const [error, setError] = useState('');
+
+  const msgRef = useRef(null);
+  useEffect(() => {
+    if (!loading) return;
+    let i = 0;
+    setLoadMsg(LISTA_MSGS[0]);
+    msgRef.current = setInterval(() => {
+      i = (i + 1) % LISTA_MSGS.length;
+      setLoadMsg(LISTA_MSGS[i]);
+    }, 8000);
+    return () => clearInterval(msgRef.current);
+  }, [loading]);
+
+  function toggleDim(d) {
+    setDim(prev => prev.includes(d) ? prev.filter(x => x !== d) : [...prev, d]);
+  }
+
+  async function genera() {
+    if (!settore) return;
+    setLoading(true); setError(''); setResult(null);
+    try {
+      const res = await fetch('/api/prospect-list', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ settore, geografia: geo, dimensione: dim, keywords, numero }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Errore API');
+      setResult(data);
+    } catch (e) {
+      setError(e.message);
+    }
+    setLoading(false);
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      {/* Form */}
+      <div style={{ background: C.elevated, borderRadius: 10, padding: 16, border: `1px solid ${C.border}` }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
+          <div>
+            <div style={{ fontSize: 11, color: C.muted, marginBottom: 6 }}>Settore *</div>
+            <select value={settore} onChange={e => setSettore(e.target.value)} style={{
+              width: '100%', padding: '8px 10px', background: C.card, border: `1px solid ${C.border}`,
+              borderRadius: 8, color: settore ? C.text : C.muted, fontSize: 13,
+            }}>
+              <option value="">Scegli settore...</option>
+              {SETTORI_OPTIONS.map(s => <option key={s} value={s}>{s}</option>)}
+            </select>
+          </div>
+          <div>
+            <div style={{ fontSize: 11, color: C.muted, marginBottom: 6 }}>Geografia</div>
+            <input value={geo} onChange={e => setGeo(e.target.value)} placeholder="Italia" style={{
+              width: '100%', padding: '8px 10px', background: C.card, border: `1px solid ${C.border}`,
+              borderRadius: 8, color: C.text, fontSize: 13, boxSizing: 'border-box',
+            }} />
+          </div>
+        </div>
+        <div style={{ marginBottom: 12 }}>
+          <div style={{ fontSize: 11, color: C.muted, marginBottom: 6 }}>Dimensione</div>
+          <div style={{ display: 'flex', gap: 8 }}>
+            {['PMI', 'Mid-market', 'Enterprise'].map(d => (
+              <button key={d} onClick={() => toggleDim(d)} style={{
+                padding: '6px 12px', fontSize: 12, borderRadius: 6, cursor: 'pointer',
+                background: dim.includes(d) ? C.accent : C.card,
+                color: dim.includes(d) ? '#fff' : C.subtle,
+                border: `1px solid ${dim.includes(d) ? C.accent : C.border}`,
+              }}>{d}</button>
+            ))}
+          </div>
+        </div>
+        <div style={{ marginBottom: 12 }}>
+          <div style={{ fontSize: 11, color: C.muted, marginBottom: 6 }}>Keyword aggiuntive (opzionale)</div>
+          <input value={keywords} onChange={e => setKeywords(e.target.value)} placeholder="es. ecommerce, B2B, export, PMI in crescita..." style={{
+            width: '100%', padding: '8px 10px', background: C.card, border: `1px solid ${C.border}`,
+            borderRadius: 8, color: C.text, fontSize: 13, boxSizing: 'border-box',
+          }} />
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', gap: 8 }}>
+            {[5,10,20].map(n => (
+              <button key={n} onClick={() => setNumero(n)} style={{
+                padding: '6px 12px', fontSize: 12, borderRadius: 6, cursor: 'pointer',
+                background: numero === n ? C.elevated : C.card,
+                color: numero === n ? C.text : C.muted,
+                border: `1px solid ${numero === n ? C.borderHover : C.border}`,
+                fontWeight: numero === n ? 600 : 400,
+              }}>{n} prospect</button>
+            ))}
+          </div>
+          <button onClick={genera} disabled={loading || !settore} style={{
+            padding: '10px 20px', background: loading || !settore ? C.card : C.accent,
+            color: loading || !settore ? C.muted : '#fff', border: 'none', borderRadius: 8,
+            cursor: loading || !settore ? 'not-allowed' : 'pointer', fontSize: 14, fontWeight: 600,
+          }}>
+            {loading ? loadMsg : 'Genera lista →'}
+          </button>
+        </div>
+        {error && <div style={{ fontSize: 12, color: C.accent, marginTop: 8 }}>⚠️ {error}</div>}
+      </div>
+
+      {/* Risultati */}
+      {result?.lista?.length > 0 && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <div style={{ fontSize: 11, color: C.muted }}>
+            {result.totale_trovate} prospect trovati · {result.criteri_applicati}
+          </div>
+          {result.lista.map((p, i) => (
+            <div key={i} style={{ background: C.elevated, borderRadius: 10, padding: 14, border: `1px solid ${C.border}` }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12 }}>
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                    <span style={{ fontSize: 14, fontWeight: 700, color: C.text }}>{p.nome}</span>
+                    <Badge label={p.dimensione} color={C.subtle} bg={C.card} />
+                  </div>
+                  <div style={{ fontSize: 12, color: C.subtle }}>{p.settore} · {p.sede}</div>
+                  {p.fatturato_stimato && <div style={{ fontSize: 11, color: C.muted }}>{p.fatturato_stimato}</div>}
+                  <div style={{ fontSize: 12, color: C.text, marginTop: 6 }}>
+                    <span style={{ color: C.accent }}>◆ </span>{p.segnale_principale}
+                  </div>
+                  <div style={{ fontSize: 11, color: C.muted, marginTop: 2 }}>Decisore: {p.decisore_probabile}</div>
+                  {p.score_motivazione && <div style={{ fontSize: 11, color: C.subtle, marginTop: 2, fontStyle: 'italic' }}>{p.score_motivazione}</div>}
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8, minWidth: 100 }}>
+                  <div style={{ width: 80 }}><ScoreBar score={p.score} /></div>
+                  <button onClick={() => onAnalizza(p.sito || p.nome)} style={{
+                    fontSize: 11, padding: '4px 10px', background: C.accent, color: '#fff',
+                    border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600,
+                  }}>Analizza →</button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── APP PRINCIPALE ────────────────────────────────────────────────────────────
+export default function App() {
+  const [mode, setMode] = useState('analizza');
+  const [input, setInput] = useState('');
+  const [note, setNote] = useState('');
+  const [gtmLayer, setGtmLayer] = useState('usecases');
+  const [gtmMotion, setGtmMotion] = useState('bottomup');
+  const [loading, setLoading] = useState(false);
+  const [loadMsg, setLoadMsg] = useState('');
+  const [result, setResult] = useState(null);
+  const [tab, setTab] = useState('intel');
+  const [error, setError] = useState('');
+  const [showArchive, setShowArchive] = useState(false);
+  const [showHs, setShowHs] = useState(false);
+  const [hsToken, setHsToken] = useState(() => localStorage.getItem('domino_hs_token') || '');
+  const [archCount, setArchCount] = useState(() => loadArchive().length);
+
+  const msgRef = useRef(null);
+  useEffect(() => {
+    if (!loading) return;
+    let i = 0;
+    setLoadMsg(LOADING_MSGS[0]);
+    msgRef.current = setInterval(() => {
+      i = (i + 1) % LOADING_MSGS.length;
+      setLoadMsg(LOADING_MSGS[i]);
+    }, 7500);
+    return () => clearInterval(msgRef.current);
+  }, [loading]);
+
+  async function analizza() {
+    if (!input.trim()) return;
+    setLoading(true); setError(''); setResult(null);
+    try {
+      const res = await fetch('/api/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prospect: input.trim(), note: note.trim(), layer: gtmLayer, motion: gtmMotion }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Errore API');
+      setResult(data);
+      setTab('intel');
+      saveToArchive(data);
+      setArchCount(loadArchive().length);
+    } catch (e) {
+      setError(e.message);
+    }
+    setLoading(false);
+  }
+
+  const tabs = [
+    { id: 'intel',    label: '🔍 Intelligence' },
+    { id: 'mail',     label: '✉️ Mail' },
+    { id: 'deck',     label: '📊 Deck' },
+    { id: 'workflow', label: '📅 Workflow' },
+    { id: 'linkedin', label: '💼 LinkedIn' },
+  ];
+
+  return (
+    <div style={{ minHeight: '100vh', background: C.bg, color: C.text, fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}>
+
+      {/* Header */}
+      <div style={{ borderBottom: `1px solid ${C.border}`, padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'sticky', top: 0, background: C.bg, zIndex: 10 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <span style={{ fontSize: 16, letterSpacing: 2 }}>
+            <span style={{ color: C.accent }}>●</span>
+            <span style={{ color: C.border }}>○</span>
+            <span style={{ color: C.accent }}>●</span>
+            <span style={{ color: C.border }}>○</span>
+          </span>
+          <span style={{ fontSize: 14, fontWeight: 600, color: C.text }}>Domino</span>
+          <span style={{ color: C.border }}>|</span>
+          <span style={{ fontSize: 14, color: C.muted }}>Prospect Engine</span>
+        </div>
+        <div style={{ display: 'flex', gap: 8 }}>
+          <button onClick={() => setShowArchive(true)} style={{ padding: '6px 12px', background: C.elevated, border: `1px solid ${C.border}`, borderRadius: 7, color: C.subtle, fontSize: 12, cursor: 'pointer' }}>
+            📂 Archivio ({archCount})
+          </button>
+          <button onClick={() => setShowHs(true)} style={{ padding: '6px 12px', background: C.elevated, border: `1px solid ${C.border}`, borderRadius: 7, color: C.subtle, fontSize: 12, cursor: 'pointer' }}>
+            🔗 HubSpot
+          </button>
+        </div>
+      </div>
+
+      <div style={{ maxWidth: 960, margin: '0 auto', padding: '24px 24px' }}>
+
+        {/* Mode switcher */}
+        <div style={{ display: 'flex', gap: 8, marginBottom: 20 }}>
+          {[{ id: 'analizza', label: '🔍 Analizza prospect' }, { id: 'lista', label: '📋 Genera lista' }].map(m => (
+            <button key={m.id} onClick={() => setMode(m.id)} style={{
+              padding: '8px 16px', fontSize: 13, fontWeight: 600, borderRadius: 8, cursor: 'pointer',
+              background: mode === m.id ? C.accent : C.elevated,
+              color: mode === m.id ? '#fff' : C.subtle,
+              border: `1px solid ${mode === m.id ? C.accent : C.border}`,
+            }}>{m.label}</button>
+          ))}
+        </div>
+
+        {mode === 'lista' ? (
+          <ListaProspect onAnalizza={(target) => { setInput(target); setMode('analizza'); }} />
+        ) : (
+          <>
+            {/* Input form */}
+            <div style={{ background: C.elevated, borderRadius: 12, padding: 20, marginBottom: 20, border: `1px solid ${C.border}` }}>
+              <input
+                value={input}
+                onChange={e => setInput(e.target.value)}
+                onKeyDown={e => e.key === 'Enter' && !e.shiftKey && analizza()}
+                placeholder="Nome azienda o URL sito web..."
+                style={{ width: '100%', padding: '12px 14px', background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, color: C.text, fontSize: 15, marginBottom: 10, boxSizing: 'border-box', outline: 'none' }}
+              />
+
+              {/* Quick picks */}
+              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 12 }}>
+                {QUICK_PICKS.map(q => (
+                  <button key={q} onClick={() => setInput(q)} style={{ fontSize: 11, padding: '3px 9px', background: C.card, border: `1px solid ${C.border}`, borderRadius: 5, color: C.muted, cursor: 'pointer' }}>
+                    {q}
+                  </button>
+                ))}
+              </div>
+
+              <textarea
+                value={note}
+                onChange={e => setNote(e.target.value)}
+                placeholder="Note commerciali (opzionale): contesto, referente, obiettivo..."
+                rows={2}
+                style={{ width: '100%', padding: '10px 12px', background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, color: C.text, fontSize: 13, resize: 'vertical', marginBottom: 12, boxSizing: 'border-box', outline: 'none' }}
+              />
+
+              <GtmSelector layer={gtmLayer} setLayer={setGtmLayer} motion={gtmMotion} setMotion={setGtmMotion} />
+
+              <button
+                onClick={analizza}
+                disabled={loading || !input.trim()}
+                style={{ width: '100%', padding: '12px', background: loading || !input.trim() ? C.card : C.accent, color: loading || !input.trim() ? C.muted : '#fff', border: 'none', borderRadius: 8, cursor: loading || !input.trim() ? 'not-allowed' : 'pointer', fontSize: 15, fontWeight: 700 }}>
+                {loading ? loadMsg : 'Analizza →'}
+              </button>
+              {error && <div style={{ fontSize: 12, color: C.accent, marginTop: 8 }}>⚠️ {error}</div>}
+            </div>
+
+            {/* Risultati */}
+            {result && (
+              <div>
+                {/* Tab bar */}
+                <div style={{ display: 'flex', gap: 4, marginBottom: 16, borderBottom: `1px solid ${C.border}`, paddingBottom: 0 }}>
+                  {tabs.map(t => (
+                    <button key={t.id} onClick={() => setTab(t.id)} style={{
+                      padding: '8px 14px', fontSize: 12, fontWeight: tab === t.id ? 700 : 400,
+                      color: tab === t.id ? C.text : C.muted, background: 'none', border: 'none',
+                      borderBottom: tab === t.id ? `2px solid ${C.accent}` : '2px solid transparent',
+                      cursor: 'pointer', marginBottom: -1,
+                    }}>{t.label}</button>
+                  ))}
+                </div>
+
+                {/* Tab content */}
+                {tab === 'intel'    && <IntelTab prospect={result.prospect} />}
+                {tab === 'mail'     && <MailTab mail={result.mail} />}
+                {tab === 'deck'     && <DeckTab deck={result.deck} prospect={result.prospect} />}
+                {tab === 'workflow' && <WorkflowTab workflow={result.workflow} />}
+                {tab === 'linkedin' && <LinkedInTab linkedin={result.linkedin} />}
+              </div>
+            )}
+          </>
+        )}
+      </div>
+
+      {showArchive && (
+        <ArchiveModal
+          onClose={() => setShowArchive(false)}
+          onSelect={(item) => { setResult(item); setMode('analizza'); setTab('intel'); }}
+        />
+      )}
+      {showHs && (
+        <HsModal
+          token={hsToken}
+          setToken={setHsToken}
+          result={result}
+          onClose={() => setShowHs(false)}
+        />
+      )}
+    </div>
+  );
 }
