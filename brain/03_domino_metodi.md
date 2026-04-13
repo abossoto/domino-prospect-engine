@@ -1,5 +1,5 @@
 # DOMINO BRAIN — Metodi Distintivi
-> Versione 5.0 — Aprile 2026. I quattro metodi proprietari che differenziano Domino: Foundation Sprint, Design Sprint, Preventivo Emozionale, Trainstorming. Aggiornato con scenari Industry 5.0 (Trainstorming aprile 2026) e pricing commerciale. Da citare nelle proposte commerciali quando pertinenti.
+> Versione 4.0 — Aprile 2026. I quattro metodi proprietari che differenziano Domino: Foundation Sprint, Design Sprint, Preventivo Emozionale, Trainstorming. Aggiornato con scenari Industry 5.0 (Trainstorming aprile 2026). Da citare nelle proposte commerciali quando pertinenti.
 
 ---
 
@@ -7,15 +7,8 @@
 
 **Cos'è:** Il passo strategico che precede il Design Sprint. Serve a costruire l'**ipotesi fondante** del progetto: la tesi che guida tutto ciò che viene dopo.
 
-**La domanda a cui risponde:** *"Stiamo lavorando sul problema giusto?"*
-
-**Output:** Ipotesi fondante condivisa — una tesi strategica che allinea tutti gli stakeholder sulla direzione prima di investire in qualsiasi soluzione.
-
 **La formula dell'ipotesi fondante:**
 > "Se aiutiamo **[cliente target]** a risolvere **[problema specifico]** con **[nostro approccio]**, allora sceglieranno la nostra soluzione al posto di **[concorrenza]** perché la nostra soluzione è **[differenziazione chiave]**."
-
-**Durata:** 1–2 giorni
-**Prezzo:** €6.000
 
 **Tecniche interne usate nel Foundation Sprint:**
 - **Magic Lenses** — mettere alla prova le idee valutandole rispetto a criteri critici. Output: un insieme raffinato delle idee più promettenti
@@ -24,12 +17,12 @@
 **Il flusso completo:**
 ```
 Foundation Sprint → [Ipotesi Fondante] → Design Sprint → Design Sprint → ... → Esecuzione
-         ↑_____________________________________________________|
+         ↑___________________________________________________|
                           (loop iterativo)
 ```
 
 **Quando proporlo:**
-- Quando il cliente non ha ancora chiarezza strategica su cosa fare
+- All'inizio di qualsiasi progetto complesso dove il cliente non ha ancora chiarezza strategica
 - Quando ci sono stakeholder con visioni diverse da allineare prima di investire
 - Quando il cliente ha tante idee ma non sa quale prioritizzare
 - Prima di un Design Sprint, per assicurarsi di lavorare sul problema giusto
@@ -39,15 +32,6 @@ Foundation Sprint → [Ipotesi Fondante] → Design Sprint → Design Sprint →
 ## 2. Design Sprint *(pionieri in Italia da 10+ anni)*
 
 **Cos'è:** La metodologia di **Google Ventures** per trasformare problemi di business complessi in prototipi testati in tempi rapidissimi. Domino è tra i primi e più esperti in Italia ad averla adottata e adattata.
-
-**La domanda a cui risponde:** *"Questa soluzione funziona davvero?"*
-
-**Output:** Prototipo testato con utenti reali — una soluzione concreta e validata prima di investire nel progetto completo.
-
-**Durata:** 4 giorni (versioni estese: 1 settimana)
-**Prezzo:** €10.000
-
-**Presupposto:** Il Design Sprint funziona meglio quando la direzione strategica è già chiara. Se non lo è, il Foundation Sprint viene prima.
 
 **Connessione I5.0 — Decision Design:** In un'epoca in cui UX e tecnologia diventano architetture di scelta, il Design Sprint è lo strumento più concreto per progettare "come le persone decidono" — non solo come navigano un'interfaccia. Ogni sprint produce trade-off visibili, scenari comparabili, conseguenze tangibili: esattamente quello che serve per decidere in contesti complessi.
 
@@ -68,40 +52,11 @@ Foundation Sprint → [Ipotesi Fondante] → Design Sprint → Design Sprint →
 - Allineamento immediato tra tutti gli stakeholder
 - In 4 giorni si ottiene ciò che normalmente richiederebbe mesi di riunioni e briefing
 
-**Specializzazioni del Design Sprint:**
-- **Service Design Sprint** — prototipazione e test con modalità design thinking
-- **CX Design Sprint** — coerenza tra canali di comunicazione
-- **Brand Design Sprint** — ripensare il modo in cui si comunica il brand
-- **Digital Marketing Design Sprint** — campagne mirate di brand awareness o lead gen
-- **Website Design Sprint** — prototipazione e test di siti web o app
-- **Intranet Design Sprint** — prototipazione e test di strumenti collaborativi
-
 **Quando proporlo:**
-- Quando la direzione è chiara ma il cliente esita a investire senza validazione
-- Quando ci sono stakeholder multipli che faticano ad allinearsi su una soluzione concreta
+- Qualsiasi progetto con complessità decisionale alta o stakeholder multipli
+- Quando il cliente esita a investire senza una visione chiara del risultato
 - Per superare stalli decisionali interni
-- Come primo passo tangibile e a scope fisso di una relazione con un nuovo cliente
-
----
-
-## Foundation Sprint vs Design Sprint — Differenze chiave
-
-Sono strumenti **sequenziali e complementari**, non alternativi. Rispondono a domande diverse e non vanno mai confusi o proposti come versioni dello stesso prodotto a prezzi diversi.
-
-| | Foundation Sprint | Design Sprint |
-|---|---|---|
-| **Domanda** | Stiamo lavorando sul problema giusto? | Questa soluzione funziona? |
-| **Output** | Ipotesi fondante condivisa | Prototipo testato con utenti reali |
-| **Durata** | 1–2 giorni | 4 giorni |
-| **Prezzo** | €6.000 | €10.000 |
-| **Focus** | Allineamento strategico | Validazione della soluzione |
-| **Presupposto** | Nessuno — è il punto di partenza | Direzione già sufficientemente chiara |
-| **Quando** | Stakeholder divisi, confusione su priorità, nessuna chiarezza strategica | Direzione chiara, si vuole validare prima di investire |
-
-**Regola operativa:**
-- Se il cliente sa *cosa* vuole ma non sa *se funzionerà* → **Design Sprint**
-- Se il cliente non sa ancora *cosa* fare o gli stakeholder sono divisi → **Foundation Sprint prima**, poi eventualmente Design Sprint
-- Se serve tutto: **Foundation Sprint → Design Sprint → Esecuzione** (percorso completo, €16.000 prima del progetto)
+- Come primo passo tangibile di una relazione con un nuovo cliente
 
 ---
 
@@ -142,7 +97,6 @@ Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina,
 | "Abbiamo visioni diverse tra i reparti" | Foundation Sprint |
 | "Vogliamo validare l'idea prima di investire" | Design Sprint |
 | "Il progetto è complesso, temiamo di sbagliare" | Design Sprint |
-| "Non sappiamo cosa fare E vogliamo un risultato tangibile" | Foundation Sprint → Design Sprint |
 | "I nostri preventivi non convertono" | Preventivo Emozionale |
 | "La rete vendita fatica a spiegare il valore" | Preventivo Emozionale |
 | "Dobbiamo innovare ma non sappiamo cosa fare" | Foundation Sprint → Design Sprint |
@@ -235,8 +189,7 @@ Fondante                 con utenti reali            12 mesi
 
 | | Foundation Sprint | Design Sprint | Trainstorming |
 |---|---|---|---|
-| **Durata** | 1–2 giorni | 4 giorni | 8 mesi (3 sessioni) |
-| **Prezzo** | €6.000 | €10.000 | — |
+| **Durata** | 1-2 giorni | 4-5 giorni | 8 mesi (3 sessioni) |
 | **Output** | Ipotesi fondante | Prototipo testato | Roadmap + implementazione avviata |
 | **Focus** | Allineamento strategico | Validazione soluzione | Cambiamento culturale/organizzativo |
 | **Quando** | Prima di un progetto | Prima di investire | Per gestire una transizione |
