@@ -76,8 +76,57 @@ function extractText(data) {
 }
 
 function parseJSON(text) {
-  const clean = text.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
-  return JSON.parse(clean);
+  // 1. Strip markdown fences
+  let clean = text.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
+  // 2. Try direct parse
+  let parsed = null;
+  try { parsed = JSON.parse(clean); } catch {}
+  // 3. Find outermost JSON object — handles any preamble/postamble the model adds
+  if (!parsed) {
+    const start = clean.indexOf('{');
+    const end = clean.lastIndexOf('}');
+    if (start !== -1 && end > start) {
+      try { parsed = JSON.parse(clean.slice(start, end + 1)); } catch {}
+    }
+  }
+  if (!parsed) {
+    console.error('[parseJSON] failed. Response prefix:', clean.slice(0, 300));
+    throw new Error('Risposta non strutturata dal modello. Riprova.');
+  }
+  // 4. Normalize — ensure all required fields exist with safe defaults
+  // Prevents frontend crashes when model omits optional fields
+  const p = parsed.prospect || {};
+  parsed.prospect = {
+    nome: p.nome || 'N/D',
+    settore: p.settore || 'N/D',
+    dimensione: p.dimensione || 'N/D',
+    fatturato_stimato: p.fatturato_stimato || null,
+    mercati: p.mercati || 'N/D',
+    persone_chiave: Array.isArray(p.persone_chiave) ? p.persone_chiave : [],
+    segnali_recenti: Array.isArray(p.segnali_recenti) ? p.segnali_recenti : [],
+    sfide_probabili: Array.isArray(p.sfide_probabili) ? p.sfide_probabili : [],
+    maturita_digitale: p.maturita_digitale || 'N/D',
+    decisore_target: p.decisore_target || 'N/D',
+    hook: p.hook || '',
+    strumenti_suggeriti: p.strumenti_suggeriti || {},
+    casi_studio: Array.isArray(p.casi_studio) ? p.casi_studio : [],
+  };
+  const m = parsed.mail || {};
+  parsed.mail = { oggetto: m.oggetto || '', corpo: m.corpo || '' };
+
+  const d = parsed.deck || {};
+  parsed.deck = {
+    slide_1_titolo: d.slide_1_titolo || '', slide_1_contenuto: d.slide_1_contenuto || '',
+    slide_2_titolo: d.slide_2_titolo || '', slide_2_contenuto: d.slide_2_contenuto || '',
+    slide_3_titolo: d.slide_3_titolo || '', slide_3_contenuto: d.slide_3_contenuto || '',
+    slide_4_titolo: d.slide_4_titolo || 'Chi l\'ha fatto con noi', slide_4_contenuto: d.slide_4_contenuto || '',
+    slide_5_titolo: d.slide_5_titolo || '', slide_5_contenuto: d.slide_5_contenuto || '',
+  };
+  parsed.workflow = Array.isArray(parsed.workflow) ? parsed.workflow : [];
+  const li = parsed.linkedin || {};
+  parsed.linkedin = { tipo: li.tipo || 'InMail', messaggio: li.messaggio || '' };
+
+  return parsed;
 }
 
 // ─── Research System ─────────────────────────────────────────────────────────
@@ -257,13 +306,17 @@ const GTM_MOTION_INSTRUCTIONS = {
 };
 
 // ─── Generation System (con GTM) ─────────────────────────────────────────────
-function buildGenerationSystem(brain, layer, motion) {
+// ARCHITETTURA: system prompt = regole + GTM (compatto)
+//               user message = brain rilevante + report intelligence
+// Questo evita che il modello si perda in un system prompt enorme
+// e garantisce che il JSON di output sia sempre completo.
+function buildGenerationSystem(layer, motion) {
   const layerInstr = GTM_LAYER_INSTRUCTIONS[layer] || GTM_LAYER_INSTRUCTIONS.headof;
   const motionInstr = GTM_MOTION_INSTRUCTIONS[motion] || GTM_MOTION_INSTRUCTIONS.bottomup;
 
-  return `${brain}
-
-Sei il generatore di materiali sales di Domino. Ricevi un report di intelligence e produci output personalizzati.
+  return `Sei il generatore di materiali sales di Domino (domino.it), agenzia CX italiana.
+Ricevi il Domino Brain (documenti interni) e un report di intelligence su un prospect.
+Il tuo compito: produrre materiali sales personalizzati in formato JSON.
 
 REGOLE FONDAMENTALI:
 - Usa SOLO informazioni dal report di intelligence — zero invenzioni
@@ -285,31 +338,35 @@ BADGE STRUMENTI — logica di selezione:
 - design_sprint_tipo — UNO tra: Service / CX / Brand / Digital Marketing / Website / Intranet
 - preventivo_emozionale: ciclo vendita lungo, rete indiretta, prodotto complesso
 
-MAIL: caso [0] nel corpo con KPI, altri come proof secondari.
-DECK slide 4: tutti e 3 i casi con cliente, KPI e perché affine.
-
-REFERENZE — REGOLA D'USO:
-Il brain contiene il file 06_domino_referenze.md con premi IKA, Sortlist e testimonianze clienti.
-Usale quando rinforzano la credibilità: cita il premio IKA se il settore è automotive o B2B industriale,
-cita le testimonianze Sortlist se il prospect è scettico, cita la certificazione B Corp se il prospect
-ha sensibilità ESG. Non elencare tutto — scegli la referenza più pertinente per QUEL prospect.
-
-SALES PLAY DI SETTORE — REGOLA D'USO:
-Il brain contiene i file 07-11 con sales play, audit tattici e pricing per ogni verticale.
-Quando generi i materiali per un prospect, consulta il file GTM del suo settore:
-- B2B Industriale / Manifatturiero → 07_domino_gtm_b2b.md
-- Salute, Sanità, Beauty → 08_domino_gtm_salute_beauty.md
-- Turismo & Cultura → 09_domino_gtm_turismo_cultura.md
-- Finance, Assicurazioni, PA → 10_domino_gtm_finance_pa.md
-- Automotive → 11_domino_gtm_automotive.md
-Usa i sales play e gli audit tattici specifici del settore per rendere i materiali immediatamente rilevanti.
+REFERENZE: usa 06_domino_referenze.md. Cita IKA per automotive/B2B, Sortlist per prospect scettici, B Corp per sensibilità ESG.
+SALES PLAY: usa il file GTM del settore del prospect (07-11). Cita audit tattici specifici per il manager layer.
 
 ━━━ ISTRUZIONI GTM ━━━
 ${layerInstr}
 
 ${motionInstr}
 
-Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.`;
+OUTPUT: restituisci ESCLUSIVAMENTE JSON puro, zero testo prima o dopo, zero markdown, zero backtick.
+Schema obbligatorio:
+{
+  "prospect": { "nome","settore","dimensione","fatturato_stimato","mercati","persone_chiave":[],"segnali_recenti":[],"sfide_probabili":[],"maturita_digitale","decisore_target","hook","strumenti_suggeriti":{"foundation_sprint":bool,"design_sprint_tipo":str|null,"design_sprint_motivazione":str|null,"preventivo_emozionale":bool,"preventivo_emozionale_motivazione":str|null},"casi_studio":[{"cliente","progetto","kpi","perche_affine","tipo"}] },
+  "mail": { "oggetto","corpo" },
+  "deck": { "slide_1_titolo","slide_1_contenuto","slide_2_titolo","slide_2_contenuto","slide_3_titolo","slide_3_contenuto","slide_4_titolo","slide_4_contenuto","slide_5_titolo","slide_5_contenuto" },
+  "workflow": [ { "giorno":int,"canale":"LinkedIn|Email|Telefono","azione":str } ],
+  "linkedin": { "tipo":"Richiesta connessione|InMail","messaggio":str }
+}`;
+}
+
+// Seleziona solo i file brain rilevanti per il settore del prospect
+// e li include nel messaggio utente insieme al report
+function buildUserMessage(brain, prospect, report) {
+  return `=== DOMINO BRAIN (usa questi documenti per generare i materiali) ===
+${brain}
+
+=== REPORT INTELLIGENCE SU: ${prospect} ===
+${report}
+
+Genera ora i materiali sales. Restituisci SOLO il JSON, nessun testo aggiuntivo.`;
 }
 
 // ─── Main handler ─────────────────────────────────────────────────────────────
@@ -332,14 +389,15 @@ export default async function handler(req, res) {
     // 2. Research agent
     const report = await runResearch(prospect, note);
 
-    // 3. Build generation system with GTM context
-    const genSystem = buildGenerationSystem(brain, layer, motion);
+    // 3. Build generation system (focused — brain goes in user message)
+    const genSystem = buildGenerationSystem(layer, motion);
+    const userMsg = buildUserMessage(brain, prospect, report);
 
-    // 4. Generate materials
+    // 4. Generate materials — max_tokens alto per garantire JSON completo
     const genData = await callClaude({
       system: genSystem,
-      messages: [{ role: 'user', content: `Genera i materiali sales per questo prospect.\n\n${report}` }],
-      max_tokens: 6000,
+      messages: [{ role: 'user', content: userMsg }],
+      max_tokens: 10000,
     });
 
     // 5. Parse JSON

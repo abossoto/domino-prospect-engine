@@ -12,20 +12,37 @@ function loadBrain() {
   }).join('\n\n---\n\n');
 }
 
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 async function callClaude({ system, messages, tools, max_tokens = 8000 }) {
   const body = { model: 'claude-sonnet-4-20250514', max_tokens, system, messages };
   if (tools?.length) body.tools = tools;
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': process.env.ANTHROPIC_API_KEY,
-      'anthropic-version': '2023-06-01',
-    },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) throw new Error(`Claude API ${res.status}: ${await res.text()}`);
-  return res.json();
+  const MAX_RETRIES = 5;
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify(body),
+    });
+    if (res.status === 529 || res.status === 429) {
+      if (attempt >= MAX_RETRIES) throw new Error('OVERLOADED:Claude è sovraccarico. Riprova tra qualche minuto.');
+      const retryAfter = parseInt(res.headers.get('retry-after') || '0', 10);
+      const backoff = retryAfter > 0 ? retryAfter * 1000 : Math.min(1000 * Math.pow(2, attempt), 32000);
+      await sleep(backoff);
+      continue;
+    }
+    if (res.status >= 500 && res.status !== 529) {
+      if (attempt >= 2) throw new Error(`Errore server (${res.status}). Riprova.`);
+      await sleep(2000 * (attempt + 1));
+      continue;
+    }
+    if (!res.ok) { const e = await res.json().catch(() => ({})); throw new Error(e?.error?.message || `Claude API ${res.status}`); }
+    return res.json();
+  }
 }
 
 function extractText(data) {

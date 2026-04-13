@@ -253,6 +253,11 @@ function TabBtn({ id, label, active, onClick }) {
 
 // ─── Tab components ───────────────────────────────────────────────────────────
 function IntelTab({ result }) {
+  if (!result?.prospect) return (
+    <div style={{ color: '#E8272A', fontSize: 13, padding: '20px 0' }}>
+      ⚠️ Dati del prospect non disponibili. Controlla il tab Fonti per vedere la risposta grezza.
+    </div>
+  );
   const p = result.prospect;
   const metrics = [
     { label: 'Settore', value: p.settore },
@@ -372,6 +377,7 @@ function IntelTab({ result }) {
 }
 
 function MailTab({ mail }) {
+  if (!mail?.oggetto) return <div style={{ color: '#666', fontSize: 13, padding: '20px 0' }}>⚠️ Mail non generata. Controlla il tab Fonti.</div>;
   return (
     <div>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
@@ -391,6 +397,7 @@ function MailTab({ mail }) {
 }
 
 function DeckTab({ deck, onExport }) {
+  if (!deck?.slide_1_titolo) return <div style={{ color: '#666', fontSize: 13, padding: '20px 0' }}>⚠️ Deck non generato. Controlla il tab Fonti.</div>;
   const slides = [
     { key: 'slide_1', bg: '#0a0a0a', titleColor: C.white },
     { key: 'slide_2', bg: C.white, titleColor: '#111111', bar: true },
@@ -425,6 +432,7 @@ function DeckTab({ deck, onExport }) {
 }
 
 function WorkflowTab({ workflow }) {
+  if (!workflow?.length) return <div style={{ color: '#666', fontSize: 13, padding: '20px 0' }}>⚠️ Workflow non generato. Controlla il tab Fonti.</div>;
   return (
     <div>
       <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 14 }}>Sequenza multicanale · 14 giorni</div>
@@ -445,6 +453,7 @@ function WorkflowTab({ workflow }) {
 }
 
 function LinkedInTab({ linkedin }) {
+  if (!linkedin?.messaggio) return <div style={{ color: '#666', fontSize: 13, padding: '20px 0' }}>⚠️ Messaggio LinkedIn non generato. Controlla il tab Fonti.</div>;
   const len = (linkedin.messaggio || '').length;
   return (
     <div>
@@ -460,12 +469,21 @@ function LinkedInTab({ linkedin }) {
   );
 }
 
-function FontiTab({ fonti }) {
+function FontiTab({ fonti, result }) {
+  const [showJson, setShowJson] = React.useState(false);
   return (
     <div>
-      <div style={{ fontSize: 11, color: C.muted, marginBottom: 10 }}>Report grezzo della research — verificabile, usabile per approfondimenti manuali</div>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+        <span style={{ fontSize: 11, color: C.muted }}>Report grezzo della research — verificabile, usabile per approfondimenti manuali</span>
+        <button onClick={() => setShowJson(s => !s)}
+          style={{ background: 'none', border: `1px solid ${C.border}`, borderRadius: 6, padding: '3px 10px', fontSize: 11, color: C.muted, cursor: 'pointer', fontFamily: FONT }}>
+          {showJson ? 'Mostra ricerca' : 'Debug JSON'}
+        </button>
+      </div>
       <div style={{ background: C.elevated, border: `1px solid ${C.border}`, borderRadius: 8, padding: '14px 16px', maxHeight: 520, overflowY: 'auto' }}>
-        <pre style={{ whiteSpace: 'pre-wrap', fontSize: 12, lineHeight: 1.6, color: C.muted, fontFamily: 'monospace', margin: 0 }}>{fonti}</pre>
+        <pre style={{ whiteSpace: 'pre-wrap', fontSize: 12, lineHeight: 1.6, color: C.muted, fontFamily: 'monospace', margin: 0 }}>
+          {showJson ? JSON.stringify(result, null, 2) : (fonti || '⚠️ Nessun report di ricerca disponibile')}
+        </pre>
       </div>
     </div>
   );
@@ -865,8 +883,8 @@ export default function App() {
               <div style={cardStyle}>
                 {/* Result header */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16, flexWrap: 'wrap' }}>
-                  <span style={{ fontSize: 18, fontWeight: 800, color: C.text }}>{result.prospect.nome}</span>
-                  <span style={{ background: 'rgba(232,39,42,0.1)', border: `1px solid rgba(232,39,42,0.3)`, color: C.red, borderRadius: 20, padding: '2px 10px', fontSize: 12 }}>{result.prospect.settore}</span>
+                  <span style={{ fontSize: 18, fontWeight: 800, color: C.text }}>{result.prospect?.nome || '—'}</span>
+                  <span style={{ background: 'rgba(232,39,42,0.1)', border: `1px solid rgba(232,39,42,0.3)`, color: C.red, borderRadius: 20, padding: '2px 10px', fontSize: 12 }}>{result.prospect?.settore || '—'}</span>
                   {/* GTM badge */}
                   {(() => {
                     const l = GTM_LAYERS.find(x => x.id === gtmLayer);
@@ -893,7 +911,7 @@ export default function App() {
                 {tab === 'deck'     && <DeckTab deck={result.deck} onExport={() => exportPPT(result)} />}
                 {tab === 'workflow' && <WorkflowTab workflow={result.workflow} />}
                 {tab === 'linkedin' && <LinkedInTab linkedin={result.linkedin} />}
-                {tab === 'fonti'    && <FontiTab fonti={result.fonti_ricerca} />}
+                {tab === 'fonti'    && <FontiTab fonti={result.fonti_ricerca} result={result} />}
               </div>
             )}
           </>
