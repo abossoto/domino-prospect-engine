@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import pptxgen from 'pptxgenjs';
+import { LOGO_DATA_URI } from './logoBase64.js';
 
 // ─── Design System ────────────────────────────────────────────────────────────
 const C = {
@@ -24,14 +25,12 @@ const DS_COLORS = {
 };
 const CANAL_COLORS = { LinkedIn: '#0077B5', Email: C.red, Telefono: '#22c55e' };
 
+// GTM Domino — 3 livelli (spec v4)
 const GTM_LAYERS = [
-  { id: 'vision',    label: 'L1 — Experience Vision', interlocutor: 'CEO / C-Suite',            need: '"Inspirami"',                color: '#7C3AED', bg: 'rgba(124,58,237,0.1)' },
-  { id: 'settori',   label: 'L2 — Settori',           interlocutor: 'Director / VP Marketing',  need: '"Connettiti col mio mondo"', color: '#059669', bg: 'rgba(5,150,105,0.1)' },
-  { id: 'usecases',  label: 'L3 — Use Cases',         interlocutor: 'Director / Head of',       need: '"Rendilo tangibile"',        color: '#2563EB', bg: 'rgba(37,99,235,0.1)' },
-  { id: 'tech',      label: 'L4 — Tech Categories',   interlocutor: 'Manager / Specialista',    need: '"Trovami dove cerco"',       color: '#D97706', bg: 'rgba(217,119,6,0.1)' },
-  { id: 'salesplay', label: 'L5 — Sales Play',        interlocutor: 'Manager / Procurement',    need: '"Sei nell\'RFP?"',           color: '#DB2777', bg: 'rgba(219,39,119,0.1)' },
+  { id: 'clevel',  label: 'C-Level',          interlocutor: 'CEO / CIO / DG',              need: '"Inspirami"',                   frame: 'Il digitale come leva strategica',      color: '#7C3AED', bg: 'rgba(124,58,237,0.1)' },
+  { id: 'headof',  label: 'Head of',           interlocutor: 'Director / VP / Resp. area',  need: '"Aiutami a fare la scelta giusta"', frame: 'Rischio zero — munizioni per il CEO', color: '#2563EB', bg: 'rgba(37,99,235,0.1)' },
+  { id: 'manager', label: 'Manager / Operativo', interlocutor: 'Resp. progetto / Specialista', need: '"I feel your pain"',             frame: 'Lavorerai meno e meglio',               color: '#059669', bg: 'rgba(5,150,105,0.1)' },
 ];
-
 const GTM_MOTIONS = [
   { id: 'bottomup', label: '⬆ Bottom-up', desc: 'Contatto freddo o inbound — sali se sei rilevante', sub: 'Pipeline rapida' },
   { id: 'topdown',  label: '⬇ Top-down',  desc: 'Referenza CEO / evento — scendi al team con credibilità', sub: 'Deal più grandi' },
@@ -56,41 +55,27 @@ async function syncHubSpot(token, result) {
     body: JSON.stringify({ filterGroups: [{ filters: [{ propertyName: 'name', operator: 'EQ', value: p.nome }] }] }),
   });
   const existing = (await search.json()).results?.[0];
-  const props = {
-    name: p.nome, industry: p.settore || '',
-    description: `Domino PE — ${new Date().toLocaleDateString('it-IT')}\nHook: ${p.hook || ''}\nDecisore: ${p.decisore_target || ''}\nMaturità: ${p.maturita_digitale || ''}`,
-    hs_lead_status: 'IN_PROGRESS',
-  };
+  const props = { name: p.nome, industry: p.settore || '', description: `Domino PE — ${new Date().toLocaleDateString('it-IT')}\nHook: ${p.hook || ''}\nDecisore: ${p.decisore_target || ''}`, hs_lead_status: 'IN_PROGRESS' };
   let companyId;
   if (existing) {
-    await fetch(`https://api.hubapi.com/crm/v3/objects/companies/${existing.id}`, {
-      method: 'PATCH', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-      body: JSON.stringify({ properties: props }),
-    });
+    await fetch(`https://api.hubapi.com/crm/v3/objects/companies/${existing.id}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify({ properties: props }) });
     companyId = existing.id;
   } else {
-    const cr = await fetch('https://api.hubapi.com/crm/v3/objects/companies', {
-      method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-      body: JSON.stringify({ properties: props }),
-    });
+    const cr = await fetch('https://api.hubapi.com/crm/v3/objects/companies', { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify({ properties: props }) });
     companyId = (await cr.json()).id;
   }
   const noteLines = [
-    `📊 ANALISI DOMINO PROSPECT ENGINE — ${new Date().toLocaleDateString('it-IT')}`,
+    `📊 DOMINO PROSPECT ENGINE — ${new Date().toLocaleDateString('it-IT')}`,
     `Settore: ${p.settore} | Dimensione: ${p.dimensione} | Fatturato: ${p.fatturato_stimato || 'N/D'}`,
-    `Decisore: ${p.decisore_target} | Maturità digitale: ${p.maturita_digitale}`,
+    `Decisore: ${p.decisore_target} | Maturità: ${p.maturita_digitale}`,
     `\nHOOK: ${p.hook}`,
     `\nSFIDE:\n${(p.sfide_probabili || []).map(s => `• ${s}`).join('\n')}`,
-    `\nSEGNALI:\n${(p.segnali_recenti || []).map(s => `• ${s}`).join('\n')}`,
-    `\nCASI STUDIO:\n${(p.casi_studio || []).map((c, i) => `${i + 1}. ${c.cliente} — ${c.kpi}`).join('\n')}`,
+    `\nCASI STUDIO:\n${(p.casi_studio || []).map((c,i) => `${i+1}. ${c.cliente} — ${c.kpi}`).join('\n')}`,
     `\nWORKFLOW:\n${(result.workflow || []).map(w => `Gg${w.giorno} [${w.canale}]: ${w.azione}`).join('\n')}`,
   ].join('\n');
   await fetch('https://api.hubapi.com/crm/v3/objects/notes', {
     method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-    body: JSON.stringify({
-      properties: { hs_note_body: noteLines, hs_timestamp: Date.now().toString() },
-      associations: [{ to: { id: companyId }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 190 }] }],
-    }),
+    body: JSON.stringify({ properties: { hs_note_body: noteLines, hs_timestamp: Date.now().toString() }, associations: [{ to: { id: companyId }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 190 }] }] }),
   });
   return { isNew: !existing };
 }
@@ -99,147 +84,102 @@ async function syncHubSpot(token, result) {
 function exportPPT(result) {
   const prs = new pptxgen();
   prs.layout = 'LAYOUT_WIDE';
-  const p = result.prospect;
-  const d = result.deck;
+  const p = result.prospect, d = result.deck;
+  const num = (slide, n) => slide.addText(String(n), { x:12.0, y:0.15, w:0.8, h:0.3, fontSize:9, bold:true, color:'E8272A', fontFace:'Helvetica', align:'right' });
+  const logo = (slide, white=false) => slide.addText('domino', { x:0.4, y:0.18, w:1.2, h:0.3, fontSize:11, bold:true, color: white ? 'FFFFFF' : 'E8272A', fontFace:'Helvetica', charSpacing:2 });
 
-  const addSlideNumber = (slide, n) =>
-    slide.addText(String(n), { x: 12.0, y: 0.15, w: 0.8, h: 0.3, fontSize: 9, bold: true, color: 'E8272A', fontFace: 'Helvetica', align: 'right' });
+  const s1 = prs.addSlide(); s1.background = { color:'111111' }; logo(s1); num(s1,1);
+  s1.addText(p.nome, { x:0.4,y:0.6,w:12,h:0.4, fontSize:11,color:'666666',fontFace:'Helvetica' });
+  s1.addText(d.slide_1_titolo, { x:0.4,y:1.4,w:11.5,h:2.2, fontSize:34,bold:true,color:'FFFFFF',fontFace:'Helvetica',charSpacing:-1 });
+  s1.addText(d.slide_1_contenuto, { x:0.4,y:3.8,w:10,h:2.2, fontSize:15,color:'AAAAAA',fontFace:'Helvetica',breakLine:true });
+  s1.addText(`${new Date().toLocaleDateString('it-IT')} · domino.it`, { x:0.4,y:6.8,w:8,h:0.3, fontSize:9,color:'444444',fontFace:'Helvetica' });
 
-  const addLogo = (slide) =>
-    slide.addText('domino', { x: 0.4, y: 0.18, w: 1.2, h: 0.3, fontSize: 11, bold: true, color: 'E8272A', fontFace: 'Helvetica', charSpacing: 2 });
+  const s2 = prs.addSlide(); s2.background = { color:'FFFFFF' }; logo(s2); num(s2,2);
+  s2.addShape(prs.ShapeType.rect, { x:0.4,y:0.65,w:0.05,h:0.7, fill:{color:'E8272A'} });
+  s2.addText(d.slide_2_titolo, { x:0.6,y:0.6,w:11.5,h:0.9, fontSize:26,bold:true,color:'111111',fontFace:'Helvetica',charSpacing:-0.5 });
+  s2.addText(d.slide_2_contenuto, { x:0.4,y:1.8,w:12,h:4.5, fontSize:15,color:'444444',fontFace:'Helvetica',breakLine:true,lineSpacingMultiple:1.4 });
 
-  // Slide 1 — Cover dark
-  const s1 = prs.addSlide();
-  s1.background = { color: '111111' };
-  addLogo(s1); addSlideNumber(s1, 1);
-  s1.addText(p.nome, { x: 0.4, y: 0.6, w: 12, h: 0.4, fontSize: 11, color: '666666', fontFace: 'Helvetica' });
-  s1.addText(d.slide_1_titolo, { x: 0.4, y: 1.4, w: 11.5, h: 2.2, fontSize: 34, bold: true, color: 'FFFFFF', fontFace: 'Helvetica', charSpacing: -1 });
-  s1.addText(d.slide_1_contenuto, { x: 0.4, y: 3.8, w: 10, h: 2.2, fontSize: 15, color: 'AAAAAA', fontFace: 'Helvetica', breakLine: true });
-  s1.addText(`${new Date().toLocaleDateString('it-IT')} · domino.it`, { x: 0.4, y: 6.8, w: 8, h: 0.3, fontSize: 9, color: '444444', fontFace: 'Helvetica' });
-
-  // Slide 2 — Problema
-  const s2 = prs.addSlide();
-  s2.background = { color: 'FFFFFF' };
-  addLogo(s2); addSlideNumber(s2, 2);
-  s2.addShape(prs.ShapeType.rect, { x: 0.4, y: 0.65, w: 0.05, h: 0.7, fill: { color: 'E8272A' } });
-  s2.addText(d.slide_2_titolo, { x: 0.6, y: 0.6, w: 11.5, h: 0.9, fontSize: 26, bold: true, color: '111111', fontFace: 'Helvetica', charSpacing: -0.5 });
-  s2.addText(d.slide_2_contenuto, { x: 0.4, y: 1.8, w: 12, h: 4.5, fontSize: 15, color: '444444', fontFace: 'Helvetica', breakLine: true, lineSpacingMultiple: 1.4 });
-
-  // Slide 3 — Soluzione + strumenti
-  const s3 = prs.addSlide();
-  s3.background = { color: 'FFFFFF' };
-  addLogo(s3); addSlideNumber(s3, 3);
-  s3.addShape(prs.ShapeType.rect, { x: 0.4, y: 0.65, w: 0.05, h: 0.7, fill: { color: 'E8272A' } });
-  s3.addText(d.slide_3_titolo, { x: 0.6, y: 0.6, w: 11.5, h: 0.9, fontSize: 26, bold: true, color: '111111', fontFace: 'Helvetica', charSpacing: -0.5 });
-  s3.addText(d.slide_3_contenuto, { x: 0.4, y: 1.8, w: 12, h: 3.5, fontSize: 15, color: '444444', fontFace: 'Helvetica', breakLine: true, lineSpacingMultiple: 1.4 });
+  const s3 = prs.addSlide(); s3.background = { color:'FFFFFF' }; logo(s3); num(s3,3);
+  s3.addShape(prs.ShapeType.rect, { x:0.4,y:0.65,w:0.05,h:0.7, fill:{color:'E8272A'} });
+  s3.addText(d.slide_3_titolo, { x:0.6,y:0.6,w:11.5,h:0.9, fontSize:26,bold:true,color:'111111',fontFace:'Helvetica',charSpacing:-0.5 });
+  s3.addText(d.slide_3_contenuto, { x:0.4,y:1.8,w:12,h:3.5, fontSize:15,color:'444444',fontFace:'Helvetica',breakLine:true,lineSpacingMultiple:1.4 });
   const ss = p.strumenti_suggeriti || {};
   const tools = [ss.core_sprint && 'Core Sprint', ss.design_sprint_tipo && `${ss.design_sprint_tipo} Design Sprint!`, ss.preventivo_emozionale && 'Preventivo Emozionale'].filter(Boolean);
   if (tools.length) {
-    s3.addShape(prs.ShapeType.rect, { x: 0.4, y: 5.4, w: 12, h: 0.06, fill: { color: 'E5E7EB' } });
-    s3.addText('Strumenti: ' + tools.join('  ·  '), { x: 0.4, y: 5.6, w: 12, h: 0.4, fontSize: 11, bold: true, color: 'E8272A', fontFace: 'Helvetica' });
+    s3.addShape(prs.ShapeType.rect, { x:0.4,y:5.4,w:12,h:0.06, fill:{color:'E5E7EB'} });
+    s3.addText('Strumenti: ' + tools.join('  ·  '), { x:0.4,y:5.6,w:12,h:0.4, fontSize:11,bold:true,color:'E8272A',fontFace:'Helvetica' });
   }
 
-  // Slide 4 — Case studies (split)
-  const s4 = prs.addSlide();
-  s4.background = { color: 'FFFFFF' };
-  s4.addShape(prs.ShapeType.rect, { x: 0, y: 0, w: 6.2, h: 7.5, fill: { color: '111111' } });
-  addSlideNumber(s4, 4);
-  s4.addText('domino', { x: 0.4, y: 0.18, w: 1.5, h: 0.3, fontSize: 11, bold: true, color: 'E8272A', fontFace: 'Helvetica' });
-  s4.addText(d.slide_4_titolo, { x: 6.4, y: 0.4, w: 6.6, h: 0.7, fontSize: 20, bold: true, color: 'E8272A', fontFace: 'Helvetica' });
-  (p.casi_studio || []).forEach((cs, i) => {
-    const yBase = 0.9 + i * 2.0;
-    s4.addShape(prs.ShapeType.rect, { x: 0.4, y: yBase, w: 0.04, h: 1.4, fill: { color: i === 0 ? 'E8272A' : i === 1 ? '3B82F6' : '888888' } });
-    s4.addText(cs.cliente, { x: 0.6, y: yBase, w: 5.4, h: 0.4, fontSize: 13, bold: true, color: 'FFFFFF', fontFace: 'Helvetica' });
-    s4.addText(cs.progetto, { x: 0.6, y: yBase + 0.38, w: 5.4, h: 0.35, fontSize: 11, color: 'AAAAAA', fontFace: 'Helvetica' });
-    if (cs.kpi) s4.addText('📊 ' + cs.kpi, { x: 0.6, y: yBase + 0.72, w: 5.4, h: 0.3, fontSize: 10, color: '4ADE80', fontFace: 'Helvetica' });
-    if (cs.perche_affine) s4.addText('→ ' + cs.perche_affine, { x: 0.6, y: yBase + 1.0, w: 5.4, h: 0.35, fontSize: 9, color: '888888', fontFace: 'Helvetica' });
+  const s4 = prs.addSlide(); s4.background = { color:'FFFFFF' };
+  s4.addShape(prs.ShapeType.rect, { x:0,y:0,w:6.2,h:7.5, fill:{color:'111111'} }); num(s4,4);
+  s4.addText('domino', { x:0.4,y:0.18,w:1.5,h:0.3, fontSize:11,bold:true,color:'E8272A',fontFace:'Helvetica' });
+  s4.addText(d.slide_4_titolo, { x:6.4,y:0.4,w:6.6,h:0.7, fontSize:20,bold:true,color:'E8272A',fontFace:'Helvetica' });
+  (p.casi_studio||[]).forEach((cs,i) => {
+    const y = 0.9 + i*2.0;
+    s4.addShape(prs.ShapeType.rect, { x:0.4,y,w:0.04,h:1.4, fill:{color: i===0?'E8272A':i===1?'3B82F6':'888888'} });
+    s4.addText(cs.cliente, { x:0.6,y,w:5.4,h:0.4, fontSize:13,bold:true,color:'FFFFFF',fontFace:'Helvetica' });
+    s4.addText(cs.progetto, { x:0.6,y:y+0.38,w:5.4,h:0.35, fontSize:11,color:'AAAAAA',fontFace:'Helvetica' });
+    if (cs.kpi) s4.addText('📊 '+cs.kpi, { x:0.6,y:y+0.72,w:5.4,h:0.3, fontSize:10,color:'4ADE80',fontFace:'Helvetica' });
+    if (cs.perche_affine) s4.addText('→ '+cs.perche_affine, { x:0.6,y:y+1.0,w:5.4,h:0.35, fontSize:9,color:'888888',fontFace:'Helvetica' });
   });
-  s4.addText(d.slide_4_contenuto, { x: 6.4, y: 1.2, w: 6.4, h: 5.5, fontSize: 13, color: '444444', fontFace: 'Helvetica', breakLine: true, lineSpacingMultiple: 1.5 });
+  s4.addText(d.slide_4_contenuto, { x:6.4,y:1.2,w:6.4,h:5.5, fontSize:13,color:'444444',fontFace:'Helvetica',breakLine:true,lineSpacingMultiple:1.5 });
 
-  // Slide 5 — Next step red
-  const s5 = prs.addSlide();
-  s5.background = { color: 'E8272A' };
-  addSlideNumber(s5, 5);
-  s5.addText('domino', { x: 0.4, y: 0.18, w: 1.2, h: 0.3, fontSize: 11, bold: true, color: 'FFFFFF', fontFace: 'Helvetica', charSpacing: 2 });
-  s5.addText(d.slide_5_titolo, { x: 0.4, y: 1.6, w: 12.2, h: 1.8, fontSize: 36, bold: true, color: 'FFFFFF', fontFace: 'Helvetica', charSpacing: -1 });
-  s5.addText(d.slide_5_contenuto, { x: 0.4, y: 3.6, w: 10, h: 2.5, fontSize: 16, color: 'FFCCCC', fontFace: 'Helvetica', breakLine: true, lineSpacingMultiple: 1.5 });
-  s5.addText('domino.it  ·  +39 011 544770  ·  Torino & Venezia', { x: 0.4, y: 6.8, w: 10, h: 0.3, fontSize: 10, color: 'FFAAAA', fontFace: 'Helvetica' });
+  const s5 = prs.addSlide(); s5.background = { color:'E8272A' }; logo(s5,true); num(s5,5);
+  s5.addText(d.slide_5_titolo, { x:0.4,y:1.6,w:12.2,h:1.8, fontSize:36,bold:true,color:'FFFFFF',fontFace:'Helvetica',charSpacing:-1 });
+  s5.addText(d.slide_5_contenuto, { x:0.4,y:3.6,w:10,h:2.5, fontSize:16,color:'FFCCCC',fontFace:'Helvetica',breakLine:true,lineSpacingMultiple:1.5 });
+  s5.addText('domino.it  ·  +39 011 544770  ·  Torino & Venezia', { x:0.4,y:6.8,w:10,h:0.3, fontSize:10,color:'FFAAAA',fontFace:'Helvetica' });
 
-  prs.writeFile({ fileName: `domino-prospect-${(p.nome || 'export').replace(/\s+/g, '-').toLowerCase()}.pptx` });
+  prs.writeFile({ fileName: `domino-prospect-${(p.nome||'export').replace(/\s+/g,'-').toLowerCase()}.pptx` });
 }
 
 // ─── UI Primitives ────────────────────────────────────────────────────────────
-const st = {
-  label: { fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.muted, marginBottom: '4px' },
-  val:   { fontSize: '13px', fontWeight: 600, color: C.text },
-};
-function Label({ children }) { return <div style={st.label}>{children}</div>; }
-function Val({ children }) { return <div style={st.val}>{children}</div>; }
-
-function Card({ children, style }) {
-  return <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: '12px', padding: '20px', ...style }}>{children}</div>;
-}
-function Btn({ children, onClick, disabled, variant = 'primary', style }) {
-  const base = { padding: '9px 20px', borderRadius: '7px', cursor: disabled ? 'not-allowed' : 'pointer', fontSize: '13px', fontWeight: 700, fontFamily: FONT, border: 'none', transition: 'opacity 0.15s', ...style };
-  const vs = {
-    primary: { background: disabled ? C.elevated : C.red, color: disabled ? C.muted : C.white },
-    ghost:   { background: 'transparent', border: `1px solid ${C.border}`, color: C.muted },
-    hs:      { background: 'rgba(255,122,89,0.1)', border: '1px solid rgba(255,122,89,0.3)', color: '#ff7a59' },
-  };
-  return <button onClick={onClick} disabled={disabled} style={{ ...base, ...vs[variant] }}>{children}</button>;
+function Label({ children }) { return <div style={{ fontSize:'10px',fontWeight:700,letterSpacing:'0.1em',textTransform:'uppercase',color:C.muted,marginBottom:'4px' }}>{children}</div>; }
+function Val({ children }) { return <div style={{ fontSize:'13px',fontWeight:600,color:C.text }}>{children}</div>; }
+function Card({ children, style }) { return <div style={{ background:C.card,border:`1px solid ${C.border}`,borderRadius:'12px',padding:'20px',...style }}>{children}</div>; }
+function Btn({ children, onClick, disabled, variant='primary', style }) {
+  const base = { padding:'9px 20px',borderRadius:'7px',cursor:disabled?'not-allowed':'pointer',fontSize:'13px',fontWeight:700,fontFamily:FONT,border:'none',transition:'opacity 0.15s',...style };
+  const vs = { primary:{ background:disabled?C.elevated:C.red,color:disabled?C.muted:C.white }, ghost:{ background:'transparent',border:`1px solid ${C.border}`,color:C.muted }, hs:{ background:'rgba(255,122,89,0.1)',border:'1px solid rgba(255,122,89,0.3)',color:'#ff7a59' } };
+  return <button onClick={onClick} disabled={disabled} style={{...base,...vs[variant]}}>{children}</button>;
 }
 function Tab({ active, onClick, label }) {
-  return (
-    <button onClick={onClick} style={{ padding: '7px 14px', background: active ? C.red : 'transparent', color: active ? C.white : C.muted, border: `1px solid ${active ? C.red : C.border}`, borderRadius: '6px', cursor: 'pointer', fontSize: '12px', fontWeight: active ? 700 : 400, fontFamily: FONT, transition: 'all 0.15s' }}>
-      {label}
-    </button>
-  );
+  return <button onClick={onClick} style={{ padding:'7px 14px',background:active?C.red:'transparent',color:active?C.white:C.muted,border:`1px solid ${active?C.red:C.border}`,borderRadius:'6px',cursor:'pointer',fontSize:'12px',fontWeight:active?700:400,fontFamily:FONT,transition:'all 0.15s' }}>{label}</button>;
 }
 function Pill({ children, color }) {
-  const c = color || { bg: 'rgba(255,255,255,0.05)', bd: C.border, tx: C.muted };
-  return <span style={{ display: 'inline-block', padding: '3px 9px', borderRadius: '4px', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: c.bg, border: `1px solid ${c.bd}`, color: c.tx }}>{children}</span>;
+  const c = color || { bg:'rgba(255,255,255,0.05)',bd:C.border,tx:C.muted };
+  return <span style={{ display:'inline-block',padding:'3px 9px',borderRadius:'4px',fontSize:'10px',fontWeight:700,letterSpacing:'0.06em',textTransform:'uppercase',background:c.bg,border:`1px solid ${c.bd}`,color:c.tx }}>{children}</span>;
 }
-function CopyBtn({ text, label = 'Copia' }) {
+function CopyBtn({ text, label='Copia' }) {
   const [done, setDone] = useState(false);
-  return (
-    <button onClick={() => { navigator.clipboard.writeText(text); setDone(true); setTimeout(() => setDone(false), 1500); }}
-      style={{ background: 'transparent', border: `1px solid ${C.border}`, color: C.muted, padding: '4px 10px', borderRadius: '5px', cursor: 'pointer', fontSize: '11px', fontFamily: FONT }}>
-      {done ? '✓ Copiato' : label}
-    </button>
-  );
+  return <button onClick={() => { navigator.clipboard.writeText(text); setDone(true); setTimeout(()=>setDone(false),1500); }} style={{ background:'transparent',border:`1px solid ${C.border}`,color:C.muted,padding:'4px 10px',borderRadius:'5px',cursor:'pointer',fontSize:'11px',fontFamily:FONT }}>{done?'✓ Copiato':label}</button>;
 }
-function AccentLine() { return <div style={{ width: '4px', borderRadius: '2px', background: C.red, flexShrink: 0 }} />; }
 
 // ─── GTM Selector ─────────────────────────────────────────────────────────────
 function GtmSelector({ layer, setLayer, motion, setMotion }) {
   return (
-    <div style={{ background: C.elevated, border: `1px solid ${C.border}`, borderRadius: 10, padding: '14px 16px', marginBottom: 14 }}>
-      <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 10 }}>
-        GTM Layer — chi è il destinatario?
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 14 }}>
+    <div style={{ background:C.elevated,border:`1px solid ${C.border}`,borderRadius:10,padding:'14px 16px',marginBottom:14 }}>
+      <div style={{ fontSize:11,color:C.muted,textTransform:'uppercase',letterSpacing:'.06em',marginBottom:10 }}>A chi ti rivolgi?</div>
+      <div style={{ display:'flex',flexDirection:'column',gap:6,marginBottom:14 }}>
         {GTM_LAYERS.map(l => (
           <div key={l.id} onClick={() => setLayer(l.id)}
-            style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 12px', borderRadius: 8, border: `1px solid ${layer === l.id ? l.color : C.border}`, background: layer === l.id ? l.bg : 'transparent', cursor: 'pointer', transition: 'all .12s' }}>
-            <div style={{ width: 3, height: 28, borderRadius: 2, background: l.color, flexShrink: 0 }} />
-            <div style={{ flex: 1 }}>
-              <span style={{ fontSize: 12, fontWeight: 600, color: C.text }}>{l.label}</span>
-              <span style={{ fontSize: 11, color: C.muted, marginLeft: 8 }}>{l.interlocutor}</span>
+            style={{ display:'flex',alignItems:'center',gap:10,padding:'10px 12px',borderRadius:8,border:`1px solid ${layer===l.id?l.color:C.border}`,background:layer===l.id?l.bg:'transparent',cursor:'pointer',transition:'all .12s' }}>
+            <div style={{ width:3,height:38,borderRadius:2,background:l.color,flexShrink:0 }} />
+            <div style={{ flex:1 }}>
+              <span style={{ fontSize:13,fontWeight:700,color:C.text }}>{l.label}</span>
+              <span style={{ fontSize:11,color:C.muted,marginLeft:8 }}>{l.interlocutor}</span>
+              <div style={{ fontSize:11,color:l.color,marginTop:2 }}>{l.frame}</div>
             </div>
-            <span style={{ fontSize: 11, color: C.muted, fontStyle: 'italic' }}>{l.need}</span>
+            <span style={{ fontSize:11,color:C.muted,fontStyle:'italic',whiteSpace:'nowrap' }}>{l.need}</span>
           </div>
         ))}
       </div>
-      <div style={{ fontSize: 11, color: C.muted, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 8 }}>
-        Motion — come stai entrando?
-      </div>
-      <div style={{ display: 'flex', gap: 8 }}>
+      <div style={{ fontSize:11,color:C.muted,textTransform:'uppercase',letterSpacing:'.06em',marginBottom:8 }}>Come stai entrando?</div>
+      <div style={{ display:'flex',gap:8 }}>
         {GTM_MOTIONS.map(m => (
           <div key={m.id} onClick={() => setMotion(m.id)}
-            style={{ flex: 1, padding: '10px 12px', borderRadius: 8, border: `1px solid ${motion === m.id ? C.text : C.border}`, background: motion === m.id ? 'rgba(255,255,255,0.05)' : 'transparent', cursor: 'pointer', transition: 'all .12s' }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: C.text, marginBottom: 2 }}>{m.label}</div>
-            <div style={{ fontSize: 11, color: C.muted }}>{m.desc}</div>
-            <div style={{ fontSize: 10, color: C.muted, marginTop: 2, opacity: .7 }}>{m.sub}</div>
+            style={{ flex:1,padding:'10px 12px',borderRadius:8,border:`1px solid ${motion===m.id?C.text:C.border}`,background:motion===m.id?'rgba(255,255,255,0.05)':'transparent',cursor:'pointer',transition:'all .12s' }}>
+            <div style={{ fontSize:13,fontWeight:700,color:C.text,marginBottom:2 }}>{m.label}</div>
+            <div style={{ fontSize:11,color:C.muted }}>{m.desc}</div>
+            <div style={{ fontSize:10,color:C.muted,marginTop:2,opacity:.7 }}>{m.sub}</div>
           </div>
         ))}
       </div>
@@ -250,66 +190,47 @@ function GtmSelector({ layer, setLayer, motion, setMotion }) {
 // ─── Tab Panels ───────────────────────────────────────────────────────────────
 function IntelTab({ p }) {
   const ss = p.strumenti_suggeriti || {};
-  const dsType = ss.design_sprint_tipo;
-  const dsCol = dsType && DS_COLORS[dsType] ? DS_COLORS[dsType] : null;
-
+  const dsCol = ss.design_sprint_tipo && DS_COLORS[ss.design_sprint_tipo];
   return (
     <div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '8px', marginBottom: '18px' }}>
-        {[['Settore', p.settore], ['Dimensione', p.dimensione], ['Fatturato', p.fatturato_stimato || '⚠️ N/D'], ['Mercati', p.mercati], ['Decisore target', p.decisore_target], ['Maturità digitale', p.maturita_digitale]].map(([l, v]) => (
-          <div key={l} style={{ background: '#0d0d0d', borderRadius: '8px', padding: '10px 12px' }}>
+      <div style={{ display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'8px',marginBottom:'18px' }}>
+        {[['Settore',p.settore],['Dimensione',p.dimensione],['Fatturato',p.fatturato_stimato||'⚠️ N/D'],['Mercati',p.mercati],['Decisore target',p.decisore_target],['Maturità digitale',p.maturita_digitale]].map(([l,v]) => (
+          <div key={l} style={{ background:'#0d0d0d',borderRadius:'8px',padding:'10px 12px' }}>
             <Label>{l}</Label><Val>{v}</Val>
           </div>
         ))}
       </div>
 
-      <div style={{ background: 'rgba(232,39,42,0.07)', border: '1px solid rgba(232,39,42,0.2)', borderRadius: '8px', padding: '12px 14px', marginBottom: '18px' }}>
+      <div style={{ background:'rgba(232,39,42,0.07)',border:'1px solid rgba(232,39,42,0.2)',borderRadius:'8px',padding:'12px 14px',marginBottom:'18px' }}>
         <Label>Hook — osservazione chiave</Label>
-        <div style={{ fontSize: '14px', color: '#ff9999', lineHeight: 1.55, marginTop: '4px' }}>🎯 {p.hook}</div>
+        <div style={{ fontSize:'14px',color:'#ff9999',lineHeight:1.55,marginTop:'4px' }}>🎯 {p.hook}</div>
       </div>
 
-      <div style={{ marginBottom: '18px' }}>
+      <div style={{ marginBottom:'18px' }}>
         <Label>Strumenti suggeriti</Label>
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '8px' }}>
-          {ss.core_sprint && (
-            <div>
-              <Pill color={{ bg: 'rgba(168,85,247,0.12)', bd: 'rgba(168,85,247,0.35)', tx: '#c084fc' }}>Core Sprint</Pill>
-              {ss.core_sprint_motivazione && <div style={{ fontSize: '11px', color: C.muted, marginTop: '4px' }}>{ss.core_sprint_motivazione}</div>}
-            </div>
-          )}
-          {dsType && dsCol && (
-            <div>
-              <Pill color={dsCol}>{dsType} Design Sprint!</Pill>
-              {ss.design_sprint_motivazione && <div style={{ fontSize: '11px', color: C.muted, marginTop: '4px' }}>{ss.design_sprint_motivazione}</div>}
-            </div>
-          )}
-          {ss.preventivo_emozionale && (
-            <div>
-              <Pill color={{ bg: 'rgba(34,197,94,0.12)', bd: 'rgba(34,197,94,0.35)', tx: '#4ade80' }}>Preventivo Emozionale</Pill>
-              {ss.preventivo_emozionale_motivazione && <div style={{ fontSize: '11px', color: C.muted, marginTop: '4px' }}>{ss.preventivo_emozionale_motivazione}</div>}
-            </div>
-          )}
+        <div style={{ display:'flex',gap:'8px',flexWrap:'wrap',marginTop:'8px' }}>
+          {ss.core_sprint && <div><Pill color={{ bg:'rgba(168,85,247,0.12)',bd:'rgba(168,85,247,0.35)',tx:'#c084fc' }}>Core Sprint</Pill>{ss.core_sprint_motivazione && <div style={{ fontSize:'11px',color:C.muted,marginTop:'4px' }}>{ss.core_sprint_motivazione}</div>}</div>}
+          {ss.design_sprint_tipo && dsCol && <div><Pill color={dsCol}>{ss.design_sprint_tipo} Design Sprint!</Pill>{ss.design_sprint_motivazione && <div style={{ fontSize:'11px',color:C.muted,marginTop:'4px' }}>{ss.design_sprint_motivazione}</div>}</div>}
+          {ss.preventivo_emozionale && <div><Pill color={{ bg:'rgba(34,197,94,0.12)',bd:'rgba(34,197,94,0.35)',tx:'#4ade80' }}>Preventivo Emozionale</Pill>{ss.preventivo_emozionale_motivazione && <div style={{ fontSize:'11px',color:C.muted,marginTop:'4px' }}>{ss.preventivo_emozionale_motivazione}</div>}</div>}
         </div>
       </div>
 
-      <div style={{ marginBottom: '18px' }}>
+      <div style={{ marginBottom:'18px' }}>
         <Label>3 Casi studio selezionati</Label>
-        <div style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          {(p.casi_studio || []).map((cs, i) => {
-            const accentColor = i === 0 ? C.red : i === 1 ? '#3b82f6' : '#888';
+        <div style={{ marginTop:'8px',display:'flex',flexDirection:'column',gap:'8px' }}>
+          {(p.casi_studio||[]).map((cs,i) => {
+            const acc = [C.red,'#3b82f6','#888'][i];
             return (
-              <div key={i} style={{ display: 'flex', gap: '12px', background: '#0d0d0d', borderRadius: '8px', padding: '12px', alignItems: 'stretch' }}>
-                <div style={{ width: '4px', borderRadius: '2px', background: accentColor, flexShrink: 0 }} />
-                <div style={{ flex: 1 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
-                    <span style={{ fontSize: '12px', fontWeight: 700, color: accentColor }}>{cs.cliente}</span>
-                    <Pill color={i === 0 ? { bg: 'rgba(232,39,42,0.08)', bd: 'rgba(232,39,42,0.25)', tx: '#ff9999' } : i === 1 ? { bg: 'rgba(59,130,246,0.08)', bd: 'rgba(59,130,246,0.25)', tx: '#93c5fd' } : { bg: 'rgba(255,255,255,0.05)', bd: C.border, tx: C.muted }}>
-                      {['Più affine', 'Stesso settore', 'Metodologia'][i]}
-                    </Pill>
+              <div key={i} style={{ display:'flex',gap:'12px',background:'#0d0d0d',borderRadius:'8px',padding:'12px' }}>
+                <div style={{ width:'4px',borderRadius:'2px',background:acc,flexShrink:0 }} />
+                <div style={{ flex:1 }}>
+                  <div style={{ display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'3px' }}>
+                    <span style={{ fontSize:'12px',fontWeight:700,color:acc }}>{cs.cliente}</span>
+                    <Pill color={i===0?{bg:'rgba(232,39,42,0.08)',bd:'rgba(232,39,42,0.25)',tx:'#ff9999'}:i===1?{bg:'rgba(59,130,246,0.08)',bd:'rgba(59,130,246,0.25)',tx:'#93c5fd'}:{bg:'rgba(255,255,255,0.05)',bd:C.border,tx:C.muted}}>{['Più affine','Stesso settore','Metodologia'][i]}</Pill>
                   </div>
-                  <div style={{ fontSize: '12px', color: C.text, marginBottom: '3px' }}>{cs.progetto}</div>
-                  {cs.kpi && <div style={{ fontSize: '11px', color: '#4ade80' }}>📊 {cs.kpi}</div>}
-                  {cs.perche_affine && <div style={{ fontSize: '11px', color: C.muted, marginTop: '3px', fontStyle: 'italic' }}>→ {cs.perche_affine}</div>}
+                  <div style={{ fontSize:'12px',color:C.text,marginBottom:'3px' }}>{cs.progetto}</div>
+                  {cs.kpi && <div style={{ fontSize:'11px',color:'#4ade80' }}>📊 {cs.kpi}</div>}
+                  {cs.perche_affine && <div style={{ fontSize:'11px',color:C.muted,marginTop:'3px',fontStyle:'italic' }}>→ {cs.perche_affine}</div>}
                 </div>
               </div>
             );
@@ -317,45 +238,32 @@ function IntelTab({ p }) {
         </div>
       </div>
 
-      {(p.persone_chiave || []).length > 0 && (
-        <div style={{ marginBottom: '18px' }}>
+      {(p.persone_chiave||[]).length > 0 && (
+        <div style={{ marginBottom:'18px' }}>
           <Label>Persone chiave</Label>
-          <div style={{ marginTop: '8px' }}>
-            {p.persone_chiave.map((pk, i) => (
-              <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'center', padding: '8px 0', borderBottom: `1px solid ${C.border}` }}>
-                <div style={{ width: '30px', height: '30px', background: C.elevated, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', color: C.muted, flexShrink: 0 }}>{pk.nome?.charAt(0) || '?'}</div>
-                <div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: C.text }}>{pk.nome}</div>
-                  <div style={{ fontSize: '11px', color: C.muted }}>{pk.ruolo}{pk.anzianita ? ` · ${pk.anzianita}` : ''}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {(p.segnali_recenti || []).length > 0 && (
-        <div style={{ marginBottom: '18px' }}>
-          <Label>Segnali recenti</Label>
-          <div style={{ marginTop: '8px' }}>
-            {p.segnali_recenti.map((sg, i) => (
-              <div key={i} style={{ display: 'flex', gap: '8px', padding: '7px 0', borderBottom: `1px solid ${C.border}`, fontSize: '13px', color: C.text }}>
-                <span style={{ color: C.red, flexShrink: 0 }}>→</span>{sg}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      <div>
-        <Label>Sfide probabili</Label>
-        <div style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-          {(p.sfide_probabili || []).map((s, i) => (
-            <div key={i} style={{ background: 'rgba(232,39,42,0.04)', border: `1px solid rgba(232,39,42,0.12)`, borderRadius: '7px', padding: '8px 12px', fontSize: '13px', color: C.text }}>
-              <span style={{ color: C.red, marginRight: '8px', fontWeight: 700 }}>{i + 1}.</span>{s}
+          {p.persone_chiave.map((pk,i) => (
+            <div key={i} style={{ display:'flex',gap:'10px',alignItems:'center',padding:'8px 0',borderBottom:`1px solid ${C.border}` }}>
+              <div style={{ width:'30px',height:'30px',background:C.elevated,borderRadius:'50%',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'11px',color:C.muted,flexShrink:0 }}>{pk.nome?.charAt(0)||'?'}</div>
+              <div><div style={{ fontSize:'13px',fontWeight:600,color:C.text }}>{pk.nome}</div><div style={{ fontSize:'11px',color:C.muted }}>{pk.ruolo}{pk.anzianita?` · ${pk.anzianita}`:''}</div></div>
             </div>
           ))}
         </div>
+      )}
+
+      {(p.segnali_recenti||[]).length > 0 && (
+        <div style={{ marginBottom:'18px' }}>
+          <Label>Segnali recenti</Label>
+          {p.segnali_recenti.map((sg,i) => <div key={i} style={{ display:'flex',gap:'8px',padding:'7px 0',borderBottom:`1px solid ${C.border}`,fontSize:'13px',color:C.text }}><span style={{ color:C.red,flexShrink:0 }}>→</span>{sg}</div>)}
+        </div>
+      )}
+
+      <Label>Sfide probabili</Label>
+      <div style={{ marginTop:'8px',display:'flex',flexDirection:'column',gap:'6px' }}>
+        {(p.sfide_probabili||[]).map((s,i) => (
+          <div key={i} style={{ background:'rgba(232,39,42,0.04)',border:'1px solid rgba(232,39,42,0.12)',borderRadius:'7px',padding:'8px 12px',fontSize:'13px',color:C.text }}>
+            <span style={{ color:C.red,marginRight:'8px',fontWeight:700 }}>{i+1}.</span>{s}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -365,20 +273,12 @@ function MailTab({ mail }) {
   if (!mail) return null;
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-        <span style={{ fontSize: '12px', color: C.muted }}>Mail di primo contatto · i casi studio selezionati sono nel corpo</span>
+      <div style={{ display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'14px' }}>
+        <span style={{ fontSize:'12px',color:C.muted }}>Mail di primo contatto</span>
         <CopyBtn text={`Oggetto: ${mail.oggetto}\n\n${mail.corpo}`} label="Copia tutto" />
       </div>
-      <Card style={{ marginBottom: '10px' }}>
-        <Label>Oggetto</Label>
-        <div style={{ fontSize: '15px', fontWeight: 700, color: C.text, marginTop: '4px' }}>{mail.oggetto}</div>
-      </Card>
-      <Card>
-        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
-          <CopyBtn text={mail.corpo} />
-        </div>
-        <div style={{ fontSize: '14px', color: C.text, lineHeight: 1.75, whiteSpace: 'pre-wrap' }}>{mail.corpo}</div>
-      </Card>
+      <Card style={{ marginBottom:'10px' }}><Label>Oggetto</Label><div style={{ fontSize:'15px',fontWeight:700,color:C.text,marginTop:'4px' }}>{mail.oggetto}</div></Card>
+      <Card><div style={{ display:'flex',justifyContent:'flex-end',marginBottom:'10px' }}><CopyBtn text={mail.corpo} /></div><div style={{ fontSize:'14px',color:C.text,lineHeight:1.75,whiteSpace:'pre-wrap' }}>{mail.corpo}</div></Card>
     </div>
   );
 }
@@ -386,23 +286,21 @@ function MailTab({ mail }) {
 function DeckTab({ deck }) {
   if (!deck) return null;
   const slides = [
-    { n: 1, bg: C.black,   t: deck.slide_1_titolo, c: deck.slide_1_contenuto, accent: false },
-    { n: 2, bg: C.white,   t: deck.slide_2_titolo, c: deck.slide_2_contenuto, accent: true },
-    { n: 3, bg: C.white,   t: deck.slide_3_titolo, c: deck.slide_3_contenuto, accent: true },
-    { n: 4, bg: '#f5f5f5', t: deck.slide_4_titolo, c: deck.slide_4_contenuto, accent: true, highlight: true },
-    { n: 5, bg: C.red,     t: deck.slide_5_titolo, c: deck.slide_5_contenuto, accent: false },
+    { n:1, bg:C.black,   t:deck.slide_1_titolo, c:deck.slide_1_contenuto, accent:false },
+    { n:2, bg:C.white,   t:deck.slide_2_titolo, c:deck.slide_2_contenuto, accent:true },
+    { n:3, bg:C.white,   t:deck.slide_3_titolo, c:deck.slide_3_contenuto, accent:true },
+    { n:4, bg:'#f5f5f5', t:deck.slide_4_titolo, c:deck.slide_4_contenuto, accent:true, sub:'Casi studio' },
+    { n:5, bg:C.red,     t:deck.slide_5_titolo, c:deck.slide_5_contenuto, accent:false },
   ];
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-      {slides.map(({ n, bg, t, c, accent, highlight }) => (
-        <div key={n} style={{ background: bg, border: `1px solid ${C.border}`, borderRadius: '8px', padding: '14px 16px', display: 'flex', gap: '12px', alignItems: 'stretch' }}>
-          {accent && <AccentLine />}
-          <div style={{ flex: 1 }}>
-            <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', color: n === 5 ? 'rgba(255,255,255,0.6)' : C.muted, textTransform: 'uppercase', marginBottom: '4px' }}>
-              SLIDE {n}{highlight ? ' — Casi studio' : ''}
-            </div>
-            <div style={{ fontSize: '14px', fontWeight: 800, color: n === 5 ? C.white : n <= 1 ? C.white : '#111', marginBottom: '5px' }}>{t}</div>
-            <div style={{ fontSize: '12px', color: n === 5 ? 'rgba(255,255,255,0.8)' : n <= 1 ? C.muted : '#555', lineHeight: 1.6 }}>{c}</div>
+    <div style={{ display:'flex',flexDirection:'column',gap:'8px' }}>
+      {slides.map(({ n,bg,t,c,accent,sub }) => (
+        <div key={n} style={{ background:bg,border:`1px solid ${C.border}`,borderRadius:'8px',padding:'14px 16px',display:'flex',gap:'12px' }}>
+          {accent && <div style={{ width:'4px',borderRadius:'2px',background:C.red,flexShrink:0 }} />}
+          <div style={{ flex:1 }}>
+            <div style={{ fontSize:'10px',fontWeight:700,letterSpacing:'0.1em',color:n===5?'rgba(255,255,255,0.6)':C.muted,textTransform:'uppercase',marginBottom:'4px' }}>SLIDE {n}{sub?` — ${sub}`:''}</div>
+            <div style={{ fontSize:'14px',fontWeight:800,color:n===5?C.white:n<=1?C.white:'#111',marginBottom:'5px' }}>{t}</div>
+            <div style={{ fontSize:'12px',color:n===5?'rgba(255,255,255,0.8)':n<=1?C.muted:'#555',lineHeight:1.6 }}>{c}</div>
           </div>
         </div>
       ))}
@@ -414,16 +312,16 @@ function WorkflowTab({ workflow }) {
   if (!workflow) return null;
   return (
     <div>
-      <div style={{ fontSize: '12px', color: C.muted, marginBottom: '14px' }}>Sequenza multicanale · 14 giorni</div>
-      {workflow.map((step, i) => (
-        <div key={i} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start', padding: '12px 0', borderBottom: `1px solid ${C.border}` }}>
-          <div style={{ minWidth: '44px', textAlign: 'center' }}>
-            <div style={{ fontSize: '9px', color: C.muted, textTransform: 'uppercase', letterSpacing: '0.08em' }}>GG</div>
-            <div style={{ fontSize: '22px', fontWeight: 800, color: C.text, lineHeight: 1 }}>{step.giorno}</div>
+      <div style={{ fontSize:'12px',color:C.muted,marginBottom:'14px' }}>Sequenza multicanale · 14 giorni</div>
+      {workflow.map((step,i) => (
+        <div key={i} style={{ display:'flex',gap:'14px',padding:'12px 0',borderBottom:`1px solid ${C.border}` }}>
+          <div style={{ minWidth:'44px',textAlign:'center' }}>
+            <div style={{ fontSize:'9px',color:C.muted,textTransform:'uppercase' }}>GG</div>
+            <div style={{ fontSize:'22px',fontWeight:800,color:C.text,lineHeight:1 }}>{step.giorno}</div>
           </div>
           <div>
-            <span style={{ display: 'inline-block', padding: '2px 8px', borderRadius: '3px', fontSize: '10px', fontWeight: 700, background: `${CANAL_COLORS[step.canale]}18`, color: CANAL_COLORS[step.canale], marginBottom: '5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{step.canale}</span>
-            <div style={{ fontSize: '13px', color: C.text, lineHeight: 1.55 }}>{step.azione}</div>
+            <span style={{ display:'inline-block',padding:'2px 8px',borderRadius:'3px',fontSize:'10px',fontWeight:700,background:`${CANAL_COLORS[step.canale]}18`,color:CANAL_COLORS[step.canale],marginBottom:'5px',textTransform:'uppercase' }}>{step.canale}</span>
+            <div style={{ fontSize:'13px',color:C.text,lineHeight:1.55 }}>{step.azione}</div>
           </div>
         </div>
       ))}
@@ -436,13 +334,13 @@ function LinkedInTab({ linkedin }) {
   const len = linkedin.messaggio?.length || 0;
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-        <Pill color={{ bg: 'rgba(0,119,181,0.1)', bd: 'rgba(0,119,181,0.3)', tx: '#60a5fa' }}>{linkedin.tipo}</Pill>
+      <div style={{ display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'14px' }}>
+        <Pill color={{ bg:'rgba(0,119,181,0.1)',bd:'rgba(0,119,181,0.3)',tx:'#60a5fa' }}>{linkedin.tipo}</Pill>
         <CopyBtn text={linkedin.messaggio} />
       </div>
       <Card>
-        <div style={{ fontSize: '14px', color: C.text, lineHeight: 1.75, whiteSpace: 'pre-wrap', marginBottom: '10px' }}>{linkedin.messaggio}</div>
-        <div style={{ fontSize: '11px', color: len > 300 ? '#f87171' : C.muted }}>{len} / 300 caratteri{len > 300 ? ' ⚠️ sopra limite' : ''}</div>
+        <div style={{ fontSize:'14px',color:C.text,lineHeight:1.75,whiteSpace:'pre-wrap',marginBottom:'10px' }}>{linkedin.messaggio}</div>
+        <div style={{ fontSize:'11px',color:len>300?'#f87171':C.muted }}>{len} / 300 caratteri{len>300?' ⚠️ sopra limite':''}</div>
       </Card>
     </div>
   );
@@ -451,10 +349,8 @@ function LinkedInTab({ linkedin }) {
 // ─── Modals ───────────────────────────────────────────────────────────────────
 function Modal({ onClose, children }) {
   return (
-    <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.88)', zIndex: 200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div onClick={e => e.stopPropagation()} style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: '14px', padding: '24px', maxHeight: '85vh', overflowY: 'auto' }}>
-        {children}
-      </div>
+    <div onClick={onClose} style={{ position:'fixed',inset:0,background:'rgba(0,0,0,0.88)',zIndex:200,display:'flex',alignItems:'center',justifyContent:'center' }}>
+      <div onClick={e=>e.stopPropagation()} style={{ background:C.card,border:`1px solid ${C.border}`,borderRadius:'14px',padding:'24px',maxHeight:'85vh',overflowY:'auto' }}>{children}</div>
     </div>
   );
 }
@@ -463,20 +359,18 @@ function ArchiveModal({ onClose, onLoad }) {
   const items = loadArchive();
   return (
     <Modal onClose={onClose}>
-      <div style={{ width: '560px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-          <div style={{ fontWeight: 700, fontSize: '15px', color: C.text }}>📁 Archivio analisi</div>
-          <button onClick={onClose} style={{ background: 'transparent', border: 'none', color: C.muted, cursor: 'pointer', fontSize: '20px', lineHeight: 1 }}>×</button>
+      <div style={{ width:'560px' }}>
+        <div style={{ display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'16px' }}>
+          <div style={{ fontWeight:700,fontSize:'15px',color:C.text }}>📁 Archivio analisi</div>
+          <button onClick={onClose} style={{ background:'transparent',border:'none',color:C.muted,cursor:'pointer',fontSize:'20px' }}>×</button>
         </div>
-        {items.length === 0
-          ? <div style={{ textAlign: 'center', color: C.muted, padding: '40px 0', fontSize: '14px' }}>Nessuna analisi salvata.</div>
-          : items.map((item, i) => (
-            <div key={i} onClick={() => { onLoad(item); onClose(); }}
-              style={{ padding: '12px', background: '#0d0d0d', borderRadius: '8px', marginBottom: '6px', cursor: 'pointer', border: `1px solid ${C.border}` }}
-              onMouseEnter={e => e.currentTarget.style.borderColor = C.red}
-              onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
-              <div style={{ fontWeight: 700, fontSize: '14px', color: C.text }}>{item.prospect?.nome || 'N/D'}</div>
-              <div style={{ fontSize: '11px', color: C.muted, marginTop: '2px' }}>{item.prospect?.settore} · {new Date(item._savedAt).toLocaleDateString('it-IT')}</div>
+        {items.length===0
+          ? <div style={{ textAlign:'center',color:C.muted,padding:'40px 0' }}>Nessuna analisi salvata.</div>
+          : items.map((item,i) => (
+            <div key={i} onClick={() => { onLoad(item); onClose(); }} style={{ padding:'12px',background:'#0d0d0d',borderRadius:'8px',marginBottom:'6px',cursor:'pointer',border:`1px solid ${C.border}` }}
+              onMouseEnter={e=>e.currentTarget.style.borderColor=C.red} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
+              <div style={{ fontWeight:700,fontSize:'14px',color:C.text }}>{item.prospect?.nome||'N/D'}</div>
+              <div style={{ fontSize:'11px',color:C.muted,marginTop:'2px' }}>{item.prospect?.settore} · {new Date(item._savedAt).toLocaleDateString('it-IT')}</div>
             </div>
           ))}
       </div>
@@ -485,18 +379,14 @@ function ArchiveModal({ onClose, onLoad }) {
 }
 
 function HsModal({ current, onClose, onSave }) {
-  const [val, setVal] = useState(current || '');
+  const [val, setVal] = useState(current||'');
   return (
     <Modal onClose={onClose}>
-      <div style={{ width: '440px' }}>
-        <div style={{ fontWeight: 700, fontSize: '15px', color: C.text, marginBottom: '6px' }}>Configura HubSpot</div>
-        <div style={{ fontSize: '12px', color: C.muted, marginBottom: '16px', lineHeight: 1.6 }}>
-          Private App Token con permessi su Companies e Notes.<br />
-          Crea su <span style={{ color: '#ff7a59' }}>app.hubspot.com/private-apps</span>
-        </div>
-        <input value={val} onChange={e => setVal(e.target.value)} placeholder="pat-eu1-xxxxxxxx..."
-          style={{ width: '100%', background: '#0d0d0d', border: `1px solid ${C.border}`, color: C.text, padding: '10px 12px', borderRadius: '7px', fontSize: '12px', fontFamily: 'monospace', marginBottom: '14px', outline: 'none', boxSizing: 'border-box' }} />
-        <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }}>
+      <div style={{ width:'440px' }}>
+        <div style={{ fontWeight:700,fontSize:'15px',color:C.text,marginBottom:'6px' }}>Configura HubSpot</div>
+        <div style={{ fontSize:'12px',color:C.muted,marginBottom:'16px',lineHeight:1.6 }}>Private App Token con permessi su Companies e Notes.<br/>Crea su <span style={{ color:'#ff7a59' }}>app.hubspot.com/private-apps</span></div>
+        <input value={val} onChange={e=>setVal(e.target.value)} placeholder="pat-eu1-xxxxxxxx..." style={{ width:'100%',background:'#0d0d0d',border:`1px solid ${C.border}`,color:C.text,padding:'10px 12px',borderRadius:'7px',fontSize:'12px',fontFamily:'monospace',marginBottom:'14px',outline:'none',boxSizing:'border-box' }} />
+        <div style={{ display:'flex',gap:'8px',justifyContent:'flex-end' }}>
           <Btn variant="ghost" onClick={onClose}>Annulla</Btn>
           <Btn onClick={() => { onSave(val); onClose(); }}>Salva token</Btn>
         </div>
@@ -507,220 +397,229 @@ function HsModal({ current, onClose, onSave }) {
 
 // ─── Main App ─────────────────────────────────────────────────────────────────
 const VERSION = 'v4.0.0';
-
-const QUICK_PICKS = ['Technogym', 'Humanitas', 'Alpitour', 'Amplifon', 'Pirelli', "De'Longhi", 'Fincantieri', "Tod's"];
-
-const SETTORI_OPTIONS = [
-  'Automotive', 'B2B Industriale / Manifatturiero', 'Salute & Sanità',
-  'Turismo & Cultura', 'Finance & Assicurazioni', 'Real Estate',
-  'Pubblica Amministrazione', 'Retail & eCommerce', 'Tecnologia & Software', 'Altro',
-];
-
-const LISTA_MSGS = ['Ricerca aziende nel settore...', 'Verifica siti web e presenza digitale...', 'Analisi segnali di bisogno digitale...', 'Ricerca decisori e struttura aziendale...', 'Scoring e ranking prospect...'];
-const LOADING_MSGS = ['Analisi sito web aziendale...', 'Ricerca dati finanziari (Cerved/CCIAA)...', 'Raccolta news ultimi 12 mesi...', 'Analisi profili LinkedIn...', 'Verifica job posting attivi...', 'Valutazione presenza digitale...', 'Generazione materiali sales personalizzati...'];
+const QUICK_PICKS = ['Technogym','Humanitas','Alpitour','Amplifon','Pirelli',"De'Longhi",'Fincantieri',"Tod's"];
+const SETTORI_OPTIONS = ['Automotive','B2B Industriale / Manifatturiero','Salute & Sanità','Turismo & Cultura','Finance & Assicurazioni','Real Estate','Pubblica Amministrazione','Retail & eCommerce','Tecnologia & Software','Altro'];
+const LOADING_MSGS = ['Analisi sito web aziendale...','Ricerca dati finanziari (Cerved/CCIAA)...','Raccolta news ultimi 12 mesi...','Analisi profili LinkedIn...','Verifica job posting attivi...','Valutazione presenza digitale...','Generazione materiali sales personalizzati...'];
+const LISTA_MSGS = ['Ricerca aziende nel settore...','Verifica siti web e presenza digitale...','Analisi segnali di bisogno digitale...','Ricerca decisori e struttura aziendale...','Scoring e ranking prospect...'];
 
 export default function App() {
-  const [input, setInput]       = useState('');
-  const [note, setNote]         = useState('');
-  const [gtmLayer, setGtmLayer] = useState('usecases');
-  const [gtmMotion, setGtmMotion] = useState('bottomup');
-  const [loading, setLoading]   = useState(false);
-  const [loadMsg, setLoadMsg]   = useState('');
-  const [result, setResult]     = useState(null);
-  const [tab, setTab]           = useState('intel');
-  const [showArchive, setShowArchive] = useState(false);
-  const [showHs, setShowHs]     = useState(false);
-  const [hsToken, setHsToken]   = useState(() => localStorage.getItem('domino_hs_token') || '');
-  const [hsSyncing, setHsSyncing] = useState(false);
-  const [hsMsg, setHsMsg]       = useState('');
-  const [archCount, setArchCount] = useState(() => loadArchive().length);
-
   const [mode, setMode]               = useState('analizza');
-  const [listaSettore, setListaSettore] = useState('');
-  const [listaGeo, setListaGeo]       = useState('Italia');
-  const [listaDim, setListaDim]       = useState([]);
-  const [listaKeywords, setListaKeywords] = useState('');
-  const [listaNumero, setListaNumero] = useState(10);
-  const [listaLoading, setListaLoading] = useState(false);
-  const [listaMsg, setListaMsg]       = useState('');
-  const [listaResult, setListaResult] = useState(null);
+  const [input, setInput]             = useState('');
+  const [note, setNote]               = useState('');
+  const [gtmLayer, setGtmLayer]       = useState('headof');
+  const [gtmMotion, setGtmMotion]     = useState('bottomup');
+  const [loading, setLoading]         = useState(false);
+  const [loadMsg, setLoadMsg]         = useState('');
+  const [result, setResult]           = useState(null);
+  const [tab, setTab]                 = useState('intel');
+  const [error, setError]             = useState('');
+  const [showArchive, setShowArchive] = useState(false);
+  const [showHs, setShowHs]           = useState(false);
+  const [hsToken, setHsToken]         = useState(() => localStorage.getItem('domino_hs_token')||'');
+  const [hsSyncing, setHsSyncing]     = useState(false);
+  const [hsMsg, setHsMsg]             = useState('');
+  const [archCount, setArchCount]     = useState(() => loadArchive().length);
 
-  const analyze = useCallback(async () => {
-    if (!input.trim() || loading) return;
-    setLoading(true); setResult(null); setTab('intel'); setHsMsg('');
+  const [listaSettore, setListaSettore]   = useState('');
+  const [listaGeo, setListaGeo]           = useState('Italia');
+  const [listaDim, setListaDim]           = useState([]);
+  const [listaKeywords, setListaKeywords] = useState('');
+  const [listaNumero, setListaNumero]     = useState(10);
+  const [listaLoading, setListaLoading]   = useState(false);
+  const [listaMsg, setListaMsg]           = useState('');
+  const [listaResult, setListaResult]     = useState(null);
+  const [listaError, setListaError]       = useState('');
+
+  const analyze = useCallback(async (overrideInput) => {
+    const target = overrideInput || input;
+    if (!target.trim() || loading) return;
+    setError(''); setLoading(true); setResult(null); setTab('intel'); setHsMsg('');
     let mi = 0; setLoadMsg(LOADING_MSGS[0]);
-    const iv = setInterval(() => { mi = Math.min(mi + 1, LOADING_MSGS.length - 1); setLoadMsg(LOADING_MSGS[mi]); }, 7500);
-    try {
-      const res = await fetch('/api/analyze', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prospect: input.trim(), note: note.trim(), layer: gtmLayer, motion: gtmMotion }),
-      });
-      if (!res.ok) throw new Error(`Errore ${res.status}: ${await res.text()}`);
-      const data = await res.json();
-      setResult(data); saveToArchive(data); setArchCount(loadArchive().length);
-    } catch (err) { alert(`Errore: ${err.message}`); }
-    finally { clearInterval(iv); setLoading(false); setLoadMsg(''); }
+    const iv = setInterval(() => { mi = Math.min(mi+1, LOADING_MSGS.length-1); setLoadMsg(LOADING_MSGS[mi]); }, 7500);
+
+    const MAX_RETRIES = 3;
+    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+      try {
+        if (attempt > 0) {
+          const wait = Math.min(4000 * Math.pow(2, attempt-1), 16000);
+          setLoadMsg(`Claude è sovraccarico, sto riprovando (tentativo ${attempt+1})…`);
+          await new Promise(r => setTimeout(r, wait));
+        }
+        const res = await fetch('/api/analyze', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prospect: target.trim(), note: note.trim(), layer: gtmLayer, motion: gtmMotion }),
+        });
+        const data = await res.json();
+        if (data.error?.startsWith('OVERLOADED:')) {
+          if (attempt >= MAX_RETRIES) throw new Error(data.error.replace('OVERLOADED:', ''));
+          continue;
+        }
+        if (data.error) throw new Error(data.error);
+        setResult(data); saveToArchive(data); setArchCount(loadArchive().length);
+        clearInterval(iv); setLoading(false); return;
+      } catch (e) {
+        if (attempt >= MAX_RETRIES || !e.message?.includes('sovraccarico')) {
+          setError(e.message); clearInterval(iv); setLoading(false); return;
+        }
+      }
+    }
+    clearInterval(iv); setLoading(false);
   }, [input, note, gtmLayer, gtmMotion, loading]);
 
   const generateLista = useCallback(async () => {
     if (!listaSettore || listaLoading) return;
-    setListaLoading(true); setListaResult(null);
+    setListaError(''); setListaLoading(true); setListaResult(null);
     let mi = 0; setListaMsg(LISTA_MSGS[0]);
-    const iv = setInterval(() => { mi = Math.min(mi + 1, LISTA_MSGS.length - 1); setListaMsg(LISTA_MSGS[mi]); }, 8000);
-    try {
-      const res = await fetch('/api/prospect-list', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ settore: listaSettore, geografia: listaGeo, dimensione: listaDim, keywords: listaKeywords, numero: listaNumero }),
-      });
-      if (!res.ok) throw new Error(`Errore ${res.status}: ${await res.text()}`);
-      setListaResult(await res.json());
-    } catch (err) { alert(`Errore: ${err.message}`); }
-    finally { clearInterval(iv); setListaLoading(false); setListaMsg(''); }
+    const iv = setInterval(() => { mi = Math.min(mi+1, LISTA_MSGS.length-1); setListaMsg(LISTA_MSGS[mi]); }, 8000);
+
+    const MAX_RETRIES = 3;
+    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+      try {
+        if (attempt > 0) {
+          setListaMsg(`Claude è sovraccarico, sto riprovando (tentativo ${attempt+1})…`);
+          await new Promise(r => setTimeout(r, Math.min(4000 * Math.pow(2, attempt-1), 16000)));
+        }
+        const res = await fetch('/api/prospect-list', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ settore: listaSettore, geografia: listaGeo, dimensione: listaDim, keywords: listaKeywords, numero: listaNumero }),
+        });
+        const data = await res.json();
+        if (data.error?.startsWith('OVERLOADED:')) {
+          if (attempt >= MAX_RETRIES) throw new Error(data.error.replace('OVERLOADED:', ''));
+          continue;
+        }
+        if (data.error) throw new Error(data.error);
+        setListaResult(data); clearInterval(iv); setListaLoading(false); return;
+      } catch (e) {
+        if (attempt >= MAX_RETRIES || !e.message?.includes('sovraccarico')) {
+          setListaError(e.message); clearInterval(iv); setListaLoading(false); return;
+        }
+      }
+    }
+    clearInterval(iv); setListaLoading(false);
   }, [listaSettore, listaGeo, listaDim, listaKeywords, listaNumero, listaLoading]);
 
   const doHsSync = async () => {
     if (!hsToken) { setShowHs(true); return; }
     setHsSyncing(true); setHsMsg('');
     try { const { isNew } = await syncHubSpot(hsToken, result); setHsMsg(isNew ? '✓ Azienda creata' : '✓ Azienda aggiornata'); }
-    catch (err) { setHsMsg(`⚠️ ${err.message}`); }
+    catch (e) { setHsMsg(`⚠️ ${e.message}`); }
     finally { setHsSyncing(false); }
   };
 
   const p = result?.prospect;
 
   return (
-    <div style={{ minHeight: '100vh', background: C.black, color: C.text, fontFamily: FONT }}>
+    <div style={{ minHeight:'100vh',background:C.black,color:C.text,fontFamily:FONT }}>
       {/* Header */}
-      <div style={{ background: '#080808', borderBottom: `1px solid ${C.border}`, height: '56px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px', position: 'sticky', top: 0, zIndex: 100 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          {/* Domino logo — solo la metà sinistra (mark + wordmark), B Corp visibile come credenziale */}
-          <img src="/domino-logo.png" alt="Domino" style={{ height: '36px', objectFit: 'contain', objectPosition: 'left center', width: '80px' }} />
-          <span style={{ color: C.border }}>|</span>
-          <span style={{ color: C.muted, fontSize: '12px', fontWeight: 500, letterSpacing: '0.04em' }}>Prospect Engine</span>
+      <div style={{ background:'#080808',borderBottom:`1px solid ${C.border}`,height:'56px',display:'flex',alignItems:'center',justifyContent:'space-between',padding:'0 24px',position:'sticky',top:0,zIndex:100 }}>
+        <div style={{ display:'flex',alignItems:'center',gap:'12px' }}>
+          <img src={LOGO_DATA_URI} alt="Domino" style={{ height:'38px',objectFit:'contain',objectPosition:'left center',maxWidth:'120px' }} />
+          <span style={{ color:C.border }}>|</span>
+          <span style={{ color:C.muted,fontSize:'12px',fontWeight:500,letterSpacing:'0.04em' }}>Prospect Engine</span>
         </div>
-        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-          <span style={{ fontSize: '10px', color: '#333', fontFamily: 'monospace' }}>{VERSION}</span>
-          <Btn variant="ghost" onClick={() => setShowArchive(true)} style={{ padding: '4px 12px', fontSize: '11px' }}>📁 Archivio ({archCount})</Btn>
-          <Btn variant={hsToken ? 'hs' : 'ghost'} onClick={() => setShowHs(true)} style={{ padding: '4px 12px', fontSize: '11px' }}>{hsToken ? '● HubSpot' : '○ HubSpot'}</Btn>
+        <div style={{ display:'flex',gap:'8px',alignItems:'center' }}>
+          <span style={{ fontSize:'10px',color:'#333',fontFamily:'monospace' }}>{VERSION}</span>
+          <Btn variant="ghost" onClick={() => setShowArchive(true)} style={{ padding:'4px 12px',fontSize:'11px' }}>📁 Archivio ({archCount})</Btn>
+          <Btn variant={hsToken?'hs':'ghost'} onClick={() => setShowHs(true)} style={{ padding:'4px 12px',fontSize:'11px' }}>{hsToken?'● HubSpot':'○ HubSpot'}</Btn>
         </div>
       </div>
 
-      <div style={{ maxWidth: '920px', margin: '0 auto', padding: '28px 20px' }}>
-
+      <div style={{ maxWidth:'920px',margin:'0 auto',padding:'28px 20px' }}>
         {/* Mode switcher */}
-        <div style={{ display: 'flex', gap: '6px', marginBottom: '20px' }}>
-          {[['analizza','🔍 Analizza Prospect'],['lista','📋 Genera Lista Prospect']].map(([m, label]) => (
-            <button key={m} onClick={() => setMode(m)} style={{ padding: '9px 20px', background: mode === m ? C.red : C.card, color: mode === m ? C.white : C.muted, border: `1px solid ${mode === m ? C.red : C.border}`, borderRadius: '8px', cursor: 'pointer', fontSize: '13px', fontWeight: mode === m ? 700 : 400, fontFamily: FONT, transition: 'all 0.15s' }}>
-              {label}
-            </button>
+        <div style={{ display:'flex',gap:'6px',marginBottom:'20px' }}>
+          {[['analizza','🔍 Analizza Prospect'],['lista','📋 Genera Lista Prospect']].map(([m,label]) => (
+            <button key={m} onClick={() => setMode(m)} style={{ padding:'9px 20px',background:mode===m?C.red:C.card,color:mode===m?C.white:C.muted,border:`1px solid ${mode===m?C.red:C.border}`,borderRadius:'8px',cursor:'pointer',fontSize:'13px',fontWeight:mode===m?700:400,fontFamily:FONT,transition:'all 0.15s' }}>{label}</button>
           ))}
         </div>
 
-        {/* ─── LISTA PROSPECT ──────────────────────────────────────────────── */}
-        {mode === 'lista' && (
+        {/* ─── LISTA PROSPECT ─────────────────────────────────────────────── */}
+        {mode==='lista' && (
           <>
-            <Card style={{ marginBottom: '20px' }}>
-              <h1 style={{ margin: '0 0 4px', fontSize: '20px', fontWeight: 800, letterSpacing: '-0.02em' }}>Genera Lista Prospect</h1>
-              <p style={{ margin: '0 0 20px', color: C.muted, fontSize: '13px' }}>Scegli settore e filtri → l'AI costruisce una lista qualificata con scoring.</p>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '14px' }}>
+            <Card style={{ marginBottom:'20px' }}>
+              <h1 style={{ margin:'0 0 4px',fontSize:'20px',fontWeight:800,letterSpacing:'-0.02em' }}>Genera Lista Prospect</h1>
+              <p style={{ margin:'0 0 20px',color:C.muted,fontSize:'13px' }}>Scegli settore e filtri → l'AI costruisce una lista qualificata con scoring.</p>
+              <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:'12px',marginBottom:'14px' }}>
                 <div>
-                  <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Settore *</div>
-                  <select value={listaSettore} onChange={e => setListaSettore(e.target.value)}
-                    style={{ width: '100%', background: '#0d0d0d', border: `1px solid ${C.border}`, color: listaSettore ? C.text : C.muted, padding: '10px 12px', borderRadius: '8px', fontSize: '13px', fontFamily: FONT, outline: 'none', cursor: 'pointer' }}>
+                  <div style={{ fontSize:'11px',fontWeight:700,letterSpacing:'0.08em',textTransform:'uppercase',color:C.muted,marginBottom:'6px' }}>Settore *</div>
+                  <select value={listaSettore} onChange={e=>setListaSettore(e.target.value)} style={{ width:'100%',background:'#0d0d0d',border:`1px solid ${C.border}`,color:listaSettore?C.text:C.muted,padding:'10px 12px',borderRadius:'8px',fontSize:'13px',fontFamily:FONT,outline:'none',cursor:'pointer' }}>
                     <option value="">Seleziona settore...</option>
-                    {SETTORI_OPTIONS.map(s => <option key={s} value={s}>{s}</option>)}
+                    {SETTORI_OPTIONS.map(s=><option key={s} value={s}>{s}</option>)}
                   </select>
                 </div>
                 <div>
-                  <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Area geografica</div>
-                  <input value={listaGeo} onChange={e => setListaGeo(e.target.value)} placeholder="es. Italia, Nord Italia, Milano..."
-                    style={{ width: '100%', background: '#0d0d0d', border: `1px solid ${C.border}`, color: C.text, padding: '10px 12px', borderRadius: '8px', fontSize: '13px', fontFamily: FONT, outline: 'none', boxSizing: 'border-box' }} />
+                  <div style={{ fontSize:'11px',fontWeight:700,letterSpacing:'0.08em',textTransform:'uppercase',color:C.muted,marginBottom:'6px' }}>Area geografica</div>
+                  <input value={listaGeo} onChange={e=>setListaGeo(e.target.value)} placeholder="es. Italia, Nord Italia, Milano..." style={{ width:'100%',background:'#0d0d0d',border:`1px solid ${C.border}`,color:C.text,padding:'10px 12px',borderRadius:'8px',fontSize:'13px',fontFamily:FONT,outline:'none',boxSizing:'border-box' }} />
                 </div>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '14px' }}>
+              <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:'12px',marginBottom:'14px' }}>
                 <div>
-                  <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Dimensione azienda</div>
-                  <div style={{ display: 'flex', gap: '6px' }}>
-                    {['PMI', 'Mid-market', 'Enterprise'].map(d => (
-                      <button key={d} onClick={() => setListaDim(prev => prev.includes(d) ? prev.filter(x => x !== d) : [...prev, d])}
-                        style={{ flex: 1, padding: '8px 6px', background: listaDim.includes(d) ? 'rgba(232,39,42,0.12)' : '#0d0d0d', border: `1px solid ${listaDim.includes(d) ? C.red : C.border}`, color: listaDim.includes(d) ? C.red : C.muted, borderRadius: '7px', cursor: 'pointer', fontSize: '11px', fontWeight: listaDim.includes(d) ? 700 : 400, fontFamily: FONT }}>
-                        {d}
-                      </button>
+                  <div style={{ fontSize:'11px',fontWeight:700,letterSpacing:'0.08em',textTransform:'uppercase',color:C.muted,marginBottom:'6px' }}>Dimensione</div>
+                  <div style={{ display:'flex',gap:'6px' }}>
+                    {['PMI','Mid-market','Enterprise'].map(d=>(
+                      <button key={d} onClick={()=>setListaDim(prev=>prev.includes(d)?prev.filter(x=>x!==d):[...prev,d])} style={{ flex:1,padding:'8px 6px',background:listaDim.includes(d)?'rgba(232,39,42,0.12)':'#0d0d0d',border:`1px solid ${listaDim.includes(d)?C.red:C.border}`,color:listaDim.includes(d)?C.red:C.muted,borderRadius:'7px',cursor:'pointer',fontSize:'11px',fontWeight:listaDim.includes(d)?700:400,fontFamily:FONT }}>{d}</button>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Numero prospect</div>
-                  <div style={{ display: 'flex', gap: '6px' }}>
-                    {[5, 10, 20].map(n => (
-                      <button key={n} onClick={() => setListaNumero(n)}
-                        style={{ flex: 1, padding: '10px', background: listaNumero === n ? 'rgba(232,39,42,0.12)' : '#0d0d0d', border: `1px solid ${listaNumero === n ? C.red : C.border}`, color: listaNumero === n ? C.red : C.muted, borderRadius: '7px', cursor: 'pointer', fontSize: '13px', fontWeight: listaNumero === n ? 700 : 400, fontFamily: FONT }}>
-                        {n}
-                      </button>
+                  <div style={{ fontSize:'11px',fontWeight:700,letterSpacing:'0.08em',textTransform:'uppercase',color:C.muted,marginBottom:'6px' }}>Numero</div>
+                  <div style={{ display:'flex',gap:'6px' }}>
+                    {[5,10,20].map(n=>(
+                      <button key={n} onClick={()=>setListaNumero(n)} style={{ flex:1,padding:'10px',background:listaNumero===n?'rgba(232,39,42,0.12)':'#0d0d0d',border:`1px solid ${listaNumero===n?C.red:C.border}`,color:listaNumero===n?C.red:C.muted,borderRadius:'7px',cursor:'pointer',fontSize:'13px',fontWeight:listaNumero===n?700:400,fontFamily:FONT }}>{n}</button>
                     ))}
                   </div>
                 </div>
               </div>
-              <div style={{ marginBottom: '16px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.muted, marginBottom: '6px' }}>Parole chiave / focus specifico (opzionale)</div>
-                <input value={listaKeywords} onChange={e => setListaKeywords(e.target.value)} placeholder="es. 'export internazionale', 'rete vendita indiretta', 'rebranding recente'"
-                  style={{ width: '100%', background: '#0d0d0d', border: `1px solid ${C.border}`, color: C.text, padding: '10px 12px', borderRadius: '8px', fontSize: '13px', fontFamily: FONT, outline: 'none', boxSizing: 'border-box' }} />
+              <div style={{ marginBottom:'16px' }}>
+                <div style={{ fontSize:'11px',fontWeight:700,letterSpacing:'0.08em',textTransform:'uppercase',color:C.muted,marginBottom:'6px' }}>Parole chiave (opzionale)</div>
+                <input value={listaKeywords} onChange={e=>setListaKeywords(e.target.value)} placeholder="es. 'export internazionale', 'rete vendita indiretta'" style={{ width:'100%',background:'#0d0d0d',border:`1px solid ${C.border}`,color:C.text,padding:'10px 12px',borderRadius:'8px',fontSize:'13px',fontFamily:FONT,outline:'none',boxSizing:'border-box' }} />
               </div>
-              <Btn onClick={generateLista} disabled={listaLoading || !listaSettore} style={{ width: '100%', fontSize: '14px', padding: '12px' }}>
+              {listaError && <div style={{ background:'rgba(232,39,42,0.1)',border:'1px solid rgba(232,39,42,0.3)',borderRadius:'8px',padding:'10px 14px',marginBottom:'12px',fontSize:'13px',color:'#ff9999' }}>⚠️ {listaError}</div>}
+              <Btn onClick={generateLista} disabled={listaLoading||!listaSettore} style={{ width:'100%',fontSize:'14px',padding:'12px' }}>
                 {listaLoading ? 'Generazione lista...' : `Genera ${listaNumero} prospect qualificati →`}
               </Btn>
             </Card>
 
             {listaLoading && (
-              <Card style={{ textAlign: 'center', padding: '36px 24px', marginBottom: '20px' }}>
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>📋</div>
-                <div style={{ fontSize: '14px', fontWeight: 700, color: C.text, marginBottom: '6px' }}>{listaMsg}</div>
-                <div style={{ fontSize: '12px', color: C.muted, marginBottom: '20px' }}>Ricerca e scoring in corso — circa 1-2 minuti</div>
-                <div style={{ background: C.elevated, borderRadius: '4px', height: '3px', overflow: 'hidden' }}>
-                  <div style={{ height: '3px', background: C.red, borderRadius: '4px', animation: 'scan 2.5s ease-in-out infinite' }} />
+              <Card style={{ textAlign:'center',padding:'36px 24px',marginBottom:'20px' }}>
+                <div style={{ fontSize:'28px',marginBottom:'12px' }}>📋</div>
+                <div style={{ fontSize:'14px',fontWeight:700,color:C.text,marginBottom:'6px' }}>{listaMsg}</div>
+                <div style={{ fontSize:'12px',color:C.muted,marginBottom:'20px' }}>Ricerca e scoring in corso — circa 1-2 minuti</div>
+                <div style={{ background:C.elevated,borderRadius:'4px',height:'3px',overflow:'hidden' }}>
+                  <div style={{ height:'3px',background:C.red,borderRadius:'4px',animation:'scan 2.5s ease-in-out infinite' }} />
                 </div>
               </Card>
             )}
 
             {listaResult && !listaLoading && (
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                  <div>
-                    <div style={{ fontSize: '15px', fontWeight: 800, color: C.text }}>{listaResult.lista?.length || 0} prospect trovati</div>
-                    <div style={{ fontSize: '12px', color: C.muted, marginTop: '2px' }}>{listaResult.criteri_applicati}</div>
-                  </div>
-                  <Btn variant="ghost" onClick={() => setListaResult(null)} style={{ padding: '5px 12px', fontSize: '11px' }}>Nuova ricerca</Btn>
+                <div style={{ display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'12px' }}>
+                  <div><div style={{ fontSize:'15px',fontWeight:800,color:C.text }}>{listaResult.lista?.length||0} prospect trovati</div><div style={{ fontSize:'12px',color:C.muted,marginTop:'2px' }}>{listaResult.criteri_applicati}</div></div>
+                  <Btn variant="ghost" onClick={()=>setListaResult(null)} style={{ padding:'5px 12px',fontSize:'11px' }}>Nuova ricerca</Btn>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {(listaResult.lista || []).sort((a, b) => (b.score || 0) - (a.score || 0)).map((item, i) => {
-                    const score = item.score || 0;
-                    const scoreColor = score >= 8 ? '#22c55e' : score >= 6 ? '#f59e0b' : C.muted;
+                <div style={{ display:'flex',flexDirection:'column',gap:'8px' }}>
+                  {(listaResult.lista||[]).sort((a,b)=>(b.score||0)-(a.score||0)).map((item,i) => {
+                    const score = item.score||0;
+                    const sc = score>=8?'#22c55e':score>=6?'#f59e0b':C.muted;
                     return (
-                      <div key={i} style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: '12px', padding: '16px', display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                        <div style={{ textAlign: 'center', minWidth: '52px', background: '#0d0d0d', borderRadius: '8px', padding: '8px 6px' }}>
-                          <div style={{ fontSize: '22px', fontWeight: 800, color: scoreColor, lineHeight: 1 }}>{score}</div>
-                          <div style={{ fontSize: '9px', color: C.muted, marginTop: '2px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>score</div>
+                      <div key={i} style={{ background:C.card,border:`1px solid ${C.border}`,borderRadius:'12px',padding:'16px',display:'flex',alignItems:'flex-start',gap:'16px' }}>
+                        <div style={{ textAlign:'center',minWidth:'52px',background:'#0d0d0d',borderRadius:'8px',padding:'8px 6px' }}>
+                          <div style={{ fontSize:'22px',fontWeight:800,color:sc,lineHeight:1 }}>{score}</div>
+                          <div style={{ fontSize:'9px',color:C.muted,marginTop:'2px',textTransform:'uppercase' }}>score</div>
                         </div>
-                        <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px', flexWrap: 'wrap' }}>
-                            <div style={{ fontSize: '14px', fontWeight: 800, color: C.text }}>{item.nome}</div>
-                            {item.sito && <a href={item.sito.startsWith('http') ? item.sito : `https://${item.sito}`} target="_blank" rel="noopener noreferrer" style={{ fontSize: '11px', color: C.muted, textDecoration: 'none' }}>↗ {item.sito}</a>}
+                        <div style={{ flex:1,minWidth:0 }}>
+                          <div style={{ display:'flex',alignItems:'center',gap:'8px',marginBottom:'4px',flexWrap:'wrap' }}>
+                            <div style={{ fontSize:'14px',fontWeight:800,color:C.text }}>{item.nome}</div>
+                            {item.sito && <a href={item.sito.startsWith('http')?item.sito:`https://${item.sito}`} target="_blank" rel="noopener noreferrer" style={{ fontSize:'11px',color:C.muted,textDecoration:'none' }}>↗ {item.sito}</a>}
                           </div>
-                          <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '6px' }}>
-                            {[item.settore, item.dimensione, item.sede].filter(Boolean).map((tag, ti) => (
-                              <span key={ti} style={{ fontSize: '10px', color: C.muted, background: C.elevated, padding: '2px 7px', borderRadius: '3px' }}>{tag}</span>
-                            ))}
-                            {item.decisore_probabile && (
-                              <span style={{ fontSize: '10px', color: '#93c5fd', background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)', padding: '2px 7px', borderRadius: '3px' }}>👤 {item.decisore_probabile}</span>
-                            )}
+                          <div style={{ display:'flex',gap:'6px',flexWrap:'wrap',marginBottom:'6px' }}>
+                            {[item.settore,item.dimensione,item.sede].filter(Boolean).map((t,ti)=><span key={ti} style={{ fontSize:'10px',color:C.muted,background:C.elevated,padding:'2px 7px',borderRadius:'3px' }}>{t}</span>)}
+                            {item.decisore_probabile && <span style={{ fontSize:'10px',color:'#93c5fd',background:'rgba(59,130,246,0.1)',border:'1px solid rgba(59,130,246,0.2)',padding:'2px 7px',borderRadius:'3px' }}>👤 {item.decisore_probabile}</span>}
                           </div>
-                          <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '3px' }}><span style={{ color: scoreColor }}>●</span> {item.score_motivazione}</div>
-                          {item.segnale_principale && <div style={{ fontSize: '11px', color: C.muted, fontStyle: 'italic' }}>→ {item.segnale_principale}</div>}
+                          <div style={{ fontSize:'12px',color:'#aaa',marginBottom:'3px' }}><span style={{ color:sc }}>●</span> {item.score_motivazione}</div>
+                          {item.segnale_principale && <div style={{ fontSize:'11px',color:C.muted,fontStyle:'italic' }}>→ {item.segnale_principale}</div>}
                         </div>
-                        <button onClick={() => { setMode('analizza'); setInput(item.sito || item.nome); setResult(null); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                          style={{ background: C.red, border: 'none', color: C.white, padding: '8px 14px', borderRadius: '7px', cursor: 'pointer', fontSize: '12px', fontWeight: 700, fontFamily: FONT, whiteSpace: 'nowrap', flexShrink: 0 }}>
-                          Analizza →
-                        </button>
+                        <button onClick={()=>{ setMode('analizza'); setInput(item.sito||item.nome); setResult(null); window.scrollTo({top:0,behavior:'smooth'}); }} style={{ background:C.red,border:'none',color:C.white,padding:'8px 14px',borderRadius:'7px',cursor:'pointer',fontSize:'12px',fontWeight:700,fontFamily:FONT,whiteSpace:'nowrap',flexShrink:0 }}>Analizza →</button>
                       </div>
                     );
                   })}
@@ -731,42 +630,45 @@ export default function App() {
         )}
 
         {/* ─── ANALIZZA PROSPECT ──────────────────────────────────────────── */}
-        {mode === 'analizza' && (
+        {mode==='analizza' && (
           <>
-            <Card style={{ marginBottom: '20px' }}>
-              <h1 style={{ margin: '0 0 4px', fontSize: '20px', fontWeight: 800, letterSpacing: '-0.02em' }}>Analizza un prospect</h1>
-              <p style={{ margin: '0 0 20px', color: C.muted, fontSize: '13px' }}>Ricerca su sito · Cerved/bilanci · news · LinkedIn · job posting → materiali sales con il DNA Domino.</p>
-              <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
-                <input value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === 'Enter' && !e.shiftKey && analyze()} disabled={loading}
-                  placeholder="es. Technogym · Gruppo Humanitas · www.alpitour.it"
-                  style={{ flex: 1, background: '#0d0d0d', border: `2px solid ${C.border}`, color: C.text, padding: '11px 14px', borderRadius: '8px', fontSize: '14px', outline: 'none', fontFamily: FONT, transition: 'border-color 0.15s' }}
-                  onFocus={e => e.target.style.borderColor = C.red} onBlur={e => e.target.style.borderColor = C.border} />
-                <Btn onClick={analyze} disabled={loading || !input.trim()} style={{ minWidth: '120px', fontSize: '14px' }}>
-                  {loading ? 'Analisi…' : 'Analizza →'}
-                </Btn>
-              </div>
-              <textarea value={note} onChange={e => setNote(e.target.value)} disabled={loading}
-                placeholder="Note per il commerciale (opzionale) — es. 'ci hanno contattato a un evento', 'competitor è X'"
-                style={{ width: '100%', background: '#0d0d0d', border: `1px solid ${C.border}`, color: C.text, padding: '9px 14px', borderRadius: '8px', fontSize: '13px', outline: 'none', fontFamily: FONT, resize: 'vertical', minHeight: '54px', boxSizing: 'border-box', marginBottom: '14px' }} />
+            <Card style={{ marginBottom:'20px' }}>
+              <h1 style={{ margin:'0 0 4px',fontSize:'20px',fontWeight:800,letterSpacing:'-0.02em' }}>Analizza un prospect</h1>
+              <p style={{ margin:'0 0 20px',color:C.muted,fontSize:'13px' }}>Ricerca su sito · Cerved/bilanci · news · LinkedIn · job posting → materiali sales con il DNA Domino.</p>
 
-              {/* GTM Selector */}
+              {error && (
+                <div style={{ background:'rgba(232,39,42,0.1)',border:'1px solid rgba(232,39,42,0.3)',borderRadius:'8px',padding:'10px 14px',marginBottom:'14px',fontSize:'13px',color:'#ff9999',display:'flex',justifyContent:'space-between',alignItems:'center' }}>
+                  <span>⚠️ {error}</span>
+                  <button onClick={()=>setError('')} style={{ background:'transparent',border:'none',color:C.muted,cursor:'pointer',fontSize:'16px',lineHeight:1 }}>×</button>
+                </div>
+              )}
+
+              <div style={{ display:'flex',gap:'10px',marginBottom:'10px' }}>
+                <input value={input} onChange={e=>setInput(e.target.value)} onKeyDown={e=>e.key==='Enter'&&!e.shiftKey&&analyze()} disabled={loading}
+                  placeholder="es. Technogym · Gruppo Humanitas · www.alpitour.it"
+                  style={{ flex:1,background:'#0d0d0d',border:`2px solid ${C.border}`,color:C.text,padding:'11px 14px',borderRadius:'8px',fontSize:'14px',outline:'none',fontFamily:FONT,transition:'border-color 0.15s' }}
+                  onFocus={e=>e.target.style.borderColor=C.red} onBlur={e=>e.target.style.borderColor=C.border} />
+                <Btn onClick={()=>analyze()} disabled={loading||!input.trim()} style={{ minWidth:'120px',fontSize:'14px' }}>{loading?'Analisi…':'Analizza →'}</Btn>
+              </div>
+              <textarea value={note} onChange={e=>setNote(e.target.value)} disabled={loading}
+                placeholder="Note (opzionale) — es. 'ci hanno contattato a un evento', 'competitor è X'"
+                style={{ width:'100%',background:'#0d0d0d',border:`1px solid ${C.border}`,color:C.text,padding:'9px 14px',borderRadius:'8px',fontSize:'13px',outline:'none',fontFamily:FONT,resize:'vertical',minHeight:'54px',boxSizing:'border-box',marginBottom:'14px' }} />
+
               <GtmSelector layer={gtmLayer} setLayer={setGtmLayer} motion={gtmMotion} setMotion={setGtmMotion} />
 
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
-                <span style={{ fontSize: '11px', color: C.muted }}>Quick picks:</span>
-                {QUICK_PICKS.map(q => (
-                  <button key={q} onClick={() => setInput(q)} style={{ background: C.elevated, border: `1px solid ${C.border}`, color: C.muted, padding: '4px 12px', borderRadius: '20px', cursor: 'pointer', fontSize: '11px', fontFamily: FONT }}>{q}</button>
-                ))}
+              <div style={{ display:'flex',gap:'8px',flexWrap:'wrap',alignItems:'center' }}>
+                <span style={{ fontSize:'11px',color:C.muted }}>Quick picks:</span>
+                {QUICK_PICKS.map(q=><button key={q} onClick={()=>setInput(q)} style={{ background:C.elevated,border:`1px solid ${C.border}`,color:C.muted,padding:'4px 12px',borderRadius:'20px',cursor:'pointer',fontSize:'11px',fontFamily:FONT }}>{q}</button>)}
               </div>
             </Card>
 
             {loading && (
-              <Card style={{ marginBottom: '20px', textAlign: 'center', padding: '36px 24px' }}>
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>🔍</div>
-                <div style={{ fontSize: '14px', fontWeight: 700, color: C.text, marginBottom: '6px' }}>{loadMsg}</div>
-                <div style={{ fontSize: '12px', color: C.muted, marginBottom: '20px' }}>Analisi approfondita · sito, Cerved, news, LinkedIn, job posting…</div>
-                <div style={{ background: C.elevated, borderRadius: '4px', height: '3px', overflow: 'hidden' }}>
-                  <div style={{ height: '3px', background: C.red, borderRadius: '4px', animation: 'scan 2.5s ease-in-out infinite' }} />
+              <Card style={{ marginBottom:'20px',textAlign:'center',padding:'36px 24px' }}>
+                <div style={{ fontSize:'28px',marginBottom:'12px' }}>🔍</div>
+                <div style={{ fontSize:'14px',fontWeight:700,color:C.text,marginBottom:'6px' }}>{loadMsg}</div>
+                <div style={{ fontSize:'12px',color:C.muted,marginBottom:'20px' }}>Analisi approfondita · sito, Cerved, news, LinkedIn, job posting…</div>
+                <div style={{ background:C.elevated,borderRadius:'4px',height:'3px',overflow:'hidden' }}>
+                  <div style={{ height:'3px',background:C.red,borderRadius:'4px',animation:'scan 2.5s ease-in-out infinite' }} />
                 </div>
                 <style>{`@keyframes scan{0%,100%{width:20%;opacity:0.4}50%{width:75%;opacity:1}}`}</style>
               </Card>
@@ -774,31 +676,31 @@ export default function App() {
 
             {result && p && (
               <>
-                <div style={{ background: '#080808', border: `1px solid ${C.border}`, borderRadius: '12px', padding: '12px 18px', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
-                  <div><Label>Prospect</Label><div style={{ fontSize: '15px', fontWeight: 800, color: C.text }}>{p.nome}</div></div>
-                  <div style={{ width: '1px', height: '30px', background: C.border }} />
-                  <div><Label>Settore</Label><div style={{ fontSize: '12px', color: '#aaa' }}>{p.settore}</div></div>
-                  <div style={{ width: '1px', height: '30px', background: C.border }} />
-                  <div><Label>Decisore</Label><div style={{ fontSize: '12px', color: '#aaa' }}>{p.decisore_target}</div></div>
-                  <div style={{ marginLeft: 'auto', display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Btn variant="ghost" onClick={() => exportPPT(result)} style={{ padding: '5px 12px', fontSize: '11px' }}>⬇ PPT</Btn>
-                    <Btn variant="hs" onClick={doHsSync} disabled={hsSyncing} style={{ padding: '5px 12px', fontSize: '11px' }}>{hsSyncing ? 'Sync…' : '→ HubSpot'}</Btn>
-                    {hsMsg && <span style={{ fontSize: '11px', color: hsMsg.startsWith('✓') ? '#4ade80' : '#f87171' }}>{hsMsg}</span>}
+                <div style={{ background:'#080808',border:`1px solid ${C.border}`,borderRadius:'12px',padding:'12px 18px',marginBottom:'12px',display:'flex',alignItems:'center',gap:'14px',flexWrap:'wrap' }}>
+                  <div><Label>Prospect</Label><div style={{ fontSize:'15px',fontWeight:800,color:C.text }}>{p.nome}</div></div>
+                  <div style={{ width:'1px',height:'30px',background:C.border }} />
+                  <div><Label>Settore</Label><div style={{ fontSize:'12px',color:'#aaa' }}>{p.settore}</div></div>
+                  <div style={{ width:'1px',height:'30px',background:C.border }} />
+                  <div><Label>Decisore</Label><div style={{ fontSize:'12px',color:'#aaa' }}>{p.decisore_target}</div></div>
+                  <div style={{ marginLeft:'auto',display:'flex',gap:'8px',alignItems:'center',flexWrap:'wrap' }}>
+                    <Btn variant="ghost" onClick={()=>exportPPT(result)} style={{ padding:'5px 12px',fontSize:'11px' }}>⬇ PPT</Btn>
+                    <Btn variant="hs" onClick={doHsSync} disabled={hsSyncing} style={{ padding:'5px 12px',fontSize:'11px' }}>{hsSyncing?'Sync…':'→ HubSpot'}</Btn>
+                    {hsMsg && <span style={{ fontSize:'11px',color:hsMsg.startsWith('✓')?'#4ade80':'#f87171' }}>{hsMsg}</span>}
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', gap: '6px', marginBottom: '12px', flexWrap: 'wrap' }}>
-                  {[['intel','🔍 Intelligence'],['mail','✉️ Mail'],['deck','📊 Deck'],['workflow','📅 Workflow'],['linkedin','💼 LinkedIn']].map(([id, label]) => (
-                    <Tab key={id} active={tab === id} onClick={() => setTab(id)} label={label} />
+                <div style={{ display:'flex',gap:'6px',marginBottom:'12px',flexWrap:'wrap' }}>
+                  {[['intel','🔍 Intelligence'],['mail','✉️ Mail'],['deck','📊 Deck'],['workflow','📅 Workflow'],['linkedin','💼 LinkedIn']].map(([id,label])=>(
+                    <Tab key={id} active={tab===id} onClick={()=>setTab(id)} label={label} />
                   ))}
                 </div>
 
                 <Card>
-                  {tab === 'intel'    && <IntelTab p={p} />}
-                  {tab === 'mail'     && <MailTab mail={result.mail} />}
-                  {tab === 'deck'     && <DeckTab deck={result.deck} />}
-                  {tab === 'workflow' && <WorkflowTab workflow={result.workflow} />}
-                  {tab === 'linkedin' && <LinkedInTab linkedin={result.linkedin} />}
+                  {tab==='intel'    && <IntelTab p={p} />}
+                  {tab==='mail'     && <MailTab mail={result.mail} />}
+                  {tab==='deck'     && <DeckTab deck={result.deck} />}
+                  {tab==='workflow' && <WorkflowTab workflow={result.workflow} />}
+                  {tab==='linkedin' && <LinkedInTab linkedin={result.linkedin} />}
                 </Card>
               </>
             )}
@@ -806,12 +708,9 @@ export default function App() {
         )}
       </div>
 
-      {showArchive && <ArchiveModal onClose={() => setShowArchive(false)} onLoad={d => { setResult(d); setTab('intel'); setMode('analizza'); }} />}
-      {showHs && <HsModal current={hsToken} onClose={() => setShowHs(false)} onSave={t => { setHsToken(t); localStorage.setItem('domino_hs_token', t); }} />}
-
-      <div style={{ textAlign: 'center', padding: '24px 0 16px', fontSize: '11px', color: '#333' }}>
-        {VERSION} · Domino Prospect Engine · domino.it
-      </div>
+      {showArchive && <ArchiveModal onClose={()=>setShowArchive(false)} onLoad={d=>{setResult(d);setTab('intel');setMode('analizza');}} />}
+      {showHs && <HsModal current={hsToken} onClose={()=>setShowHs(false)} onSave={t=>{setHsToken(t);localStorage.setItem('domino_hs_token',t);}} />}
+      <div style={{ textAlign:'center',padding:'24px 0 16px',fontSize:'11px',color:'#333' }}>{VERSION} · Domino Prospect Engine · domino.it</div>
     </div>
   );
 }
