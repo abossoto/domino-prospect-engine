@@ -1,234 +1,290 @@
-# DOMINO BRAIN — Referenze, Premi e Testimonianze
-> Versione 3.0 — Aprile 2026. Fonti: Sortlist (profilo verificato, 10 recensioni, 4.83/5), sito domino.it, blog Domino25. Aggiornato con frame I5.0 per le formule di pitch (Trainstorming aprile 2026).
+# DOMINO BRAIN — Servizi
+> Versione 4.0 — Aprile 2026. Fonti: sito domino.it, presentazioni, Sortlist, blog domino.it. Aggiornato con scenari Industry 5.0 (Trainstorming aprile 2026).
+
+Le 4 macro-aree di competenza Domino, con dettaglio delle attività e stack tecnologico completo.
 
 ---
 
-## PROFILO SORTLIST
+## 1. Service Design & Digital Transformation
 
-- **Rating:** 4.83/5 su 10 recensioni verificate
-- **Progetti in portfolio:** 27
-- **Premi ricevuti:** 16
-- **Membro dal:** 2023
-- **Lingue:** Italiano, Inglese
-- **Opera:** da remoto a livello globale
+**Claim sito:** *"Value creation — Digital Transformation, new services"*
 
----
+**Scenario I5.0:** In un'epoca in cui l'efficienza è una commodity, il vantaggio competitivo si sposta sulla capacità di progettare transizioni — non progetti singoli. I clienti non cercano soluzioni, cercano partner che restino accanto a loro mentre il sistema cambia. Il Service Design è il metodo per farlo con rigore.
 
-## 16 PREMI E RICONOSCIMENTI
-*(Lista completa da profilo Sortlist ufficiale)*
+Identifichiamo e definiamo nuove opportunità di business. Analizziamo e miglioriamo servizi esistenti. Il Service Design combina pratiche di product design e interaction design per creare o sviluppare servizi per gli utenti.
 
-| Anno | Premio | Progetto / Cliente |
-|------|--------|--------------------|
-| 2025 | **Interactive Key Award** — Nomination B2B | **IVECO Design System** |
-| 2025 | **Interactive Key Award** — Nomination AI Best Use in ADV | **IVECO MY METALLICA TRUCK** |
-| 2024 | **Interactive Key Award** — AI Best Use in ADV in Social Media Marketing | **Case IH** |
-| 2024 | **Interactive Key Award** — Automotive and Energy | **IVECO** |
-| 2024 | **IKA Award** — Best Website | **iveco.com** |
-| 2023 | **Interactive Key Award** — Business to Business | **ROLLON** |
-| 2021 | **TIME** — Top 100 Inventions of the Year | **Stellantis Arena del Futuro** |
-| 2019 | **Interactive Key Award** — Best Use of Digital Media | **IVECO** |
-| 2019 | **FEIEIA Grand Prix Award** — Migliore Intranet d'Europa | **FCA** (ora Stellantis) |
-| 2015 | **Interactive Key Award** — Trasporti ed energia | **JEEP** |
-| 2012 | **Interactive Key Award** — Trasporti ed energia | **FIAT** (fiat.it — sito lanciato nel 2010 in 21 paesi EMEA) |
-| 2012 | **NC Digital Award** — Best Corporate Website | **FIAT** |
-| 2011 | **Interactive Key Award** — Automotive | **Alfa Romeo** |
-| 2009 | **Davey Award Silver** — Events | **Alfa Romeo @ Goodwood** |
-| 2009 | **Davey Award Silver** — Special Interest | **Alfa Romeo @ Goodwood** |
-| 2009 | **Webby Awards** — Website & Community | **Juventus** |
-| 2008 | **Interactive Key Award** — Best Emergency Project | **Action Aid International** |
-| 2004 | **Interactive Key Award** — Web Promotion | **Martini e Rossi** |
-| 2004 | **Interactive Key Award** — Best Front End Website | **Fiera del Libro** |
-| 2004 | **Interactive Key Award** — Best Interactive Website | **Martini e Rossi** |
+**Attività:**
+- Design Sprint! (riduce mesi di lavoro a pochi giorni di full-immersion)
+- Core Sprint (Core Hypothesis, allineamento strategico)
+- **Trainstorming** (percorso strutturato di change management e innovazione, 3 sessioni quadrimestrali)
+- **Decision Design** — progettazione di architetture di scelta: UX, UI e strumenti digitali come supporto alle decisioni in contesti complessi (trade-off, scenari, conseguenze)
+- Personas Design
+- User Experience Design
+- Market insight (scouting, analisi di mercato e competitor)
+- Product & service expansion (espansione digitale)
+- Launch & adoption (lancio servizi e on-boarding)
+- Brand positioning & harmonization
+- Routes to markets (accesso a nuovi mercati)
 
-**Totale riconoscimenti internazionali: oltre 30** (16 su Sortlist + IKA 2024 iveco.com + TIME 2021 + altri)
+**Come proporlo con frame I5.0:**
+> *"Non progettiamo solo interfacce. Progettiamo le conseguenze delle scelte dei vostri utenti e del vostro team. In un contesto di transizione continua — AI, regolazione, sostenibilità — questo è il tipo di partner che fa la differenza."*
+
+**Case history collegati:** MYIVECO, FCA intranet, CIFA, Jeep community
 
 ---
 
-## 10 RECENSIONI CLIENTI — SORTLIST (4.83/5)
-*(Tutte verificate — Novembre/Dicembre 2024)*
+## 2. Digital Marketing, Customer Experience & Sales
+
+**Claim sito:** *"Listen and improve — Campaigns, lead generation, marketing automation, analytics and Omnichannel sales paths management"*
+
+**Scenario I5.0:** Nel rumore dell'automazione, vincerà chi costruisce fiducia. Il marketing digitale non è più solo performance: è progettazione di relazioni responsabili con l'utente. GEO e AI applicata alla lead generation non sono solo strumenti di efficienza — sono modi per essere rilevanti nei nuovi ecosistemi di ricerca e decisione.
+
+L'obiettivo: comprendere i bisogni personali per offrire soluzioni specifiche e automatizzate, creando una relazione vera finalizzata al business.
+
+**Attività:**
+- Lead & demand generation (campagne multicanale)
+- Digital Marketing (search, display, social, shopping, Spotify, comparatori)
+- Inbound Marketing — strategie per acquisire contatti qualificati
+- Marketing Automation e nurturing
+- Customer Experience Design
+- Analytics & Data Science
+- Intelligent Assistant / AI Chatbot
+- Brand & Communication
+- Storytelling
+- Preventivo Emozionale
+- SEO tecnico e on-page
+- GEO — Generative Engine Optimization (ottimizzazione per AI search: Google AI Overview, ChatGPT, Perplexity)
+- Campagne Google Ads (search, display, demand gen, shopping)
+- Social Ads (META, LinkedIn)
+- Gestione canali social (contenuti, scheduling, analytics)
+- Differentiated messaging (personalizzazione per audience)
+- Sales model & process (Buyer Journey, messaggi per fase)
+- Sales enablement diretto e indiretto (formazione rete vendita)
+
+**Workflow campagne (da Sortlist):**
+1. Definizione strategia e flussi di campagna
+2. Proposta allocazione budget e stima risultati
+3. Produzione asset creativi (copy e visual, con gestione traduzioni se multilingua)
+4. Setup e monitoraggio performance per ottimizzazioni in corso
+5. Analisi e report finale
+
+**Case history collegati:** Masi Agricola, Demak, Frascold, Rollon US, ENIT (34 paesi), Contship Italia, Lierac/Phyto, CaseIH Europa
 
 ---
 
-### Grace Cleary ⭐ 5/5
-**Global Website Lead for Case IH and New Holland — CNH** (5.001–10.000 dipendenti)
-*Servizio: Digital Strategy — Settore: Farming/Agriculture*
+## 3. Digital Products & Produzione
 
-**Obiettivo:** "Domino provides global website content and digital strategies across many of our market websites."
+**Claim sito:** *"Appeal and efficiency — Website, intranet, mobile app, reserved areas, PED social network"*
 
-**Cosa ha apprezzato di più:**
-> "Domino is innovative and quick. They have a high quality of work and continue to push Case IH as industry leaders in the digital marketing space."
+**Scenario I5.0:** I prodotti digitali che contano non sono quelli più veloci o più automatizzati — sono quelli che aiutano le persone a capire, scegliere e agire con consapevolezza. Progettiamo prodotti che incorporano "decision design": tool di configurazione, comparatori, advisor AI, scenari di scelta.
 
----
+Progettiamo e realizziamo prodotti digitali che funzionano e sono memorabili. Punto di partenza: i bisogni degli utenti finali. Approccio integrato: Storytelling + UI + UX Design.
 
-### Alessandra Manzato ⭐ 5/5
-**Communication & Corporate Identity Manager — Bitron Industrie SpA** (5.001–10.000 dipendenti)
-*Settore: Industrial Goods & Services — B2B*
+**Attività:**
+- Website B2B, istituzionali, internazionali multilingua
+- App mobile e web app
+- Intranet ed Employee Portal
+- Aree riservate e portali con accesso profilato
+- Sales Tool digitali (configuratori, listini, comparatori vs concorrenza)
+- eCommerce (biglietteria, shop, pacchetti)
+- Social network aziendali (PED)
+- Video e content production
+- Video AI con avatar (pillole formative 3-5 min)
+- Data visualization
+- International coordination & rollout (adattamento multilingua, multi-mercato)
+- Analytics & reporting dashboard (anche su Looker)
+- Ottimizzazione & management continuativo
 
-**Obiettivo:** "Domino ha supportato la mia azienda nella costruzione del nuovo sito di Gruppo, nell'ottimizzazione SEO e nella gestione di alcune campagne web."
-
-**Cosa ha apprezzato di più:**
-> "Ritengo Domino una delle migliori web agency in ambito B2B del panorama italiano. Consulenti professionali e super competenti: assolutamente consigliata!"
-
----
-
-### Monica Sarri ⭐ 5/5
-**Digital Marketing Specialist — IPI SPA** (201–500 dipendenti)
-*Settore: Real Estate*
-
-**Obiettivo:** "Domino è stata scelta per rispondere a multiple esigenze, dalla realizzazione di nuovi siti web, allo sviluppo della intranet aziendale, così come processi di digital education."
-
-**Cosa ha apprezzato di più:**
-> "Ho apprezzato moltissimo la reattività e la disponibilità del personale. La squadra è sempre pronta a rispondere alle esigenze del cliente con rapidità e impegno. L'agenzia è sempre aggiornata rispetto ai trend e tendenze del mercato, propone sempre soluzioni originali e innovative."
+**Case history collegati:** Stellantis Employee Portal, IVECO.com, Comau+, Biennale di Venezia, Arca Advisory Assistant, Fiat Professional E-Product, IPI SFERA Intranet, Links Foundation intranet, Bancomat, Museo Nazionale del Cinema, Fondazione Torino Musei
 
 ---
 
-### Oscar Ruo Roch ⭐ 5/5
-**Content Specialist — Reply / Stellantis**
+## 4. Information Technology — Expertise and Know-how
 
-**Obiettivo:** "Creare asset digitali (video) per clienti."
+**Claim sito:** *"Technologies that enable companies to offer new and innovative services"*
 
-**Cosa ha apprezzato di più:**
-> "L'organizzazione e flessibilità della squadra."
+**Scenario I5.0:** La tecnologia non è il vantaggio — lo è la capacità di governarla. Selezioniamo, implementiamo e gestiamo le piattaforme tecnologiche più adatte con un approccio "human-in-the-loop": l'AI che proponiamo è sempre comprensibile, controllabile e orientata a creare valore reale, non solo efficienza.
 
----
+**Attività:**
+- Platform selection, management e personalizzazione
+- CMS selection & implementation
+- CRM implementation & integration
+- Marketing Automation
+- Middleware e ad-hoc integrations
+- Open Data, Big Data
+- Cloud Migration
+- Security
+- Green hosting — Server Farm proprietaria
+- Collaborative tools
+- AI integration (GEO, generazione contenuti, personalizzazione, product finder, chatbot)
 
-### Claudio Honegger ⭐ 5/5
-**Amministratore Unico — Richmond Italia**
+**Stack Enterprise:**
+- Adobe Experience Cloud
+- IBM Watson / IBM AI
+- HubSpot (CRM + Marketing Automation)
+- Microsoft Sitecore
 
-**Obiettivo:** "Rivedere tutta la strategia, i processi e il design di un portale introducendo IA."
-
-**Cosa ha apprezzato di più:**
-> "La capacità di comprensione delle necessità."
-
----
-
-### Marina Golotta ⭐ 5/5 *(recensione verificata)*
-**Responsabile Prodotti CLOUD — TNE srl**
-
-**Obiettivo:** "L'agenzia ha realizzato il nostro sito e la piattaforma di applicazioni CLOUD."
-
-**Cosa ha apprezzato di più:**
-> "La professionalità dello sviluppatore della parte CLOUD."
-
----
-
-### Andrea Pallard ⭐ 4.75/5
-**Communications Manager — Stellantis** (10.001+ dipendenti)
-*Settore: Automotive*
-
-**Obiettivo:** "Attività running di internal e managerial communication e special projects."
-
-**Cosa ha apprezzato di più:**
-> "Flessibilità, creatività, comprensione delle necessità del cliente."
-
-**Area di miglioramento:** "Portare soluzioni dirompenti e innovative anche se il cliente non le richiede."
+**Stack Corporate:**
+- WordPress
+- JBoss
+- Liferay
+- Drupal
+- Gaia (CMS proprietario)
+- ElasticSearch
+- 3D (visualizzazione)
+- Looker (analytics dashboard)
 
 ---
 
-### BABYLON Kévin ⭐ 4.75/5
-**Responsabile Marketing Digital — IVECO France**
-*Servizio: Website Creation — Settore: Automotive*
+## 5. Internal Communication & Employee Experience
 
-**Obiettivo:** "Creazione del nuovo sito IVECO BUS, supporto nello sviluppo dei siti mercati, monitoring delle performance e supporto operativo."
+*(Area trasversale, fortemente sviluppata — presente su Sortlist come offerta separata)*
 
-**Cosa ha apprezzato di più:**
-> "Le persone, la disponibilità e i consigli."
+**Claim:** *"Il dipendente è il nostro primo stakeholder. Aiutiamo le aziende a migliorare l'ingaggio delle proprie persone creando una employee experience semplice, chiara ed efficace."*
 
-**Area di miglioramento:** "Alcune volte i tempi sono stati un po' allungati."
+**Scenario I5.0:** Le transizioni più difficili non sono tecnologiche — sono umane. AI adoption, riorganizzazioni, nuovi modelli di lavoro: le persone devono capire, non solo eseguire. La internal communication diventa lo strumento con cui le organizzazioni attraversano i cambiamenti senza perdersi per strada. Un'agenzia rilevante non consegna una campagna interna — resta finché il sistema impara a reggere il cambiamento.
 
----
+**Focus:**
+- Intranet Design
+- Employee Engagement
+- Employee Branding
+- Employee Experience
+- D&I (Diversity & Inclusion)
+- Core Values Communication
+- Innovation Communication
+- Digital Transformation Communication
+- E&C (Ethics & Compliance)
+- Top Management Communication
+- Onboarding digitale
+- **Trainstorming** — change management e programmi di transizione strutturati (vedi scheda dedicata)
 
-### Emanuela Giorgini ⭐ 4.5/5
-**Referente Web Strategy — Visit Piemonte**
-*Servizio: Website Creation — Settore: Travel & Leisure (11–50 dipendenti)*
+**Workflow tipico:**
+Brief → Analisi dei need → Strategia → Concept creativo → Produzione contenuti → Analisi KPI
 
-**Obiettivo:** "Gestione del sito aziendale per la promozione turistica."
+**Formati prodotti:**
+- Video series con dipendenti reali
+- Pillole formative AI con avatar (3-5 minuti)
+- Mini video journey
+- Email di lancio e news
+- Video teaser e stakeholder video
+- Piani di training strutturati (per manager + tutti i dipendenti)
+- Chatbot AI istruiti via PDF e siti web (risponde via chat, audio e video)
 
-**Cosa ha apprezzato di più:**
-> "La velocità di risposta in ogni nostra richiesta di tipo manutentiva ed evolutiva."
-
----
-
-### Roberto Veronesi ⭐ 4.25/5
-**Resp. Comunicazione e Sviluppo Risorse — Fondazione Links**
-*Servizio: Corporate Communication*
-
-**Obiettivo:** "L'agenzia ha lavorato sulla realizzazione ex novo della intranet."
-
-**Cosa ha apprezzato di più:**
-> "La progettazione e la individuazione di soluzioni coerenti con i bisogni."
-
----
-
-## SINTESI TEMI RICORRENTI NELLE RECENSIONI
-*(AI summary da Sortlist)*
-
-- **Responsività e disponibilità** — citata dalla maggioranza dei clienti
-- **Comprensione dei bisogni del cliente** — riconoscimento trasversale
-- **Innovazione e creatività** — con soluzioni originali e aggiornate ai trend
-- **Professionalità ed expertise** — "una delle migliori web agency B2B italiane" (Bitron)
-- **Flessibilità e organizzazione**
+**Case history collegati:** Stellantis Employee Portal (88.000 dipendenti, FEIEIA Award), Stellantis D&I People Stories, Stellantis Electrification Days, IPI Onboarding, Bitron AI & IC
 
 ---
 
-## TESTIMONIANZE DOMINO25 — "La parola ai clienti"
-*(25° anniversario Domino, 2021. I clienti scelgono una delle 25 parole del Manifesto)*
+## Trainstorming — Programmi di Innovazione e Change Management *(metodo proprietario)*
 
-**Clienti identificati con nome e parola:**
-- **Marie Mauton** — Case IH — *"Imparare ad imparare"*
-- **Duilio Amico** — COMAU — *"Imparare ad imparare"*
-- **Marco Bader** — Responsabile Produzione Multimediale, Seat Pagine Gialle — *"Soluzioni"* (cliente dal 1996)
+> Al pari di Design Sprint, Core Sprint e Preventivo Emozionale: uno strumento distintivo Domino, non un servizio generico.
 
-> ⚠️ Le citazioni testuali complete sono solo nei video YouTube (playlist clienti: PLUzt_7WkbwTJGCS13nNAWhOfdpr0F_Qne)
+**Posizionamento:** *"Portiamo l'innovazione dentro la tua azienda in modo concreto e continuo — gestendo il cambiamento con metodo, non per improvvisazione."*
 
----
+Il Trainstorming è il metodo Domino per accompagnare le organizzazioni attraverso transizioni complesse: adozione dell'AI, cambiamenti culturali, trasformazioni digitali, nuovi modelli operativi. Nasce dalla pratica interna Domino (sessioni mensili del team) ed è stato strutturato come percorso replicabile per i clienti.
 
-## COME USARE LE REFERENZE NELLE COMUNICAZIONI
+Non è un corso di formazione. Non è una consulenza generica. È un programma di transizione con output concreti a ogni tappa.
 
-### Regole generali
-- Usare **1 referenza concreta** per comunicazione, non un elenco
-- Sceglierla in base al settore e alla sfida specifica del prospect
-- I **premi** sono le prove più forti con prospect che non conoscono Domino
-- Le **citazioni Sortlist** sono credibili perché verificate e recenti (2024)
-- I **KPI dei case history** (%, numeri) battono qualsiasi descrizione qualitativa
+**Il format: 3 sessioni quadrimestrali**
 
-### Formule pronte per mail e LinkedIn (adattare al prospect)
+| Sessione | Focus | Output |
+|----------|-------|--------|
+| **#1** — Mese 1 | Diagnosi e Core Hypothesis: dove si trova l'azienda, quali opportunità di cambiamento/innovazione esistono, priorità concrete | Mappa delle priorità + Core Hypothesis validata |
+| **#2** — Mese 4 | Prototipazione e test: lavoro sulle 1-2 priorità emerse. Si prototipa, si testa con le persone reali, si decide | Prototipi testati + decisioni d'investimento chiare |
+| **#3** — Mese 8 | Misurazione e scala: analisi dei risultati delle prime implementazioni, consolidamento, pianificazione | Roadmap di transizione 12 mesi |
 
-**Per prospect in automotive / multinazionale:**
-> "IVECO France lo ha detto chiaramente: 'le persone, la disponibilità e i consigli'. Abbiamo vinto 3 Interactive Key Award su progetti IVECO e Case IH nel solo 2024."
+**Metodologia — derivata dal Design Sprint, adattata per il cambiamento continuativo:**
+- **Core Sprint** per costruire l'Core Hypothesis e allineare gli stakeholder prima di investire
+- **Magic Lenses** per valutare le idee rispetto a criteri critici e filtrare le più promettenti
+- **Votazione Silenziosa** per far emergere il consenso reale senza dinamiche gerarchiche
+- **Prototipazione rapida** per rendere tangibili le idee prima di decidere se investire
+- **AI Assessment personalizzato**: mappatura delle aree dove l'AI può essere applicata concretamente (GEO, chatbot, automazione contenuti, product finder, video AI, personalizzazione CRM)
 
-**Per prospect B2B industriale:**
-> "Il Communication Manager di Bitron ci definisce 'una delle migliori web agency B2B del panorama italiano'. Rollon ci ha affidato il sito in 16 mercati — risultato: +48% di traffico organico negli USA."
+**Focus speciale — Intelligenza Artificiale:**
+L'AI è il tema trasversale di ogni percorso Trainstorming. Non come fine a sé stesso, ma come strumento per risolvere problemi reali:
+- Dove l'AI riduce costi operativi e libera risorse
+- Dove l'AI migliora la CX (chatbot, personalizzazione, product selector)
+- Dove l'AI accelera la produzione di contenuti (video, newsletter, copy multilingua)
+- Dove l'AI aumenta la visibilità (GEO — ottimizzazione per ChatGPT, Perplexity, Google AI Overview)
+- Come strutturare un workflow AI sostenibile e scalabile nell'organizzazione
 
-**Per prospect interessato a intranet / comunicazione interna:**
-> "L'intranet che abbiamo costruito per FCA ha vinto il FEIEIA Grand Prix come Migliore Intranet d'Europa — 88.000 dipendenti connessi in un unico portale."
+**Ambiti di applicazione:**
+- Adozione dell'AI in azienda (cultura, processi, strumenti)
+- Digital transformation per team non-digitali
+- Change management post-merger, post-reorganizzazione, post-lancio piattaforma
+- Costruzione di una cultura dell'innovazione interna
+- Onboarding di nuove tecnologie (Microsoft 365, nuovo CRM, nuova intranet)
 
-**Per prospect interessato a AI / innovazione digitale:**
-> "Richmond Italia ci ha scelto per 'rivedere tutta la strategia e i processi di un portale introducendo IA'. Con Case IH abbiamo vinto l'Interactive Key Award 2024 per il miglior uso dell'AI nel digital marketing."
+**A chi si rivolge:**
+- **CEO / Direzione Generale** — che vogliono gestire una transizione con metodo
+- **HR / Responsabili Formazione** — che devono costruire programmi di cambiamento sostenibili
+- **Marketing e Digital Manager** — che devono portare l'AI nei processi senza stravolgere l'organizzazione
+- Aziende B2B con team distribuiti e culture consolidate da evolvere
 
-**Per prospect con agenda I5.0 (AI responsabile, transizioni, ESG):**
-> "Lavoriamo con aziende che non vogliono solo essere più veloci — vogliono scegliere meglio dove andare. Con Stellantis abbiamo accompagnato la transizione di 88.000 dipendenti in tutto il mondo. Con Bitron abbiamo costruito un AI che aiuta il buyer B2B a decidere, non solo a comprare. È quello che intendiamo per 'semplificare la complessità'."
+**Il differenziatore chiave:**
+Il Trainstorming non si esaurisce in sé stesso. Se durante il percorso emergono opportunità di prodotti o campagne digitali, Domino ha la capacità esecutiva per realizzarle — strategia, design, tecnologia, produzione: tutto interno.
 
-**Per prospect che ha paura dell'AI o la percepisce come rischio:**
-> "La fiducia non si scala con l'efficienza. I tool AI che progettiamo sono comprensibili, governabili e centrati sulle persone — non sull'automazione per sé. Il nostro approccio è sempre human-in-the-loop: l'AI serve le decisioni umane, non le sostituisce."
+**Come proporlo:**
+> *"Abbiamo un metodo che usiamo ogni mese su noi stessi per restare innovativi. Lo abbiamo strutturato come percorso per le aziende: tre sessioni nell'anno, costruite attorno alla vostra transizione specifica, con focus sull'AI applicata. Si esce da ogni sessione con decisioni prese e prototipi concreti — non slide da dimenticare in un cassetto."*
 
-**Per prospect nel turismo / cultura:**
-> "Visit Piemonte apprezza soprattutto la nostra velocità di risposta. Con ENIT coordiniamo campagne in 34 paesi su un'unica dashboard Looker."
+**Quando proporlo:**
+| Situazione cliente | Risposta Trainstorming |
+|---|---|
+| "Dobbiamo fare qualcosa con l'AI ma non sappiamo da dove partire" | Sessione 1: AI Assessment + priorità |
+| "Stiamo cambiando organizzazione / strumenti / modello" | Percorso completo di change management |
+| "I nostri manager resistono al cambiamento" | Sessioni come spazio di co-progettazione (non imposizione) |
+| "Vogliamo innovare ma ogni progetto si blocca in stakeholder war" | Core Sprint integrato nella sessione 1 |
+| "Abbiamo fatto Design Sprint ma non riusciamo a mettere a terra" | Trainstorming come follow-through strutturato |
+| "L'AI Act e le nuove normative ci preoccupano" | Trainstorming: Responsible AI & compliance come valore, non costo |
+| "Siamo sotto pressione su ESG e sostenibilità" | Trainstorming: I5.0 come framework — responsabilità come differenziatore di mercato |
+| "Abbiamo bisogno di una visione, non solo di strumenti" | Trainstorming + Decision Design: costruiamo la direzione prima di investire |
 
----
+**Tag commerciali:** change management, AI adoption, innovazione, design thinking, transizione digitale, formazione manageriale, industry 5.0, responsible AI, decision design, B2B, internal communication
 
-## TABELLA REFERENZE PER SETTORE (per Prospect Engine)
+**Posizionamento:** *"Portiamo l'innovazione dentro la tua azienda, in modo concreto, misurabile e su misura per il tuo contesto."*
 
-| Settore prospect | Premio/KPI da citare | Citazione cliente da usare |
-|---|---|---|
-| **Automotive** | IKA 2024 IVECO + IKA 2024 Case IH + nomination IKA 2025 | BABYLON Kévin (IVECO France) |
-| **B2B industriale** | IKA 2023 ROLLON, +48% organico US | Alessandra Manzato (Bitron) |
-| **Agricultural / macchine** | IKA 2024 Case IH, 16 mercati | Grace Cleary (CNH) |
-| **Intranet / Internal Comm** | FEIEIA Best Intranet Europa, 88.000 dip. | Andrea Pallard (Stellantis) |
-| **SEO / Lead generation** | Demak +48% organico, +54% lead | Alessandra Manzato (Bitron) |
-| **AI / Digital transformation** | IKA 2024 AI Case IH | Claudio Honegger (Richmond) |
-| **AI responsabile / I5.0 / ESG** | Stellantis EP (88k dip.) + Bitron AI Product Selector | Andrea Pallard (Stellantis) |
-| **Transizioni organizzative** | Stellantis Employee Portal (FEIEIA), IPI Onboarding | Monica Sarri (IPI) |
-| **Real estate / servizi** | IPI (sito + intranet + digital education) | Monica Sarri (IPI) |
-| **Non-profit / PA** | Links Foundation intranet, Action Aid IKA 2008 | Roberto Veronesi (Links) |
-| **Turismo / Cultura** | ENIT 34 paesi, Masi +175% pagine viste | Emanuela Giorgini (Visit Piemonte) |
+Noi facciamo il Trainstorming ogni mese su noi stessi. Ora lo offriamo ai clienti come percorso strutturato per introdurre innovazione reale nell'organizzazione — non workshop generici, ma sessioni progettate attorno ai problemi e alle opportunità specifiche dell'azienda cliente.
+
+**Il format: 3 incontri quadrimestrali**
+
+| Incontro | Focus | Output |
+|----------|-------|--------|
+| **#1** (mese 1) | Diagnosi e Core Hypothesis: dove si trova l'azienda, quali opportunità di innovazione esistono, dove l'AI può creare valore reale | Mappa delle priorità + Core Hypothesis validata |
+| **#2** (mese 4) | Prototipazione e test: si lavora sulle 1-2 priorità emerse, con metodi derivati dal Design Sprint. Si prototipa, si testa, si decide | Prototipi testati + decisioni d'investimento chiare |
+| **#3** (mese 8) | Misurazione e scala: si analizzano i risultati delle prime implementazioni, si consolida ciò che funziona, si pianifica il passo successivo | Roadmap d'innovazione 12 mesi |
+
+**Metodologia — derivata dal Design Sprint, adattata per l'innovazione continuativa:**
+- **Core Sprint** per costruire l'Core Hypothesis e allineare gli stakeholder prima di investire
+- **Magic Lenses** per valutare le idee rispetto a criteri critici e filtrare le più promettenti
+- **Votazione Silenziosa** per far emergere il consenso reale senza dinamiche gerarchiche
+- **Prototipazione rapida** per rendere tangibili le idee prima di decidere se investire
+- **AI Assessment personalizzato**: mappatura delle aree dove l'AI può essere applicata subito (GEO, chatbot, automazione contenuti, product finder, video AI, personalizzazione CRM)
+
+**Focus speciale — Intelligenza Artificiale:**
+L'AI è il tema centrale di ogni percorso Trainstorming Aziendale. Non come fine a sé stesso, ma come strumento concreto per risolvere problemi reali:
+- Dove l'AI riduce costi operativi e libera risorse
+- Dove l'AI migliora la CX (chatbot, personalizzazione, product selector)
+- Dove l'AI accelera la produzione di contenuti (video, newsletter, copy multilingua)
+- Dove l'AI aumenta la visibilità (GEO — ottimizzazione per ChatGPT, Perplexity, Google AI Overview)
+- Come strutturare un workflow AI sostenibile e scalabile
+
+**A chi si rivolge:**
+- **CEO / Direzione Generale** — che vogliono innovare ma non sanno da dove partire o come priorizzare
+- **Marketing e Digital Manager** — che sentono la pressione dell'AI ma non hanno tempo per sperimentare
+- **HR / Responsabili Formazione** — che vogliono costruire una cultura dell'innovazione interna
+- Aziende B2B industriali, manifatturiere, financial, healthcare che operano in settori complessi
+
+**Differenziatori rispetto ai corsi di formazione tradizionali:**
+- Non è un corso: è un percorso di trasformazione con output concreti a ogni incontro
+- Non è generico: ogni sessione parte dal contesto specifico dell'azienda
+- Non finisce in un cassetto: i prototipi e le decisioni prodotte sono immediatamente utilizzabili
+- Include la capacità esecutiva Domino: se emerge un'opportunità digitale, Domino può realizzarla
+
+**Pricing e struttura commerciale** *(da definire con Direzione)*:
+- Proposta standard: 3 sessioni full-day (o half-day) nell'arco di 8 mesi
+- Formato: on-site presso il cliente o presso le sedi Domino (Torino / Venezia)
+- Possibilità di estendere con sessioni aggiuntive o di attivare progetti esecutivi a valle
+
+**Come proporlo:**
+> *"Abbiamo un format che usiamo internamente ogni mese per restare aggiornati e innovare. Lo abbiamo trasformato in un servizio per le aziende: tre incontri nell'anno, costruiti attorno ai vostri problemi specifici, con focus sull'AI applicata. Non un corso, non una consulenza astratta — si esce da ogni sessione con decisioni prese e prototipi da testare."*
+
+**Tag commerciali:** innovazione, AI adoption, design thinking, formazione manageriale, digital transformation, B2B, industry 4.0

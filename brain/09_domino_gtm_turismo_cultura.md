@@ -15,7 +15,7 @@
 
 ## Scala di entrata commerciale
 
-Pricing, regole sul gratuito e distinzione Foundation Sprint vs Design Sprint sono definiti in `brain/03_domino_metodi.md` — fonte unica di verità. Non ripetere qui.
+Pricing, regole sul gratuito e distinzione Core Sprint vs Design Sprint sono definiti in `brain/03_domino_metodi.md` — fonte unica di verità. Non ripetere qui.
 
 ---
 
@@ -27,7 +27,7 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 
 **Preventivo Emozionale** — il tool killer per tour operator e reti di vendita indirette. Costa Crociere è il case perfetto: il preventivo viaggio diventa un minisite con analytics integrata. Unico in Italia. Quando rilevante, aprire con la demo invece dell'audit.
 
-**Differenziale vs agenzie specializzate turismo/cultura:** Domino porta metodi proprietari (Foundation Sprint, Design Sprint) + execution full-stack + competenza GEO che le agenzie verticali non hanno.
+**Differenziale vs agenzie specializzate turismo/cultura:** Domino porta metodi proprietari (Core Sprint, Design Sprint) + execution full-stack + competenza GEO che le agenzie verticali non hanno.
 
 **Differenziale vs web agency generaliste:** Domino conosce il settore in profondità — case history documentati su destinazioni, tour operator e istituzioni culturali di primo livello.
 
@@ -54,7 +54,7 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 
 **Come entrare:**
 - SEO/GEO Audit (€1.500) → visibilità per mercato prioritario, keyword gap per lingua, test diretto su ChatGPT e Google AI Overview con benchmark destinazioni competitor
-- Foundation Sprint (€6.000) → se non è chiaro quali mercati prioritizzare o se stakeholder interni (ente, consorzi, comuni) hanno visioni diverse
+- Core Sprint (€6.000) → se non è chiaro quali mercati prioritizzare o se stakeholder interni (ente, consorzi, comuni) hanno visioni diverse
 - Design Sprint (€10.000) → prototipo della nuova architettura di contenuto internazionale testato con viaggiatori reali dei mercati target in 4 giorni
 
 **Proof point:**
@@ -89,8 +89,8 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 
 **Come entrare:**
 - Digital Marketing Audit (€1.500) → analisi campagne attive per mercato, budget allocation, performance per canale. Ideale come apertura pre-stagione
-- Workshop gratuito 2h (solo per grandi enti: ENIT, regioni, DMO nazionali) → apre verso Foundation Sprint
-- Foundation Sprint (€6.000) → se stakeholder istituzionali (ente, regione, consorzi, governance politica) hanno priorità diverse: allinea su mercati, KPI e modello di coordinamento
+- Workshop gratuito 2h (solo per grandi enti: ENIT, regioni, DMO nazionali) → apre verso Core Sprint
+- Core Sprint (€6.000) → se stakeholder istituzionali (ente, regione, consorzi, governance politica) hanno priorità diverse: allinea su mercati, KPI e modello di coordinamento
 
 **Proof point:**
 - ENIT — coordinamento 34 paesi, dashboard Looker unificata
@@ -128,7 +128,7 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 - CX Audit rete vendita (€1.500) → mappatura del processo di preventivazione attuale: touchpoint, tempi, tasso di chiusura per canale. Quantifica il problema prima di proporre la soluzione
 - Design Sprint (€10.000) → se vogliono riprogettare il processo di vendita indiretto più in profondità: prototipo del nuovo modello testato con agenti reali in 4 giorni
 
-**Nota:** In questo play la demo del Preventivo Emozionale è l'apertura principale. Il Foundation Sprint non è solitamente necessario — il problema è tattico e ben definito.
+**Nota:** In questo play la demo del Preventivo Emozionale è l'apertura principale. Il Core Sprint non è solitamente necessario — il problema è tattico e ben definito.
 
 **Proof point:**
 - Costa Crociere — Preventivo Emozionale per rete agenzie: ogni preventivo è un minisite tracciato
@@ -163,7 +163,7 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 
 **Come entrare:**
 - CX Audit visitatore (€1.500) → mappatura del percorso digitale del visitatore: dalla scoperta all'acquisto del biglietto. Dove si perde, dove abbandona, dove il sito non serve il pubblico giusto
-- Foundation Sprint (€6.000) → se c'è tensione interna tra identità culturale e accessibilità, o tra i diversi pubblici da servire: allinea direzione, comunicazione e digital su un'ipotesi fondante
+- Core Sprint (€6.000) → se c'è tensione interna tra identità culturale e accessibilità, o tra i diversi pubblici da servire: allinea direzione, comunicazione e digital su un'Core Hypothesis
 - Design Sprint (€10.000) → prototipo del nuovo sito o del nuovo funnel biglietteria testato con visitatori reali in 4 giorni
 
 **Proof point:**
@@ -199,7 +199,7 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 
 **Come entrare:**
 - SEO/GEO Audit (€1.500) → test diretto: l'istituzione viene citata da ChatGPT, Perplexity, Google AI nelle query turistiche e culturali rilevanti? Benchmark con istituzioni simili
-- Workshop gratuito 2h (solo per grandi istituzioni: fondazioni multi-sede, biennali, musei nazionali) → apre verso Foundation Sprint
+- Workshop gratuito 2h (solo per grandi istituzioni: fondazioni multi-sede, biennali, musei nazionali) → apre verso Core Sprint
 - Design Sprint (€10.000) → prototipa la nuova architettura di contenuto e visibilità, testata con visitatori reali. Per istituzioni multi-sede: valida il modello di coordinamento prima di investire
 
 **Proof point:**
@@ -224,5 +224,5 @@ Quando generi materiali per un prospect Turismo/Cultura:
 3. **Per destinazioni e istituzioni: il test GEO è l'apertura più efficace** — "cercate il vostro nome su ChatGPT" funziona meglio di qualsiasi pitch
 4. **Usa i proof point del sub-target corretto**: ENIT/Visit Piemonte per destinazioni, Costa Crociere per tour operator, Fondazione Torino Musei/Biennale per istituzioni culturali
 5. **Tono comunicativo**: in questo settore il linguaggio deve essere emozionale e valoriale, non solo performativo. Il "significato" batte l'efficienza
-6. **Non confondere Foundation Sprint e Design Sprint** come alternative di prezzo: vedi distinzione completa in `brain/03_domino_metodi.md`
+6. **Non confondere Core Sprint e Design Sprint** come alternative di prezzo: vedi distinzione completa in `brain/03_domino_metodi.md`
 7. **Niente lavoro gratuito bottom-up**: workshop gratuito solo per grandi enti istituzionali o fondazioni multi-sede in approccio top-down
