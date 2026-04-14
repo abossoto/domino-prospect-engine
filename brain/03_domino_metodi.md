@@ -1,208 +1,247 @@
-# DOMINO BRAIN — Metodi Distintivi
-> Versione 4.0 — Aprile 2026. I quattro metodi proprietari che differenziano Domino: Foundation Sprint, Design Sprint, Preventivo Emozionale, Trainstorming. Aggiornato con scenari Industry 5.0 (Trainstorming aprile 2026). Da citare nelle proposte commerciali quando pertinenti.
+# DOMINO BRAIN — GTM Automotive
+> Versione 1.0 — Aprile 2026. Sales plays e regole commerciali per il settore Automotive. Da usare dal Prospect Engine per generare materiali calibrati sul prospect.
 
 ---
 
-## 1. Foundation Sprint *(introdotto 2024)*
+## Caratteristiche del settore
 
-**Cos'è:** Il passo strategico che precede il Design Sprint. Serve a costruire l'**ipotesi fondante** del progetto: la tesi che guida tutto ciò che viene dopo.
+**Approccio GTM:** Mix — espansione clienti esistenti (IVECO, Stellantis, Case IH, CNH Industrial) + nuovi OEM via referral. Non outbound freddo.
 
-**La formula dell'ipotesi fondante:**
-> "Se aiutiamo **[cliente target]** a risolvere **[problema specifico]** con **[nostro approccio]**, allora sceglieranno la nostra soluzione al posto di **[concorrenza]** perché la nostra soluzione è **[differenziazione chiave]**."
+**Ticket:** €50K–100K+ per i progetti grandi (siti multi-paese, employee portal). Design Sprint (€10K) e Foundation Sprint (€6K) servono come entry product per nuove relazioni o nuovi scope su clienti esistenti.
 
-**Tecniche interne usate nel Foundation Sprint:**
-- **Magic Lenses** — mettere alla prova le idee valutandole rispetto a criteri critici. Output: un insieme raffinato delle idee più promettenti
-- **Votazione Silenziosa** — tutti ricevono 3 "pallini" e votano autonomamente le proposte più forti sulla bacheca, senza influenzarsi a vicenda. Favorisce la diversità di opinioni e l'emersione delle idee realmente condivise
-
-**Il flusso completo:**
-```
-Foundation Sprint → [Ipotesi Fondante] → Design Sprint → Design Sprint → ... → Esecuzione
-         ↑___________________________________________________|
-                          (loop iterativo)
-```
-
-**Quando proporlo:**
-- All'inizio di qualsiasi progetto complesso dove il cliente non ha ancora chiarezza strategica
-- Quando ci sono stakeholder con visioni diverse da allineare prima di investire
-- Quando il cliente ha tante idee ma non sa quale prioritizzare
-- Prima di un Design Sprint, per assicurarsi di lavorare sul problema giusto
+**Posizionamento:** Settore con la history più profonda di Domino — presente dall'automotive dal 1996 (Fiat). Premio IKA vinto in 5 edizioni diverse. Nessun competitor ha una credenziale paragonabile nel mercato italiano.
 
 ---
 
-## 2. Design Sprint *(pionieri in Italia da 10+ anni)*
+## Premi IKA in automotive (cronologia completa)
 
-**Cos'è:** La metodologia di **Google Ventures** per trasformare problemi di business complessi in prototipi testati in tempi rapidissimi. Domino è tra i primi e più esperti in Italia ad averla adottata e adattata.
-
-**Connessione I5.0 — Decision Design:** In un'epoca in cui UX e tecnologia diventano architetture di scelta, il Design Sprint è lo strumento più concreto per progettare "come le persone decidono" — non solo come navigano un'interfaccia. Ogni sprint produce trade-off visibili, scenari comparabili, conseguenze tangibili: esattamente quello che serve per decidere in contesti complessi.
-
-**Il format standard:**
-- **4 giorni** (o 1 settimana nelle versioni estese)
-- **1 team unito** — cliente + Domino in full-immersion
-- **1 risultato tangibile** — prototipo testato con utenti reali
-- **100% clienti soddisfatti** (dato dichiarato ufficialmente)
-
-**Cosa si progetta:**
-- Percorsi (campagne, customer experience, buyer journey)
-- Touchpoint (sito web, app, intranet, sales tool)
-- Servizi (aree riservate, nuovi prodotti digitali, modelli di partnership)
-
-**Vantaggi per il cliente:**
-- Riduzione drastica del rischio di investimento
-- Decisioni basate su test con utenti reali, non su opinioni interne
-- Allineamento immediato tra tutti gli stakeholder
-- In 4 giorni si ottiene ciò che normalmente richiederebbe mesi di riunioni e briefing
-
-**Quando proporlo:**
-- Qualsiasi progetto con complessità decisionale alta o stakeholder multipli
-- Quando il cliente esita a investire senza una visione chiara del risultato
-- Per superare stalli decisionali interni
-- Come primo passo tangibile di una relazione con un nuovo cliente
-
----
-
-## 3. Preventivo Emozionale
-
-**Cos'è:** Un approccio unico alla fase commerciale che trasforma il preventivo tradizionale in un'**esperienza interattiva** che fa vivere al prospect il valore del progetto ancor prima che venga realizzato.
-
-**Come funziona tecnicamente:**
-- Il preventivo diventa un **minisite personalizzato** per ogni cliente/offerta
-- Contiene: descrizione del progetto, visual, video, valore comunicato, CTA
-- Ha un **sistema di analytics integrato**: si traccia chi lo visualizza, quando, quante volte, per quanto tempo
-- Moduli attivabili a seconda del contesto: Cataloghi, Listini, ID Manager, Training, Area Documentale, Analytics
-
-**Vantaggi commerciali:**
-- Il cliente "vive" la proposta invece di leggerla su un PDF
-- Riduce la confusione competitiva: il cliente capisce immediatamente cosa differenzia Domino
-- Fornisce intelligence commerciale: si sa chi è davvero interessato e quanto
-- Tracking della conversione per prodotto, punto vendita e operatore
-- La rete vendita può generare preventivi personalizzati in autonomia
-
-**Caso d'uso reale — Costa Crociere:**
-Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina, prezzo, foto dell'agente, contatti e CTA prenotazione diretta. Ogni preventivo è tracciato. Il sistema scala su tutta la rete agenzie.
-
-**Quando proporlo:**
-- Sempre in contesti B2B con ciclo di vendita complesso
-- Quando il valore dell'offerta è difficile da comunicare con un documento tradizionale
-- Per reti di vendita indirette (concessionari, agenzie, rivenditori) che devono vendere servizi complessi
-- Quando il cliente vuole aumentare la conversion rate dei preventivi
-- Come dimostrazione concreta delle capacità Domino già nella fase di proposta
-
----
-
-## Come combinare i metodi
-
-| Situazione cliente | Strumento consigliato |
-|---|---|
-| "Non sappiamo da dove partire" | Foundation Sprint |
-| "Abbiamo visioni diverse tra i reparti" | Foundation Sprint |
-| "Vogliamo validare l'idea prima di investire" | Design Sprint |
-| "Il progetto è complesso, temiamo di sbagliare" | Design Sprint |
-| "I nostri preventivi non convertono" | Preventivo Emozionale |
-| "La rete vendita fatica a spiegare il valore" | Preventivo Emozionale |
-| "Dobbiamo innovare ma non sappiamo cosa fare" | Foundation Sprint → Design Sprint |
-| "Dobbiamo rinnovare il sito ma gli stakeholder non sono d'accordo" | Design Sprint |
-| "Dobbiamo gestire un cambiamento culturale o tecnologico importante" | Trainstorming |
-| "Vogliamo introdurre l'AI in azienda ma non sappiamo come" | Trainstorming |
-| "Facciamo fatica a mettere a terra le idee nel tempo" | Trainstorming (follow-through strutturato) |
-| "Abbiamo fatto un Design Sprint ma non riusciamo a implementare" | Trainstorming come continuazione |
-| "L'AI Act ci impone di ripensare come usiamo i dati" | Trainstorming: Responsible AI assessment + roadmap |
-| "Siamo in una transizione (fusione, riorganizzazione, nuova piattaforma)" | Trainstorming: transition program su misura |
-| "I nostri tool digitali aiutano a fare cose ma non a decidere meglio" | Design Sprint + Decision Design |
-| "Vogliamo essere rilevanti nell'era dell'AI, non solo efficienti" | Foundation Sprint → Trainstorming I5.0 |
-
----
-
-## GEO — Generative Engine Optimization *(competenza emergente 2024-2025)*
-
-**Cos'è:** L'ottimizzazione dei contenuti per essere rilevanti non solo su Google ma anche nei risultati generati da AI come ChatGPT, Perplexity, Google AI Overview.
-
-**Perché è importante:**
-- Gli utenti cercano in modo più conversazionale (intent più complesso)
-- L'AI influenza i risultati di ricerca con snippet e AI overview
-- I contenuti devono essere ottimizzati per essere "citati" dall'AI
-
-**Cosa include:**
-- Keyword research avanzata
-- Ottimizzazione meta tag e tag semantici (H1, hreflang, ecc.)
-- Audit tecnico SEO completo
-- Ottimizzazione JS/CSS per performance
-- Creazione contenuti targettizzati per topic cluster
-- Monitoraggio su dashboard (Looker)
-
-**Risultati documentati:**
-- Demak: +48% traffico organico, +54% lead gen, +20% clic non-brand, +18% audit score
-- Masi Agricola: +44% utenti, +54% sessioni, +175% pagine viste (6 mesi)
-- Frascold: +62% utenti organici (già in 1 mese)
-- Rollon US: +48% traffico organico USA, "Linear rails" = prima keyword organica
-- ENIT: coordinamento campagne in 34 paesi con dashboard Looker unificata
-
----
-
-## CMS Omnicanale — Abbattere i silos tecnologici *(tema emergente 2025-2026)*
-
-**Il problema di mercato:** Molte aziende hanno accumulato decine di strumenti digitali diversi ma comunicano in modo incoerente. I silos tecnologici frenano la velocità — oggi requisito di sopravvivenza, non optional.
-
-**La risposta Domino:** L'indipendenza tecnologica (Adobe, Sitecore, WordPress, Liferay, Drupal, Gaia proprietario) è già una risposta strutturale a questo problema. Domino non vende una piattaforma: seleziona quella giusta per eliminare i silos e garantire coerenza omnicanale.
-
-**Approccio architetturale consigliato:** Architetture modulari basate su API + team cross-funzionali allineati tra marketing e IT.
-
-**Quando portare questo tema:**
-- Con clienti che gestiscono più siti, brand o mercati con strumenti non integrati
-- In progetti di CMS selection o migrazione piattaforma
-- Quando il cliente lamenta lentezza nella pubblicazione o incoerenza tra canali
-
-**Angolo di vendita:** Non "cambiamo il tuo CMS" ma "costruiamo un'infrastruttura che ti permette di comunicare con la velocità che il mercato richiede."
-
----
-
-## 4. Trainstorming *(metodo proprietario — change management e innovazione continuativa)*
-
-**Cos'è:** Il metodo Domino per accompagnare le organizzazioni attraverso transizioni complesse con un percorso strutturato nel tempo. Non è un workshop singolo, non è formazione tradizionale: è un programma di cambiamento a cadenza quadrimestrale che porta innovazione concreta e gestita all'interno dell'azienda cliente.
-
-Nasce dalla pratica interna Domino — il team si incontra mensilmente con questo format — ed è stato strutturato come servizio replicabile per i clienti.
-
-**Connessione I5.0 — Da Progetti a Transizioni:**
-Il Trainstorming è la risposta operativa al cambio di paradigma di Industry 5.0: i clienti non cercano più soluzioni puntuali, ma partner che li accompagnino attraverso transizioni lunghe e continue (AI adoption, regolazione, sostenibilità, cambi organizzativi). Il Trainstorming è esattamente questo — non un deliverable, ma un programma di accompagnamento. I progetti finiscono; le transizioni no.
-
-I tre temi I5.0 che guidano ogni percorso Trainstorming:
-- **Responsabilità come differenziatore** — come usare l'AI in modo governabile, comprensibile, fiduciario
-- **Ecosistemi e orchestrazione** — come l'azienda si colloca in reti di partner, piattaforme, fornitori
-- **Decision Design** — come costruire strumenti e processi che aiutano le persone a decidere meglio
-
-**Il flusso completo:**
-```
-Sessione 1 [Mese 1]      Sessione 2 [Mese 4]      Sessione 3 [Mese 8]
-Diagnosi + Ipotesi   →   Prototipazione + Test  →   Scala + Roadmap
-Fondante                 con utenti reali            12 mesi
-     ↑______________________________________________|
-                    (loop iterativo se necessario)
-```
-
-**Tecniche interne usate:**
-- **Foundation Sprint** — costruisce l'ipotesi fondante della transizione nella sessione 1
-- **Magic Lenses** — mette alla prova le idee di cambiamento rispetto a criteri critici
-- **Votazione Silenziosa** — fa emergere il consenso reale senza gerarchie
-- **Prototipazione rapida** — rende tangibile il cambiamento prima di investire
-- **AI Assessment** — mappa le opportunità AI concrete per quel contesto specifico
-
-**Differenza con Design Sprint e Foundation Sprint:**
-
-| | Foundation Sprint | Design Sprint | Trainstorming |
+| Anno | Cliente | Progetto | Categoria |
 |---|---|---|---|
-| **Durata** | 1-2 giorni | 4-5 giorni | 8 mesi (3 sessioni) |
-| **Output** | Ipotesi fondante | Prototipo testato | Roadmap + implementazione avviata |
-| **Focus** | Allineamento strategico | Validazione soluzione | Cambiamento culturale/organizzativo |
-| **Quando** | Prima di un progetto | Prima di investire | Per gestire una transizione |
+| 2010 | Fiat | fiat.it — nuovo sito internazionale | Da confermare (non trovata online) |
+| 2019 | IVECO | MyIVECO portal | Best Use of Digital Media |
+| 2023 | Rollon | Sito B2B + SEO | Best Integrated Communication Campaign B2B |
+| 2024 | IVECO | iveco.com | Automotive & Energy |
+| 2024 | Case IH | AI in lead generation | Premio Speciale Innovation Technology |
+| 2025* | IVECO | IVECO Design System | Nomination — B2B |
+| 2025* | IVECO | MY METALLICA TRUCK | Nomination — AI Best Use in ADV |
 
-**Quando proporlo:**
-- Quando il cliente deve gestire una trasformazione culturale o tecnologica rilevante (AI, nuovi strumenti, riorganizzazione)
-- Quando ha già fatto un Design Sprint ma fatica a mettere a terra
-- Quando l'innovazione è bloccata da resistenze interne o stakeholder war
-- Come programma annuale di innovazione per aziende che vogliono mantenere un ritmo di cambiamento
-- Come naturale continuazione di un onboarding su nuove piattaforme (intranet, CRM, Microsoft 365)
-- Quando il cliente è sotto pressione normativa (AI Act, ESG, data ethics) e deve trasformare la compliance in vantaggio competitivo
-- Quando l'azienda vuole adottare l'AI ma teme l'impatto sulle persone e sui processi: il Trainstorming costruisce una governance responsabile dall'interno
-- Quando il cliente sta ripensando il proprio modello di business in risposta a transizioni sistemiche (energia, supply chain, demografia)
+*Nomination 2025 (IKA 26° edizione) — esito non ancora nel Brain.
 
-**Pitch I5.0 per il Trainstorming:**
-> *"I progetti finiscono. Le transizioni no. Vi accompagniamo attraverso le vostre — AI, regolazione, organizzazione — con un metodo che usiamo ogni mese su noi stessi: tre sessioni nell'anno, output concreti a ogni tappa, nessuna slide da dimenticare in un cassetto."*
+**Come usare questa credenziale:** Domino è l'unica agenzia italiana che ha vinto IKA in automotive in 5 edizioni diverse, con 3 clienti diversi (Fiat, IVECO, Case IH) e in categorie diverse (sito, B2B, AI, digital media). È la prova più forte di expertise settoriale che esiste.
+
+---
+
+## Scala di entrata commerciale
+
+Pricing, regole sul gratuito e distinzione Foundation Sprint vs Design Sprint sono definiti in `brain/03_domino_metodi.md` — fonte unica di verità. Non ripetere qui.
+
+---
+
+## Sub-target del settore
+
+| Sub-target | Clienti tipo | Interlocutore principale |
+|---|---|---|
+| **OEM / presenza digitale** | Case madri, brand globali | Marketing Director / Digital Manager / CDO |
+| **Rete vendita** | Dealer, concessionari, distributori | Sales Director / Network Development |
+| **Fleet / transizione elettrico** | Fleet marketing, B2B commerciale | Fleet Marketing / B2B Marketing / Sales B2B |
+| **Employee experience** | Grandi gruppi multinazionali | HR Director / Internal Comms / CDO |
+| **AI & innovazione** | Marketing / CDO innovativi | CMO / CDO / Marketing Director |
+
+---
+
+## Sales Plays — OEM / presenza digitale internazionale
+
+### SP1 — "Il nostro sito non regge il confronto internazionale — e i mercati non sono coordinati"
+**Motion:** Espansione / Referral
+**Entry:** Marketing Director / Digital Manager / CDO
+**Trigger:** Nuovo modello o brand, sito obsoleto, espansione mercati, referral
+
+**Problema:**
+- Sito corporate o di prodotto che non regge il confronto con i competitor internazionali
+- Brand inconsistente tra mercati — ogni paese ha il suo sito, nessuna governance
+- UX non progettata per il buyer journey automotive (configuratore, dealer finder, test drive)
+- Rollout lento: i nuovi mercati aspettano mesi per avere il sito aggiornato
+
+**Soluzione completa Domino:**
+- Sito istituzionale o di prodotto con Design System scalabile su tutti i mercati
+- Rollout multi-paese coordinato con governance centrale
+- UX progettata per il buyer journey automotive — dalla scoperta alla lead
+- SEO/GEO per visibilità internazionale su keyword di prodotto e modello
+
+**Come entrare / espandere:**
+- Apertura con case IVECO.com IKA 2024 (primo incontro) → credenziale più forte del settore
+- Foundation Sprint (€6.000) → se stakeholder divisi su direzione, mercati prioritari o architettura del sito
+- Design Sprint (€10.000) → prototipo del nuovo sito o buyer journey testato con utenti reali in 4 giorni, prima di investire nel progetto completo (€50–100K+)
+
+**Proof point:**
+- IVECO.com — IKA 2024 categoria Automotive & Energy ("miglior sito automotive")
+- Fiat.it — IKA 2010, rollout in 21 paesi EMEA
+- Case IH — sito con Personas lanciato in 18 mercati simultaneamente
+- CNH Industrial, Stellantis
+
+**Vs competitor:**
+- Vs web agency: Design System + governance multi-paese documentata su brand automotive globali
+- Vs consulenza: Domino esegue — non solo strategia
+
+**CTA:** Apertura con case IVECO.com (IKA 2024) + Design Sprint (€10K) per prototipare la nuova esperienza prima del rollout completo.
+
+---
+
+## Sales Plays — Rete vendita
+
+### SP2 — "I nostri dealer non riescono a vendere in modo coerente — mancano strumenti e formazione"
+**Motion:** Espansione / Referral
+**Entry:** Sales Director / Network Development / Marketing Rete
+**Trigger:** Nuovo modello, ristrutturazione rete, cambio responsabile
+
+**Problema:**
+- Rete di concessionari eterogenea — competenze, lingue e mercati molto diversi
+- Cataloghi, listini e comparatori ancora su PDF — non aggiornati, non personalizzabili
+- Formazione su nuovi modelli lenta e costosa — i dealer attendono mesi
+- Impossibile tracciare l'attività commerciale della rete dal centro
+
+**Soluzione completa Domino:**
+- App rete vendita offline-ready — cataloghi interattivi, listini, comparatori vs concorrenza
+- Preventivo Emozionale per dealer — proposta personalizzata, tracciabile, con analytics
+- Video AI con avatar per formazione rete su nuovi modelli (3–5 min per modulo, multilingua)
+- ID Manager per profili e contenuti personalizzati per punto vendita
+
+**Come entrare / espandere:**
+- Demo E-Product App + PE automotive (primo incontro) → il dealer che genera, personalizza e traccia la proposta. Si vede il prodotto finito
+- CX Audit rete vendita (€1.500) → mappatura del processo attuale: dove i dealer perdono efficacia, dove mancano strumenti
+- Design Sprint (€10.000) → prototipo del sales tool o del sistema di formazione AI testato con dealer reali in 4 giorni
+
+**Proof point:**
+- Fiat Professional E-Product App — cataloghi interattivi, listini, comparatori, offline-ready, multilingua
+- IVECO Training AI Video — formazione rete con video AI personalizzati per ruolo e mercato
+- Preventivo Emozionale — già su reti automotive e automotive-adjacent (Costa Crociere, Arca SGR)
+
+**Vs competitor:**
+- Vs web agency: full stack — app + PE + video AI + analytics in un sistema integrato
+
+**CTA:** Demo E-Product App e PE automotive + Design Sprint (€10K) per prototipare la soluzione con dealer reali prima del rollout.
+
+---
+
+## Sales Plays — Fleet / transizione elettrico
+
+### SP3 — "I fleet manager non riescono a giustificare il passaggio all'elettrico — troppa complessità"
+**Motion:** Espansione / Referral
+**Entry:** Fleet Marketing / B2B Marketing / Sales B2B
+**Trigger:** Nuovi modelli EV, normative emissioni, pressione fleet manager
+
+**Problema:**
+- Fleet manager sotto pressione normativa (emissioni, ESG) ma incerti sul ROI dell'elettrico
+- TCO del veicolo elettrico difficile da calcolare senza dati specifici per la flotta
+- Comunicazione EV ancora generica — non parla la lingua del fleet manager B2B
+- Il concessionario non ha strumenti per guidare la conversazione con il cliente
+
+**Soluzione completa Domino:**
+- TCO Calculator personalizzato per flotta — il fleet manager calcola il risparmio reale con i suoi dati
+- eDailyAdvisor — tool step-by-step per guidare le scelte di mobilità sostenibile
+- Contenuti B2B mirati per fleet manager (non per consumatore finale)
+- Lead gen qualificata con AI per fleet manager in fase di rinnovo flotta
+
+**Come entrare / espandere:**
+- Demo TCO Calculator + eDailyAdvisor su caso IVECO (primo incontro) → il fleet manager inserisce i suoi dati e vede il risparmio concreto
+- Foundation Sprint (€6.000) → se non è chiaro quale tool costruire o se B2B marketing, fleet sales e digital hanno visioni diverse
+- Design Sprint (€10.000) → prototipo del TCO Calculator o configuratore EV testato con fleet manager reali in 4 giorni
+
+**Proof point:**
+- IVECO TCO Calculator — risparmio personalizzato per flotta
+- IVECO eDailyAdvisor — guida alla mobilità elettrica aziendale
+- Case IH — IKA 2024 Innovation Technology per AI in lead gen B2B
+- Demak Group — riposizionamento da fornitore a leader B2B (+54% lead gen, +48% organico): referenza cross-settore come analogia di brand che naviga una transizione di posizionamento
+
+**Vs competitor:**
+- Vs web agency: Decision Design applicato al B2B automotive — strumenti che aiutano a decidere, non solo contenuti
+
+**CTA:** Demo TCO Calculator su caso IVECO + Design Sprint (€10K) per prototipare il loro calculator con fleet manager reali in 4 giorni.
+
+---
+
+## Sales Plays — Employee experience
+
+### SP4 — "Dobbiamo connettere e coinvolgere decine di migliaia di dipendenti in tutto il mondo"
+**Motion:** Espansione / Referral
+**Entry:** HR Director / Internal Communications / CDO
+**Trigger:** Fusione/acquisizione, nuovo management, trasformazione organizzativa
+
+**Problema:**
+- Fusioni e riorganizzazioni che frammentano la cultura aziendale
+- Decine di intranet locali non collegate — ogni country fa da sé
+- Dipendenti di profili molto diversi (operai, ingegneri, commercial, HQ) difficili da raggiungere con un unico canale
+- Transizioni strategiche (elettrico, sostenibilità, D&I) da comunicare internamente in modo efficace
+
+**Soluzione completa Domino:**
+- Employee Portal globale con UX per profili diversi e accesso profilato
+- Comunicazione interna per transizioni strategiche (eventi, video series, newsletter)
+- Video AI con avatar per formazione e onboarding (3–5 min per modulo, multilingua)
+- Piano di engagement e adozione per il lancio
+
+**Come entrare / espandere:**
+- Case Stellantis Employee Portal (primo incontro) → 88.000 dipendenti, FEIEIA Award Best European Intranet. Nato come FCA, esteso a CNH Industrial e Iveco Group
+- Foundation Sprint (€6.000) → allinea HR, IT, comunicazione e business su ipotesi fondante del portale
+- Design Sprint (€10.000) → prototipo testato con dipendenti reali di profili diversi in 4 giorni
+
+**Proof point:**
+- Stellantis Employee Portal — 88.000 dipendenti, FEIEIA Award Best European Intranet, esteso a CNH Industrial e Iveco Group
+- Stellantis Electrification Days — evento globale sold-out in poche ore
+- Stellantis D&I People Stories — video più visti sull'intranet, rilanciate dal COO
+
+**Vs competitor:**
+- Vs web agency: experience su employee portal a scala globale con decine di migliaia di utenti eterogenei
+
+**CTA:** Case Stellantis Employee Portal come apertura + Foundation Sprint (€6K) per allineare HR, IT e comunicazione prima di avviare il progetto.
+
+---
+
+## Sales Plays — AI & innovazione nel marketing automotive
+
+### SP5 — "Vogliamo integrare l'AI nel marketing — lead gen, formazione, contenuti"
+**Motion:** Referral
+**Entry:** CMO / CDO / Marketing Director
+**Trigger:** Referral, pressione innovazione, competitor che si muovono
+
+**Problema:**
+- AI ovunque nei competitor ma non si sa quali usi siano davvero efficaci nel settore
+- Lead gen B2B automotive/industrial con volumi bassi e valore altissimo — ogni lead conta
+- Formazione rete vendita su nuovi modelli: lenta, costosa, non scalabile con metodi tradizionali
+- GEO — le ricerche di veicoli commerciali e industriali si spostano sull'AI search
+
+**Soluzione completa Domino:**
+- AI in lead gen — campagne digitali con AI per identificare e qualificare prospect B2B (Case IH model)
+- Video AI con avatar per formazione rete (multilingua, personalizzati per modello e mercato)
+- GEO per essere citati dai motori AI nelle ricerche di veicoli commerciali e industriali
+- Responsible AI by design — human-in-the-loop, conforme AI Act
+
+**Come entrare:**
+- Case IH IKA 2024 Innovation Technology (primo incontro) → AI in lead gen B2B premiata internazionalmente. Si apre con il case: risultati misurabili, non hype
+- Foundation Sprint (€6.000) → mappa le opportunità AI concrete per il loro contesto: lead gen, formazione o GEO
+- Design Sprint (€10.000) → prototipo del primo use case AI testato con utenti reali in 4 giorni
+
+**Proof point:**
+- Case IH — IKA 2024 "Innovation Technology" per AI in lead gen B2B
+- IVECO Training AI Video — formazione rete con AI, multilingua per mercato
+- GEO — competenza esclusiva Domino in Italia
+- IVECO MY METALLICA TRUCK — nomination IKA 2025 AI Best Use in ADV
+
+**Vs competitor:**
+- Vs web agency: AI applicata con risultati documentati e premiati internazionalmente
+- Vs consulenza: Domino non solo consiglia — realizza e misura
+
+**CTA:** Apertura con case IKA 2024 Case IH + Foundation Sprint (€6K) per identificare il primo use case AI ad alto impatto.
+
+---
+
+## Prospect Engine — istruzioni di utilizzo
+
+Quando generi materiali per un prospect Automotive:
+
+1. **I premi IKA sono la credenziale di apertura principale** — citare sempre il premio più rilevante per il tipo di progetto discusso. Non iniziare con la storia di Domino: inizia con il premio
+2. **SP1**: aprire con IVECO.com IKA 2024 per nuovi OEM. Per expansion su clienti esistenti: citare il case più recente e pertinente al nuovo scope
+3. **SP2**: aprire sempre con demo E-Product App + PE — si vede il prodotto, non si racconta
+4. **SP3**: demo TCO Calculator come apertura — il fleet manager che vede il suo risparmio concreto vale più di qualsiasi slide
+5. **SP4**: Stellantis Employee Portal è una credenziale impossibile da replicare. Citarla sempre nei progetti employee experience
+6. **Non confondere Foundation Sprint e Design Sprint** come alternative di prezzo: vedi `brain/03_domino_metodi.md`
+7. **Niente lavoro gratuito bottom-up**: workshop gratuito solo per grandi OEM in approccio top-down

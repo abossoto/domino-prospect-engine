@@ -1,157 +1,238 @@
-# DOMINO BRAIN — Identità
-> Versione 3.0 — Aprile 2026. Fonti: sito domino.it (IT+EN), presentazioni ufficiali, Sortlist, Digital Communication Forum 2025, Trainstorming "Le transizioni, I5.0 by Design" (aprile 2026).
+# DOMINO BRAIN — Case History
+> Versione 3.0 — Aprile 2026. Tutti i case documentati da sito, presentazioni e materiali ufficiali. Da usare per settore e tipo di progetto. Aggiornato con lettura I5.0 dei principali case (Trainstorming aprile 2026).
 
 ---
 
-## Chi siamo
+## AUTOMOTIVE
 
-**Domino — Proudly Interactive** è una CX agency specializzata in progetti digitali per lo sviluppo delle imprese.
+### IVECO — iveco.com (Premio IKA 2024)
+**Progetto:** Nuovo sito istituzionale globale per IVECO.
+**Riconoscimento:** Premio **IKA 2024** — massimo riconoscimento internazionale per siti automotive.
 
-- **50 persone** (dato sito ufficiale) / 45 (Forum 2025) — team in crescita
-- **29 anni di esperienza** (fondata nel 1996)
-- **2 sedi**: Torino (Via Agostino da Montefeltro, 2 — 10134) e Venezia (Sestiere Santa Croce, 466/G — 30135)
-- **Società Benefit certificata B Corp** (certificazione ottenuta nel 2025)
-- **Oltre 30 riconoscimenti internazionali**
-- Partita IVA: 07098990018
+### IVECO — MyIVECO App
+**Progetto:** Customer experience personalizzata per ogni utente MyIVECO.
+**Approccio:** Progettazione UX centrata sull'utente, area riservata con contenuti profilati.
 
-**Contatti:**
-- Torino: +39 011 544770
-- Venezia: +39 041 0991410
-- Lavora con noi: jobs@domino.it
+### IVECO — TCO Calculator
+**Progetto:** Tool B2B per il calcolo del risparmio personalizzato (Total Cost of Ownership).
+**Obiettivo:** Guidare i fleet manager verso scelte più consapevoli con dati concreti.
 
----
+### IVECO — eDailyAdvisor
+**Progetto:** Tool B2B per guidare le scelte di mobilità sostenibile/elettrica.
+**Contesto:** Supporto alla transizione verso l'elettrico nella flotta aziendale.
 
-## Payoff e posizionamento
+### IVECO — Training con AI Video
+**Progetto:** Contenuti formativi personalizzati e video AI per coinvolgere ogni team commerciale.
+**Tecnologia:** Video generati con AI, personalizzati per ruolo e mercato.
 
-> *"Semplifichiamo la complessità, liberiamo il potenziale"* — payoff principale, sito e presentazioni
+### Stellantis — Employee Portal (ex-FCA)
+**Progetto:** Migrazione da intranet multiple a un unico Employee Portal globale.
+**Approccio:** Assessment processi esistenti, survey su audience specifiche, employee journey mapping.
+**Risultato:** Rete che connette **88.000 dipendenti nel mondo**. Premio **FEIEIA Award – Best European Intranet**. Esteso successivamente a CNH Industrial e Iveco Group.
+**Lettura I5.0:** Case emblematico di "transition program" — non un sito, ma l'infrastruttura di una transizione organizzativa globale. Domino non ha consegnato un deliverable: ha accompagnato una transizione. Il valore non era nell'output, ma nella continuità della relazione.
 
-> *"Diamo il meglio in situazioni complesse"* — claim sintetico Forum 2025
+### Stellantis — Electrification Days
+**Progetto:** Evento globale (online + offline) sulla mobilità elettrica per dipendenti.
+**Attività:** Concept & Strategy, Visual Identity, Content Production, coordinamento progetto, utilizzo AI.
+**Risultato:** Le prime due manifestazioni locali sono state **sold-out in poche ore**.
 
-> *"Proudly Interactive dal 1996"* — claim storico, ancora usato
+### Stellantis — D&I People Stories
+**Progetto:** Due video series con dipendenti donne Stellantis come protagoniste, su temi D&I.
+**Attività:** Concept, visual identity, storyboard, produzione video.
+**Risultato:** Tra i **video più visti sulla intranet Stellantis**, rilanciate dal COO nella sua comunicazione settimanale.
 
-Domino è un **Strategic CX Partner**: non un vendor di software, non una web agency generica. Siamo il partner che trasforma problemi di business complessi in soluzioni digitali concrete, gestendo internamente l'intero workflow — dalla strategia alla creatività, fino alla messa a terra tecnologica.
+### Fiat — Sito internazionale EMEA
+**Progetto:** Nuovo sito Fiat in **21 paesi**, primo grande progetto di rollout internazionale Domino.
+**Anno:** 2010.
 
-Nell'auto-definizione istituzionale: **"Interaction Agency"** (non solo web agency) perché ogni progetto digitale deve interagire con lo sviluppo reale dell'impresa.
+### Fiat Professional (Ducato) — App E-Product
+**Progetto:** App per la rete vendita Fiat Professional.
+**Funzionalità:** Cataloghi interattivi, listini con comparatori vs concorrenza, valutatori costi di gestione, offline-ready, personalizzabile per punto vendita, area training, area documentale, analytics.
 
----
+### Jeep — Community digitale
+**Progetto:** Come nasce una community Jeep. Progettazione e realizzazione della community digitale per i proprietari Jeep.
 
-## Direzione
+### CIFA — Interazioni guidate dall'innovazione
+**Progetto:** Costruire interazioni digitali guidate dall'innovazione per un produttore di macchine da costruzione.
 
-| Nome | Ruolo |
-|------|-------|
-| **Andrea Bosso** | Strategy and Consulting Director (co-founder) |
-| **Emiliano Cianci** | Product Director (co-founder) |
-| **Giovanni Borgna** | Administration and Finance Director |
+### Case IH — Lead generation Europa + Brand Awareness
+**Progetto:** Campagne di lead generation per il mercato europeo e incremento brand awareness.
 
----
+### Case IH — IKA 2024 "Innovation Technology"
+**Riconoscimento:** Premio **IKA 2024** — categoria "Premio Speciale Innovation Technology".
+**Cosa ha premiato:** L'integrazione dell'AI nel processo di lead generation tramite campagne di digital marketing. Definisce nuovi standard per l'uso dell'AI nel marketing B2B agricultural/industrial.
+**Nota:** Domino vince due IKA 2024 nello stesso anno: uno con IVECO (sito, categoria Automotive) e uno con Case IH (AI + lead gen, categoria Innovation Technology).
+**Lettura I5.0:** Esempio concreto di "Efficiency to Responsibility as Differentiator" — l'AI non è usata per automatizzare ciecamente, ma per migliorare la pertinenza e la qualità dei contatti generati. AI che produce fiducia, non solo volume.
 
-## Il team: i "Domineers"
-
-I dipendenti Domino si chiamano internamente **Domineers**. La caratteristica fondante: **curiosità**. Il Domineer si appassiona agli argomenti più impensati, fa domande, cerca informazioni, interagisce, comprende, risolve. È imbattibile in un ambito (o vorrebbe esserlo nei prossimi 18 mesi).
-
----
-
-## Trainstorming — La cultura dell'apprendimento continuo
-
-Il **Trainstorming** è il format interno di crescita periodica (cadenza mensile circa) in cui tutto il team Domino si ritrova — unendo fisicamente le sedi di Torino e Venezia quando possibile — per esplorare nuovi strumenti, metodologie e idee. Il nome fonde *training* e *brainstorming*: non è una riunione, è uno spazio di sperimentazione collettiva.
-
-**Perché è rilevante anche commercialmente:**
-- È la prova che le competenze dichiarate vengono continuamente testate su noi stessi prima di essere proposte ai clienti (es. AI, Design Sprint, workflow creativi)
-- Istituzionalizza la curiosità che definisce i Domineers
-- Rafforza la coesione tra le due sedi
-
-**Argomenti recenti (2025-2026):**
-- **"Le transizioni, I5.0 by Design"** — Industry 5.0 come scenario competitivo: dalla responsabilità come differenziatore al Decision Design come nuovo perimetro della consulenza digitale (aprile 2026)
-- **Weavy** — piattaforma AI per workflow creativi e supporto al Design Sprint (marzo 2026)
-- Accessibilità digitale + evoluzione dei motori di risposta AI (GEO)
-- UX Design per Chat AI
-- Digitalizzazione della mobilità e volontariato (coerente con B Corp)
-- Workshop natalizio unificato Torino+Venezia (Banca del Vino, Pollenzo)
-
-**Come citarlo in un pitch:**
-> *"Prima di proporre uno strumento a un cliente, lo testiamo su noi stessi. È così che funziona il Trainstorming: ogni mese il team si ferma per imparare. L'AI nei nostri progetti non è una novità dell'ultima ora."*
+### Case IH — Sito con Personas per 18 mercati
+**Progetto:** Nuovo sito web basato su Personas, lanciato in **18 mercati** simultaneamente. Approccio: ricerca qualitativa → personas → UX → design → sviluppo → rollout internazionale.
 
 ---
 
-## Scenario di riferimento — Industry 5.0 *(cornice strategica adottata aprile 2026)*
+## B2B INDUSTRIALE
 
-Il Trainstorming di aprile 2026 ("Le transizioni, I5.0 by Design") ha consolidato la visione strategica che orienta il posizionamento Domino nei prossimi anni. Tre tendenze strutturali ridefiniscono il valore di un partner digitale:
+### Comau — Brand Identity
+**Progetto:** Brand identity completa: analisi valori, concept, immaginario visivo, sistema di identità.
 
-**1. Dall'Efficienza alla Responsabilità come Differenziatore**
-L'IA rende l'efficienza una commodity accessibile a tutti. Il vero vantaggio competitivo — per Domino e per i suoi clienti — diventa la capacità di progettare tecnologia responsabile, comprensibile e governabile. *Responsible AI, human-in-the-loop, compliance come value creation* (AI Act, ESG, data ethics): questi non sono vincoli, sono posizionamenti.
+### Comau+ — Marketplace
+**Progetto:** Nuovo modello di partnership digitale tra Comau (hardware), clienti industriali (acquirenti) e system integrator (software applicativo).
+**Scope:** Progettazione di processo + UX + design + front-end + erogazione + manutenzione. Gestito interamente da Domino.
 
-**2. Dai Progetti agli Ecosistemi e alle Transizioni**
-I clienti non cercano più "soluzioni" puntuali, ma partner capaci di accompagnarli attraverso transizioni complesse (AI adoption, regolazione, sostenibilità, riorganizzazione). L'agency che vince non consegna deliverable: resta finché il sistema impara a reggere il cambiamento. Transition programs, continuous design frameworks, governance di piattaforme e partnership sono la nuova unità di misura del valore.
+### Bitron — AI Product Selector
+**Progetto:** Consulente AI B2B che comprende i bisogni del cliente e suggerisce il prodotto corretto.
+**Come funziona:** L'AI pre-compila il configuratore web con le caratteristiche principali.
+**Extra:** AI Chatbot istruito via PDF e siti web, risponde via chat, audio e video a domande tecniche.
+**Lettura I5.0:** Case exemplare di "Decision Design" — l'AI non sostituisce il buyer, lo aiuta a decidere meglio in un contesto tecnico complesso. Human-in-the-loop by design.
 
-**3. Dal "Digital Delivery" al "Decision Design"**
-Non vendiamo più solo prodotti digitali, ma strumenti per decidere in contesti complessi. UX, UI e tecnologia diventano architetture di scelta: chi aiuta a decidere meglio diventa strategico, non sostituibile. Decision UX, scenario simulator, advisory ibrida (design + strategia + tecnologia) sono il nuovo perimetro della consulenza.
+### Bitron — Customer Experience B2B
+**Progetto:** Nuova customer experience per valorizzare il know-how B2B di Bitron.
 
-> **Come questo si traduce nel payoff Domino:**
-> *"Semplifichiamo la complessità, liberiamo il potenziale"* non è mai stato solo uno slogan operativo — è una dichiarazione di postura I5.0: aiutiamo le organizzazioni a orientarsi in transizioni difficili, non a muoversi più velocemente verso direzioni sbagliate.
+### Rollon — "Il prodotto diventa esperienza" *(IKA 2023)*
+**Riconoscimento:** Premio **IKA 2023** — categoria "Best Integrated Communication Campaign B2B".
+**Progetto:** Trasformazione del sito B2B in una vera esperienza di prodotto.
+**SEO US:** +**48% traffico organico** USA. "Linear rails" = prima keyword organica US (preceduta solo dal brand "Rollon").
 
-**Come usare questi scenari nelle comunicazioni:**
-- Come apertura di contesto in pitch e presentazioni (soprattutto con C-level e direzione)
-- Come frame per il Trainstorming aziendale ("viviamo in un'epoca di transizioni, non di progetti")
-- Come differenziatore rispetto ad agenzie che parlano solo di tool e output
-- Come aggancio ai temi ESG/B Corp già presenti nel positioning Domino
+### Megadyne — Digital B2B
+**Progetto:** Il digitale B2B apre nuove opportunità di business per Megadyne (trasmissioni di potenza).
 
----
+### Contship Italia — Digital growth
+**Progetto:** Crescita digitale del brand per il gruppo leader nella logistica portuale.
 
-## Storia
+### Danieli Automation — Design System
+**Progetto:** Design System completo per digitalizzare e uniformare la comunicazione internazionale del brand.
 
-| Anno | Evento |
-|------|--------|
-| 1996 | Fondazione. Primo progetto: **Seat Pagine Gialle** — "dare la giusta informazione al momento giusto è il primo passo per una buona CX" |
-| 2000–2004 | **Martini** — costruzione di una brand story potente |
-| 2007–2012 | **Juventus.com** e **Juventusmember.com** — progetto sport e community |
-| 2009–2012 | **New Holland** — CX a partire dalla relazione con il dealer |
-| 2010 | **Fiat** — nuovo sito in **21 paesi**, primo grande progetto internazionale |
-| 2021 | Stellantis **Arena del Futuro** citata da **TIME** tra le 100 invenzioni dell'anno |
-| 2024 | Premio **IKA** per il nuovo **iveco.com** (categoria Automotive & Energy) |
-| 2024 | Premio **IKA** con **Case IH** — categoria "Innovation Technology" per integrazione AI nel processo di lead generation via campagne digital marketing |
-| 2025 | Certificazione **B Corp** ufficializzata |
+### IPI Agency — Real Estate advisory leader
+**Progetto:** Come raccontare un leader nella consulenza immobiliare B2B.
 
----
+### IPI — SFERA Intranet
+**Progetto:** Nuova intranet SFERA per il Gruppo IPI.
 
-## USP — Cosa ci differenzia (sintesi da sito + presentazioni + Sortlist)
+### IPI — Internal Communication Onboarding
+**Progetto:** Piano di comunicazione per lancio nuova intranet e tool Microsoft 365.
+**Attività:** Video teaser, email di lancio, 12 mini news formative, 8 mini video AI con avatar (3-5 min), 1 meeting stakeholder.
 
-1. **Risultati prima degli strumenti** — non siamo vendor di software, la tecnologia serve il progetto
-2. **Full workflow interno** — strategia, creatività, tecnologia, produzione, manutenzione tutto sotto lo stesso tetto (o coordinando fornitori selezionati)
-3. **Metodi proprietari** — Foundation Sprint, Design Sprint, Preventivo Emozionale (unici in Italia)
-4. **Indipendenza tecnologica** — scegliamo il meglio tra HubSpot, IBM Watson, Sitecore, Adobe, WordPress, Liferay, Drupal e altri
-5. **Complessità come habitat naturale** — B2B industriale multinazionale, automotive, sanità, turismo, finanza: lavoriamo meglio dove gli altri fanno fatica
-6. **Pionieri AI applicata al business — con responsabilità** — GEO, product finder AI, chatbot B2B, video AI, personalizzazione contenuti: usi concreti, non sperimentazioni. E con un approccio "human-in-the-loop" che rende l'AI governabile, comprensibile e fidata. Non solo veloce.
+### BANCOMAT — Da ottimizzazione back-office a engagement
+**Progetto:** Ottimizzazione dei processi back-office e aumento dell'engagement digitale.
 
----
+### Links Foundation — Nuova Intranet
+**Progetto:** Nuova intranet per Links Foundation – Leading Innovation & Knowledge for Society.
+**Approccio:** Design Sprint + Metodo Agile + piano di engagement e formazione.
 
-## A chi ci rivolgiamo (target personas)
+### Demak Group — Da fornitore a leader B2B
+**Progetto:** Riposizionamento da fornitore a player di riferimento nel settore B2B.
+**SEO:** +48% traffico organico totale, +54% lead generation, +20% clic non-brand, +18% audit score.
 
-- **Chief Experience Officer** → coerenza della visione di marca su tutti i touchpoint
-- **Responsabili Operations** → eliminare i silos, ottimizzare processi interni
-- **Marketing & CRM Manager** → trasformare i dati in percorsi di conversione fluidi
-- **Direzione Generale / CEO** → partner strategico per la digital transformation
-- **HR / Internal Communication Manager** → employee experience, onboarding, engagement, change management
+### Frascold — SEO
+**Progetto:** SEO post-lancio nuovo sito per produttore compressori HVACR.
+**Risultato:** +**62% utenti organici già nel primo mese**.
 
----
+### Veritas — Scoasse
+**Progetto:** Comunicazione digitale per Veritas sul tema ambiente e raccolta rifiuti.
 
-## Presenza digitale e social
+### Pipein — Da startup ad azienda
+**Progetto:** Nuova comunicazione più matura per Pipein, dalla fase startup alla fase scale-up.
 
-- **LinkedIn:** linkedin.com/company/domino *(canale principale)*
-- **Facebook:** domino.proudly.interactive
-- **Instagram:** domino_proudly_interactive
-- **Sito:** www.domino.it (IT e EN)
-- **Sortlist:** profilo verificato con 10+ recensioni clienti
-
-**Progetto ESG ricorrente — Wikiliceo:**
-Ogni anno Domino collabora con il Liceo Valsalice di Torino per trasformare le tradizionali ricerche scolastiche in contributi reali a Wikipedia. Gli studenti diventano produttori di conoscenza condivisa. Un'iniziativa coerente con la mission ("semplificare la complessità per il bene comune") e con i valori B Corp (responsabilità, trasparenza, cultura digitale accessibile).
+### Gruppo De Eccher — B2B
+**Progetto:** Presenza digitale per il gruppo di costruzioni.
 
 ---
 
-## Tono di comunicazione
+## DIGITAL MARKETING & SEO/GEO
 
-- Consulenziale ma fattivo: non vendiamo sogni, portiamo risultati misurabili
-- Diretto: "semplifichiamo la complessità" non è uno slogan, è il metodo
-- Concreto: sempre con esempi, KPI, case history reali
-- Mai autoreferenziale: il focus è sempre sul problema del cliente
-- Calore umano: i "Domineers" hanno personalità, non siamo una macchina
-- Evitare: genericità ("siamo i migliori"), promesse senza prove, linguaggio puramente tecnico senza contesto di business
+### Masi Agricola — Sito + SEO + eCommerce
+**Progetto:** Nuovo sito (istituzionale + enoteca + cantine), campagne SEO/SEM, Google Ads ecommerce.
+**Risultati SEO (6 mesi):** Utenti +**44,22%** | Sessioni +**54,19%** | Pagine viste +**175,52%**
+
+### ENIT — Promozione Italia nel mondo
+**Progetto:** Analisi e coordinamento campagne di web marketing sul brand Italia in **34 paesi**.
+**Attività:** Iniziative local + global, dashboard unificata su **Looker** per monitoraggio performance.
+
+---
+
+## CX / ECOMMERCE / FINANCE
+
+### Arca SGR — Advisory Assistant
+**Progetto:** Tool interattivo per collocatori bancari distribuito presso istituti bancari.
+**Come funziona:** Guida la definizione degli investimenti del cliente finale in modo personalizzato.
+
+### Costa Crociere — Preventivo Emozionale
+**Progetto:** Il preventivo viaggio diventa un minisite personalizzato per ogni agenzia e cliente.
+**Include:** Destinazione, nave, date, cabina, prezzo, foto e contatti dell'agente, CTA prenotazione.
+**Analytics:** Monitoraggio lead per prodotto e punto vendita, conversione tracciata per operatore.
+
+---
+
+## AI & INNOVAZIONE
+
+> **Lettura I5.0 di questa sezione:** I case AI di Domino non sono esperimenti di laboratorio — sono esempi concreti di "Responsible AI in produzione": sistemi comprensibili, governabili, con human-in-the-loop. Non vendiamo AI generica: progettiamo le conseguenze di come l'AI viene usata. Questi case dimostrano che è possibile — e che Domino lo fa già.
+
+### IBM Watson / BR-Uno — Anti-bullying
+**Progetto:** Domino e IBM Watson insieme per affrontare il tema del bullismo con una soluzione di Intelligent Assistant.
+
+### GEDI + Stellantis — Alfabeto del Futuro (2023)
+**Progetto:** Esperienza AI immersiva nelle piazze italiane, nell'ambito del tour "Alfabeto del Futuro" di Gruppo Editoriale GEDI per raccontare l'innovazione in Italia.
+**Cosa ha fatto Domino:** Uso dell'AI per creare un'installazione/esperienza immersiva che rende tangibili le possibilità del progresso tecnologico al grande pubblico.
+**Rilevanza:** Case che dimostra la capacità Domino di portare l'AI fuori dai contesti B2B puri, in esperienze phygital rivolte al consumatore finale.
+
+---
+
+## TURISMO & CULTURA
+
+### Biennale di Venezia — Sito + eCommerce
+**Progetto:** Nuova presenza digitale per la Biennale: sito istituzionale, eCommerce (biglietteria/shop), aree profilate.
+
+### Fondazione Torino Musei — Rete museale
+**Progetto:** 4 musei (Palazzo Madama, GAM, MAO, Borgo Medievale), 2000 anni di storia, 150.000 opere, una rete digitale unica.
+
+### Museo Nazionale del Cinema — Torino
+**Progetto:** Presenza digitale per il Museo Nazionale del Cinema di Torino.
+
+### Costa Crociere — *vedi sezione CX sopra*
+
+### Alpitour — Digital Marketing & Sales
+**Settore:** Tour operator premium.
+
+### ENIT — *vedi sezione Digital Marketing sopra*
+
+### Langhe-Monferrato-Roero
+**Progetto:** L'eccellenza del territorio parte dal digitale. Promozione turistica integrata.
+
+### Distretto Turistico dei Laghi
+**Progetto:** Una destinazione turistica a portata di dita. Presenza digitale per il distretto.
+
+### Masi Agricola — *vedi Digital Marketing sopra*
+
+**Altri clienti turismo/cultura:** Turismo Torino, Terre dei Savoia, Visit Piemonte, Marcegaglia Tourism, Provincia di Padova, Museo Poldi Pezzoli, Veneto Tourism
+
+---
+
+## SALUTE & BEAUTY
+
+### Lierac + Phyto (Ales Group) — CX prima del prodotto
+**Progetto:** Per Lierac e Phyto il cliente viene prima (anche del prodotto). Strategia CX per due brand beauty premium.
+
+### Ospedale dell'Angelo (Venezia-Mestre)
+**Progetto:** Promuovere l'eccellenza nel settore sanitario attraverso il digitale.
+
+### Affidea Italia
+**Progetto:** Portare il servizio più vicino all'utente attraverso la CX digitale.
+
+### LARC — Digital innovation in healthcare
+**Progetto:** Innovazione digitale al servizio della sanità per Gruppo LARC.
+
+**Altri clienti salute:** CDI, Humanitas, Asalaser, Solgar, Azienda Ospedaliera di Padova, Labo Cosprophar
+
+---
+
+## REFERENZE COMPLETE PER SETTORE
+
+| Settore | Clienti |
+|---|---|
+| **Automotive** | Fiat, Fiat Professional, Jeep, Abarth, Alfa Romeo, IVECO, Ford Authos, Motor Village, CIFA, Askoll, Mopar, Steyr, CNH Industrial, New Holland, Case IH, Stellantis |
+| **B2B Industriale** | Danieli, COMAU, Bitron, Volvo Penta, Petronas, Frascold, Teksid, Rollon, TEXA, B3, SKF, Ewellix, DFS, Links Foundation, Megadyne, Contship Italia, Veritas, Pipein, Gruppo De Eccher, Demak |
+| **Finance & PA** | Arca SGR, Bancomat SpA, Exor, Zoomlion Capital, Compagnia di San Paolo, Regione del Veneto, Consiglio Regionale Veneto |
+| **Salute & Beauty** | Affidea, Ospedale dell'Angelo, CDI, Humanitas, Asalaser, LARC, Lierac, Phyto, Solgar, Azienda Ospedaliera di Padova, Labo Cosprophar |
+| **Turismo & Cultura** | Alpitour, ENIT, Costa Crociere, Biennale di Venezia, Fondazione Torino Musei, Palazzo Madama, GAM, MAO, Museo Nazionale del Cinema, Galleria Borghese, Fondazione Aquileia, Museo Poldi Pezzoli, Turismo Torino, Visit Piemonte, Terre dei Savoia, Marcegaglia Tourism, Provincia di Padova, Langhe-Monferrato-Roero, Distretto Turistico dei Laghi, Masi Agricola |
+| **Media, Sport & PA** | RAI, Universal, Lega Nazionale Pallacanestro, FIMI, Juventus, IPI Group, Bancomat |
+| **AI & Tech** | IBM Watson (BR-Uno), Links Foundation, TEXA, Neosperience |
+| **Startup & Scale-up** | Demak, Pipein, iFog, CheProfessionista, MIND |

@@ -1,233 +1,272 @@
-# DOMINO BRAIN — GTM Finance, Assicurazioni & PA
-> Versione 1.0 — Aprile 2026. Sales plays e regole commerciali per il settore Finance e PA. Da usare dal Prospect Engine per generare materiali calibrati sul prospect.
+# DOMINO BRAIN — Metodi Distintivi
+> Versione 5.0 — Aprile 2026. I quattro metodi proprietari che differenziano Domino: Foundation Sprint, Design Sprint, Preventivo Emozionale, Trainstorming. Aggiornato con scenari Industry 5.0 (Trainstorming aprile 2026) e pricing commerciale. Da citare nelle proposte commerciali quando pertinenti.
 
 ---
 
-## Caratteristiche del settore
+## 1. Foundation Sprint *(introdotto 2024)*
 
-**Approccio GTM:** Opportunistico — arriva quasi sempre da referral, non è un settore che Domino caccia attivamente con outbound. I plays sono calibrati per **convertire un contatto caldo**, non per aprire porte fredde.
+**Cos'è:** Il passo strategico che precede il Design Sprint. Serve a costruire l'**ipotesi fondante** del progetto: la tesi che guida tutto ciò che viene dopo.
 
-**Ticket:** €50K+ per le istituzioni grandi. PA: budget e tempi dipendono da procurement pubblico.
+**La domanda a cui risponde:** *"Stiamo lavorando sul problema giusto?"*
 
-**Nota PA:** La PA ha gare, bandi e tempi che non si controllano. Il referral apre porte ma raramente bypassa il procurement. La strategia più efficace è usare il Foundation Sprint come strumento di co-progettazione pre-gara: orienta il capitolato prima che venga scritto.
+**Output:** Ipotesi fondante condivisa — una tesi strategica che allinea tutti gli stakeholder sulla direzione prima di investire in qualsiasi soluzione.
+
+**La formula dell'ipotesi fondante:**
+> "Se aiutiamo **[cliente target]** a risolvere **[problema specifico]** con **[nostro approccio]**, allora sceglieranno la nostra soluzione al posto di **[concorrenza]** perché la nostra soluzione è **[differenziazione chiave]**."
+
+**Durata:** 1–2 giorni
+**Prezzo:** €6.000
+
+**Tecniche interne usate nel Foundation Sprint:**
+- **Magic Lenses** — mettere alla prova le idee valutandole rispetto a criteri critici. Output: un insieme raffinato delle idee più promettenti
+- **Votazione Silenziosa** — tutti ricevono 3 "pallini" e votano autonomamente le proposte più forti sulla bacheca, senza influenzarsi a vicenda. Favorisce la diversità di opinioni e l'emersione delle idee realmente condivise
+
+**Il flusso completo:**
+```
+Foundation Sprint → [Ipotesi Fondante] → Design Sprint → Design Sprint → ... → Esecuzione
+         ↑_____________________________________________________|
+                          (loop iterativo)
+```
+
+**Quando proporlo:**
+- Quando il cliente non ha ancora chiarezza strategica su cosa fare
+- Quando ci sono stakeholder con visioni diverse da allineare prima di investire
+- Quando il cliente ha tante idee ma non sa quale prioritizzare
+- Prima di un Design Sprint, per assicurarsi di lavorare sul problema giusto
 
 ---
 
-## Sub-target del settore
+## 2. Design Sprint *(pionieri in Italia da 10+ anni)*
 
-| Sub-target | Clienti tipo | Interlocutore principale |
+**Cos'è:** La metodologia di **Google Ventures** per trasformare problemi di business complessi in prototipi testati in tempi rapidissimi. Domino è tra i primi e più esperti in Italia ad averla adottata e adattata.
+
+**La domanda a cui risponde:** *"Questa soluzione funziona davvero?"*
+
+**Output:** Prototipo testato con utenti reali — una soluzione concreta e validata prima di investire nel progetto completo.
+
+**Durata:** 4 giorni (versioni estese: 1 settimana)
+**Prezzo:** €10.000
+
+**Presupposto:** Il Design Sprint funziona meglio quando la direzione strategica è già chiara. Se non lo è, il Foundation Sprint viene prima.
+
+**Connessione I5.0 — Decision Design:** In un'epoca in cui UX e tecnologia diventano architetture di scelta, il Design Sprint è lo strumento più concreto per progettare "come le persone decidono" — non solo come navigano un'interfaccia. Ogni sprint produce trade-off visibili, scenari comparabili, conseguenze tangibili: esattamente quello che serve per decidere in contesti complessi.
+
+**Il format standard:**
+- **4 giorni** (o 1 settimana nelle versioni estese)
+- **1 team unito** — cliente + Domino in full-immersion
+- **1 risultato tangibile** — prototipo testato con utenti reali
+- **100% clienti soddisfatti** (dato dichiarato ufficialmente)
+
+**Cosa si progetta:**
+- Percorsi (campagne, customer experience, buyer journey)
+- Touchpoint (sito web, app, intranet, sales tool)
+- Servizi (aree riservate, nuovi prodotti digitali, modelli di partnership)
+
+**Vantaggi per il cliente:**
+- Riduzione drastica del rischio di investimento
+- Decisioni basate su test con utenti reali, non su opinioni interne
+- Allineamento immediato tra tutti gli stakeholder
+- In 4 giorni si ottiene ciò che normalmente richiederebbe mesi di riunioni e briefing
+
+**Specializzazioni del Design Sprint:**
+- **Service Design Sprint** — prototipazione e test con modalità design thinking
+- **CX Design Sprint** — coerenza tra canali di comunicazione
+- **Brand Design Sprint** — ripensare il modo in cui si comunica il brand
+- **Digital Marketing Design Sprint** — campagne mirate di brand awareness o lead gen
+- **Website Design Sprint** — prototipazione e test di siti web o app
+- **Intranet Design Sprint** — prototipazione e test di strumenti collaborativi
+
+**Quando proporlo:**
+- Quando la direzione è chiara ma il cliente esita a investire senza validazione
+- Quando ci sono stakeholder multipli che faticano ad allinearsi su una soluzione concreta
+- Per superare stalli decisionali interni
+- Come primo passo tangibile e a scope fisso di una relazione con un nuovo cliente
+
+---
+
+## Scala di entrata commerciale — pricing di riferimento
+
+Questa scala è la fonte unica di verità per il pricing. I file GTM di settore la referenziano senza ripeterla.
+
+| Step | Prodotto | Prezzo | Note |
+|---|---|---|---|
+| 1 | Audit tattico (CX, SEO/GEO o Digital Mktg) | €1.500 | Scope fisso, 1–2 settimane. Mai gratuito per prospect bottom-up |
+| 2 | Foundation Sprint | €6.000 | Quando la direzione non è chiara o gli stakeholder sono divisi |
+| 3 | Design Sprint | €10.000 | Quando la direzione è chiara e si vuole validare prima di investire |
+| 4 | Progetto completo (execution) | €20.000–60.000 | Su ciò che è stato validato |
+
+**Percorso completo opzionale:** Foundation Sprint (€6K) → Design Sprint (€10K) = €16.000 pre-esecuzione.
+
+**Regola sul gratuito:** niente lavoro gratuito per prospect bottom-up. Workshop gratuito (2h) solo per grandi clienti in approccio top-down — non è un servizio autonomo, apre il percorso verso Foundation Sprint.
+
+---
+
+## Foundation Sprint vs Design Sprint — Differenze chiave
+
+Sono strumenti **sequenziali e complementari**, non alternativi. Rispondono a domande diverse e non vanno mai confusi o proposti come versioni dello stesso prodotto a prezzi diversi.
+
+| | Foundation Sprint | Design Sprint |
 |---|---|---|
-| **Asset management / SGR** | SGR, fondi, gestori patrimoniali | Resp. Rete / Sales / Marketing |
-| **Infrastrutture finanziarie** | Circuiti di pagamento, infrastrutture | CDO / Digital / Marketing / HR |
-| **Fondazioni / istituzionali** | Fondazioni bancarie, family office, investitori istituzionali | Resp. Comunicazione / Direzione Generale |
-| **PA / enti pubblici** | Regioni, consigli regionali, enti pubblici | Resp. Comunicazione / Assessorato Digital |
+| **Domanda** | Stiamo lavorando sul problema giusto? | Questa soluzione funziona? |
+| **Output** | Ipotesi fondante condivisa | Prototipo testato con utenti reali |
+| **Durata** | 1–2 giorni | 4 giorni |
+| **Prezzo** | €6.000 | €10.000 |
+| **Focus** | Allineamento strategico | Validazione della soluzione |
+| **Presupposto** | Nessuno — è il punto di partenza | Direzione già sufficientemente chiara |
+| **Quando** | Stakeholder divisi, confusione su priorità, nessuna chiarezza strategica | Direzione chiara, si vuole validare prima di investire |
+
+**Regola operativa:**
+- Se il cliente sa *cosa* vuole ma non sa *se funzionerà* → **Design Sprint**
+- Se il cliente non sa ancora *cosa* fare o gli stakeholder sono divisi → **Foundation Sprint prima**, poi eventualmente Design Sprint
+- Se serve tutto: **Foundation Sprint → Design Sprint → Esecuzione** (percorso completo, €16.000 prima del progetto)
 
 ---
 
-## Scala di entrata commerciale
+## 3. Preventivo Emozionale
 
-Pricing, regole sul gratuito e distinzione Foundation Sprint vs Design Sprint sono definiti in `brain/03_domino_metodi.md` — fonte unica di verità. Non ripetere qui.
+**Cos'è:** Un approccio unico alla fase commerciale che trasforma il preventivo tradizionale in un'**esperienza interattiva** che fa vivere al prospect il valore del progetto ancor prima che venga realizzato.
 
-**Differenza rispetto agli altri settori:** in Finance e PA l'entry point è più avanzato. Si parte quasi sempre da una presentazione capabilities nel primo incontro, non da un audit tattico a freddo. Gli audit (€1.500) restano utili per formalizzare una diagnosi già nota al prospect, non come primo touch.
+**Come funziona tecnicamente:**
+- Il preventivo diventa un **minisite personalizzato** per ogni cliente/offerta
+- Contiene: descrizione del progetto, visual, video, valore comunicato, CTA
+- Ha un **sistema di analytics integrato**: si traccia chi lo visualizza, quando, quante volte, per quanto tempo
+- Moduli attivabili a seconda del contesto: Cataloghi, Listini, ID Manager, Training, Area Documentale, Analytics
 
----
+**Vantaggi commerciali:**
+- Il cliente "vive" la proposta invece di leggerla su un PDF
+- Riduce la confusione competitiva: il cliente capisce immediatamente cosa differenzia Domino
+- Fornisce intelligence commerciale: si sa chi è davvero interessato e quanto
+- Tracking della conversione per prodotto, punto vendita e operatore
+- La rete vendita può generare preventivi personalizzati in autonomia
 
-## Nota sul Preventivo Emozionale in Finance
+**Caso d'uso reale — Costa Crociere:**
+Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina, prezzo, foto dell'agente, contatti e CTA prenotazione diretta. Ogni preventivo è tracciato. Il sistema scala su tutta la rete agenzie.
 
-Il caso Arca SGR (Advisory Assistant) è una **verticalizzazione del Preventivo Emozionale** per la distribuzione finanziaria. La piattaforma PE è la stessa usata da Costa Crociere per la rete agenzie: prodotto complesso, rete di distribuzione indiretta, bisogno di personalizzazione e tracciabilità. La logica è identica.
-
-Quando si parla di PE in contesto finance, il cross-reference con Costa Crociere è un argomento commerciale forte: dimostra che la piattaforma funziona su reti di distribuzione complesse indipendentemente dal settore.
-
----
-
-## Sales Plays — Asset management / SGR
-
-### SP1 — "I nostri collocatori non riescono a spiegare i prodotti — e i clienti non capiscono dove investono"
-**Motion:** Referral ↗
-**Entry:** Responsabile Rete / Sales / Marketing
-**Trigger:** Referral, lancio nuovo prodotto, cambio responsabile
-
-**Problema:**
-- Prodotti finanziari complessi da spiegare a investitori con diversi livelli di expertise
-- Rete di collocatori (banche, consulenti) senza strumenti digitali efficaci per guidare la scelta
-- Compliance MiFID limita il messaggio — deve essere corretto e comprensibile insieme
-- Il cliente finale non capisce dove investe — fiducia fragile, rischio di riscatto
-
-**Soluzione completa Domino:**
-- Preventivo Emozionale versione finance — minisite personalizzato per ogni proposta di investimento, con analytics su chi lo apre, quando e per quanto tempo
-- Il collocatore genera la proposta in autonomia, la personalizza per il cliente, la traccia
-- Materiali digitali conformi MiFID per la rete di distribuzione
-- Video AI con avatar per formazione rete su nuovi prodotti
-
-**Come convertire il referral:**
-- Demo PE su caso Arca (primo incontro) → si mostra la piattaforma in funzione su un caso finanziario reale. Il collocatore che genera, personalizza e traccia la proposta. Niente pitch — si vede il prodotto
-- Foundation Sprint (€6.000) → se rete, marketing e compliance hanno priorità diverse: allinea tutti sull'ipotesi fondante
-- Design Sprint (€10.000) → prototipo del PE personalizzato per il loro prodotto/rete, testato con collocatori reali in 4 giorni
-
-**Proof point:**
-- Arca SGR — Advisory Assistant (Preventivo Emozionale verticalizzato per distribuzione finanziaria)
-- Costa Crociere — stessa piattaforma PE applicata a rete agenzie (cross-reference settoriale)
-
-**Vs competitor:**
-- Vs agenzia finance: il PE è un prodotto proprietario Domino — unico in Italia, già testato su reti di distribuzione complesse
-- Vs web agency: non solo sito — si trasforma il processo di vendita indiretto con analytics integrata
-
-**CTA:** Demo PE su caso Arca nel primo incontro. Se c'è interesse: Design Sprint (€10K) per prototipare la versione sul loro prodotto e rete in 4 giorni.
+**Quando proporlo:**
+- Sempre in contesti B2B con ciclo di vendita complesso
+- Quando il valore dell'offerta è difficile da comunicare con un documento tradizionale
+- Per reti di vendita indirette (concessionari, agenzie, rivenditori) che devono vendere servizi complessi
+- Quando il cliente vuole aumentare la conversion rate dei preventivi
+- Come dimostrazione concreta delle capacità Domino già nella fase di proposta
 
 ---
 
-## Sales Plays — Infrastrutture e circuiti finanziari
+## Come combinare i metodi
 
-### SP2 — "Dobbiamo digitalizzare processi interni e aumentare l'engagement con i nostri stakeholder"
-**Motion:** Referral ↗
-**Entry:** CDO / Digital / Marketing / HR
-**Trigger:** Referral, trasformazione digitale in corso
-
-**Problema:**
-- Back-office con processi ancora manuali o poco digitalizzati
-- Stakeholder eterogenei: banche, esercenti, consumatori, dipendenti
-- Comunicazione interna frammentata in organizzazioni complesse
-- Difficile costruire engagement in un settore percepito come freddo e transazionale
-
-**Soluzione completa Domino:**
-- Ottimizzazione processi back-office con UX centrata sull'operatore
-- Portale stakeholder o intranet per engagement interno
-- Comunicazione istituzionale che costruisce autorevolezza e fiducia
-- Programma di change management digitale (Trainstorming)
-
-**Come convertire il referral:**
-- CX / Process Audit (€1.500) → mappatura del processo o touchpoint critico. Utile per formalizzare una diagnosi già nota al prospect
-- Foundation Sprint (€6.000) → se ci sono più problemi da affrontare o stakeholder con priorità diverse: roadmap condivisa prima di investire
-- Trainstorming → per organizzazioni in piena trasformazione digitale: percorso in 3 sessioni (8 mesi) con output concreti
-
-**Proof point:**
-- Bancomat SpA — da ottimizzazione back-office a engagement digitale
-- Finance STAR[T] — digital transformation della BU finance con engagement e community interna
-
-**Vs competitor:**
-- Vs consulenza digital: Domino esegue internamente — non solo strategia e governance
-- Vs web agency: esperienza su trasformazioni complesse con stakeholder multipli e istituzionali
-
-**CTA:** Case Bancomat o Finance STAR[T] come apertura + Foundation Sprint (€6K) per costruire la roadmap condivisa.
+| Situazione cliente | Strumento consigliato |
+|---|---|
+| "Non sappiamo da dove partire" | Foundation Sprint |
+| "Abbiamo visioni diverse tra i reparti" | Foundation Sprint |
+| "Vogliamo validare l'idea prima di investire" | Design Sprint |
+| "Il progetto è complesso, temiamo di sbagliare" | Design Sprint |
+| "Non sappiamo cosa fare E vogliamo un risultato tangibile" | Foundation Sprint → Design Sprint |
+| "I nostri preventivi non convertono" | Preventivo Emozionale |
+| "La rete vendita fatica a spiegare il valore" | Preventivo Emozionale |
+| "Dobbiamo innovare ma non sappiamo cosa fare" | Foundation Sprint → Design Sprint |
+| "Dobbiamo rinnovare il sito ma gli stakeholder non sono d'accordo" | Design Sprint |
+| "Dobbiamo gestire un cambiamento culturale o tecnologico importante" | Trainstorming |
+| "Vogliamo introdurre l'AI in azienda ma non sappiamo come" | Trainstorming |
+| "Facciamo fatica a mettere a terra le idee nel tempo" | Trainstorming (follow-through strutturato) |
+| "Abbiamo fatto un Design Sprint ma non riusciamo a implementare" | Trainstorming come continuazione |
+| "L'AI Act ci impone di ripensare come usiamo i dati" | Trainstorming: Responsible AI assessment + roadmap |
+| "Siamo in una transizione (fusione, riorganizzazione, nuova piattaforma)" | Trainstorming: transition program su misura |
+| "I nostri tool digitali aiutano a fare cose ma non a decidere meglio" | Design Sprint + Decision Design |
+| "Vogliamo essere rilevanti nell'era dell'AI, non solo efficienti" | Foundation Sprint → Trainstorming I5.0 |
 
 ---
 
-## Sales Plays — Fondazioni e investitori istituzionali
+## GEO — Generative Engine Optimization *(competenza emergente 2024-2025)*
 
-### SP3 — "Dobbiamo comunicare il nostro impatto in modo autorevole e comprensibile"
-**Motion:** Referral ↗
-**Entry:** Responsabile Comunicazione / Direzione Generale
-**Trigger:** Referral, nuovo mandato / governance, report ESG
+**Cos'è:** L'ottimizzazione dei contenuti per essere rilevanti non solo su Google ma anche nei risultati generati da AI come ChatGPT, Perplexity, Google AI Overview.
 
-**Problema:**
-- Identità e impatto difficili da comunicare a pubblici diversi (beneficiari, istituzioni, media, donatori)
-- Reporting ESG e rendicontazione di impatto ancora in formato tradizionale
-- Sito istituzionale che informa ma non coinvolge né convince
-- Pressione crescente su trasparenza, governance e comunicazione responsabile
+**Perché è importante:**
+- Gli utenti cercano in modo più conversazionale (intent più complesso)
+- L'AI influenza i risultati di ricerca con snippet e AI overview
+- I contenuti devono essere ottimizzati per essere "citati" dall'AI
 
-**Soluzione completa Domino:**
-- Sito istituzionale con storytelling di impatto per pubblici diversi
-- Report annuale / ESG in formato digitale interattivo
-- Comunicazione istituzionale autorevole senza autoreferenzialità
-- GEO per essere citati nelle ricerche su sostenibilità e impatto
+**Cosa include:**
+- Keyword research avanzata
+- Ottimizzazione meta tag e tag semantici (H1, hreflang, ecc.)
+- Audit tecnico SEO completo
+- Ottimizzazione JS/CSS per performance
+- Creazione contenuti targettizzati per topic cluster
+- Monitoraggio su dashboard (Looker)
 
-**Come convertire il referral:**
-- Presentazione capabilities istituzionali (primo incontro) → focus su Compagnia di San Paolo, Exor. Tono consulenziale e autorevole, non commerciale. Ascolto prioritario sul pitch
-- Foundation Sprint (€6.000) → quasi sempre il passo giusto: bilancia identità istituzionale, pubblici diversi e obiettivi di comunicazione
-- Design Sprint (€10.000) → prototipo del sito istituzionale o del report di impatto testato con pubblici reali in 4 giorni
-
-**Proof point:**
-- Compagnia di San Paolo
-- Exor
-- Zoomlion Capital
-
-**Vs competitor:**
-- Vs agenzia comunicazione: Domino porta strategia + execution digitale integrata, non solo contenuti
-- Vs web agency: esperienza nella gestione di identità istituzionale complessa con pubblici multipli
-
-**CTA:** Primo incontro consulenziale (ascolto + capabilities) → proposta Foundation Sprint (€6K) come passo successivo naturale.
+**Risultati documentati:**
+- Demak: +48% traffico organico, +54% lead gen, +20% clic non-brand, +18% audit score
+- Masi Agricola: +44% utenti, +54% sessioni, +175% pagine viste (6 mesi)
+- Frascold: +62% utenti organici (già in 1 mese)
+- Rollon US: +48% traffico organico USA, "Linear rails" = prima keyword organica
+- ENIT: coordinamento campagne in 34 paesi con dashboard Looker unificata
 
 ---
 
-## Sales Plays — Cross sub-target finance
+## CMS Omnicanale — Abbattere i silos tecnologici *(tema emergente 2025-2026)*
 
-### SP4 — "Siamo sotto pressione normativa — AI Act, ESG, GDPR — e non sappiamo come trasformarlo in vantaggio"
-**Motion:** Referral ↗
-**Entry:** CDO / Compliance / Legal + Marketing
-**Trigger:** Referral, scadenza normativa, audit interno
+**Il problema di mercato:** Molte aziende hanno accumulato decine di strumenti digitali diversi ma comunicano in modo incoerente. I silos tecnologici frenano la velocità — oggi requisito di sopravvivenza, non optional.
 
-**Problema:**
-- AI Act, GDPR, ESG: compliance vista come costo, non come opportunità di differenziazione
-- Chi governa prima si differenzia dai competitor — ma non è chiaro da dove partire
-- Strumenti digitali esistenti non progettati per essere trasparenti e spiegabili (AI Act)
-- Difficile comunicare all'esterno la governance AI in modo credibile
+**La risposta Domino:** L'indipendenza tecnologica (Adobe, Sitecore, WordPress, Liferay, Drupal, Gaia proprietario) è già una risposta strutturale a questo problema. Domino non vende una piattaforma: seleziona quella giusta per eliminare i silos e garantire coerenza omnicanale.
 
-**Soluzione completa Domino:**
-- Responsible AI assessment — mappatura strumenti AI esistenti rispetto all'AI Act
-- Progettazione human-in-the-loop per tool digitali e chatbot
-- Comunicazione della governance AI verso stakeholder esterni
-- Trainstorming I5.0 — percorso strutturato per trasformare la compliance in posizionamento competitivo
+**Approccio architetturale consigliato:** Architetture modulari basate su API + team cross-funzionali allineati tra marketing e IT.
 
-**Come convertire il referral:**
-- Apertura I5.0 (primo incontro) → frame strategico: "chi progetta tecnologia responsabile prima dei competitor costruisce fiducia istituzionale duratura." Domino lo vive internamente (B Corp 2025) — non è solo una proposta consulenziale
-- Foundation Sprint (€6.000) → mappa gli strumenti digitali esistenti rispetto alle normative. Output: ipotesi fondante su dove intervenire e come comunicarlo come differenziatore
-- Trainstorming I5.0 → programma in 3 sessioni (8 mesi): Responsible AI, ESG, GDPR. Per chi vuole un percorso strutturato, non un progetto puntuale
+**Quando portare questo tema:**
+- Con clienti che gestiscono più siti, brand o mercati con strumenti non integrati
+- In progetti di CMS selection o migrazione piattaforma
+- Quando il cliente lamenta lentezza nella pubblicazione o incoerenza tra canali
 
-**Proof point:**
-- Trainstorming I5.0 — "Le transizioni, I5.0 by Design" aprile 2026
-- B Corp Domino 2025 — la compliance come valore vissuto internamente, non solo proposto
-
-**Vs competitor:**
-- Vs consulenza: Domino non solo consiglia — progetta e realizza gli strumenti responsabili
-- Vs web agency: competenza AI Act e I5.0 applicata a progetti digitali concreti
-
-**CTA:** Conversazione strategica I5.0 nel primo incontro + Foundation Sprint (€6K) come primo passo concreto.
+**Angolo di vendita:** Non "cambiamo il tuo CMS" ma "costruiamo un'infrastruttura che ti permette di comunicare con la velocità che il mercato richiede."
 
 ---
 
-## Sales Plays — PA / enti pubblici
+## 4. Trainstorming *(metodo proprietario — change management e innovazione continuativa)*
 
-### SP5 — "Dobbiamo modernizzare la comunicazione istituzionale e i servizi digitali ai cittadini"
-**Motion:** Referral ↗
-**Entry:** Responsabile Comunicazione / Assessorato Digital / Direzione Generale
-**Trigger:** Referral, nuovo mandato politico, finanziamento PNRR
+**Cos'è:** Il metodo Domino per accompagnare le organizzazioni attraverso transizioni complesse con un percorso strutturato nel tempo. Non è un workshop singolo, non è formazione tradizionale: è un programma di cambiamento a cadenza quadrimestrale che porta innovazione concreta e gestita all'interno dell'azienda cliente.
 
-**Problema:**
-- Comunicazione percepita come distante, burocratica, poco accessibile ai cittadini
-- Servizi digitali frammentati tra portali diversi, non integrati
-- Nuovo mandato politico che richiede visibilità rapida su temi e iniziative
-- Procurement pubblico con tempi lunghi — ma finanziamenti PNRR disponibili
+Nasce dalla pratica interna Domino — il team si incontra mensilmente con questo format — ed è stato strutturato come servizio replicabile per i clienti.
 
-**Soluzione completa Domino:**
-- Portale istituzionale con UX centrata sul cittadino, non sull'organigramma
-- Campagne di comunicazione pubblica su temi strategici
-- Intranet per enti con dipendenti eterogenei
-- Accessibilità digitale (obbligo normativo PA — Legge Stanca + direttiva EU)
+**Connessione I5.0 — Da Progetti a Transizioni:**
+Il Trainstorming è la risposta operativa al cambio di paradigma di Industry 5.0: i clienti non cercano più soluzioni puntuali, ma partner che li accompagnino attraverso transizioni lunghe e continue (AI adoption, regolazione, sostenibilità, cambi organizzativi). Il Trainstorming è esattamente questo — non un deliverable, ma un programma di accompagnamento. I progetti finiscono; le transizioni no.
 
-**Come convertire il referral:**
-- Nota procurement PA → il referral apre porte ma raramente bypassa le gare. Usare il Foundation Sprint come co-progettazione pre-gara: orienta il capitolato prima che venga scritto
-- Foundation Sprint (€6.000) → allinea decisori politici, tecnici e comunicazione sull'ipotesi fondante. Può anticipare e orientare la scrittura del capitolato
-- Design Sprint (€10.000) → prototipo del portale o servizio testato con cittadini reali in 4 giorni. Produce un deliverable concreto anche prima della gara — dimostra la capacità esecutiva
+I tre temi I5.0 che guidano ogni percorso Trainstorming:
+- **Responsabilità come differenziatore** — come usare l'AI in modo governabile, comprensibile, fiduciario
+- **Ecosistemi e orchestrazione** — come l'azienda si colloca in reti di partner, piattaforme, fornitori
+- **Decision Design** — come costruire strumenti e processi che aiutano le persone a decidere meglio
 
-**Proof point:**
-- Regione del Veneto
-- Consiglio Regionale Veneto
+**Il flusso completo:**
+```
+Sessione 1 [Mese 1]      Sessione 2 [Mese 4]      Sessione 3 [Mese 8]
+Diagnosi + Ipotesi   →   Prototipazione + Test  →   Scala + Roadmap
+Fondante                 con utenti reali            12 mesi
+     ↑______________________________________________|
+                    (loop iterativo se necessario)
+```
 
-**Vs competitor:**
-- Vs web agency PA-specializzata: il Design Sprint accelera i tempi decisionali — cruciale in PA dove si perdono mesi in riunioni e allineamenti interni
+**Tecniche interne usate:**
+- **Foundation Sprint** — costruisce l'ipotesi fondante della transizione nella sessione 1
+- **Magic Lenses** — mette alla prova le idee di cambiamento rispetto a criteri critici
+- **Votazione Silenziosa** — fa emergere il consenso reale senza gerarchie
+- **Prototipazione rapida** — rende tangibile il cambiamento prima di investire
+- **AI Assessment** — mappa le opportunità AI concrete per quel contesto specifico
 
-**CTA:** Case Regione Veneto come apertura + Foundation Sprint (€6K) come strumento di co-progettazione pre-gara.
+**Differenza con Design Sprint e Foundation Sprint:**
 
----
+| | Foundation Sprint | Design Sprint | Trainstorming |
+|---|---|---|---|
+| **Durata** | 1–2 giorni | 4 giorni | 8 mesi (3 sessioni) |
+| **Prezzo** | €6.000 | €10.000 | — |
+| **Output** | Ipotesi fondante | Prototipo testato | Roadmap + implementazione avviata |
+| **Focus** | Allineamento strategico | Validazione soluzione | Cambiamento culturale/organizzativo |
+| **Quando** | Prima di un progetto | Prima di investire | Per gestire una transizione |
 
-## Prospect Engine — istruzioni di utilizzo
+**Quando proporlo:**
+- Quando il cliente deve gestire una trasformazione culturale o tecnologica rilevante (AI, nuovi strumenti, riorganizzazione)
+- Quando ha già fatto un Design Sprint ma fatica a mettere a terra
+- Quando l'innovazione è bloccata da resistenze interne o stakeholder war
+- Come programma annuale di innovazione per aziende che vogliono mantenere un ritmo di cambiamento
+- Come naturale continuazione di un onboarding su nuove piattaforme (intranet, CRM, Microsoft 365)
+- Quando il cliente è sotto pressione normativa (AI Act, ESG, data ethics) e deve trasformare la compliance in vantaggio competitivo
+- Quando l'azienda vuole adottare l'AI ma teme l'impatto sulle persone e sui processi: il Trainstorming costruisce una governance responsabile dall'interno
+- Quando il cliente sta ripensando il proprio modello di business in risposta a transizioni sistemiche (energia, supply chain, demografia)
 
-Quando generi materiali per un prospect Finance/PA:
-
-1. **Questo settore è referral-driven**: i materiali devono essere calibrati per un prospect già caldo, non per cold outreach. Tono più diretto, entry point più avanzato
-2. **SP1 (asset management)**: apri sempre con la demo del Preventivo Emozionale su caso Arca — è il differenziale più immediato e tangibile. Il PE in finance è la stessa piattaforma di Costa Crociere: usare il cross-reference
-3. **SP3 (fondazioni)**: tono consulenziale e autorevole, mai commerciale. Il primo incontro è ascolto, non pitch
-4. **SP4 (compliance)**: usare il frame I5.0 e la B Corp come prova che Domino vive internamente ciò che propone — non è solo consulenza
-5. **PA**: segnalare sempre la complessità del procurement pubblico. Il Foundation Sprint pre-gara è la mossa strategica più intelligente
-6. **Non confondere Foundation Sprint e Design Sprint** come alternative di prezzo: vedi distinzione completa in `brain/03_domino_metodi.md`
-7. **Niente lavoro gratuito**: anche in questo settore vale la regola — niente audit o workshop gratuiti, tranne il workshop top-down per grandi istituzioni
+**Pitch I5.0 per il Trainstorming:**
+> *"I progetti finiscono. Le transizioni no. Vi accompagniamo attraverso le vostre — AI, regolazione, organizzazione — con un metodo che usiamo ogni mese su noi stessi: tre sessioni nell'anno, output concreti a ogni tappa, nessuna slide da dimenticare in un cassetto."*

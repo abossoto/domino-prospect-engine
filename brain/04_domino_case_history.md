@@ -1,238 +1,229 @@
-# DOMINO BRAIN — Case History
-> Versione 3.0 — Aprile 2026. Tutti i case documentati da sito, presentazioni e materiali ufficiali. Da usare per settore e tipo di progetto. Aggiornato con lettura I5.0 dei principali case (Trainstorming aprile 2026).
+# DOMINO BRAIN — GTM B2B Industriale / Manifatturiero
+> Versione 1.0 — Aprile 2026. Sales plays, scala di pricing e regole commerciali per il settore B2B industriale. Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
 
 ---
 
-## AUTOMOTIVE
+## Scala di entrata commerciale
 
-### IVECO — iveco.com (Premio IKA 2024)
-**Progetto:** Nuovo sito istituzionale globale per IVECO.
-**Riconoscimento:** Premio **IKA 2024** — massimo riconoscimento internazionale per siti automotive.
+Quattro livelli a prezzo crescente. Ogni passo porta naturalmente al successivo. Non si propone mai lavoro gratuito sui prospect bottom-up.
 
-### IVECO — MyIVECO App
-**Progetto:** Customer experience personalizzata per ogni utente MyIVECO.
-**Approccio:** Progettazione UX centrata sull'utente, area riservata con contenuti profilati.
+| Step | Prodotto | Prezzo | Quando |
+|---|---|---|---|
+| 1 | Audit tattico (SEO/GEO, Digital Mktg o CX) | €1.500 | Sempre disponibile come primo passo a scope fisso |
+| 2 | Foundation Sprint | €6.000 | Quando la direzione strategica non è chiara o gli stakeholder sono divisi |
+| 3 | Design Sprint | €10.000 | Quando la direzione è chiara e si vuole validare prima di investire |
+| 4 | Progetto completo (execution) | €20.000–60.000 | Sito, campagne, tool digitale, design system — su ciò che è stato validato |
 
-### IVECO — TCO Calculator
-**Progetto:** Tool B2B per il calcolo del risparmio personalizzato (Total Cost of Ownership).
-**Obiettivo:** Guidare i fleet manager verso scelte più consapevoli con dati concreti.
+**Regola chiave Foundation Sprint vs Design Sprint:** sono strumenti sequenziali, non alternativi. Il Foundation Sprint risponde a "stiamo lavorando sul problema giusto?" — il Design Sprint risponde a "questa soluzione funziona?". Non vanno mai proposti come versioni dello stesso prodotto a prezzi diversi. Per la distinzione completa, vedi `03_domino_metodi.md`.
 
-### IVECO — eDailyAdvisor
-**Progetto:** Tool B2B per guidare le scelte di mobilità sostenibile/elettrica.
-**Contesto:** Supporto alla transizione verso l'elettrico nella flotta aziendale.
-
-### IVECO — Training con AI Video
-**Progetto:** Contenuti formativi personalizzati e video AI per coinvolgere ogni team commerciale.
-**Tecnologia:** Video generati con AI, personalizzati per ruolo e mercato.
-
-### Stellantis — Employee Portal (ex-FCA)
-**Progetto:** Migrazione da intranet multiple a un unico Employee Portal globale.
-**Approccio:** Assessment processi esistenti, survey su audience specifiche, employee journey mapping.
-**Risultato:** Rete che connette **88.000 dipendenti nel mondo**. Premio **FEIEIA Award – Best European Intranet**. Esteso successivamente a CNH Industrial e Iveco Group.
-**Lettura I5.0:** Case emblematico di "transition program" — non un sito, ma l'infrastruttura di una transizione organizzativa globale. Domino non ha consegnato un deliverable: ha accompagnato una transizione. Il valore non era nell'output, ma nella continuità della relazione.
-
-### Stellantis — Electrification Days
-**Progetto:** Evento globale (online + offline) sulla mobilità elettrica per dipendenti.
-**Attività:** Concept & Strategy, Visual Identity, Content Production, coordinamento progetto, utilizzo AI.
-**Risultato:** Le prime due manifestazioni locali sono state **sold-out in poche ore**.
-
-### Stellantis — D&I People Stories
-**Progetto:** Due video series con dipendenti donne Stellantis come protagoniste, su temi D&I.
-**Attività:** Concept, visual identity, storyboard, produzione video.
-**Risultato:** Tra i **video più visti sulla intranet Stellantis**, rilanciate dal COO nella sua comunicazione settimanale.
-
-### Fiat — Sito internazionale EMEA
-**Progetto:** Nuovo sito Fiat in **21 paesi**, primo grande progetto di rollout internazionale Domino.
-**Anno:** 2010.
-
-### Fiat Professional (Ducato) — App E-Product
-**Progetto:** App per la rete vendita Fiat Professional.
-**Funzionalità:** Cataloghi interattivi, listini con comparatori vs concorrenza, valutatori costi di gestione, offline-ready, personalizzabile per punto vendita, area training, area documentale, analytics.
-
-### Jeep — Community digitale
-**Progetto:** Come nasce una community Jeep. Progettazione e realizzazione della community digitale per i proprietari Jeep.
-
-### CIFA — Interazioni guidate dall'innovazione
-**Progetto:** Costruire interazioni digitali guidate dall'innovazione per un produttore di macchine da costruzione.
-
-### Case IH — Lead generation Europa + Brand Awareness
-**Progetto:** Campagne di lead generation per il mercato europeo e incremento brand awareness.
-
-### Case IH — IKA 2024 "Innovation Technology"
-**Riconoscimento:** Premio **IKA 2024** — categoria "Premio Speciale Innovation Technology".
-**Cosa ha premiato:** L'integrazione dell'AI nel processo di lead generation tramite campagne di digital marketing. Definisce nuovi standard per l'uso dell'AI nel marketing B2B agricultural/industrial.
-**Nota:** Domino vince due IKA 2024 nello stesso anno: uno con IVECO (sito, categoria Automotive) e uno con Case IH (AI + lead gen, categoria Innovation Technology).
-**Lettura I5.0:** Esempio concreto di "Efficiency to Responsibility as Differentiator" — l'AI non è usata per automatizzare ciecamente, ma per migliorare la pertinenza e la qualità dei contatti generati. AI che produce fiducia, non solo volume.
-
-### Case IH — Sito con Personas per 18 mercati
-**Progetto:** Nuovo sito web basato su Personas, lanciato in **18 mercati** simultaneamente. Approccio: ricerca qualitativa → personas → UX → design → sviluppo → rollout internazionale.
+**Percorso completo opzionale:** Foundation Sprint (€6K) → Design Sprint (€10K) → Execution (€20–60K). Totale pre-esecuzione: €16.000.
 
 ---
 
-## B2B INDUSTRIALE
+## Audit tattici — i tre tipi
 
-### Comau — Brand Identity
-**Progetto:** Brand identity completa: analisi valori, concept, immaginario visivo, sistema di identità.
+Prodotti a scope fisso (€1.500), consegnati in 1–2 settimane. Creano una diagnosi oggettiva che apre la conversazione sul "e adesso cosa facciamo". Non sono mai gratuiti.
 
-### Comau+ — Marketplace
-**Progetto:** Nuovo modello di partnership digitale tra Comau (hardware), clienti industriali (acquirenti) e system integrator (software applicativo).
-**Scope:** Progettazione di processo + UX + design + front-end + erogazione + manutenzione. Gestito interamente da Domino.
+### SEO & GEO Audit
+Analisi visibilità organica, keyword gap per settore e mercato, presenza nei motori AI (Google AI Overview, Perplexity, ChatGPT). Report con priorità di intervento e benchmark settoriale.
+→ Usare in: SP1 (sito che non porta lead), SP5 (comunicazione internazionale frammentata)
 
-### Bitron — AI Product Selector
-**Progetto:** Consulente AI B2B che comprende i bisogni del cliente e suggerisce il prodotto corretto.
-**Come funziona:** L'AI pre-compila il configuratore web con le caratteristiche principali.
-**Extra:** AI Chatbot istruito via PDF e siti web, risponde via chat, audio e video a domande tecniche.
-**Lettura I5.0:** Case exemplare di "Decision Design" — l'AI non sostituisce il buyer, lo aiuta a decidere meglio in un contesto tecnico complesso. Human-in-the-loop by design.
+### Digital Marketing Audit
+Analisi campagne attive, budget allocation, performance per canale (search, social, display), qualità dei lead generati. Fotografia oggettiva di cosa funziona e cosa no.
+→ Usare in: SP3 (cambio di agenzia / nuovo responsabile)
 
-### Bitron — Customer Experience B2B
-**Progetto:** Nuova customer experience per valorizzare il know-how B2B di Bitron.
-
-### Rollon — "Il prodotto diventa esperienza" *(IKA 2023)*
-**Riconoscimento:** Premio **IKA 2023** — categoria "Best Integrated Communication Campaign B2B".
-**Progetto:** Trasformazione del sito B2B in una vera esperienza di prodotto.
-**SEO US:** +**48% traffico organico** USA. "Linear rails" = prima keyword organica US (preceduta solo dal brand "Rollon").
-
-### Megadyne — Digital B2B
-**Progetto:** Il digitale B2B apre nuove opportunità di business per Megadyne (trasmissioni di potenza).
-
-### Contship Italia — Digital growth
-**Progetto:** Crescita digitale del brand per il gruppo leader nella logistica portuale.
-
-### Danieli Automation — Design System
-**Progetto:** Design System completo per digitalizzare e uniformare la comunicazione internazionale del brand.
-
-### IPI Agency — Real Estate advisory leader
-**Progetto:** Come raccontare un leader nella consulenza immobiliare B2B.
-
-### IPI — SFERA Intranet
-**Progetto:** Nuova intranet SFERA per il Gruppo IPI.
-
-### IPI — Internal Communication Onboarding
-**Progetto:** Piano di comunicazione per lancio nuova intranet e tool Microsoft 365.
-**Attività:** Video teaser, email di lancio, 12 mini news formative, 8 mini video AI con avatar (3-5 min), 1 meeting stakeholder.
-
-### BANCOMAT — Da ottimizzazione back-office a engagement
-**Progetto:** Ottimizzazione dei processi back-office e aumento dell'engagement digitale.
-
-### Links Foundation — Nuova Intranet
-**Progetto:** Nuova intranet per Links Foundation – Leading Innovation & Knowledge for Society.
-**Approccio:** Design Sprint + Metodo Agile + piano di engagement e formazione.
-
-### Demak Group — Da fornitore a leader B2B
-**Progetto:** Riposizionamento da fornitore a player di riferimento nel settore B2B.
-**SEO:** +48% traffico organico totale, +54% lead generation, +20% clic non-brand, +18% audit score.
-
-### Frascold — SEO
-**Progetto:** SEO post-lancio nuovo sito per produttore compressori HVACR.
-**Risultato:** +**62% utenti organici già nel primo mese**.
-
-### Veritas — Scoasse
-**Progetto:** Comunicazione digitale per Veritas sul tema ambiente e raccolta rifiuti.
-
-### Pipein — Da startup ad azienda
-**Progetto:** Nuova comunicazione più matura per Pipein, dalla fase startup alla fase scale-up.
-
-### Gruppo De Eccher — B2B
-**Progetto:** Presenza digitale per il gruppo di costruzioni.
+### CX Audit
+Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali devono intervenire manualmente, dove il digitale non supporta la vendita. Identificazione del collo di bottiglia prioritario.
+→ Usare in: SP2 (commerciali che perdono tempo a spiegare il prodotto)
 
 ---
 
-## DIGITAL MARKETING & SEO/GEO
+## Regole commerciali
 
-### Masi Agricola — Sito + SEO + eCommerce
-**Progetto:** Nuovo sito (istituzionale + enoteca + cantine), campagne SEO/SEM, Google Ads ecommerce.
-**Risultati SEO (6 mesi):** Utenti +**44,22%** | Sessioni +**54,19%** | Pagine viste +**175,52%**
-
-### ENIT — Promozione Italia nel mondo
-**Progetto:** Analisi e coordinamento campagne di web marketing sul brand Italia in **34 paesi**.
-**Attività:** Iniziative local + global, dashboard unificata su **Looker** per monitoraggio performance.
+- **Niente lavoro gratuito per i prospect bottom-up.** Il primo passo è sempre a pagamento (audit €1.500, Foundation Sprint €6K o Design Sprint €10K).
+- **Workshop gratuito (2h) solo per grandi clienti in approccio top-down.** Non è un servizio autonomo: apre il percorso verso un Foundation Sprint a pagamento. Si usa solo quando il deal potenziale giustifica l'investimento.
+- **Il Design Sprint (€10K) è il principale entry product** per avviare una collaborazione: budget fisso, risultato tangibile in 4 giorni (prototipo testato), bassa frizione decisionale.
+- **Non proporre mai Foundation Sprint e Design Sprint come "alternativa economica" l'uno dell'altro.** Sono strumenti diversi per situazioni diverse.
 
 ---
 
-## CX / ECOMMERCE / FINANCE
+## Sales Plays
 
-### Arca SGR — Advisory Assistant
-**Progetto:** Tool interattivo per collocatori bancari distribuito presso istituti bancari.
-**Come funziona:** Guida la definizione degli investimenti del cliente finale in modo personalizzato.
+### SP1 — "Il nostro sito non porta contatti qualificati"
+**Motion:** Bottom-up ⬆
+**Entry:** Marketing Manager / Digital Manager
+**Trigger:** Sito obsoleto, cambio responsabile marketing
 
-### Costa Crociere — Preventivo Emozionale
-**Progetto:** Il preventivo viaggio diventa un minisite personalizzato per ogni agenzia e cliente.
-**Include:** Destinazione, nave, date, cabina, prezzo, foto e contatti dell'agente, CTA prenotazione.
-**Analytics:** Monitoraggio lead per prodotto e punto vendita, conversione tracciata per operatore.
+**Problema:**
+- Sito nato per "esserci", non per generare lead
+- Traffico piatto o calante, zero lead organici
+- Buyer journey non progettato per il processo B2B multi-stakeholder
 
----
+**Soluzione completa Domino:**
+- Nuovo sito B2B con buyer journey integrato per personas
+- SEO internazionale + GEO per AI search
+- Lead gen con form e marketing automation
 
-## AI & INNOVAZIONE
+**Come entrare:**
+- Audit SEO/GEO (€1.500) → fotografia oggettiva del gap con benchmark settoriale
+- Foundation Sprint (€6.000) → se stakeholder divisi su cosa fare o direzione non chiara
+- Design Sprint (€10.000) → se la direzione è chiara, prototipo del nuovo sito testato con buyer reali in 4 giorni
 
-> **Lettura I5.0 di questa sezione:** I case AI di Domino non sono esperimenti di laboratorio — sono esempi concreti di "Responsible AI in produzione": sistemi comprensibili, governabili, con human-in-the-loop. Non vendiamo AI generica: progettiamo le conseguenze di come l'AI viene usata. Questi case dimostrano che è possibile — e che Domino lo fa già.
+**Proof point:**
+- Demak: +54% lead gen, +48% traffico organico, +20% clic non-brand
+- Rollon US: +48% traffico organico, "linear rails" = prima keyword organica
+- Frascold: +62% utenti organici già nel primo mese
 
-### IBM Watson / BR-Uno — Anti-bullying
-**Progetto:** Domino e IBM Watson insieme per affrontare il tema del bullismo con una soluzione di Intelligent Assistant.
+**Vs competitor:**
+- Vs web agency generalista: Domino porta strategia + execution + KPI, non solo ranking
+- Vs consulenza: non solo strategia — si consegna il sito funzionante con i risultati
 
-### GEDI + Stellantis — Alfabeto del Futuro (2023)
-**Progetto:** Esperienza AI immersiva nelle piazze italiane, nell'ambito del tour "Alfabeto del Futuro" di Gruppo Editoriale GEDI per raccontare l'innovazione in Italia.
-**Cosa ha fatto Domino:** Uso dell'AI per creare un'installazione/esperienza immersiva che rende tangibili le possibilità del progresso tecnologico al grande pubblico.
-**Rilevanza:** Case che dimostra la capacità Domino di portare l'AI fuori dai contesti B2B puri, in esperienze phygital rivolte al consumatore finale.
-
----
-
-## TURISMO & CULTURA
-
-### Biennale di Venezia — Sito + eCommerce
-**Progetto:** Nuova presenza digitale per la Biennale: sito istituzionale, eCommerce (biglietteria/shop), aree profilate.
-
-### Fondazione Torino Musei — Rete museale
-**Progetto:** 4 musei (Palazzo Madama, GAM, MAO, Borgo Medievale), 2000 anni di storia, 150.000 opere, una rete digitale unica.
-
-### Museo Nazionale del Cinema — Torino
-**Progetto:** Presenza digitale per il Museo Nazionale del Cinema di Torino.
-
-### Costa Crociere — *vedi sezione CX sopra*
-
-### Alpitour — Digital Marketing & Sales
-**Settore:** Tour operator premium.
-
-### ENIT — *vedi sezione Digital Marketing sopra*
-
-### Langhe-Monferrato-Roero
-**Progetto:** L'eccellenza del territorio parte dal digitale. Promozione turistica integrata.
-
-### Distretto Turistico dei Laghi
-**Progetto:** Una destinazione turistica a portata di dita. Presenza digitale per il distretto.
-
-### Masi Agricola — *vedi Digital Marketing sopra*
-
-**Altri clienti turismo/cultura:** Turismo Torino, Terre dei Savoia, Visit Piemonte, Marcegaglia Tourism, Provincia di Padova, Museo Poldi Pezzoli, Veneto Tourism
+**CTA:** Proposta SEO/GEO Audit (€1.500) a scope fisso, 1–2 settimane, con benchmark settoriale. Porta naturalmente a Foundation Sprint o Design Sprint.
 
 ---
 
-## SALUTE & BEAUTY
+### SP2 — "I nostri commerciali perdono tempo a spiegare il prodotto"
+**Motion:** Bottom-up ⬆
+**Entry:** Sales Director / Product Manager
+**Trigger:** Cambio responsabile, lancio nuovo prodotto, espansione mercato
 
-### Lierac + Phyto (Ales Group) — CX prima del prodotto
-**Progetto:** Per Lierac e Phyto il cliente viene prima (anche del prodotto). Strategia CX per due brand beauty premium.
+**Problema:**
+- Prodotti tecnici complessi, buyer con background diversi (tecnico, acquisti, direzione)
+- Sales impegnati a fare educazione di prodotto invece di vendere
+- PDF e cataloghi che non guidano la scelta d'acquisto
 
-### Ospedale dell'Angelo (Venezia-Mestre)
-**Progetto:** Promuovere l'eccellenza nel settore sanitario attraverso il digitale.
+**Soluzione completa Domino:**
+- AI Product Selector — il buyer trova il prodotto giusto da solo
+- Configuratore digitale / TCO calculator
+- Chatbot tecnico istruito su catalogo e documentazione
+- Sales tool offline per la rete vendita
 
-### Affidea Italia
-**Progetto:** Portare il servizio più vicino all'utente attraverso la CX digitale.
+**Come entrare:**
+- CX Audit (€1.500) → mappatura del buyer journey attuale, evidenzia il collo di bottiglia
+- Foundation Sprint (€6.000) → se non è chiaro quale tool costruire (selector? configuratore? chatbot?): allinea sales, marketing e prodotto
+- Design Sprint (€10.000) → se il tool è identificato: prototipo testato con buyer reali prima dello sviluppo completo
 
-### LARC — Digital innovation in healthcare
-**Progetto:** Innovazione digitale al servizio della sanità per Gruppo LARC.
+**Proof point:**
+- Bitron: AI Product Selector che comprende i bisogni e suggerisce il prodotto corretto
+- IVECO: TCO Calculator per fleet manager
+- Fiat Professional: E-Product App per rete vendita (usabile offline)
 
-**Altri clienti salute:** CDI, Humanitas, Asalaser, Solgar, Azienda Ospedaliera di Padova, Labo Cosprophar
+**Vs competitor:**
+- Vs consulenza digital (Accenture, Reply): Domino non consegna un report — consegna il tool funzionante
+- Vs web agency: competenza verticale su B2B industriale complesso, non solo sviluppo
+
+**CTA:** Demo live del Bitron AI Selector + proposta CX Audit (€1.500) per mappare il buyer journey e identificare il collo di bottiglia prioritario.
 
 ---
 
-## REFERENZE COMPLETE PER SETTORE
+### SP3 — "Cambio di agenzia — cerco un partner che capisca il B2B"
+**Motion:** Bottom-up ⬆
+**Entry:** Nuovo Marketing Director / CMO
+**Trigger:** Cambio responsabile marketing, referral da cliente esistente
 
-| Settore | Clienti |
-|---|---|
-| **Automotive** | Fiat, Fiat Professional, Jeep, Abarth, Alfa Romeo, IVECO, Ford Authos, Motor Village, CIFA, Askoll, Mopar, Steyr, CNH Industrial, New Holland, Case IH, Stellantis |
-| **B2B Industriale** | Danieli, COMAU, Bitron, Volvo Penta, Petronas, Frascold, Teksid, Rollon, TEXA, B3, SKF, Ewellix, DFS, Links Foundation, Megadyne, Contship Italia, Veritas, Pipein, Gruppo De Eccher, Demak |
-| **Finance & PA** | Arca SGR, Bancomat SpA, Exor, Zoomlion Capital, Compagnia di San Paolo, Regione del Veneto, Consiglio Regionale Veneto |
-| **Salute & Beauty** | Affidea, Ospedale dell'Angelo, CDI, Humanitas, Asalaser, LARC, Lierac, Phyto, Solgar, Azienda Ospedaliera di Padova, Labo Cosprophar |
-| **Turismo & Cultura** | Alpitour, ENIT, Costa Crociere, Biennale di Venezia, Fondazione Torino Musei, Palazzo Madama, GAM, MAO, Museo Nazionale del Cinema, Galleria Borghese, Fondazione Aquileia, Museo Poldi Pezzoli, Turismo Torino, Visit Piemonte, Terre dei Savoia, Marcegaglia Tourism, Provincia di Padova, Langhe-Monferrato-Roero, Distretto Turistico dei Laghi, Masi Agricola |
-| **Media, Sport & PA** | RAI, Universal, Lega Nazionale Pallacanestro, FIMI, Juventus, IPI Group, Bancomat |
-| **AI & Tech** | IBM Watson (BR-Uno), Links Foundation, TEXA, Neosperience |
-| **Startup & Scale-up** | Demak, Pipein, iFog, CheProfessionista, MIND |
+**Problema:**
+- Nuovo responsabile, vuole impronta propria e risultati rapidi
+- Agenzia precedente non capiva la complessità B2B (multi-stakeholder, cicli lunghi, prodotti tecnici)
+- Nessuna ownership dei risultati, solo esecuzione
+
+**Soluzione completa Domino:**
+- Partnership continuativa: strategia + execution + ottimizzazione
+- Proposta modulare: si parte dalla priorità più urgente, si scala
+- Metodi proprietari (Foundation Sprint, Design Sprint, Preventivo Emozionale) che l'agenzia precedente non aveva
+
+**Come entrare:**
+- Digital Marketing Audit (€1.500) → fotografia oggettiva di cosa ha ereditato il nuovo responsabile: campagne, budget, performance, qualità lead
+- Foundation Sprint (€6.000) → se c'è confusione su priorità o visioni diverse tra reparti: ottimo primo atto per il nuovo responsabile che deve riordinare le idee
+- Design Sprint (€10.000) → se ha già le idee chiare: risultato concreto in 4 giorni, porta subito un prototipo validato alla direzione
+
+**Proof point:**
+- 20+ clienti B2B industriale attivi (Danieli, COMAU, Bitron, Rollon, Megadyne, Demak, Frascold…)
+- IKA 2023 — Rollon: Best Integrated Communication Campaign B2B
+- 29 anni di esperienza, 100% clienti soddisfatti Design Sprint
+
+**Vs competitor:**
+- Vs web agency: vertical knowledge B2B + metodi proprietari + ownership dei risultati
+- Vs consulenza: non solo strategia — si esegue internamente con team dedicato
+
+**CTA:** Incontro 45 min con 3 case B2B rilevanti per il settore del prospect + proposta Digital Marketing Audit (€1.500) come primo passo concreto.
+
+---
+
+### SP4 — "Abbiamo un budget ma non sappiamo da dove partire"
+**Motion:** Top-down ⬇
+**Entry:** CMO / CEO / Direzione — clienti di dimensioni significative
+**Trigger:** Sito obsoleto, referral da cliente esistente
+
+**Problema:**
+- C-level sa che "il digitale non funziona" ma non sa cosa cambiare
+- Stakeholder interni con priorità divergenti, nessun allineamento
+- Paura di investire nella direzione sbagliata
+
+**Soluzione completa Domino:**
+- Percorso strutturato: Foundation Sprint → Design Sprint → Execution
+- Roadmap prioritizzata con budget stimato per fase
+- Partner che resta durante l'intera transizione, non solo nel progetto
+
+**Come entrare:**
+- Workshop gratuito 2h (solo grandi clienti) → non è un servizio autonomo, apre il percorso verso Foundation Sprint
+- Foundation Sprint (€6.000) → primo passo quasi sempre necessario: l'ipotesi fondante sblocca la paralisi strategica e allinea tutti gli stakeholder
+- Design Sprint (€10.000) → dopo il Foundation Sprint, quando la direzione è condivisa: prototipo testato che giustifica l'investimento nel progetto completo
+
+**Proof point:**
+- 100% clienti soddisfatti Design Sprint
+- Links Foundation: Design Sprint + Agile — intranet progettata e validata in settimane
+- Metodo documentato: in 4 giorni si produce ciò che normalmente richiede mesi di riunioni
+
+**Vs competitor:**
+- Vs consulenza (Accenture, Reply): output tangibile in 4 giorni, non un report da 80 pagine
+- Vs web agency: capacità strategica + esecutiva — non si delega la strategia fuori
+
+**CTA:** Per grandi clienti: workshop gratuito 2h → Foundation Sprint (€6K). Per altri: Foundation Sprint direttamente come primo atto a pagamento.
+
+---
+
+### SP5 — "Dobbiamo comunicare in modo coerente su più mercati"
+**Motion:** Top-down ⬇
+**Entry:** CMO / Marketing Director — aziende con presenza internazionale
+**Trigger:** Espansione internazionale, referral da cliente esistente
+
+**Problema:**
+- Brand inconsistente tra sedi, filiali, mercati
+- Siti e comunicazione diversi per ogni paese, gestione frammentata
+- Agenzie locali che divergono dal brand centrale, nessuna governance
+
+**Soluzione completa Domino:**
+- Design System centralizzato + rollout multi-paese
+- CMS multilingua con governance centrale
+- Coordinamento agenzie locali
+- SEO/GEO per visibilità internazionale su keyword di prodotto
+
+**Come entrare:**
+- SEO/GEO Audit internazionale (€1.500) → analisi visibilità per mercato e lingua, quantifica il costo della frammentazione in traffico perso
+- Foundation Sprint (€6.000) → se HQ e filiali hanno visioni diverse: definisce architettura del brand internazionale e governance dei mercati
+- Design Sprint (€10.000) → quando la direzione è condivisa: prototipa il nuovo modello di comunicazione e lo testa con stakeholder reali di HQ e mercati chiave prima del rollout
+
+**Proof point:**
+- Danieli: Design System per digitalizzare e uniformare la comunicazione internazionale del brand
+- Rollon US: +48% traffico organico, "linear rails" = prima keyword organica USA
+- Case IH: rollout in 18 mercati
+- Fiat: nuovo sito in 21 paesi
+
+**Vs competitor:**
+- Vs web agency: esperienza documentata di rollout multi-paese con governance centrale
+- Vs consulenza: Domino esegue — non solo consiglia l'architettura
+
+**CTA:** Apertura con caso Danieli o Case IH + proposta SEO/GEO Audit internazionale (€1.500) per quantificare il gap prima di proporre il progetto completo.
+
+---
+
+## Prospect Engine — istruzioni di utilizzo
+
+Quando generi materiali per un prospect B2B industriale:
+
+1. **Identifica il sales play più pertinente** in base a ruolo del contatto, trigger rilevato e problema principale
+2. **Seleziona il corretto entry point** in base alla situazione: se la direzione non è chiara → Foundation Sprint; se è chiara → Design Sprint; se il contatto è freddo o il budget è limitato → Audit tattico
+3. **Non proporre mai lavoro gratuito** a prospect bottom-up — la prima proposta è sempre a pagamento
+4. **Usa i proof point del play**, non generici: se scrivi a un'azienda con problema SEO, cita Demak e Rollon, non Biennale di Venezia
+5. **Il Preventivo Emozionale** va sempre considerato come strumento di follow-up per proposal formali su deal di medio-alto valore
+6. **Non confondere Foundation Sprint e Design Sprint** come alternative di prezzo: sono strumenti diversi per situazioni diverse, da proporre in base alla diagnosi del prospect

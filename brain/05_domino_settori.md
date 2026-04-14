@@ -1,191 +1,228 @@
-# DOMINO BRAIN — Settori
-> Versione 3.0 — Aprile 2026. Linguaggio specifico, pain point reali e approccio Domino per ciascun verticale. Aggiornato con scenari Industry 5.0 (Trainstorming aprile 2026).
+# DOMINO BRAIN — GTM Turismo & Cultura
+> Versione 1.0 — Aprile 2026. Sales plays, scala di pricing e regole commerciali per il settore Turismo e Cultura. Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
 
 ---
 
-## AUTOMOTIVE
+## Sub-target del settore
 
-**Claim sito:** *"Creiamo strategie e strumenti per CX e Inbound Marketing — dal sito all'officina — che rendono ogni interazione unica e memorabile. Complice la nostra passione per i motori."*
-
-**Scenario I5.0:** L'automotive è il settore dove la transizione è più visibile e più urgente — verso l'elettrico, verso nuovi modelli di mobilità, verso reti di vendita da riforgiare. Non basta essere efficienti: bisogna aiutare concessionari, fleet manager e clienti finali a decidere bene in un momento di cambiamento profondo. Qui il Decision Design non è un'opzione, è la base di qualunque progetto digitale rilevante.
-
-**Clienti:** Fiat, Fiat Professional, Jeep, Abarth, Alfa Romeo, IVECO, Ford Authos, Motor Village, CIFA, Askoll, Mopar, Steyr, CNH Industrial, New Holland, Case IH, Stellantis
-
-**Pain point tipici:**
-- Reti di vendita indirette (concessionari, dealer) difficili da formare e allineare
-- Complessità del prodotto (configurazioni, optional, listini, TCO) difficile da comunicare
-- Coerenza di marca difficile da garantire su mercati internazionali multipli
-- Transizione verso l'elettrico che richiede nuovi strumenti di comunicazione e formazione
-- Customer experience frammentata tra online (sito, configuratore) e offline (concessionaria)
-- Fleet manager che faticano a giustificare l'investimento senza dati concreti
-
-**Come Domino risponde:**
-- Sales tool digitali (configuratori, listini offline, comparatori vs concorrenza, TCO calculator)
-- Design System per coerenza visiva internazionale
-- App per la rete vendita (usabili anche senza connessione)
-- Siti internazionali con rollout multi-paese (es. 18 mercati per Case IH, 21 per Fiat)
-- Preventivo Emozionale per reti di vendita indirette
-- IVECO eDailyAdvisor per guidare le scelte di mobilità elettrica
-- Video training AI personalizzati per team commerciali
-- Community digitali (Jeep)
-
-**Case da citare:** IVECO.com (IKA 2024), Case IH (18 mercati), Stellantis Employee Portal (FEIEIA Award), Fiat Professional E-Product App, IVECO TCO Calculator, IVECO eDailyAdvisor, Jeep Community
+| Sub-target | Clienti tipo | Interlocutore principale |
+|---|---|---|
+| **Destinazioni / enti del turismo** | DMO, consorzi, Visit, ENIT, regioni, province | Resp. Marketing / Comunicazione / Promozione |
+| **Tour operator / crociere** | Tour operator, crocieristi, operatori incoming | Sales Director / Resp. Rete Agenzie / Marketing |
+| **Istituzioni culturali** | Musei, fondazioni, biennali, istituzioni multi-sede | Resp. Comunicazione / Direttore / Marketing |
 
 ---
 
-## B2B INDUSTRIALE / MANIFATTURIERO
+## Scala di entrata commerciale
 
-**Claim sito:** *"Il marketing B2B si basa sulla reputazione costruita in un processo lungo e complesso. Telefonate, siti e fiere non bastano più: servono nuove strategie per raggiungere il cliente."*
-
-**Scenario I5.0:** Il manifatturiero è il settore più esposto alle transizioni sistemiche: supply chain ridisegnate, nuove normative, AI che entra nei processi produttivi e commerciali, sostenibilità come requisito di accesso ai mercati. I buyer B2B non cercano più fornitori — cercano partner capaci di accompagnarli in queste transizioni. Chi sa aiutare a decidere in contesti complessi (Decision Design, AI-assisted tools, scenario simulator) diventa strategico e difficilmente sostituibile.
-
-**Clienti:** Danieli, COMAU, Bitron, Volvo Penta, Petronas, Frascold, Teksid, Rollon, TEXA, B3, SKF, Ewellix, DFS, Links Foundation, Megadyne, Contship Italia, Veritas, Pipein, Gruppo De Eccher, Demak
-
-**Pain point tipici:**
-- Prodotti tecnici complessi da spiegare a buyer con background diversi (tecnico, acquisti, direzione)
-- **Processo decisionale multi-stakeholder**: mediamente 5-7 persone coinvolte in un acquisto B2B, ognuna con esigenze e priorità diverse. Il messaggio deve essere personalizzato per ruolo e fase del funnel.
-- Processi di vendita lunghi con molti stakeholder e cicli decisionali di mesi
-- Comunicazione ancora ancorata a strumenti tradizionali (PDF, fiere, telefonate)
-- Difficoltà a differenziarsi da competitor con prodotti apparentemente simili
-- Internazionalizzazione con adattamento per mercati e culture diverse
-- Lead generation B2B con volume basso ma altissimo valore unitario
-- **Accessibilità digitale**: obbligo normativo (Legge Stanca + direttiva EU) con rischio sanzioni per aziende con fatturato >500M€. Spesso i siti B2B esistenti non sono conformi — opportunità di revisione.
-- **Pressione I5.0**: AI Act, ESG, rendicontazione di sostenibilità, nuove normative sui dati — la compliance si sta trasformando in requisito competitivo. Chi la governa prima, vince.
-
-**Come Domino risponde:**
-- AI Product Selector per guidare il buyer alla soluzione giusta (Bitron)
-- Marketplace e portali di partnership (Comau+)
-- Design System per brand internazionali (Danieli)
-- Siti B2B basati su Personas e buyer journey (Rollon, Megadyne, Demak)
-- SEO/GEO per visibilità internazionale su keyword di prodotto
-- Foundation Sprint per allineare stakeholder interni sulla direzione strategica
-- Design Sprint per prototipare soluzioni in una settimana
-- Intranet e portali per comunicazione interna complessa (Links Foundation, IPI SFERA)
-- **Trainstorming I5.0** per aziende manifatturiere che devono navigare transizioni complesse (AI, normativa, sostenibilità) con un metodo strutturato e output concreti
-- **Decision Design tools**: configuratori, TCO calculator, comparatori — strumenti che aiutano il buyer a decidere, non solo a informarsi
-
-**KPI documentati:**
-- Rollon: +48% traffico organico USA, "Linear rails" = prima keyword organica
-- Demak: +48% organico, +54% lead gen, +20% clic non-brand
-- Frascold: +62% utenti organici in 1 mese
-
-**Case da citare:** Bitron AI Product Selector, Comau+ Marketplace, Danieli Design System, Rollon US SEO, Demak riposizionamento, Links Foundation Intranet (Design Sprint + Agile)
+Pricing, regole sul gratuito e distinzione Foundation Sprint vs Design Sprint sono definiti in `brain/03_domino_metodi.md` — fonte unica di verità. Non ripetere qui.
 
 ---
 
-## SALUTE, SANITÀ & BEAUTY
+## Nota settoriale — regola trasversale a tutti i plays
 
-**Claim sito:** *"I media digitali hanno un impatto potente anche su come ci prendiamo cura della nostra salute. Comprendendo i bisogni dei clienti, siamo in grado di offrire una CX eccellente."*
+In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competitivo sta nell'essere citati, scelti e ricordati — non solo trovati. Due differenziali principali da portare sempre:
 
-**Scenario I5.0:** In sanità e beauty la fiducia è tutto — e la fiducia non si scala con l'efficienza. L'AI in questi settori deve essere trasparente, spiegabile e governabile (human-in-the-loop): un chatbot medico che "sbaglia" non è un bug tecnico, è un danno relazionale. Il vantaggio competitivo sta nel progettare tecnologia responsabile che rafforza la relazione tra struttura e paziente/cliente, non che la sostituisce.
+**GEO** — pochissime agenzie in Italia sanno applicarlo al settore turismo/cultura. Il test di apertura più efficace: "cercate la vostra destinazione o istituzione su ChatGPT — vi cita?" Il risultato quasi sempre sorprende il prospect e apre la conversazione senza bisogno di pitch.
 
-**Clienti:** Affidea, Ospedale dell'Angelo, CDI, Humanitas, Asalaser, LARC, Lierac, Phyto, Solgar, Azienda Ospedaliera di Padova, Labo Cosprophar
+**Preventivo Emozionale** — il tool killer per tour operator e reti di vendita indirette. Costa Crociere è il case perfetto: il preventivo viaggio diventa un minisite con analytics integrata. Unico in Italia. Quando rilevante, aprire con la demo invece dell'audit.
 
-**Pain point tipici:**
-- Comunicare servizi complessi (diagnostica, percorsi di cura) a pazienti e caregiver non esperti
-- Digitalizzare prenotazioni, accesso a referti, percorso paziente
-- Costruire fiducia digitale in un settore ad altissima sensibilità
-- Normative stringenti su comunicazione medica e farmaceutica
-- Per i brand beauty: distinguersi con CX quando il prodotto da solo non basta
-- Employee communication in strutture con migliaia di dipendenti molto diversi
+**Differenziale vs agenzie specializzate turismo/cultura:** Domino porta metodi proprietari (Foundation Sprint, Design Sprint) + execution full-stack + competenza GEO che le agenzie verticali non hanno.
 
-**Come Domino risponde:**
-- Siti e portali paziente con UX accessibile, rassicurante e informativa
-- CX prima del prodotto: conoscere il cliente prima di promuovere il prodotto (Lierac, Phyto)
-- Campagne conformi alle normative del settore
-- Strumenti di prenotazione e gestione digitale del percorso paziente
-- Comunicazione istituzionale che costruisce autorevolezza e fiducia
-
-**Case da citare:** Lierac + Phyto (CX prima del prodotto), Ospedale dell'Angelo (promuovere l'eccellenza), Affidea (servizio vicino all'utente), LARC (innovazione digitale in sanità)
+**Differenziale vs web agency generaliste:** Domino conosce il settore in profondità — case history documentati su destinazioni, tour operator e istituzioni culturali di primo livello.
 
 ---
 
-## TURISMO & CULTURA
+## Sales Plays — Destinazioni / enti del turismo
 
-**Claim sito:** *"Viaggiare può essere molto più che spuntare luoghi dalla lista. Può essere un'esperienza di vita di grande valore. Il digitale espande questo valore anche prima e dopo il viaggio."*
+### SP1 — "I turisti internazionali non ci trovano — né su Google né sull'AI"
+**Motion:** Bottom-up ⬆
+**Entry:** Responsabile Marketing / Digital / Comunicazione
+**Trigger:** Calo traffico, cambio responsabile, nuova stagione
 
-**Scenario I5.0:** Il turismo e la cultura sono i settori dove il "significato" batte l'efficienza per definizione. In un mondo dove l'AI automatizza la ricerca di offerte, il vantaggio sta nell'essere citati, scelti e ricordati — non solo trovati. GEO (Generative Engine Optimization) e storytelling digitale sono strumenti I5.0 per eccellenza: costruire autorevolezza nei nuovi ecosistemi di ricerca AI è il nuovo posizionamento competitivo per destinazioni e istituzioni culturali.
+**Problema:**
+- Visibilità organica bassa sui mercati internazionali prioritari
+- Assenti nelle risposte di ChatGPT, Perplexity, Google AI ("best places in…", "cosa vedere a…")
+- Contenuti in italiano o tradotti male, non ottimizzati per query conversazionali internazionali
+- Difficile misurare il ritorno delle campagne su 5-10+ mercati diversi
 
-**Clienti:** Alpitour, ENIT, Costa Crociere, Biennale di Venezia, Fondazione Torino Musei (Palazzo Madama, GAM, MAO, Borgo Medievale), Museo Nazionale del Cinema, Galleria Borghese, Fondazione Aquileia, Museo Poldi Pezzoli, Turismo Torino, Visit Piemonte, Terre dei Savoia, Marcegaglia Tourism, Provincia di Padova, Langhe-Monferrato-Roero, Distretto Turistico dei Laghi, Masi Agricola
+**Soluzione completa Domino:**
+- SEO internazionale multi-lingua + GEO per AI search
+- Contenuti autorevoli ottimizzati per query conversazionali per mercato
+- Campagne Google Ads e social per mercati prioritari
+- Dashboard Looker per monitoraggio unificato multi-paese
 
-**Pain point tipici:**
-- Competizione internazionale fortissima per l'attenzione dei viaggiatori
-- Necessità di comunicare l'esperienza in modo emozionale, non solo informativo
-- Gestione multicanale e multilingual di contenuti in aggiornamento continuo
-- eCommerce con alta stagionalità e complessità di offerta
-- Per i musei: bilanciare identità culturale e accessibilità digitale per pubblici diversi
-- Reti di vendita indirette (agenzie di viaggio, tour operator) difficili da abilitare
+**Come entrare:**
+- SEO/GEO Audit (€1.500) → visibilità per mercato prioritario, keyword gap per lingua, test diretto su ChatGPT e Google AI Overview con benchmark destinazioni competitor
+- Foundation Sprint (€6.000) → se non è chiaro quali mercati prioritizzare o se stakeholder interni (ente, consorzi, comuni) hanno visioni diverse
+- Design Sprint (€10.000) → prototipo della nuova architettura di contenuto internazionale testato con viaggiatori reali dei mercati target in 4 giorni
 
-**Come Domino risponde:**
-- Siti esperienziali con forte componente visiva e storytelling
-- SEO/GEO per visibilità internazionale
-- Campagne Google Ads per eCommerce (biglietteria, shop, pacchetti)
-- Rollout multilingua coordinato
-- Preventivo Emozionale per tour operator e agenzie (Costa Crociere)
-- Dashboard Looker per monitoring campagne internazionali (ENIT, 34 paesi)
-
-**KPI documentati:**
+**Proof point:**
+- ENIT — coordinamento campagne in 34 paesi, dashboard Looker unificata
 - Masi Agricola SEO (6 mesi): +44% utenti, +54% sessioni, +175% pagine viste
-- ENIT: coordinamento 34 paesi, dashboard unificata Looker
+- Visit Piemonte — gestione sito e promozione turistica
 
-**Case da citare:** Masi (SEO), Costa Crociere (Preventivo Emozionale), Biennale di Venezia, Fondazione Torino Musei (4 sedi, 150.000 opere), ENIT (34 paesi)
+**Vs competitor:**
+- Vs agenzia turismo: GEO è una competenza che pochissime agenzie in Italia sanno applicare
+- Vs web agency: coordinamento multi-paese documentato su decine di mercati internazionali
 
----
-
-## FINANCE, ASSICURAZIONI & PA
-
-**Clienti:** Arca SGR, Bancomat SpA, Exor, Zoomlion Capital, Compagnia di San Paolo, Regione del Veneto, Consiglio Regionale Veneto
-
-**Scenario I5.0:** Finance e PA sono i settori dove la compliance non è una scelta — e dove l'AI Act, il GDPR e le normative ESG si fanno sentire prima che altrove. Ma la sfida I5.0 qui è trasformare la compliance in valore: chi progetta strumenti digitali responsabili, trasparenti e governabili costruisce fiducia istituzionale. Il Decision Design — strumenti che guidano scelte complesse in modo comprensibile — è il perimetro naturale della consulenza digitale in questo settore.
-
-**Pain point tipici:**
-- Prodotti finanziari complessi da spiegare a clienti non esperti
-- Rete di distribuzione indiretta (agenti, consulenti, banche) da formare e abilitare con strumenti efficaci
-- Normative MiFID, GDPR, compliance che limitano la comunicazione
-- Costruire fiducia digitale in un settore ad alta sensibilità
-- Back-office e processi interni ancora poco digitalizzati
-
-**Come Domino risponde:**
-- Tool interattivi per reti di vendita (Arca Advisory Assistant)
-- Preventivo Emozionale per collocatori e agenti
-- Ottimizzazione back-office e aumento engagement (Bancomat)
-- Comunicazione istituzionale autorevole con attenzione alla compliance
-
-**Case da citare:** Arca Advisory Assistant (tool per collocatori bancari), Bancomat (da back-office a engagement)
+**CTA:** SEO/GEO Audit (€1.500) con test diretto — "cercate la vostra destinazione su ChatGPT nei mercati chiave: cosa risponde?" Quasi sempre la miglior apertura commerciale del settore.
 
 ---
 
-## COMUNICAZIONE INTERNA & EMPLOYEE EXPERIENCE
+### SP2 — "Coordiniamo campagne su più mercati ma non abbiamo visione unificata"
+**Motion:** Top-down ⬇
+**Entry:** Direttore Marketing / Responsabile Promozione
+**Trigger:** Nuova stagione, referral, budget da ottimizzare
 
-*(Verticale trasversale a tutti i settori — offerta strutturata e documentata)*
+**Problema:**
+- Campagne attive su 5-30+ mercati senza un sistema di monitoraggio unificato
+- Budget allocato "a sensazione", difficile giustificare le scelte alla governance istituzionale
+- Agenzie locali o mercati che operano in modo non coordinato
+- Stagionalità che rende il reporting discontinuo e difficile da confrontare anno su anno
 
-**Scenario I5.0 — il verticale più direttamente allineato:**
-La transizione più difficile non è mai quella tecnologica: è quella umana. Adottare l'AI, riorganizzarsi, cambiare strumenti, integrare culture diverse dopo una fusione — le organizzazioni che falliscono queste transizioni non falliscono per mancanza di tecnologia, ma per mancanza di senso condiviso. La comunicazione interna è il tessuto connettivo delle transizioni I5.0. Un'agenzia rilevante non consegna una campagna interna e sparisce: resta finché il sistema impara a reggere il cambiamento.
+**Soluzione completa Domino:**
+- Dashboard Looker unificata per tutti i mercati e canali
+- Modello di coordinamento campagne con KPI condivisi
+- Strategia media mix per mercato con budget allocation basata su dati
+- Reportistica periodica per governance e stakeholder istituzionali
 
-> *"L'efficienza è scalabile. La fiducia no. La velocità è replicabile. Il senso no."* — Manifesto I5.0
+**Come entrare:**
+- Digital Marketing Audit (€1.500) → analisi campagne attive per mercato, budget allocation, performance per canale. Ideale come apertura pre-stagione
+- Workshop gratuito 2h (solo per grandi enti: ENIT, regioni, DMO nazionali) → apre verso Foundation Sprint
+- Foundation Sprint (€6.000) → se stakeholder istituzionali (ente, regione, consorzi, governance politica) hanno priorità diverse: allinea su mercati, KPI e modello di coordinamento
 
-**Pain point tipici:**
-- Dipendenti non raggiungibili o non coinvolti con i canali tradizionali
-- Change management per nuovi tool, processi, riorganizzazioni post-merger
-- Engagement in multinazionali con culture, lingue e fusi orari diversi
-- Valori aziendali percepiti come astratti e lontani dalla vita quotidiana
-- Lancio di nuove piattaforme tecnologiche (Microsoft 365, SAP, nuova intranet)
-- **AI adoption interna**: i dipendenti temono l'AI, non la capiscono o la usano in modo non governato — serve un programma di transizione con metodo, non una campagna di rassicurazione
-- **Transizioni sistemiche** (fusioni, riorganizzazioni, nuovi modelli di lavoro ibrido): le persone devono capire dove stanno andando prima di seguire
+**Proof point:**
+- ENIT — coordinamento 34 paesi, dashboard Looker unificata
+- Visit Piemonte — gestione continuativa sito e promozione
 
-**Come Domino risponde:**
-- Assessment dei processi e dei bisogni esistenti
-- Piani di onboarding digitale strutturati (engagement + training)
-- Video series con dipendenti reali come protagonisti (D&I, Core Values)
-- Pillole formative AI con avatar (3-5 minuti, personalizzabili)
-- Intranet ed employee portal (dalla progettazione UX alla manutenzione)
-- Chatbot AI istruiti su documentazione interna (risponde via chat, audio e video)
-- Eventi ibridi (online + offline) per engagement su temi chiave (es. elettrificazione)
-- **Trainstorming I5.0**: programma strutturato per accompagnare l'adozione dell'AI in azienda — non un corso, non una campagna, ma un percorso di transizione con output concreti a ogni sessione. Ideale per aziende che devono introdurre responsabilmente l'AI tra le proprie persone.
+**Vs competitor:**
+- Vs agenzia turismo: competenza analytics e dashboard che le agenzie verticali raramente hanno
+- Vs web agency: esperienza di coordinamento multi-paese a scala internazionale documentata
 
-**KPI documentati:**
-- Stellantis Employee Portal: 88.000 dipendenti, FEIEIA Award Best European Intranet
-- Stellantis D&I People Stories: tra i più visti in intranet, rilanciate dal COO
-- Stellantis Electrification Days: prime manifestazioni sold-out in poche ore
+**CTA:** Case ENIT come apertura ("34 paesi, un unico cruscotto") + Digital Marketing Audit (€1.500) per fotografare la situazione attuale prima della nuova stagione.
 
-**Case da citare:** Stellantis Employee Portal, Stellantis D&I People Stories, Stellantis Electrification Days, IPI Onboarding, Bitron AI & Internal Communication, Links Foundation (Design Sprint + Agile)
+---
+
+## Sales Plays — Tour operator / crociere
+
+### SP3 — "La nostra rete agenzie fatica a vendere il prodotto — i preventivi non chiudono"
+**Motion:** Bottom-up ⬆
+**Entry:** Sales Director / Responsabile Rete Agenzie / Marketing
+**Trigger:** Cambio responsabile, calo conversioni, referral
+
+**Problema:**
+- Reti di agenzie indirette che vendono un prodotto complesso (itinerari, cabine, optional, date)
+- Preventivi PDF che non comunicano il valore emozionale del viaggio
+- Impossibile tracciare chi è davvero interessato tra i clienti che ricevono il preventivo
+- Agenti che non riescono a personalizzare la proposta per ogni cliente in modo efficiente
+
+**Soluzione completa Domino:**
+- Preventivo Emozionale — minisite personalizzato per ogni proposta di viaggio
+- Analytics integrata: si traccia chi apre, quanto tempo rimane, quante volte torna
+- La rete agenzie genera preventivi personalizzati in autonomia
+- Campagne di lead nurturing per chi ha aperto ma non ha ancora prenotato
+
+**Come entrare:**
+- Demo Preventivo Emozionale (gratuita) → caso Costa Crociere: si mostra il prodotto in funzione su un preventivo reale. La demo sostituisce il pitch: il prospect vede subito cosa riceve il cliente finale
+- CX Audit rete vendita (€1.500) → mappatura del processo di preventivazione attuale: touchpoint, tempi, tasso di chiusura per canale. Quantifica il problema prima di proporre la soluzione
+- Design Sprint (€10.000) → se vogliono riprogettare il processo di vendita indiretto più in profondità: prototipo del nuovo modello testato con agenti reali in 4 giorni
+
+**Nota:** In questo play la demo del Preventivo Emozionale è l'apertura principale. Il Foundation Sprint non è solitamente necessario — il problema è tattico e ben definito.
+
+**Proof point:**
+- Costa Crociere — Preventivo Emozionale per rete agenzie: ogni preventivo è un minisite tracciato
+- Alpitour — digital marketing & sales
+
+**Vs competitor:**
+- Vs agenzia turismo: il Preventivo Emozionale è un prodotto proprietario Domino — unico in Italia
+- Vs web agency: non solo sito — si trasforma il processo di vendita indiretto con analytics integrata
+
+**CTA:** Demo live del Preventivo Emozionale su caso Costa Crociere. Niente pitch, si mostra il prodotto finito. Poi CX Audit (€1.500) per capire dove il processo di vendita si inceppa oggi.
+
+---
+
+## Sales Plays — Istituzioni culturali
+
+### SP4 — "Dobbiamo attrarre pubblici diversi senza snaturare la nostra identità culturale"
+**Motion:** Bottom-up ⬆
+**Entry:** Responsabile Comunicazione / Marketing / Direttore
+**Trigger:** Cambio responsabile, nuovo progetto espositivo, referral
+
+**Problema:**
+- Tensione tra identità istituzionale/accademica e accessibilità per il grande pubblico
+- Pubblici molto diversi da servire: turisti, residenti, scuole, ricercatori, donatori
+- eCommerce biglietteria spesso gestito male — abbandoni nel funnel di acquisto
+- Contenuti digitali ricchi ma mal strutturati — non trovabili dai motori AI
+
+**Soluzione completa Domino:**
+- Sito esperienziale con forte storytelling, accessibile a pubblici diversi
+- eCommerce biglietteria ottimizzato per conversione e stagionalità
+- GEO per essere citati dai motori AI nelle ricerche culturali e turistiche
+- Campagne Google Ads per biglietteria e eventi speciali
+
+**Come entrare:**
+- CX Audit visitatore (€1.500) → mappatura del percorso digitale del visitatore: dalla scoperta all'acquisto del biglietto. Dove si perde, dove abbandona, dove il sito non serve il pubblico giusto
+- Foundation Sprint (€6.000) → se c'è tensione interna tra identità culturale e accessibilità, o tra i diversi pubblici da servire: allinea direzione, comunicazione e digital su un'ipotesi fondante
+- Design Sprint (€10.000) → prototipo del nuovo sito o del nuovo funnel biglietteria testato con visitatori reali in 4 giorni
+
+**Proof point:**
+- Fondazione Torino Musei — 4 musei (Palazzo Madama, GAM, MAO, Borgo Medievale), 2000 anni di storia, 150.000 opere, rete digitale unica
+- Biennale di Venezia — sito istituzionale + eCommerce + aree profilate
+- Museo Nazionale del Cinema — Torino
+- Galleria Borghese
+
+**Vs competitor:**
+- Vs agenzia cultura: il Design Sprint testa le scelte con visitatori reali — non solo con il curatore o il CDA
+- Vs web agency: profonda conoscenza delle istituzioni culturali italiane + metodi proprietari
+
+**CTA:** Case Fondazione Torino Musei o Biennale come apertura + CX Audit visitatore (€1.500) per mappare il percorso digitale attuale.
+
+---
+
+### SP5 — "Siamo su tutti i canali ma nessuno ci trova quando contano davvero"
+**Motion:** Top-down ⬇
+**Entry:** Direttore / Responsabile Comunicazione — istituzioni con più sedi o eventi ricorrenti
+**Trigger:** Nuova stagione espositiva, referral, riposizionamento
+
+**Problema:**
+- Presenza su sito, social, newsletter — ma visibilità organica bassa quando il turista cerca online
+- Assenti nelle risposte AI ("cosa vedere a Venezia", "musei imperdibili a Torino")
+- Più sedi o eventi con comunicazione non coordinata tra loro
+- Budget limitati: ogni euro deve essere misurabile e giustificabile alla governance
+
+**Soluzione completa Domino:**
+- GEO per essere citati nelle ricerche AI turistiche e culturali
+- SEO su keyword di visita ad alto intento ("musei torino", "biglietti biennale", ecc.)
+- Strategia di contenuto coordinata tra sedi ed eventi
+- Dashboard di monitoring per misurare il ritorno di ogni canale
+
+**Come entrare:**
+- SEO/GEO Audit (€1.500) → test diretto: l'istituzione viene citata da ChatGPT, Perplexity, Google AI nelle query turistiche e culturali rilevanti? Benchmark con istituzioni simili
+- Workshop gratuito 2h (solo per grandi istituzioni: fondazioni multi-sede, biennali, musei nazionali) → apre verso Foundation Sprint
+- Design Sprint (€10.000) → prototipa la nuova architettura di contenuto e visibilità, testata con visitatori reali. Per istituzioni multi-sede: valida il modello di coordinamento prima di investire
+
+**Proof point:**
+- Fondazione Torino Musei — strategia digitale integrata per 4 sedi
+- Masi Agricola: +44% utenti, +175% pagine viste in 6 mesi
+- GEO — competenza esclusiva Domino in Italia
+
+**Vs competitor:**
+- Vs agenzia cultura: GEO è una competenza che le agenzie verticali non hanno ancora sviluppato
+- Vs web agency: conoscenza profonda del settore culturale + capacità analytics avanzata
+
+**CTA:** Test di apertura: "cercate il nome dell'istituzione su ChatGPT — vi cita tra le prime cose da vedere?" + SEO/GEO Audit (€1.500) per il quadro completo.
+
+---
+
+## Prospect Engine — istruzioni di utilizzo
+
+Quando generi materiali per un prospect Turismo/Cultura:
+
+1. **Identifica il sub-target** prima del play: destinazione/ente, tour operator o istituzione culturale — i problemi e gli interlocutori sono profondamente diversi
+2. **Per tour operator: apri sempre con la demo del Preventivo Emozionale**, non con un audit. È il differenziale più immediato e tangibile
+3. **Per destinazioni e istituzioni: il test GEO è l'apertura più efficace** — "cercate il vostro nome su ChatGPT" funziona meglio di qualsiasi pitch
+4. **Usa i proof point del sub-target corretto**: ENIT/Visit Piemonte per destinazioni, Costa Crociere per tour operator, Fondazione Torino Musei/Biennale per istituzioni culturali
+5. **Tono comunicativo**: in questo settore il linguaggio deve essere emozionale e valoriale, non solo performativo. Il "significato" batte l'efficienza
+6. **Non confondere Foundation Sprint e Design Sprint** come alternative di prezzo: vedi distinzione completa in `brain/03_domino_metodi.md`
+7. **Niente lavoro gratuito bottom-up**: workshop gratuito solo per grandi enti istituzionali o fondazioni multi-sede in approccio top-down

@@ -1,17 +1,26 @@
-# DOMINO BRAIN — GTM Salute, Sanità & Beauty
-> Versione 1.0 — Aprile 2026. Sales plays, scala di pricing e regole commerciali per il settore Salute, Sanità e Beauty. Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
+# DOMINO BRAIN — GTM Finance, Assicurazioni & PA
+> Versione 1.0 — Aprile 2026. Sales plays e regole commerciali per il settore Finance e PA. Da usare dal Prospect Engine per generare materiali calibrati sul prospect.
+
+---
+
+## Caratteristiche del settore
+
+**Approccio GTM:** Opportunistico — arriva quasi sempre da referral, non è un settore che Domino caccia attivamente con outbound. I plays sono calibrati per **convertire un contatto caldo**, non per aprire porte fredde.
+
+**Ticket:** €50K+ per le istituzioni grandi. PA: budget e tempi dipendono da procurement pubblico.
+
+**Nota PA:** La PA ha gare, bandi e tempi che non si controllano. Il referral apre porte ma raramente bypassa il procurement. La strategia più efficace è usare il Foundation Sprint come strumento di co-progettazione pre-gara: orienta il capitolato prima che venga scritto.
 
 ---
 
 ## Sub-target del settore
 
-Il settore è frammentato in tre sub-target con interlocutori e problemi diversi:
-
 | Sub-target | Clienti tipo | Interlocutore principale |
 |---|---|---|
-| **Strutture sanitarie private** | Cliniche, poliambulatori, centri diagnostica, gruppi ospedalieri privati | Resp. Marketing / Comunicazione / HR Director |
-| **Brand beauty / cosmesi premium** | Brand cosmetici, centri estetici premium | Marketing Director / Brand Manager |
-| **Farma / integratori** | Brand farmaceutici OTC, integratori | Marketing Manager / Digital Manager |
+| **Asset management / SGR** | SGR, fondi, gestori patrimoniali | Resp. Rete / Sales / Marketing |
+| **Infrastrutture finanziarie** | Circuiti di pagamento, infrastrutture | CDO / Digital / Marketing / HR |
+| **Fondazioni / istituzionali** | Fondazioni bancarie, family office, investitori istituzionali | Resp. Comunicazione / Direzione Generale |
+| **PA / enti pubblici** | Regioni, consigli regionali, enti pubblici | Resp. Comunicazione / Assessorato Digital |
 
 ---
 
@@ -19,207 +28,206 @@ Il settore è frammentato in tre sub-target con interlocutori e problemi diversi
 
 Pricing, regole sul gratuito e distinzione Foundation Sprint vs Design Sprint sono definiti in `brain/03_domino_metodi.md` — fonte unica di verità. Non ripetere qui.
 
----
-
-## Nota settoriale — regola trasversale a tutti i plays
-
-In sanità e beauty la **fiducia è il valore principale** — non si scala con l'efficienza. L'AI va sempre proposta come **human-in-the-loop**: un chatbot medico che sbaglia non è un bug tecnico, è un danno relazionale. La comunicazione medica è normata: non si può promettere, solo rassicurare.
-
-**Differenziale vs agenzie healthcare specializzate:** Domino porta metodi proprietari (Foundation Sprint, Design Sprint) + execution full-stack + idee cross-settoriali che un'agenzia verticale non ha. Le agenzie healthcare sanno il settore ma non hanno i metodi né la capacità esecutiva integrata.
-
-**Differenziale vs web agency generaliste:** Domino conosce i vincoli normativi della comunicazione sanitaria e ha case history documentati nel settore (Affidea, Ospedale dell'Angelo, Lierac, Phyto, LARC).
+**Differenza rispetto agli altri settori:** in Finance e PA l'entry point è più avanzato. Si parte quasi sempre da una presentazione capabilities nel primo incontro, non da un audit tattico a freddo. Gli audit (€1.500) restano utili per formalizzare una diagnosi già nota al prospect, non come primo touch.
 
 ---
 
-## Sales Plays — Strutture sanitarie private
+## Nota sul Preventivo Emozionale in Finance
 
-### SP1 — "I pazienti faticano a trovare il servizio giusto e prenotare online"
-**Motion:** Bottom-up ⬆
-**Entry:** Responsabile Marketing / Comunicazione / Digital
-**Trigger:** Sito obsoleto, cambio responsabile, apertura nuova sede
+Il caso Arca SGR (Advisory Assistant) è una **verticalizzazione del Preventivo Emozionale** per la distribuzione finanziaria. La piattaforma PE è la stessa usata da Costa Crociere per la rete agenzie: prodotto complesso, rete di distribuzione indiretta, bisogno di personalizzazione e tracciabilità. La logica è identica.
+
+Quando si parla di PE in contesto finance, il cross-reference con Costa Crociere è un argomento commerciale forte: dimostra che la piattaforma funziona su reti di distribuzione complesse indipendentemente dal settore.
+
+---
+
+## Sales Plays — Asset management / SGR
+
+### SP1 — "I nostri collocatori non riescono a spiegare i prodotti — e i clienti non capiscono dove investono"
+**Motion:** Referral ↗
+**Entry:** Responsabile Rete / Sales / Marketing
+**Trigger:** Referral, lancio nuovo prodotto, cambio responsabile
 
 **Problema:**
-- Sito costruito per informare, non per guidare il paziente al servizio giusto
-- Prenotazioni ancora prevalentemente telefoniche — collo di bottiglia e costo operativo
-- UX complessa, non accessibile, non mobile-first
-- Percorso paziente frammentato tra online e offline
+- Prodotti finanziari complessi da spiegare a investitori con diversi livelli di expertise
+- Rete di collocatori (banche, consulenti) senza strumenti digitali efficaci per guidare la scelta
+- Compliance MiFID limita il messaggio — deve essere corretto e comprensibile insieme
+- Il cliente finale non capisce dove investe — fiducia fragile, rischio di riscatto
 
 **Soluzione completa Domino:**
-- Portale paziente con UX accessibile, rassicurante e informativa
-- Prenotazione digitale integrata con il workflow della struttura
-- SEO locale per essere trovati nelle ricerche "vicino a me"
-- GEO per essere citati dai motori AI nelle ricerche di salute
+- Preventivo Emozionale versione finance — minisite personalizzato per ogni proposta di investimento, con analytics su chi lo apre, quando e per quanto tempo
+- Il collocatore genera la proposta in autonomia, la personalizza per il cliente, la traccia
+- Materiali digitali conformi MiFID per la rete di distribuzione
+- Video AI con avatar per formazione rete su nuovi prodotti
 
-**Come entrare:**
-- CX Audit (€1.500) → mappatura del percorso paziente digitale: dove si perde, dove atterra su pagine inutili, dove abbandona. Report con priorità di intervento
-- Foundation Sprint (€6.000) → se stakeholder interni divisi (marketing, medici, IT, direzione): allinea tutti su quali pazienti, quale percorso, quale priorità digitale
-- Design Sprint (€10.000) → se la direzione è chiara: prototipo del nuovo percorso paziente testato con utenti reali in 4 giorni, prima di investire nello sviluppo completo
+**Come convertire il referral:**
+- Demo PE su caso Arca (primo incontro) → si mostra la piattaforma in funzione su un caso finanziario reale. Il collocatore che genera, personalizza e traccia la proposta. Niente pitch — si vede il prodotto
+- Foundation Sprint (€6.000) → se rete, marketing e compliance hanno priorità diverse: allinea tutti sull'ipotesi fondante
+- Design Sprint (€10.000) → prototipo del PE personalizzato per il loro prodotto/rete, testato con collocatori reali in 4 giorni
 
 **Proof point:**
-- Affidea Italia — CX digitale vicina all'utente
-- LARC — digital innovation in healthcare
-- Ospedale dell'Angelo (Venezia-Mestre) — eccellenza sanitaria nel digitale
+- Arca SGR — Advisory Assistant (Preventivo Emozionale verticalizzato per distribuzione finanziaria)
+- Costa Crociere — stessa piattaforma PE applicata a rete agenzie (cross-reference settoriale)
 
 **Vs competitor:**
-- Vs agenzia healthcare: il Design Sprint porta un prototipo testato con pazienti reali in 4 giorni — non un progetto da 6 mesi al buio
-- Vs web agency: conoscenza del percorso paziente e dei vincoli del settore
+- Vs agenzia finance: il PE è un prodotto proprietario Domino — unico in Italia, già testato su reti di distribuzione complesse
+- Vs web agency: non solo sito — si trasforma il processo di vendita indiretto con analytics integrata
 
-**CTA:** CX Audit paziente (€1.500) — mappatura del percorso digitale attuale con benchmark su strutture simili. Risultato in 1–2 settimane.
+**CTA:** Demo PE su caso Arca nel primo incontro. Se c'è interesse: Design Sprint (€10K) per prototipare la versione sul loro prodotto e rete in 4 giorni.
 
 ---
 
-### SP2 — "Dobbiamo costruire autorevolezza e fiducia digitale per differenziarci"
-**Motion:** Top-down ⬇
-**Entry:** Direttore Marketing / Direzione Generale
-**Trigger:** Apertura nuova struttura, riposizionamento, referral
+## Sales Plays — Infrastrutture e circuiti finanziari
+
+### SP2 — "Dobbiamo digitalizzare processi interni e aumentare l'engagement con i nostri stakeholder"
+**Motion:** Referral ↗
+**Entry:** CDO / Digital / Marketing / HR
+**Trigger:** Referral, trasformazione digitale in corso
 
 **Problema:**
-- Mercato affollato — cliniche e poliambulatori si assomigliano online
-- La comunicazione medica è normata: non si può promettere, solo rassicurare
-- La fiducia del paziente si costruisce prima della visita — il digitale è il primo touchpoint
-- Difficile comunicare l'eccellenza clinica senza sembrare autoreferenziali
+- Back-office con processi ancora manuali o poco digitalizzati
+- Stakeholder eterogenei: banche, esercenti, consumatori, dipendenti
+- Comunicazione interna frammentata in organizzazioni complesse
+- Difficile costruire engagement in un settore percepito come freddo e transazionale
 
 **Soluzione completa Domino:**
-- Sito istituzionale con storytelling orientato al paziente, non alla struttura
-- Contenuti che costruiscono autorevolezza (profili medici, blog, risposte a domande frequenti)
-- GEO per essere citati dall'AI nelle ricerche informative di salute
-- Campagne digitali conformi alle normative del settore
+- Ottimizzazione processi back-office con UX centrata sull'operatore
+- Portale stakeholder o intranet per engagement interno
+- Comunicazione istituzionale che costruisce autorevolezza e fiducia
+- Programma di change management digitale (Trainstorming)
 
-**Come entrare:**
-- SEO/GEO Audit (€1.500) → confronto diretto con i competitor locali: chi viene citato dall'AI nelle query di salute rilevanti?
-- Workshop gratuito 2h (solo per grandi strutture) → apre il percorso verso Foundation Sprint
-- Design Sprint (€10.000) → prototipo del nuovo sito e della nuova narrazione, testato con pazienti reali in 4 giorni
+**Come convertire il referral:**
+- CX / Process Audit (€1.500) → mappatura del processo o touchpoint critico. Utile per formalizzare una diagnosi già nota al prospect
+- Foundation Sprint (€6.000) → se ci sono più problemi da affrontare o stakeholder con priorità diverse: roadmap condivisa prima di investire
+- Trainstorming → per organizzazioni in piena trasformazione digitale: percorso in 3 sessioni (8 mesi) con output concreti
 
 **Proof point:**
-- Ospedale dell'Angelo — promuovere l'eccellenza sanitaria nel digitale
-- Affidea — servizio vicino all'utente
-- Humanitas
+- Bancomat SpA — da ottimizzazione back-office a engagement digitale
+- Finance STAR[T] — digital transformation della BU finance con engagement e community interna
 
 **Vs competitor:**
-- Vs web agency generalista: Domino conosce i vincoli normativi della comunicazione sanitaria
-- Vs agenzia healthcare: Design Sprint porta prototipo in 4 giorni con pazienti reali — non solo strategia
+- Vs consulenza digital: Domino esegue internamente — non solo strategia e governance
+- Vs web agency: esperienza su trasformazioni complesse con stakeholder multipli e istituzionali
 
-**CTA:** Case Ospedale dell'Angelo o Affidea come apertura + SEO/GEO Audit (€1.500) per vedere come la struttura è percepita online rispetto ai competitor locali.
+**CTA:** Case Bancomat o Finance STAR[T] come apertura + Foundation Sprint (€6K) per costruire la roadmap condivisa.
 
 ---
 
-## Sales Plays — Brand beauty / cosmesi premium
+## Sales Plays — Fondazioni e investitori istituzionali
 
-### SP3 — "Il prodotto non basta più — dobbiamo costruire una relazione con il cliente"
-**Motion:** Bottom-up ⬆
-**Entry:** Marketing Director / Brand Manager
-**Trigger:** Cambio responsabile, riposizionamento brand, referral
+### SP3 — "Dobbiamo comunicare il nostro impatto in modo autorevole e comprensibile"
+**Motion:** Referral ↗
+**Entry:** Responsabile Comunicazione / Direzione Generale
+**Trigger:** Referral, nuovo mandato / governance, report ESG
 
 **Problema:**
-- Mercato beauty saturo — il prodotto da solo non differenzia più
-- Il cliente viene raggiunto in fase promozionale ma non conosciuto prima
-- CX frammentata tra canali: sito, social, punto vendita, farmacia
-- Difficile costruire fedeltà senza dati sul comportamento del cliente
+- Identità e impatto difficili da comunicare a pubblici diversi (beneficiari, istituzioni, media, donatori)
+- Reporting ESG e rendicontazione di impatto ancora in formato tradizionale
+- Sito istituzionale che informa ma non coinvolge né convince
+- Pressione crescente su trasparenza, governance e comunicazione responsabile
 
 **Soluzione completa Domino:**
-- CX prima del prodotto: conoscere il cliente prima di promuovere (modello Lierac/Phyto)
-- Personas dettagliate + buyer journey per canale
-- Sito esperienziale con forte componente storytelling
-- Campagne digitali personalizzate per fase del journey
-- Marketing automation per nutrire la relazione post-acquisto
+- Sito istituzionale con storytelling di impatto per pubblici diversi
+- Report annuale / ESG in formato digitale interattivo
+- Comunicazione istituzionale autorevole senza autoreferenzialità
+- GEO per essere citati nelle ricerche su sostenibilità e impatto
 
-**Come entrare:**
-- CX Audit (€1.500) → mappatura del journey del cliente beauty: touchpoint attivi, dove si perde la relazione, dove il brand scompare dopo l'acquisto
-- Foundation Sprint (€6.000) → se marketing, digital e brand hanno visioni diverse: ipotesi fondante su chi è il cliente e quale relazione costruire
-- Design Sprint (€10.000) → prototipo della nuova CX testato con clienti reali in 4 giorni: sito, journey, contenuti
+**Come convertire il referral:**
+- Presentazione capabilities istituzionali (primo incontro) → focus su Compagnia di San Paolo, Exor. Tono consulenziale e autorevole, non commerciale. Ascolto prioritario sul pitch
+- Foundation Sprint (€6.000) → quasi sempre il passo giusto: bilancia identità istituzionale, pubblici diversi e obiettivi di comunicazione
+- Design Sprint (€10.000) → prototipo del sito istituzionale o del report di impatto testato con pubblici reali in 4 giorni
 
 **Proof point:**
-- Lierac (Ales Group) — "il cliente viene prima del prodotto": strategia CX per brand beauty premium
-- Phyto (Ales Group) — CX prima del prodotto
-- Asalaser — centri estetici premium
+- Compagnia di San Paolo
+- Exor
+- Zoomlion Capital
 
 **Vs competitor:**
-- Vs web agency: non solo sito — si progetta la relazione con il cliente a partire dai dati
-- Vs agenzia healthcare: esperienza beauty premium documentata con brand internazionali (Lierac, Phyto)
+- Vs agenzia comunicazione: Domino porta strategia + execution digitale integrata, non solo contenuti
+- Vs web agency: esperienza nella gestione di identità istituzionale complessa con pubblici multipli
 
-**CTA:** Case Lierac/Phyto come apertura ("il cliente viene prima del prodotto") + CX Audit (€1.500) per mappare il journey attuale e i gap relazionali.
+**CTA:** Primo incontro consulenziale (ascolto + capabilities) → proposta Foundation Sprint (€6K) come passo successivo naturale.
 
 ---
 
-## Sales Plays — Beauty & farma (cross-settore)
+## Sales Plays — Cross sub-target finance
 
-### SP4 — "Le persone cercano salute e beauty su AI — noi non siamo lì"
-**Motion:** Bottom-up ⬆
-**Entry:** Marketing Manager / Digital Manager
-**Trigger:** Calo traffico organico, cambio responsabile, budget da riallocare
+### SP4 — "Siamo sotto pressione normativa — AI Act, ESG, GDPR — e non sappiamo come trasformarlo in vantaggio"
+**Motion:** Referral ↗
+**Entry:** CDO / Compliance / Legal + Marketing
+**Trigger:** Referral, scadenza normativa, audit interno
 
 **Problema:**
-- Le ricerche di salute e beauty si spostano da Google a ChatGPT, Perplexity, Google AI Overview
-- Il brand non viene citato dai motori AI — invisibile nelle nuove ricerche conversazionali
-- I contenuti esistenti non sono strutturati per essere "citabili" dall'AI
-- Il traffico organico scende ma non si capisce perché
+- AI Act, GDPR, ESG: compliance vista come costo, non come opportunità di differenziazione
+- Chi governa prima si differenzia dai competitor — ma non è chiaro da dove partire
+- Strumenti digitali esistenti non progettati per essere trasparenti e spiegabili (AI Act)
+- Difficile comunicare all'esterno la governance AI in modo credibile
 
 **Soluzione completa Domino:**
-- GEO — ottimizzazione per essere citati da ChatGPT, Perplexity, Google AI Overview
-- Contenuti autorevoli strutturati per query conversazionali (salute, ingredienti, benessere)
-- SEO tecnico + on-page per mantenere visibilità Google in parallelo
-- Dashboard di monitoring per tracciare la visibilità su AI e Google
+- Responsible AI assessment — mappatura strumenti AI esistenti rispetto all'AI Act
+- Progettazione human-in-the-loop per tool digitali e chatbot
+- Comunicazione della governance AI verso stakeholder esterni
+- Trainstorming I5.0 — percorso strutturato per trasformare la compliance in posizionamento competitivo
 
-**Come entrare:**
-- SEO/GEO Audit (€1.500) → test concreto: il brand viene citato da ChatGPT, Perplexity, Google AI Overview nelle query rilevanti? Report con gap e priorità
-- Foundation Sprint (€6.000) → se non è chiaro quale strategia di contenuto adottare o se marketing e digital sono su posizioni diverse
-- Design Sprint (€10.000) → prototipo della nuova architettura di contenuto testata con utenti reali: si valida quali contenuti generano fiducia e citabilità prima di produrre il piano editoriale completo
+**Come convertire il referral:**
+- Apertura I5.0 (primo incontro) → frame strategico: "chi progetta tecnologia responsabile prima dei competitor costruisce fiducia istituzionale duratura." Domino lo vive internamente (B Corp 2025) — non è solo una proposta consulenziale
+- Foundation Sprint (€6.000) → mappa gli strumenti digitali esistenti rispetto alle normative. Output: ipotesi fondante su dove intervenire e come comunicarlo come differenziatore
+- Trainstorming I5.0 → programma in 3 sessioni (8 mesi): Responsible AI, ESG, GDPR. Per chi vuole un percorso strutturato, non un progetto puntuale
 
 **Proof point:**
-- GEO — competenza Domino dal 2024, unica in Italia su questo approccio
-- Frascold: +62% utenti organici in 1 mese (metodo SEO applicabile a GEO)
-- Demak: +54% lead gen, +48% traffico organico
+- Trainstorming I5.0 — "Le transizioni, I5.0 by Design" aprile 2026
+- B Corp Domino 2025 — la compliance come valore vissuto internamente, non solo proposto
 
 **Vs competitor:**
-- Vs web agency: GEO non è SEO con un nuovo nome — richiede una strategia di contenuto radicalmente diversa
-- Vs agenzia healthcare: i KPI SEO/GEO documentati vengono da settori diversi ma il metodo è lo stesso; Domino ha competenza GEO che le agenzie verticali non hanno ancora
+- Vs consulenza: Domino non solo consiglia — progetta e realizza gli strumenti responsabili
+- Vs web agency: competenza AI Act e I5.0 applicata a progetti digitali concreti
 
-**CTA:** SEO/GEO Audit (€1.500) con test diretto — "cercate il vostro brand o i vostri prodotti su ChatGPT: cosa risponde?" Il risultato è quasi sempre la miglior apertura commerciale.
+**CTA:** Conversazione strategica I5.0 nel primo incontro + Foundation Sprint (€6K) come primo passo concreto.
 
 ---
 
-### SP5 — "Abbiamo migliaia di dipendenti eterogenei — la comunicazione interna non funziona"
-**Motion:** Top-down ⬇
-**Entry:** HR Director / Direttore Comunicazione — strutture sanitarie grandi
-**Trigger:** Apertura nuova sede, fusione/acquisizione, referral
+## Sales Plays — PA / enti pubblici
+
+### SP5 — "Dobbiamo modernizzare la comunicazione istituzionale e i servizi digitali ai cittadini"
+**Motion:** Referral ↗
+**Entry:** Responsabile Comunicazione / Assessorato Digital / Direzione Generale
+**Trigger:** Referral, nuovo mandato politico, finanziamento PNRR
 
 **Problema:**
-- Strutture con 500–5.000 dipendenti molto diversi: medici, infermieri, amministrativi, tecnici
-- Comunicazione interna frammentata — email, bacheche, WhatsApp informali
-- Onboarding lento e costoso per il personale sanitario
-- Difficile mantenere coerenza culturale dopo fusioni o acquisizioni
+- Comunicazione percepita come distante, burocratica, poco accessibile ai cittadini
+- Servizi digitali frammentati tra portali diversi, non integrati
+- Nuovo mandato politico che richiede visibilità rapida su temi e iniziative
+- Procurement pubblico con tempi lunghi — ma finanziamenti PNRR disponibili
 
 **Soluzione completa Domino:**
-- Intranet / employee portal con UX progettata per profili diversi
-- Video AI con avatar per formazione e onboarding (3–5 min per modulo)
-- Piano di comunicazione interno per lancio e adozione
-- Integrazione con Microsoft 365 e strumenti esistenti
+- Portale istituzionale con UX centrata sul cittadino, non sull'organigramma
+- Campagne di comunicazione pubblica su temi strategici
+- Intranet per enti con dipendenti eterogenei
+- Accessibilità digitale (obbligo normativo PA — Legge Stanca + direttiva EU)
 
-**Come entrare:**
-- Workshop gratuito 2h (solo per grandi strutture) → apre il percorso verso Foundation Sprint. Non autonomo
-- Foundation Sprint (€6.000) → quasi sempre necessario: allinea HR, IT, comunicazione e direzione su quali profili dipendente, quale portale, quali contenuti prioritari
-- Design Sprint (€10.000) → dopo il Foundation Sprint: prototipo del portale testato con dipendenti reali (medici, infermieri, amministrativi) in 4 giorni
+**Come convertire il referral:**
+- Nota procurement PA → il referral apre porte ma raramente bypassa le gare. Usare il Foundation Sprint come co-progettazione pre-gara: orienta il capitolato prima che venga scritto
+- Foundation Sprint (€6.000) → allinea decisori politici, tecnici e comunicazione sull'ipotesi fondante. Può anticipare e orientare la scrittura del capitolato
+- Design Sprint (€10.000) → prototipo del portale o servizio testato con cittadini reali in 4 giorni. Produce un deliverable concreto anche prima della gara — dimostra la capacità esecutiva
 
 **Proof point:**
-- IPI — SFERA Intranet + piano di comunicazione per lancio (video AI, email, mini news formative)
-- Stellantis Employee Portal — premio FEIEIA
-- Links Foundation — Design Sprint + Agile per nuova intranet
+- Regione del Veneto
+- Consiglio Regionale Veneto
 
 **Vs competitor:**
-- Vs web agency: esperienza su employee portal complessi con migliaia di utenti eterogenei
-- Vs agenzia healthcare: metodo Design Sprint porta prototipo testato con dipendenti reali in 4 giorni
+- Vs web agency PA-specializzata: il Design Sprint accelera i tempi decisionali — cruciale in PA dove si perdono mesi in riunioni e allineamenti interni
 
-**CTA:** Case IPI o Stellantis Employee Portal come apertura + per grandi strutture: workshop gratuito 2h → Foundation Sprint (€6K).
+**CTA:** Case Regione Veneto come apertura + Foundation Sprint (€6K) come strumento di co-progettazione pre-gara.
 
 ---
 
 ## Prospect Engine — istruzioni di utilizzo
 
-Quando generi materiali per un prospect Salute/Sanità/Beauty:
+Quando generi materiali per un prospect Finance/PA:
 
-1. **Identifica il sub-target** prima del play: struttura sanitaria, brand beauty o farma/integratori — i problemi e gli interlocutori sono diversi
-2. **Usa il proof point del sub-target corretto**: Affidea/LARC per strutture sanitarie, Lierac/Phyto per beauty, KPI SEO/GEO per farma
-3. **Rispetta i vincoli normativi del settore**: non promettere risultati in ambito medico, tono rassicurante non promozionale per le strutture sanitarie
-4. **Proponi sempre AI come human-in-the-loop**: in questo settore l'AI deve essere spiegabile e governabile — mai presentarla come sostituto del personale
-5. **Non confondere Foundation Sprint e Design Sprint** come alternative di prezzo: vedi distinzione completa in `brain/03_domino_metodi.md`
-6. **Niente lavoro gratuito bottom-up**: workshop gratuito solo per grandi strutture sanitarie in approccio top-down
+1. **Questo settore è referral-driven**: i materiali devono essere calibrati per un prospect già caldo, non per cold outreach. Tono più diretto, entry point più avanzato
+2. **SP1 (asset management)**: apri sempre con la demo del Preventivo Emozionale su caso Arca — è il differenziale più immediato e tangibile. Il PE in finance è la stessa piattaforma di Costa Crociere: usare il cross-reference
+3. **SP3 (fondazioni)**: tono consulenziale e autorevole, mai commerciale. Il primo incontro è ascolto, non pitch
+4. **SP4 (compliance)**: usare il frame I5.0 e la B Corp come prova che Domino vive internamente ciò che propone — non è solo consulenza
+5. **PA**: segnalare sempre la complessità del procurement pubblico. Il Foundation Sprint pre-gara è la mossa strategica più intelligente
+6. **Non confondere Foundation Sprint e Design Sprint** come alternative di prezzo: vedi distinzione completa in `brain/03_domino_metodi.md`
+7. **Niente lavoro gratuito**: anche in questo settore vale la regola — niente audit o workshop gratuiti, tranne il workshop top-down per grandi istituzioni
