@@ -1,8 +1,11 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-// ─── Brain loader — tutti gli 11 file ────────────────────────────────────────
+// ─── Brain cache — one load per cold start ────────────────────────────────────
+let _brainCache = null;
+
 function loadBrain() {
+  if (_brainCache) return _brainCache;
   const files = [
     '01_domino_identita.md',
     '02_domino_servizi.md',
@@ -16,120 +19,17 @@ function loadBrain() {
     '10_domino_gtm_finance_pa.md',
     '11_domino_gtm_automotive.md',
   ];
-  return files.map(f => {
-    try { return readFileSync(join(process.cwd(), 'brain', f), 'utf-8'); }
-    catch { return `[ATTENZIONE: file brain/${f} non trovato]`; }
-  }).join('\n\n---\n\n');
+  _brainCache = files
+    .map(f => {
+      try { return readFileSync(join(process.cwd(), 'brain', f), 'utf-8'); }
+      catch { return `[ATTENZIONE: file brain/${f} non trovato]`; }
+    })
+    .join('\n\n---\n\n');
+  return _brainCache;
 }
 
-// ─── Claude API helper — exponential backoff su 529/500/overloaded ───────────
-const sleep = ms => new Promise(r => setTimeout(r, ms));
+// ─── System Prompts ───────────────────────────────────────────────────────────
 
-async function callClaude({ system, messages, tools, max_tokens = 8000 }) {
-  const body = { model: 'claude-sonnet-4-20250514', max_tokens, system, messages };
-  if (tools?.length) body.tools = tools;
-
-  const MAX_RETRIES = 5;
-  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': process.env.ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify(body),
-    });
-
-    // Overloaded or rate limited → retry with exponential backoff
-    if (res.status === 529 || res.status === 429) {
-      if (attempt >= MAX_RETRIES) {
-        throw new Error('OVERLOADED:Claude è sovraccarico. Riprova tra qualche minuto.');
-      }
-      const retryAfter = parseInt(res.headers.get('retry-after') || '0', 10);
-      const backoff = retryAfter > 0 ? retryAfter * 1000 : Math.min(1000 * Math.pow(2, attempt), 32000);
-      await sleep(backoff);
-      continue;
-    }
-
-    // Transient server error → retry once
-    if (res.status >= 500 && res.status !== 529) {
-      if (attempt >= 2) {
-        const text = await res.text();
-        throw new Error(`OVERLOADED:Errore temporaneo del server (${res.status}). Sto riprovando…`);
-      }
-      await sleep(2000 * (attempt + 1));
-      continue;
-    }
-
-    if (!res.ok) {
-      const e = await res.json().catch(() => ({}));
-      throw new Error(e?.error?.message || `Claude API ${res.status}`);
-    }
-
-    return res.json();
-  }
-}
-
-function extractText(data) {
-  return (data?.content || []).filter(b => b.type === 'text').map(b => b.text).join('\n');
-}
-
-function parseJSON(text) {
-  // 1. Strip markdown fences
-  let clean = text.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
-  // 2. Try direct parse
-  let parsed = null;
-  try { parsed = JSON.parse(clean); } catch {}
-  // 3. Find outermost JSON object — handles any preamble/postamble the model adds
-  if (!parsed) {
-    const start = clean.indexOf('{');
-    const end = clean.lastIndexOf('}');
-    if (start !== -1 && end > start) {
-      try { parsed = JSON.parse(clean.slice(start, end + 1)); } catch {}
-    }
-  }
-  if (!parsed) {
-    console.error('[parseJSON] failed. Response prefix:', clean.slice(0, 300));
-    throw new Error('Risposta non strutturata dal modello. Riprova.');
-  }
-  // 4. Normalize — ensure all required fields exist with safe defaults
-  // Prevents frontend crashes when model omits optional fields
-  const p = parsed.prospect || {};
-  parsed.prospect = {
-    nome: p.nome || 'N/D',
-    settore: p.settore || 'N/D',
-    dimensione: p.dimensione || 'N/D',
-    fatturato_stimato: p.fatturato_stimato || null,
-    mercati: p.mercati || 'N/D',
-    persone_chiave: Array.isArray(p.persone_chiave) ? p.persone_chiave : [],
-    segnali_recenti: Array.isArray(p.segnali_recenti) ? p.segnali_recenti : [],
-    sfide_probabili: Array.isArray(p.sfide_probabili) ? p.sfide_probabili : [],
-    maturita_digitale: p.maturita_digitale || 'N/D',
-    decisore_target: p.decisore_target || 'N/D',
-    hook: p.hook || '',
-    strumenti_suggeriti: p.strumenti_suggeriti || {},
-    casi_studio: Array.isArray(p.casi_studio) ? p.casi_studio : [],
-  };
-  const m = parsed.mail || {};
-  parsed.mail = { oggetto: m.oggetto || '', corpo: m.corpo || '' };
-
-  const d = parsed.deck || {};
-  parsed.deck = {
-    slide_1_titolo: d.slide_1_titolo || '', slide_1_contenuto: d.slide_1_contenuto || '',
-    slide_2_titolo: d.slide_2_titolo || '', slide_2_contenuto: d.slide_2_contenuto || '',
-    slide_3_titolo: d.slide_3_titolo || '', slide_3_contenuto: d.slide_3_contenuto || '',
-    slide_4_titolo: d.slide_4_titolo || 'Chi l\'ha fatto con noi', slide_4_contenuto: d.slide_4_contenuto || '',
-    slide_5_titolo: d.slide_5_titolo || '', slide_5_contenuto: d.slide_5_contenuto || '',
-  };
-  parsed.workflow = Array.isArray(parsed.workflow) ? parsed.workflow : [];
-  const li = parsed.linkedin || {};
-  parsed.linkedin = { tipo: li.tipo || 'InMail', messaggio: li.messaggio || '' };
-
-  return parsed;
-}
-
-// ─── Research System ─────────────────────────────────────────────────────────
 const RESEARCH_SYSTEM = `Sei un analista di intelligence commerciale senior per Domino, agenzia CX italiana.
 Produci un dossier completo e preciso su un'azienda prospect usando ESCLUSIVAMENTE dati reali trovati sul web.
 
@@ -152,7 +52,7 @@ FONTI DA CERCARE IN ORDINE:
    - Se non trovi nulla: "⚠️ Dati finanziari non trovati pubblicamente"
 
 3. NEWS E COMUNICATI (ultimi 12 mesi)
-   - Query: "[azienda] news 2024 2025", "[azienda] comunicato stampa acquisizione partnership"
+   - Query: "[azienda] news 2024 2025", "[azienda] comunicato stampa acquisizione partnership finanziamento"
    - Estrai eventi con date precise. Se nulla: "⚠️ Nessuna news rilevante trovata"
 
 4. LINKEDIN
@@ -169,7 +69,7 @@ FONTI DA CERCARE IN ORDINE:
    - Valuta sito, social attivi, frequenza post, blog, newsletter
    - Rating maturità: Bassa / Media / Alta con motivazione concreta
 
-Fai almeno 8-10 ricerche. Quando trovi un URL rilevante, leggi la pagina intera.
+Fai almeno 8-10 ricerche. Quando trovi un URL rilevante, leggi la pagina intera — non solo snippet.
 
 STRUTTURA OBBLIGATORIA DEL REPORT:
 ## PROFILO AZIENDA
@@ -182,114 +82,52 @@ STRUTTURA OBBLIGATORIA DEL REPORT:
 ## OPPORTUNITÀ PER DOMINO
 ## ⚠️ DATI NON TROVATI (obbligatoria — guida la ricerca manuale del commerciale)`;
 
-// ─── Research Agent (agentico multi-turn) ────────────────────────────────────
-async function runResearch(prospect, note) {
-  const webSearch = { type: 'web_search_20250305', name: 'web_search' };
-  const userContent = `Produci dossier su: "${prospect}"${note ? `\nNote: ${note}` : ''}`;
-  let messages = [{ role: 'user', content: userContent }];
-  let data = await callClaude({ system: RESEARCH_SYSTEM, messages, tools: [webSearch], max_tokens: 8000 });
+// ─── GTM Layer Instructions ───────────────────────────────────────────────────
 
-  let i = 0;
-  while (data.stop_reason === 'tool_use' && i < 20) {
-    i++;
-    const toolBlocks = data.content.filter(b => b.type === 'tool_use');
-    if (!toolBlocks.length) break;
-    messages = [...messages, { role: 'assistant', content: data.content }];
-
-    const feedback =
-      i < 8  ? 'Continua — cerca ancora LinkedIn per nomi manager e Cerved per dati finanziari.' :
-      i < 15 ? 'Approfondisci job posting e presenza digitale, poi produci il report.' :
-               'Hai abbastanza dati. Produci il report finale completo con tutte le sezioni.';
-
-    const results = toolBlocks.map(b => ({ type: 'tool_result', tool_use_id: b.id, content: feedback }));
-    messages = [...messages, { role: 'user', content: results }];
-    data = await callClaude({ system: RESEARCH_SYSTEM, messages, tools: [webSearch], max_tokens: 8000 });
-  }
-  return extractText(data);
-}
-
-// ─── GTM Layer/Motion instructions (3 livelli) ───────────────────────────────
-// Tre livelli reali della vendita B2B: C-Level, Head of, Manager/Operativo.
-// Non modificano la struttura JSON di output — adattano tono, argomenti e CTA.
 const GTM_LAYER_INSTRUCTIONS = {
+  vision: `LAYER GTM SELEZIONATO: L1 — Experience Vision (interlocutore: CEO / C-Suite)
+Il destinatario vuole essere ispirato, non venduto. Adatta i materiali così:
+- MAIL: apri con contesto strategico o transizione di settore (Industry 5.0, AI, sostenibilità).
+  Zero prodotti nel corpo. CTA = call 30 min sul tema, non su Domino.
+- DECK: slide 1 su contesto settore, slide 2 sulla sfida strategica, slide 3 su come altre
+  organizzazioni simili l'hanno affrontata, slide 4 case d'impatto, slide 5 next step esplorativo.
+- WORKFLOW: 3 touch in 3 settimane. Touch 2 = condividi contenuto rilevante sul settore, non pitch.`,
 
-  clevel: `LAYER GTM SELEZIONATO: C-Level (CEO / CIO / DG / Direttore Generale)
-FRAME: "Il digitale è leva strategica per il tuo business — ecco come altri come te l'hanno usata."
-Il CEO non vuole essere venduto: vuole essere ispirato e vedere pattern di successo nel suo settore.
-Non parlargli di tool, metodi o agenzie — parlagli di transizioni, opportunità e rischio competitivo.
+  settori: `LAYER GTM SELEZIONATO: L2 — Settori (interlocutore: Director / VP Marketing)
+Il destinatario vuole sentirsi capito nel suo mondo. Adatta i materiali così:
+- MAIL: aggancia con pain point specifico del settore. Cita 1-2 clienti Domino stesso settore con metrica.
+  CTA = call per approfondire quel tema.
+- DECK: slide 1 sul loro settore oggi, slide 2 sui 3 pain point più comuni nel verticale,
+  slide 3-4 case dello stesso settore con numeri, slide 5 next step.
+- WORKFLOW: 4 touch in 4 settimane. Touch 2 = case study PDF del cliente più affine.`,
 
-MAIL:
-- Oggetto: osservazione strategica sul loro settore o momento di mercato, mai "vi proponiamo"
-- Apertura: contesto Industry 5.0, transizione digitale, pressione competitiva nel loro verticale
-- Corpo: 3-4 righe max. Un'osservazione acuta sul loro momento. Cita 1 case di impatto nello stesso settore (risultato di business, non tecnico). Zero lista servizi.
-- CTA: call esplorativa di 30 min sul tema strategico — non su Domino, non su un progetto specifico
-- Tono: pari a pari. Mai "siamo felici di presentarvi". Mai "vi offriamo".
+  usecases: `LAYER GTM SELEZIONATO: L3 — Use Cases (interlocutore: Director / Head of / Responsabile progetto)
+Il destinatario vuole vedere il problema risolto in modo concreto. Adatta i materiali così:
+- MAIL: descrivi il loro problema specifico nel loro linguaggio (non quello dell'agenzia).
+  Cita metrica di business. CTA = Design Sprint o call operativa di 30 min.
+- DECK: slide 1 il problema (loro lingua), slide 2 perché è difficile (insight non ovvio),
+  slide 3-4 case con numeri, slide 5 Core Sprint o Design Sprint come prossimo passo a basso rischio.
+- WORKFLOW: 4 touch. Touch 3 = proponi esplicitamente un Design Sprint con descrizione e costo indicativo.`,
 
-DECK (5 slide):
-- Slide 1: Il contesto — cosa sta cambiando nel loro settore (dati reali dal report intelligence)
-- Slide 2: La sfida strategica — rischio di restare indietro o opportunità da cogliere
-- Slide 3: Come aziende simili l'hanno affrontata — 2 case dello stesso settore con impatto di business
-- Slide 4: L'approccio Domino — visione, B Corp, 29 anni, metodo (NO lista servizi tecnici)
-- Slide 5: Next step — call esplorativa, zero commitment, zero preventivo
+  tech: `LAYER GTM SELEZIONATO: L4 — Tech Categories (interlocutore: Manager / Specialista)
+Il destinatario ha trovato Domino cercando attivamente. Adatta i materiali così:
+- MAIL: osservazione tecnica specifica sulla loro presenza digitale attuale (usa i dati del report).
+  Expertise concreta, niente visione strategica. CTA = call tecnica 20 min.
+- DECK: slide 1 analisi loro presenza digitale attuale, slide 2 benchmark di settore,
+  slide 3 come Domino lavora su quella categoria, slide 4 risultati per clienti simili,
+  slide 5 quick win nelle prime 4 settimane.
+- WORKFLOW: 3 touch rapidi in 2 settimane. Touch 2 = risorsa utile (articolo, tool, checklist).`,
 
-WORKFLOW (3 touch, 3 settimane):
-- Gg1 [Email]: mail di visione personalizzata sul settore
-- Gg8 [LinkedIn]: condividi articolo/ricerca rilevante sul tema — zero pitch Domino
-- Gg18 [Email]: follow-up diretto, proponi 30 min di confronto sul tema`,
-
-  headof: `LAYER GTM SELEZIONATO: Head of (Director / VP / Responsabile area / Head of Marketing/Digital)
-FRAME: "Questa è la scelta giusta — te lo dimostriamo prima di spendere. Se va storto, siamo noi il problema."
-L'Head of ha DUE fronti: deve convincere il CEO sopra e non creare problemi al team sotto.
-Il suo bisogno reale è ridurre il rischio percepito e avere munizioni per la vendita interna.
-Non parlargli di visione (quella è del CEO) né di operatività (quella è del manager): parlagli di credibilità e metodo.
-
-MAIL:
-- Oggetto: pain point specifico del settore formulato come domanda o osservazione concreta
-- Apertura: dimostra che conosci il loro mondo con un dato o osservazione dal report intelligence
-- Corpo: collega il problema a come Domino l'ha risolto per qualcuno di simile. Cita 1-2 clienti stesso settore con KPI. Menziona il Design Sprint come modo per validare prima di investire.
-- CTA: call di 30 min per capire il loro contesto specifico — non per presentare Domino
-- Tono: consulenziale, specifico, orientato a ridurre il rischio. No jargon tecnico.
-
-DECK (5 slide):
-- Slide 1: Il vostro settore oggi — dinamiche chiave e pressioni (personalizzato dal report)
-- Slide 2: I 3 pain point più comuni per aziende come la loro — insight non ovvio che dimostra expertise
-- Slide 3: Come [cliente affine] l'ha risolto con Domino — case con KPI e contesto simile
-- Slide 4: Il Design Sprint — come validare la direzione in 4 giorni prima di investire il budget
-- Slide 5: Next step — proposta di Foundation Sprint o Design Sprint come primo passo a basso rischio
-
-WORKFLOW (4 touch, 4 settimane):
-- Gg1 [Email]: mail settore personalizzata
-- Gg7 [LinkedIn]: invia case study PDF del cliente più affine — no pitch
-- Gg16 [Email]: proponi esplicitamente Design Sprint con descrizione e investimento indicativo
-- Gg26 [Telefono]: follow-up diretto "ha senso parlarne?"`,
-
-  manager: `LAYER GTM SELEZIONATO: Manager / Operativo (Resp. progetto / Specialista / Responsabile tecnico)
-FRAME: "I feel your pain — lavorare con Domino è più semplice di quanto pensi. Lavorerai meno e meglio."
-Il manager si preoccupa del suo carico di lavoro quotidiano, non della visione strategica.
-Teme: riunioni infinite, brief che cambiano, deliverable che tornano indietro, il progetto che diventa "il suo problema" per mesi.
-Dagli certezza sul processo, dimostrate che guidate voi, che il metodo funziona.
-IMPORTANTE: usa i file GTM di settore (07-11) per citare sales play e audit tattici specifici per il loro verticale.
-
-MAIL:
-- Oggetto: tecnico e specifico sul loro problema operativo dichiarato o dedotto dal report
-- Apertura: osservazione concreta sulla loro situazione attuale (sito, tool, processi — dai dati del report)
-- Corpo: spiega brevemente come Domino gestisce il processo in modo che lui/lei lavori meno, non di più. Cita 1 risultato concreto (metrica). Menziona l'audit tattico di settore se pertinente (€1.500, 1-2 settimane, diagnosi oggettiva).
-- CTA: call tecnica di 20 min — proponi tu l'agenda concreta
-- Tono: diretto, pratico, tra professionisti. Niente filosofia. Parla di process, tool, timeline.
-
-DECK (5 slide):
-- Slide 1: Analisi della loro situazione attuale — cosa funziona e cosa no (dati reali dal report)
-- Slide 2: Come lavora Domino — il metodo in pratica, chi fa cosa, cosa si chiede al cliente
-- Slide 3: Risultati per clienti simili — metriche operative, non solo business outcomes
-- Slide 4: Il primo passo — audit tattico o Design Sprint: scope fisso, timeline definita, zero ambiguità
-- Slide 5: Come sarà lavorare insieme — ruoli chiari, un interlocutore dedicato, nessuna sorpresa
-
-WORKFLOW (4 touch, 3 settimane — veloci, i manager decidono in fretta):
-- Gg1 [Email]: mail operativa con osservazione specifica sulla loro situazione
-- Gg5 [LinkedIn]: risorsa utile (checklist, audit gratuito, articolo pratico) — no pitch
-- Gg12 [Email]: proponi audit tattico (€1.500) o call tecnica con agenda precisa
-- Gg18 [Telefono]: follow-up diretto`,
+  salesplay: `LAYER GTM SELEZIONATO: L5 — Sales Play (interlocutore: Manager / Procurement)
+Il prospect è già in fase di selezione o ha emesso un RFP. Adatta i materiali così:
+- MAIL: apri con riferimento al contesto specifico (RFP, call precedente, referenza).
+  Diretto, problem-solution, con cifre. CTA = disponibilità per call di approfondimento.
+- DECK: slide 1 comprensione del loro brief, slide 2 proposta specifica,
+  slide 3 metodo (come si lavora dal giorno 1), slide 4 case più affine, slide 5 investimento e timeline.
+- WORKFLOW: 2 touch rapidi. Touch 2 (giorno 4) = follow-up diretto.`,
 };
+
+// ─── GTM Motion Instructions ──────────────────────────────────────────────────
 
 const GTM_MOTION_INSTRUCTIONS = {
   bottomup: `MOTION GTM: BOTTOM-UP (contatto freddo o inbound)
@@ -305,18 +143,15 @@ const GTM_MOTION_INSTRUCTIONS = {
 - CTA operativa: definire il perimetro del progetto, non conoscersi.`,
 };
 
-// ─── Generation System (con GTM) ─────────────────────────────────────────────
-// ARCHITETTURA: system prompt = regole + GTM (compatto)
-//               user message = brain rilevante + report intelligence
-// Questo evita che il modello si perda in un system prompt enorme
-// e garantisce che il JSON di output sia sempre completo.
-function buildGenerationSystem(layer, motion) {
-  const layerInstr = GTM_LAYER_INSTRUCTIONS[layer] || GTM_LAYER_INSTRUCTIONS.headof;
+// ─── Generation System ────────────────────────────────────────────────────────
+
+function buildGenerationSystem(brain, layer = 'usecases', motion = 'bottomup') {
+  const layerInstr = GTM_LAYER_INSTRUCTIONS[layer] || GTM_LAYER_INSTRUCTIONS.usecases;
   const motionInstr = GTM_MOTION_INSTRUCTIONS[motion] || GTM_MOTION_INSTRUCTIONS.bottomup;
 
-  return `Sei il generatore di materiali sales di Domino (domino.it), agenzia CX italiana.
-Ricevi il Domino Brain (documenti interni) e un report di intelligence su un prospect.
-Il tuo compito: produrre materiali sales personalizzati in formato JSON.
+  return `${brain}
+
+Sei il generatore di materiali sales di Domino. Ricevi un report di intelligence su un prospect e produci output personalizzati.
 
 REGOLE FONDAMENTALI:
 - Usa SOLO informazioni dal report di intelligence — zero invenzioni
@@ -328,48 +163,151 @@ REGOLE FONDAMENTALI:
 - Next step sempre specifico ("30 minuti per capire se c'è fit")
 
 CASE STUDY — REGOLA DEI 3 (coerente tra intelligence, mail e deck):
+Scegli ESATTAMENTE 3 case study:
 [0] Il più affine: stesso settore O stessa sfida specifica. Spiega PERCHÉ in 1 frase. Includi KPI.
 [1] Stesso settore o simile: mostra expertise verticale. Includi KPI.
-[2] Metodologia specifica rilevante: Design Sprint!, Preventivo Emozionale, GEO, AI B2B, Internal Comm.
+[2] Metodologia specifica rilevante: Core Sprint, Design Sprint!, Preventivo Emozionale, GEO, AI B2B, Internal Comm. Includi KPI.
 MAI usare solo Fiat e Costa Crociere — usa l'intero repertorio del Brain.
 
 BADGE STRUMENTI — logica di selezione:
-- foundation_sprint: stakeholder multipli, visioni contrastanti, mancanza di direzione
-- design_sprint_tipo — UNO tra: Service / CX / Brand / Digital Marketing / Website / Intranet
+- core_sprint: quando il cliente non ha chiarezza strategica, stakeholder multipli con visioni diverse, o troppe idee senza priorità. Durata 1-2 giorni, €6.000.
+- design_sprint_tipo — scegli UNO tra 6 in base al bisogno principale:
+  * "Service" → lanciare nuovo prodotto/servizio digitale
+  * "CX" → customer journey frammentata, touchpoint incoerenti
+  * "Brand" → rebranding, riposizionamento
+  * "Digital Marketing" → lead generation debole, scarsa visibilità
+  * "Website" → sito da rinnovare, nuova presenza digitale
+  * "Intranet" → problemi comunicazione interna
 - preventivo_emozionale: ciclo vendita lungo, rete indiretta, prodotto complesso
 
-REFERENZE: usa 06_domino_referenze.md. Cita IKA per automotive/B2B, Sortlist per prospect scettici, B Corp per sensibilità ESG.
-SALES PLAY: usa il file GTM del settore del prospect (07-11). Cita audit tattici specifici per il manager layer.
+MAIL: caso [0] nel corpo con KPI, gli altri come proof point secondari.
+DECK slide 4: tutti e 3 i casi con cliente, KPI e perché affine.
 
 ━━━ ISTRUZIONI GTM ━━━
 ${layerInstr}
 
 ${motionInstr}
 
-OUTPUT: restituisci ESCLUSIVAMENTE JSON puro, zero testo prima o dopo, zero markdown, zero backtick.
-Schema obbligatorio:
+Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
+
 {
-  "prospect": { "nome","settore","dimensione","fatturato_stimato","mercati","persone_chiave":[],"segnali_recenti":[],"sfide_probabili":[],"maturita_digitale","decisore_target","hook","strumenti_suggeriti":{"foundation_sprint":bool,"design_sprint_tipo":str|null,"design_sprint_motivazione":str|null,"preventivo_emozionale":bool,"preventivo_emozionale_motivazione":str|null},"casi_studio":[{"cliente","progetto","kpi","perche_affine","tipo"}] },
-  "mail": { "oggetto","corpo" },
-  "deck": { "slide_1_titolo","slide_1_contenuto","slide_2_titolo","slide_2_contenuto","slide_3_titolo","slide_3_contenuto","slide_4_titolo","slide_4_contenuto","slide_5_titolo","slide_5_contenuto" },
-  "workflow": [ { "giorno":int,"canale":"LinkedIn|Email|Telefono","azione":str } ],
-  "linkedin": { "tipo":"Richiesta connessione|InMail","messaggio":str }
+  "prospect": {
+    "nome": "string",
+    "settore": "string",
+    "dimensione": "PMI | Mid-market | Enterprise",
+    "fatturato_stimato": "string | null",
+    "mercati": "string",
+    "persone_chiave": [{"nome": "string", "ruolo": "string", "anzianita": "string"}],
+    "segnali_recenti": ["string"],
+    "sfide_probabili": ["string", "string", "string"],
+    "maturita_digitale": "Bassa | Media | Alta — motivazione concreta",
+    "decisore_target": "string",
+    "hook": "string — osservazione specifica su dato reale trovato",
+    "strumenti_suggeriti": {
+      "core_sprint": true,
+      "core_sprint_motivazione": "string | null",
+      "design_sprint_tipo": "Service | CX | Brand | Digital Marketing | Website | Intranet | null",
+      "design_sprint_motivazione": "string | null",
+      "preventivo_emozionale": true,
+      "preventivo_emozionale_motivazione": "string | null"
+    },
+    "casi_studio": [
+      {"cliente": "string", "progetto": "string", "kpi": "string", "perche_affine": "string", "tipo": "affine"},
+      {"cliente": "string", "progetto": "string", "kpi": "string", "perche_affine": "string", "tipo": "settore"},
+      {"cliente": "string", "progetto": "string", "kpi": "string", "perche_affine": "string", "tipo": "metodologia"}
+    ]
+  },
+  "mail": {
+    "oggetto": "string — specifico, non generico",
+    "corpo": "string — max 150 parole. Problema prospect prima. Segnale reale. Caso [0] con KPI. CTA specifica."
+  },
+  "deck": {
+    "slide_1_titolo": "string — osservazione specifica sul prospect",
+    "slide_1_contenuto": "string",
+    "slide_2_titolo": "string — il loro problema reale",
+    "slide_2_contenuto": "string",
+    "slide_3_titolo": "string — come Domino lo risolve + strumento specifico",
+    "slide_3_contenuto": "string",
+    "slide_4_titolo": "Chi l'ha fatto con noi",
+    "slide_4_contenuto": "string — usa tutti e 3 i casi con cliente, KPI e perché affine",
+    "slide_5_titolo": "string — next step concreto e specifico",
+    "slide_5_contenuto": "string"
+  },
+  "workflow": [
+    {"giorno": 1, "canale": "LinkedIn", "azione": "string"},
+    {"giorno": 3, "canale": "Email", "azione": "string"},
+    {"giorno": 7, "canale": "LinkedIn", "azione": "string"},
+    {"giorno": 10, "canale": "Email", "azione": "string"},
+    {"giorno": 14, "canale": "Telefono", "azione": "string"}
+  ],
+  "linkedin": {
+    "tipo": "Richiesta connessione | InMail",
+    "messaggio": "string — max 300 caratteri, personalizzato con nome e hook reale"
+  }
 }`;
 }
 
-// Seleziona solo i file brain rilevanti per il settore del prospect
-// e li include nel messaggio utente insieme al report
-function buildUserMessage(brain, prospect, report) {
-  return `=== DOMINO BRAIN (usa questi documenti per generare i materiali) ===
-${brain}
+// ─── Claude API helpers ───────────────────────────────────────────────────────
 
-=== REPORT INTELLIGENCE SU: ${prospect} ===
-${report}
+async function callClaude({ system, messages, tools, max_tokens = 8000 }) {
+  const body = { model: 'claude-sonnet-4-20250514', max_tokens, system, messages };
+  if (tools?.length) body.tools = tools;
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': process.env.ANTHROPIC_API_KEY,
+      'anthropic-version': '2023-06-01',
+    },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`Claude API ${res.status}: ${await res.text()}`);
+  return res.json();
+}
 
-Genera ora i materiali sales. Restituisci SOLO il JSON, nessun testo aggiuntivo.`;
+function extractText(data) {
+  return data.content?.filter(b => b.type === 'text').map(b => b.text).join('\n') || '';
+}
+
+function parseJSON(text) {
+  const clean = text.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
+  return JSON.parse(clean);
+}
+
+// ─── Research Agent ───────────────────────────────────────────────────────────
+
+async function runResearch(prospect, note) {
+  const webSearch = { type: 'web_search_20250305', name: 'web_search' };
+
+  const userMsg = `Produci un dossier completo su questo prospect per il team commerciale di Domino.
+
+PROSPECT: "${prospect}"
+${note?.trim() ? `NOTE: ${note}\n` : ''}
+Cerca in ordine: sito web (leggi le pagine, non solo snippet), dati finanziari Cerved/CCIAA, news ultimi 12 mesi, LinkedIn con nomi reali, job posting attivi, presenza digitale.
+Fai almeno 8-10 ricerche. Produci il report con tutte le sezioni obbligatorie.`;
+
+  let messages = [{ role: 'user', content: userMsg }];
+  let data = await callClaude({ system: RESEARCH_SYSTEM, messages, tools: [webSearch], max_tokens: 8000 });
+
+  let i = 0;
+  while (data.stop_reason === 'tool_use' && i < 20) {
+    i++;
+    const toolBlocks = data.content.filter(b => b.type === 'tool_use');
+    if (!toolBlocks.length) break;
+    messages = [...messages, { role: 'assistant', content: data.content }];
+    const feedback =
+      i < 8  ? 'Continua — cerca ancora LinkedIn per nomi manager e Cerved per dati finanziari.' :
+      i < 15 ? 'Approfondisci job posting e presenza digitale, poi produci il report.' :
+               'Hai abbastanza dati. Produci il report finale completo con tutte le sezioni.';
+    const results = toolBlocks.map(b => ({ type: 'tool_result', tool_use_id: b.id, content: feedback }));
+    messages = [...messages, { role: 'user', content: results }];
+    data = await callClaude({ system: RESEARCH_SYSTEM, messages, tools: [webSearch], max_tokens: 8000 });
+  }
+  return extractText(data);
 }
 
 // ─── Main handler ─────────────────────────────────────────────────────────────
+
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -377,35 +315,24 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
+  const { prospect, note, layer = 'usecases', motion = 'bottomup' } = req.body || {};
+  if (!prospect?.trim()) return res.status(400).json({ error: 'Prospect richiesto' });
+
   try {
-    const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
-    const { prospect, note, layer = 'headof', motion = 'bottomup' } = body;
-
-    if (!prospect) return res.status(400).json({ error: 'prospect è obbligatorio' });
-
-    // 1. Load brain
     const brain = loadBrain();
+    const researchReport = await runResearch(prospect.trim(), note?.trim());
+    const genSystem = buildGenerationSystem(brain, layer, motion);
 
-    // 2. Research agent
-    const report = await runResearch(prospect, note);
-
-    // 3. Build generation system (focused — brain goes in user message)
-    const genSystem = buildGenerationSystem(layer, motion);
-    const userMsg = buildUserMessage(brain, prospect, report);
-
-    // 4. Generate materials — max_tokens alto per garantire JSON completo
     const genData = await callClaude({
       system: genSystem,
-      messages: [{ role: 'user', content: userMsg }],
-      max_tokens: 10000,
+      messages: [{
+        role: 'user',
+        content: `Prospect: "${prospect}"\nLayer: ${layer} | Motion: ${motion}\n\nReport di intelligence:\n${researchReport}\n\nGenera i materiali sales. Solo JSON puro.`,
+      }],
+      max_tokens: 6000,
     });
 
-    // 5. Parse JSON
     const result = parseJSON(extractText(genData));
-
-    // 6. Attach raw report
-    result.fonti_ricerca = report;
-
     return res.status(200).json(result);
   } catch (err) {
     console.error(err);
