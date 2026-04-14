@@ -1,234 +1,225 @@
-# DOMINO BRAIN — Referenze, Premi e Testimonianze
-> Versione 3.0 — Aprile 2026. Fonti: Sortlist (profilo verificato, 10 recensioni, 4.83/5), sito domino.it, blog Domino25. Aggiornato con frame I5.0 per le formule di pitch (Trainstorming aprile 2026).
+# DOMINO BRAIN — GTM Salute, Sanità & Beauty
+> Versione 1.0 — Aprile 2026. Sales plays, scala di pricing e regole commerciali per il settore Salute, Sanità e Beauty. Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
 
 ---
 
-## PROFILO SORTLIST
+## Sub-target del settore
 
-- **Rating:** 4.83/5 su 10 recensioni verificate
-- **Progetti in portfolio:** 27
-- **Premi ricevuti:** 16
-- **Membro dal:** 2023
-- **Lingue:** Italiano, Inglese
-- **Opera:** da remoto a livello globale
+Il settore è frammentato in tre sub-target con interlocutori e problemi diversi:
 
----
-
-## 16 PREMI E RICONOSCIMENTI
-*(Lista completa da profilo Sortlist ufficiale)*
-
-| Anno | Premio | Progetto / Cliente |
-|------|--------|--------------------|
-| 2025 | **Interactive Key Award** — Nomination B2B | **IVECO Design System** |
-| 2025 | **Interactive Key Award** — Nomination AI Best Use in ADV | **IVECO MY METALLICA TRUCK** |
-| 2024 | **Interactive Key Award** — AI Best Use in ADV in Social Media Marketing | **Case IH** |
-| 2024 | **Interactive Key Award** — Automotive and Energy | **IVECO** |
-| 2024 | **IKA Award** — Best Website | **iveco.com** |
-| 2023 | **Interactive Key Award** — Business to Business | **ROLLON** |
-| 2021 | **TIME** — Top 100 Inventions of the Year | **Stellantis Arena del Futuro** |
-| 2019 | **Interactive Key Award** — Best Use of Digital Media | **IVECO** |
-| 2019 | **FEIEIA Grand Prix Award** — Migliore Intranet d'Europa | **FCA** (ora Stellantis) |
-| 2015 | **Interactive Key Award** — Trasporti ed energia | **JEEP** |
-| 2012 | **Interactive Key Award** — Trasporti ed energia | **FIAT** (fiat.it — sito lanciato nel 2010 in 21 paesi EMEA) |
-| 2012 | **NC Digital Award** — Best Corporate Website | **FIAT** |
-| 2011 | **Interactive Key Award** — Automotive | **Alfa Romeo** |
-| 2009 | **Davey Award Silver** — Events | **Alfa Romeo @ Goodwood** |
-| 2009 | **Davey Award Silver** — Special Interest | **Alfa Romeo @ Goodwood** |
-| 2009 | **Webby Awards** — Website & Community | **Juventus** |
-| 2008 | **Interactive Key Award** — Best Emergency Project | **Action Aid International** |
-| 2004 | **Interactive Key Award** — Web Promotion | **Martini e Rossi** |
-| 2004 | **Interactive Key Award** — Best Front End Website | **Fiera del Libro** |
-| 2004 | **Interactive Key Award** — Best Interactive Website | **Martini e Rossi** |
-
-**Totale riconoscimenti internazionali: oltre 30** (16 su Sortlist + IKA 2024 iveco.com + TIME 2021 + altri)
-
----
-
-## 10 RECENSIONI CLIENTI — SORTLIST (4.83/5)
-*(Tutte verificate — Novembre/Dicembre 2024)*
-
----
-
-### Grace Cleary ⭐ 5/5
-**Global Website Lead for Case IH and New Holland — CNH** (5.001–10.000 dipendenti)
-*Servizio: Digital Strategy — Settore: Farming/Agriculture*
-
-**Obiettivo:** "Domino provides global website content and digital strategies across many of our market websites."
-
-**Cosa ha apprezzato di più:**
-> "Domino is innovative and quick. They have a high quality of work and continue to push Case IH as industry leaders in the digital marketing space."
-
----
-
-### Alessandra Manzato ⭐ 5/5
-**Communication & Corporate Identity Manager — Bitron Industrie SpA** (5.001–10.000 dipendenti)
-*Settore: Industrial Goods & Services — B2B*
-
-**Obiettivo:** "Domino ha supportato la mia azienda nella costruzione del nuovo sito di Gruppo, nell'ottimizzazione SEO e nella gestione di alcune campagne web."
-
-**Cosa ha apprezzato di più:**
-> "Ritengo Domino una delle migliori web agency in ambito B2B del panorama italiano. Consulenti professionali e super competenti: assolutamente consigliata!"
-
----
-
-### Monica Sarri ⭐ 5/5
-**Digital Marketing Specialist — IPI SPA** (201–500 dipendenti)
-*Settore: Real Estate*
-
-**Obiettivo:** "Domino è stata scelta per rispondere a multiple esigenze, dalla realizzazione di nuovi siti web, allo sviluppo della intranet aziendale, così come processi di digital education."
-
-**Cosa ha apprezzato di più:**
-> "Ho apprezzato moltissimo la reattività e la disponibilità del personale. La squadra è sempre pronta a rispondere alle esigenze del cliente con rapidità e impegno. L'agenzia è sempre aggiornata rispetto ai trend e tendenze del mercato, propone sempre soluzioni originali e innovative."
-
----
-
-### Oscar Ruo Roch ⭐ 5/5
-**Content Specialist — Reply / Stellantis**
-
-**Obiettivo:** "Creare asset digitali (video) per clienti."
-
-**Cosa ha apprezzato di più:**
-> "L'organizzazione e flessibilità della squadra."
-
----
-
-### Claudio Honegger ⭐ 5/5
-**Amministratore Unico — Richmond Italia**
-
-**Obiettivo:** "Rivedere tutta la strategia, i processi e il design di un portale introducendo IA."
-
-**Cosa ha apprezzato di più:**
-> "La capacità di comprensione delle necessità."
-
----
-
-### Marina Golotta ⭐ 5/5 *(recensione verificata)*
-**Responsabile Prodotti CLOUD — TNE srl**
-
-**Obiettivo:** "L'agenzia ha realizzato il nostro sito e la piattaforma di applicazioni CLOUD."
-
-**Cosa ha apprezzato di più:**
-> "La professionalità dello sviluppatore della parte CLOUD."
-
----
-
-### Andrea Pallard ⭐ 4.75/5
-**Communications Manager — Stellantis** (10.001+ dipendenti)
-*Settore: Automotive*
-
-**Obiettivo:** "Attività running di internal e managerial communication e special projects."
-
-**Cosa ha apprezzato di più:**
-> "Flessibilità, creatività, comprensione delle necessità del cliente."
-
-**Area di miglioramento:** "Portare soluzioni dirompenti e innovative anche se il cliente non le richiede."
-
----
-
-### BABYLON Kévin ⭐ 4.75/5
-**Responsabile Marketing Digital — IVECO France**
-*Servizio: Website Creation — Settore: Automotive*
-
-**Obiettivo:** "Creazione del nuovo sito IVECO BUS, supporto nello sviluppo dei siti mercati, monitoring delle performance e supporto operativo."
-
-**Cosa ha apprezzato di più:**
-> "Le persone, la disponibilità e i consigli."
-
-**Area di miglioramento:** "Alcune volte i tempi sono stati un po' allungati."
-
----
-
-### Emanuela Giorgini ⭐ 4.5/5
-**Referente Web Strategy — Visit Piemonte**
-*Servizio: Website Creation — Settore: Travel & Leisure (11–50 dipendenti)*
-
-**Obiettivo:** "Gestione del sito aziendale per la promozione turistica."
-
-**Cosa ha apprezzato di più:**
-> "La velocità di risposta in ogni nostra richiesta di tipo manutentiva ed evolutiva."
-
----
-
-### Roberto Veronesi ⭐ 4.25/5
-**Resp. Comunicazione e Sviluppo Risorse — Fondazione Links**
-*Servizio: Corporate Communication*
-
-**Obiettivo:** "L'agenzia ha lavorato sulla realizzazione ex novo della intranet."
-
-**Cosa ha apprezzato di più:**
-> "La progettazione e la individuazione di soluzioni coerenti con i bisogni."
-
----
-
-## SINTESI TEMI RICORRENTI NELLE RECENSIONI
-*(AI summary da Sortlist)*
-
-- **Responsività e disponibilità** — citata dalla maggioranza dei clienti
-- **Comprensione dei bisogni del cliente** — riconoscimento trasversale
-- **Innovazione e creatività** — con soluzioni originali e aggiornate ai trend
-- **Professionalità ed expertise** — "una delle migliori web agency B2B italiane" (Bitron)
-- **Flessibilità e organizzazione**
-
----
-
-## TESTIMONIANZE DOMINO25 — "La parola ai clienti"
-*(25° anniversario Domino, 2021. I clienti scelgono una delle 25 parole del Manifesto)*
-
-**Clienti identificati con nome e parola:**
-- **Marie Mauton** — Case IH — *"Imparare ad imparare"*
-- **Duilio Amico** — COMAU — *"Imparare ad imparare"*
-- **Marco Bader** — Responsabile Produzione Multimediale, Seat Pagine Gialle — *"Soluzioni"* (cliente dal 1996)
-
-> ⚠️ Le citazioni testuali complete sono solo nei video YouTube (playlist clienti: PLUzt_7WkbwTJGCS13nNAWhOfdpr0F_Qne)
-
----
-
-## COME USARE LE REFERENZE NELLE COMUNICAZIONI
-
-### Regole generali
-- Usare **1 referenza concreta** per comunicazione, non un elenco
-- Sceglierla in base al settore e alla sfida specifica del prospect
-- I **premi** sono le prove più forti con prospect che non conoscono Domino
-- Le **citazioni Sortlist** sono credibili perché verificate e recenti (2024)
-- I **KPI dei case history** (%, numeri) battono qualsiasi descrizione qualitativa
-
-### Formule pronte per mail e LinkedIn (adattare al prospect)
-
-**Per prospect in automotive / multinazionale:**
-> "IVECO France lo ha detto chiaramente: 'le persone, la disponibilità e i consigli'. Abbiamo vinto 3 Interactive Key Award su progetti IVECO e Case IH nel solo 2024."
-
-**Per prospect B2B industriale:**
-> "Il Communication Manager di Bitron ci definisce 'una delle migliori web agency B2B del panorama italiano'. Rollon ci ha affidato il sito in 16 mercati — risultato: +48% di traffico organico negli USA."
-
-**Per prospect interessato a intranet / comunicazione interna:**
-> "L'intranet che abbiamo costruito per FCA ha vinto il FEIEIA Grand Prix come Migliore Intranet d'Europa — 88.000 dipendenti connessi in un unico portale."
-
-**Per prospect interessato a AI / innovazione digitale:**
-> "Richmond Italia ci ha scelto per 'rivedere tutta la strategia e i processi di un portale introducendo IA'. Con Case IH abbiamo vinto l'Interactive Key Award 2024 per il miglior uso dell'AI nel digital marketing."
-
-**Per prospect con agenda I5.0 (AI responsabile, transizioni, ESG):**
-> "Lavoriamo con aziende che non vogliono solo essere più veloci — vogliono scegliere meglio dove andare. Con Stellantis abbiamo accompagnato la transizione di 88.000 dipendenti in tutto il mondo. Con Bitron abbiamo costruito un AI che aiuta il buyer B2B a decidere, non solo a comprare. È quello che intendiamo per 'semplificare la complessità'."
-
-**Per prospect che ha paura dell'AI o la percepisce come rischio:**
-> "La fiducia non si scala con l'efficienza. I tool AI che progettiamo sono comprensibili, governabili e centrati sulle persone — non sull'automazione per sé. Il nostro approccio è sempre human-in-the-loop: l'AI serve le decisioni umane, non le sostituisce."
-
-**Per prospect nel turismo / cultura:**
-> "Visit Piemonte apprezza soprattutto la nostra velocità di risposta. Con ENIT coordiniamo campagne in 34 paesi su un'unica dashboard Looker."
-
----
-
-## TABELLA REFERENZE PER SETTORE (per Prospect Engine)
-
-| Settore prospect | Premio/KPI da citare | Citazione cliente da usare |
+| Sub-target | Clienti tipo | Interlocutore principale |
 |---|---|---|
-| **Automotive** | IKA 2024 IVECO + IKA 2024 Case IH + nomination IKA 2025 | BABYLON Kévin (IVECO France) |
-| **B2B industriale** | IKA 2023 ROLLON, +48% organico US | Alessandra Manzato (Bitron) |
-| **Agricultural / macchine** | IKA 2024 Case IH, 16 mercati | Grace Cleary (CNH) |
-| **Intranet / Internal Comm** | FEIEIA Best Intranet Europa, 88.000 dip. | Andrea Pallard (Stellantis) |
-| **SEO / Lead generation** | Demak +48% organico, +54% lead | Alessandra Manzato (Bitron) |
-| **AI / Digital transformation** | IKA 2024 AI Case IH | Claudio Honegger (Richmond) |
-| **AI responsabile / I5.0 / ESG** | Stellantis EP (88k dip.) + Bitron AI Product Selector | Andrea Pallard (Stellantis) |
-| **Transizioni organizzative** | Stellantis Employee Portal (FEIEIA), IPI Onboarding | Monica Sarri (IPI) |
-| **Real estate / servizi** | IPI (sito + intranet + digital education) | Monica Sarri (IPI) |
-| **Non-profit / PA** | Links Foundation intranet, Action Aid IKA 2008 | Roberto Veronesi (Links) |
-| **Turismo / Cultura** | ENIT 34 paesi, Masi +175% pagine viste | Emanuela Giorgini (Visit Piemonte) |
+| **Strutture sanitarie private** | Cliniche, poliambulatori, centri diagnostica, gruppi ospedalieri privati | Resp. Marketing / Comunicazione / HR Director |
+| **Brand beauty / cosmesi premium** | Brand cosmetici, centri estetici premium | Marketing Director / Brand Manager |
+| **Farma / integratori** | Brand farmaceutici OTC, integratori | Marketing Manager / Digital Manager |
+
+---
+
+## Scala di entrata commerciale
+
+Pricing, regole sul gratuito e distinzione Foundation Sprint vs Design Sprint sono definiti in `brain/03_domino_metodi.md` — fonte unica di verità. Non ripetere qui.
+
+---
+
+## Nota settoriale — regola trasversale a tutti i plays
+
+In sanità e beauty la **fiducia è il valore principale** — non si scala con l'efficienza. L'AI va sempre proposta come **human-in-the-loop**: un chatbot medico che sbaglia non è un bug tecnico, è un danno relazionale. La comunicazione medica è normata: non si può promettere, solo rassicurare.
+
+**Differenziale vs agenzie healthcare specializzate:** Domino porta metodi proprietari (Foundation Sprint, Design Sprint) + execution full-stack + idee cross-settoriali che un'agenzia verticale non ha. Le agenzie healthcare sanno il settore ma non hanno i metodi né la capacità esecutiva integrata.
+
+**Differenziale vs web agency generaliste:** Domino conosce i vincoli normativi della comunicazione sanitaria e ha case history documentati nel settore (Affidea, Ospedale dell'Angelo, Lierac, Phyto, LARC).
+
+---
+
+## Sales Plays — Strutture sanitarie private
+
+### SP1 — "I pazienti faticano a trovare il servizio giusto e prenotare online"
+**Motion:** Bottom-up ⬆
+**Entry:** Responsabile Marketing / Comunicazione / Digital
+**Trigger:** Sito obsoleto, cambio responsabile, apertura nuova sede
+
+**Problema:**
+- Sito costruito per informare, non per guidare il paziente al servizio giusto
+- Prenotazioni ancora prevalentemente telefoniche — collo di bottiglia e costo operativo
+- UX complessa, non accessibile, non mobile-first
+- Percorso paziente frammentato tra online e offline
+
+**Soluzione completa Domino:**
+- Portale paziente con UX accessibile, rassicurante e informativa
+- Prenotazione digitale integrata con il workflow della struttura
+- SEO locale per essere trovati nelle ricerche "vicino a me"
+- GEO per essere citati dai motori AI nelle ricerche di salute
+
+**Come entrare:**
+- CX Audit (€1.500) → mappatura del percorso paziente digitale: dove si perde, dove atterra su pagine inutili, dove abbandona. Report con priorità di intervento
+- Foundation Sprint (€6.000) → se stakeholder interni divisi (marketing, medici, IT, direzione): allinea tutti su quali pazienti, quale percorso, quale priorità digitale
+- Design Sprint (€10.000) → se la direzione è chiara: prototipo del nuovo percorso paziente testato con utenti reali in 4 giorni, prima di investire nello sviluppo completo
+
+**Proof point:**
+- Affidea Italia — CX digitale vicina all'utente
+- LARC — digital innovation in healthcare
+- Ospedale dell'Angelo (Venezia-Mestre) — eccellenza sanitaria nel digitale
+
+**Vs competitor:**
+- Vs agenzia healthcare: il Design Sprint porta un prototipo testato con pazienti reali in 4 giorni — non un progetto da 6 mesi al buio
+- Vs web agency: conoscenza del percorso paziente e dei vincoli del settore
+
+**CTA:** CX Audit paziente (€1.500) — mappatura del percorso digitale attuale con benchmark su strutture simili. Risultato in 1–2 settimane.
+
+---
+
+### SP2 — "Dobbiamo costruire autorevolezza e fiducia digitale per differenziarci"
+**Motion:** Top-down ⬇
+**Entry:** Direttore Marketing / Direzione Generale
+**Trigger:** Apertura nuova struttura, riposizionamento, referral
+
+**Problema:**
+- Mercato affollato — cliniche e poliambulatori si assomigliano online
+- La comunicazione medica è normata: non si può promettere, solo rassicurare
+- La fiducia del paziente si costruisce prima della visita — il digitale è il primo touchpoint
+- Difficile comunicare l'eccellenza clinica senza sembrare autoreferenziali
+
+**Soluzione completa Domino:**
+- Sito istituzionale con storytelling orientato al paziente, non alla struttura
+- Contenuti che costruiscono autorevolezza (profili medici, blog, risposte a domande frequenti)
+- GEO per essere citati dall'AI nelle ricerche informative di salute
+- Campagne digitali conformi alle normative del settore
+
+**Come entrare:**
+- SEO/GEO Audit (€1.500) → confronto diretto con i competitor locali: chi viene citato dall'AI nelle query di salute rilevanti?
+- Workshop gratuito 2h (solo per grandi strutture) → apre il percorso verso Foundation Sprint
+- Design Sprint (€10.000) → prototipo del nuovo sito e della nuova narrazione, testato con pazienti reali in 4 giorni
+
+**Proof point:**
+- Ospedale dell'Angelo — promuovere l'eccellenza sanitaria nel digitale
+- Affidea — servizio vicino all'utente
+- Humanitas
+
+**Vs competitor:**
+- Vs web agency generalista: Domino conosce i vincoli normativi della comunicazione sanitaria
+- Vs agenzia healthcare: Design Sprint porta prototipo in 4 giorni con pazienti reali — non solo strategia
+
+**CTA:** Case Ospedale dell'Angelo o Affidea come apertura + SEO/GEO Audit (€1.500) per vedere come la struttura è percepita online rispetto ai competitor locali.
+
+---
+
+## Sales Plays — Brand beauty / cosmesi premium
+
+### SP3 — "Il prodotto non basta più — dobbiamo costruire una relazione con il cliente"
+**Motion:** Bottom-up ⬆
+**Entry:** Marketing Director / Brand Manager
+**Trigger:** Cambio responsabile, riposizionamento brand, referral
+
+**Problema:**
+- Mercato beauty saturo — il prodotto da solo non differenzia più
+- Il cliente viene raggiunto in fase promozionale ma non conosciuto prima
+- CX frammentata tra canali: sito, social, punto vendita, farmacia
+- Difficile costruire fedeltà senza dati sul comportamento del cliente
+
+**Soluzione completa Domino:**
+- CX prima del prodotto: conoscere il cliente prima di promuovere (modello Lierac/Phyto)
+- Personas dettagliate + buyer journey per canale
+- Sito esperienziale con forte componente storytelling
+- Campagne digitali personalizzate per fase del journey
+- Marketing automation per nutrire la relazione post-acquisto
+
+**Come entrare:**
+- CX Audit (€1.500) → mappatura del journey del cliente beauty: touchpoint attivi, dove si perde la relazione, dove il brand scompare dopo l'acquisto
+- Foundation Sprint (€6.000) → se marketing, digital e brand hanno visioni diverse: ipotesi fondante su chi è il cliente e quale relazione costruire
+- Design Sprint (€10.000) → prototipo della nuova CX testato con clienti reali in 4 giorni: sito, journey, contenuti
+
+**Proof point:**
+- Lierac (Ales Group) — "il cliente viene prima del prodotto": strategia CX per brand beauty premium
+- Phyto (Ales Group) — CX prima del prodotto
+- Asalaser — centri estetici premium
+
+**Vs competitor:**
+- Vs web agency: non solo sito — si progetta la relazione con il cliente a partire dai dati
+- Vs agenzia healthcare: esperienza beauty premium documentata con brand internazionali (Lierac, Phyto)
+
+**CTA:** Case Lierac/Phyto come apertura ("il cliente viene prima del prodotto") + CX Audit (€1.500) per mappare il journey attuale e i gap relazionali.
+
+---
+
+## Sales Plays — Beauty & farma (cross-settore)
+
+### SP4 — "Le persone cercano salute e beauty su AI — noi non siamo lì"
+**Motion:** Bottom-up ⬆
+**Entry:** Marketing Manager / Digital Manager
+**Trigger:** Calo traffico organico, cambio responsabile, budget da riallocare
+
+**Problema:**
+- Le ricerche di salute e beauty si spostano da Google a ChatGPT, Perplexity, Google AI Overview
+- Il brand non viene citato dai motori AI — invisibile nelle nuove ricerche conversazionali
+- I contenuti esistenti non sono strutturati per essere "citabili" dall'AI
+- Il traffico organico scende ma non si capisce perché
+
+**Soluzione completa Domino:**
+- GEO — ottimizzazione per essere citati da ChatGPT, Perplexity, Google AI Overview
+- Contenuti autorevoli strutturati per query conversazionali (salute, ingredienti, benessere)
+- SEO tecnico + on-page per mantenere visibilità Google in parallelo
+- Dashboard di monitoring per tracciare la visibilità su AI e Google
+
+**Come entrare:**
+- SEO/GEO Audit (€1.500) → test concreto: il brand viene citato da ChatGPT, Perplexity, Google AI Overview nelle query rilevanti? Report con gap e priorità
+- Foundation Sprint (€6.000) → se non è chiaro quale strategia di contenuto adottare o se marketing e digital sono su posizioni diverse
+- Design Sprint (€10.000) → prototipo della nuova architettura di contenuto testata con utenti reali: si valida quali contenuti generano fiducia e citabilità prima di produrre il piano editoriale completo
+
+**Proof point:**
+- GEO — competenza Domino dal 2024, unica in Italia su questo approccio
+- Frascold: +62% utenti organici in 1 mese (metodo SEO applicabile a GEO)
+- Demak: +54% lead gen, +48% traffico organico
+
+**Vs competitor:**
+- Vs web agency: GEO non è SEO con un nuovo nome — richiede una strategia di contenuto radicalmente diversa
+- Vs agenzia healthcare: i KPI SEO/GEO documentati vengono da settori diversi ma il metodo è lo stesso; Domino ha competenza GEO che le agenzie verticali non hanno ancora
+
+**CTA:** SEO/GEO Audit (€1.500) con test diretto — "cercate il vostro brand o i vostri prodotti su ChatGPT: cosa risponde?" Il risultato è quasi sempre la miglior apertura commerciale.
+
+---
+
+### SP5 — "Abbiamo migliaia di dipendenti eterogenei — la comunicazione interna non funziona"
+**Motion:** Top-down ⬇
+**Entry:** HR Director / Direttore Comunicazione — strutture sanitarie grandi
+**Trigger:** Apertura nuova sede, fusione/acquisizione, referral
+
+**Problema:**
+- Strutture con 500–5.000 dipendenti molto diversi: medici, infermieri, amministrativi, tecnici
+- Comunicazione interna frammentata — email, bacheche, WhatsApp informali
+- Onboarding lento e costoso per il personale sanitario
+- Difficile mantenere coerenza culturale dopo fusioni o acquisizioni
+
+**Soluzione completa Domino:**
+- Intranet / employee portal con UX progettata per profili diversi
+- Video AI con avatar per formazione e onboarding (3–5 min per modulo)
+- Piano di comunicazione interno per lancio e adozione
+- Integrazione con Microsoft 365 e strumenti esistenti
+
+**Come entrare:**
+- Workshop gratuito 2h (solo per grandi strutture) → apre il percorso verso Foundation Sprint. Non autonomo
+- Foundation Sprint (€6.000) → quasi sempre necessario: allinea HR, IT, comunicazione e direzione su quali profili dipendente, quale portale, quali contenuti prioritari
+- Design Sprint (€10.000) → dopo il Foundation Sprint: prototipo del portale testato con dipendenti reali (medici, infermieri, amministrativi) in 4 giorni
+
+**Proof point:**
+- IPI — SFERA Intranet + piano di comunicazione per lancio (video AI, email, mini news formative)
+- Stellantis Employee Portal — premio FEIEIA
+- Links Foundation — Design Sprint + Agile per nuova intranet
+
+**Vs competitor:**
+- Vs web agency: esperienza su employee portal complessi con migliaia di utenti eterogenei
+- Vs agenzia healthcare: metodo Design Sprint porta prototipo testato con dipendenti reali in 4 giorni
+
+**CTA:** Case IPI o Stellantis Employee Portal come apertura + per grandi strutture: workshop gratuito 2h → Foundation Sprint (€6K).
+
+---
+
+## Prospect Engine — istruzioni di utilizzo
+
+Quando generi materiali per un prospect Salute/Sanità/Beauty:
+
+1. **Identifica il sub-target** prima del play: struttura sanitaria, brand beauty o farma/integratori — i problemi e gli interlocutori sono diversi
+2. **Usa il proof point del sub-target corretto**: Affidea/LARC per strutture sanitarie, Lierac/Phyto per beauty, KPI SEO/GEO per farma
+3. **Rispetta i vincoli normativi del settore**: non promettere risultati in ambito medico, tono rassicurante non promozionale per le strutture sanitarie
+4. **Proponi sempre AI come human-in-the-loop**: in questo settore l'AI deve essere spiegabile e governabile — mai presentarla come sostituto del personale
+5. **Non confondere Foundation Sprint e Design Sprint** come alternative di prezzo: vedi distinzione completa in `brain/03_domino_metodi.md`
+6. **Niente lavoro gratuito bottom-up**: workshop gratuito solo per grandi strutture sanitarie in approccio top-down

@@ -1,20 +1,20 @@
-{
-  "name": "domino-prospect-engine",
-  "version": "3.3.0",
-  "private": true,
-  "scripts": {
-    "dev": "concurrently \"vite\" \"node api/server.js\"",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "pptxgenjs": "^3.12.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
-    "concurrently": "^9.0.0",
-    "vite": "^5.4.8"
-  }
-}
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Domino | Prospect Engine</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { background: #0a0a0a; color: #e8e8e8; }
+      input, textarea, select, button { font-family: inherit; }
+      ::-webkit-scrollbar { width: 6px; } 
+      ::-webkit-scrollbar-track { background: #141414; }
+      ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
