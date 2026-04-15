@@ -61,7 +61,7 @@ Quando si parla di PE in contesto finance, il cross-reference con Costa Crociere
 
 **Come convertire il referral:**
 - Demo PE su caso Arca (primo incontro) → si mostra la piattaforma in funzione su un caso finanziario reale. Il collocatore che genera, personalizza e traccia la proposta. Niente pitch — si vede il prodotto
-- Core Sprint (€6.000) → se rete, marketing e compliance hanno priorità diverse: allinea tutti sull'Core Hypothesis
+- Core Sprint (€6.000) → se rete, marketing e compliance hanno priorità diverse: allinea tutti sull'ipotesi fondante
 - Design Sprint (€10.000) → prototipo del PE personalizzato per il loro prodotto/rete, testato con collocatori reali in 4 giorni
 
 **Proof point:**
@@ -98,7 +98,7 @@ Quando si parla di PE in contesto finance, il cross-reference con Costa Crociere
 **Come convertire il referral:**
 - CX / Process Audit (€1.500) → mappatura del processo o touchpoint critico. Utile per formalizzare una diagnosi già nota al prospect
 - Core Sprint (€6.000) → se ci sono più problemi da affrontare o stakeholder con priorità diverse: roadmap condivisa prima di investire
-- Trainstorming → per organizzazioni in piena trasformazione digitale: il percorso che traduce le intenzioni di cambiamento in comportamenti e processi concreti — 3 sessioni in 8 mesi, output reali a ogni tappa
+- Trainstorming → per organizzazioni in piena trasformazione digitale: percorso in 3 sessioni (8 mesi) con output concreti
 
 **Proof point:**
 - Bancomat SpA — da ottimizzazione back-office a engagement digitale
@@ -170,8 +170,8 @@ Quando si parla di PE in contesto finance, il cross-reference con Costa Crociere
 
 **Come convertire il referral:**
 - Apertura I5.0 (primo incontro) → frame strategico: "chi progetta tecnologia responsabile prima dei competitor costruisce fiducia istituzionale duratura." Domino lo vive internamente (B Corp 2025) — non è solo una proposta consulenziale
-- Core Sprint (€6.000) → mappa gli strumenti digitali esistenti rispetto alle normative. Output: Core Hypothesis su dove intervenire e come comunicarlo come differenziatore
-- Trainstorming I5.0 → programma in 3 sessioni (8 mesi): accompagna l'organizzazione attraverso Responsible AI, ESG, GDPR — non un progetto puntuale, ma il percorso che fa diventare sistema il cambiamento
+- Core Sprint (€6.000) → mappa gli strumenti digitali esistenti rispetto alle normative. Output: ipotesi fondante su dove intervenire e come comunicarlo come differenziatore
+- Trainstorming I5.0 → programma in 3 sessioni (8 mesi): Responsible AI, ESG, GDPR. Per chi vuole un percorso strutturato, non un progetto puntuale
 
 **Proof point:**
 - Trainstorming I5.0 — "Le transizioni, I5.0 by Design" aprile 2026
@@ -206,7 +206,7 @@ Quando si parla di PE in contesto finance, il cross-reference con Costa Crociere
 
 **Come convertire il referral:**
 - Nota procurement PA → il referral apre porte ma raramente bypassa le gare. Usare il Core Sprint come co-progettazione pre-gara: orienta il capitolato prima che venga scritto
-- Core Sprint (€6.000) → allinea decisori politici, tecnici e comunicazione sull'Core Hypothesis. Può anticipare e orientare la scrittura del capitolato
+- Core Sprint (€6.000) → allinea decisori politici, tecnici e comunicazione sull'ipotesi fondante. Può anticipare e orientare la scrittura del capitolato
 - Design Sprint (€10.000) → prototipo del portale o servizio testato con cittadini reali in 4 giorni. Produce un deliverable concreto anche prima della gara — dimostra la capacità esecutiva
 
 **Proof point:**

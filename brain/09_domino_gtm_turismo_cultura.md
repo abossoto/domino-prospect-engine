@@ -163,7 +163,7 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 
 **Come entrare:**
 - CX Audit visitatore (€1.500) → mappatura del percorso digitale del visitatore: dalla scoperta all'acquisto del biglietto. Dove si perde, dove abbandona, dove il sito non serve il pubblico giusto
-- Core Sprint (€6.000) → se c'è tensione interna tra identità culturale e accessibilità, o tra i diversi pubblici da servire: allinea direzione, comunicazione e digital su un'Core Hypothesis
+- Core Sprint (€6.000) → se c'è tensione interna tra identità culturale e accessibilità, o tra i diversi pubblici da servire: allinea direzione, comunicazione e digital su un'ipotesi fondante
 - Design Sprint (€10.000) → prototipo del nuovo sito o del nuovo funnel biglietteria testato con visitatori reali in 4 giorni
 
 **Proof point:**

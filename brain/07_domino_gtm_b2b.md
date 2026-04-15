@@ -5,18 +5,7 @@
 
 ## Scala di entrata commerciale
 
-Quattro livelli a prezzo crescente. Ogni passo porta naturalmente al successivo. Non si propone mai lavoro gratuito sui prospect bottom-up.
-
-| Step | Prodotto | Prezzo | Quando |
-|---|---|---|---|
-| 1 | Audit tattico (SEO/GEO, Digital Mktg o CX) | €1.500 | Sempre disponibile come primo passo a scope fisso |
-| 2 | Core Sprint | €6.000 | Quando la direzione strategica non è chiara o gli stakeholder sono divisi |
-| 3 | Design Sprint | €10.000 | Quando la direzione è chiara e si vuole validare prima di investire |
-| 4 | Progetto completo (execution) | €20.000–60.000 | Sito, campagne, tool digitale, design system — su ciò che è stato validato |
-
-**Regola chiave Core Sprint vs Design Sprint:** sono strumenti sequenziali, non alternativi. Il Core Sprint risponde a "di tutto quello che abbiamo sul tavolo, su cosa vale la pena investire?" — il Design Sprint risponde a "cosa si chiedono i nostri clienti e come rispondiamo per essere credibili e preferiti?". Non vanno mai proposti come versioni dello stesso prodotto a prezzi diversi. Per la distinzione completa, vedi `03_domino_metodi.md`.
-
-**Percorso completo opzionale:** Core Sprint (€6K) → Design Sprint (€10K) → Execution (€20–60K). Totale pre-esecuzione: €16.000.
+Pricing, regole sul gratuito e distinzione Core Sprint vs Design Sprint sono definiti in `brain/03_domino_metodi.md` — fonte unica di verità. Non ripetere qui.
 
 ---
 
@@ -139,7 +128,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 **Proof point:**
 - 20+ clienti B2B industriale attivi (Danieli, COMAU, Bitron, Rollon, Megadyne, Demak, Frascold…)
 - IKA 2023 — Rollon: Best Integrated Communication Campaign B2B
-- 30 anni di esperienza, 100% clienti soddisfatti Design Sprint
+- 29 anni di esperienza, 100% clienti soddisfatti Design Sprint
 
 **Vs competitor:**
 - Vs web agency: vertical knowledge B2B + metodi proprietari + ownership dei risultati
@@ -166,7 +155,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 
 **Come entrare:**
 - Workshop gratuito 2h (solo grandi clienti) → non è un servizio autonomo, apre il percorso verso Core Sprint
-- Core Sprint (€6.000) → primo passo quasi sempre necessario: l'Core Hypothesis sblocca la paralisi strategica e allinea tutti gli stakeholder
+- Core Sprint (€6.000) → primo passo quasi sempre necessario: l'ipotesi fondante sblocca la paralisi strategica e allinea tutti gli stakeholder
 - Design Sprint (€10.000) → dopo il Core Sprint, quando la direzione è condivisa: prototipo testato che giustifica l'investimento nel progetto completo
 
 **Proof point:**
@@ -226,4 +215,4 @@ Quando generi materiali per un prospect B2B industriale:
 3. **Non proporre mai lavoro gratuito** a prospect bottom-up — la prima proposta è sempre a pagamento
 4. **Usa i proof point del play**, non generici: se scrivi a un'azienda con problema SEO, cita Demak e Rollon, non Biennale di Venezia
 5. **Il Preventivo Emozionale** va sempre considerato come strumento di follow-up per proposal formali su deal di medio-alto valore
-6. **Non confondere Core Sprint e Design Sprint** come alternative di prezzo: sono strumenti diversi per situazioni diverse, da proporre in base alla diagnosi del prospect
+6. **Non confondere Core Sprint e Design Sprint** come alternative di prezzo: sono strumenti diversi per situazioni diverse. Vedi distinzione completa in `brain/03_domino_metodi.md`

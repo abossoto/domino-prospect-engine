@@ -181,7 +181,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint vs Design Sprint sono def
 
 **Come entrare / espandere:**
 - Case Stellantis Employee Portal (primo incontro) → 88.000 dipendenti, FEIEIA Award Best European Intranet. Nato come FCA, esteso a CNH Industrial e Iveco Group
-- Core Sprint (€6.000) → allinea HR, IT, comunicazione e business su Core Hypothesis del portale
+- Core Sprint (€6.000) → allinea HR, IT, comunicazione e business su ipotesi fondante del portale
 - Design Sprint (€10.000) → prototipo testato con dipendenti reali di profili diversi in 4 giorni
 
 **Proof point:**

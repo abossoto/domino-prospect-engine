@@ -166,8 +166,8 @@
 
 > **Lettura I5.0 di questa sezione:** I case AI di Domino non sono esperimenti di laboratorio — sono esempi concreti di "Responsible AI in produzione": sistemi comprensibili, governabili, con human-in-the-loop. Non vendiamo AI generica: progettiamo le conseguenze di come l'AI viene usata. Questi case dimostrano che è possibile — e che Domino lo fa già.
 
-### IBM Watson / BR-Uno — Anti-bullying
-**Progetto:** Domino e IBM Watson insieme per affrontare il tema del bullismo con una soluzione di Intelligent Assistant.
+### BR-Uno — Intelligent Assistant Anti-bullying
+**Progetto:** Soluzione di Intelligent Assistant per affrontare il tema del bullismo, sviluppata da Domino con tecnologia AI conversazionale.
 
 ### GEDI + Stellantis — Alfabeto del Futuro (2023)
 **Progetto:** Esperienza AI immersiva nelle piazze italiane, nell'ambito del tour "Alfabeto del Futuro" di Gruppo Editoriale GEDI per raccontare l'innovazione in Italia.
@@ -234,5 +234,5 @@
 | **Salute & Beauty** | Affidea, Ospedale dell'Angelo, CDI, Humanitas, Asalaser, LARC, Lierac, Phyto, Solgar, Azienda Ospedaliera di Padova, Labo Cosprophar |
 | **Turismo & Cultura** | Alpitour, ENIT, Costa Crociere, Biennale di Venezia, Fondazione Torino Musei, Palazzo Madama, GAM, MAO, Museo Nazionale del Cinema, Galleria Borghese, Fondazione Aquileia, Museo Poldi Pezzoli, Turismo Torino, Visit Piemonte, Terre dei Savoia, Marcegaglia Tourism, Provincia di Padova, Langhe-Monferrato-Roero, Distretto Turistico dei Laghi, Masi Agricola |
 | **Media, Sport & PA** | RAI, Universal, Lega Nazionale Pallacanestro, FIMI, Juventus, IPI Group, Bancomat |
-| **AI & Tech** | IBM Watson (BR-Uno), Links Foundation, TEXA, Neosperience |
+| **AI & Tech** | BR-Uno (Intelligent Assistant), Links Foundation, TEXA, Neosperience |
 | **Startup & Scale-up** | Demak, Pipein, iFog, CheProfessionista, MIND |

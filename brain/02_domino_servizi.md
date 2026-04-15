@@ -1,7 +1,36 @@
 # DOMINO BRAIN — Servizi
-> Versione 4.0 — Aprile 2026. Fonti: sito domino.it, presentazioni, Sortlist, blog domino.it. Aggiornato con scenari Industry 5.0 (Trainstorming aprile 2026).
+> Versione 4.1 — Aprile 2026. Fonti: sito domino.it, presentazioni, Sortlist, blog domino.it. Aggiornato con scenari Industry 5.0 (Trainstorming aprile 2026).
 
 Le 4 macro-aree di competenza Domino, con dettaglio delle attività e stack tecnologico completo.
+
+---
+
+## Metodi proprietari — Guida rapida
+
+Domino ha sviluppato metodi propri, non generici. Sono differenziatori commerciali prima ancora che strumenti operativi — usarli come tali in ogni proposta.
+
+### Core Sprint
+**Cos'è:** Workshop strategico di 1-2 giorni per produrre una **Core Hypothesis** condivisa — la scommessa centrale su cui costruire il progetto. Allinea stakeholder spesso in conflitto prima che il budget venga investito.
+**Durata:** 1-2 giorni
+**Output:** Core Hypothesis documentata, priorità d'intervento, stakeholder allineati
+**Quando usarlo:** Quando il cliente non ha chiarezza su dove intervenire, o quando ci sono visioni divergenti tra reparti e direzione. Quasi sempre il primo passo giusto prima di un Design Sprint o di un progetto più ampio.
+**Prezzo:** €6.000
+
+### Design Sprint
+**Cos'è:** Processo intensivo di 4-5 giorni (derivato dal metodo Google Ventures) per prototipare e testare una soluzione con utenti reali prima di investire nello sviluppo completo. Comprime mesi di lavoro in una settimana.
+**Durata:** 4-5 giorni
+**Output:** Prototipo testato con utenti reali, decisioni d'investimento fondate su evidenze — non su opinioni interne
+**Quando usarlo:** Quando la direzione è chiara ma si vuole validare la soluzione prima di investire. Ideale dopo un Core Sprint o quando il brief è già definito.
+**Prezzo:** €10.000
+
+### Preventivo Emozionale
+**Cos'è:** Strumento di proposta commerciale proprietario — unico in Italia. Invece di un PDF statico con voci di costo, produce un'esperienza interattiva e narrativa che racconta il progetto prima ancora di iniziarlo. Trasforma la proposta in un primo touchpoint della CX che Domino prometterà di erogare.
+**Quando usarlo:** Su prospect qualificati per progetti di una certa rilevanza. È insieme strumento di vendita e dimostrazione di metodo — mostra come lavoriamo prima ancora di iniziare.
+**Nota:** Ha vinto premi come progetto in sé. Citabile come case in presentazioni.
+
+### Trainstorming *(vedi scheda dedicata in fondo)*
+Percorso strutturato di change management in 3 sessioni quadrimestrali. Non è formazione — traduce le intenzioni di cambiamento in comportamenti e strumenti concreti nell'arco di 8 mesi.
+**Prezzo:** a partire da €15.000
 
 ---
 
@@ -105,6 +134,15 @@ Progettiamo e realizziamo prodotti digitali che funzionano e sono memorabili. Pu
 
 **Scenario I5.0:** La tecnologia non è il vantaggio — lo è la capacità di governarla. Selezioniamo, implementiamo e gestiamo le piattaforme tecnologiche più adatte con un approccio "human-in-the-loop": l'AI che proponiamo è sempre comprensibile, controllabile e orientata a creare valore reale, non solo efficienza.
 
+**AI Act — Compliance come servizio:**
+Con l'entrata in vigore dell'AI Act, i sistemi AI ad alto rischio richiedono documentazione, oversight umano e spiegabilità. Domino può supportare i clienti in:
+- Mappatura dei sistemi AI esistenti rispetto alle categorie di rischio dell'AI Act
+- Progettazione di workflow human-in-the-loop conformi
+- Documentazione tecnica per audit e qualifica vendor
+- Workshop interni di AI governance (per team marketing, HR, operations)
+
+Questo non è un servizio separato: è il modo in cui Domino progetta l'AI da sempre. Per i clienti diventa un deliverable certificabile.
+
 **Attività:**
 - Platform selection, management e personalizzazione
 - CMS selection & implementation
@@ -120,7 +158,6 @@ Progettiamo e realizziamo prodotti digitali che funzionano e sono memorabili. Pu
 
 **Stack Enterprise:**
 - Adobe Experience Cloud
-- IBM Watson / IBM AI
 - HubSpot (CRM + Marketing Automation)
 - Microsoft Sitecore
 

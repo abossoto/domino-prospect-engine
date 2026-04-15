@@ -5,14 +5,14 @@
 
 ## 1. Core Sprint *(introdotto 2024)*
 
-**Cos'è:** Il passo strategico che precede qualsiasi progetto. Serve ad andare al nocciolo: capire cosa conta davvero, eliminare il superfluo e uscire con una direzione condivisa da tutti gli stakeholder.
+**Cos'è:** Il passo strategico che precede il Design Sprint. Serve a costruire l'**ipotesi fondante** del progetto: la tesi che guida tutto ciò che viene dopo.
 
-**La domanda a cui risponde:** *"Di tutto quello che abbiamo sul tavolo, su cosa vale la pena investire?"*
+**La domanda a cui risponde:** *"Stiamo lavorando sul problema giusto?"*
 
-**Output — La Core Hypothesis:**
-> "Se aiutiamo **[cliente target]** a risolvere **[problema specifico]** con **[nostra soluzione]**, allora ci preferiranno a **[concorrenza]** perché **[differenziazione chiave]**."
+**Output:** Ipotesi fondante condivisa — una tesi strategica che allinea tutti gli stakeholder sulla direzione prima di investire in qualsiasi soluzione.
 
-Una dichiarazione condivisa che allinea tutti gli stakeholder prima di investire un euro in soluzioni.
+**La formula dell'ipotesi fondante:**
+> "Se aiutiamo **[cliente target]** a risolvere **[problema specifico]** con **[nostro approccio]**, allora sceglieranno la nostra soluzione al posto di **[concorrenza]** perché la nostra soluzione è **[differenziazione chiave]**."
 
 **Durata:** 1–2 giorni
 **Prezzo:** €6.000
@@ -23,7 +23,7 @@ Una dichiarazione condivisa che allinea tutti gli stakeholder prima di investire
 
 **Il flusso completo:**
 ```
-Core Sprint → [Core Hypothesis] → Design Sprint → Design Sprint → ... → Esecuzione
+Core Sprint → [Ipotesi Fondante] → Design Sprint → Design Sprint → ... → Esecuzione
          ↑_____________________________________________________|
                           (loop iterativo)
 ```
@@ -38,11 +38,11 @@ Core Sprint → [Core Hypothesis] → Design Sprint → Design Sprint → ... �
 
 ## 2. Design Sprint *(pionieri in Italia da 10+ anni)*
 
-**Cos'è:** Una metodologia nata in Google Ventures che Domino ha profondamente adattato al mercato italiano e ai settori in cui opera — da oltre 10 anni, tra i primi in Italia. Non è una trasposizione del metodo originale: è un approccio ridisegnato per funzionare con le dinamiche decisionali, culturali e organizzative delle aziende italiane strutturate.
+**Cos'è:** La metodologia di **Google Ventures** per trasformare problemi di business complessi in prototipi testati in tempi rapidissimi. Domino è tra i primi e più esperti in Italia ad averla adottata e adattata.
 
-**La domanda a cui risponde:** *"Cosa si chiedono davvero i nostri clienti — e come rispondiamo in modo da essere credibili, rilevanti e preferiti?"*
+**La domanda a cui risponde:** *"Questa soluzione funziona davvero?"*
 
-**Output:** Una comprensione condivisa e operativa delle domande che clienti e personas si pongono, e delle risposte più efficaci per aumentare credibilità, reputazione e redemption. Il risultato può essere un prototipo, un concept, una mappa di contenuti o un percorso di comunicazione — a seconda del contesto.
+**Output:** Prototipo testato con utenti reali — una soluzione concreta e validata prima di investire nel progetto completo.
 
 **Durata:** 4 giorni (versioni estese: 1 settimana)
 **Prezzo:** €10.000
@@ -54,7 +54,7 @@ Core Sprint → [Core Hypothesis] → Design Sprint → Design Sprint → ... �
 **Il format standard:**
 - **4 giorni** (o 1 settimana nelle versioni estese)
 - **1 team unito** — cliente + Domino in full-immersion
-- **1 risultato tangibile** — comprensione condivisa + soluzione concreta da portare in produzione
+- **1 risultato tangibile** — prototipo testato con utenti reali
 - **100% clienti soddisfatti** (dato dichiarato ufficialmente)
 
 **Cosa si progetta:**
@@ -64,8 +64,8 @@ Core Sprint → [Core Hypothesis] → Design Sprint → Design Sprint → ... �
 
 **Vantaggi per il cliente:**
 - Riduzione drastica del rischio di investimento
-- Allineamento immediato tra tutti gli stakeholder su cosa dire, a chi e come
-- Risposte concrete alle domande reali dei clienti — non a quelle che immaginiamo
+- Decisioni basate su test con utenti reali, non su opinioni interne
+- Allineamento immediato tra tutti gli stakeholder
 - In 4 giorni si ottiene ciò che normalmente richiederebbe mesi di riunioni e briefing
 
 **Specializzazioni del Design Sprint:**
@@ -94,8 +94,10 @@ Questa scala è la fonte unica di verità per il pricing. I file GTM di settore 
 | 2 | Core Sprint | €6.000 | Quando la direzione non è chiara o gli stakeholder sono divisi |
 | 3 | Design Sprint | €10.000 | Quando la direzione è chiara e si vuole validare prima di investire |
 | 4 | Progetto completo (execution) | €20.000–60.000 | Su ciò che è stato validato |
+| 5 | Trainstorming | a partire da €15.000 | Percorso change management 8 mesi (3 sessioni quadrimestrali) — per transizioni culturali/organizzative complesse |
 
 **Percorso completo opzionale:** Core Sprint (€6K) → Design Sprint (€10K) = €16.000 pre-esecuzione.
+**Trainstorming** può avviarsi dopo un Design Sprint o in parallelo all'execution su progetti di trasformazione significativi.
 
 **Regola sul gratuito:** niente lavoro gratuito per prospect bottom-up. Workshop gratuito (2h) solo per grandi clienti in approccio top-down — non è un servizio autonomo, apre il percorso verso Core Sprint.
 
@@ -107,16 +109,16 @@ Sono strumenti **sequenziali e complementari**, non alternativi. Rispondono a do
 
 | | Core Sprint | Design Sprint |
 |---|---|---|
-| **Domanda** | Di tutto quello che abbiamo sul tavolo, su cosa vale la pena investire? | Cosa si chiedono davvero i nostri clienti e come rispondiamo in modo da essere credibili e preferiti? |
-| **Output** | Core Hypothesis condivisa — direzione chiara e allineamento tra stakeholder | Comprensione condivisa delle domande reali dei clienti + soluzione concreta (prototipo, concept, mappa contenuti o percorso di comunicazione) |
+| **Domanda** | Stiamo lavorando sul problema giusto? | Questa soluzione funziona? |
+| **Output** | Ipotesi fondante condivisa | Prototipo testato con utenti reali |
 | **Durata** | 1–2 giorni | 4 giorni |
 | **Prezzo** | €6.000 | €10.000 |
-| **Focus** | Eliminare il superfluo, andare al nocciolo | Aumentare credibilità, reputazione e redemption |
+| **Focus** | Allineamento strategico | Validazione della soluzione |
 | **Presupposto** | Nessuno — è il punto di partenza | Direzione già sufficientemente chiara |
-| **Quando** | Stakeholder divisi, confusione su priorità, troppe idee senza gerarchia | Direzione chiara, si vuole capire come comunicare ed essere preferiti |
+| **Quando** | Stakeholder divisi, confusione su priorità, nessuna chiarezza strategica | Direzione chiara, si vuole validare prima di investire |
 
 **Regola operativa:**
-- Se il cliente sa *dove vuole andare* ma non sa *come comunicarlo con efficacia* → **Design Sprint**
+- Se il cliente sa *cosa* vuole ma non sa *se funzionerà* → **Design Sprint**
 - Se il cliente non sa ancora *cosa* fare o gli stakeholder sono divisi → **Core Sprint prima**, poi eventualmente Design Sprint
 - Se serve tutto: **Core Sprint → Design Sprint → Esecuzione** (percorso completo, €16.000 prima del progetto)
 
@@ -134,7 +136,7 @@ Sono strumenti **sequenziali e complementari**, non alternativi. Rispondono a do
 
 **Vantaggi commerciali:**
 - Il cliente "vive" la proposta invece di leggerla su un PDF
-- Riduce la confusione competitiva: il cliente capisce immediatamente cosa differenzia lui dalla concorrenza
+- Riduce la confusione competitiva: il cliente capisce immediatamente cosa differenzia Domino
 - Fornisce intelligence commerciale: si sa chi è davvero interessato e quanto
 - Tracking della conversione per prodotto, punto vendita e operatore
 - La rete vendita può generare preventivi personalizzati in autonomia
@@ -166,7 +168,7 @@ Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina,
 | "Dobbiamo rinnovare il sito ma gli stakeholder non sono d'accordo" | Design Sprint |
 | "Dobbiamo gestire un cambiamento culturale o tecnologico importante" | Trainstorming |
 | "Vogliamo introdurre l'AI in azienda ma non sappiamo come" | Trainstorming |
-| "Facciamo fatica a tradurre le decisioni in azione nel tempo" | Trainstorming (follow-through strutturato) |
+| "Facciamo fatica a mettere a terra le idee nel tempo" | Trainstorming (follow-through strutturato) |
 | "Abbiamo fatto un Design Sprint ma non riusciamo a implementare" | Trainstorming come continuazione |
 | "L'AI Act ci impone di ripensare come usiamo i dati" | Trainstorming: Responsible AI assessment + roadmap |
 | "Siamo in una transizione (fusione, riorganizzazione, nuova piattaforma)" | Trainstorming: transition program su misura |
@@ -218,11 +220,9 @@ Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina,
 
 ---
 
-## 4. Trainstorming *(metodo proprietario — il metodo per far accadere il cambiamento)*
+## 4. Trainstorming *(metodo proprietario — change management e innovazione continuativa)*
 
-**Cos'è:** Il Core Sprint chiarisce dove andare. Il Design Sprint progetta come arrivarci. Ma tra la decisione e la realtà c'è sempre uno spazio — fatto di resistenze, abitudini, stakeholder in conflitto — che nessun workshop di due giorni può attraversare da solo.
-
-Il Trainstorming è il programma di accompagnamento che traduce le intenzioni di cambiamento in comportamenti, processi e strumenti concreti. Non è formazione. Non è consulenza. È un percorso strutturato su 8 mesi con output reali a ogni tappa.
+**Cos'è:** Il metodo Domino per accompagnare le organizzazioni attraverso transizioni complesse con un percorso strutturato nel tempo. Non è un workshop singolo, non è formazione tradizionale: è un programma di cambiamento a cadenza quadrimestrale che porta innovazione concreta e gestita all'interno dell'azienda cliente.
 
 Nasce dalla pratica interna Domino — il team si incontra mensilmente con questo format — ed è stato strutturato come servizio replicabile per i clienti.
 
@@ -231,20 +231,20 @@ Il Trainstorming è la risposta operativa al cambio di paradigma di Industry 5.0
 
 I tre temi I5.0 che guidano ogni percorso Trainstorming:
 - **Responsabilità come differenziatore** — come usare l'AI in modo governabile, comprensibile, fiduciario
-- **Ecosistemi e orchestrazione** — come l'azienda si colloca in reti di partner, piattaforme, fornitori
+- **Dai Progetti alle Transizioni** — il cliente non cerca un deliverable, cerca un partner che resti finché il cambiamento diventa sistema
 - **Decision Design** — come costruire strumenti e processi che aiutano le persone a decidere meglio
 
 **Il flusso completo:**
 ```
-Sessione 1 [Mese 1]           Sessione 2 [Mese 4]                 Sessione 3 [Mese 8]
-Diagnosi e allineamento  →   Prototipazione e test          →   Consolidamento e
-stakeholder                  con utenti reali                    roadmap 12 mesi
+Sessione 1 [Mese 1]      Sessione 2 [Mese 4]      Sessione 3 [Mese 8]
+Diagnosi + Ipotesi   →   Prototipazione + Test  →   Scala + Roadmap
+Fondante                 con utenti reali            12 mesi
      ↑______________________________________________|
                     (loop iterativo se necessario)
 ```
 
 **Tecniche interne usate:**
-- **Core Sprint** — costruisce l'Core Hypothesis della transizione nella sessione 1
+- **Core Sprint** — costruisce l'ipotesi fondante della transizione nella sessione 1
 - **Magic Lenses** — mette alla prova le idee di cambiamento rispetto a criteri critici
 - **Votazione Silenziosa** — fa emergere il consenso reale senza gerarchie
 - **Prototipazione rapida** — rende tangibile il cambiamento prima di investire
@@ -255,20 +255,20 @@ stakeholder                  con utenti reali                    roadmap 12 mesi
 | | Core Sprint | Design Sprint | Trainstorming |
 |---|---|---|---|
 | **Durata** | 1–2 giorni | 4 giorni | 8 mesi (3 sessioni) |
-| **Prezzo** | €6.000 | €10.000 | — |
-| **Output** | Core Hypothesis condivisa | Comprensione condivisa + soluzione concreta | Roadmap + implementazione avviata |
-| **Focus** | Eliminare il superfluo, andare al nocciolo | Credibilità, reputazione e redemption | Cambiamento culturale/organizzativo |
-| **Quando** | Prima di un progetto | Prima di investire | Per accompagnare una transizione |
+| **Prezzo** | €6.000 | €10.000 | a partire da €15.000 |
+| **Output** | Ipotesi fondante | Prototipo testato | Roadmap + implementazione avviata |
+| **Focus** | Allineamento strategico | Validazione soluzione | Cambiamento culturale/organizzativo |
+| **Quando** | Prima di un progetto | Prima di investire | Per gestire una transizione |
 
 **Quando proporlo:**
 - Quando il cliente deve gestire una trasformazione culturale o tecnologica rilevante (AI, nuovi strumenti, riorganizzazione)
-- Quando ha già fatto un Design Sprint ma fatica a tradurre le decisioni in azione concreta
-- Quando l'innovazione è bloccata da resistenze interne o stakeholder in conflitto
+- Quando ha già fatto un Design Sprint ma fatica a mettere a terra
+- Quando l'innovazione è bloccata da resistenze interne o stakeholder war
 - Come programma annuale di innovazione per aziende che vogliono mantenere un ritmo di cambiamento
 - Come naturale continuazione di un onboarding su nuove piattaforme (intranet, CRM, Microsoft 365)
 - Quando il cliente è sotto pressione normativa (AI Act, ESG, data ethics) e deve trasformare la compliance in vantaggio competitivo
 - Quando l'azienda vuole adottare l'AI ma teme l'impatto sulle persone e sui processi: il Trainstorming costruisce una governance responsabile dall'interno
 - Quando il cliente sta ripensando il proprio modello di business in risposta a transizioni sistemiche (energia, supply chain, demografia)
 
-**Pitch per il Trainstorming:**
-> *"Il Core Sprint chiarisce dove andare. Il Design Sprint progetta come arrivarci. Il Trainstorming è il percorso che fa accadere il cambiamento davvero — tre sessioni nell'anno, output concreti a ogni tappa. I progetti finiscono. Le transizioni no. Il Trainstorming accompagna l'organizzazione finché il cambiamento diventa sistema."*
+**Pitch I5.0 per il Trainstorming:**
+> *"I progetti finiscono. Le transizioni no. Vi accompagniamo attraverso le vostre — AI, regolazione, organizzazione — con un metodo che usiamo ogni mese su noi stessi: tre sessioni nell'anno, output concreti a ogni tappa, nessuna slide da dimenticare in un cassetto."*

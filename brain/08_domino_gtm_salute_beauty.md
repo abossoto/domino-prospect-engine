@@ -125,7 +125,7 @@ In sanità e beauty la **fiducia è il valore principale** — non si scala con 
 
 **Come entrare:**
 - CX Audit (€1.500) → mappatura del journey del cliente beauty: touchpoint attivi, dove si perde la relazione, dove il brand scompare dopo l'acquisto
-- Core Sprint (€6.000) → se marketing, digital e brand hanno visioni diverse: Core Hypothesis su chi è il cliente e quale relazione costruire
+- Core Sprint (€6.000) → se marketing, digital e brand hanno visioni diverse: ipotesi fondante su chi è il cliente e quale relazione costruire
 - Design Sprint (€10.000) → prototipo della nuova CX testato con clienti reali in 4 giorni: sito, journey, contenuti
 
 **Proof point:**
