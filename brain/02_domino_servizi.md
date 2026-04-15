@@ -174,26 +174,26 @@ Brief → Analisi dei need → Strategia → Concept creativo → Produzione con
 
 ---
 
-## Trainstorming — Programmi di Innovazione e Change Management *(metodo proprietario)*
+## Trainstorming — Il metodo per far accadere il cambiamento *(metodo proprietario)*
 
 > Al pari di Design Sprint, Core Sprint e Preventivo Emozionale: uno strumento distintivo Domino, non un servizio generico.
 
-**Posizionamento:** *"Portiamo l'innovazione dentro la tua azienda in modo concreto e continuo — gestendo il cambiamento con metodo, non per improvvisazione."*
+**Posizionamento:** *"Il Core Sprint chiarisce dove andare. Il Design Sprint progetta come arrivarci. Il Trainstorming è il percorso che fa accadere il cambiamento davvero."*
 
-Il Trainstorming è il metodo Domino per accompagnare le organizzazioni attraverso transizioni complesse: adozione dell'AI, cambiamenti culturali, trasformazioni digitali, nuovi modelli operativi. Nasce dalla pratica interna Domino (sessioni mensili del team) ed è stato strutturato come percorso replicabile per i clienti.
+Il Core Sprint chiarisce dove andare. Il Design Sprint progetta come arrivarci. Ma tra la decisione e la realtà c'è sempre uno spazio — fatto di resistenze, abitudini, stakeholder in conflitto — che nessun workshop di due giorni può attraversare da solo.
 
-Non è un corso di formazione. Non è una consulenza generica. È un programma di transizione con output concreti a ogni tappa.
+Il Trainstorming è il programma di accompagnamento che traduce le intenzioni di cambiamento in comportamenti, processi e strumenti concreti. Non è formazione. Non è consulenza. È un percorso strutturato su 8 mesi con output reali a ogni tappa.
 
 **Il format: 3 sessioni quadrimestrali**
 
 | Sessione | Focus | Output |
 |----------|-------|--------|
-| **#1** — Mese 1 | Diagnosi e Core Hypothesis: dove si trova l'azienda, quali opportunità di cambiamento/innovazione esistono, priorità concrete | Mappa delle priorità + Core Hypothesis validata |
-| **#2** — Mese 4 | Prototipazione e test: lavoro sulle 1-2 priorità emerse. Si prototipa, si testa con le persone reali, si decide | Prototipi testati + decisioni d'investimento chiare |
-| **#3** — Mese 8 | Misurazione e scala: analisi dei risultati delle prime implementazioni, consolidamento, pianificazione | Roadmap di transizione 12 mesi |
+| **#1** — Mese 1 | Diagnosi e allineamento stakeholder: dove si trova l'azienda, quali priorità di cambiamento esistono, Core Hypothesis della transizione | Mappa delle priorità + stakeholder allineati |
+| **#2** — Mese 4 | Prototipazione e test con utenti reali: si lavora sulle 1-2 priorità emerse, si prototipa, si testa, si decide | Prototipi testati + decisioni d'investimento chiare |
+| **#3** — Mese 8 | Consolidamento e roadmap 12 mesi: analisi dei risultati, consolidamento di ciò che funziona, pianificazione del passo successivo | Roadmap di transizione 12 mesi |
 
 **Metodologia — derivata dal Design Sprint, adattata per il cambiamento continuativo:**
-- **Core Sprint** per costruire l'Core Hypothesis e allineare gli stakeholder prima di investire
+- **Core Sprint** per costruire la Core Hypothesis e allineare gli stakeholder prima di investire
 - **Magic Lenses** per valutare le idee rispetto a criteri critici e filtrare le più promettenti
 - **Votazione Silenziosa** per far emergere il consenso reale senza dinamiche gerarchiche
 - **Prototipazione rapida** per rendere tangibili le idee prima di decidere se investire
@@ -224,7 +224,7 @@ L'AI è il tema trasversale di ogni percorso Trainstorming. Non come fine a sé 
 Il Trainstorming non si esaurisce in sé stesso. Se durante il percorso emergono opportunità di prodotti o campagne digitali, Domino ha la capacità esecutiva per realizzarle — strategia, design, tecnologia, produzione: tutto interno.
 
 **Come proporlo:**
-> *"Abbiamo un metodo che usiamo ogni mese su noi stessi per restare innovativi. Lo abbiamo strutturato come percorso per le aziende: tre sessioni nell'anno, costruite attorno alla vostra transizione specifica, con focus sull'AI applicata. Si esce da ogni sessione con decisioni prese e prototipi concreti — non slide da dimenticare in un cassetto."*
+> *"Prima di proporre uno strumento a un cliente, lo testiamo su noi stessi. Il Trainstorming nasce così: ogni mese il nostro team si ferma per imparare e sperimentare. Ora lo offriamo come percorso strutturato per far accadere il cambiamento nelle organizzazioni. Tre sessioni nell'anno, costruite attorno alla vostra transizione specifica — si esce da ogni sessione con decisioni prese e prototipi concreti."*
 
 **Quando proporlo:**
 | Situazione cliente | Risposta Trainstorming |
@@ -232,40 +232,15 @@ Il Trainstorming non si esaurisce in sé stesso. Se durante il percorso emergono
 | "Dobbiamo fare qualcosa con l'AI ma non sappiamo da dove partire" | Sessione 1: AI Assessment + priorità |
 | "Stiamo cambiando organizzazione / strumenti / modello" | Percorso completo di change management |
 | "I nostri manager resistono al cambiamento" | Sessioni come spazio di co-progettazione (non imposizione) |
-| "Vogliamo innovare ma ogni progetto si blocca in stakeholder war" | Core Sprint integrato nella sessione 1 |
-| "Abbiamo fatto Design Sprint ma non riusciamo a mettere a terra" | Trainstorming come follow-through strutturato |
+| "Vogliamo innovare ma ogni progetto si blocca per conflitti interni" | Core Sprint integrato nella sessione 1 |
+| "Abbiamo fatto Design Sprint ma non riusciamo a implementare" | Trainstorming come follow-through strutturato |
 | "L'AI Act e le nuove normative ci preoccupano" | Trainstorming: Responsible AI & compliance come valore, non costo |
 | "Siamo sotto pressione su ESG e sostenibilità" | Trainstorming: I5.0 come framework — responsabilità come differenziatore di mercato |
 | "Abbiamo bisogno di una visione, non solo di strumenti" | Trainstorming + Decision Design: costruiamo la direzione prima di investire |
 
-**Tag commerciali:** change management, AI adoption, innovazione, design thinking, transizione digitale, formazione manageriale, industry 5.0, responsible AI, decision design, B2B, internal communication
+**Tag commerciali:** change management, AI adoption, innovazione, design thinking, transizione digitale, industry 5.0, responsible AI, decision design, B2B, internal communication
 
-**Posizionamento:** *"Portiamo l'innovazione dentro la tua azienda, in modo concreto, misurabile e su misura per il tuo contesto."*
-
-Noi facciamo il Trainstorming ogni mese su noi stessi. Ora lo offriamo ai clienti come percorso strutturato per introdurre innovazione reale nell'organizzazione — non workshop generici, ma sessioni progettate attorno ai problemi e alle opportunità specifiche dell'azienda cliente.
-
-**Il format: 3 incontri quadrimestrali**
-
-| Incontro | Focus | Output |
-|----------|-------|--------|
-| **#1** (mese 1) | Diagnosi e Core Hypothesis: dove si trova l'azienda, quali opportunità di innovazione esistono, dove l'AI può creare valore reale | Mappa delle priorità + Core Hypothesis validata |
-| **#2** (mese 4) | Prototipazione e test: si lavora sulle 1-2 priorità emerse, con metodi derivati dal Design Sprint. Si prototipa, si testa, si decide | Prototipi testati + decisioni d'investimento chiare |
-| **#3** (mese 8) | Misurazione e scala: si analizzano i risultati delle prime implementazioni, si consolida ciò che funziona, si pianifica il passo successivo | Roadmap d'innovazione 12 mesi |
-
-**Metodologia — derivata dal Design Sprint, adattata per l'innovazione continuativa:**
-- **Core Sprint** per costruire l'Core Hypothesis e allineare gli stakeholder prima di investire
-- **Magic Lenses** per valutare le idee rispetto a criteri critici e filtrare le più promettenti
-- **Votazione Silenziosa** per far emergere il consenso reale senza dinamiche gerarchiche
-- **Prototipazione rapida** per rendere tangibili le idee prima di decidere se investire
-- **AI Assessment personalizzato**: mappatura delle aree dove l'AI può essere applicata subito (GEO, chatbot, automazione contenuti, product finder, video AI, personalizzazione CRM)
-
-**Focus speciale — Intelligenza Artificiale:**
-L'AI è il tema centrale di ogni percorso Trainstorming Aziendale. Non come fine a sé stesso, ma come strumento concreto per risolvere problemi reali:
-- Dove l'AI riduce costi operativi e libera risorse
-- Dove l'AI migliora la CX (chatbot, personalizzazione, product selector)
-- Dove l'AI accelera la produzione di contenuti (video, newsletter, copy multilingua)
-- Dove l'AI aumenta la visibilità (GEO — ottimizzazione per ChatGPT, Perplexity, Google AI Overview)
-- Come strutturare un workflow AI sostenibile e scalabile
+**Tagline:** *"I progetti finiscono. Le transizioni no. Il Trainstorming accompagna l'organizzazione finché il cambiamento diventa sistema."*
 
 **A chi si rivolge:**
 - **CEO / Direzione Generale** — che vogliono innovare ma non sanno da dove partire o come priorizzare

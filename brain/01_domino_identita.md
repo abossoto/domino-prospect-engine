@@ -8,7 +8,7 @@
 **Domino — Proudly Interactive** è una CX agency specializzata in progetti digitali per lo sviluppo delle imprese.
 
 - **50 persone** (dato sito ufficiale) / 45 (Forum 2025) — team in crescita
-- **29 anni di esperienza** (fondata nel 1996)
+- **30 anni di esperienza** (fondata nel 1996)
 - **2 sedi**: Torino (Via Agostino da Montefeltro, 2 — 10134) e Venezia (Sestiere Santa Croce, 466/G — 30135)
 - **Società Benefit certificata B Corp** (certificazione ottenuta nel 2025)
 - **Oltre 30 riconoscimenti internazionali**

@@ -166,7 +166,7 @@ Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina,
 | "Dobbiamo rinnovare il sito ma gli stakeholder non sono d'accordo" | Design Sprint |
 | "Dobbiamo gestire un cambiamento culturale o tecnologico importante" | Trainstorming |
 | "Vogliamo introdurre l'AI in azienda ma non sappiamo come" | Trainstorming |
-| "Facciamo fatica a mettere a terra le idee nel tempo" | Trainstorming (follow-through strutturato) |
+| "Facciamo fatica a tradurre le decisioni in azione nel tempo" | Trainstorming (follow-through strutturato) |
 | "Abbiamo fatto un Design Sprint ma non riusciamo a implementare" | Trainstorming come continuazione |
 | "L'AI Act ci impone di ripensare come usiamo i dati" | Trainstorming: Responsible AI assessment + roadmap |
 | "Siamo in una transizione (fusione, riorganizzazione, nuova piattaforma)" | Trainstorming: transition program su misura |
@@ -218,9 +218,11 @@ Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina,
 
 ---
 
-## 4. Trainstorming *(metodo proprietario — change management e innovazione continuativa)*
+## 4. Trainstorming *(metodo proprietario — il metodo per far accadere il cambiamento)*
 
-**Cos'è:** Il metodo Domino per accompagnare le organizzazioni attraverso transizioni complesse con un percorso strutturato nel tempo. Non è un workshop singolo, non è formazione tradizionale: è un programma di cambiamento a cadenza quadrimestrale che porta innovazione concreta e gestita all'interno dell'azienda cliente.
+**Cos'è:** Il Core Sprint chiarisce dove andare. Il Design Sprint progetta come arrivarci. Ma tra la decisione e la realtà c'è sempre uno spazio — fatto di resistenze, abitudini, stakeholder in conflitto — che nessun workshop di due giorni può attraversare da solo.
+
+Il Trainstorming è il programma di accompagnamento che traduce le intenzioni di cambiamento in comportamenti, processi e strumenti concreti. Non è formazione. Non è consulenza. È un percorso strutturato su 8 mesi con output reali a ogni tappa.
 
 Nasce dalla pratica interna Domino — il team si incontra mensilmente con questo format — ed è stato strutturato come servizio replicabile per i clienti.
 
@@ -234,9 +236,9 @@ I tre temi I5.0 che guidano ogni percorso Trainstorming:
 
 **Il flusso completo:**
 ```
-Sessione 1 [Mese 1]      Sessione 2 [Mese 4]      Sessione 3 [Mese 8]
-Diagnosi + Ipotesi   →   Prototipazione + Test  →   Scala + Roadmap
-Fondante                 con utenti reali            12 mesi
+Sessione 1 [Mese 1]           Sessione 2 [Mese 4]                 Sessione 3 [Mese 8]
+Diagnosi e allineamento  →   Prototipazione e test          →   Consolidamento e
+stakeholder                  con utenti reali                    roadmap 12 mesi
      ↑______________________________________________|
                     (loop iterativo se necessario)
 ```
@@ -256,17 +258,17 @@ Fondante                 con utenti reali            12 mesi
 | **Prezzo** | €6.000 | €10.000 | — |
 | **Output** | Core Hypothesis condivisa | Comprensione condivisa + soluzione concreta | Roadmap + implementazione avviata |
 | **Focus** | Eliminare il superfluo, andare al nocciolo | Credibilità, reputazione e redemption | Cambiamento culturale/organizzativo |
-| **Quando** | Prima di un progetto | Prima di investire | Per gestire una transizione |
+| **Quando** | Prima di un progetto | Prima di investire | Per accompagnare una transizione |
 
 **Quando proporlo:**
 - Quando il cliente deve gestire una trasformazione culturale o tecnologica rilevante (AI, nuovi strumenti, riorganizzazione)
-- Quando ha già fatto un Design Sprint ma fatica a mettere a terra
-- Quando l'innovazione è bloccata da resistenze interne o stakeholder war
+- Quando ha già fatto un Design Sprint ma fatica a tradurre le decisioni in azione concreta
+- Quando l'innovazione è bloccata da resistenze interne o stakeholder in conflitto
 - Come programma annuale di innovazione per aziende che vogliono mantenere un ritmo di cambiamento
 - Come naturale continuazione di un onboarding su nuove piattaforme (intranet, CRM, Microsoft 365)
 - Quando il cliente è sotto pressione normativa (AI Act, ESG, data ethics) e deve trasformare la compliance in vantaggio competitivo
 - Quando l'azienda vuole adottare l'AI ma teme l'impatto sulle persone e sui processi: il Trainstorming costruisce una governance responsabile dall'interno
 - Quando il cliente sta ripensando il proprio modello di business in risposta a transizioni sistemiche (energia, supply chain, demografia)
 
-**Pitch I5.0 per il Trainstorming:**
-> *"I progetti finiscono. Le transizioni no. Vi accompagniamo attraverso le vostre — AI, regolazione, organizzazione — con un metodo che usiamo ogni mese su noi stessi: tre sessioni nell'anno, output concreti a ogni tappa, nessuna slide da dimenticare in un cassetto."*
+**Pitch per il Trainstorming:**
+> *"Il Core Sprint chiarisce dove andare. Il Design Sprint progetta come arrivarci. Il Trainstorming è il percorso che fa accadere il cambiamento davvero — tre sessioni nell'anno, output concreti a ogni tappa. I progetti finiscono. Le transizioni no. Il Trainstorming accompagna l'organizzazione finché il cambiamento diventa sistema."*

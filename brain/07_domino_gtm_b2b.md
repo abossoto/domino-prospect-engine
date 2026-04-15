@@ -139,7 +139,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 **Proof point:**
 - 20+ clienti B2B industriale attivi (Danieli, COMAU, Bitron, Rollon, Megadyne, Demak, Frascold…)
 - IKA 2023 — Rollon: Best Integrated Communication Campaign B2B
-- 29 anni di esperienza, 100% clienti soddisfatti Design Sprint
+- 30 anni di esperienza, 100% clienti soddisfatti Design Sprint
 
 **Vs competitor:**
 - Vs web agency: vertical knowledge B2B + metodi proprietari + ownership dei risultati
