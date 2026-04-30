@@ -137,7 +137,7 @@ Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function callClaude({ system, messages, tools, max_tokens = 8000 }) {
-  const body = { model: 'claude-sonnet-4-20250514', max_tokens, system, messages };
+  const body = { model: 'claude-sonnet-4-6', max_tokens, system, messages };
   if (tools?.length) body.tools = tools;
   const MAX_RETRIES = 5;
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {

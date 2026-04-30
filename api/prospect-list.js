@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
 // ─── Brain cache — persists across warm invocations ───────────────────────────
@@ -6,40 +6,49 @@ let _brainCache = null;
 
 function loadBrain() {
   if (_brainCache) return _brainCache;
-  const files = [
-    '01_domino_identita.md',
-    '02_domino_servizi.md',
-    '03_domino_metodi.md',
-    '04_domino_case_history.md',
-    '05_domino_settori.md',
-    '06_domino_referenze.md',
-    '07_domino_gtm_b2b.md',
-    '08_domino_gtm_salute_beauty.md',
-    '09_domino_gtm_turismo_cultura.md',
-    '10_domino_gtm_finance_pa.md',
-    '11_domino_gtm_automotive.md',
-  ];
+  const brainDir = join(process.cwd(), 'brain');
+  const files = readdirSync(brainDir).filter(f => f.endsWith('.md')).sort();
   _brainCache = files.map(f => {
-    try { return readFileSync(join(process.cwd(), 'brain', f), 'utf-8'); }
-    catch { return `[BRAIN FILE ${f} NOT FOUND]`; }
+    try { return readFileSync(join(brainDir, f), 'utf-8'); }
+    catch { return `[ATTENZIONE: file brain/${f} non trovato]`; }
   }).join('\n\n---\n\n');
   return _brainCache;
 }
 
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 async function callClaude({ system, messages, tools, max_tokens = 8000 }) {
-  const body = { model: 'claude-sonnet-4-20250514', max_tokens, system, messages };
+  const body = { model: 'claude-sonnet-4-6', max_tokens, system, messages };
   if (tools?.length) body.tools = tools;
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': process.env.ANTHROPIC_API_KEY,
-      'anthropic-version': '2023-06-01',
-    },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) throw new Error(`Claude API ${res.status}: ${await res.text()}`);
-  return res.json();
+  const MAX_RETRIES = 5;
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify(body),
+    });
+    if (res.status === 529 || res.status === 429) {
+      if (attempt >= MAX_RETRIES) throw new Error('OVERLOADED:Claude e\' sovraccarico. Riprova tra qualche minuto.');
+      const retryAfter = parseInt(res.headers.get('retry-after') || '0', 10);
+      const backoff = retryAfter > 0 ? retryAfter * 1000 : Math.min(1000 * Math.pow(2, attempt), 32000);
+      await sleep(backoff);
+      continue;
+    }
+    if (res.status >= 500 && res.status !== 529) {
+      if (attempt >= 2) throw new Error(`OVERLOADED:Errore temporaneo del server (${res.status}). Sto riprovando...`);
+      await sleep(2000 * (attempt + 1));
+      continue;
+    }
+    if (!res.ok) {
+      const e = await res.json().catch(() => ({}));
+      throw new Error(e?.error?.message || `Claude API ${res.status}`);
+    }
+    return res.json();
+  }
 }
 
 function extractText(data) {
