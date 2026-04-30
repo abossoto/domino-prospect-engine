@@ -14,7 +14,9 @@ Le modifiche di contenuto vanno fatte a monte (in OneDrive) e poi
 sincronizzate con `scripts/sync-brain.sh`.
 
 ## Spec funzionale
-La spec completa è in `DOMINO_PROSPECT_ENGINE_SPEC_v4.md` (anche su OneDrive).
+La spec dell'app è in `/DOMINO_PROSPECT_ENGINE_SPEC_v4.md` (root del repo).
+Vive separata dal brain perché non è contenuto Domino, è la documentazione interna
+dell'applicazione (system prompt, JSON schema, architettura).
 Quando modifichi system prompt, parseJSON o JSON schema, aggiorna anche la spec.
 
 ## Regole di nomenclatura prodotti
