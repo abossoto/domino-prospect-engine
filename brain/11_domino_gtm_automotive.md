@@ -17,15 +17,15 @@
 
 ## Premi IKA in automotive (cronologia completa)
 
-| Anno | Cliente | Progetto | Categoria |
-|---|---|---|---|
-| 2010 | Fiat | fiat.it — nuovo sito internazionale | Da confermare (non trovata online) |
-| 2019 | IVECO | MyIVECO portal | Best Use of Digital Media |
-| 2023 | Rollon | Sito B2B + SEO | Best Integrated Communication Campaign B2B |
-| 2024 | IVECO | iveco.com | Automotive & Energy |
-| 2024 | Case IH | AI in lead generation | Premio Speciale Innovation Technology |
-| 2025* | IVECO | IVECO Design System | Nomination — B2B |
-| 2025* | IVECO | MY METALLICA TRUCK | Nomination — AI Best Use in ADV |
+| Anno  | Cliente | Progetto                            | Categoria                                  |
+| ----- | ------- | ----------------------------------- | ------------------------------------------ |
+| 2010  | Fiat    | fiat.it — nuovo sito internazionale | Automotive                                 |
+| 2019  | IVECO   | MyIVECO portal                      | Best Use of Digital Media                  |
+| 2023  | Rollon  | Sito B2B + SEO                      | Best Integrated Communication Campaign B2B |
+| 2024  | IVECO   | iveco.com                           | Automotive & Energy                        |
+| 2024  | Case IH | AI in lead generation               | Premio Speciale Innovation Technology      |
+| 2025* | IVECO   | IVECO Design System                 | Nomination — B2B                           |
+| 2025* | IVECO   | MY METALLICA TRUCK                  | Nomination — AI Best Use in ADV            |
 
 *Nomination 2025 (IKA 26° edizione) — esito non ancora nel Brain.
 
