@@ -202,7 +202,21 @@ function IntelTab({ p }) {
       {(p.segnali_recenti||[]).length > 0 && (
         <div style={{ marginBottom:'18px' }}>
           <Label>Segnali recenti</Label>
-          {p.segnali_recenti.map((sg,i) => <div key={i} style={{ display:'flex',gap:'8px',padding:'7px 0',borderBottom:`1px solid ${C.border}`,fontSize:'13px',color:C.text }}><span style={{ color:C.red,flexShrink:0 }}>→</span>{sg}</div>)}
+          {p.segnali_recenti.map((sg,i) => (
+            <div key={i} style={{ display:'flex',gap:'8px',padding:'7px 0',borderBottom:`1px solid ${C.border}`,fontSize:'13px',color:C.text,alignItems:'baseline' }}>
+              <span style={{ color:C.red,flexShrink:0 }}>→</span>
+              <div style={{ flex:1,lineHeight:1.45 }}>
+                <span>{sg.testo}</span>
+                {sg.data && <span style={{ marginLeft:'8px',fontSize:'11px',color:C.muted }}>· {sg.data}</span>}
+                {sg.fonte_url && (
+                  <a href={sg.fonte_url} target="_blank" rel="noopener noreferrer"
+                     style={{ marginLeft:'8px',fontSize:'11px',color:C.red,textDecoration:'none',whiteSpace:'nowrap' }}>
+                    [{sg.fonte_titolo || 'fonte'} ↗]
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       )}
 
