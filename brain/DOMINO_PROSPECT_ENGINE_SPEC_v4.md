@@ -1,7 +1,9 @@
 # DOMINO PROSPECT ENGINE — Specifiche Complete
-## Versione sorgente: v4.0.0 (App.jsx) / Versione brain: 5.0
+## Versione sorgente: v4.0.0 (App.jsx) / Versione brain: 5.1
 
 > Documento generato dalla lettura diretta del codice sorgente. Sufficiente per ricreare il sistema identico.
+
+> **Principio architetturale.** Tutte le informazioni canoniche su Domino (identità, servizi, metodi, prezzi, case, settori, GTM verticali, referenze) vivono nei file `.md` della cartella `brain/`. Questa spec **non è una fonte autoritativa** su quei contenuti: dove cita prodotti, prezzi o regole è solo per fornire al modello un *anchor* anti-allucinazione nel system prompt. La fonte canonica resta il brain. Quando il brain cambia, le sezioni 6 (system prompt), 6a (istruzioni GTM) e 22 (descrizione brain) di questa spec vanno riallineate — le altre sezioni dovrebbero restare stabili.
 
 ---
 
@@ -13,7 +15,7 @@ Sales intelligence tool interno per il team commerciale di Domino (domino.it). I
 - **Brain completo a 11 file** — il loader carica tutti i file della cartella `brain/` a runtime, inclusi i 5 nuovi file GTM di settore (07–11). Nessun file hardcodato.
 - **Caching del brain** — il brain viene caricato e concatenato una volta sola per processo (in-memory cache) per ridurre I/O e velocizzare le chiamate successive.
 - **Domino GTM a 3 livelli** — sostituisce il framework Adobe a 5 layer con tre livelli reali della vendita B2B: C-Level, Head of, Manager/Operativo. Ciascuno con frame commerciale dedicato.
-- **Nomenclatura corretta** — tutti i nomi di prodotti/metodi Domino rispecchiano il brain v5: `Core Sprint` (non Core Sprint), `Design Sprint`, `Preventivo Emozionale`, `Trainstorming`.
+- **Nomenclatura corretta** — tutti i nomi di prodotti/metodi Domino rispecchiano il brain v5.1: `Core Sprint!` (NON "Foundation Sprint"), `Design Sprint!` con la variante di punta 2026 `Brain & Identity Design Sprint!`, `Build Sprint!` (sostituisce la voce storica "Progetto completo"), `Trainstorming!` (oggi anche servizio venduto, da €15K), `Preventivo Emozionale`. Cornice trasversale: **Decision Design**.
 - **Exponential backoff** — retry automatico su errori 429/529 con messaggio all'utente.
 - **Logo Domino** da domino.it con fallback testuale.
 - **Architettura generation** — brain nel messaggio utente (non nel system prompt) per garantire JSON completo e non troncato.
@@ -31,7 +33,7 @@ Sales intelligence tool interno per il team commerciale di Domino (domino.it). I
 ├── brain/                  → 11 file .md caricati a runtime (aggiornabili senza toccare il codice)
 │   ├── 01_domino_identita.md       → Chi siamo, payoff, storia, contatti
 │   ├── 02_domino_servizi.md        → 4 aree servizi, stack tech, scenari I5.0
-│   ├── 03_domino_metodi.md         → Core Sprint, Design Sprint, PE, Trainstorming + pricing
+│   ├── 03_domino_metodi.md         → Catalogo 2026: Core Sprint!, Design Sprint! (+ Brain & Identity), Build Sprint!, Trainstorming!, Preventivo Emozionale, pricing
 │   ├── 04_domino_case_history.md   → Tutti i case study con KPI
 │   ├── 05_domino_settori.md        → Pain point e approccio per verticale
 │   ├── 06_domino_referenze.md      → Premi IKA, Sortlist, testimonianze clienti
@@ -307,25 +309,34 @@ REGOLE FONDAMENTALI:
 - Tono diretto, concreto, umano — non da template
 - Next step sempre specifico ("30 minuti per capire se c'è fit")
 
-NOMI PRODOTTI DOMINO — USARE ESATTAMENTE QUESTI NOMI (da brain/03_domino_metodi.md):
-- "Core Sprint" (€6.000) — NON "Core Sprint", NON "foundation sprint"
-- "Design Sprint" (€10.000) — con le specializzazioni:
-  Service Design Sprint / CX Design Sprint / Brand Design Sprint /
-  Digital Marketing Design Sprint / Website Design Sprint / Intranet Design Sprint
+NOMI PRODOTTI DOMINO — USARE ESATTAMENTE QUESTI NOMI (fonte canonica: brain/03_domino_metodi.md, sezione "Catalogo 2026"):
+- "Core Sprint!" (€6.000) — NON "Foundation Sprint" (linguaggio startup, noi serviamo enterprise)
+- "Design Sprint!" (€10.000) — con le specializzazioni:
+  Service Design Sprint! / CX Design Sprint! / Brand Design Sprint! /
+  Digital Marketing Design Sprint! / Website Design Sprint! / Intranet Design Sprint! /
+  Brain & Identity Design Sprint! (variante di punta 2026 — fondamenta brain aziendale + design system)
+- "Build Sprint!" (€20.000–60.000) — esecuzione a blocchi di 2 settimane o 1 mese, perimetro aperto. Sostituisce la voce storica "Progetto completo".
+- "Trainstorming!" (a partire da €15.000) — percorso change management 12 mesi (3 sessioni, una ogni 4). Era rituale interno dal 2010, dal 2026 è anche servizio venduto.
 - "Preventivo Emozionale" — NON "preventivo emozionale" minuscolo
-- "Trainstorming" — format interno, non un servizio venduto
-- Scala commerciale: Audit tattico (€1.500) → Core Sprint (€6K) → Design Sprint (€10K) → Progetto completo (€20K–60K)
-- Percorso completo: Core Sprint → Design Sprint → Esecuzione (€16.000 pre-esecuzione)
+- "Audit tattico" (€1.500) — entry point, scope fisso 1–2 settimane
+
+SCALA COMMERCIALE 2026 (catalogo a 6 prodotti — fonte: brain/03_domino_metodi.md):
+Audit tattico (€1.500) → Core Sprint! (€6K) → Design Sprint! (€10K, variante di punta Brain & Identity) → Build Sprint! (€20K–60K) → Trainstorming! (da €15K, in parallelo o a valle)
+Percorso pre-esecuzione tipico: Core Sprint! → Design Sprint! = €16.000 prima del Build Sprint!.
+
+CORNICE TRASVERSALE (fonte: brain/02_domino_servizi.md, sezione "Decision Design — Il cuore del nostro lavoro"):
+Decision Design = progettazione delle conseguenze (trade-off, scenari, effetti a 6-12 mesi). Slogan: "da come si naviga a come si sceglie". Citarlo quando il prospect ha bisogno di una cornice strategica — non come tool, come postura.
 
 CASE STUDY — REGOLA DEI 3:
 [0] Il più affine: stesso settore O stessa sfida specifica. Spiega PERCHÉ in 1 frase. Includi KPI.
 [1] Stesso settore o simile: mostra expertise verticale. Includi KPI.
-[2] Metodologia specifica rilevante: Design Sprint, Preventivo Emozionale, GEO, AI B2B, Internal Comm.
+[2] Metodologia specifica rilevante: Design Sprint! (incluse le sue varianti, p.es. Brain & Identity), Build Sprint!, Preventivo Emozionale, GEO, AI B2B, Internal Comm.
 MAI usare solo Fiat e Costa Crociere — usa l'intero repertorio del Brain.
 
 BADGE STRUMENTI — logica di selezione:
 - core_sprint: stakeholder divisi, direzione non chiara, mancanza di allineamento interno
-- design_sprint_tipo — UNO tra: Service / CX / Brand / Digital Marketing / Website / Intranet
+- design_sprint_tipo — UNO tra: Service / CX / Brand / Digital Marketing / Website / Intranet / Brain & Identity
+  (Brain & Identity è la variante di punta 2026: usarla quando il prospect ha bisogno di fondamenta — brain aziendale interrogabile via AI e/o design system riutilizzabile — prima dei prodotti applicativi)
 - preventivo_emozionale: ciclo vendita lungo, rete indiretta, prodotto complesso
 
 REFERENZE: usa 06_domino_referenze.md. Cita premi IKA per automotive/B2B, testimonianze Sortlist
@@ -352,7 +363,7 @@ Schema obbligatorio — tutti i campi devono essere presenti:
     "hook": string,
     "strumenti_suggeriti": {
       "core_sprint": bool,
-      "design_sprint_tipo": "Service|CX|Brand|Digital Marketing|Website|Intranet|null",
+      "design_sprint_tipo": "Service|CX|Brand|Digital Marketing|Website|Intranet|Brain & Identity|null",
       "design_sprint_motivazione": string|null,
       "preventivo_emozionale": bool,
       "preventivo_emozionale_motivazione": string|null
@@ -446,7 +457,7 @@ MAIL:
 - Oggetto: pain point specifico del settore formulato come domanda o osservazione concreta
 - Apertura: dato o osservazione dal report che dimostra che conosci il loro mondo
 - Corpo: collega il problema a come Domino l'ha risolto per qualcuno di simile + KPI.
-  Menziona il Core Sprint come modo per validare prima di investire (€6.000, settimana).
+  Menziona il Core Sprint! come modo per validare prima di investire (€6.000, settimana).
 - CTA: call 30 min per capire il loro contesto — non per presentare Domino
 - Tono: consulenziale, specifico, orientato a ridurre il rischio.
 
@@ -454,13 +465,13 @@ DECK (5 slide):
 - Slide 1: loro settore oggi — dinamiche e pressioni (personalizzato dal report)
 - Slide 2: 3 pain point più comuni nel verticale — insight non ovvio che dimostra expertise
 - Slide 3: come [cliente affine] l'ha risolto con Domino — case con KPI e contesto simile
-- Slide 4: Core Sprint — validare in una settimana prima di investire il budget (€6.000)
-- Slide 5: next step — Core Sprint o Design Sprint come primo passo a basso rischio
+- Slide 4: Core Sprint! — validare in una settimana prima di investire il budget (€6.000)
+- Slide 5: next step — Core Sprint! o Design Sprint! come primo passo a basso rischio
 
 WORKFLOW (4 touch, 4 settimane):
 - Gg1 [Email]: mail settore personalizzata
 - Gg7 [LinkedIn]: case study PDF cliente più affine — no pitch
-- Gg16 [Email]: proponi Core Sprint con descrizione e investimento indicativo (€6.000)
+- Gg16 [Email]: proponi Core Sprint! con descrizione e investimento indicativo (€6.000)
 - Gg26 [Telefono]: follow-up diretto "ha senso parlarne?"`,
 
   manager: `LAYER GTM: Manager / Operativo (Resp. progetto / Specialista / Resp. tecnico)
@@ -481,7 +492,7 @@ DECK (5 slide):
 - Slide 1: analisi loro situazione attuale — cosa funziona e cosa no (dati reali dal report)
 - Slide 2: come lavora Domino — il metodo in pratica, chi fa cosa, cosa si chiede al cliente
 - Slide 3: risultati per clienti simili — metriche operative, non solo business outcomes
-- Slide 4: Audit tattico o Design Sprint — scope fisso, timeline definita, zero ambiguità (€1.500 o €10.000)
+- Slide 4: Audit tattico o Design Sprint! — scope fisso, timeline definita, zero ambiguità (€1.500 o €10.000)
 - Slide 5: come sarà lavorare insieme — ruoli chiari, un interlocutore, nessuna sorpresa
 
 WORKFLOW (4 touch, 3 settimane — veloci, i manager decidono in fretta):
@@ -585,7 +596,7 @@ Il JSON è invariato rispetto alla v3, con un'unica modifica: `foundation_sprint
     "hook": "string — osservazione specifica su dato reale trovato",
     "strumenti_suggeriti": {
       "core_sprint": true,
-      "design_sprint_tipo": "Service | CX | Brand | Digital Marketing | Website | Intranet | null",
+      "design_sprint_tipo": "Service | CX | Brand | Digital Marketing | Website | Intranet | Brain & Identity | null",
       "design_sprint_motivazione": "string | null",
       "preventivo_emozionale": true,
       "preventivo_emozionale_motivazione": "string | null"
@@ -671,7 +682,7 @@ const C = {
 const FONT = "'Helvetica Neue', Helvetica, Arial, sans-serif";
 ```
 
-### Design Sprint colors (badge per tipo — nome corretto: "Design Sprint" non "Design Sprint!")
+### Design Sprint! colors (badge per tipo)
 ```js
 const DS_COLORS = {
   'Service':          { bg: 'rgba(99,102,241,0.12)',  bd: 'rgba(99,102,241,0.4)',  tx: '#a5b4fc' },
@@ -680,6 +691,7 @@ const DS_COLORS = {
   'Digital Marketing':{ bg: 'rgba(16,185,129,0.12)',  bd: 'rgba(16,185,129,0.4)',  tx: '#6ee7b7' },
   'Website':          { bg: 'rgba(59,130,246,0.12)',  bd: 'rgba(59,130,246,0.4)',  tx: '#93c5fd' },
   'Intranet':         { bg: 'rgba(234,88,12,0.12)',   bd: 'rgba(234,88,12,0.4)',   tx: '#fdba74' },
+  'Brain & Identity': { bg: 'rgba(232,39,42,0.14)',   bd: 'rgba(232,39,42,0.5)',   tx: '#ff6b6e' },  // rosso Domino — variante di punta 2026
 };
 ```
 
@@ -872,8 +884,8 @@ Visualizza `result.prospect`. Null guard: se `result.prospect` è assente mostra
 **Hook card** (sfondo rosso dimmed): `🎯 {prospect.hook}`
 
 **Badge strumenti** — nomi corretti:
-- `core_sprint: true` → badge viola "Core Sprint" (€6.000)
-- `design_sprint_tipo` → badge colorato "[Tipo] Design Sprint" + motivazione 11px
+- `core_sprint: true` → badge viola "Core Sprint!" (€6.000)
+- `design_sprint_tipo` → badge colorato "[Tipo] Design Sprint!" + motivazione 11px
 - `preventivo_emozionale: true` → badge verde "Preventivo Emozionale" + motivazione
 
 **3 Casi studio:** [0] rosso "Più affine" / [1] blu "Stesso settore" / [2] grigio "Metodologia"
@@ -963,10 +975,10 @@ Token `pat-eu1-...` salvato in localStorage. Chiamate dirette dal frontend all'A
 
 ## 22. BRAIN — CONTENUTO DEI 11 FILE
 
-### File esistenti (v5)
-- `01_domino_identita.md` — 50 persone, 30 anni, B Corp 2025, payoff, manifesto, clienti per settore, Sortlist
-- `02_domino_servizi.md` — 4 macro-aree, stack tech, scenari I5.0, Decision Design, Trainstorming
-- `03_domino_metodi.md` (**v5**) — **Core Sprint** (€6K), Design Sprint (€10K), Preventivo Emozionale, Trainstorming, scala commerciale, regola sul gratuito
+### File esistenti (brain v5.1)
+- `01_domino_identita.md` — 50 persone, 30 anni, B Corp 2025, payoff, **manifesto a 5 pilastri**, tabella *"Da agenzia digital a Strategic CX Partner"*, **5 rivoluzioni in 30 anni** ('95→'25), clienti per settore, Sortlist
+- `02_domino_servizi.md` (**v4.2**) — **Decision Design come cuore del lavoro** (sezione di apertura, con citazione Codice Etico 2024), 4 macro-aree, stack tech, scenari I5.0, Trainstorming!
+- `03_domino_metodi.md` (**v5.1**) — Catalogo 2026 a 6 prodotti (tabella sintetica + percorso a 4 Sprint!), **Core Sprint!** (€6K), **Design Sprint!** (€10K) con la variante di punta 2026 **Brain & Identity Design Sprint!**, **Build Sprint!** (€20-60K, sostituisce "Progetto completo"), **Trainstorming!** (da €15K, oggi anche servizio venduto), Preventivo Emozionale, scala commerciale, regola sul gratuito
 - `04_domino_case_history.md` — tutti i case con KPI: IVECO IKA 2024, Stellantis, Fiat EMEA, Case IH, Costa Crociere, Masi, Frascold, Bitron, Arca, ENIT...
 - `05_domino_settori.md` — pain point per verticale: Automotive, B2B, Salute, Turismo, Finance, PA
 - `06_domino_referenze.md` — 16 premi IKA (tabella completa), 10 testimonianze Sortlist, formule di pitch, B Corp
@@ -984,7 +996,7 @@ Token `pat-eu1-...` salvato in localStorage. Chiamate dirette dal frontend all'A
 
 **Brain caching:** `let _brainCache = null` a livello modulo. Prima chiamata legge il filesystem, le successive usano la cache. Su Vercel ogni serverless function ha il suo ciclo di vita, ma in dev e per chiamate multiple nella stessa invocazione la cache evita letture ridondanti.
 
-**Nomenclatura prodotti:** il system prompt di generation include esplicitamente i nomi corretti come regola obbligatoria. Se il modello scrive "Core Sprint" è un errore — il system prompt dice `"Core Sprint" (NON "Core Sprint")`.
+**Nomenclatura prodotti:** il system prompt di generation include esplicitamente i nomi corretti come *anchor* anti-allucinazione. La fonte canonica resta `brain/03_domino_metodi.md` (sezione "Catalogo 2026"). Errori tipici da prevenire: "Foundation Sprint" al posto di "Core Sprint!", "Progetto completo" al posto di "Build Sprint!", "preventivo emozionale" minuscolo, "Trainstorming" senza `!` quando citato come prodotto.
 
 **JSON parsing robusto:** 3 tentativi — parse diretto, estrazione da `{...}`, errore. Seguita da normalizzazione completa di tutti i campi.
 
@@ -1005,4 +1017,17 @@ Token `pat-eu1-...` salvato in localStorage. Chiamate dirette dal frontend all'A
 1. Push su GitHub (`abossoto/domino-prospect-engine`)
 2. Vercel rileva automaticamente framework Vite
 3. Impostare `ANTHROPIC_API_KEY` in Vercel → Settings → Environment Variables
-4. Deploy automatico a ogni push su `main`
+4. Deploy automatico a ogni push sul branch `main`.
+
+---
+
+## 25. CHANGELOG DOC
+
+- **2026-04-30** — riallineamento al brain v5.1 (presentazione interna *"A new Domino"*, aprile 2026):
+  - Aggiunto principio architetturale in apertura (brain = fonte canonica, spec = orchestratore).
+  - Versione brain dichiarata 5.0 → 5.1.
+  - System prompt generation aggiornato: aggiunti **Build Sprint!** (sostituisce "Progetto completo") e **Brain & Identity Design Sprint!** (variante di punta 2026); **Trainstorming!** ora dichiarato come servizio venduto e non più solo rituale interno; aggiunto blocco *Decision Design* come cornice trasversale; corretto typo *"Core Sprint! NON Core Sprint!"* → *"NON Foundation Sprint"*.
+  - Schema JSON e `parseJSON`: aggiunto valore `Brain & Identity` a `design_sprint_tipo`.
+  - Frontend `DS_COLORS`: aggiunto colore rosso Domino per la variante `Brain & Identity`.
+  - Sezione 22: descrizione `01/02/03_*.md` aggiornata coi nuovi contenuti (manifesto a 5 pilastri, 5 rivoluzioni in 30 anni, Decision Design come cuore, catalogo 2026 a 6 prodotti).
+  - Note implementative: ricordo che la fonte canonica dei nomi prodotto resta `brain/03_domino_metodi.md`.
