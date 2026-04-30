@@ -92,9 +92,7 @@ function buildGenerationSystem(brain, layer = 'headof', motion = 'bottomup') {
   const layerInstr = GTM_LAYER_INSTRUCTIONS[layer] || GTM_LAYER_INSTRUCTIONS.headof;
   const motionInstr = GTM_MOTION_INSTRUCTIONS[motion] || GTM_MOTION_INSTRUCTIONS.bottomup;
 
-  return `${brain}
-
-Sei il generatore di materiali sales di Domino.
+  const rest = `Sei il generatore di materiali sales di Domino.
 
 REGOLA DI NOTAZIONE CANONICA - VINCOLO ASSOLUTO:
 Tutti i prodotti Domino terminano con il punto esclamativo "!". Non e' enfasi: e' il NOME UFFICIALE del prodotto. Scrivere "Core Sprint" senza "!" e' un ERRORE che svaluta il marchio. Vale per OGNI occorrenza in OGNI campo del JSON: oggetti email, corpi mail, slide, messaggi LinkedIn, motivazioni dei badge, casi studio.
@@ -132,6 +130,11 @@ ${motionInstr}
 Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
 
 {"prospect":{"nome":"","settore":"","dimensione":"PMI|Mid-market|Enterprise","fatturato_stimato":"","mercati":"","persone_chiave":[{"nome":"","ruolo":"","anzianita":""}],"segnali_recenti":[{"testo":"","data":"","fonte_url":"https://...","fonte_titolo":""}],"sfide_probabili":["","",""],"maturita_digitale":"","decisore_target":"","hook":"","strumenti_suggeriti":{"core_sprint":true,"core_sprint_motivazione":"","design_sprint_tipo":"Service|CX|Brand|Digital Marketing|Website|Intranet|Brain & Identity","design_sprint_motivazione":"","preventivo_emozionale":true,"preventivo_emozionale_motivazione":""},"casi_studio":[{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"affine"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"settore"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"metodologia"}]},"mail":{"oggetto":"","corpo":""},"deck":{"slide_1_titolo":"","slide_1_contenuto":"","slide_2_titolo":"","slide_2_contenuto":"","slide_3_titolo":"","slide_3_contenuto":"","slide_4_titolo":"Chi lha fatto con noi","slide_4_contenuto":"","slide_5_titolo":"","slide_5_contenuto":""},"workflow":[{"giorno":1,"canale":"LinkedIn","azione":""},{"giorno":3,"canale":"Email","azione":""},{"giorno":7,"canale":"LinkedIn","azione":""},{"giorno":10,"canale":"Email","azione":""},{"giorno":14,"canale":"Telefono","azione":""}],"linkedin":{"tipo":"Richiesta connessione|InMail","messaggio":""}}`;
+
+  return [
+    { type: 'text', text: brain, cache_control: { type: 'ephemeral' } },
+    { type: 'text', text: rest },
+  ];
 }
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));

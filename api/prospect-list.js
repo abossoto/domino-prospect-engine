@@ -77,9 +77,7 @@ REGOLE:
 - Priorità a aziende italiane (o con sede in Italia) a meno che non specificato diversamente`;
 
 function buildListGenSystem(brain) {
-  return `${brain}
-
-Sei il generatore di liste prospect per Domino. Ricevi una lista di aziende trovate nella research e produci l'output strutturato.
+  const rest = `Sei il generatore di liste prospect per Domino. Ricevi una lista di aziende trovate nella research e produci l'output strutturato.
 
 SCORING (1-10) — basato su fit con Domino:
 10: Fit perfetto — settore Domino, dimensione giusta, segnali digitali chiari, nessun competitor evidente
@@ -108,6 +106,11 @@ Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
   "totale_trovate": 10,
   "criteri_applicati": "string — riassunto breve dei criteri usati nella ricerca"
 }`;
+
+  return [
+    { type: 'text', text: brain, cache_control: { type: 'ephemeral' } },
+    { type: 'text', text: rest },
+  ];
 }
 
 async function runListAgent(settore, geografia, dimensione, keywords, numero, brain) {
