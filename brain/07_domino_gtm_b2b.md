@@ -1,11 +1,13 @@
 # DOMINO BRAIN — GTM B2B Industriale / Manifatturiero
-> Versione 1.0 — Aprile 2026. Sales plays, scala di pricing e regole commerciali per il settore B2B industriale. Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
+> Versione 1.1 — Aprile 2026. Sales plays, scala di pricing e regole commerciali per il settore B2B industriale. Allineata a brain v5.1 (catalogo 2026, Build Sprint!, Brain & Identity Design Sprint!, Decision Design come cornice). Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
+
+**Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · Altri GTM: [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 
 ---
 
 ## Scala di entrata commerciale
 
-Pricing, regole sul gratuito e distinzione Core Sprint vs Design Sprint sono definiti in `brain/03_domino_metodi.md` — fonte unica di verità. Non ripetere qui.
+Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono definiti in [03_domino_metodi.md](03_domino_metodi.md) — fonte unica di verità. Non ripetere qui.
 
 ---
 
@@ -29,10 +31,10 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 
 ## Regole commerciali
 
-- **Niente lavoro gratuito per i prospect bottom-up.** Il primo passo è sempre a pagamento (audit €1.500, Core Sprint €6K o Design Sprint €10K).
-- **Workshop gratuito (2h) solo per grandi clienti in approccio top-down.** Non è un servizio autonomo: apre il percorso verso un Core Sprint a pagamento. Si usa solo quando il deal potenziale giustifica l'investimento.
-- **Il Design Sprint (€10K) è il principale entry product** per avviare una collaborazione: budget fisso, risultato tangibile in 4 giorni (prototipo testato), bassa frizione decisionale.
-- **Non proporre mai Core Sprint e Design Sprint come "alternativa economica" l'uno dell'altro.** Sono strumenti diversi per situazioni diverse.
+- **Niente lavoro gratuito per i prospect bottom-up.** Il primo passo è sempre a pagamento (audit €1.500, Core Sprint! €6K o Design Sprint! €10K).
+- **Workshop gratuito (2h) solo per grandi clienti in approccio top-down.** Non è un servizio autonomo: apre il percorso verso un Core Sprint! a pagamento. Si usa solo quando il deal potenziale giustifica l'investimento.
+- **Il Design Sprint! (€10K) è il principale entry product** per avviare una collaborazione: budget fisso, risultato tangibile in 4 giorni (prototipo testato), bassa frizione decisionale.
+- **Non proporre mai Core Sprint! e Design Sprint! come "alternativa economica" l'uno dell'altro.** Sono strumenti diversi per situazioni diverse.
 
 ---
 
@@ -48,17 +50,17 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 - Traffico piatto o calante, zero lead organici
 - Buyer journey non progettato per il processo B2B multi-stakeholder
 
-**Soluzione completa Domino:**
+**[Soluzione completa Domino](02_domino_servizi.md):**
 - Nuovo sito B2B con buyer journey integrato per personas
 - SEO internazionale + GEO per AI search
 - Lead gen con form e marketing automation
 
 **Come entrare:**
 - Audit SEO/GEO (€1.500) → fotografia oggettiva del gap con benchmark settoriale
-- Core Sprint (€6.000) → se stakeholder divisi su cosa fare o direzione non chiara
-- Design Sprint (€10.000) → se la direzione è chiara, prototipo del nuovo sito testato con buyer reali in 4 giorni
+- Core Sprint! (€6.000) → se stakeholder divisi su cosa fare o direzione non chiara
+- Design Sprint! (€10.000) → se la direzione è chiara, prototipo del nuovo sito testato con buyer reali in 4 giorni
 
-**Proof point:**
+**[Proof point](04_domino_case_history.md):**
 - Demak: +54% lead gen, +48% traffico organico, +20% clic non-brand
 - Rollon US: +48% traffico organico, "linear rails" = prima keyword organica
 - Frascold: +62% utenti organici già nel primo mese
@@ -67,7 +69,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 - Vs web agency generalista: Domino porta strategia + execution + KPI, non solo ranking
 - Vs consulenza: non solo strategia — si consegna il sito funzionante con i risultati
 
-**CTA:** Proposta SEO/GEO Audit (€1.500) a scope fisso, 1–2 settimane, con benchmark settoriale. Porta naturalmente a Core Sprint o Design Sprint.
+**CTA:** Proposta SEO/GEO Audit (€1.500) a scope fisso, 1–2 settimane, con benchmark settoriale. Porta naturalmente a Core Sprint! o Design Sprint!
 
 ---
 
@@ -81,18 +83,20 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 - Sales impegnati a fare educazione di prodotto invece di vendere
 - PDF e cataloghi che non guidano la scelta d'acquisto
 
-**Soluzione completa Domino:**
+**[Soluzione completa Domino](02_domino_servizi.md):**
 - AI Product Selector — il buyer trova il prodotto giusto da solo
 - Configuratore digitale / TCO calculator
 - Chatbot tecnico istruito su catalogo e documentazione
 - Sales tool offline per la rete vendita
 
+**Cornice** *([Decision Design](02_domino_servizi.md))*: questi non sono "tool", sono **architetture di scelta** per il buyer B2B. Spostano il piano da *"come naviga il catalogo"* a *"come decide quale prodotto comprare"*. È l'angolo che differenzia Domino da chi vende un configuratore generico.
+
 **Come entrare:**
 - CX Audit (€1.500) → mappatura del buyer journey attuale, evidenzia il collo di bottiglia
-- Core Sprint (€6.000) → se non è chiaro quale tool costruire (selector? configuratore? chatbot?): allinea sales, marketing e prodotto
-- Design Sprint (€10.000) → se il tool è identificato: prototipo testato con buyer reali prima dello sviluppo completo
+- Core Sprint! (€6.000) → se non è chiaro quale tool costruire (selector? configuratore? chatbot?): allinea sales, marketing e prodotto
+- Design Sprint! (€10.000) → se il tool è identificato: prototipo testato con buyer reali prima dello sviluppo completo
 
-**Proof point:**
+**[Proof point](04_domino_case_history.md):**
 - Bitron: AI Product Selector che comprende i bisogni e suggerisce il prodotto corretto
 - IVECO: TCO Calculator per fleet manager
 - Fiat Professional: E-Product App per rete vendita (usabile offline)
@@ -115,20 +119,20 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 - Agenzia precedente non capiva la complessità B2B (multi-stakeholder, cicli lunghi, prodotti tecnici)
 - Nessuna ownership dei risultati, solo esecuzione
 
-**Soluzione completa Domino:**
+**[Soluzione completa Domino](02_domino_servizi.md):**
 - Partnership continuativa: strategia + execution + ottimizzazione
 - Proposta modulare: si parte dalla priorità più urgente, si scala
-- Metodi proprietari (Core Sprint, Design Sprint, Preventivo Emozionale) che l'agenzia precedente non aveva
+- Metodi proprietari (Core Sprint!, Design Sprint!, Preventivo Emozionale) che l'agenzia precedente non aveva
 
 **Come entrare:**
 - Digital Marketing Audit (€1.500) → fotografia oggettiva di cosa ha ereditato il nuovo responsabile: campagne, budget, performance, qualità lead
-- Core Sprint (€6.000) → se c'è confusione su priorità o visioni diverse tra reparti: ottimo primo atto per il nuovo responsabile che deve riordinare le idee
-- Design Sprint (€10.000) → se ha già le idee chiare: risultato concreto in 4 giorni, porta subito un prototipo validato alla direzione
+- Core Sprint! (€6.000) → se c'è confusione su priorità o visioni diverse tra reparti: ottimo primo atto per il nuovo responsabile che deve riordinare le idee
+- Design Sprint! (€10.000) → se ha già le idee chiare: risultato concreto in 4 giorni, porta subito un prototipo validato alla direzione
 
-**Proof point:**
+**[Proof point](04_domino_case_history.md):**
 - 20+ clienti B2B industriale attivi (Danieli, COMAU, Bitron, Rollon, Megadyne, Demak, Frascold…)
 - IKA 2023 — Rollon: Best Integrated Communication Campaign B2B
-- 29 anni di esperienza, 100% clienti soddisfatti Design Sprint
+- 29 anni di esperienza, 100% clienti soddisfatti Design Sprint!
 
 **Vs competitor:**
 - Vs web agency: vertical knowledge B2B + metodi proprietari + ownership dei risultati
@@ -148,26 +152,26 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 - Stakeholder interni con priorità divergenti, nessun allineamento
 - Paura di investire nella direzione sbagliata
 
-**Soluzione completa Domino:**
-- Percorso strutturato: Core Sprint → Design Sprint → Execution
+**[Soluzione completa Domino](02_domino_servizi.md):**
+- Percorso strutturato: Core Sprint! → Design Sprint! → Execution
 - Roadmap prioritizzata con budget stimato per fase
 - Partner che resta durante l'intera transizione, non solo nel progetto
 
 **Come entrare:**
-- Workshop gratuito 2h (solo grandi clienti) → non è un servizio autonomo, apre il percorso verso Core Sprint
-- Core Sprint (€6.000) → primo passo quasi sempre necessario: l'ipotesi fondante sblocca la paralisi strategica e allinea tutti gli stakeholder
-- Design Sprint (€10.000) → dopo il Core Sprint, quando la direzione è condivisa: prototipo testato che giustifica l'investimento nel progetto completo
+- Workshop gratuito 2h (solo grandi clienti) → non è un servizio autonomo, apre il percorso verso Core Sprint!
+- Core Sprint! (€6.000) → primo passo quasi sempre necessario: l'ipotesi core sblocca la paralisi strategica e allinea tutti gli stakeholder
+- Design Sprint! (€10.000) → dopo il Core Sprint!, quando la direzione è condivisa: prototipo testato che giustifica l'investimento nel **Build Sprint!**
 
-**Proof point:**
-- 100% clienti soddisfatti Design Sprint
-- Links Foundation: Design Sprint + Agile — intranet progettata e validata in settimane
+**[Proof point](04_domino_case_history.md):**
+- 100% clienti soddisfatti Design Sprint!
+- Links Foundation: Design Sprint! + Agile — intranet progettata e validata in settimane
 - Metodo documentato: in 4 giorni si produce ciò che normalmente richiede mesi di riunioni
 
 **Vs competitor:**
 - Vs consulenza (Accenture, Reply): output tangibile in 4 giorni, non un report da 80 pagine
 - Vs web agency: capacità strategica + esecutiva — non si delega la strategia fuori
 
-**CTA:** Per grandi clienti: workshop gratuito 2h → Core Sprint (€6K). Per altri: Core Sprint direttamente come primo atto a pagamento.
+**CTA:** Per grandi clienti: workshop gratuito 2h → Core Sprint! (€6K). Per altri: Core Sprint! direttamente come primo atto a pagamento.
 
 ---
 
@@ -181,7 +185,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 - Siti e comunicazione diversi per ogni paese, gestione frammentata
 - Agenzie locali che divergono dal brand centrale, nessuna governance
 
-**Soluzione completa Domino:**
+**[Soluzione completa Domino](02_domino_servizi.md):**
 - Design System centralizzato + rollout multi-paese
 - CMS multilingua con governance centrale
 - Coordinamento agenzie locali
@@ -189,10 +193,11 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 
 **Come entrare:**
 - SEO/GEO Audit internazionale (€1.500) → analisi visibilità per mercato e lingua, quantifica il costo della frammentazione in traffico perso
-- Core Sprint (€6.000) → se HQ e filiali hanno visioni diverse: definisce architettura del brand internazionale e governance dei mercati
-- Design Sprint (€10.000) → quando la direzione è condivisa: prototipa il nuovo modello di comunicazione e lo testa con stakeholder reali di HQ e mercati chiave prima del rollout
+- Core Sprint! (€6.000) → se HQ e filiali hanno visioni diverse: definisce architettura del brand internazionale e governance dei mercati
+- Design Sprint! (€10.000) → quando la direzione è condivisa: prototipa il nuovo modello di comunicazione e lo testa con stakeholder reali di HQ e mercati chiave prima del rollout
+- **Brain & Identity Design Sprint!** *(variante di punta 2026)* → quando il problema vero è strutturale: serve un **design system** scalabile multi-mercato e/o un **brain** della conoscenza prodotto interrogabile via AI. Sono *fondamenta*, non progetti puntuali — vivono nel tempo, vengono alimentati, smettono di essere reinventati a ogni rollout. Caso di scuola: Danieli.
 
-**Proof point:**
+**[Proof point](04_domino_case_history.md):**
 - Danieli: Design System per digitalizzare e uniformare la comunicazione internazionale del brand
 - Rollon US: +48% traffico organico, "linear rails" = prima keyword organica USA
 - Case IH: rollout in 18 mercati
@@ -202,7 +207,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 - Vs web agency: esperienza documentata di rollout multi-paese con governance centrale
 - Vs consulenza: Domino esegue — non solo consiglia l'architettura
 
-**CTA:** Apertura con caso Danieli o Case IH + proposta SEO/GEO Audit internazionale (€1.500) per quantificare il gap prima di proporre il progetto completo.
+**CTA:** Apertura con caso Danieli o Case IH + proposta SEO/GEO Audit internazionale (€1.500) per quantificare il gap prima di proporre il **Build Sprint!**.
 
 ---
 
@@ -211,8 +216,27 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 Quando generi materiali per un prospect B2B industriale:
 
 1. **Identifica il sales play più pertinente** in base a ruolo del contatto, trigger rilevato e problema principale
-2. **Seleziona il corretto entry point** in base alla situazione: se la direzione non è chiara → Core Sprint; se è chiara → Design Sprint; se il contatto è freddo o il budget è limitato → Audit tattico
+2. **Seleziona il corretto entry point** in base alla situazione: se la direzione non è chiara → Core Sprint!; se è chiara → Design Sprint!; se il contatto è freddo o il budget è limitato → Audit tattico
 3. **Non proporre mai lavoro gratuito** a prospect bottom-up — la prima proposta è sempre a pagamento
 4. **Usa i proof point del play**, non generici: se scrivi a un'azienda con problema SEO, cita Demak e Rollon, non Biennale di Venezia
 5. **Il Preventivo Emozionale** va sempre considerato come strumento di follow-up per proposal formali su deal di medio-alto valore
-6. **Non confondere Core Sprint e Design Sprint** come alternative di prezzo: sono strumenti diversi per situazioni diverse. Vedi distinzione completa in `brain/03_domino_metodi.md`
+6. **Non confondere Core Sprint! e Design Sprint!** come alternative di prezzo: sono strumenti diversi per situazioni diverse. Vedi distinzione completa in [03_domino_metodi.md](03_domino_metodi.md)
+
+
+---
+
+## Collegamenti al Brain
+
+Questo file fa parte del Domino Brain. Per approfondire:
+
+- [01_domino_identita.md](01_domino_identita.md) — storia, valori, team, B Corp, premi, tensioni da gestire
+- [02_domino_servizi.md](02_domino_servizi.md) — tassonomia dei servizi e capabilities
+- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [04_domino_case_history.md](04_domino_case_history.md) — case per cliente con KPI e categoria
+- [05_domino_settori.md](05_domino_settori.md) — mappa settori, sub-segmenti, messaggi chiave
+- [06_domino_referenze.md](06_domino_referenze.md) — review Sortlist, premi, testimonianze video Domino25
+- [07_domino_gtm_b2b.md](07_domino_gtm_b2b.md) — sales plays B2B industriale
+- [08_domino_gtm_salute_beauty.md](08_domino_gtm_salute_beauty.md) — sales plays Salute & Beauty
+- [09_domino_gtm_turismo_cultura.md](09_domino_gtm_turismo_cultura.md) — sales plays Turismo & Cultura
+- [10_domino_gtm_finance_pa.md](10_domino_gtm_finance_pa.md) — sales plays Finance & PA
+- [11_domino_gtm_automotive.md](11_domino_gtm_automotive.md) — sales plays Automotive

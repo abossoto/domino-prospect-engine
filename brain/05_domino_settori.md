@@ -1,5 +1,7 @@
 # DOMINO BRAIN — Settori
-> Versione 3.0 — Aprile 2026. Linguaggio specifico, pain point reali e approccio Domino per ciascun verticale. Aggiornato con scenari Industry 5.0 (Trainstorming aprile 2026).
+> Versione 3.0 — Aprile 2026. Linguaggio specifico, pain point reali e approccio Domino per ciascun verticale. Aggiornato con scenari Industry 5.0 (Trainstorming! aprile 2026).
+
+**Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Referenze](06_domino_referenze.md) · GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 
 ---
 
@@ -9,7 +11,7 @@
 
 **Scenario I5.0:** L'automotive è il settore dove la transizione è più visibile e più urgente — verso l'elettrico, verso nuovi modelli di mobilità, verso reti di vendita da riforgiare. Non basta essere efficienti: bisogna aiutare concessionari, fleet manager e clienti finali a decidere bene in un momento di cambiamento profondo. Qui il Decision Design non è un'opzione, è la base di qualunque progetto digitale rilevante.
 
-**Clienti:** Fiat, Fiat Professional, Jeep, Abarth, Alfa Romeo, IVECO, Ford Authos, Motor Village, CIFA, Askoll, Mopar, Steyr, CNH Industrial, New Holland, Case IH, Stellantis
+**[Clienti](04_domino_case_history.md):** Fiat, Fiat Professional, Jeep, Abarth, Alfa Romeo, IVECO, Ford Authos, Motor Village, CIFA, Askoll, Mopar, Steyr, CNH Industrial, New Holland, Case IH, Stellantis
 
 **Pain point tipici:**
 - Reti di vendita indirette (concessionari, dealer) difficili da formare e allineare
@@ -29,7 +31,7 @@
 - Video training AI personalizzati per team commerciali
 - Community digitali (Jeep)
 
-**Case da citare:** IVECO.com (IKA 2024), Case IH (18 mercati), Stellantis Employee Portal (FEIEIA Award), Fiat Professional E-Product App, IVECO TCO Calculator, IVECO eDailyAdvisor, Jeep Community
+**[Case da citare](04_domino_case_history.md):** IVECO.com (IKA 2024), Case IH (18 mercati), Stellantis Employee Portal (FEIEIA Award), Fiat Professional E-Product App, IVECO TCO Calculator, IVECO eDailyAdvisor, Jeep Community
 
 ---
 
@@ -39,7 +41,7 @@
 
 **Scenario I5.0:** Il manifatturiero è il settore più esposto alle transizioni sistemiche: supply chain ridisegnate, nuove normative, AI che entra nei processi produttivi e commerciali, sostenibilità come requisito di accesso ai mercati. I buyer B2B non cercano più fornitori — cercano partner capaci di accompagnarli in queste transizioni. Chi sa aiutare a decidere in contesti complessi (Decision Design, AI-assisted tools, scenario simulator) diventa strategico e difficilmente sostituibile.
 
-**Clienti:** Danieli, COMAU, Bitron, Volvo Penta, Petronas, Frascold, Teksid, Rollon, TEXA, B3, SKF, Ewellix, DFS, Links Foundation, Megadyne, Contship Italia, Veritas, Pipein, Gruppo De Eccher, Demak
+**[Clienti](04_domino_case_history.md):** Danieli, COMAU, Bitron, Volvo Penta, Petronas, Frascold, Teksid, Rollon, TEXA, B3, SKF, Ewellix, DFS, Links Foundation, Megadyne, Contship Italia, Veritas, Pipein, Gruppo De Eccher, Demak
 
 **Pain point tipici:**
 - Prodotti tecnici complessi da spiegare a buyer con background diversi (tecnico, acquisti, direzione)
@@ -58,10 +60,10 @@
 - Design System per brand internazionali (Danieli)
 - Siti B2B basati su Personas e buyer journey (Rollon, Megadyne, Demak)
 - SEO/GEO per visibilità internazionale su keyword di prodotto
-- Core Sprint per allineare stakeholder interni sulla direzione strategica
-- Design Sprint per prototipare soluzioni in una settimana
+- Core Sprint! per allineare stakeholder interni sulla direzione strategica
+- Design Sprint! per prototipare soluzioni in una settimana
 - Intranet e portali per comunicazione interna complessa (Links Foundation, IPI SFERA)
-- **Trainstorming I5.0** per aziende manifatturiere che devono navigare transizioni complesse (AI, normativa, sostenibilità) con un metodo strutturato e output concreti
+- **Trainstorming! I5.0** per aziende manifatturiere che devono navigare transizioni complesse (AI, normativa, sostenibilità) con un metodo strutturato e output concreti
 - **Decision Design tools**: configuratori, TCO calculator, comparatori — strumenti che aiutano il buyer a decidere, non solo a informarsi
 
 **KPI documentati:**
@@ -69,7 +71,7 @@
 - Demak: +48% organico, +54% lead gen, +20% clic non-brand
 - Frascold: +62% utenti organici in 1 mese
 
-**Case da citare:** Bitron AI Product Selector, Comau+ Marketplace, Danieli Design System, Rollon US SEO, Demak riposizionamento, Links Foundation Intranet (Design Sprint + Agile)
+**[Case da citare](04_domino_case_history.md):** Bitron AI Product Selector, Comau+ Marketplace, Danieli Design System, Rollon US SEO, Demak riposizionamento, Links Foundation Intranet (Design Sprint! + Agile)
 
 ---
 
@@ -79,7 +81,7 @@
 
 **Scenario I5.0:** In sanità e beauty la fiducia è tutto — e la fiducia non si scala con l'efficienza. L'AI in questi settori deve essere trasparente, spiegabile e governabile (human-in-the-loop): un chatbot medico che "sbaglia" non è un bug tecnico, è un danno relazionale. Il vantaggio competitivo sta nel progettare tecnologia responsabile che rafforza la relazione tra struttura e paziente/cliente, non che la sostituisce.
 
-**Clienti:** Affidea, Ospedale dell'Angelo, CDI, Humanitas, Asalaser, LARC, Lierac, Phyto, Solgar, Azienda Ospedaliera di Padova, Labo Cosprophar
+**[Clienti](04_domino_case_history.md):** Affidea, Ospedale dell'Angelo, CDI, Humanitas, Asalaser, LARC, Lierac, Phyto, Solgar, Azienda Ospedaliera di Padova, Labo Cosprophar
 
 **Pain point tipici:**
 - Comunicare servizi complessi (diagnostica, percorsi di cura) a pazienti e caregiver non esperti
@@ -96,7 +98,7 @@
 - Strumenti di prenotazione e gestione digitale del percorso paziente
 - Comunicazione istituzionale che costruisce autorevolezza e fiducia
 
-**Case da citare:** Lierac + Phyto (CX prima del prodotto), Ospedale dell'Angelo (promuovere l'eccellenza), Affidea (servizio vicino all'utente), LARC (innovazione digitale in sanità)
+**[Case da citare](04_domino_case_history.md):** Lierac + Phyto (CX prima del prodotto), Ospedale dell'Angelo (promuovere l'eccellenza), Affidea (servizio vicino all'utente), LARC (innovazione digitale in sanità)
 
 ---
 
@@ -106,7 +108,7 @@
 
 **Scenario I5.0:** Il turismo e la cultura sono i settori dove il "significato" batte l'efficienza per definizione. In un mondo dove l'AI automatizza la ricerca di offerte, il vantaggio sta nell'essere citati, scelti e ricordati — non solo trovati. GEO (Generative Engine Optimization) e storytelling digitale sono strumenti I5.0 per eccellenza: costruire autorevolezza nei nuovi ecosistemi di ricerca AI è il nuovo posizionamento competitivo per destinazioni e istituzioni culturali.
 
-**Clienti:** Alpitour, ENIT, Costa Crociere, Biennale di Venezia, Fondazione Torino Musei (Palazzo Madama, GAM, MAO, Borgo Medievale), Museo Nazionale del Cinema, Galleria Borghese, Fondazione Aquileia, Museo Poldi Pezzoli, Turismo Torino, Visit Piemonte, Terre dei Savoia, Marcegaglia Tourism, Provincia di Padova, Langhe-Monferrato-Roero, Distretto Turistico dei Laghi, Masi Agricola
+**[Clienti](04_domino_case_history.md):** Alpitour, ENIT, Costa Crociere, Biennale di Venezia, Fondazione Torino Musei (Palazzo Madama, GAM, MAO, Borgo Medievale), Museo Nazionale del Cinema, Galleria Borghese, Fondazione Aquileia, Museo Poldi Pezzoli, Turismo Torino, Visit Piemonte, Terre dei Savoia, Marcegaglia Tourism, Provincia di Padova, Langhe-Monferrato-Roero, Distretto Turistico dei Laghi, Masi Agricola
 
 **Pain point tipici:**
 - Competizione internazionale fortissima per l'attenzione dei viaggiatori
@@ -128,13 +130,13 @@
 - Masi Agricola SEO (6 mesi): +44% utenti, +54% sessioni, +175% pagine viste
 - ENIT: coordinamento 34 paesi, dashboard unificata Looker
 
-**Case da citare:** Masi (SEO), Costa Crociere (Preventivo Emozionale), Biennale di Venezia, Fondazione Torino Musei (4 sedi, 150.000 opere), ENIT (34 paesi)
+**[Case da citare](04_domino_case_history.md):** Masi (SEO), Costa Crociere (Preventivo Emozionale), Biennale di Venezia, Fondazione Torino Musei (4 sedi, 150.000 opere), ENIT (34 paesi)
 
 ---
 
 ## FINANCE, ASSICURAZIONI & PA
 
-**Clienti:** Arca SGR, Bancomat SpA, Exor, Zoomlion Capital, Compagnia di San Paolo, Regione del Veneto, Consiglio Regionale Veneto
+**[Clienti](04_domino_case_history.md):** Arca SGR, Bancomat SpA, Exor, Zoomlion Capital, Compagnia di San Paolo, Regione del Veneto, Consiglio Regionale Veneto
 
 **Scenario I5.0:** Finance e PA sono i settori dove la compliance non è una scelta — e dove l'AI Act, il GDPR e le normative ESG si fanno sentire prima che altrove. Ma la sfida I5.0 qui è trasformare la compliance in valore: chi progetta strumenti digitali responsabili, trasparenti e governabili costruisce fiducia istituzionale. Il Decision Design — strumenti che guidano scelte complesse in modo comprensibile — è il perimetro naturale della consulenza digitale in questo settore.
 
@@ -151,7 +153,7 @@
 - Ottimizzazione back-office e aumento engagement (Bancomat)
 - Comunicazione istituzionale autorevole con attenzione alla compliance
 
-**Case da citare:** Arca Advisory Assistant (tool per collocatori bancari), Bancomat (da back-office a engagement)
+**[Case da citare](04_domino_case_history.md):** Arca Advisory Assistant (tool per collocatori bancari), Bancomat (da back-office a engagement)
 
 ---
 
@@ -181,11 +183,30 @@ La transizione più difficile non è mai quella tecnologica: è quella umana. Ad
 - Intranet ed employee portal (dalla progettazione UX alla manutenzione)
 - Chatbot AI istruiti su documentazione interna (risponde via chat, audio e video)
 - Eventi ibridi (online + offline) per engagement su temi chiave (es. elettrificazione)
-- **Trainstorming I5.0**: programma strutturato per accompagnare l'adozione dell'AI in azienda — non un corso, non una campagna, ma un percorso di transizione con output concreti a ogni sessione. Ideale per aziende che devono introdurre responsabilmente l'AI tra le proprie persone.
+- **Trainstorming! I5.0**: programma strutturato per accompagnare l'adozione dell'AI in azienda — non un corso, non una campagna, ma un percorso di transizione con output concreti a ogni sessione. Ideale per aziende che devono introdurre responsabilmente l'AI tra le proprie persone.
 
 **KPI documentati:**
 - Stellantis Employee Portal: 88.000 dipendenti, FEIEIA Award Best European Intranet
 - Stellantis D&I People Stories: tra i più visti in intranet, rilanciate dal COO
 - Stellantis Electrification Days: prime manifestazioni sold-out in poche ore
 
-**Case da citare:** Stellantis Employee Portal, Stellantis D&I People Stories, Stellantis Electrification Days, IPI Onboarding, Bitron AI & Internal Communication, Links Foundation (Design Sprint + Agile)
+**[Case da citare](04_domino_case_history.md):** Stellantis Employee Portal, Stellantis D&I People Stories, Stellantis Electrification Days, IPI Onboarding, Bitron AI & Internal Communication, Links Foundation (Design Sprint! + Agile)
+
+
+---
+
+## Collegamenti al Brain
+
+Questo file fa parte del Domino Brain. Per approfondire:
+
+- [01_domino_identita.md](01_domino_identita.md) — storia, valori, team, B Corp, premi, tensioni da gestire
+- [02_domino_servizi.md](02_domino_servizi.md) — tassonomia dei servizi e capabilities
+- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [04_domino_case_history.md](04_domino_case_history.md) — case per cliente con KPI e categoria
+- [05_domino_settori.md](05_domino_settori.md) — mappa settori, sub-segmenti, messaggi chiave
+- [06_domino_referenze.md](06_domino_referenze.md) — review Sortlist, premi, testimonianze video Domino25
+- [07_domino_gtm_b2b.md](07_domino_gtm_b2b.md) — sales plays B2B industriale
+- [08_domino_gtm_salute_beauty.md](08_domino_gtm_salute_beauty.md) — sales plays Salute & Beauty
+- [09_domino_gtm_turismo_cultura.md](09_domino_gtm_turismo_cultura.md) — sales plays Turismo & Cultura
+- [10_domino_gtm_finance_pa.md](10_domino_gtm_finance_pa.md) — sales plays Finance & PA
+- [11_domino_gtm_automotive.md](11_domino_gtm_automotive.md) — sales plays Automotive

@@ -1,5 +1,7 @@
 # DOMINO BRAIN — Case History
-> Versione 3.0 — Aprile 2026. Tutti i case documentati da sito, presentazioni e materiali ufficiali. Da usare per settore e tipo di progetto. Aggiornato con lettura I5.0 dei principali case (Trainstorming aprile 2026).
+> Versione 3.0 — Aprile 2026. Tutti i case documentati da sito, presentazioni e materiali ufficiali. Da usare per settore e tipo di progetto. Aggiornato con lettura I5.0 dei principali case (Trainstorming! aprile 2026).
+
+**Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 
 ---
 
@@ -116,7 +118,7 @@
 
 ### Links Foundation — Nuova Intranet
 **Progetto:** Nuova intranet per Links Foundation – Leading Innovation & Knowledge for Society.
-**Approccio:** Design Sprint + Metodo Agile + piano di engagement e formazione.
+**Approccio:** Design Sprint! + Metodo Agile + piano di engagement e formazione.
 
 ### Demak Group — Da fornitore a leader B2B
 **Progetto:** Riposizionamento da fornitore a player di riferimento nel settore B2B.
@@ -236,3 +238,22 @@
 | **Media, Sport & PA** | RAI, Universal, Lega Nazionale Pallacanestro, FIMI, Juventus, IPI Group, Bancomat |
 | **AI & Tech** | BR-Uno (Intelligent Assistant), Links Foundation, TEXA, Neosperience |
 | **Startup & Scale-up** | Demak, Pipein, iFog, CheProfessionista, MIND |
+
+
+---
+
+## Collegamenti al Brain
+
+Questo file fa parte del Domino Brain. Per approfondire:
+
+- [01_domino_identita.md](01_domino_identita.md) — storia, valori, team, B Corp, premi, tensioni da gestire
+- [02_domino_servizi.md](02_domino_servizi.md) — tassonomia dei servizi e capabilities
+- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [04_domino_case_history.md](04_domino_case_history.md) — case per cliente con KPI e categoria
+- [05_domino_settori.md](05_domino_settori.md) — mappa settori, sub-segmenti, messaggi chiave
+- [06_domino_referenze.md](06_domino_referenze.md) — review Sortlist, premi, testimonianze video Domino25
+- [07_domino_gtm_b2b.md](07_domino_gtm_b2b.md) — sales plays B2B industriale
+- [08_domino_gtm_salute_beauty.md](08_domino_gtm_salute_beauty.md) — sales plays Salute & Beauty
+- [09_domino_gtm_turismo_cultura.md](09_domino_gtm_turismo_cultura.md) — sales plays Turismo & Cultura
+- [10_domino_gtm_finance_pa.md](10_domino_gtm_finance_pa.md) — sales plays Finance & PA
+- [11_domino_gtm_automotive.md](11_domino_gtm_automotive.md) — sales plays Automotive
