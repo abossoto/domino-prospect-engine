@@ -1,4 +1,8 @@
 {
   "framework": "vite",
+  "functions": {
+    "api/analyze.js": { "maxDuration": 60 },
+    "api/prospect-list.js": { "maxDuration": 60 }
+  },
   "rewrites": [{ "source": "/api/(.*)", "destination": "/api/$1" }]
 }
