@@ -40,7 +40,17 @@ STRUTTURA OBBLIGATORIA DEL REPORT:
 ## PRESENZA E MATURITA' DIGITALE
 ## SFIDE PROBABILI
 ## OPPORTUNITA' PER DOMINO
-## DATI NON TROVATI`;
+## DATI NON TROVATI
+
+REGOLA SPECIALE - SEGNALI RECENTI - VERIFICABILITA' OBBLIGATORIA:
+Per ogni segnale recente DEVI raccogliere e includere nel report l'URL della fonte
+(comunicato stampa, articolo testata giornalistica, post LinkedIn ufficiale, ecc.).
+Formato: "Evento (data) - URL: https://..." oppure su due righe.
+Esempio:
+- Acquisizione di X SpA (marzo 2025) - URL: https://www.ilsole24ore.com/art/...
+- Lancio prodotto Y (gennaio 2026) - URL: https://comunicati.azienda.it/...
+Se per un evento NON riesci a trovare la URL fonte verificabile, OMETTILO completamente
+dalla sezione SEGNALI RECENTI. Meglio segnalare 2 eventi verificabili che 5 eventi senza prova.`;
 
 const GTM_LAYER_INSTRUCTIONS = {
   clevel: `LAYER GTM: C-Level (CEO / CIO / DG)
@@ -109,13 +119,19 @@ REGOLE: usa SOLO info dal report. Prima frase = problema del prospect. Tono dire
 CASE STUDY - REGOLA DEI 3: [0] stesso settore/sfida con KPI [1] settore simile con KPI [2] metodologia specifica (es. Brain & Identity Design Sprint!, Build Sprint!, Preventivo Emozionale, GEO, AI B2B). MAI solo Fiat e Costa Crociere.
 BADGE: core_sprint se stakeholder multipli/no chiarezza. design_sprint_tipo = Service/CX/Brand/Digital Marketing/Website/Intranet/Brain & Identity. preventivo_emozionale se ciclo lungo/rete indiretta.
 
+SEGNALI RECENTI - VERIFICABILITA' OBBLIGATORIA:
+Ogni segnale del JSON DEVE essere un oggetto con i campi {testo, data, fonte_url, fonte_titolo}.
+Il valore di fonte_url DEVE essere una URL reale presa dal report di intelligence (sezione SEGNALI RECENTI).
+Se il report non ha URL per un evento, NON includerlo nell'array. Meglio 2 segnali verificabili che 5 senza prova.
+Se nessun segnale ha fonte verificabile, restituisci array vuoto: "segnali_recenti": [].
+
 ${layerInstr}
 
 ${motionInstr}
 
 Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
 
-{"prospect":{"nome":"","settore":"","dimensione":"PMI|Mid-market|Enterprise","fatturato_stimato":"","mercati":"","persone_chiave":[{"nome":"","ruolo":"","anzianita":""}],"segnali_recenti":[""],"sfide_probabili":["","",""],"maturita_digitale":"","decisore_target":"","hook":"","strumenti_suggeriti":{"core_sprint":true,"core_sprint_motivazione":"","design_sprint_tipo":"Service|CX|Brand|Digital Marketing|Website|Intranet|Brain & Identity","design_sprint_motivazione":"","preventivo_emozionale":true,"preventivo_emozionale_motivazione":""},"casi_studio":[{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"affine"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"settore"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"metodologia"}]},"mail":{"oggetto":"","corpo":""},"deck":{"slide_1_titolo":"","slide_1_contenuto":"","slide_2_titolo":"","slide_2_contenuto":"","slide_3_titolo":"","slide_3_contenuto":"","slide_4_titolo":"Chi lha fatto con noi","slide_4_contenuto":"","slide_5_titolo":"","slide_5_contenuto":""},"workflow":[{"giorno":1,"canale":"LinkedIn","azione":""},{"giorno":3,"canale":"Email","azione":""},{"giorno":7,"canale":"LinkedIn","azione":""},{"giorno":10,"canale":"Email","azione":""},{"giorno":14,"canale":"Telefono","azione":""}],"linkedin":{"tipo":"Richiesta connessione|InMail","messaggio":""}}`;
+{"prospect":{"nome":"","settore":"","dimensione":"PMI|Mid-market|Enterprise","fatturato_stimato":"","mercati":"","persone_chiave":[{"nome":"","ruolo":"","anzianita":""}],"segnali_recenti":[{"testo":"","data":"","fonte_url":"https://...","fonte_titolo":""}],"sfide_probabili":["","",""],"maturita_digitale":"","decisore_target":"","hook":"","strumenti_suggeriti":{"core_sprint":true,"core_sprint_motivazione":"","design_sprint_tipo":"Service|CX|Brand|Digital Marketing|Website|Intranet|Brain & Identity","design_sprint_motivazione":"","preventivo_emozionale":true,"preventivo_emozionale_motivazione":""},"casi_studio":[{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"affine"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"settore"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"metodologia"}]},"mail":{"oggetto":"","corpo":""},"deck":{"slide_1_titolo":"","slide_1_contenuto":"","slide_2_titolo":"","slide_2_contenuto":"","slide_3_titolo":"","slide_3_contenuto":"","slide_4_titolo":"Chi lha fatto con noi","slide_4_contenuto":"","slide_5_titolo":"","slide_5_contenuto":""},"workflow":[{"giorno":1,"canale":"LinkedIn","azione":""},{"giorno":3,"canale":"Email","azione":""},{"giorno":7,"canale":"LinkedIn","azione":""},{"giorno":10,"canale":"Email","azione":""},{"giorno":14,"canale":"Telefono","azione":""}],"linkedin":{"tipo":"Richiesta connessione|InMail","messaggio":""}}`;
 }
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -202,6 +218,37 @@ function normalizeProductNames(node) {
   return node;
 }
 
+// ──────────────────────────────────────────────────────────────────────────────
+// Normalizzazione segnali_recenti: garantisce verificabilita'.
+// Schema atteso: array di {testo, data, fonte_url, fonte_titolo}.
+// SOLUZIONE A: se un segnale non ha fonte_url valida, lo OMETTIAMO.
+// Backward-compat: se arriva una string (vecchio schema), la scartiamo perche'
+// non ha URL associata. Meglio array vuoto che "informazione senza prova".
+// ──────────────────────────────────────────────────────────────────────────────
+function isValidUrl(u) {
+  if (typeof u !== 'string' || !u.trim()) return false;
+  return /^https?:\/\/\S+/i.test(u.trim());
+}
+
+function normalizeSignals(arr) {
+  if (!Array.isArray(arr)) return [];
+  return arr
+    .map(s => {
+      // Vecchio formato (string) - niente URL - omettere
+      if (typeof s === 'string') return null;
+      if (!s || typeof s !== 'object') return null;
+      // Nuovo formato - richiede fonte_url valida
+      if (!isValidUrl(s.fonte_url)) return null;
+      return {
+        testo: String(s.testo || '').trim(),
+        data: String(s.data || '').trim(),
+        fonte_url: s.fonte_url.trim(),
+        fonte_titolo: String(s.fonte_titolo || '').trim(),
+      };
+    })
+    .filter(Boolean);
+}
+
 function parseJSON(text) {
   const clean = text.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
   let parsed = null;
@@ -210,51 +257,4 @@ function parseJSON(text) {
     const s = clean.indexOf('{'), e = clean.lastIndexOf('}');
     if (s !== -1 && e !== -1) { try { parsed = JSON.parse(clean.slice(s, e + 1)); } catch {} }
   }
-  if (!parsed) throw new Error('JSON non valido nella risposta del modello');
-  // Fail-safe finale: assicura il "!" canonico nei nomi prodotto Domino.
-  return normalizeProductNames(parsed);
-}
-
-async function runResearch(prospect, note) {
-  const webSearch = { type: 'web_search_20250305', name: 'web_search' };
-  const userContent = `Produci un dossier completo su: "${prospect}"${note ? `\nNote: ${note}` : ''}
-Cerca: sito web, dati finanziari Cerved/CCIAA, news ultimi 12 mesi, LinkedIn con nomi reali, job posting, presenza digitale.
-Fai almeno 8-10 ricerche. Produci il report con tutte le sezioni.`;
-  let messages = [{ role: 'user', content: userContent }];
-  let data = await callClaude({ system: RESEARCH_SYSTEM, messages, tools: [webSearch], max_tokens: 8000 });
-  let i = 0;
-  while (data.stop_reason === 'tool_use' && i < 20) {
-    i++;
-    const toolBlocks = data.content.filter(b => b.type === 'tool_use');
-    if (!toolBlocks.length) break;
-    messages = [...messages, { role: 'assistant', content: data.content }];
-    const feedback = i < 8 ? 'Continua - cerca LinkedIn per nomi manager e Cerved per dati finanziari.' : i < 15 ? 'Approfondisci job posting e presenza digitale, poi produci il report.' : 'Hai abbastanza dati. Produci il report finale completo.';
-    const results = toolBlocks.map(b => ({ type: 'tool_result', tool_use_id: b.id, content: feedback }));
-    messages = [...messages, { role: 'user', content: results }];
-    data = await callClaude({ system: RESEARCH_SYSTEM, messages, tools: [webSearch], max_tokens: 8000 });
-  }
-  return extractText(data);
-}
-
-export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
-  const { prospect, note, layer = 'headof', motion = 'bottomup' } = req.body || {};
-  if (!prospect?.trim()) return res.status(400).json({ error: 'Prospect richiesto' });
-  try {
-    const brain = loadBrain();
-    const researchReport = await runResearch(prospect.trim(), note?.trim());
-    const genData = await callClaude({
-      system: buildGenerationSystem(brain, layer, motion),
-      messages: [{ role: 'user', content: `Prospect: "${prospect}"\nLayer: ${layer} | Motion: ${motion}\n\nReport:\n${researchReport}\n\nGenera i materiali. Solo JSON puro.` }],
-      max_tokens: 6000,
-    });
-    return res.status(200).json(parseJSON(extractText(genData)));
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({ error: err.message });
-  }
-}
+  if (!parsed) thr
