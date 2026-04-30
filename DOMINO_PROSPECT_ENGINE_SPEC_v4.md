@@ -1,5 +1,5 @@
 # DOMINO PROSPECT ENGINE — Specifiche Complete
-## Versione sorgente: v4.0.0 (App.jsx) / Versione brain: 5.1
+## Versione sorgente: v4.1.0 (App.jsx) / Versione brain: 5.1
 
 > Documento generato dalla lettura diretta del codice sorgente. Sufficiente per ricreare il sistema identico.
 
@@ -30,7 +30,7 @@ Sales intelligence tool interno per il team commerciale di Domino (domino.it). I
 ├── api/
 │   ├── analyze.js          → Research agent + generazione materiali (Domino GTM 3 livelli)
 │   └── prospect-list.js    → Generazione lista prospect qualificata
-├── brain/                  → 11 file .md caricati a runtime (aggiornabili senza toccare il codice)
+├── brain/                  → 11 file .md caricati a runtime (aggiornabili senza toccare il codice). Sincronizzato da OneDrive via scripts/sync-brain.sh.
 │   ├── 01_domino_identita.md       → Chi siamo, payoff, storia, contatti
 │   ├── 02_domino_servizi.md        → 4 aree servizi, stack tech, scenari I5.0
 │   ├── 03_domino_metodi.md         → Catalogo 2026: Core Sprint!, Design Sprint! (+ Brain & Identity), Build Sprint!, Trainstorming!, Preventivo Emozionale, pricing
@@ -42,16 +42,22 @@ Sales intelligence tool interno per il team commerciale di Domino (domino.it). I
 │   ├── 09_domino_gtm_turismo_cultura.md → Sales play Turismo & Cultura
 │   ├── 10_domino_gtm_finance_pa.md → Sales play Finance, Assicurazioni, PA
 │   └── 11_domino_gtm_automotive.md → Sales play Automotive
+├── scripts/
+│   └── sync-brain.sh       → rsync OneDrive → brain/ + auto-commit + push (lanciato da launchd ogni 10 min)
 ├── src/
 │   ├── App.jsx             → Frontend React completo
 │   └── main.jsx            → Entry point React
 ├── index.html              → HTML shell (background #0a0a0a, lang="it")
 ├── package.json            → dipendenze
 ├── vite.config.js          → Vite + proxy /api → localhost:3000
-└── vercel.json             → routing Vercel
+├── vercel.json             → routing Vercel + maxDuration functions
+├── DOMINO_PROSPECT_ENGINE_SPEC_v4.md → questa spec (root, fuori da brain/ perché non è contenuto Domino)
+└── CLAUDE.md               → istruzioni per Claude Code che lavora sul repo
 ```
 
 **Principio chiave del brain:** il loader legge **tutti i file `.md` presenti nella cartella `brain/`** a runtime, ordinati per nome. Aggiungere un nuovo file brain non richiede modifiche al codice. Il brain è cached in memoria per il ciclo di vita del processo Vercel.
+
+**Sync OneDrive → repo (v4.1):** Il brain canonico vive su OneDrive in `Documenti/Claude/Projects/Domino Brain/`. `scripts/sync-brain.sh` (lanciato ogni 10 min da un LaunchAgent macOS) fa rsync one-way OneDrive → `brain/`, auto-committa cambi e pusha su `origin/main`. La spec è esclusa dal brain perché descrive l'app, non i contenuti Domino.
 
 ---
 
@@ -95,9 +101,15 @@ export default defineConfig({
 ```json
 {
   "framework": "vite",
+  "functions": {
+    "api/analyze.js": { "maxDuration": 300 },
+    "api/prospect-list.js": { "maxDuration": 300 }
+  },
   "rewrites": [{ "source": "/api/(.*)", "destination": "/api/$1" }]
 }
 ```
+
+`maxDuration: 300` (cap Pro plan) serve perché il research agent agentico con Sonnet 4.6 + web_search può raggiungere ~3-4 min su prospect complessi. Era 60 in v4.0 ma con Sonnet 4.6 sforava sistematicamente.
 
 ### Variabile d'ambiente Vercel
 `ANTHROPIC_API_KEY` → necessaria per entrambe le functions API.
@@ -137,7 +149,7 @@ function loadBrain() {
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function callClaude({ system, messages, tools, max_tokens = 8000 }) {
-  const body = { model: 'claude-sonnet-4-20250514', max_tokens, system, messages };
+  const body = { model: 'claude-sonnet-4-6', max_tokens, system, messages, output_config: { effort: 'low' } };
   if (tools?.length) body.tools = tools;
 
   const MAX_RETRIES = 5;
@@ -181,6 +193,8 @@ async function callClaude({ system, messages, tools, max_tokens = 8000 }) {
 
 **Nota:** gli errori `OVERLOADED:` vengono intercettati dal frontend che mostra il messaggio all'utente e ritenta con backoff lato client (4s, 8s, 16s).
 
+**Modello e effort (v4.1):** Il modello è `claude-sonnet-4-6` (Sonnet 4.6, GA). `output_config: { effort: 'low' }` è settato esplicitamente perché Sonnet 4.6 di default usa `effort: 'high'` che fa thinking aggressivo, sforando il budget di 300s nel loop agentico. `low` allinea la latenza a quella di Sonnet 4.0 (modello precedente, in deprecation con retire previsto 15-giu-2026).
+
 ### Research Agent — loop agentico multi-turn
 ```js
 async function runResearch(prospect, note) {
@@ -190,16 +204,16 @@ async function runResearch(prospect, note) {
   let data = await callClaude({ system: RESEARCH_SYSTEM, messages, tools: [webSearch], max_tokens: 8000 });
 
   let i = 0;
-  while (data.stop_reason === 'tool_use' && i < 20) {
+  while (data.stop_reason === 'tool_use' && i < 8) {
     i++;
     const toolBlocks = data.content.filter(b => b.type === 'tool_use');
     if (!toolBlocks.length) break;
     messages = [...messages, { role: 'assistant', content: data.content }];
 
     const feedback =
-      i < 8  ? 'Continua — cerca ancora LinkedIn per nomi manager e Cerved per dati finanziari.' :
-      i < 15 ? 'Approfondisci job posting e presenza digitale, poi produci il report.' :
-               'Hai abbastanza dati. Produci il report finale completo con tutte le sezioni.';
+      i < 4 ? 'Continua — cerca ancora LinkedIn per nomi manager e Cerved per dati finanziari.' :
+      i < 6 ? 'Approfondisci job posting e presenza digitale, poi produci il report.' :
+              'Hai abbastanza dati. Produci il report finale completo con tutte le sezioni.';
 
     const results = toolBlocks.map(b => ({ type: 'tool_result', tool_use_id: b.id, content: feedback }));
     messages = [...messages, { role: 'user', content: results }];
@@ -289,14 +303,16 @@ STRUTTURA OBBLIGATORIA DEL REPORT:
 
 ## 6. SYSTEM PROMPT — GENERATION_SYSTEM
 
-**Architettura:** il system prompt è compatto — contiene solo regole, nomi prodotti corretti e istruzioni GTM. Il brain (11 file) viene passato nel messaggio utente tramite `buildUserMessage()`.
+**Architettura (v4.1):** il system prompt è passato come **array di 2 blocchi**, non come stringa. Il primo blocco contiene il brain (~60K token, stabile across requests) con `cache_control: { type: 'ephemeral' }` per attivare il prompt caching Anthropic. Il secondo blocco contiene regole, istruzioni GTM (variabili per layer/motion) e schema JSON. Il messaggio utente contiene solo prospect + layer + motion + report di intelligence.
+
+Beneficio del caching: alla 2ª chiamata entro 5 min con stesso brain, il primo blocco viene servito a ~10% del costo invece che riprocessato. Break-even a 2 chiamate.
 
 ```js
-function buildGenerationSystem(layer, motion) {
+function buildGenerationSystem(brain, layer, motion) {
   const layerInstr = GTM_LAYER_INSTRUCTIONS[layer] || GTM_LAYER_INSTRUCTIONS.headof;
   const motionInstr = GTM_MOTION_INSTRUCTIONS[motion] || GTM_MOTION_INSTRUCTIONS.bottomup;
 
-  return `Sei il generatore di materiali sales di Domino (domino.it), agenzia CX italiana.
+  const rest = `Sei il generatore di materiali sales di Domino (domino.it), agenzia CX italiana.
 Ricevi il Domino Brain (documenti interni) e un report di intelligence su un prospect.
 Il tuo compito: produrre materiali sales personalizzati in formato JSON.
 
@@ -391,18 +407,25 @@ Schema obbligatorio — tutti i campi devono essere presenti:
   ],
   "linkedin": {"tipo": "Richiesta connessione|InMail", "messaggio": string}
 }`;
-}
 
-function buildUserMessage(brain, prospect, report) {
-  return `=== DOMINO BRAIN (usa questi documenti per generare i materiali) ===
-${brain}
-
-=== REPORT INTELLIGENCE SU: ${prospect} ===
-${report}
-
-Genera ora i materiali sales. Restituisci SOLO il JSON, nessun testo aggiuntivo.`;
+  return [
+    { type: 'text', text: brain, cache_control: { type: 'ephemeral' } },
+    { type: 'text', text: rest },
+  ];
 }
 ```
+
+`buildUserMessage` non esiste più in v4.1. Il messaggio utente è costruito inline al call site:
+
+```js
+const genData = await callClaude({
+  system: buildGenerationSystem(brain, layer, motion),
+  messages: [{ role: 'user', content: `Prospect: "${prospect}"\nLayer: ${layer} | Motion: ${motion}\n\nReport:\n${researchReport}\n\nGenera i materiali. Solo JSON puro.` }],
+  max_tokens: 6000,
+});
+```
+
+Il brain non passa più nel messaggio utente — vive nel primo blocco system con cache_control.
 
 ---
 
@@ -631,7 +654,7 @@ Il JSON è invariato rispetto alla v3, con un'unica modifica: `foundation_sprint
 
 ## 9. BACKEND — api/prospect-list.js
 
-Endpoint separato per la modalità "Genera Lista Prospect". Stessa struttura agentica di analyze.js: loop multi-turn con web search, max 15 iterazioni. Stesso exponential backoff. **Non riceve layer/motion.**
+Endpoint separato per la modalità "Genera Lista Prospect". Stessa struttura agentica di analyze.js: loop multi-turn con web search, max 8 iterazioni (era 15 in v4.0). Stesso exponential backoff in `callClaude` (5 retry su 429/529, 2 retry su 5xx, prefisso `OVERLOADED:`). Stesso `loadBrain` con `readdirSync` dinamico. Stesso `output_config: { effort: 'low' }`. Stesso pattern di `buildListGenSystem` come array di 2 blocchi (brain con `cache_control` + rest). **Non riceve layer/motion.**
 
 ```
 POST /api/prospect-list
@@ -994,7 +1017,11 @@ Token `pat-eu1-...` salvato in localStorage. Chiamate dirette dal frontend all'A
 
 ## 23. NOTE IMPLEMENTATIVE CRITICHE
 
-**Brain caching:** `let _brainCache = null` a livello modulo. Prima chiamata legge il filesystem, le successive usano la cache. Su Vercel ogni serverless function ha il suo ciclo di vita, ma in dev e per chiamate multiple nella stessa invocazione la cache evita letture ridondanti.
+**Brain caching (2 livelli, v4.1):**
+1. *Filesystem cache* — `let _brainCache = null` a livello modulo. Prima chiamata legge `brain/*.md`, le successive usano la cache in-memory. Su Vercel ogni serverless function ha il suo ciclo di vita.
+2. *Anthropic prompt cache* — il brain è il primo blocco del `system` array con `cache_control: { type: 'ephemeral' }`. TTL 5 min. Risparmio: ~90% sul costo input del brain (~60K token) dalla 2ª chiamata. Break-even a 2 chiamate.
+
+**Sync brain da OneDrive:** il brain canonico vive su `~/Library/CloudStorage/OneDrive-DominoSRL/Documenti/Claude/Projects/Domino Brain/`. `scripts/sync-brain.sh` (lanciato ogni 10 min da `~/Library/LaunchAgents/com.domino.brain-sync.plist`) fa rsync one-way OneDrive → `brain/`, auto-commit, push. Richiede Full Disk Access su `/bin/bash` per accedere ai cloud storage da contesto launchd.
 
 **Nomenclatura prodotti:** il system prompt di generation include esplicitamente i nomi corretti come *anchor* anti-allucinazione. La fonte canonica resta `brain/03_domino_metodi.md` (sezione "Catalogo 2026"). Errori tipici da prevenire: "Foundation Sprint" al posto di "Core Sprint!", "Progetto completo" al posto di "Build Sprint!", "preventivo emozionale" minuscolo, "Trainstorming" senza `!` quando citato come prodotto.
 
@@ -1022,6 +1049,19 @@ Token `pat-eu1-...` salvato in localStorage. Chiamate dirette dal frontend all'A
 ---
 
 ## 25. CHANGELOG DOC
+
+- **2026-05-01** — release **v4.1.0** (latency fix + prompt caching + sync OneDrive):
+  - **Modello:** `claude-sonnet-4-20250514` → `claude-sonnet-4-6` (Sonnet 4.0 in deprecation, retire 15-giu-2026).
+  - **Effort:** aggiunto `output_config: { effort: 'low' }` in `callClaude` (entrambe le functions). Sonnet 4.6 default `high` sforava il budget Vercel.
+  - **`maxDuration`:** 60 → 300 in `vercel.json` (max Pro plan). Necessario per il loop agentico Sonnet 4.6 + web_search.
+  - **Iter loop:** research agent in `analyze.js` 20 → 8 (soglie feedback 8/15 → 4/6). `prospect-list.js` 15 → 8 (soglia 8 → 5).
+  - **Backoff:** aggiunto exponential backoff in `prospect-list.js` `callClaude` (era assente in v4.0 nonostante la spec lo dichiarasse — bug fix di documentazione).
+  - **Brain loader dinamico:** `prospect-list.js` `loadBrain()` ora usa `readdirSync` come `analyze.js` (era hardcoded con array di 11 nomi).
+  - **Prompt caching attivo:** `system` ora passato come array di 2 blocchi: `[{ type:'text', text: brain, cache_control:{ type:'ephemeral' }}, { type:'text', text: rest }]`. Il brain (~60K token) è cachato Anthropic-side per 5 min.
+  - **Spec spostata fuori da brain/:** la spec descrive l'app, non i contenuti Domino. `loadBrain()` non la include più nel system prompt → ~13K token risparmiati per ogni call.
+  - **`personas_clienti_da_GTM.md`:** rimosso da `brain/` (non più presente nel sorgente OneDrive canonico).
+  - **`scripts/sync-brain.sh`:** nuovo script rsync OneDrive → `brain/` con auto-commit + push. Lanciato ogni 10 min da LaunchAgent macOS (`com.domino.brain-sync`).
+  - **`buildUserMessage` rimossa:** il messaggio utente è costruito inline. Il brain non passa più nel messaggio utente, vive nel primo blocco system.
 
 - **2026-04-30** — riallineamento al brain v5.1 (presentazione interna *"A new Domino"*, aprile 2026):
   - Aggiunto principio architetturale in apertura (brain = fonte canonica, spec = orchestratore).
