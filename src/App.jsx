@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import pptxgen from 'pptxgenjs';
+import { exportPPT } from './pptBuilder.js';
 import { LOGO_DATA_URI } from './logoBase64.js';
 
 // ─── Design System ────────────────────────────────────────────────────────────
@@ -80,57 +80,6 @@ async function syncHubSpot(token, result) {
   return { isNew: !existing };
 }
 
-// ─── PPT Export ───────────────────────────────────────────────────────────────
-function exportPPT(result) {
-  const prs = new pptxgen();
-  prs.layout = 'LAYOUT_WIDE';
-  const p = result.prospect, d = result.deck;
-  const num = (slide, n) => slide.addText(String(n), { x:12.0, y:0.15, w:0.8, h:0.3, fontSize:9, bold:true, color:'E8272A', fontFace:'Helvetica', align:'right' });
-  const logo = (slide, white=false) => slide.addText('domino', { x:0.4, y:0.18, w:1.2, h:0.3, fontSize:11, bold:true, color: white ? 'FFFFFF' : 'E8272A', fontFace:'Helvetica', charSpacing:2 });
-
-  const s1 = prs.addSlide(); s1.background = { color:'111111' }; logo(s1); num(s1,1);
-  s1.addText(p.nome, { x:0.4,y:0.6,w:12,h:0.4, fontSize:11,color:'666666',fontFace:'Helvetica' });
-  s1.addText(d.slide_1_titolo, { x:0.4,y:1.4,w:11.5,h:2.2, fontSize:34,bold:true,color:'FFFFFF',fontFace:'Helvetica',charSpacing:-1 });
-  s1.addText(d.slide_1_contenuto, { x:0.4,y:3.8,w:10,h:2.2, fontSize:15,color:'AAAAAA',fontFace:'Helvetica',breakLine:true });
-  s1.addText(`${new Date().toLocaleDateString('it-IT')} · domino.it`, { x:0.4,y:6.8,w:8,h:0.3, fontSize:9,color:'444444',fontFace:'Helvetica' });
-
-  const s2 = prs.addSlide(); s2.background = { color:'FFFFFF' }; logo(s2); num(s2,2);
-  s2.addShape(prs.ShapeType.rect, { x:0.4,y:0.65,w:0.05,h:0.7, fill:{color:'E8272A'} });
-  s2.addText(d.slide_2_titolo, { x:0.6,y:0.6,w:11.5,h:0.9, fontSize:26,bold:true,color:'111111',fontFace:'Helvetica',charSpacing:-0.5 });
-  s2.addText(d.slide_2_contenuto, { x:0.4,y:1.8,w:12,h:4.5, fontSize:15,color:'444444',fontFace:'Helvetica',breakLine:true,lineSpacingMultiple:1.4 });
-
-  const s3 = prs.addSlide(); s3.background = { color:'FFFFFF' }; logo(s3); num(s3,3);
-  s3.addShape(prs.ShapeType.rect, { x:0.4,y:0.65,w:0.05,h:0.7, fill:{color:'E8272A'} });
-  s3.addText(d.slide_3_titolo, { x:0.6,y:0.6,w:11.5,h:0.9, fontSize:26,bold:true,color:'111111',fontFace:'Helvetica',charSpacing:-0.5 });
-  s3.addText(d.slide_3_contenuto, { x:0.4,y:1.8,w:12,h:3.5, fontSize:15,color:'444444',fontFace:'Helvetica',breakLine:true,lineSpacingMultiple:1.4 });
-  const ss = p.strumenti_suggeriti || {};
-  const tools = [ss.core_sprint && 'Core Sprint', ss.design_sprint_tipo && `${ss.design_sprint_tipo} Design Sprint!`, ss.preventivo_emozionale && 'Preventivo Emozionale'].filter(Boolean);
-  if (tools.length) {
-    s3.addShape(prs.ShapeType.rect, { x:0.4,y:5.4,w:12,h:0.06, fill:{color:'E5E7EB'} });
-    s3.addText('Strumenti: ' + tools.join('  ·  '), { x:0.4,y:5.6,w:12,h:0.4, fontSize:11,bold:true,color:'E8272A',fontFace:'Helvetica' });
-  }
-
-  const s4 = prs.addSlide(); s4.background = { color:'FFFFFF' };
-  s4.addShape(prs.ShapeType.rect, { x:0,y:0,w:6.2,h:7.5, fill:{color:'111111'} }); num(s4,4);
-  s4.addText('domino', { x:0.4,y:0.18,w:1.5,h:0.3, fontSize:11,bold:true,color:'E8272A',fontFace:'Helvetica' });
-  s4.addText(d.slide_4_titolo, { x:6.4,y:0.4,w:6.6,h:0.7, fontSize:20,bold:true,color:'E8272A',fontFace:'Helvetica' });
-  (p.casi_studio||[]).forEach((cs,i) => {
-    const y = 0.9 + i*2.0;
-    s4.addShape(prs.ShapeType.rect, { x:0.4,y,w:0.04,h:1.4, fill:{color: i===0?'E8272A':i===1?'3B82F6':'888888'} });
-    s4.addText(cs.cliente, { x:0.6,y,w:5.4,h:0.4, fontSize:13,bold:true,color:'FFFFFF',fontFace:'Helvetica' });
-    s4.addText(cs.progetto, { x:0.6,y:y+0.38,w:5.4,h:0.35, fontSize:11,color:'AAAAAA',fontFace:'Helvetica' });
-    if (cs.kpi) s4.addText('📊 '+cs.kpi, { x:0.6,y:y+0.72,w:5.4,h:0.3, fontSize:10,color:'4ADE80',fontFace:'Helvetica' });
-    if (cs.perche_affine) s4.addText('→ '+cs.perche_affine, { x:0.6,y:y+1.0,w:5.4,h:0.35, fontSize:9,color:'888888',fontFace:'Helvetica' });
-  });
-  s4.addText(d.slide_4_contenuto, { x:6.4,y:1.2,w:6.4,h:5.5, fontSize:13,color:'444444',fontFace:'Helvetica',breakLine:true,lineSpacingMultiple:1.5 });
-
-  const s5 = prs.addSlide(); s5.background = { color:'E8272A' }; logo(s5,true); num(s5,5);
-  s5.addText(d.slide_5_titolo, { x:0.4,y:1.6,w:12.2,h:1.8, fontSize:36,bold:true,color:'FFFFFF',fontFace:'Helvetica',charSpacing:-1 });
-  s5.addText(d.slide_5_contenuto, { x:0.4,y:3.6,w:10,h:2.5, fontSize:16,color:'FFCCCC',fontFace:'Helvetica',breakLine:true,lineSpacingMultiple:1.5 });
-  s5.addText('domino.it  ·  +39 011 544770  ·  Torino & Venezia', { x:0.4,y:6.8,w:10,h:0.3, fontSize:10,color:'FFAAAA',fontFace:'Helvetica' });
-
-  prs.writeFile({ fileName: `domino-prospect-${(p.nome||'export').replace(/\s+/g,'-').toLowerCase()}.pptx` });
-}
 
 // ─── UI Primitives ────────────────────────────────────────────────────────────
 function Label({ children }) { return <div style={{ fontSize:'10px',fontWeight:700,letterSpacing:'0.1em',textTransform:'uppercase',color:C.muted,marginBottom:'4px' }}>{children}</div>; }
