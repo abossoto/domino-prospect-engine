@@ -53,16 +53,16 @@ WORKFLOW: 3 touch in 3 settimane. Touch 2 = contenuto settore, zero pitch.`,
   headof: `LAYER GTM: Head of (Director / VP / Responsabile area)
 FRAME: "Questa e' la scelta giusta - te lo dimostriamo prima di spendere."
 Bisogno reale: ridurre rischio percepito, munizioni per vendita interna al CEO.
-MAIL: pain point settore specifico, dato dal report, caso Domino affine con KPI, Core Sprint come validazione (6000 euro, 1 settimana), CTA call 30min.
-DECK: settore oggi, 3 pain point verticale, case affine con KPI, Core Sprint, next step basso rischio.
-WORKFLOW: 4 touch in 4 settimane. Gg16 proponi Core Sprint con investimento (6000 euro). Gg26 telefono.`,
+MAIL: pain point settore specifico, dato dal report, caso Domino affine con KPI, Core Sprint! come validazione (6000 euro, 1 settimana), CTA call 30min.
+DECK: settore oggi, 3 pain point verticale, case affine con KPI, Core Sprint!, next step basso rischio.
+WORKFLOW: 4 touch in 4 settimane. Gg16 proponi Core Sprint! con investimento (6000 euro). Gg26 telefono.`,
 
   manager: `LAYER GTM: Manager / Operativo (Resp. progetto / Specialista)
 FRAME: "I feel your pain - lavorerai meno e meglio."
 Il manager teme riunioni infinite, brief che cambiano, il progetto che diventa il suo problema per mesi.
 IMPORTANTE: usa i file GTM di settore (07-11) per citare sales play e audit tattici (1500 euro).
 MAIL: oggetto tecnico specifico, osservazione concreta dalla loro situazione, come Domino gestisce il processo, audit tattico se pertinente (1500 euro), CTA call tecnica 20min.
-DECK: analisi situazione attuale, come lavora Domino, metriche operative, Audit tattico o Design Sprint scope fisso, come sara' lavorare insieme.
+DECK: analisi situazione attuale, come lavora Domino, metriche operative, Audit tattico o Design Sprint! scope fisso, come sara' lavorare insieme.
 WORKFLOW: 4 touch in 3 settimane veloci. Gg12 proponi Audit tattico (1500 euro). Gg18 telefono.`,
 };
 
@@ -86,14 +86,28 @@ function buildGenerationSystem(brain, layer = 'headof', motion = 'bottomup') {
 
 Sei il generatore di materiali sales di Domino.
 
-NOMENCLATURA PRODOTTI - OBBLIGATORIO:
-- "Core Sprint" (NON "Foundation Sprint" - quello e' il nome vecchio, non usarlo mai)
-- "Design Sprint" o "[Tipo] Design Sprint!" (Service/CX/Brand/Digital Marketing/Website/Intranet)
-- "Preventivo Emozionale"
+REGOLA DI NOTAZIONE CANONICA - VINCOLO ASSOLUTO:
+Tutti i prodotti Domino terminano con il punto esclamativo "!". Non e' enfasi: e' il NOME UFFICIALE del prodotto. Scrivere "Core Sprint" senza "!" e' un ERRORE che svaluta il marchio. Vale per OGNI occorrenza in OGNI campo del JSON: oggetti email, corpi mail, slide, messaggi LinkedIn, motivazioni dei badge, casi studio.
+
+CORRETTO: "Core Sprint!", "Design Sprint!", "Build Sprint!", "Trainstorming!", "Brain & Identity Design Sprint!", "Service Design Sprint!", "CX Design Sprint!", "Brand Design Sprint!", "Digital Marketing Design Sprint!", "Website Design Sprint!", "Intranet Design Sprint!"
+ERRATO: "Core Sprint", "Design Sprint", "Build Sprint", "Trainstorming", "il Core Sprint del cliente", "un Design Sprint di 4 giorni"
+Eccezioni (NON portano "!"): "Preventivo Emozionale" (storico), "Audit tattico" (descrittivo).
+
+Prima di restituire il JSON, RILEGGI ogni occorrenza dei nomi prodotto e verifica che il "!" finale sia presente.
+
+CATALOGO 2026 - prodotti Domino (fonte canonica: brain/03_domino_metodi.md):
+- "Core Sprint!" (6.000 euro, 1-2 giorni) - allineamento strategico, NON "Foundation Sprint" (linguaggio startup, noi serviamo enterprise).
+- "Design Sprint!" (10.000 euro, 4 giorni) - prototipo testato. Specializzazioni: Service / CX / Brand / Digital Marketing / Website / Intranet / Brain & Identity (variante di punta 2026, fondamenta brain aziendale + design system).
+- "Build Sprint!" (20-60K euro, 8-52 settimane) - esecuzione a blocchi di 2 settimane o 1 mese, perimetro aperto. Sostituisce la voce storica "Progetto completo".
+- "Trainstorming!" (da 15.000 euro, 12 mesi, 3 sessioni) - change management. Era rituale interno dal 2010, dal 2026 anche servizio venduto.
+- "Preventivo Emozionale" - tool commerciale (minisite preventivo con analytics).
+- "Audit tattico" (1.500 euro, 1-2 settimane) - entry point.
+
+CORNICE TRASVERSALE: "Decision Design" - progettazione delle conseguenze (trade-off, scenari, effetti a 6-12 mesi). Slogan: "da come si naviga a come si sceglie". Citarlo come postura strategica, non come tool.
 
 REGOLE: usa SOLO info dal report. Prima frase = problema del prospect. Tono diretto, concreto.
-CASE STUDY - REGOLA DEI 3: [0] stesso settore/sfida con KPI [1] settore simile con KPI [2] metodologia specifica. MAI solo Fiat e Costa Crociere.
-BADGE: core_sprint se stakeholder multipli/no chiarezza. design_sprint_tipo = Service/CX/Brand/Digital Marketing/Website/Intranet. preventivo_emozionale se ciclo lungo/rete indiretta.
+CASE STUDY - REGOLA DEI 3: [0] stesso settore/sfida con KPI [1] settore simile con KPI [2] metodologia specifica (es. Brain & Identity Design Sprint!, Build Sprint!, Preventivo Emozionale, GEO, AI B2B). MAI solo Fiat e Costa Crociere.
+BADGE: core_sprint se stakeholder multipli/no chiarezza. design_sprint_tipo = Service/CX/Brand/Digital Marketing/Website/Intranet/Brain & Identity. preventivo_emozionale se ciclo lungo/rete indiretta.
 
 ${layerInstr}
 
@@ -101,7 +115,7 @@ ${motionInstr}
 
 Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
 
-{"prospect":{"nome":"","settore":"","dimensione":"PMI|Mid-market|Enterprise","fatturato_stimato":"","mercati":"","persone_chiave":[{"nome":"","ruolo":"","anzianita":""}],"segnali_recenti":[""],"sfide_probabili":["","",""],"maturita_digitale":"","decisore_target":"","hook":"","strumenti_suggeriti":{"core_sprint":true,"core_sprint_motivazione":"","design_sprint_tipo":"","design_sprint_motivazione":"","preventivo_emozionale":true,"preventivo_emozionale_motivazione":""},"casi_studio":[{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"affine"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"settore"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"metodologia"}]},"mail":{"oggetto":"","corpo":""},"deck":{"slide_1_titolo":"","slide_1_contenuto":"","slide_2_titolo":"","slide_2_contenuto":"","slide_3_titolo":"","slide_3_contenuto":"","slide_4_titolo":"Chi lha fatto con noi","slide_4_contenuto":"","slide_5_titolo":"","slide_5_contenuto":""},"workflow":[{"giorno":1,"canale":"LinkedIn","azione":""},{"giorno":3,"canale":"Email","azione":""},{"giorno":7,"canale":"LinkedIn","azione":""},{"giorno":10,"canale":"Email","azione":""},{"giorno":14,"canale":"Telefono","azione":""}],"linkedin":{"tipo":"Richiesta connessione|InMail","messaggio":""}}`;
+{"prospect":{"nome":"","settore":"","dimensione":"PMI|Mid-market|Enterprise","fatturato_stimato":"","mercati":"","persone_chiave":[{"nome":"","ruolo":"","anzianita":""}],"segnali_recenti":[""],"sfide_probabili":["","",""],"maturita_digitale":"","decisore_target":"","hook":"","strumenti_suggeriti":{"core_sprint":true,"core_sprint_motivazione":"","design_sprint_tipo":"Service|CX|Brand|Digital Marketing|Website|Intranet|Brain & Identity","design_sprint_motivazione":"","preventivo_emozionale":true,"preventivo_emozionale_motivazione":""},"casi_studio":[{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"affine"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"settore"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"metodologia"}]},"mail":{"oggetto":"","corpo":""},"deck":{"slide_1_titolo":"","slide_1_contenuto":"","slide_2_titolo":"","slide_2_contenuto":"","slide_3_titolo":"","slide_3_contenuto":"","slide_4_titolo":"Chi lha fatto con noi","slide_4_contenuto":"","slide_5_titolo":"","slide_5_contenuto":""},"workflow":[{"giorno":1,"canale":"LinkedIn","azione":""},{"giorno":3,"canale":"Email","azione":""},{"giorno":7,"canale":"LinkedIn","azione":""},{"giorno":10,"canale":"Email","azione":""},{"giorno":14,"canale":"Telefono","azione":""}],"linkedin":{"tipo":"Richiesta connessione|InMail","messaggio":""}}`;
 }
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -144,12 +158,61 @@ function extractText(data) {
   return data.content?.filter(b => b.type === 'text').map(b => b.text).join('\n') || '';
 }
 
+// ──────────────────────────────────────────────────────────────────────────────
+// Fail-safe: garantisce la notazione canonica con "!" finale per i prodotti
+// Domino anche se il modello l'ha omessa nel JSON. Si applica a TUTTE le
+// stringhe del JSON (oggetti email, corpi, slide, motivazioni badge, casi studio,
+// messaggi LinkedIn, ecc.).
+// ⚠️ Ordine: i nomi piu' lunghi DEVONO venire prima dei piu' corti per evitare
+// che "Service Design Sprint" venga matchato come "Design Sprint" prima di
+// essere riconosciuto come variante. Il negative lookahead (?!!) impedisce di
+// aggiungere doppi "!!" se il "!" e' gia' presente.
+// ──────────────────────────────────────────────────────────────────────────────
+const PRODUCT_NORMALIZATIONS = [
+  [/\bBrain & Identity Design Sprint\b(?!!)/g, 'Brain & Identity Design Sprint!'],
+  [/\bDigital Marketing Design Sprint\b(?!!)/g, 'Digital Marketing Design Sprint!'],
+  [/\bService Design Sprint\b(?!!)/g, 'Service Design Sprint!'],
+  [/\bWebsite Design Sprint\b(?!!)/g, 'Website Design Sprint!'],
+  [/\bIntranet Design Sprint\b(?!!)/g, 'Intranet Design Sprint!'],
+  [/\bBrand Design Sprint\b(?!!)/g, 'Brand Design Sprint!'],
+  [/\bCX Design Sprint\b(?!!)/g, 'CX Design Sprint!'],
+  [/\bDesign Sprint\b(?!!)/g, 'Design Sprint!'],
+  [/\bCore Sprint\b(?!!)/g, 'Core Sprint!'],
+  [/\bBuild Sprint\b(?!!)/g, 'Build Sprint!'],
+  [/\bTrainstorming\b(?![!a-zA-Z])/g, 'Trainstorming!'],
+];
+
+function normalizeProductString(s) {
+  if (typeof s !== 'string') return s;
+  let out = s;
+  for (const [pattern, replacement] of PRODUCT_NORMALIZATIONS) {
+    out = out.replace(pattern, replacement);
+  }
+  return out;
+}
+
+function normalizeProductNames(node) {
+  if (typeof node === 'string') return normalizeProductString(node);
+  if (Array.isArray(node)) return node.map(normalizeProductNames);
+  if (node && typeof node === 'object') {
+    const out = {};
+    for (const k of Object.keys(node)) out[k] = normalizeProductNames(node[k]);
+    return out;
+  }
+  return node;
+}
+
 function parseJSON(text) {
   const clean = text.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
-  try { return JSON.parse(clean); } catch {}
-  const s = clean.indexOf('{'), e = clean.lastIndexOf('}');
-  if (s !== -1 && e !== -1) { try { return JSON.parse(clean.slice(s, e + 1)); } catch {} }
-  throw new Error('JSON non valido nella risposta del modello');
+  let parsed = null;
+  try { parsed = JSON.parse(clean); } catch {}
+  if (!parsed) {
+    const s = clean.indexOf('{'), e = clean.lastIndexOf('}');
+    if (s !== -1 && e !== -1) { try { parsed = JSON.parse(clean.slice(s, e + 1)); } catch {} }
+  }
+  if (!parsed) throw new Error('JSON non valido nella risposta del modello');
+  // Fail-safe finale: assicura il "!" canonico nei nomi prodotto Domino.
+  return normalizeProductNames(parsed);
 }
 
 async function runResearch(prospect, note) {
