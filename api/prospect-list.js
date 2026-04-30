@@ -18,7 +18,7 @@ function loadBrain() {
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function callClaude({ system, messages, tools, max_tokens = 8000 }) {
-  const body = { model: 'claude-sonnet-4-6', max_tokens, system, messages, output_config: { effort: 'medium' } };
+  const body = { model: 'claude-sonnet-4-6', max_tokens, system, messages, output_config: { effort: 'low' } };
   if (tools?.length) body.tools = tools;
   const MAX_RETRIES = 5;
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
@@ -136,12 +136,12 @@ Escludi clienti Domino già noti: Rollon, Bitron, IVECO, Case IH, Stellantis, Co
   let data = await callClaude({ system: LIST_RESEARCH_SYSTEM, messages, tools: [webSearch], max_tokens: 6000 });
 
   let i = 0;
-  while (data.stop_reason === 'tool_use' && i < 15) {
+  while (data.stop_reason === 'tool_use' && i < 8) {
     i++;
     const toolBlocks = data.content.filter(b => b.type === 'tool_use');
     if (!toolBlocks.length) break;
     messages = [...messages, { role: 'assistant', content: data.content }];
-    const feedback = i < 8
+    const feedback = i < 5
       ? `Continua — cerca altre aziende del settore ${settore}. Verifica i siti di quelle già trovate.`
       : 'Hai trovato abbastanza aziende. Ora hai tutti i dati per produrre la lista finale.';
     const results = toolBlocks.map(b => ({ type: 'tool_result', tool_use_id: b.id, content: feedback }));

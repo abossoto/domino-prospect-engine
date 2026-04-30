@@ -137,7 +137,7 @@ Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function callClaude({ system, messages, tools, max_tokens = 8000 }) {
-  const body = { model: 'claude-sonnet-4-6', max_tokens, system, messages, output_config: { effort: 'medium' } };
+  const body = { model: 'claude-sonnet-4-6', max_tokens, system, messages, output_config: { effort: 'low' } };
   if (tools?.length) body.tools = tools;
   const MAX_RETRIES = 5;
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
@@ -256,14 +256,14 @@ Fai almeno 8-10 ricerche. Produci il report con tutte le sezioni.`;
   let messages = [{ role: 'user', content: userContent }];
   let data = await callClaude({ system: RESEARCH_SYSTEM, messages, tools: [webSearch], max_tokens: 8000 });
   let i = 0;
-  while (data.stop_reason === 'tool_use' && i < 20) {
+  while (data.stop_reason === 'tool_use' && i < 8) {
     i++;
     const toolBlocks = data.content.filter(b => b.type === 'tool_use');
     if (!toolBlocks.length) break;
     messages = [...messages, { role: 'assistant', content: data.content }];
-    const feedback = i < 8
+    const feedback = i < 4
       ? 'Continua - cerca LinkedIn per nomi manager e Cerved per dati finanziari. Per ogni news recente, raccogli URL della fonte.'
-      : i < 15
+      : i < 6
       ? 'Approfondisci job posting e presenza digitale. Per i segnali recenti, ricorda di raccogliere URL fonte (omettili se non li trovi).'
       : 'Hai abbastanza dati. Produci il report finale completo.';
     const results = toolBlocks.map(b => ({ type: 'tool_result', tool_use_id: b.id, content: feedback }));
