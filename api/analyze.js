@@ -174,16 +174,6 @@ function extractText(data) {
   return data.content?.filter(b => b.type === 'text').map(b => b.text).join('\n') || '';
 }
 
-// ──────────────────────────────────────────────────────────────────────────────
-// Fail-safe: garantisce la notazione canonica con "!" finale per i prodotti
-// Domino anche se il modello l'ha omessa nel JSON. Si applica a TUTTE le
-// stringhe del JSON (oggetti email, corpi, slide, motivazioni badge, casi studio,
-// messaggi LinkedIn, ecc.).
-// ⚠️ Ordine: i nomi piu' lunghi DEVONO venire prima dei piu' corti per evitare
-// che "Service Design Sprint" venga matchato come "Design Sprint" prima di
-// essere riconosciuto come variante. Il negative lookahead (?!!) impedisce di
-// aggiungere doppi "!!" se il "!" e' gia' presente.
-// ──────────────────────────────────────────────────────────────────────────────
 const PRODUCT_NORMALIZATIONS = [
   [/\bBrain & Identity Design Sprint\b(?!!)/g, 'Brain & Identity Design Sprint!'],
   [/\bDigital Marketing Design Sprint\b(?!!)/g, 'Digital Marketing Design Sprint!'],
@@ -218,13 +208,6 @@ function normalizeProductNames(node) {
   return node;
 }
 
-// ──────────────────────────────────────────────────────────────────────────────
-// Normalizzazione segnali_recenti: garantisce verificabilita'.
-// Schema atteso: array di {testo, data, fonte_url, fonte_titolo}.
-// SOLUZIONE A: se un segnale non ha fonte_url valida, lo OMETTIAMO.
-// Backward-compat: se arriva una string (vecchio schema), la scartiamo perche'
-// non ha URL associata. Meglio array vuoto che "informazione senza prova".
-// ──────────────────────────────────────────────────────────────────────────────
 function isValidUrl(u) {
   if (typeof u !== 'string' || !u.trim()) return false;
   return /^https?:\/\/\S+/i.test(u.trim());
@@ -234,10 +217,8 @@ function normalizeSignals(arr) {
   if (!Array.isArray(arr)) return [];
   return arr
     .map(s => {
-      // Vecchio formato (string) - niente URL - omettere
       if (typeof s === 'string') return null;
       if (!s || typeof s !== 'object') return null;
-      // Nuovo formato - richiede fonte_url valida
       if (!isValidUrl(s.fonte_url)) return null;
       return {
         testo: String(s.testo || '').trim(),
@@ -257,4 +238,60 @@ function parseJSON(text) {
     const s = clean.indexOf('{'), e = clean.lastIndexOf('}');
     if (s !== -1 && e !== -1) { try { parsed = JSON.parse(clean.slice(s, e + 1)); } catch {} }
   }
-  if (!parsed) thr
+  if (!parsed) throw new Error('JSON non valido nella risposta del modello');
+
+  if (parsed.prospect) {
+    parsed.prospect.segnali_recenti = normalizeSignals(parsed.prospect.segnali_recenti);
+  }
+
+  return normalizeProductNames(parsed);
+}
+
+async function runResearch(prospect, note) {
+  const webSearch = { type: 'web_search_20250305', name: 'web_search' };
+  const userContent = `Produci un dossier completo su: "${prospect}"${note ? `\nNote: ${note}` : ''}
+Cerca: sito web, dati finanziari Cerved/CCIAA, news ultimi 12 mesi, LinkedIn con nomi reali, job posting, presenza digitale.
+Per ogni segnale recente raccogli SEMPRE l'URL della fonte. Senza URL non includerlo.
+Fai almeno 8-10 ricerche. Produci il report con tutte le sezioni.`;
+  let messages = [{ role: 'user', content: userContent }];
+  let data = await callClaude({ system: RESEARCH_SYSTEM, messages, tools: [webSearch], max_tokens: 8000 });
+  let i = 0;
+  while (data.stop_reason === 'tool_use' && i < 20) {
+    i++;
+    const toolBlocks = data.content.filter(b => b.type === 'tool_use');
+    if (!toolBlocks.length) break;
+    messages = [...messages, { role: 'assistant', content: data.content }];
+    const feedback = i < 8
+      ? 'Continua - cerca LinkedIn per nomi manager e Cerved per dati finanziari. Per ogni news recente, raccogli URL della fonte.'
+      : i < 15
+      ? 'Approfondisci job posting e presenza digitale. Per i segnali recenti, ricorda di raccogliere URL fonte (omettili se non li trovi).'
+      : 'Hai abbastanza dati. Produci il report finale completo.';
+    const results = toolBlocks.map(b => ({ type: 'tool_result', tool_use_id: b.id, content: feedback }));
+    messages = [...messages, { role: 'user', content: results }];
+    data = await callClaude({ system: RESEARCH_SYSTEM, messages, tools: [webSearch], max_tokens: 8000 });
+  }
+  return extractText(data);
+}
+
+export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+  const { prospect, note, layer = 'headof', motion = 'bottomup' } = req.body || {};
+  if (!prospect?.trim()) return res.status(400).json({ error: 'Prospect richiesto' });
+  try {
+    const brain = loadBrain();
+    const researchReport = await runResearch(prospect.trim(), note?.trim());
+    const genData = await callClaude({
+      system: buildGenerationSystem(brain, layer, motion),
+      messages: [{ role: 'user', content: `Prospect: "${prospect}"\nLayer: ${layer} | Motion: ${motion}\n\nReport:\n${researchReport}\n\nGenera i materiali. Solo JSON puro.` }],
+      max_tokens: 6000,
+    });
+    return res.status(200).json(parseJSON(extractText(genData)));
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ error: err.message });
+  }
+}
