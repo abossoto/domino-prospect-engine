@@ -233,6 +233,37 @@ function normalizeSignals(arr) {
     .filter(Boolean);
 }
 
+// Riparazione mirata di un classico bug LLM: chiusura prematura del root
+// con un "}" extra, seguita dal resto dei campi (es. {"prospect":{...}},
+// "mail":{...},...}). Cammina la stringa con state-tracker e rimuove i "}"
+// spuri che porterebbero la profondita' a 0 mentre c'e' ancora ',"chiave":...'
+// dopo. Iterativo: gestisce piu' "}" extra in sequenza.
+function repairExtraRootCloses(text) {
+  let result = text;
+  for (let pass = 0; pass < 8; pass++) {
+    let depth = 0, inString = false, escape = false, fixAt = -1;
+    for (let i = 0; i < result.length; i++) {
+      const c = result[i];
+      if (escape) { escape = false; continue; }
+      if (c === '\\') { escape = true; continue; }
+      if (c === '"') { inString = !inString; continue; }
+      if (inString) continue;
+      if (c === '{' || c === '[') depth++;
+      else if (c === '}' || c === ']') {
+        depth--;
+        if (depth === 0 && c === '}') {
+          let j = i + 1;
+          while (j < result.length && /\s/.test(result[j])) j++;
+          if (result[j] === ',') { fixAt = i; break; }
+        }
+      }
+    }
+    if (fixAt === -1) return result;
+    result = result.slice(0, fixAt) + result.slice(fixAt + 1);
+  }
+  return result;
+}
+
 function parseJSON(text) {
   const clean = text.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
   let parsed = null;
@@ -240,6 +271,9 @@ function parseJSON(text) {
   if (!parsed) {
     const s = clean.indexOf('{'), e = clean.lastIndexOf('}');
     if (s !== -1 && e !== -1) { try { parsed = JSON.parse(clean.slice(s, e + 1)); } catch {} }
+  }
+  if (!parsed) {
+    try { parsed = JSON.parse(repairExtraRootCloses(clean)); } catch {}
   }
   if (!parsed) throw new Error('JSON non valido nella risposta del modello');
 
@@ -290,9 +324,27 @@ export default async function handler(req, res) {
     const genData = await callClaude({
       system: buildGenerationSystem(brain, layer, motion),
       messages: [{ role: 'user', content: `Prospect: "${prospect}"\nLayer: ${layer} | Motion: ${motion}\n\nReport:\n${researchReport}\n\nGenera i materiali. Solo JSON puro.` }],
-      max_tokens: 6000,
+      max_tokens: 8000,
     });
-    return res.status(200).json(parseJSON(extractText(genData)));
+    const rawText = extractText(genData);
+    try {
+      return res.status(200).json(parseJSON(rawText));
+    } catch (parseErr) {
+      console.error('JSON parse fallito. stop_reason=', genData.stop_reason, 'len=', rawText.length);
+      console.error('parseErr:', parseErr.message);
+      console.error('--- raw response (primi 600 char) ---\n' + rawText.slice(0, 600));
+      console.error('--- raw response (ultimi 400 char) ---\n' + rawText.slice(-400));
+      try {
+        const { writeFileSync } = await import('fs');
+        writeFileSync('/tmp/domino_last_raw.json', rawText);
+        console.error('Raw response salvato in /tmp/domino_last_raw.json');
+      } catch {}
+      const truncated = genData.stop_reason === 'max_tokens';
+      const hint = truncated
+        ? 'Output troncato (max_tokens raggiunto). Riduci il testo nelle Note o riprova.'
+        : 'Il modello non ha restituito JSON valido. Riprova; se persiste, riduci/semplifica le Note.';
+      return res.status(500).json({ error: hint });
+    }
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: err.message });
