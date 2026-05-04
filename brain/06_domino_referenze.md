@@ -304,7 +304,7 @@ Sul tema scelto: a volte bisogna saper guardare avanti, vedere il quadro general
 #### 14. Lucia Caretti — Giornalista / Digital Editor (attività digitali per 2 fondazioni benefiche) — *"Curiosità"*
 *Video: [RZ-SU1VoCNc](https://www.youtube.com/watch?v=RZ-SU1VoCNc)*
 
-Racconta la curiosità di Domino verso un gruppo di liceali diciassettenni "matti" che volevano fondare un'associazione — e per cui Domino ha sviluppato il sito.
+Racconta la curiosità di Domino verso un gruppo di liceali diciassettenni "matti" che volevano fondare un'associazione — e per cui Domino ha sviluppato il il progetto wikiliceo.
 
 **Uso:** apre la porta a prospect **non-profit/fondazioni**. Prova che Domino prende sul serio anche clienti piccoli e progetti "ad alta vocazione".
 
