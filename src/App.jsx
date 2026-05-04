@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { exportPPT } from './pptBuilder.js';
+import { exportDossier } from './dossierBuilder.js';
 import { LOGO_DATA_URI } from './logoBase64.js';
 
 // ─── Design System ────────────────────────────────────────────────────────────
@@ -382,6 +383,7 @@ export default function App() {
   const [hsSyncing, setHsSyncing]     = useState(false);
   const [hsMsg, setHsMsg]             = useState('');
   const [archCount, setArchCount]     = useState(() => loadArchive().length);
+  const [dossierBusy, setDossierBusy] = useState(false);
 
   const [listaSettore, setListaSettore]   = useState('');
   const [listaGeo, setListaGeo]           = useState('Italia');
@@ -461,6 +463,18 @@ export default function App() {
     }
     clearInterval(iv); setListaLoading(false);
   }, [listaSettore, listaGeo, listaDim, listaKeywords, listaNumero, listaLoading]);
+
+  const doDossier = async () => {
+    if (!result || dossierBusy) return;
+    setDossierBusy(true);
+    try {
+      await exportDossier(result, { layer: gtmLayer, motion: gtmMotion });
+    } catch (e) {
+      setError(`Esportazione dossier fallita: ${e.message}`);
+    } finally {
+      setDossierBusy(false);
+    }
+  };
 
   const doHsSync = async () => {
     if (!hsToken) { setShowHs(true); return; }
@@ -647,6 +661,7 @@ export default function App() {
                   <div><Label>Decisore</Label><div style={{ fontSize:'12px',color:'#aaa' }}>{p.decisore_target}</div></div>
                   <div style={{ marginLeft:'auto',display:'flex',gap:'8px',alignItems:'center',flexWrap:'wrap' }}>
                     <Btn variant="ghost" onClick={()=>exportPPT(result)} style={{ padding:'5px 12px',fontSize:'11px' }}>⬇ PPT</Btn>
+                    <Btn variant="ghost" onClick={doDossier} disabled={dossierBusy} style={{ padding:'5px 12px',fontSize:'11px' }}>{dossierBusy?'Dossier…':'⬇ Dossier Word'}</Btn>
                     <Btn variant="hs" onClick={doHsSync} disabled={hsSyncing} style={{ padding:'5px 12px',fontSize:'11px' }}>{hsSyncing?'Sync…':'→ HubSpot'}</Btn>
                     {hsMsg && <span style={{ fontSize:'11px',color:hsMsg.startsWith('✓')?'#4ade80':'#f87171' }}>{hsMsg}</span>}
                   </div>
