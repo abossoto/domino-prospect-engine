@@ -96,18 +96,31 @@ Un workshop di strategia di 1-2 giorni lo fanno anche brand consultant, partner 
 - **Il metodo battle-tested.** Magic Lenses e Votazione Silenziosa non sono giochini: sono protocolli di decisione di gruppo che riducono dinamiche gerarchiche e fanno emergere consenso reale. Domino li applica anche al proprio brain, prima di proporli ai clienti.
 - **L'orizzonte 6-12 mesi (Decision Design).** Non vendiamo una visione decennale ("dove sarà il vostro brand nel 2030") né un'azione tattica ("cosa fate domani"). Vendiamo **la prossima decisione importante**, con orizzonte di effetto a 6-12 mesi. È esattamente la finestra del Decision Design — la cornice strategica 2026.
 
-### 7. Manca il repertorio di trigger frasi
+### 7. Trigger frasi e framing del prodotto — *chiuso*
 
-Frasi che, dette in riunione dal prospect, fanno scattare "qui serve un Core Sprint!":
+**Riposizionamento concettuale:** il Core Sprint! è **ricognitivo, non generativo**. Non *prende* decisioni che non ci sono — *snellisce e chiarisce* decisioni già esistenti nelle teste delle persone, frammentate o non comunicate. Coerente con il filtro al punto 1 ("ri-allineamento su priorità").
 
-- "Abbiamo cinque progetti aperti e ognuno tira da una parte."
-- "Il CdA ci ha chiesto focus, ma noi non riusciamo a metterci d'accordo su cosa significhi."
-- "Stiamo per investire un budget importante e mi sembra che non abbiamo deciso davvero la rotta."
-- "Ogni direzione presenta la propria roadmap, e fanno il triplo del lavoro che potremmo fare."
-- "Mi serve qualcuno che ci aiuti a decidere, non a eseguire."
-- "Abbiamo provato a fare strategia internamente ma ogni volta finiamo nello stesso pantano."
+**Repertorio per script sales interno (non slide pubblica):**
 
-Questi vanno nello script di sales, non sulla slide pubblica — ma vanno scritti.
+1. "Abbiamo cinque progetti aperti che procedono in direzioni divergenti."
+2. "Il CdA ci ha chiesto focus, è necessaria una condivisione sintetica della direzione."
+3. "Stiamo per partire con un investimento importante e vorrei chiarezza e condivisione su dove indirizzarlo."
+4. "Ogni direzione presenta la propria roadmap, e finiamo per duplicare il lavoro tra reparti."
+5. "Abbiamo provato a fare ordine internamente ma ogni volta ci ritroviamo allo stesso punto."
+6. "I nostri manager continuano a chiedermi quali sono le priorità e mi rendo conto di non avere una risposta chiara."
+7. "Sappiamo di fare troppo. Ci manca un criterio per decidere cosa fermare."
+
+**Nessun gancio pubblico singolo.** La versione discorsiva del filtro al punto 1 è già il gancio narrativo della scheda. Una frase-citazione separata sarebbe ridondante.
+
+**Frasi escluse (perché non parlano la lingua dei prospect Domino):**
+- "Mi serve qualcuno che ci aiuti a decidere, non a eseguire." → suona da consulenza pura (BCG/McKinsey), non da CEO italiano medio-grande.
+
+**Mappatura frase → buyer:**
+- #1, #4 → CEO/DG (vede l'inefficienza esecutiva), Direzione Operativa (catalizzatore).
+- #2 → CEO/DG sotto pressione del CdA.
+- #3 → CIO/IT alla vigilia del kick-off, oppure CEO/CMO che sta per firmare un investimento.
+- #5 → CMO/Innovazione che ha già tentato.
+- #6, #7 → CEO/DG e Senior manager / responsabile di funzione (catalizzatore).
 
 ---
 
@@ -154,10 +167,16 @@ Non vendiamo una decisione e ce ne andiamo. La prendiamo *con voi*, e poi sappia
 
 ---
 
-## Da decidere insieme
+## Stato di avanzamento
 
-1. Il filtro per "a chi è destinato" — A, B o C? Combinazione?
-2. Il deliverable — ti torna la lista a 5 voci? Ne togliamo? Ne aggiungiamo (es. una sintesi visiva tipo poster)?
-3. La promessa — riformuliamo così come ho proposto, oppure più asciutta?
-4. I quattro buyer — è la segmentazione giusta, o la condensiamo in 2-3?
-5. Le trigger frasi — vanno solo nello script sales o ne facciamo emergere una sulla slide pubblica come gancio?
+- [x] Punto 1 — Filtro "a chi è destinato": *chiuso* (riallineamento su priorità, tre lunghezze + versione discorsiva).
+- [x] Punto 2 — Deliverable: *chiuso* (5 elementi + poster A3 di sintesi, no firma).
+- [x] Punto 3 — Promessa: *chiusa* (Ipotesi Core comprensibile a tutti i livelli + scala di priorità su 6-12 mesi).
+- [x] Punto 4 — Buyer e catalizzatori: *chiuso* (2 principali + 3 catalizzatori).
+- [x] Punto 5 — Trigger frasi e framing: *chiuso* (7 frasi per script sales, framing ricognitivo).
+
+## Aperto / da decidere
+
+- Integrare nella sezione 3 (Promessa) una nota di metodo che chiarisca il framing **ricognitivo, non generativo**? Esempio: *"Il Core Sprint! non costruisce una direzione nuova: mette per iscritto e in forma compatta quella che già esiste, frammentata, nelle teste dei decisori."*
+- Consolidare la "Scheda canonica" in fondo al file alla luce dei cinque punti chiusi (alcune voci — Format, Posizionamento commerciale, Perché Domino — non sono state rivisitate punto per punto e potrebbero richiedere allineamento finale).
+- Quando la definizione regge, propagare in `03_domino_metodi.md` (sezione 1) e poi sulle slide della presentazione "A new Domino".
