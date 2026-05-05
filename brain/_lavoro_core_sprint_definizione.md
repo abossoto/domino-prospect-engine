@@ -44,14 +44,19 @@ Il Core Sprint! è un acquisto da €6.000. Su questa cifra possono firmare ruol
 
 **Implicazione:** la scheda del prodotto dovrebbe dichiarare i quattro buyer e per ciascuno l'angolo. Non è cosmesi: è una guida commerciale.
 
-### 3. La promessa è sovradimensionata rispetto al format
+### 3. La promessa — *chiusa*
 
-"Ritrovare maggiore efficacia verso il mercato e i dipendenti" è una promessa da percorso annuale, non da 1-2 giorni. Il Core Sprint! non *consegna* l'efficacia — consegna **una decisione presa**. L'efficacia arriva dopo, con Design Sprint!, Build Sprint!, Trainstorming!.
+**Promessa canonica:**
 
-**Riformulazione candidata:**
-*"Esci con una decisione presa su dove concentrare le forze nei prossimi 6-12 mesi, condivisa dai centri decisionali che contano. È il punto di partenza dell'efficacia, non l'efficacia in sé."*
+*Esci con l'Ipotesi Core, facilmente condivisibile e comprensibile da tutti i livelli dell'azienda (che dà chiarezza operativa), e con una scala di priorità su cui costruire i 6-12 mesi successivi.*
 
-Lega bene anche al Decision Design (orizzonte 6-12 mesi) — coerenza con la cornice 2026.
+**Note:**
+- L'Ipotesi Core è il soggetto principale; la scala di priorità è la sua traduzione operativa. Coerenza con il deliverable canonico storico.
+- "Facilmente condivisibile e comprensibile da tutti i livelli dell'azienda" copre la doppia forma del filtro (top diviso / manageriale senza priorità chiare): l'Ipotesi Core deve viaggiare sia in senso orizzontale tra direzioni apicali, sia verticale verso il manageriale operativo.
+- "Che dà chiarezza operativa" — il beneficio implicito: la comprensibilità non è cosmesi, è ciò che fa scendere la decisione strategica nei comportamenti quotidiani.
+- "Scala di priorità" lega al filtro del punto 1 ("riallineamento su priorità") e al deliverable #2 ("Mappa delle priorità"). Coerenza terminologica.
+- "6-12 mesi" lega al Decision Design senza doverlo citare esplicitamente.
+- Sostituisce "ritrovare maggiore efficacia" delle slide attuali — una promessa da percorso annuale, non da 1-2 giorni.
 
 ### 4. Il deliverable — *chiuso*
 
