@@ -18,7 +18,7 @@ Il Core Sprint! è ricognitivo, non generativo: non costruisce una direzione nuo
 
 Singolo deliverable (~10-15 pagine) + poster A3 di sintesi, entro 5 giorni lavorativi dalla chiusura del workshop:
 
-1. **Ipotesi Core** — formula compilata, una pagina.
+1. **Ipotesi Core** — la frase canonica che mette a fuoco in forma compatta la direzione che l'azienda riconosce come propria nei 6-12 mesi successivi. Formula: *"Se aiutiamo [cliente target] a risolvere [problema specifico] con la nostra [soluzione], allora sceglieranno noi al posto di [concorrenza] perché la nostra soluzione è [differenziazione chiave]."* Una pagina, formato frase + tabella con i cinque slot compilati (cliente target, problema, nostra soluzione, concorrenza, differenziazione chiave).
 2. **Mappa delle priorità** — 3-5 direzioni ordinate, con criterio di scelta esplicito.
 3. **Mappa stakeholder** — allineamenti e frizioni residue (consegna controllata al solo committente).
 4. **Trade-off considerati** — traccia decisionale, utile a CdA o board.
