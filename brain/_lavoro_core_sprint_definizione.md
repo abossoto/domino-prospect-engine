@@ -17,17 +17,21 @@ Aggiunge un filtro buyer ("aziende multibusiness e multimercato in contesti comp
 
 ## Le tensioni aperte
 
-### 1. Il filtro "a chi è destinato" non taglia abbastanza
+### 1. Il filtro "a chi è destinato" — *chiuso*
 
-"Multibusiness e multimercato in contesti complessi" è troppo largo. Lascia passare metà dei prospect Domino e taglia fuori clienti che invece sono il caso d'uso ideale (es. un'azienda mono-business con sei direzioni in conflitto sulla rotta).
+**Frase di posizionamento (canonica, tre lunghezze):**
 
-**Tre varianti possibili per il filtro:**
+- **Asciutta.** *Per organizzazioni che hanno bisogno di un riallineamento su priorità.*
+- **Media (+ momento).** *Per organizzazioni che hanno bisogno di un riallineamento su priorità, alla vigilia di un investimento rilevante.*
+- **Estesa (+ sintomo + momento).** *Per organizzazioni che hanno bisogno di un riallineamento su priorità — quando i progetti aperti non sempre convergono e si sta per investire risorse rilevanti in una direzione non ancora certa.*
 
-- **Variante A — Filtro per complessità decisionale.** "Aziende dove più centri decisionali (CEO + direzioni di business + funzioni corporate) hanno opinioni divergenti su dove andare, e nessuno ha l'autorità o il tempo di forzarne una." — Filtra meglio la situazione reale; non si lega a tipologie d'azienda artificiose.
-- **Variante B — Filtro per portafoglio.** "Aziende che hanno aperto troppi cantieri (digital, comunicazione, prodotto, processi) e non riescono più a farli convergere." — Punta sul sintomo organizzativo. Forte ma più sintomatico che strutturale.
-- **Variante C — Filtro per momento.** "Aziende che stanno per investire risorse rilevanti in una direzione e non sono certe sia quella giusta." — Filtra per *istante* d'acquisto, non per natura. Comunica meglio l'urgenza ma riduce la base.
+**Versione discorsiva** — per pagine sito, sezioni di proposta, scheda canonica nel brain:
 
-**Mia preferenza:** A come filtro principale, C come trigger d'acquisto. B come sintomo a corollario.
+> *Si manifesta in due forme. La prima: i ruoli apicali — CEO, CMO, CIO, direzioni di business — hanno letture diverse della stessa azienda, e ognuno conduce la propria roadmap come se le altre non esistessero. La seconda, più frequente: il vertice è allineato sulla carta, ma il livello manageriale sotto non ha chiaro cosa viene prima di cosa, e finisce per inseguire tutti i progetti contemporaneamente. In entrambi i casi il sintomo è lo stesso — troppe iniziative aperte, decisioni rimandate, comunicazione dispersiva — ma la causa è una: manca un ordine condiviso di priorità.*
+
+**Note di notazione:** "su priorità" senza articolo (più affilato, registro strategy-deck) — confermato. "Non sempre convergono" anziché "non convergono più" (ammorbidito).
+
+**Cosa abbiamo guadagnato rispetto alle slide attuali:** il filtro non si lega più a una tipologia d'azienda ("multibusiness e multimercato"), ma alla *condizione* in cui l'azienda si trova. Copre quindi anche organizzazioni mono-business con direzioni divise, e — soprattutto — la stanza più frequente in cui il top è formalmente allineato ma il manageriale sotto non ha chiarezza sulle priorità.
 
 ### 2. Manca il buyer (chi firma)
 
@@ -49,19 +53,18 @@ Il Core Sprint! è un acquisto da €6.000. Su questa cifra possono firmare ruol
 
 Lega bene anche al Decision Design (orizzonte 6-12 mesi) — coerenza con la cornice 2026.
 
-### 4. Il deliverable è una formula, non un oggetto
+### 4. Il deliverable — *chiuso*
 
-L'Ipotesi Core è una formula elegante ("Se aiutiamo X a risolvere Y…"). Ma il cliente, a fine sprint, cosa si porta a casa fisicamente? Senza un oggetto, il €6.000 sembra "due giorni di chiacchiere strutturate".
+**Sei elementi, raccolti in un singolo deliverable (~10-15 pagine) + un poster A3 di sintesi, consegnati entro 5 giorni lavorativi dalla chiusura del workshop:**
 
-**Cosa proporrei consegniamo (proposta di canone):**
-
-1. **Documento Ipotesi Core** — formula compilata, una pagina, firmata dai partecipanti.
+1. **Documento Ipotesi Core** — formula compilata, una pagina.
 2. **Mappa delle priorità** — le 3-5 direzioni emerse, ordinate per rilevanza, con criterio di scelta esplicito.
-3. **Mappa stakeholder** — chi è allineato su cosa, dove restano frizioni, chi va portato dentro.
-4. **Trade-off principali** — le scelte alternative considerate e perché scartate (è la traccia decisionale, utile a CdA o board).
-5. **Prossimi passi** — Design Sprint!, Audit, Build Sprint!, oppure altro percorso. Con stima d'investimento orientativa.
+3. **Mappa stakeholder** — chi è allineato su cosa, dove restano frizioni, chi va portato dentro. *(Consegna controllata — solo al committente, non distribuita.)*
+4. **Trade-off principali** — le scelte alternative considerate e perché scartate. È la traccia decisionale — utile a CdA o board, e coerente con il Decision Design (progettare le conseguenze, non solo le scelte).
+5. **Prossimi passi** — Design Sprint!, Audit, Build Sprint!, oppure altro percorso, con stima d'investimento orientativa.
+6. **Poster A3 di sintesi** — versione visuale dell'Ipotesi Core e delle priorità, formato che il cliente può appendere o portare nelle riunioni successive. È il pezzo che fa sopravvivere il Core Sprint! oltre il PDF — e che differenzia un Core Sprint! Domino da un workshop di strategia generico.
 
-Tutto questo entra in **un singolo deliverable** (~10-15 pagine) consegnato entro 5 giorni lavorativi dalla chiusura del workshop.
+**Funzioni dei sei elementi:** 1 è il cuore, 2 è la coerenza con il posizionamento ("riallineamento su priorità"), 3 è la traccia politica, 4 è la traccia decisionale, 5 è il gancio commerciale al percorso a quattro Sprint!, 6 è la memorabilità nel tempo.
 
 ### 5. Manca il "cosa NON consegniamo"
 
@@ -100,9 +103,13 @@ Questi vanno nello script di sales, non sulla slide pubblica — ma vanno scritt
 ## Schema di scheda prodotto canonica (da consolidare)
 
 ### A chi è destinato
-- **Tipo di azienda:** organizzazioni con più centri decisionali (CEO + direzioni di business + funzioni corporate) le cui visioni divergono e nessuno ha autorità o tempo di forzarne una.
-- **Buyer principali:** CEO/DG (per arbitrato), Chief Strategy (per strumento), CMO (per legittimazione), Direzione Operativa/IT (per evitare scope-creep).
-- **Momento d'acquisto:** vigilia di un investimento rilevante in una direzione non ancora certa.
+
+*Per organizzazioni che hanno bisogno di un riallineamento su priorità, alla vigilia di un investimento rilevante.*
+
+Si manifesta in due forme. La prima: i ruoli apicali — CEO, CMO, CIO, direzioni di business — hanno letture diverse della stessa azienda, e ognuno conduce la propria roadmap come se le altre non esistessero. La seconda, più frequente: il vertice è allineato sulla carta, ma il livello manageriale sotto non ha chiaro cosa viene prima di cosa, e finisce per inseguire tutti i progetti contemporaneamente. In entrambi i casi il sintomo è lo stesso — troppe iniziative aperte, decisioni rimandate, comunicazione dispersiva — ma la causa è una: manca un ordine condiviso di priorità.
+
+**Buyer principali:** CEO/DG (per arbitrato), Chief Strategy (per strumento), CMO (per legittimazione), Direzione Operativa/IT (per evitare scope-creep su un progetto in arrivo).
+**Momento d'acquisto:** vigilia di un investimento rilevante in una direzione non ancora certa.
 
 ### Quando proporlo / quando NON proporlo
 **Proporlo se:** stakeholder divisi, cantieri aperti che non convergono, decisione imminente con dubbio sulla rotta, il cliente ha già fatto strategia internamente senza esito.
@@ -110,12 +117,13 @@ Questi vanno nello script di sales, non sulla slide pubblica — ma vanno scritt
 **Non proporlo se:** la direzione è già chiara e va validata (→ Design Sprint!), serve diagnosi tattica su un canale specifico (→ Audit), il cliente cerca una brand strategy o una visione decennale (non è il nostro prodotto), c'è un solo decisore allineato (basta una conversazione, non serve un workshop).
 
 ### Cosa consegniamo
-Singolo documento (~10-15 pagine) entro 5 giorni dalla chiusura del workshop, contenente:
-1. Ipotesi Core compilata e firmata
-2. Mappa delle priorità (3-5 direzioni, ordinate)
-3. Mappa stakeholder (allineamenti e frizioni residue)
+Singolo documento (~10-15 pagine) + poster A3 di sintesi, entro 5 giorni lavorativi dalla chiusura del workshop:
+1. Ipotesi Core compilata (una pagina)
+2. Mappa delle priorità (3-5 direzioni, ordinate, con criterio di scelta)
+3. Mappa stakeholder (allineamenti e frizioni residue) — consegna controllata al solo committente
 4. Trade-off considerati (traccia decisionale)
 5. Prossimi passi consigliati con stima d'investimento
+6. Poster A3 di sintesi — Ipotesi Core e priorità in formato visuale
 
 ### Cosa NON consegniamo
 Non è brand strategy, non è business plan, non è customer research, non è Design Sprint!. È la decisione presa — non la sua esecuzione.
