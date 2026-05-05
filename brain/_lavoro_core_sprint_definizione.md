@@ -33,16 +33,22 @@ Aggiunge un filtro buyer ("aziende multibusiness e multimercato in contesti comp
 
 **Cosa abbiamo guadagnato rispetto alle slide attuali:** il filtro non si lega più a una tipologia d'azienda ("multibusiness e multimercato"), ma alla *condizione* in cui l'azienda si trova. Copre quindi anche organizzazioni mono-business con direzioni divise, e — soprattutto — la stanza più frequente in cui il top è formalmente allineato ma il manageriale sotto non ha chiarezza sulle priorità.
 
-### 2. Manca il buyer (chi firma)
+### 2. Buyer e catalizzatori — *chiuso*
 
-Il Core Sprint! è un acquisto da €6.000. Su questa cifra possono firmare ruoli molto diversi, con motivazioni diverse:
+Distinguiamo due ruoli: chi firma (acquista) e chi spinge perché si firmi (avvia la conversazione interna). In Italia sono spesso persone diverse nello stesso prospect.
 
-- **CEO / Direzione Generale** — firma per arbitrato. Ha visioni divergenti sotto di sé e vuole forzarne una con metodo. Non vuole un consulente che gli dia ragione.
-- **Chief Strategy / Direzione Innovazione** — firma per strumento. Ha bisogno di un format che porti i pari grado a decidere senza scontri.
-- **CMO / Direzione Marketing** — firma per legittimazione. Sa cosa vorrebbe fare ma deve allineare CEO e altre direzioni prima di partire.
-- **Direzione Operativa / IT** — firma per evitare scope-creep su un progetto in arrivo (sito, intranet, prodotto digitale). Vuole chiarire il "cosa" prima del "come".
+**Buyer principali (firmano).**
 
-**Implicazione:** la scheda del prodotto dovrebbe dichiarare i quattro buyer e per ciascuno l'angolo. Non è cosmesi: è una guida commerciale.
+1. **CEO / Direzione Generale** — cerca *allineamento su visione e velocità di esecuzione*. Se l'esecuzione rallenta perché ognuno tira in una direzione diversa, il CEO sente il costo subito.
+2. **CMO / Direzione Innovazione** — cerca *legittimazione interna e un metodo che faccia decidere i pari grado*. Sa cosa vorrebbe fare ma deve allineare CEO e altre direzioni prima di partire. Il Core Sprint! è il format che gli evita di andare in CdA da solo.
+
+**Catalizzatori (non firmano, spingono perché si firmi).**
+
+3. **Direzione Operativa** — vede convergere su di sé progetti aperti che tirano in direzioni diverse. Spinge perché il vertice decida le priorità, così che l'esecuzione diventi gestibile.
+4. **CIO / Direzione IT** — ha un progetto digitale rilevante in arrivo (sito, intranet, brain, prodotto digitale). Spinge perché il workshop avvenga *prima* del kick-off tecnico, per evitare scope-creep.
+5. **Senior manager / responsabile di funzione** — sente sui colleghi e sui sottoposti il costo del non-allineamento: domande quotidiane su cosa viene prima di cosa, riunioni che girano in tondo, frustrazione operativa. Porta la richiesta al vertice perché qualcuno decida. Coerente con la seconda forma del filtro (manageriale senza priorità chiare): è spesso il primo a sollevare il bisogno.
+
+**Note di metodo:** "arbitrato" come motivazione del CEO è caduta — è un beneficio implicito del metodo (Magic Lenses, Votazione Silenziosa fanno da terzo super partes), non una motivazione d'acquisto. Lo recuperiamo eventualmente nel "Perché Domino" come effetto collaterale, non come driver. "Chief Strategy" è caduto: ruolo poco italiano, le sue motivazioni si assorbono nel CEO/DG e nel CMO/Innovazione.
 
 ### 3. La promessa — *chiusa*
 
@@ -113,7 +119,8 @@ Questi vanno nello script di sales, non sulla slide pubblica — ma vanno scritt
 
 Si manifesta in due forme. La prima: i ruoli apicali — CEO, CMO, CIO, direzioni di business — hanno letture diverse della stessa azienda, e ognuno conduce la propria roadmap come se le altre non esistessero. La seconda, più frequente: il vertice è allineato sulla carta, ma il livello manageriale sotto non ha chiaro cosa viene prima di cosa, e finisce per inseguire tutti i progetti contemporaneamente. In entrambi i casi il sintomo è lo stesso — troppe iniziative aperte, decisioni rimandate, comunicazione dispersiva — ma la causa è una: manca un ordine condiviso di priorità.
 
-**Buyer principali:** CEO/DG (per arbitrato), Chief Strategy (per strumento), CMO (per legittimazione), Direzione Operativa/IT (per evitare scope-creep su un progetto in arrivo).
+**Buyer principali (firmano):** CEO/DG (cerca allineamento su visione e velocità di esecuzione), CMO/Innovazione (cerca legittimazione interna e un metodo che faccia decidere i pari grado).
+**Catalizzatori (spingono perché si firmi):** Direzione Operativa (priorità per coordinare l'esecuzione), CIO/Direzione IT (chiarezza prima del kick-off tecnico), Senior manager / responsabile di funzione (direzione chiara per colleghi e sottoposti).
 **Momento d'acquisto:** vigilia di un investimento rilevante in una direzione non ancora certa.
 
 ### Quando proporlo / quando NON proporlo
