@@ -2,7 +2,12 @@
 
 > *Per organizzazioni che hanno bisogno di un riallineamento su priorità, alla vigilia di un investimento rilevante.*
 
-Si manifesta in due forme. La prima: i ruoli apicali — CEO, CMO, CIO, direzioni di business — hanno letture diverse della stessa azienda, e ognuno conduce la propria roadmap come se le altre non esistessero. La seconda, più frequente: il vertice è allineato sulla carta, ma il livello manageriale sotto non ha chiaro cosa viene prima di cosa, e finisce per inseguire tutti i progetti contemporaneamente. In entrambi i casi il sintomo è lo stesso — troppe iniziative aperte, decisioni rimandate, comunicazione dispersiva — ma la causa è una: manca un ordine condiviso di priorità.
+Risponde a due esigenze 
+La prima: i ruoli apicali — CEO, CMO, CIO, direzioni di business — hanno letture diverse della stessa azienda, e ognuno conduce la propria roadmap come se le altre non esistessero.
+
+La seconda, più frequente: il vertice è allineato sulla carta, ma il livello manageriale sotto non ha chiaro cosa viene prima di cosa, e finisce per inseguire tutti i progetti contemporaneamente. 
+
+In entrambi i casi il sintomo è lo stesso — troppe iniziative aperte, decisioni rimandate, comunicazione dispersiva — ma la causa è una: manca un ordine condiviso di priorità.
 
 ## La domanda a cui risponde
 
