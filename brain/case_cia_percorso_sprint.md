@@ -1,11 +1,12 @@
 # Case CIA — Percorso a tre Sprint!
 
 **Cliente:** CIA — Confederazione Italiana Agricoltori
-**Settore:** Associazioni di categoria / servizi a imprese e cittadini
+**Settore:** B2B Industriale
 **Periodo:** Giugno 2025 → Gennaio 2026 (~7 mesi)
 **Prodotti Domino utilizzati:** 1 Core Sprint! + 2 Design Sprint!
 **Status a maggio 2026:** Output consegnati, Build Sprint! non ancora avviato
 **Citabilità:** Nome cliente utilizzabile pubblicamente
+**Uso come case-tipo:** valido sia per pitch del Core Sprint! sia per pitch del Design Sprint! (in particolare quando il cliente ha più segmenti utente che richiedono percorsi distinti)
 
 ---
 
@@ -17,7 +18,7 @@ Domino ha riallineato CIA dal vertice nazionale fino a due sue unità operative 
 
 CIA è una confederazione storica con oltre 900 sedi sul territorio italiano e quattro decenni di autorevolezza nel mondo agricolo e nei servizi al cittadino. La sfida non era di immagine, era di rilevanza. Il mondo si è mosso più velocemente: l'agricoltore non chiede più "come si fa il 730", chiede "quanto mi fa guadagnare il fotovoltaico"; il cittadino non confronta più CIA con altre confederazioni, la confronta con app DIY, piattaforme online e con la P.A. che si sta digitalizzando. La sensazione interna era nota: troppe iniziative aperte, comunicazione frammentata tra livello nazionale e sedi locali, prodotti percepiti come commodity dal mercato, rischio reale di scivolare nella guerra dei prezzi.
 
-Il vertice CIA aveva già intuito tutto questo. Quello che mancava era un'ipotesi condivisa su dove andare, una mappa che ordinasse le priorità e un linguaggio che rendesse la nuova direzione comprensibile a 900 sedi senza tradirla.
+Il vertice CIA aveva chiara la pressione del contesto, ma non ancora una direzione confederale costruita e condivisa. Mancavano un'ipotesi su dove andare, una mappa che ordinasse le priorità, un manifesto e un linguaggio capaci di portare la nuova direzione fino alle 900 sedi senza tradirla.
 
 ## Perché tre Sprint! e non uno
 
@@ -63,14 +64,22 @@ Il Build Sprint! non è ancora stato avviato. Il sito CIAO CIA è prototipo, non
 
 ## Argomenti di pitch derivati
 
-Per organizzazioni federate o multi-business unit. Il pattern Core (al vertice) + Design (sulle unità operative) è replicabile ovunque la decisione si forma in un punto e incontra l'utente in un altro: confederazioni, gruppi industriali con divisioni autonome, retailer multi-format, gruppi assicurativi multi-canale, holding multi-mercato.
+### Per pitch del Core Sprint!
 
-Per direzioni generali in fase di riposizionamento. Il Core Sprint! con il vertice produce ciò che le ricerche di mercato e i piani strategici tradizionali non producono — una direzione condivisa e firmata in due giorni di lavoro, non in sei mesi di slide. Le evidenze di processo sono dichiarabili senza imbarazzo: manifesto, mappa di differenziazione, riorganizzazione dell'offerta.
+**Per organizzazioni federate o multi-business unit.** Il pattern Core (al vertice) + Design (sulle unità operative) è replicabile ovunque la decisione si forma in un punto e incontra l'utente in un altro: confederazioni, gruppi industriali con divisioni autonome, retailer multi-format, gruppi assicurativi multi-canale, holding multi-mercato.
 
-Per CMO che devono unificare un linguaggio frammentato. Il caso CIA mostra che il tone of voice può essere progettato come prodotto — con regole, esempi prima/dopo, applicazioni concrete a bandi e comunicazioni di prodotto — non lasciato al gusto del singolo ufficio.
+**Per direzioni generali in fase di riposizionamento.** Il Core Sprint! con il vertice produce ciò che le ricerche di mercato e i piani strategici tradizionali non producono — una direzione confederale condivisa e firmata in due giorni di lavoro, non in sei mesi di slide. Output dichiarabili: manifesto, mappa di differenziazione, riorganizzazione dell'offerta in pacchetti leggibili.
 
-Per CIO che vogliono un'architettura digitale che non parta dal CMS. Il caso CIA mostra che il prototipo digitale (CIAO CIA) nasce dalla strategia, non dalla tecnologia. La selezione di piattaforma viene dopo, nel Build Sprint!, su un perimetro già validato con utenti reali.
+**Per CMO che devono unificare un linguaggio frammentato.** Il caso CIA mostra che il tone of voice può essere progettato come prodotto — con regole, esempi prima/dopo, applicazioni concrete a bandi e comunicazioni di prodotto — non lasciato al gusto del singolo ufficio.
+
+### Per pitch del Design Sprint!
+
+**Per organizzazioni con più segmenti utente molto diversi sullo stesso brand.** Il caso CIA mostra che applicare due Design Sprint! distinti — uno sull'unità Cittadini, uno sull'unità Imprese — sulla stessa direzione strategica produce due prototipi che parlano la stessa lingua di brand ma rispondono a percorsi utente diversi. Pattern replicabile su banche multi-prodotto (retail/SME/private), sanità multi-target (paziente/operatore/caregiver), e-commerce con segmenti molto diversi, intranet aziendali con popolazioni eterogenee.
+
+**Per CIO e Direzioni Digitali che vogliono un'architettura strategy-first.** Il caso CIA mostra che il prototipo digitale (CIAO CIA) nasce dalla direzione strategica, non dalla scelta di piattaforma. La selezione tecnologica viene dopo, nel Build Sprint!, su un perimetro già validato con utenti reali su due segmenti distinti. Argomento forte per evitare lo scope-creep tecnologico tipico dei progetti che partono dal CMS.
+
+**Per Direzioni Servizi che vogliono ripacchettizzare un'offerta frammentata.** Il caso CIA mostra che il Design Sprint! non è solo per validare un'interfaccia — è anche il tavolo dove l'offerta del cliente viene riorganizzata in pacchetti commerciali con tempo-a-risultato dichiarato. Output utile a chi deve vendere servizi complessi a buyer con pazienza limitata.
 
 ## Note di ingaggio
 
-Il caso è citabile pubblicamente. Il dossier "La Nuova CIA" è materiale interno CIA condivisibile in pitch su autorizzazione. Le metriche di outcome verranno aggiunte alla case quando saranno disponibili — al momento, la case poggia sulle evidenze di processo e sui prodotti consegnati, non su KPI numerici.
+Il caso è citabile pubblicamente. Il dossier "La Nuova CIA" è materiale interno CIA condivisibile in pitch su autorizzazione. Le metriche di outcome verranno aggiunte al caso quando saranno disponibili — al momento, il racconto poggia sulle evidenze di processo e sui prodotti consegnati, non su KPI numerici.
