@@ -43,8 +43,6 @@ Avere gli strumenti per ciascuno dei tre verbi *(capire, costruire, far funziona
 **Durata:** 2 giorni di workshop + consolidamento dei deliverable nei 5 giorni lavorativi successivi.
 **Prezzo:** €6.000
 
-**Genealogia metodologica.** Il Core Sprint! è l'**adattamento Domino per organizzazioni strutturate** del framework **Foundation Sprint** (Jake Knapp / AJ&Smart). L'adattamento agisce su tre assi: (1) **composizione del tavolo** — dimensionata per CdA, direzioni di business e funzioni, non per team founder di startup; (2) **tempo di consolidamento** — i deliverable escono dal workshop dei 2 giorni ma vengono formalizzati in un dossier consegnato entro 5 giorni lavorativi, leggibile a board e committenti che non erano in sala; (3) **integrazione con il percorso a quattro Sprint!** — Core → Design → Build → Trainstorming!, con un orizzonte Decision Design 6-12 mesi. Il naming commerciale resta Core Sprint!: la genealogia si dichiara solo se il buyer chiede esplicitamente il fondamento metodologico, in tono di legittimazione.
-
 **Cosa consegniamo (7 deliverable, dossier ~10-15 pagine + poster A3, entro 5 giorni dalla chiusura):**
 1. **Ipotesi Core** — la frase canonica con i cinque slot compilati (cliente target, problema, nostra soluzione, concorrenza, differenziazione chiave).
 2. **Mappa di differenziazione competitiva** — posizionamento del cliente rispetto ai principali competitor sui driver di scelta rilevanti per il segmento. Sostiene e rende verificabile lo slot *differenziazione chiave* dell'Ipotesi Core.
@@ -54,9 +52,9 @@ Avere gli strumenti per ciascuno dei tre verbi *(capire, costruire, far funziona
 6. **Prossimi passi** — Design Sprint!, Audit, Build Sprint! o altro percorso, con stima d'investimento.
 7. **Poster A3 di sintesi** — Ipotesi Core e priorità in forma visiva.
 
-**Tecniche interne usate nel Core Sprint!** *(eredità diretta del framework Foundation Sprint, gestite in plenaria nei 2 giorni):*
+**Tecniche interne usate nel Core Sprint!** *(gestite in plenaria nei 2 giorni):*
 - **Magic Lenses** — mettere alla prova le idee valutandole rispetto a criteri critici. Output: un insieme raffinato delle idee più promettenti.
-- **Votazione Silenziosa** *(Note & Vote)* — tutti ricevono 3 "pallini" e votano autonomamente le proposte più forti sulla bacheca, senza influenzarsi a vicenda. Favorisce la diversità di opinioni e l'emersione delle idee realmente condivise.
+- **Votazione Silenziosa** — tutti ricevono 3 "pallini" e votano autonomamente le proposte più forti sulla bacheca, senza influenzarsi a vicenda. Favorisce la diversità di opinioni e l'emersione delle idee realmente condivise.
 
 **Il flusso completo:**
 ```

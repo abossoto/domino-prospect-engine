@@ -46,7 +46,6 @@ Domino ha sviluppato metodi propri, non generici. Sono differenziatori commercia
 **Output:** dossier ~10-15 pagine + poster A3 con sette deliverable: Ipotesi Core, mappa di differenziazione competitiva, mappa delle priorità, mappa stakeholder, trade-off considerati, prossimi passi, poster di sintesi.
 **Quando usarlo:** Quando il cliente non ha chiarezza su dove intervenire, o quando ci sono visioni divergenti tra reparti e direzione. Quasi sempre il primo passo giusto prima di un Design Sprint! o di un progetto più ampio.
 **Prezzo:** €6.000
-**Genealogia metodologica.** Adattamento Domino per organizzazioni strutturate del framework **Foundation Sprint** (Jake Knapp / AJ&Smart). Naming commerciale: Core Sprint!. La genealogia si dichiara solo se il buyer chiede esplicitamente il fondamento metodologico. Dettaglio completo in [03_domino_metodi.md](03_domino_metodi.md).
 
 ### Design Sprint!
 **Cos'è:** Processo intensivo di 4-5 giorni (derivato dal metodo Google Ventures) per prototipare e testare una soluzione con utenti reali prima di investire nello sviluppo completo. Comprime mesi di lavoro in una settimana.
