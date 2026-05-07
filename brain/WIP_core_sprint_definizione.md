@@ -17,18 +17,19 @@ In entrambi i casi il sintomo è lo stesso — troppe iniziative aperte, decisio
 
 Esci con l'Ipotesi Core, facilmente condivisibile e comprensibile da tutti i livelli dell'azienda (che dà chiarezza operativa), e con una scala di priorità su cui costruire i 6-12 mesi successivi.
 
-Il Core Sprint! è ricognitivo, non generativo: non costruisce una direzione nuova, mette per iscritto e in forma compatta quella che già esiste — frammentata, implicita o non comunicata — nelle teste dei decisori.
+Il Core Sprint! è ricognitivo, non generativo: non costruisce necessariamente una direzione nuova, mette per iscritto e in forma compatta quella che già esiste — frammentata, implicita o non comunicata — nelle teste dei decisori.
 
 ## Cosa consegniamo
 
 Singolo deliverable (~10-15 pagine) + poster A3 di sintesi, entro 5 giorni lavorativi dalla chiusura del workshop:
 
 1. **Ipotesi Core** — la frase canonica che mette a fuoco in forma compatta la direzione che l'azienda riconosce come propria nei 6-12 mesi successivi. Formula: *"Se aiutiamo [cliente target] a risolvere [problema specifico] con la nostra [soluzione], allora sceglieranno noi al posto di [concorrenza] perché la nostra soluzione è [differenziazione chiave]."* Una pagina, formato frase + tabella con i cinque slot compilati (cliente target, problema, nostra soluzione, concorrenza, differenziazione chiave).
-2. **Mappa delle priorità** — 3-5 direzioni ordinate, con criterio di scelta esplicito.
-3. **Mappa stakeholder** — allineamenti e frizioni residue (consegna controllata al solo committente).
-4. **Trade-off considerati** — traccia decisionale, utile a CdA o board.
-5. **Prossimi passi** — Design Sprint!, Audit, Build Sprint! o altro percorso, con stima d'investimento.
-6. **Poster A3 di sintesi** — Ipotesi Core e priorità in forma visiva.
+2. **Mappa di differenziazione competitiva** — posizionamento del cliente rispetto ai principali competitor sui driver di scelta rilevanti per il segmento. Sostiene e rende verificabile lo slot *differenziazione chiave* dell'Ipotesi Core.
+3. **Mappa delle priorità** — 3-5 direzioni ordinate, con criterio di scelta esplicito.
+4. **Mappa stakeholder** — allineamenti e frizioni residue (consegna controllata al solo committente).
+5. **Trade-off considerati** — traccia decisionale, utile a CdA o board.
+6. **Prossimi passi** — Design Sprint!, Audit, Build Sprint! o altro percorso, con stima d'investimento.
+7. **Poster A3 di sintesi** — Ipotesi Core e priorità in forma visiva.
 
 ## Cosa NON consegniamo
 
