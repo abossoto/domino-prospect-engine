@@ -41,11 +41,12 @@ Il Decision Design del 2026 non è una svolta improvvisata: è la formalizzazion
 Domino ha sviluppato metodi propri, non generici. Sono differenziatori commerciali prima ancora che strumenti operativi — usarli come tali in ogni proposta.
 
 ### Core Sprint!
-**Cos'è:** Workshop strategico di 1-2 giorni per produrre una **Core Hypothesis** condivisa — la scommessa centrale su cui costruire il progetto. Allinea stakeholder spesso in conflitto prima che il budget venga investito.
-**Durata:** 1-2 giorni
-**Output:** Core Hypothesis documentata, priorità d'intervento, stakeholder allineati
+**Cos'è:** Workshop strategico di 2 giorni per produrre l'**Ipotesi Core** condivisa — la scommessa centrale su cui costruire il progetto — insieme a una mappa di differenziazione competitiva e a una scala di priorità per i 6-12 mesi successivi. Allinea stakeholder spesso in conflitto prima che il budget venga investito.
+**Durata:** 2 giorni di workshop + consolidamento dei deliverable nei 5 giorni lavorativi successivi
+**Output:** dossier ~10-15 pagine + poster A3 con sette deliverable: Ipotesi Core, mappa di differenziazione competitiva, mappa delle priorità, mappa stakeholder, trade-off considerati, prossimi passi, poster di sintesi.
 **Quando usarlo:** Quando il cliente non ha chiarezza su dove intervenire, o quando ci sono visioni divergenti tra reparti e direzione. Quasi sempre il primo passo giusto prima di un Design Sprint! o di un progetto più ampio.
 **Prezzo:** €6.000
+**Genealogia metodologica.** Adattamento Domino per organizzazioni strutturate del framework **Foundation Sprint** (Jake Knapp / AJ&Smart). Naming commerciale: Core Sprint!. La genealogia si dichiara solo se il buyer chiede esplicitamente il fondamento metodologico. Dettaglio completo in [03_domino_metodi.md](03_domino_metodi.md).
 
 ### Design Sprint!
 **Cos'è:** Processo intensivo di 4-5 giorni (derivato dal metodo Google Ventures) per prototipare e testare una soluzione con utenti reali prima di investire nello sviluppo completo. Comprime mesi di lavoro in una settimana.

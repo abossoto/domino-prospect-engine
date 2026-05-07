@@ -17,7 +17,7 @@ In entrambi i casi il sintomo è lo stesso — troppe iniziative aperte, decisio
 
 Esci con l'Ipotesi Core, facilmente condivisibile e comprensibile da tutti i livelli dell'azienda (che dà chiarezza operativa), e con una scala di priorità su cui costruire i 6-12 mesi successivi.
 
-Il Core Sprint! è ricognitivo, non generativo: non costruisce necessariamente una direzione nuova, mette per iscritto e in forma compatta quella che già esiste — frammentata, implicita o non comunicata — nelle teste dei decisori.
+Il Core Sprint! è ricognitivo, non generativo: **non costruisce necessariamente una direzione nuova**, mette per iscritto e in forma compatta quella che già esiste — frammentata, implicita o non comunicata — nelle teste dei decisori.
 
 ## Cosa consegniamo
 
@@ -37,9 +37,9 @@ Non è una brand strategy, non è un business plan, non è ricerca cliente, non 
 
 ## A chi è destinato
 
-**Buyer principali (firmano).** CEO/Direzione Generale, che cerca allineamento su visione e velocità di esecuzione. CMO/Direzione Innovazione, che cerca legittimazione interna e un metodo che faccia decidere i pari grado.
+**Buyer principali (decisori).** CEO/Direzione Generale, che cerca allineamento su visione e velocità di esecuzione. CMO/Direzione Innovazione, che cerca legittimazione interna e un metodo che faccia decidere i pari grado.
 
-**Catalizzatori (spingono perché si firmi).** Direzione Operativa, che cerca priorità per coordinare l'esecuzione. CIO/Direzione IT, che cerca chiarezza prima del kick-off tecnico, per evitare scope-creep. Senior manager / responsabile di funzione, che porta al vertice il bisogno di una direzione chiara per colleghi e sottoposti.
+**Catalizzatori (facilitatori della decisione).** Direzione Operativa, che cerca priorità per coordinare l'esecuzione. CIO/Direzione IT, che cerca chiarezza prima del kick-off tecnico, per evitare scope-creep. Senior manager / responsabile di funzione, che porta al vertice il bisogno di una direzione chiara per colleghi e sottoposti.
 
 ## Format
 
@@ -68,3 +68,15 @@ Prima del **Design Sprint!**: il Design Sprint! presuppone direzione chiara. Se 
 ## Perché Domino
 
 Non vendiamo strategia astratta e poi ce ne andiamo. Snelliamo e chiariamo *con voi* la decisione che già esiste nella vostra organizzazione, e poi sappiamo eseguirla — Design Sprint!, Build Sprint!, Trainstorming! — senza handoff. Il metodo (Magic Lenses, Votazione Silenziosa) fa da terzo super partes: il workshop genera consenso senza che qualcuno debba imporre un veto. È il primo passo di un percorso, non un workshop in sé.
+
+## Genealogia metodologica
+
+Il Core Sprint! è l'**adattamento Domino per organizzazioni strutturate** del framework **Foundation Sprint** (Jake Knapp / AJ&Smart). L'adattamento agisce su tre assi:
+
+1. **Composizione del tavolo** — dimensionata per CdA, direzioni di business e funzioni, non per team founder di startup. Il setup di partecipanti, dinamica e linguaggio del workshop tiene conto di gerarchie, politiche interne e tempi decisionali tipici dell'enterprise.
+2. **Tempo di consolidamento dei deliverable** — i sette deliverable escono dal workshop dei 2 giorni ma vengono formalizzati in un dossier (~10-15 pagine) consegnato entro 5 giorni lavorativi. Il dossier è leggibile a board e committenti che non erano in sala — la differenza rispetto al Foundation Sprint originale, dove gli output restano artefatti di lavoro del team.
+3. **Integrazione con il percorso a quattro Sprint!** — Core Sprint! → Design Sprint! → Build Sprint! → Trainstorming!, con orizzonte Decision Design 6-12 mesi. Il Core non è un esercizio isolato: è il primo atto di un percorso eseguibile da Domino senza handoff.
+
+Le tecniche del workshop (Magic Lenses, Votazione Silenziosa / Note & Vote) sono eredità diretta del framework Foundation Sprint. La mappa di differenziazione competitiva (deliverable 2) e l'Ipotesi Core (deliverable 1) sono output canonici del framework.
+
+**Regola di naming.** Il prodotto si chiama e si presenta come Core Sprint!. La genealogia "Foundation Sprint adattato per enterprise" si dichiara solo se il buyer chiede esplicitamente il fondamento metodologico, in tono di legittimazione (mai come naming commerciale verso il cliente).

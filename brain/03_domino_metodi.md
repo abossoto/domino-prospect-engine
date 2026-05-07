@@ -12,7 +12,7 @@ Vista sintetica del catalogo Domino al 2026. Le schede di dettaglio sono nelle s
 | # | Prodotto | Atto | Domanda a cui risponde | Durata | Prezzo | Stato |
 |---|---|---|---|---|---|---|
 | 1 | **Audit tattico** *(CX, SEO/GEO o Digital Marketing)* | Capiamo | "Da dove cominciamo, concretamente?" | 1–2 settimane | €1.500 | Storico — entry point |
-| 2 | **Core Sprint!** | Capiamo | "Stiamo lavorando sul problema giusto?" | 1–2 giorni | €6.000 | **Novità 2026** |
+| 2 | **Core Sprint!** | Capiamo | "Stiamo lavorando sul problema giusto?" | 2 giorni | €6.000 | **Novità 2026** |
 | 3 | **Design Sprint!** | Costruiamo *(progettiamo)* | "Questa soluzione funziona davvero?" | 4 giorni | €10.000 | Storico (10+ anni in Italia). Sei specializzazioni: Service · CX · Brand · Digital Marketing · Website · Intranet |
 | 4 | **Brain & Identity Design Sprint!** *(variante Design Sprint!)* | Costruiamo *(progettiamo)* | "Su quali fondamenta costruiamo?" | Sprint format | Sprint format + Brain + Design System | **Novità 2026 — prodotto di punta** |
 | 5 | **Build Sprint!** | Costruiamo *(realizziamo)* | "Come lo costruiamo davvero?" | 8–52 settimane (blocchi di 2 sett. o 1 mese) | €20.000–60.000 | Sostituisce la voce storica "Progetto completo" |
@@ -22,7 +22,7 @@ Vista sintetica del catalogo Domino al 2026. Le schede di dettaglio sono nelle s
 **Il percorso a quattro Sprint! — capiamo, costruiamo, facciamo funzionare:**
 ```
 Core Sprint! → Design Sprint! → Build Sprint! → Trainstorming!
-   1–2 giorni      4 giorni       8–52 settimane     12 mesi
+    2 giorni       4 giorni       8–52 settimane     12 mesi
    capiamo       progettiamo       costruiamo      facciamo funzionare
 ```
 Avere gli strumenti per ciascuno dei tre verbi *(capire, costruire, far funzionare)* è ciò che ci distingue.
@@ -31,21 +31,32 @@ Avere gli strumenti per ciascuno dei tre verbi *(capire, costruire, far funziona
 
 ## 1. Core Sprint! *(introdotto 2024)*
 
-**Cos'è:** Il passo strategico che precede il Design Sprint! Serve a costruire l'**ipotesi core** del progetto: la tesi che guida tutto ciò che viene dopo.
+**Cos'è:** Il passo strategico che precede il Design Sprint! Serve a costruire l'**Ipotesi Core** del progetto: la tesi che guida tutto ciò che viene dopo.
 
 **La domanda a cui risponde:** *"Stiamo lavorando sul problema giusto?"*
 
 **Output:** Ipotesi Core condivisa — una tesi strategica che allinea tutti gli stakeholder sulla direzione prima di investire in qualsiasi soluzione.
 
-**La formula dell'ipotesi core:**
+**La formula dell'Ipotesi Core:**
 > "Se aiutiamo **[cliente target]** a risolvere **[problema specifico]** con **[nostra soluzione]**, allora sceglieranno la nostra soluzione al posto di **[concorrenza]** perché la nostra soluzione è **[differenziazione chiave]**."
 
-**Durata:** 1–2 giorni
+**Durata:** 2 giorni di workshop + consolidamento dei deliverable nei 5 giorni lavorativi successivi.
 **Prezzo:** €6.000
 
-**Tecniche interne usate nel Core Sprint!:**
-- **Magic Lenses** — mettere alla prova le idee valutandole rispetto a criteri critici. Output: un insieme raffinato delle idee più promettenti
-- **Votazione Silenziosa** — tutti ricevono 3 "pallini" e votano autonomamente le proposte più forti sulla bacheca, senza influenzarsi a vicenda. Favorisce la diversità di opinioni e l'emersione delle idee realmente condivise
+**Genealogia metodologica.** Il Core Sprint! è l'**adattamento Domino per organizzazioni strutturate** del framework **Foundation Sprint** (Jake Knapp / AJ&Smart). L'adattamento agisce su tre assi: (1) **composizione del tavolo** — dimensionata per CdA, direzioni di business e funzioni, non per team founder di startup; (2) **tempo di consolidamento** — i deliverable escono dal workshop dei 2 giorni ma vengono formalizzati in un dossier consegnato entro 5 giorni lavorativi, leggibile a board e committenti che non erano in sala; (3) **integrazione con il percorso a quattro Sprint!** — Core → Design → Build → Trainstorming!, con un orizzonte Decision Design 6-12 mesi. Il naming commerciale resta Core Sprint!: la genealogia si dichiara solo se il buyer chiede esplicitamente il fondamento metodologico, in tono di legittimazione.
+
+**Cosa consegniamo (7 deliverable, dossier ~10-15 pagine + poster A3, entro 5 giorni dalla chiusura):**
+1. **Ipotesi Core** — la frase canonica con i cinque slot compilati (cliente target, problema, nostra soluzione, concorrenza, differenziazione chiave).
+2. **Mappa di differenziazione competitiva** — posizionamento del cliente rispetto ai principali competitor sui driver di scelta rilevanti per il segmento. Sostiene e rende verificabile lo slot *differenziazione chiave* dell'Ipotesi Core.
+3. **Mappa delle priorità** — 3-5 direzioni ordinate, con criterio di scelta esplicito.
+4. **Mappa stakeholder** — allineamenti e frizioni residue (consegna controllata al solo committente).
+5. **Trade-off considerati** — traccia decisionale, utile a CdA o board.
+6. **Prossimi passi** — Design Sprint!, Audit, Build Sprint! o altro percorso, con stima d'investimento.
+7. **Poster A3 di sintesi** — Ipotesi Core e priorità in forma visiva.
+
+**Tecniche interne usate nel Core Sprint!** *(eredità diretta del framework Foundation Sprint, gestite in plenaria nei 2 giorni):*
+- **Magic Lenses** — mettere alla prova le idee valutandole rispetto a criteri critici. Output: un insieme raffinato delle idee più promettenti.
+- **Votazione Silenziosa** *(Note & Vote)* — tutti ricevono 3 "pallini" e votano autonomamente le proposte più forti sulla bacheca, senza influenzarsi a vicenda. Favorisce la diversità di opinioni e l'emersione delle idee realmente condivise.
 
 **Il flusso completo:**
 ```
@@ -205,8 +216,8 @@ Sono strumenti **sequenziali e complementari**, non alternativi. Rispondono a do
 | | Core Sprint! | Design Sprint! |
 |---|---|---|
 | **Domanda** | Stiamo lavorando sul problema giusto? | Questa soluzione funziona? |
-| **Output** | Ipotesi Core condivisa | Prototipo testato con utenti reali |
-| **Durata** | 1–2 giorni | 4 giorni |
+| **Output** | Ipotesi Core condivisa + mappa di differenziazione + scala di priorità | Prototipo testato con utenti reali |
+| **Durata** | 2 giorni (+ 5 giorni di consolidamento) | 4 giorni |
 | **Prezzo** | €6.000 | €10.000 |
 | **Focus** | Allineamento strategico | Validazione della soluzione |
 | **Presupposto** | Nessuno — è il punto di partenza | Direzione già sufficientemente chiara |
@@ -354,9 +365,9 @@ Programma totale: 12 mesi, una sessione ogni 4.
 
 | | Core Sprint! | Design Sprint! | Build Sprint! | Trainstorming! |
 |---|---|---|---|---|
-| **Durata** | 1–2 giorni | 4 giorni | 8–52 settimane (blocchi 2 sett. / 1 mese) | 12 mesi (3 sessioni, una ogni 4) |
+| **Durata** | 2 giorni (+ 5 giorni consolidamento) | 4 giorni | 8–52 settimane (blocchi 2 sett. / 1 mese) | 12 mesi (3 sessioni, una ogni 4) |
 | **Prezzo** | €6.000 | €10.000 | €20.000–60.000 | a partire da €15.000 |
-| **Output** | Ipotesi Core | Prototipo testato | Soluzione realizzata e funzionante | Roadmap + implementazione avviata |
+| **Output** | Ipotesi Core + mappa differenziazione + scala priorità | Prototipo testato | Soluzione realizzata e funzionante | Roadmap + implementazione avviata |
 | **Focus** | Allineamento strategico | Validazione soluzione | Costruzione | Cambiamento culturale/organizzativo |
 | **Quando** | Prima di un progetto | Prima di investire | Dopo la validazione | Per gestire una transizione |
 
