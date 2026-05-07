@@ -54,7 +54,7 @@ Posizionamento e manifesto del nuovo CIA — *partner di crescita*, non *passaca
 
 ## Cosa è successo, in concreto
 
-Il vertice CIA è uscito dai sette mesi di percorso con una direzione condivisa firmata, comprensibile e comunicabile a 900 sedi. Il manifesto è entrato nei materiali di rappresentanza istituzionale. L'ecosistema digitale CIAO CIA è passato da idea a prototipo testato con utenti reali sulle due unità operative. La proposta commerciale di CIA verso il mercato è stata riorganizzata in pacchetti chiari, con tempo-a-risultato dichiarato.
+Il vertice CIA è uscito dai sette mesi di percorso con una direzione condivisa, definita, comprensibile e comunicabile a 900 sedi. Il manifesto è entrato nei materiali di rappresentanza istituzionale. L'ecosistema digitale CIAO CIA è passato da idea a prototipo testato con utenti reali sulle due unità operative. La proposta commerciale di CIA verso il mercato è stata riorganizzata in pacchetti chiari, con tempo-a-risultato dichiarato.
 
 Niente di tutto questo era disponibile a giugno 2025.
 
@@ -68,7 +68,7 @@ Il Build Sprint! non è ancora stato avviato. Il sito CIAO CIA è prototipo, non
 
 **Per organizzazioni federate o multi-business unit.** Il pattern Core (al vertice) + Design (sulle unità operative) è replicabile ovunque la decisione si forma in un punto e incontra l'utente in un altro: confederazioni, gruppi industriali con divisioni autonome, retailer multi-format, gruppi assicurativi multi-canale, holding multi-mercato.
 
-**Per direzioni generali in fase di riposizionamento.** Il Core Sprint! con il vertice produce ciò che le ricerche di mercato e i piani strategici tradizionali non producono — una direzione confederale condivisa e firmata in due giorni di lavoro, non in sei mesi di slide. Output dichiarabili: manifesto, mappa di differenziazione, riorganizzazione dell'offerta in pacchetti leggibili.
+**Per direzioni generali in fase di riposizionamento.** Il Core Sprint! con il vertice produce ciò che le ricerche di mercato e i piani strategici tradizionali non producono — una direzione confederale condivisa e definita in due giorni di lavoro, non in sei mesi di slide. Output dichiarabili: manifesto, mappa di differenziazione, riorganizzazione dell'offerta in pacchetti leggibili.
 
 **Per CMO che devono unificare un linguaggio frammentato.** Il caso CIA mostra che il tone of voice può essere progettato come prodotto — con regole, esempi prima/dopo, applicazioni concrete a bandi e comunicazioni di prodotto — non lasciato al gusto del singolo ufficio.
 

@@ -123,6 +123,10 @@ Core Sprint! → [Ipotesi Core] → Design Sprint! → Design Sprint! → ... �
 - Per superare stalli decisionali interni
 - Come primo passo tangibile e a scope fisso di una relazione con un nuovo cliente
 
+**Case di riferimento per pitch:**
+- **Poltrona Frau In Motion** *(Q1 2026)*: Design Sprint! sul sito B2B con tre buyer personas votate dal tavolo (CPO, CTO, Designer Avio). Decisione architetturale presa al tavolo: il sito B2B non eredita la struttura del sito B2C del brand-madre. Build eseguito, sito in produzione. Vedi [scheda completa](case_poltronafrau_inmotion_percorso_sprint.md).
+- **CIA — Confederazione Italiana Agricoltori** *(2025-2026)*: due Design Sprint! distinti sulle unità Cittadini e Imprese, dentro un percorso che inizia con un Core Sprint! sul vertice nazionale. Pattern di vendita: organizzazioni con segmenti utente molto diversi sullo stesso brand. Vedi [scheda completa](case_cia_percorso_sprint.md).
+
 ---
 
 ## 2.bis Brain & Identity Design Sprint! *(prodotto di punta 2026)*
@@ -376,7 +380,7 @@ Programma totale: 12 mesi, una sessione ogni 4.
 **Quando proporlo:**
 - Quando il cliente deve gestire una trasformazione culturale o tecnologica rilevante (AI, nuovi strumenti, riorganizzazione)
 - Quando ha già fatto un Design Sprint! ma fatica a mettere a terra
-- Quando l'innovazione è bloccata da resistenze interne o stakeholder war
+- Quando l'innovazione è bloccata da resistenze interne o conflitti tra stakeholder
 - Come programma annuale di innovazione per aziende che vogliono mantenere un ritmo di cambiamento
 - Come naturale continuazione di un onboarding su nuove piattaforme (intranet, CRM, Microsoft 365)
 - Quando il cliente è sotto pressione normativa (AI Act, ESG, data ethics) e deve trasformare la compliance in vantaggio competitivo

@@ -64,7 +64,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 - Demak: +54% lead gen, +48% traffico organico, +20% clic non-brand
 - Rollon US: +48% traffico organico, "linear rails" = prima keyword organica
 - Frascold: +62% utenti organici già nel primo mese
-- **Poltrona Frau In Motion** *(percorso Core + Design, sito B2B in produzione 2026)* — case parlante per BU industriali dentro brand-madre consumer; il sito B2B nasce da Ipotesi Core firmata dal vertice e da Design Sprint! sui buyer reali (CPO, CTO, Designer), non dall'adattamento del sito B2C. Vedi [scheda completa](case_poltronafrau_inmotion_percorso_sprint.md)
+- **Poltrona Frau In Motion** *(percorso Core + Design, sito B2B in produzione 2026)* — case parlante per BU industriali dentro brand-madre consumer; il sito B2B nasce da Ipotesi Core definita dal vertice e da Design Sprint! sui buyer reali (CPO, CTO, Designer), non dall'adattamento del sito B2C. Vedi [scheda completa](case_poltronafrau_inmotion_percorso_sprint.md)
 
 **Vs competitor:**
 - Vs web agency generalista: Domino porta strategia + execution + KPI, non solo ranking
