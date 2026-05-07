@@ -69,6 +69,10 @@ Core Sprint! → [Ipotesi Core] → Design Sprint! → Design Sprint! → ... �
 - Quando il cliente ha tante idee ma non sa quale prioritizzare
 - Prima di un Design Sprint!, per assicurarsi di lavorare sul problema giusto
 
+**Case di riferimento per pitch:**
+- **CIA — Confederazione Italiana Agricoltori** *(2025-2026)*: percorso Core + 2 Design Sprint! su organizzazione federata. Pattern di vendita: Core al vertice nazionale, Design sulle unità operative. Vedi [scheda completa](case_cia_percorso_sprint.md).
+- **Poltrona Frau In Motion** *(Q1 2026)*: percorso Core + Design Sprint!, sito B2B in produzione. Pattern di vendita: BU industriale dentro brand-madre consumer. Vedi [scheda completa](case_poltronafrau_inmotion_percorso_sprint.md).
+
 ---
 
 ## 2. Design Sprint! *(pionieri in Italia da 10+ anni)*

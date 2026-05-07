@@ -64,6 +64,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 - Demak: +54% lead gen, +48% traffico organico, +20% clic non-brand
 - Rollon US: +48% traffico organico, "linear rails" = prima keyword organica
 - Frascold: +62% utenti organici già nel primo mese
+- **Poltrona Frau In Motion** *(percorso Core + Design, sito B2B in produzione 2026)* — case parlante per BU industriali dentro brand-madre consumer; il sito B2B nasce da Ipotesi Core firmata dal vertice e da Design Sprint! sui buyer reali (CPO, CTO, Designer), non dall'adattamento del sito B2C. Vedi [scheda completa](case_poltronafrau_inmotion_percorso_sprint.md)
 
 **Vs competitor:**
 - Vs web agency generalista: Domino porta strategia + execution + KPI, non solo ranking
@@ -166,6 +167,8 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 - 100% clienti soddisfatti Design Sprint!
 - Links Foundation: Design Sprint! + Agile — intranet progettata e validata in settimane
 - Metodo documentato: in 4 giorni si produce ciò che normalmente richiede mesi di riunioni
+- **CIA — Confederazione Italiana Agricoltori** *(percorso Core + 2 Design, 2025-2026)* — case di riferimento per organizzazioni federate, multi-livello, multi-segmento utente. Core con il vertice nazionale, Design separati sulle due unità operative (Cittadini, Imprese). Vedi [scheda completa](case_cia_percorso_sprint.md)
+- **Poltrona Frau In Motion** *(percorso Core + Design, sito B2B in produzione 2026)* — case di riferimento per BU industriali dentro brand-madre consumer. Vedi [scheda completa](case_poltronafrau_inmotion_percorso_sprint.md)
 
 **Vs competitor:**
 - Vs consulenza (Accenture, Reply): output tangibile in 4 giorni, non un report da 80 pagine

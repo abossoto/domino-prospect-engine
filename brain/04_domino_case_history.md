@@ -5,6 +5,30 @@
 
 ---
 
+## PERCORSI A SPRINT! — Case di riferimento *(2025-2026)*
+
+I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono percorsi reali, citabili pubblicamente con regole specifiche di confidenzialità. Schede complete nei file dedicati.
+
+### CIA — Confederazione Italiana Agricoltori
+**Settore:** B2B Industriale
+**Periodo:** Giugno 2025 → Gennaio 2026 (~7 mesi)
+**Sprint:** 1 Core Sprint! (vertice nazionale) + 2 Design Sprint! (unità Cittadini, unità Imprese)
+**Status:** Output consegnati, Build Sprint! non ancora avviato
+**Pattern di vendita:** organizzazione federata, multi-livello, multi-segmento utente
+**Citabilità:** nome utilizzabile pubblicamente
+**Scheda completa:** [case_cia_percorso_sprint.md](case_cia_percorso_sprint.md)
+
+### Poltrona Frau In Motion
+**Settore:** B2B Industriale (mobility supplier — automotive, nautica, aviation)
+**Periodo:** Q1 2026
+**Sprint:** 1 Core Sprint! (vertice strategico) + 1 Design Sprint! (aree operative)
+**Status:** Build Sprint! eseguito, sito B2B in produzione
+**Pattern di vendita:** business unit industriale dentro brand-madre consumer
+**Citabilità:** nome cliente sì; mappa di differenziazione e manifesto sono **riservati al cliente** — non divulgabili in pitch
+**Scheda completa:** [case_poltronafrau_inmotion_percorso_sprint.md](case_poltronafrau_inmotion_percorso_sprint.md)
+
+---
+
 ## AUTOMOTIVE
 
 ### IVECO — iveco.com (Premio IKA 2024)
@@ -231,7 +255,7 @@
 | Settore | Clienti |
 |---|---|
 | **Automotive** | Fiat, Fiat Professional, Jeep, Abarth, Alfa Romeo, IVECO, Ford Authos, Motor Village, CIFA, Askoll, Mopar, Steyr, CNH Industrial, New Holland, Case IH, Stellantis |
-| **B2B Industriale** | Danieli, COMAU, Bitron, Volvo Penta, Petronas, Frascold, Teksid, Rollon, TEXA, B3, SKF, Ewellix, DFS, Links Foundation, Megadyne, Contship Italia, Veritas, Pipein, Gruppo De Eccher, Demak |
+| **B2B Industriale** | CIA — Confederazione Italiana Agricoltori, Poltrona Frau In Motion, Danieli, COMAU, Bitron, Volvo Penta, Petronas, Frascold, Teksid, Rollon, TEXA, B3, SKF, Ewellix, DFS, Links Foundation, Megadyne, Contship Italia, Veritas, Pipein, Gruppo De Eccher, Demak |
 | **Finance & PA** | Arca SGR, Bancomat SpA, Exor, Zoomlion Capital, Compagnia di San Paolo, Regione del Veneto, Consiglio Regionale Veneto |
 | **Salute & Beauty** | Affidea, Ospedale dell'Angelo, CDI, Humanitas, Asalaser, LARC, Lierac, Phyto, Solgar, Azienda Ospedaliera di Padova, Labo Cosprophar |
 | **Turismo & Cultura** | Alpitour, ENIT, Costa Crociere, Biennale di Venezia, Fondazione Torino Musei, Palazzo Madama, GAM, MAO, Museo Nazionale del Cinema, Galleria Borghese, Fondazione Aquileia, Museo Poldi Pezzoli, Turismo Torino, Visit Piemonte, Terre dei Savoia, Marcegaglia Tourism, Provincia di Padova, Langhe-Monferrato-Roero, Distretto Turistico dei Laghi, Masi Agricola |
