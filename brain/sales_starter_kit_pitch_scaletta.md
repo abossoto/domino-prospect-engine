@@ -145,7 +145,7 @@
 **Take-away**: il prossimo passo è basso commitment, definito, immediatamente comprabile.
 
 **Contenuto**:
-- **Investimento Sales Starter Kit** (range orientativo, da consolidare con direzione): workshop Brain & Identity Design Sprint! (3 giorni) + build del brain (3 settimane) + go-live, **€13.000-17.000 totali**.
+- **Investimento Sales Starter Kit**: investimento dedicato — quotato in proposta sulla base del perimetro definito al workshop. Workshop Brain & Identity Design Sprint! (3 giorni) + build del brain (3 settimane) + go-live. **In questa fase il pricing non viene comunicato a slide**: si dichiara *"vi mandiamo la proposta dedicata dopo l'Audit"* e si rimanda al passo concreto sotto.
 - **Prima di impegnarsi**: un Audit tattico di una settimana — analizziamo i materiali commerciali esistenti, mappiamo il dolore reale del team Sales, vi diciamo se il Sales Starter Kit ha senso per voi. **€1.500, scope fisso, niente sorprese.**
 - **Il passo concreto, oggi**: *"Vi mando una mail con due date la prossima settimana per l'Audit. Se preferite parlarne in altro modo, ditemelo adesso."*
 
@@ -182,7 +182,7 @@ Tre-cinque domande tipiche con risposta secca:
 
 Tre nodi ancora aperti:
 
-1. **Pricing finale**. €13-17K è ipotesi mia. Va verificato con direzione, allineato alla scala in `03_domino_metodi.md` (oggi posiziona Sales Starter Kit tra Core Sprint! €6K e Build Sprint! €20-60K — il range proposto regge ma va deciso). Nodo correlato: l'Audit tattico €1.500 va proposto come passo "0" del Sales Starter Kit, oppure resta prodotto autonomo (storico, già in catalogo)?
+1. **Pricing in slide.** Decisione presa (Maggio 2026): in questa fase **il pricing dello Starter Kit non si comunica a slide**. La cifra entra solo nella proposta dedicata, dopo l'Audit. Slide 8 va costruita di conseguenza: nessun cartellino, si chiude sul prossimo passo (Audit a €1.500). Nodo correlato ancora aperto: l'Audit tattico €1.500 va proposto come passo "0" del Sales Starter Kit *con sconto/credito sul prezzo finale*, oppure resta prodotto autonomo (storico, già in catalogo)? Da decidere alla prossima revisione commerciale.
 2. **Statistica di apertura slide 1**. La quota di tempo che un commerciale dedica al recupero informazioni va trovata da una fonte difendibile. Se non si trova, si toglie e si lascia la domanda da sola — funziona uguale.
 3. **Terzo case study**. Il self-case Domino è onesto ma può apparire poco "cliente". Va testato in 2-3 pitch reali. Se non regge, sostituirlo.
 

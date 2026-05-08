@@ -54,7 +54,7 @@ Domino ha sviluppato metodi propri, non generici. Sono differenziatori commercia
 **Quando usarlo:** Quando la direzione è chiara ma si vuole validare la soluzione prima di investire. Ideale dopo un Core Sprint! o quando il brief è già definito.
 **Prezzo:** €10.000
 **Variante di punta 2026:** **Brain & Identity Design Sprint!** — progetta le fondamenta del cliente: il *brain aziendale* (conoscenza interrogabile via AI) e il *design system*. *"Il brain governa cosa si sa, il design system governa come si appare."* Scheda completa in [03_domino_metodi.md](03_domino_metodi.md).
-**Specializzazioni tattiche 2026 — gli Starter Kit:** Sales · Internal Communication · CX Manager. Sono varianti verticali del Brain & Identity Design Sprint! — un dominio funzionale per volta, 4 settimane, **senza integrazioni IT**, €13-17K. Si comprano col budget di funzione e aprono il percorso al Brain & Identity Design Sprint! pieno. Scheda completa in [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
+**Specializzazioni tattiche 2026 — gli Starter Kit:** Sales · Internal Communication · CX Manager. Sono varianti verticali del Brain & Identity Design Sprint! — un dominio funzionale per volta, 4 settimane, **senza integrazioni IT**. Pricing su richiesta, non comunicato pubblicamente. Si comprano col budget di funzione e aprono il percorso al Brain & Identity Design Sprint! pieno. Scheda completa in [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
 
 ### Build Sprint! *(nuovo metodo 2026)*
 **Cos'è:** L'esecuzione vera e propria, applicata con metodo sprint: blocchi di 2 settimane o 1 mese, deliverable verificabili, perimetro aperto. Sostituisce la voce storica "Progetto completo".

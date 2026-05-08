@@ -9,7 +9,7 @@
 
 Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono definiti in [03_domino_metodi.md](03_domino_metodi.md) — fonte unica di verità. Non ripetere qui.
 
-**Entry-point Starter Kit naturali per il settore.** Per prospect B2B industriale con dolore concentrato in funzione Sales (rete vendita che cerca invece di vendere, RFP che richiedono giorni di scavo), considerare il **Sales Starter Kit** del Brain & Identity Design Sprint! (€13-17K, 4 settimane, no IT integration) come alternativa al Design Sprint! classico. Buyer: Sales Director, compra col proprio budget. Per organizzazioni multi-stabilimento con pressione su onboarding e knowledge interno è valutabile anche l'**Internal Communication Starter Kit**. Scheda completa: [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
+**Entry-point Starter Kit naturali per il settore.** Per prospect B2B industriale con dolore concentrato in funzione Sales (rete vendita che cerca invece di vendere, RFP che richiedono giorni di scavo), considerare il **Sales Starter Kit** del Brain & Identity Design Sprint! (4 settimane, no IT integration, pricing su richiesta) come alternativa al Design Sprint! classico. Buyer: Sales Director, compra col proprio budget. Per organizzazioni multi-stabilimento con pressione su onboarding e knowledge interno è valutabile anche l'**Internal Communication Starter Kit**. Scheda completa: [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
 
 ---
 

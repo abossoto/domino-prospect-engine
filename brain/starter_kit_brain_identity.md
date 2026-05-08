@@ -1,7 +1,7 @@
 # DOMINO BRAIN — Starter Kit del Brain & Identity Design Sprint!
 ## Tre specializzazioni tattiche: Sales · Internal Communication · CX Manager
 
-> Versione 0.1 — Maggio 2026. Schede prodotto delle tre specializzazioni tattiche del **Brain & Identity Design Sprint!**. Sono varianti verticali, perimetro singolo, **senza integrazioni IT** né custom development. Pensate per partire in fretta, con un buyer di funzione che decide col proprio budget, e per aprire il percorso al Brain & Identity Design Sprint! pieno o ai successivi Sprint! del catalogo. **Versione di lavoro** — da consolidare con direzione su pricing finale e KPI.
+> Versione 0.2 — Maggio 2026. Schede prodotto delle tre specializzazioni tattiche del **Brain & Identity Design Sprint!**. Sono varianti verticali, perimetro singolo, **senza integrazioni IT** né custom development. Pensate per partire in fretta, con un buyer di funzione che decide col proprio budget, e per aprire il percorso al Brain & Identity Design Sprint! pieno o ai successivi Sprint! del catalogo. **Aggiornamento v0.2:** chiusi i tre nodi aperti della v0.1 (pricing, buyer CX, KPI Internal Comms) — vedi sezione "Decisioni prese".
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md) · Pitch deck Sales: [scaletta](sales_starter_kit_pitch_scaletta.md)
 
@@ -39,7 +39,7 @@ Uno Starter Kit è una **specializzazione tattica e verticale** del [Brain & Ide
 | **Output** | Brain con 40-80 nodi curati · web app SSO interrogabile · piano di governance (chi aggiorna, ogni quanto, con quale workflow) · roadmap di crescita |
 | **Integrazioni** | Nessuna. Il brain è autonomo, vive su stack Domino, retrieval con ranking |
 | **Utenti inclusi nel pilota** | Fino a 20. Oltre va valutato — la web app scala senza limiti tecnici |
-| **Pricing** | €13.000-17.000 *(uniforme sui tre Starter Kit per semplicità di messaggio commerciale; range orientativo, da consolidare con direzione)* |
+| **Pricing** | Su richiesta — non comunicato pubblicamente in questa fase. Investimento dedicato condiviso solo all'interno della proposta. Logica: deve restare comprabile dal buyer di funzione col proprio budget |
 | **Audit tattico €1.500** | Passo zero opzionale ma consigliato: una settimana per analizzare i materiali esistenti, mappare il dolore reale del team, decidere se lo Starter Kit ha senso per quel cliente |
 
 **Tre limiti onesti, identici per tutti.**
@@ -84,7 +84,11 @@ Uno Starter Kit è una **specializzazione tattica e verticale** del [Brain & Ide
 2. **Onboarding più rapido del nuovo joiner.** Policy, benefit, glossario, organigramma, storia della company in un punto solo, interrogabile in linguaggio naturale. Niente più PDF da 80 pagine.
 3. **Coerenza nei messaggi interni.** Una sola fonte canonica e versionata di policy, valori, comportamenti attesi. Al posto di tre versioni in tre cartelle SharePoint con date diverse.
 
-**KPI difendibili.** Numero di richieste ripetitive verso HR/Comms (prima/dopo) — KPI primario, il più misurabile. Tasso di adozione del brain nei primi 30 giorni di un nuovo joiner — KPI secondario. Time-to-productivity del nuovo joiner — KPI terziario, più narrativo che misurabile.
+**KPI difendibili.** Due KPI primari, da misurare in parallelo:
+- **Riduzione delle richieste ripetitive verso HR/Comms** (prima/dopo) — il più misurabile, leggibile direttamente dai ticket del people team.
+- **Time-to-productivity del nuovo joiner** — più narrativo, ma è il KPI che parla al CdA. Si misura su milestone (a 30, 60, 90 giorni: percentuale di policy/processi che il nuovo joiner conosce e usa autonomamente).
+
+KPI secondario di supporto: tasso di adozione del brain nei primi 30 giorni di un nuovo joiner.
 
 **Cosa entra nel brain (40-80 nodi).** Policy HR, procedure operative interne, benefit, codice etico, glossario aziendale, organigramma, milestone della company history, principi di comportamento, FAQ ricorrenti, guide self-service di livello informativo (espense, viaggi, IT how-to).
 
@@ -97,8 +101,7 @@ Uno Starter Kit è una **specializzazione tattica e verticale** del [Brain & Ide
 
 ## 3. CX Manager Starter Kit
 
-**Buyer primario.** CX Manager, Head of Customer Experience, Customer Operations Director.
-**Buyer secondario** *(da validare in 2-3 pitch reali)*: COO / Operations Director, perché in molte aziende italiane la CX è spaccata fra Marketing e Operations e il decisore di budget può stare dall'altra parte.
+**Buyer primario.** CX Manager, Head of Customer Experience, Customer Operations Director. Decisione di funzione singola: il CX Manager compra col proprio budget, senza shared ownership con Operations o Marketing.
 
 **Profilo del dolore.** Un agente customer care risponde diversamente da un altro. Le risposte canoniche vivono in N file diversi, alcuni obsoleti. Un nuovo agente impiega settimane per essere autonomo. Il chatbot AI generico inventa o dà risposte non allineate al tono del brand. La voice of customer si raccoglie ma non rientra nelle risposte standard.
 
@@ -122,13 +125,13 @@ Uno Starter Kit è una **specializzazione tattica e verticale** del [Brain & Ide
 
 | Asse | Sales Starter Kit | Internal Comms Starter Kit | CX Manager Starter Kit |
 |---|---|---|---|
-| **Buyer** | Sales Director | HR / Internal Comms / CPO | CX Manager *(+ COO da validare)* |
+| **Buyer** | Sales Director | HR / Internal Comms / CPO | CX Manager |
 | **Dolore principale** | Tempo perso a *cercare* invece di vendere | Ticket ricorrenti al people team | Risposte incoerenti tra agenti |
-| **KPI primario** | Tempo medio preparazione offerta | Riduzione richieste ripetitive HR | AHT (Average Handle Time) |
+| **KPI primari** | Tempo medio preparazione offerta | Riduzione richieste ripetitive HR · Time-to-productivity nuovo joiner | AHT (Average Handle Time) |
 | **Cosa entra nel brain** | Schede, listini, claim, case, battle card | Policy, benefit, glossario, valori, FAQ | Procedure casi, FAQ, escalation, script |
 | **Settori naturali** | B2B Industriale, Finance/PA, Automotive | Salute & Beauty, Finance/PA, B2B Industriale | Turismo & Cultura, Automotive, Salute & Beauty |
 | **Format** | 4 settimane (3 gg + 3 sett. + 1 sett. QA) | identico | identico |
-| **Pricing** | €13-17K | €13-17K | €13-17K |
+| **Pricing** | Su richiesta | Su richiesta | Su richiesta |
 | **Audit tattico passo zero** | €1.500 (1 settimana) | €1.500 (1 settimana) | €1.500 (1 settimana) |
 | **Integrazioni IT** | Nessuna | Nessuna | Nessuna |
 
@@ -157,12 +160,12 @@ Uno Starter Kit è una **specializzazione tattica e verticale** del [Brain & Ide
 
 Lo Starter Kit è un **acceleratore tattico** dentro il percorso Domino, non un prodotto fuori catalogo. Dopo uno Starter Kit andato bene, i passi naturali sono:
 
-1. **Brain & Identity Design Sprint! pieno** — estensione del brain ad altri domini funzionali, e introduzione del layer identity / design system. Sprint format, range tipico €30-60K *(da consolidare con direzione)*.
-2. **Build Sprint!** — costruzione di prodotti digitali che *consumano* il brain (sales tool, employee portal, customer portal, agente AI di funzione). €20-60K, blocchi di 2 settimane o 1 mese.
-3. **Trainstorming!** — accompagnamento 12 mesi sull'adozione organizzativa del brain e del cambiamento culturale che porta con sé. A partire da €15.000.
+1. **Brain & Identity Design Sprint! pieno** — estensione del brain ad altri domini funzionali, e introduzione del layer identity / design system. Sprint format, pricing dedicato in fase di proposta.
+2. **Build Sprint!** — costruzione di prodotti digitali che *consumano* il brain (sales tool, employee portal, customer portal, agente AI di funzione). €20.000-60.000, blocchi di 2 settimane o 1 mese (vedi [03_domino_metodi.md](03_domino_metodi.md)).
+3. **Trainstorming!** — accompagnamento 12 mesi sull'adozione organizzativa del brain e del cambiamento culturale che porta con sé. A partire da €15.000 (vedi [03_domino_metodi.md](03_domino_metodi.md)).
 
 ```
-Starter Kit (4 settimane, €13-17K)
+Starter Kit (4 settimane)
         ↓
 Brain & Identity Design Sprint! pieno
         ↓
@@ -171,13 +174,16 @@ Build Sprint! → Trainstorming!
 
 ---
 
-## Nodi aperti — da consolidare prima di portare in pitch
+## Decisioni prese (chiusura dei nodi aperti — Maggio 2026)
 
-Tre decisioni ancora pendenti:
+Tre decisioni di Andrea, che chiudono i nodi della v0.1:
 
-1. **Pricing finale.** €13-17K uniforme sui tre Starter Kit è ipotesi mia per semplicità di messaggio. Alternativa in valutazione: pricing modulato (Sales €13-17K, Internal Comms €11-15K perché contenuti tipicamente meno complessi, CX €15-20K perché più operativo). Da decidere con direzione.
-2. **Buyer primario CX.** Lo posiziono sul CX Manager. In molte aziende italiane la funzione è spaccata fra Marketing e Operations: va testato in 2-3 pitch dal vivo se il buyer di budget è il CX Manager o il COO. Se non regge, dichiarare doppio buyer in scheda.
-3. **KPI Internal Comms.** Lascio "riduzione richieste ripetitive HR" come KPI primario perché misurabile. *Time-to-productivity* è più narrativo ma meno difendibile in CdA — resta come KPI secondario. Da validare con HR Director in 2 conversazioni reali.
+1. **Pricing.** Per la fase attuale lo Starter Kit **non comunica un range pubblico**. La cifra entra solo nella fase di proposta vera e propria, su richiesta. Tutte le tabelle di scheda riportano *"Su richiesta"*. La logica resta: deve restare comprabile dal buyer di funzione col proprio budget — la verifica è sul "compra senza passare dal CdA", non su un cartellino.
+2. **Buyer primario CX.** **CX Manager singolo.** Niente shared ownership con COO o Marketing in scheda: la specializzazione si presenta come decisione di funzione singola, sul budget del CX Manager. Eventuali shared ownership emergono solo a livello di pitch, caso per caso, e non vanno dichiarati in scheda.
+3. **KPI Internal Comms.** **Entrambi i KPI come primari**: riduzione richieste ripetitive HR (il misurabile dai ticket) *e* time-to-productivity del nuovo joiner (il narrativo che parla al CdA). Si misurano in parallelo, su milestone definite nel workshop. Il tasso di adozione del brain a 30 giorni resta come KPI secondario di supporto.
+
+**Nodo ancora aperto** (non bloccante per il pitch):
+- L'**Audit tattico €1.500** va proposto come passo "0" del Sales Starter Kit *con sconto/credito sul prezzo finale*, oppure resta prodotto autonomo come oggi (storico, già in catalogo)? Da decidere con direzione alla prossima revisione commerciale.
 
 ---
 
@@ -215,4 +221,4 @@ Quando si costruiscono deck, one-pager o pagine di sito a partire da questa sche
 
 ---
 
-*Versione 0.1 — Maggio 2026. Da rivedere con Andrea su pricing e KPI prima di costruire materiali commerciali derivati.*
+*Versione 0.2 — Maggio 2026. Pricing, buyer CX e KPI Internal Comms chiusi (vedi sezione Decisioni prese). Resta da decidere se l'Audit tattico €1.500 entra come passo zero scontato o resta prodotto autonomo.*

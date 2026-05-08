@@ -37,7 +37,7 @@
 
 Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono definiti in [03_domino_metodi.md](03_domino_metodi.md) — fonte unica di verità. Non ripetere qui.
 
-**Entry-point Starter Kit naturali per il settore.** Per la rete dealer e il post-vendita auto/veicoli industriali, il **CX Manager Starter Kit** del Brain & Identity Design Sprint! è entry-point naturale (€13-17K, 4 settimane, buyer After-Sales Manager / Customer Experience Director): brain di procedure di garanzia, escalation, casi tipici e tono di voce. Per le funzioni vendita di OEM e dealer importer, il **Sales Starter Kit** è valutabile come entry-point parallelo. Scheda completa: [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
+**Entry-point Starter Kit naturali per il settore.** Per la rete dealer e il post-vendita auto/veicoli industriali, il **CX Manager Starter Kit** del Brain & Identity Design Sprint! è entry-point naturale (4 settimane, buyer After-Sales Manager / Customer Experience Director, pricing su richiesta): brain di procedure di garanzia, escalation, casi tipici e tono di voce. Per le funzioni vendita di OEM e dealer importer, il **Sales Starter Kit** è valutabile come entry-point parallelo. Scheda completa: [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
 
 ---
 

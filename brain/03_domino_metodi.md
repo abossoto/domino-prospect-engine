@@ -15,7 +15,7 @@ Vista sintetica del catalogo Domino al 2026. Le schede di dettaglio sono nelle s
 | 2 | **Core Sprint!** | Capiamo | "Stiamo lavorando sul problema giusto?" | 2 giorni | €6.000 | **Novità 2026** |
 | 3 | **Design Sprint!** | Costruiamo *(progettiamo)* | "Questa soluzione funziona davvero?" | 4 giorni | €10.000 | Storico (10+ anni in Italia). Sei specializzazioni: Service · CX · Brand · Digital Marketing · Website · Intranet |
 | 4 | **Brain & Identity Design Sprint!** *(variante Design Sprint!)* | Costruiamo *(progettiamo)* | "Su quali fondamenta costruiamo?" | Sprint format | Sprint format + Brain + Design System | **Novità 2026 — prodotto di punta** |
-| 4.bis | **Starter Kit** *(specializzazioni tattiche del Brain & Identity Design Sprint!)* — Sales · Internal Comms · CX Manager | Costruiamo *(progettiamo)* | "Da quale dominio funzionale partiamo, in 4 settimane, senza IT?" | 4 settimane | €13.000-17.000 | **Novità 2026** *(scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md))* |
+| 4.bis | **Starter Kit** *(specializzazioni tattiche del Brain & Identity Design Sprint!)* — Sales · Internal Comms · CX Manager | Costruiamo *(progettiamo)* | "Da quale dominio funzionale partiamo, in 4 settimane, senza IT?" | 4 settimane | Su richiesta | **Novità 2026** *(scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md))* |
 | 5 | **Build Sprint!** | Costruiamo *(realizziamo)* | "Come lo costruiamo davvero?" | 8–52 settimane (blocchi di 2 sett. o 1 mese) | €20.000–60.000 | Sostituisce la voce storica "Progetto completo" |
 | 6 | **Trainstorming!** | Facciamo funzionare | "Come faccio a far diventare il cambiamento parte dell'organizzazione?" | 12 mesi · 3 sessioni | a partire da €15.000 | **Novità 2026** *(rituale interno dal 2010, oggi servizio)* |
 | + | **Preventivo Emozionale** *(tool commerciale)* | Trasversale | "Come faccio a far vivere il valore prima ancora di vendere?" | Minisite + analytics | A progetto | Storico — caso d'uso Costa Crociere |
@@ -169,15 +169,15 @@ Tre **specializzazioni verticali** del Brain & Identity Design Sprint! pensate p
 
 **Scheda completa con tutti i dettagli operativi:** [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
 
-**Format comune.** 4 settimane esatte: 3 giorni di workshop + 3 settimane di build (40-80 nodi canonici, web app SSO Microsoft o Google) + 1 settimana di QA. Pricing **€13.000-17.000 uniforme** sui tre Starter Kit *(da consolidare con direzione)*. Audit tattico €1.500 come passo zero opzionale.
+**Format comune.** 4 settimane esatte: 3 giorni di workshop + 3 settimane di build (40-80 nodi canonici, web app SSO Microsoft o Google) + 1 settimana di QA. **Pricing su richiesta** — non comunicato pubblicamente in questa fase, condiviso solo all'interno della proposta. La logica resta: deve restare comprabile dal buyer di funzione col proprio budget. Audit tattico €1.500 come passo zero opzionale.
 
 **I tre Starter Kit in tabella:**
 
-| Starter Kit | Buyer | Dolore principale | KPI primario | Settori naturali |
+| Starter Kit | Buyer | Dolore principale | KPI primari | Settori naturali |
 |---|---|---|---|---|
 | **Sales** | Sales Director | Tempo perso a *cercare* invece di vendere | Tempo medio preparazione offerta | B2B Industriale, Finance/PA, Automotive |
-| **Internal Communication** | HR / Internal Comms / CPO | Ticket ricorrenti al people team | Riduzione richieste ripetitive HR | Salute & Beauty, Finance/PA, B2B Industriale |
-| **CX Manager** | CX Manager *(+ COO da validare)* | Risposte incoerenti tra agenti | AHT (Average Handle Time) | Turismo & Cultura, Automotive, Salute & Beauty |
+| **Internal Communication** | HR / Internal Comms / CPO | Ticket ricorrenti al people team | Riduzione richieste ripetitive HR · Time-to-productivity nuovo joiner | Salute & Beauty, Finance/PA, B2B Industriale |
+| **CX Manager** | CX Manager | Risposte incoerenti tra agenti | AHT (Average Handle Time) | Turismo & Cultura, Automotive, Salute & Beauty |
 
 **Tre limiti onesti, identici per tutti.**
 1. Niente integrazioni con sistemi vivi (CRM, ERP, HRIS, contact center, intranet).
@@ -239,7 +239,7 @@ Questa scala è la fonte unica di verità per il pricing. I file GTM di settore 
 | 1 | Audit tattico (CX, SEO/GEO o Digital Mktg) | €1.500 | Scope fisso, 1–2 settimane. Mai gratuito per prospect bottom-up |
 | 2 | Core Sprint! | €6.000 | Quando la direzione non è chiara o gli stakeholder sono divisi |
 | 3 | Design Sprint! | €10.000 | Quando la direzione è chiara e si vuole validare prima di investire — varianti incluso il **Brain & Identity Design Sprint!**, prodotto di punta 2026 |
-| 3.bis | Starter Kit del Brain & Identity Design Sprint! *(Sales / Internal Comms / CX)* | €13.000–17.000 | Specializzazione tattica verticale, 4 settimane, no IT integration. Buyer di funzione. Scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md) |
+| 3.bis | Starter Kit del Brain & Identity Design Sprint! *(Sales / Internal Comms / CX)* | Su richiesta | Specializzazione tattica verticale, 4 settimane, no IT integration. Buyer di funzione. Pricing non comunicato pubblicamente in questa fase. Scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md) |
 | 4 | Build Sprint! *(execution)* | €20.000–60.000 | Costruzione a blocchi di 2 settimane o 1 mese, perimetro aperto. Sostituisce la voce storica "Progetto completo" |
 | 5 | Trainstorming! | a partire da €15.000 | Percorso change management 12 mesi (3 sessioni, una ogni 4) — per transizioni culturali/organizzative complesse |
 

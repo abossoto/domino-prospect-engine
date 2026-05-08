@@ -21,7 +21,7 @@ Il settore è frammentato in tre sub-target con interlocutori e problemi diversi
 
 Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono definiti in [03_domino_metodi.md](03_domino_metodi.md) — fonte unica di verità. Non ripetere qui.
 
-**Entry-point Starter Kit naturali per il settore.** Per catene retail (beauty, cliniche, poliambulatori) con turnover diffuso sul territorio e pressione su onboarding e coerenza policy, l'**Internal Communication Starter Kit** del Brain & Identity Design Sprint! è entry-point naturale (€13-17K, 4 settimane, buyer HR Director). Per gruppi sanitari e brand beauty con customer care complesso (claim regolati, post-vendita, prenotazioni), valutare il **CX Manager Starter Kit**. Scheda completa: [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
+**Entry-point Starter Kit naturali per il settore.** Per catene retail (beauty, cliniche, poliambulatori) con turnover diffuso sul territorio e pressione su onboarding e coerenza policy, l'**Internal Communication Starter Kit** del Brain & Identity Design Sprint! è entry-point naturale (4 settimane, buyer HR Director, pricing su richiesta). Per gruppi sanitari e brand beauty con customer care complesso (claim regolati, post-vendita, prenotazioni), valutare il **CX Manager Starter Kit**. Scheda completa: [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
 
 ---
 
