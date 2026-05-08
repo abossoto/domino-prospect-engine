@@ -1,7 +1,9 @@
 # Pitch Brain & Identity Design Sprint! — Sales Starter Kit
 ## Scaletta deck primo incontro freddo · 8-10 slide · B2B industriale
 
-> Versione 0.1 — Maggio 2026. Scaletta del pitch per il **Sales Starter Kit**, specializzazione Sales del **Brain & Identity Design Sprint!**, da portare al primo incontro con un Sales Director di azienda B2B industriale italiana che non conosce ancora Domino. Pitch da 20-30 minuti, formato PPTX Domino 30 (sfondi `#0a0a0a`, accenti `#E8272A`, Helvetica Neue / Arial). **Versione di lavoro** — da consolidare prima di costruire le slide.
+> Versione 0.2 — Maggio 2026. Scaletta del pitch per il **Sales Starter Kit**, specializzazione Sales del **Brain & Identity Design Sprint!**, da portare al primo incontro con un Sales Director di azienda B2B industriale italiana che non conosce ancora Domino. Pitch da 20-30 minuti, formato PPTX Domino 30 (sfondi `#0a0a0a`, accenti `#E8272A`, Helvetica Neue / Arial). **Versione di lavoro** — da consolidare prima di costruire le slide.
+
+> **Scheda prodotto canonica del Sales Starter Kit (e dei due Starter Kit fratelli — Internal Comms e CX Manager):** [`starter_kit_brain_identity.md`](starter_kit_brain_identity.md). Questo file resta dedicato alla **scaletta del deck di pitch**, non alla scheda prodotto. In caso di disallineamento, la fonte autoritativa per format, pricing e KPI è la scheda umbrella.
 
 ---
 

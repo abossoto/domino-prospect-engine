@@ -1,5 +1,5 @@
 # DOMINO BRAIN — Metodi Distintivi
-> Versione 5.1 — Aprile 2026. I metodi proprietari che differenziano Domino: Core Sprint!, Design Sprint! (con il **Brain & Identity Design Sprint!** come variante di punta 2026), Build Sprint!, Trainstorming!, Preventivo Emozionale. Aggiornato con la presentazione interna *"A new Domino"* (aprile 2026): catalogo 2026 a sei prodotti, percorso a quattro Sprint!, Decision Design come cornice. Da citare nelle proposte commerciali quando pertinenti.
+> Versione 5.2 — Maggio 2026. I metodi proprietari che differenziano Domino: Core Sprint!, Design Sprint! (con il **Brain & Identity Design Sprint!** come variante di punta 2026 e i tre **Starter Kit** verticali — Sales, Internal Comms, CX Manager — come specializzazioni tattiche), Build Sprint!, Trainstorming!, Preventivo Emozionale. Aggiornato con la presentazione interna *"A new Domino"* (aprile 2026): catalogo 2026 a sei prodotti, percorso a quattro Sprint!, Decision Design come cornice. Da citare nelle proposte commerciali quando pertinenti.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 
@@ -15,6 +15,7 @@ Vista sintetica del catalogo Domino al 2026. Le schede di dettaglio sono nelle s
 | 2 | **Core Sprint!** | Capiamo | "Stiamo lavorando sul problema giusto?" | 2 giorni | €6.000 | **Novità 2026** |
 | 3 | **Design Sprint!** | Costruiamo *(progettiamo)* | "Questa soluzione funziona davvero?" | 4 giorni | €10.000 | Storico (10+ anni in Italia). Sei specializzazioni: Service · CX · Brand · Digital Marketing · Website · Intranet |
 | 4 | **Brain & Identity Design Sprint!** *(variante Design Sprint!)* | Costruiamo *(progettiamo)* | "Su quali fondamenta costruiamo?" | Sprint format | Sprint format + Brain + Design System | **Novità 2026 — prodotto di punta** |
+| 4.bis | **Starter Kit** *(specializzazioni tattiche del Brain & Identity Design Sprint!)* — Sales · Internal Comms · CX Manager | Costruiamo *(progettiamo)* | "Da quale dominio funzionale partiamo, in 4 settimane, senza IT?" | 4 settimane | €13.000-17.000 | **Novità 2026** *(scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md))* |
 | 5 | **Build Sprint!** | Costruiamo *(realizziamo)* | "Come lo costruiamo davvero?" | 8–52 settimane (blocchi di 2 sett. o 1 mese) | €20.000–60.000 | Sostituisce la voce storica "Progetto completo" |
 | 6 | **Trainstorming!** | Facciamo funzionare | "Come faccio a far diventare il cambiamento parte dell'organizzazione?" | 12 mesi · 3 sessioni | a partire da €15.000 | **Novità 2026** *(rituale interno dal 2010, oggi servizio)* |
 | + | **Preventivo Emozionale** *(tool commerciale)* | Trasversale | "Come faccio a far vivere il valore prima ancora di vendere?" | Minisite + analytics | A progetto | Storico — caso d'uso Costa Crociere |
@@ -162,6 +163,39 @@ Variante del Design Sprint! che merita una scheda dedicata: è il prodotto su cu
 
 ---
 
+## 2.ter Starter Kit del Brain & Identity Design Sprint! *(specializzazioni tattiche — Novità 2026)*
+
+Tre **specializzazioni verticali** del Brain & Identity Design Sprint! pensate per partire in fretta su un singolo dominio funzionale, **senza integrazioni IT** né custom development. Si comprano col budget di funzione (Sales Director, HR/Comms, CX Manager) e aprono il percorso al Brain & Identity Design Sprint! pieno.
+
+**Scheda completa con tutti i dettagli operativi:** [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
+
+**Format comune.** 4 settimane esatte: 3 giorni di workshop + 3 settimane di build (40-80 nodi canonici, web app SSO Microsoft o Google) + 1 settimana di QA. Pricing **€13.000-17.000 uniforme** sui tre Starter Kit *(da consolidare con direzione)*. Audit tattico €1.500 come passo zero opzionale.
+
+**I tre Starter Kit in tabella:**
+
+| Starter Kit | Buyer | Dolore principale | KPI primario | Settori naturali |
+|---|---|---|---|---|
+| **Sales** | Sales Director | Tempo perso a *cercare* invece di vendere | Tempo medio preparazione offerta | B2B Industriale, Finance/PA, Automotive |
+| **Internal Communication** | HR / Internal Comms / CPO | Ticket ricorrenti al people team | Riduzione richieste ripetitive HR | Salute & Beauty, Finance/PA, B2B Industriale |
+| **CX Manager** | CX Manager *(+ COO da validare)* | Risposte incoerenti tra agenti | AHT (Average Handle Time) | Turismo & Cultura, Automotive, Salute & Beauty |
+
+**Tre limiti onesti, identici per tutti.**
+1. Niente integrazioni con sistemi vivi (CRM, ERP, HRIS, contact center, intranet).
+2. Non si aggiorna da solo: l'aggiornamento è una decisione esplicita del team di funzione.
+3. Non è un bot dentro Teams o Slack: è una web app via SSO.
+
+**Quando proporli.**
+- Il prospect ha un dolore concentrato in *una* funzione e un buyer di funzione disposto a comprare.
+- Il prospect ha già provato un copilot generico (Microsoft Copilot, ChatGPT Enterprise) e ha capito che senza sapere curato non funziona.
+- Vogliamo testare la relazione con un cliente nuovo con perimetro chiuso e ROI dimostrabile in 4 settimane.
+
+**Quando non proporli.** Quando il dolore è trasversale a più funzioni — meglio Brain & Identity Design Sprint! pieno. Quando il cliente vuole integrazioni live con CRM/ERP da subito — meglio Build Sprint! con scope tecnico.
+
+**Frase-aggancio in pitch:**
+> *"Non vi proponiamo di costruire il brain dell'intera azienda al primo passo. Vi proponiamo di costruirlo per il caso d'uso che oggi vi sta costando di più. Quattro settimane, perimetro chiuso, KPI di funzione misurabile prima e dopo."*
+
+---
+
 ## 3. Build Sprint! *(nuovo metodo 2026 — sostituisce la voce "Progetto completo")*
 
 **Cos'è:** L'esecuzione vera e propria di ciò che il Core Sprint! ha definito e il Design Sprint! (o il Brain & Identity Design Sprint!) ha validato. Non è "il progetto" generico: è un **metodo sprint** applicato alla costruzione, con micro-obiettivi e deliverable a cadenza fissa.
@@ -205,6 +239,7 @@ Questa scala è la fonte unica di verità per il pricing. I file GTM di settore 
 | 1 | Audit tattico (CX, SEO/GEO o Digital Mktg) | €1.500 | Scope fisso, 1–2 settimane. Mai gratuito per prospect bottom-up |
 | 2 | Core Sprint! | €6.000 | Quando la direzione non è chiara o gli stakeholder sono divisi |
 | 3 | Design Sprint! | €10.000 | Quando la direzione è chiara e si vuole validare prima di investire — varianti incluso il **Brain & Identity Design Sprint!**, prodotto di punta 2026 |
+| 3.bis | Starter Kit del Brain & Identity Design Sprint! *(Sales / Internal Comms / CX)* | €13.000–17.000 | Specializzazione tattica verticale, 4 settimane, no IT integration. Buyer di funzione. Scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md) |
 | 4 | Build Sprint! *(execution)* | €20.000–60.000 | Costruzione a blocchi di 2 settimane o 1 mese, perimetro aperto. Sostituisce la voce storica "Progetto completo" |
 | 5 | Trainstorming! | a partire da €15.000 | Percorso change management 12 mesi (3 sessioni, una ogni 4) — per transizioni culturali/organizzative complesse |
 
@@ -399,7 +434,8 @@ Questo file fa parte del Domino Brain. Per approfondire:
 
 - [01_domino_identita.md](01_domino_identita.md) — storia, valori, team, B Corp, premi, tensioni da gestire
 - [02_domino_servizi.md](02_domino_servizi.md) — tassonomia dei servizi e capabilities
-- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!** e i tre **Starter Kit** Sales / Internal Comms / CX), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [starter_kit_brain_identity.md](starter_kit_brain_identity.md) — schede dei tre Starter Kit (specializzazioni tattiche del Brain & Identity Design Sprint!)
 - [04_domino_case_history.md](04_domino_case_history.md) — case per cliente con KPI e categoria
 - [05_domino_settori.md](05_domino_settori.md) — mappa settori, sub-segmenti, messaggi chiave
 - [06_domino_referenze.md](06_domino_referenze.md) — review Sortlist, premi, testimonianze video Domino25

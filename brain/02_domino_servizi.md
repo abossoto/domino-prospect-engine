@@ -1,5 +1,5 @@
 # DOMINO BRAIN — Servizi
-> Versione 4.2 — Aprile 2026. Fonti: sito domino.it, presentazioni, Sortlist, blog domino.it, Codice Etico Domino (8 luglio 2024), presentazione interna *"A new Domino"* (aprile 2026). Aggiornato con scenari Industry 5.0 e con **Decision Design come cuore del lavoro**.
+> Versione 4.3 — Maggio 2026. Fonti: sito domino.it, presentazioni, Sortlist, blog domino.it, Codice Etico Domino (8 luglio 2024), presentazione interna *"A new Domino"* (aprile 2026). Aggiornato con scenari Industry 5.0, **Decision Design come cuore del lavoro**, e i tre **Starter Kit** del Brain & Identity Design Sprint! (Sales, Internal Comms, CX Manager).
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 
@@ -54,6 +54,7 @@ Domino ha sviluppato metodi propri, non generici. Sono differenziatori commercia
 **Quando usarlo:** Quando la direzione è chiara ma si vuole validare la soluzione prima di investire. Ideale dopo un Core Sprint! o quando il brief è già definito.
 **Prezzo:** €10.000
 **Variante di punta 2026:** **Brain & Identity Design Sprint!** — progetta le fondamenta del cliente: il *brain aziendale* (conoscenza interrogabile via AI) e il *design system*. *"Il brain governa cosa si sa, il design system governa come si appare."* Scheda completa in [03_domino_metodi.md](03_domino_metodi.md).
+**Specializzazioni tattiche 2026 — gli Starter Kit:** Sales · Internal Communication · CX Manager. Sono varianti verticali del Brain & Identity Design Sprint! — un dominio funzionale per volta, 4 settimane, **senza integrazioni IT**, €13-17K. Si comprano col budget di funzione e aprono il percorso al Brain & Identity Design Sprint! pieno. Scheda completa in [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
 
 ### Build Sprint! *(nuovo metodo 2026)*
 **Cos'è:** L'esecuzione vera e propria, applicata con metodo sprint: blocchi di 2 settimane o 1 mese, deliverable verificabili, perimetro aperto. Sostituisce la voce storica "Progetto completo".
@@ -128,6 +129,8 @@ L'obiettivo: comprendere i bisogni personali per offrire soluzioni specifiche e 
 - Differentiated messaging (personalizzazione per audience)
 - Sales model & process (Buyer Journey, messaggi per fase)
 - Sales enablement diretto e indiretto (formazione rete vendita)
+- **Sales Starter Kit** — variante tattica del Brain & Identity Design Sprint! per il sapere commerciale. Brain di schede, listini, claim, case, battle card, interrogabile via web app SSO. 4 settimane, no IT integration. KPI primario: tempo medio preparazione offerta. Scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md) · pitch deck: [sales_starter_kit_pitch_scaletta.md](sales_starter_kit_pitch_scaletta.md)
+- **CX Manager Starter Kit** — variante tattica del Brain & Identity Design Sprint! per il customer care. Brain di procedure casi, FAQ, escalation, script, tono di voce, interrogabile via web app SSO dagli agenti. 4 settimane, no IT integration. KPI primario: AHT (Average Handle Time). Scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md)
 
 **Workflow campagne (da Sortlist):**
 1. Definizione strategia e flussi di campagna
@@ -233,6 +236,7 @@ Questo non è un servizio separato: è il modo in cui Domino progetta l'AI da se
 - Top Management Communication
 - Onboarding digitale
 - **Trainstorming!** — change management e programmi di transizione strutturati (vedi scheda dedicata)
+- **Internal Communication Starter Kit** — variante tattica del Brain & Identity Design Sprint! per il dominio interno-organizzativo. Brain di policy, benefit, glossario, valori, FAQ ricorrenti, interrogabile via web app SSO. 4 settimane, no IT integration. KPI primario: riduzione richieste ripetitive al people team. Scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md)
 
 **Workflow tipico:**
 Brief → Analisi dei need → Strategia → Concept creativo → Produzione contenuti → Analisi KPI
@@ -349,7 +353,8 @@ Questo file fa parte del Domino Brain. Per approfondire:
 
 - [01_domino_identita.md](01_domino_identita.md) — storia, valori, team, B Corp, premi, tensioni da gestire
 - [02_domino_servizi.md](02_domino_servizi.md) — tassonomia dei servizi e capabilities
-- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!** e i tre **Starter Kit**), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [starter_kit_brain_identity.md](starter_kit_brain_identity.md) — schede dei tre Starter Kit (Sales · Internal Comms · CX Manager)
 - [04_domino_case_history.md](04_domino_case_history.md) — case per cliente con KPI e categoria
 - [05_domino_settori.md](05_domino_settori.md) — mappa settori, sub-segmenti, messaggi chiave
 - [06_domino_referenze.md](06_domino_referenze.md) — review Sortlist, premi, testimonianze video Domino25
