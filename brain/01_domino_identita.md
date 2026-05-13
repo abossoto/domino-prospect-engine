@@ -31,7 +31,9 @@
 
 > *"Proudly Interactive dal 1996"* — claim storico, ancora usato
 
-Domino è un **Strategic CX Partner**: non un vendor di software, non una web agency generica. Siamo il partner che trasforma problemi di business complessi in soluzioni digitali concrete, gestendo internamente l'intero workflow — dalla strategia alla creatività, fino alla messa a terra tecnologica.
+Domino è il **Domino CX Transformation Partner**: non un vendor di software, non una web agency generica. Siamo il partner che trasforma problemi di business complessi in soluzioni digitali concrete, gestendo internamente l'intero workflow — dalla strategia alla creatività, fino alla messa a terra tecnologica.
+
+> *Vi accompagniamo nella trasformazione, con metodi collaudati da anni. Siamo abituati a gestire la complessità dei mercati e dei nostri* `[completare]`
 
 ---
 
@@ -39,7 +41,7 @@ Domino è un **Strategic CX Partner**: non un vendor di software, non una web ag
 
 | Priorità | Label | Quando usarlo |
 |---|---|---|
-| **Primario** | Strategic CX Partner | Sempre — pitch, presentazioni, materiali istituzionali |
+| **Primario** | Domino CX Transformation Partner | Sempre — pitch, presentazioni, materiali istituzionali |
 | **Secondario** | CX agency | Quando il contesto richiede un termine più immediato |
 | **Contestuale** | Partner digitale | Con prospect non-digitali o contesti non-agency |
 | **Da evitare** | web agency, digital agency, interaction agency | Mai in auto-definizione — è un downgrade |
@@ -58,7 +60,7 @@ Il manifesto è il modo in cui diciamo a noi stessi chi siamo diventati. Cinque 
 L'AI ha reso l'esecuzione abbondante. Dieci prototipi in un'ora, un deck in trenta minuti, codice in un pomeriggio: quello che fino al 2025 era vantaggio competitivo è infrastruttura disponibile a tutti, per quasi niente. **Vendere output significa essere confrontabili. Vendere decisioni significa essere insostituibili.**
 
 ### 2. Dove ci posizioniamo
-**Strategic CX Partner**. Cornice **Industry 5.0** (sostenibile, human-centric, resiliente — definizione Commissione Europea). Cuore: **Decision Design** — la progettazione delle conseguenze su un orizzonte di 6-12 mesi.
+**Domino CX Transformation Partner**. Cornice **Industry 5.0** (sostenibile, human-centric, resiliente — definizione Commissione Europea). Cuore: **Decision Design** — la progettazione delle conseguenze su un orizzonte di 6-12 mesi.
 
 ### 3. Come lavoriamo
 Tre verbi, una sola relazione: **capiamo, costruiamo, facciamo funzionare**. Setup → misurazione → governance continua. Quattro Sprint! a coprire i tre verbi: Core Sprint! → Design Sprint! → Build Sprint! → Trainstorming!.
@@ -71,11 +73,11 @@ Tre verbi, una sola relazione: **capiamo, costruiamo, facciamo funzionare**. Set
 
 ---
 
-## Da agenzia digital a Strategic CX Partner
+## Da agenzia digital a Domino CX Transformation Partner
 
 Il cambio di paradigma in quattro dimensioni operative. Va portato esplicitamente in pitch quando il prospect ci percepisce ancora come "fornitore di siti / intranet / campagne". *(Fonte: presentazione interna "A new Domino", aprile 2026.)*
 
-| Dimensione | Da *(agenzia digital)* | A *(Strategic CX Partner)* |
+| Dimensione | Da *(agenzia digital)* | A *(Domino CX Transformation Partner)* |
 |---|---|---|
 | **Da dove partiamo** | Da un brief funzionale | Da un problema che blocca il cliente |
 | **Chi siede al tavolo** | CMO / Marketing Manager | CMO + CEO/COO + CIO + HR |

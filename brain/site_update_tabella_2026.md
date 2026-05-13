@@ -1,5 +1,7 @@
 # Tabella aggiornamento sito domino.it — Brain 2026
-> Versione 1.0 — 13 maggio 2026. Confronto pagina-per-pagina tra lo stato attuale del sito domino.it (rilevato a maggio 2026) e la fonte canonica del **Domino Brain**. Focus su: prodotti 2026 (Core/Design/Build/Trainstorming!), Decision Design + tesi *vendere decisioni*, identità (B Corp, 30 anni, payoff, manifesto), settori target e case history.
+> Versione 1.1 — 13 maggio 2026. Confronto pagina-per-pagina tra lo stato attuale del sito domino.it (rilevato a maggio 2026) e la fonte canonica del **Domino Brain**. Focus su: prodotti 2026 (Core/Design/Build/Trainstorming!), Decision Design + tesi *vendere decisioni*, identità (B Corp, 30 anni, payoff, manifesto), settori target e case history.
+>
+> **Aggiornamento v1.1.** Sostituita ovunque l'etichetta di posizionamento *Strategic CX Partner* → **Domino CX Transformation Partner** (allineata a `01_domino_identita.md` v3.2). Frase di accompagnamento canonica: *"Vi accompagniamo nella trasformazione, con metodi collaudati da anni. Siamo abituati a gestire la complessità dei mercati e dei nostri"* `[completare]`.
 
 **Legenda priorità:** 🔴 alta · 🟡 media · 🟢 bassa.
 **Legenda tipo:** *nuova* = pagina/sezione da creare ex-novo · *riscrivere* = contenuto esistente da rifare · *integrare* = aggiungere blocco/sezione · *aggiornare* = ritocco mirato.
@@ -10,7 +12,8 @@
 
 | Cosa | Dove aggiornare | Tipo | Priorità | Perché |
 |---|---|---|---|---|
-| **H1 / titolo principale** — oggi: *"Service design, Digital marketing, Customer experience, con Sprint! in 4 giorni"* | Hero in alto | Riscrivere | 🔴 | Posiziona ancora Domino come agenzia digital generica con un Sprint! da 4 giorni. Va sostituito con il framing 2026 *Strategic CX Partner* + Decision Design o con la tesi *"Vendiamo decisioni, non output"*. Brain: `01_identita` §Manifesto e §USP. |
+| **H1 / titolo principale** — oggi: *"Service design, Digital marketing, Customer experience, con Sprint! in 4 giorni"* | Hero in alto | Riscrivere | 🔴 | Posiziona ancora Domino come agenzia digital generica con un Sprint! da 4 giorni. Va sostituito col framing 2026 *Domino CX Transformation Partner* + Decision Design o con la tesi *"Vendiamo decisioni, non output"*. Brain: `01_identita` §Manifesto e §USP. |
+| **Frase di accompagnamento canonica** — *"Vi accompagniamo nella trasformazione, con metodi collaudati da anni. Siamo abituati a gestire la complessità dei mercati e dei nostri…"* `[completare]` | Sotto-hero / occhiello | Nuova | 🔴 | È la spiegazione che declina la label *Domino CX Transformation Partner* in promessa concreta: trasformazione + metodo + complessità governata. Brain: `01_identita` §Payoff e posizionamento. |
 | **Payoff canonico** *"Semplifichiamo la complessità, liberiamo il potenziale"* | Hero o sezione manifesto sotto hero | Integrare | 🔴 | Il payoff è in tutti i materiali interni e nel Codice Etico 2024 ma non è in homepage. È la prima frase che dovrebbe accogliere il visitatore. Brain: `01_identita` §Payoff. |
 | **Tagline I5.0** *"Siamo in un'epoca di transizioni. Non di progetti."* | Sezione apertura contesto, sotto hero | Nuova | 🟡 | Frase-cardine per pitch C-level. Da posizionare come ponte tra payoff e proposta valore. Brain: `01_identita` §Scenario I5.0. |
 | **Quattro Sprint! 2026** — Core/Design/Build/Trainstorming! con la sequenza *capire → progettare → costruire → far funzionare* | Nuovo blocco "Come lavoriamo" | Nuova | 🔴 | Oggi la home cita solo "Sprint! in 4 giorni" generico. Il catalogo prodotti 2026 va reso visibile: è il differenziatore commerciale principale. Brain: `02_servizi` §Metodi proprietari + `03_metodi`. |
@@ -25,7 +28,8 @@
 
 | Cosa | Dove aggiornare | Tipo | Priorità | Perché |
 |---|---|---|---|---|
-| **Posizionamento di apertura** — oggi: *"We simplify complexity, we unlock potential"* + bullet anni '90 | Hero e sezione "We are good at" | Riscrivere | 🔴 | Il payoff c'è, ma manca il riposizionamento da *agenzia digital* a *Strategic CX Partner*. La tabella "Da/A" del Manifesto è il contenuto centrale da pubblicare qui. Brain: `01_identita` §Da agenzia digital a Strategic CX Partner. |
+| **Posizionamento di apertura** — oggi: *"We simplify complexity, we unlock potential"* + bullet anni '90 | Hero e sezione "We are good at" | Riscrivere | 🔴 | Il payoff c'è, ma manca il riposizionamento da *agenzia digital* a *Domino CX Transformation Partner*. La tabella "Da/A" del Manifesto è il contenuto centrale da pubblicare qui. Brain: `01_identita` §Da agenzia digital a Domino CX Transformation Partner. |
+| **Frase di accompagnamento canonica** | Subito sotto la nuova definizione | Nuova | 🔴 | Stessa frase usata in homepage: dichiara *cosa* facciamo (accompagnamento) e *come* (metodi collaudati, complessità governata). Brain: `01_identita` §Chi siamo. |
 | **Manifesto "A new Domino" — 5 idee** (Cosa è cambiato / Dove ci posizioniamo / Come lavoriamo / Cosa non cambia / Cosa NON siamo) | Nuova sezione subito sotto hero | Nuova | 🔴 | Il manifesto interno aprile 2026 è pronto e va portato sul sito: è la dichiarazione di posizionamento più nitida che abbiamo. Brain: `01_identita` §Manifesto. |
 | **Storia — Cinque rivoluzioni in trent'anni** (1995/2005/2010/2018/2025) | Sezione "Over the years we have learnt to…" | Riscrivere | 🔴 | Oggi la pagina racconta solo Martini/Pagine Gialle/Juventus/New Holland/Fiat — racconto pre-2015. Sostituire con la timeline delle 5 rivoluzioni che giustifica la longevità ≠ inerzia. Brain: `01_identita` §Storia. |
 | **B Corp 2025 + Codice Etico 8.7.2024** | Nuova sezione dedicata | Nuova | 🔴 | Certificazione 2025 invisibile in pagina (solo link footer "Relazione Impatto ESG"). B Corp è leva commerciale in finance/PA/healthcare e nelle gare con criteri ESG. Brain: `01_identita` §B Corp. |
@@ -40,6 +44,7 @@
 
 | Cosa | Dove aggiornare | Tipo | Priorità | Perché |
 |---|---|---|---|---|
+| **Cornice di apertura** — *Domino CX Transformation Partner* + frase di accompagnamento | Intro pagina | Nuova | 🔴 | Oggi la pagina entra subito nelle 4 aree. Va premessa la promessa (accompagnamento alla trasformazione, complessità governata) che giustifica il catalogo che segue. Brain: `01_identita` §Chi siamo + `02_servizi` apertura. |
 | **Le 4 aree storiche** (Service Design / Marketing&CX / Digital Products / IT) | Architettura della pagina | Aggiornare | 🟡 | Tassonomia ancora valida, ma vanno riscritte le intro con frame I5.0 e citazione del *Decision Design* come cornice trasversale. Brain: `02_servizi` §1-4. |
 | **Decision Design — il cuore del nostro lavoro** | Nuovo blocco di apertura (sopra le 4 aree) | Nuova | 🔴 | È il *cuore* della proposta 2026: *"non progettiamo interfacce, progettiamo conseguenze"*. Oggi non esiste sul sito. Brain: `02_servizi` §Decision Design. |
 | **Catalogo prodotti 2026** — Core Sprint! · Design Sprint! · Build Sprint! · Trainstorming! · Preventivo Emozionale | Nuova sezione "Metodi proprietari" | Nuova | 🔴 | Oggi è citato solo un *Design Sprint! 4 giorni* generico. Manca Core Sprint! (€6k), Build Sprint! (€20-60k, sostituisce "progetto completo"), Trainstorming! (€15k+). Brain: `02_servizi` §Metodi proprietari + `03_metodi`. |
@@ -186,11 +191,11 @@
 
 ---
 
-## Sintesi priorità — Top 10 interventi 🔴
+## Sintesi priorità — Top 11 interventi 🔴
 
-1. **Home — H1 + payoff + manifesto + quattro Sprint!** (rifondazione hero)
-2. **Chi siamo — manifesto "A new Domino" + 5 rivoluzioni + B Corp**
-3. **Servizi — sezione Decision Design + catalogo prodotti 2026 + Brain & Identity Design Sprint!**
+1. **Home — H1 + frase di accompagnamento + payoff + manifesto + quattro Sprint!** (rifondazione hero)
+2. **Chi siamo — definizione "Domino CX Transformation Partner" + frase di accompagnamento + manifesto + 5 rivoluzioni + B Corp**
+3. **Servizi — cornice apertura *Domino CX Transformation Partner* + Decision Design + catalogo prodotti 2026 + Brain & Identity Design Sprint!**
 4. **Nuova pagina Core Sprint!**
 5. **Nuova pagina Build Sprint!**
 6. **Nuova pagina Trainstorming!**
@@ -198,19 +203,21 @@
 8. **Nuovo settore Finance/PA** (pagina + menù)
 9. **B2B Industriale — case CIA + Poltrona Frau + KPI Rollon/Demak/Frascold**
 10. **Automotive — premi IKA 2024 IVECO + Case IH (visibili in pagina)**
+11. **Voce di menù Metodi/Sprint! + Finance/PA nel sub-menù Esperienze**
 
 ---
 
 ## Note operative
 
-- **Tutto il sito è in HubSpot CMS** (visibile dai metatag e dai CTA cta-redirect.hubspot.com): aggiornamenti centralizzati, possibilità di moduli condivisi per i blocchi ricorrenti (badge B Corp, footer manifesto, card metodi).
+- **Tutto il sito è in HubSpot CMS** (visibile dai metatag e dai CTA cta-redirect.hubspot.com): aggiornamenti centralizzati, possibilità di moduli condivisi per i blocchi ricorrenti (badge B Corp, footer manifesto, card metodi, riga *Domino CX Transformation Partner* + frase di accompagnamento).
 - **DATI NON TROVATI:** non ho verificato in questa analisi le pagine `/contatti`, `/privacy`, `/cookie-policy`, le singole pagine case history, `/preventivo-emozionale` italiana (solo titolo dal menù), il dettaglio della Relazione Impatto ESG. Vanno controllate prima della rilavorazione.
-- **Cantierabilità:** i ~10 interventi 🔴 possono essere raggruppati in 3 release: (a) Home + Chi siamo + Servizi *(riposizionamento)*; (b) 4 nuove landing prodotto + ridisegno Design Sprint! *(catalogo 2026)*; (c) Finance/PA + arricchimento settori esistenti *(verticali)*.
+- **Frase di accompagnamento — `[completare]`:** la frase di accompagnamento canonica termina con *"…e dei nostri"*. Va chiusa esplicitamente prima della pubblicazione (più probabilmente *"…dei nostri clienti"*, ma è una scelta editoriale di Andrea/Direzione).
+- **Cantierabilità:** i ~11 interventi 🔴 possono essere raggruppati in 3 release: (a) Home + Chi siamo + Servizi *(riposizionamento *Domino CX Transformation Partner*)*; (b) 4 nuove landing prodotto + ridisegno Design Sprint! *(catalogo 2026)*; (c) Finance/PA + arricchimento settori esistenti *(verticali)*.
 
 ---
 
 ## Fonti
 
-**Domino Brain (canonico):** `01_domino_identita.md`, `02_domino_servizi.md`, `03_domino_metodi.md`, `04_domino_case_history.md`, `05_domino_settori.md`, `core_sprint_scheda_prodotto.md`, `starter_kit_brain_identity.md`, `case_cia_percorso_sprint.md`, `case_poltronafrau_inmotion_percorso_sprint.md`, `CLAUDE.md`.
+**Domino Brain (canonico):** `01_domino_identita.md` (v3.2 — label aggiornata), `02_domino_servizi.md`, `03_domino_metodi.md`, `04_domino_case_history.md`, `05_domino_settori.md`, `core_sprint_scheda_prodotto.md`, `starter_kit_brain_identity.md`, `case_cia_percorso_sprint.md`, `case_poltronafrau_inmotion_percorso_sprint.md`, `CLAUDE.md`.
 
 **Sito (stato rilevato il 13 maggio 2026):** `domino.it/it`, `domino.it/en`, `domino.it/en/who-we-are`, `domino.it/en/our-services-domino`, `domino.it/en/website-design-sprint`, `domino.it/en/what-we-do/digital-marketing-for-industrial-assets`.
