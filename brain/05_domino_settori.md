@@ -162,7 +162,7 @@
 *(Verticale trasversale a tutti i settori — offerta strutturata e documentata)*
 
 **Scenario I5.0 — il verticale più direttamente allineato:**
-La transizione più difficile non è mai quella tecnologica: è quella umana. Adottare l'AI, riorganizzarsi, cambiare strumenti, integrare culture diverse dopo una fusione — le organizzazioni che falliscono queste transizioni non falliscono per mancanza di tecnologia, ma per mancanza di senso condiviso. La comunicazione interna è il tessuto connettivo delle transizioni I5.0. Un'agenzia rilevante non consegna una campagna interna e sparisce: resta finché il sistema impara a reggere il cambiamento.
+La transizione più difficile non è mai quella tecnologica: è quella umana. Adottare l'AI, riorganizzarsi, cambiare strumenti, integrare culture diverse dopo una fusione — le organizzazioni che falliscono queste transizioni non falliscono per mancanza di tecnologia, ma per mancanza di senso condiviso. La comunicazione interna è il tessuto connettivo delle transizioni I5.0. Un partner rilevante non consegna una campagna interna e sparisce: resta finché il sistema impara a reggere il cambiamento.
 
 > *"L'efficienza è scalabile. La fiducia no. La velocità è replicabile. Il senso no."* — Manifesto I5.0
 

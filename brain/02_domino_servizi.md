@@ -221,7 +221,7 @@ Questo non è un servizio separato: è il modo in cui Domino progetta l'AI da se
 
 **Claim:** *"Il dipendente è il nostro primo stakeholder. Aiutiamo le aziende a migliorare l'ingaggio delle proprie persone creando una employee experience semplice, chiara ed efficace."*
 
-**Scenario I5.0:** Le transizioni più difficili non sono tecnologiche — sono umane. AI adoption, riorganizzazioni, nuovi modelli di lavoro: le persone devono capire, non solo eseguire. La internal communication diventa lo strumento con cui le organizzazioni attraversano i cambiamenti senza perdersi per strada. Un'agenzia rilevante non consegna una campagna interna — resta finché il sistema impara a reggere il cambiamento.
+**Scenario I5.0:** Le transizioni più difficili non sono tecnologiche — sono umane. AI adoption, riorganizzazioni, nuovi modelli di lavoro: le persone devono capire, non solo eseguire. La internal communication diventa lo strumento con cui le organizzazioni attraversano i cambiamenti senza perdersi per strada. Un partner rilevante non consegna una campagna interna — resta finché il sistema impara a reggere il cambiamento.
 
 **Focus:**
 - Intranet Design

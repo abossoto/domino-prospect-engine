@@ -1,5 +1,5 @@
-# Manifesto di posizionamento — Domino in Industry 5.0
-*Versione 5 — aprile 2026. Documento interno. Integra le revisioni di Emiliano e i sigilli del Trainstorming "I5.0 by Design". Base per Innovation Board, home page, evoluzione del Brain.*
+# Manifesto di posizionamento — Domino CX Transformation Partner in Industry 5.0
+*Versione 6 — maggio 2026. Documento interno. Aggiornamento alla v5: consolidamento del label **Domino CX Transformation Partner**, ingresso di Build Sprint! e Brain & Identity Design Sprint! nel percorso a quattro Sprint!, tesi-cardine 2026 ("vendere output / vendere decisioni") in apertura, definizione canonica di Decision Design con orizzonte 6-12 mesi. Base per Innovation Board, home page, evoluzione del Brain.*
 
 (Non è uno slogan. È un documento.)
 
@@ -7,7 +7,7 @@
 
 ## Quello che diciamo in dieci secondi
 
-Siamo una CX agency. Progettiamo le decisioni dei nostri clienti — e le costruiamo.
+Siamo un partner di Customer Experience. Progettiamo le decisioni dei nostri clienti — e le costruiamo.
 
 Le decisioni che aiutiamo a prendere sono di due tipi.
 
@@ -17,7 +17,15 @@ Quelle **verso gli utenti finali**: come scoprono un brand, come scelgono, come 
 
 Ogni decisione, per esistere davvero, deve prendere una forma: un'interfaccia, un prodotto digitale, un'esperienza, un sistema AI, una campagna. Quella forma la progettiamo e la realizziamo noi.
 
-Capire, costruire, far funzionare. Tre verbi, un mestiere solo.
+Capire, costruire, far funzionare. Tre verbi, un mestiere solo. È quello che vuol dire essere **Customer Experience Transformation Partner**: non un fornitore di output, ma il partner che resta accanto al cliente per tutto l'arco di una trasformazione.
+
+---
+
+## La tesi che regge tutto
+
+**Vendere output significa essere confrontabili. Vendere decisioni significa essere insostituibili.**
+
+È la frase che orienta tutte le altre. Da qui in poi, tutto il manifesto è la sua spiegazione operativa.
 
 ---
 
@@ -27,7 +35,9 @@ L'AI ha reso l'esecuzione abbondante. Dieci prototipi in un'ora. Un deck in tren
 
 Quello che fino al 2024 era un vantaggio competitivo — andare veloci, consegnare tanto — sta diventando infrastruttura. Disponibile a tutti, per quasi niente.
 
-Quando l'esecuzione si commoditizza, il valore si sposta. Diventa raro sapere cosa merita di essere eseguito. Diventa raro accompagnare un'organizzazione fino in fondo a una trasformazione, e fino in fondo vuol dire fino a quando il cambiamento diventa sistema. Diventa raro governare la velocità senza esserne travolti.
+C'è un secondo effetto, meno raccontato e più importante. Con l'AI generativa **non aumenta la qualità diffusa: aumenta l'uniformità**. La qualità bassa scompare, la qualità media collassa verso un centro omogeneo. Il vero spazio di differenziazione non è più "meglio". È **diverso**.
+
+Quando l'esecuzione si commoditizza e gli output si somigliano, il valore si sposta. Diventa raro sapere cosa merita di essere eseguito. Diventa raro accompagnare un'organizzazione fino in fondo a una trasformazione, e fino in fondo vuol dire fino a quando il cambiamento diventa sistema. Diventa raro governare la velocità senza esserne travolti.
 
 I clienti che lavorano con noi — multinazionali industriali, automotive, sanità, finanza, turismo — non hanno bisogno di andare più veloci. Hanno bisogno di **decidere meglio**, mentre tutto intorno a loro accelera.
 
@@ -43,14 +53,14 @@ I clienti che lavorano con noi — multinazionali industriali, automotive, sanit
 
 Decision Design è il nome che diamo a questo mestiere, quando lo guardiamo da vicino. Non è un servizio tra gli altri: è il modo in cui pensiamo, il metodo con cui lavoriamo e il piano su cui costruiamo tutte le nostre soluzioni.
 
-È la progettazione delle architetture di scelta — trade-off, scenari, conseguenze: i processi, le interfacce, i dati, gli strumenti AI che permettono — a un'azienda e ai suoi utenti — di scegliere bene quando il contesto è complesso.
+**Definizione canonica.** Il Decision Design è la **progettazione delle conseguenze** — trade-off, scenari, effetti nel tempo delle scelte che un'azienda e i suoi utenti prendono ogni giorno. Lavoriamo su un orizzonte di **6-12 mesi**: il tempo necessario perché una decisione produca effetti misurabili e si trasformi in sistema. Lo spostamento di piano è da *come si naviga* a *come si sceglie*.
 
-Per i nostri clienti, Decision Design prende sempre una forma concreta. Si traduce in quattro momenti:
+Per i nostri clienti, Decision Design prende sempre una forma concreta. Si traduce in un percorso a **quattro Sprint!**, uno per ciascun verbo:
 
-- capire cosa vale la pena decidere
-- progettare le scelte e i percorsi
-- costruire le soluzioni
-- farle funzionare nel tempo
+- **capire cosa vale la pena decidere** → Core Sprint!
+- **progettare le scelte e i percorsi** → Design Sprint! (con il **Brain & Identity Design Sprint!** come variante di punta 2026, che progetta le fondamenta: brain aziendale e design system)
+- **costruire le soluzioni** → Build Sprint!
+- **farle funzionare nel tempo** → Trainstorming!
 
 È così che passiamo dalla strategia all'impatto reale.
 
@@ -88,7 +98,7 @@ Adottare l'AI, ridisegnare un ecosistema di servizi, riposizionare un'organizzaz
 
 Stiamo dalla parte di chi accompagna fino in fondo, costruendo sistemi che funzionano nel tempo — anche partendo da progetti concreti.
 
-**Un'agenzia rilevante non consegna soluzioni. Resta finché il sistema impara a reggere il cambiamento.**
+**Un partner rilevante non consegna soluzioni. Resta finché il sistema impara a reggere il cambiamento.**
 
 ### 3. La responsabilità è un differenziatore, non un vincolo
 
@@ -114,15 +124,19 @@ Stiamo già dalla parte giusta del filtro.
 
 ## Come lo facciamo succedere
 
-Tre verbi, nessuno facoltativo: **capiamo, costruiamo, facciamo funzionare**.
+Tre verbi, nessuno facoltativo: **capiamo, costruiamo, facciamo funzionare**. Quattro Sprint! per coprirli, uno per ciascun passaggio reale del lavoro.
 
-**Capiamo.** Prima di costruire qualsiasi cosa, ci alleniamo a capire cosa vale la pena costruire. Lo facciamo con il **Core Sprint!** (1-2 giorni per allineare gli stakeholder su un'ipotesi strategica condivisa) e il **Design Sprint!** (4 giorni per prototipare e testare con utenti reali prima di investire). Sono metodi proprietari.
+**Capiamo — Core Sprint!** Due giorni di workshop più cinque di consolidamento per produrre l'**Ipotesi Core** condivisa, la mappa di differenziazione competitiva e la scala delle priorità a 6-12 mesi. Allinea stakeholder spesso in conflitto prima che il budget venga investito. È il passo che impedisce di lavorare bene sul problema sbagliato.
 
-**Costruiamo.** Strategia, design, codice, produzione, integrazione AI — tutto sotto lo stesso tetto. Quello che progettiamo, lo consegniamo.
+**Progettiamo — Design Sprint! (e Brain & Identity Design Sprint!).** Quattro giorni, derivati e adattati dal metodo Google Ventures, per prototipare e testare con utenti reali. Sei specializzazioni (Service, CX, Brand, Digital Marketing, Website, Intranet) più la variante di punta 2026, il **Brain & Identity Design Sprint!**, che progetta le fondamenta del cliente: il brain aziendale (conoscenza interrogabile via AI) e il design system. *Il brain governa cosa si sa, il design system governa come si appare.*
 
-**Facciamo funzionare.** Un progetto digitale va live. Una transizione, no. Il **Trainstorming!** — il nostro percorso di accompagnamento all'adozione — esiste per questo: restiamo finché il cambiamento non funziona davvero. E il **Preventivo Emozionale** è la prova già in fase commerciale che sappiamo pensare e fare senza soluzione di continuità.
+**Costruiamo — Build Sprint!** L'esecuzione vera e propria con metodo sprint: blocchi di due settimane o un mese, deliverable verificabili a ogni blocco, perimetro aperto. Il cliente decide blocco per blocco, noi avvisiamo se la rotta sta deviando. Sostituisce la voce storica "Progetto completo" — invece di vendere un perimetro, vendiamo un metodo di consegna. Strategia, design, codice, produzione, integrazione AI: tutto sotto lo stesso tetto.
 
-Avere gli strumenti per ciascuno dei tre verbi è quello che ci distingue.
+**Facciamo funzionare — Trainstorming!** Un progetto digitale va live. Una transizione, no. Il Trainstorming! è il percorso di accompagnamento all'adozione su dodici mesi, tre sessioni a cadenza quadrimestrale: diagnosi, prototipazione, consolidamento con roadmap a dodici mesi. *I progetti finiscono. Le transizioni no. Il Trainstorming! accompagna l'organizzazione finché il cambiamento diventa sistema.*
+
+A coprire la fase commerciale, il **Preventivo Emozionale**: prova già in proposta che sappiamo pensare e fare senza soluzione di continuità.
+
+Avere gli strumenti per ciascuno dei tre verbi — e tutto sotto lo stesso tetto — è quello che ci distingue.
 
 ---
 
@@ -130,9 +144,9 @@ Avere gli strumenti per ciascuno dei tre verbi è quello che ci distingue.
 
 Cambia quello che promettiamo. Prima era *"vi costruiamo l'intranet"*. Adesso è *"capiamo, costruiamo, facciamo funzionare"*. Non vendiamo più singoli output, ma sistemi che aiutano a decidere meglio e a far funzionare il cambiamento nel tempo.
 
-Cambia con chi parliamo. Accanto al CMO e al Marketing Manager — sempre più CEO, CIO, COO, HR.
+Cambia con chi parliamo. Accanto al CMO e al Marketing Manager — sempre più **CEO, COO, CIO, HR**. Il tavolo si allarga perché la transizione non sta in un solo perimetro funzionale.
 
-Cambia il nostro label: **Strategic Decision Partner — per le transizioni d'impresa nell'era post-AI**. La CX non sparisce. Resta nel *cosa facciamo*. Sale di un piano nel *perché lo facciamo*.
+Cambia il nostro label: **Domino CX Transformation Partner**. Non una web agency, non una digital agency, non un fornitore di output. Il partner che trasforma problemi di business complessi in soluzioni digitali concrete, gestendo l'intero workflow — dalla strategia alla messa in produzione, fino al cambiamento che diventa sistema. La CX non sparisce: è il terreno da cui veniamo e che governiamo da trent'anni. Decision Design e Industry 5.0 sono il piano su cui poggia.
 
 ---
 

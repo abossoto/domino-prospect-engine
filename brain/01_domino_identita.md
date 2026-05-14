@@ -7,7 +7,7 @@
 
 ## Chi siamo
 
-**Domino — Proudly Interactive** è una CX agency specializzata in progetti digitali per lo sviluppo delle imprese.
+**Domino — Proudly Interactive** è un partner di Customer Experience specializzato in progetti digitali per lo sviluppo delle imprese. Non eseguiamo: accompagniamo.
 
 - **50 persone** (dato sito ufficiale) / 45 (Forum 2025) — team in crescita
 - **30 anni di esperienza** (fondata nel 1996)
@@ -42,9 +42,9 @@ Domino è il **Domino CX Transformation Partner**: non un vendor di software, no
 | Priorità | Label | Quando usarlo |
 |---|---|---|
 | **Primario** | Domino CX Transformation Partner | Sempre — pitch, presentazioni, materiali istituzionali |
-| **Secondario** | CX agency | Quando il contesto richiede un termine più immediato |
-| **Contestuale** | Partner digitale | Con prospect non-digitali o contesti non-agency |
-| **Da evitare** | web agency, digital agency, interaction agency | Mai in auto-definizione — è un downgrade |
+| **Secondario** | Partner di Customer Experience *(o "Partner CX")* | Quando il contesto richiede un termine più immediato |
+| **Contestuale** | Partner digitale | Con prospect non-digitali |
+| **Da evitare** | CX agency, web agency, digital agency, interaction agency, agenzia, agency | Mai in auto-definizione. *Non eseguiamo, accompagniamo.* "Agency" è categoria di chi consegna output; noi siamo partner di transizione |
 
 > "Proudly Interactive" resta come claim storico/culturale, non come categoria di mercato.
 
@@ -69,7 +69,7 @@ Tre verbi, una sola relazione: **capiamo, costruiamo, facciamo funzionare**. Set
 **Semplifichiamo la complessità, liberiamo il potenziale.** È la mission che il Codice Etico Domino ha messo per iscritto nel 2024 e che la pratica del 2026 conferma — la definizione più asciutta di Decision Design che potessimo darci.
 
 ### 5. Cosa NON siamo
-**Non consulenza, non software house, non web agency.** Una CX agency che prima aiuta a decidere, poi costruisce, e resta finché il cambiamento smette di dover essere difeso.
+**Non consulenza, non software house, non web agency.** Un partner di Customer Experience che prima aiuta a decidere, poi costruisce, e resta finché il cambiamento smette di dover essere difeso. *Non eseguiamo, accompagniamo.*
 
 ---
 
@@ -134,7 +134,7 @@ Il Trainstorming! di aprile 2026 ("Le transizioni, I5.0 by Design") ha consolida
 L'IA rende l'efficienza una commodity accessibile a tutti. Il vero vantaggio competitivo — per Domino e per i suoi clienti — diventa la capacità di progettare tecnologia responsabile, comprensibile e governabile. *Responsible AI, human-in-the-loop, compliance come value creation* (AI Act, ESG, data ethics): questi non sono vincoli, sono posizionamenti.
 
 **2. Dai Progetti alle Transizioni**
-I clienti non cercano più "soluzioni" puntuali, ma partner capaci di accompagnarli attraverso transizioni complesse (AI adoption, regolazione, sostenibilità, riorganizzazione). L'agency che vince non consegna deliverable: resta finché il sistema impara a reggere il cambiamento. Transition programs, continuous design frameworks, governance di piattaforme e partnership sono la nuova unità di misura del valore.
+I clienti non cercano più "soluzioni" puntuali, ma partner capaci di accompagnarli attraverso transizioni complesse (AI adoption, regolazione, sostenibilità, riorganizzazione). Il partner che vince non consegna deliverable: resta finché il sistema impara a reggere il cambiamento. Transition programs, continuous design frameworks, governance di piattaforme e partnership sono la nuova unità di misura del valore.
 
 **3. Dal "Digital Delivery" al "Decision Design"**
 Non vendiamo più solo prodotti digitali, ma strumenti per decidere in contesti complessi. UX, UI e tecnologia diventano architetture di scelta: chi aiuta a decidere meglio diventa strategico, non sostituibile. Decision UX, scenario simulator, advisory ibrida (design + strategia + tecnologia) sono il nuovo perimetro della consulenza.

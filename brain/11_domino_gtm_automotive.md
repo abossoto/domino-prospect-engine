@@ -29,7 +29,7 @@
 
 *Nomination 2025 (IKA 26° edizione) — esito non ancora nel Brain.
 
-**Come usare questa credenziale:** Domino è l'unica agenzia italiana che ha vinto IKA in automotive in 5 edizioni diverse, con 3 clienti diversi (Fiat, IVECO, Case IH) e in categorie diverse (sito, B2B, AI, digital media). È la prova più forte di expertise settoriale che esiste.
+**Come usare questa credenziale:** Domino è l'unico partner italiano che ha vinto IKA in automotive in 5 edizioni diverse, con 3 clienti diversi (Fiat, IVECO, Case IH) e in categorie diverse (sito, B2B, AI, digital media). È la prova più forte di expertise settoriale che esiste.
 
 ---
 
