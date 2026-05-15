@@ -20,13 +20,13 @@ Vista sintetica del catalogo Domino al 2026. Le schede di dettaglio sono nelle s
 | 6 | **Trainstorming!** | Facciamo funzionare | "Come faccio a far diventare il cambiamento parte dell'organizzazione?" | 12 mesi · 3 sessioni | a partire da €15.000 | **Novità 2026** *(rituale interno dal 2010, oggi servizio)* |
 | + | **Preventivo Emozionale** *(tool commerciale)* | Trasversale | "Come faccio a far vivere il valore prima ancora di vendere?" | Minisite + analytics | A progetto | Storico — caso d'uso Costa Crociere |
 
-**Il percorso a quattro Sprint! — capiamo, costruiamo, facciamo funzionare:**
+**Il percorso a quattro Sprint! — capiamo, progettiamo, costruiamo, facciamo funzionare:**
 ```
 Core Sprint! → Design Sprint! → Build Sprint! → Trainstorming!
     2 giorni       4 giorni       8–52 settimane     12 mesi
    capiamo       progettiamo       costruiamo      facciamo funzionare
 ```
-Avere gli strumenti per ciascuno dei tre verbi *(capire, costruire, far funzionare)* è ciò che ci distingue.
+Avere gli strumenti per ciascuno dei quattro verbi *(capire,progettare,  costruire, far funzionare)* è ciò che ci distingue.
 
 ---
 
