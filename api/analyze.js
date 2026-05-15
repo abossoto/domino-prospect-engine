@@ -103,9 +103,10 @@ Eccezioni (NON portano "!"): "Preventivo Emozionale" (storico), "Audit tattico" 
 
 Prima di restituire il JSON, RILEGGI ogni occorrenza dei nomi prodotto e verifica che il "!" finale sia presente.
 
-CATALOGO 2026 - prodotti Domino (fonte canonica: brain/03_domino_metodi.md):
+CATALOGO 2026 - prodotti Domino (fonte canonica: brain/03_domino_metodi.md, brain/starter_kit_brain_identity.md):
 - "Core Sprint!" (6.000 euro, 1-2 giorni) - allineamento strategico, NON "Foundation Sprint" (linguaggio startup, noi serviamo enterprise).
 - "Design Sprint!" (10.000 euro, 4 giorni) - prototipo testato. Specializzazioni: Service / CX / Brand / Digital Marketing / Website / Intranet / Brain & Identity (variante di punta 2026, fondamenta brain aziendale + design system).
+- "Sales Starter Kit" / "Internal Communication Starter Kit" / "CX Manager Starter Kit" - specializzazioni tattiche verticali del Brain & Identity Design Sprint! (solo layer brain, no identity / design system, nessuna integrazione IT). Format 4 settimane (3 gg workshop + 3 sett. build + 1 sett. QA), web app SSO Microsoft/Google, 40-80 nodi curati, pricing su richiesta. Buyer di funzione singolo che compra col proprio budget: Sales Director per Sales Starter Kit, HR/Internal Comms/CPO per Internal Communication, CX Manager per CX. Proporli quando il dolore e' concentrato in UNA funzione e si vuole partire veloce con perimetro chiuso e ROI in 4 settimane - apertura naturale al Brain & Identity Design Sprint! pieno a valle. Fonte: brain/starter_kit_brain_identity.md.
 - "Build Sprint!" (20-60K euro, 8-52 settimane) - esecuzione a blocchi di 2 settimane o 1 mese, perimetro aperto. Sostituisce la voce storica "Progetto completo".
 - "Trainstorming!" (da 15.000 euro, 12 mesi, 3 sessioni) - change management. Era rituale interno dal 2010, dal 2026 anche servizio venduto.
 - "Preventivo Emozionale" - tool commerciale (minisite preventivo con analytics).
@@ -114,8 +115,8 @@ CATALOGO 2026 - prodotti Domino (fonte canonica: brain/03_domino_metodi.md):
 CORNICE TRASVERSALE: "Decision Design" - progettazione delle conseguenze (trade-off, scenari, effetti a 6-12 mesi). Slogan: "da come si naviga a come si sceglie". Citarlo come postura strategica, non come tool.
 
 REGOLE: usa SOLO info dal report. Prima frase = problema del prospect. Tono diretto, concreto.
-CASE STUDY - REGOLA DEI 3: [0] stesso settore/sfida con KPI [1] settore simile con KPI [2] metodologia specifica (es. Brain & Identity Design Sprint!, Build Sprint!, Preventivo Emozionale, GEO, AI B2B). MAI solo Fiat e Costa Crociere.
-BADGE: core_sprint se stakeholder multipli/no chiarezza. design_sprint_tipo = Service/CX/Brand/Digital Marketing/Website/Intranet/Brain & Identity. preventivo_emozionale se ciclo lungo/rete indiretta.
+CASE STUDY - REGOLA DEI 3: [0] stesso settore/sfida con KPI [1] settore simile con KPI [2] metodologia specifica (es. Brain & Identity Design Sprint!, Sales/Internal Comms/CX Manager Starter Kit, Build Sprint!, Preventivo Emozionale, GEO, AI B2B). MAI solo Fiat e Costa Crociere.
+BADGE: core_sprint se stakeholder multipli/no chiarezza. design_sprint_tipo = Service/CX/Brand/Digital Marketing/Website/Intranet/Brain & Identity. Se il dolore e' concentrato in UNA funzione (sales / internal comms / customer experience) con buyer di funzione disponibile, preferire uno Starter Kit verticale rispetto al Brain & Identity Design Sprint! pieno e citarlo esplicitamente in hook, mail e deck. preventivo_emozionale se ciclo lungo/rete indiretta.
 
 SEGNALI RECENTI - VERIFICABILITA' OBBLIGATORIA:
 Ogni segnale del JSON DEVE essere un oggetto con i campi {testo, data, fonte_url, fonte_titolo}.
