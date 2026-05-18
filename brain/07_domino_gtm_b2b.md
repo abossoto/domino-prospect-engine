@@ -100,15 +100,14 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 - Design Sprint! (€10.000) → se il tool è identificato: prototipo testato con buyer reali prima dello sviluppo completo
 
 **[Proof point](04_domino_case_history.md):**
-- Bitron: AI Product Selector che comprende i bisogni e suggerisce il prodotto corretto
-- IVECO: TCO Calculator per fleet manager
+- IVECO: TCO Calculator per fleet manager + configuratore AI per individuare prodotto/allestimento
 - Fiat Professional: E-Product App per rete vendita (usabile offline)
 
 **Vs competitor:**
 - Vs consulenza digital (Accenture, Reply): Domino non consegna un report — consegna il tool funzionante
 - Vs web agency: competenza verticale su B2B industriale complesso, non solo sviluppo
 
-**CTA:** Demo live del Bitron AI Selector + proposta CX Audit (€1.500) per mappare il buyer journey e identificare il collo di bottiglia prioritario.
+**CTA:** Walkthrough del case IVECO (TCO Calculator + configuratore AI) + proposta CX Audit (€1.500) per mappare il buyer journey e identificare il collo di bottiglia prioritario.
 
 ---
 

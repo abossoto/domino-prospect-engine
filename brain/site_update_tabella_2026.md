@@ -119,7 +119,7 @@
 | **CIA — Confederazione Italiana Agricoltori** come case riferimento | Sezione case              | Nuova     | 🔴       | Percorso 1 Core + 2 Design Sprint! (giu 2025 – gen 2026), citabile pubblicamente, organizzazione federata multi-livello. Brain: `case_cia_percorso_sprint`. |
 | **Poltrona Frau In Motion** come case                               | Sezione case              | Nuova     | 🔴       | Q1 2026, percorso Sprint! completo. Citabile col nome cliente (mappa diff. e manifesto riservati). Brain: `case_poltronafrau_inmotion_percorso_sprint`.     |
 | **KPI documentati Rollon / Demak / Frascold**                       | Box risultati             | Nuova     | 🟡       | +48% organico US (Rollon), +48/+54/+20% (Demak), +62% organico in 1 mese (Frascold). Prove numeriche. Brain: `05_settori` §B2B KPI.                         |
-| **Bitron AI Product Selector**                                      | Sezione case              | Integrare | 🟡       | Esempio canonico di Decision Design + Responsible AI. Brain: `04_case_history`.                                                                             |
+| **IVECO configuratore AI prodotto/allestimento**                    | Sezione case              | Integrare | 🟡       | Esempio canonico di Decision Design + Responsible AI: configuratore basato su IA per individuare prodotto e allestimento corretti. Brain: `04_case_history` (IVECO).                              |
 | **Accessibilità digitale (Legge Stanca + EU)** come pain point      | Sezione "Cosa risolviamo" | Nuova     | 🟢       | Pain point reale per aziende >500M€ fatturato: opportunità di revisione siti B2B. Brain: `05_settori` §B2B Pain.                                            |
 
 ---

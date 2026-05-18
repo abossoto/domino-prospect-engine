@@ -55,7 +55,6 @@
 - **Pressione I5.0**: AI Act, ESG, rendicontazione di sostenibilità, nuove normative sui dati — la compliance si sta trasformando in requisito competitivo. Chi la governa prima, vince.
 
 **Come Domino risponde:**
-- AI Product Selector per guidare il buyer alla soluzione giusta (Bitron)
 - Marketplace e portali di partnership (Comau+)
 - Design System per brand internazionali (Danieli)
 - Siti B2B basati su Personas e buyer journey (Rollon, Megadyne, Demak)
@@ -71,7 +70,7 @@
 - Demak: +48% organico, +54% lead gen, +20% clic non-brand
 - Frascold: +62% utenti organici in 1 mese
 
-**[Case da citare](04_domino_case_history.md):** Bitron AI Product Selector, Comau+ Marketplace, Danieli Design System, Rollon US SEO, Demak riposizionamento, Links Foundation Intranet (Design Sprint! + Agile)
+**[Case da citare](04_domino_case_history.md):** Bitron CX B2B & Web di Gruppo, Comau+ Marketplace, Danieli Design System, Rollon US SEO, Demak riposizionamento, Links Foundation Intranet (Design Sprint! + Agile)
 
 ---
 
@@ -190,7 +189,7 @@ La transizione più difficile non è mai quella tecnologica: è quella umana. Ad
 - Stellantis D&I People Stories: tra i più visti in intranet, rilanciate dal COO
 - Stellantis Electrification Days: prime manifestazioni sold-out in poche ore
 
-**[Case da citare](04_domino_case_history.md):** Stellantis Employee Portal, Stellantis D&I People Stories, Stellantis Electrification Days, IPI Onboarding, Bitron AI & Internal Communication, Links Foundation (Design Sprint! + Agile)
+**[Case da citare](04_domino_case_history.md):** Stellantis Employee Portal, Stellantis D&I People Stories, Stellantis Electrification Days, IPI Onboarding, Links Foundation (Design Sprint! + Agile)
 
 
 ---

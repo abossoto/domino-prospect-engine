@@ -104,14 +104,9 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Progetto:** Nuovo modello di partnership digitale tra Comau (hardware), clienti industriali (acquirenti) e system integrator (software applicativo).
 **Scope:** Progettazione di processo + UX + design + front-end + erogazione + manutenzione. Gestito interamente da Domino.
 
-### Bitron — AI Product Selector
-**Progetto:** Consulente AI B2B che comprende i bisogni del cliente e suggerisce il prodotto corretto.
-**Come funziona:** L'AI pre-compila il configuratore web con le caratteristiche principali.
-**Extra:** AI Chatbot istruito via PDF e siti web, risponde via chat, audio e video a domande tecniche.
-**Lettura I5.0:** Case exemplare di "Decision Design" — l'AI non sostituisce il buyer, lo aiuta a decidere meglio in un contesto tecnico complesso. Human-in-the-loop by design.
-
-### Bitron — Customer Experience B2B
-**Progetto:** Nuova customer experience per valorizzare il know-how B2B di Bitron.
+### Bitron — Customer Experience B2B & Web di Gruppo
+**Progetto:** Nuova customer experience per valorizzare il know-how B2B di Bitron, con integrazione dei settori diversi presidiati dal Gruppo in un'unica architettura coerente.
+**Scope:** Nuovo sito di Gruppo, ottimizzazione SEO, gestione di campagne web *(referente: Alessandra Manzato — Communication & Corporate Identity Manager)*.
 
 ### Rollon — "Il prodotto diventa esperienza" *(IKA 2023)*
 **Riconoscimento:** Premio **IKA 2023** — categoria "Best Integrated Communication Campaign B2B".
