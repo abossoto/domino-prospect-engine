@@ -16,15 +16,15 @@
 | 0 | Apertura — il ribaltamento del framing | 3 |
 | 1 | Indagine live sui silos — Mentimeter | 7 |
 | 2 | Analisi teorica — la tassonomia HBR | 7 |
-| 3 | Industry 5.0 e Decision Design — la tesi di Domino | 6 |
+| 3 | Industry 5.0 e Decision Design — la tesi di Domino | 5 |
 | 4 | I quattro metodi Domino — le risposte | 11 |
 | 5 | Tre casi reali — i metodi in azione (1–2 slide per caso) | 5 |
 | 6 | L'angolo AI e il Brain & Identity Design Sprint! | 4 |
 | 7 | Chiusura e call to action | 3 |
 | 8 | Q&A | 3 |
-| | **Totale** | **49** |
+| | **Totale** | **48** |
 
-> Buffer di 1 minuto su slot 50.
+> Buffer di 2 minuti su slot 50.
 
 ---
 
@@ -89,27 +89,41 @@ Paura. La funzione difende il proprio perimetro perché teme di perdere risorse,
 
 ---
 
-## 3. Industry 5.0 e Decision Design — la tesi di Domino (6 min)
+## 3. Industry 5.0 e Decision Design — la tesi di Domino (5 min)
 
-Due movimenti narrativi, fusi in un unico blocco compatto.
+Quattro movimenti consecutivi, ciascuno conseguenza del precedente. Industry 5.0 fa la **diagnosi del contesto**, Decision Design è la **risposta operativa**. Non sono tesi parallele: sono una sequenza.
 
-### Industry 5.0 come cornice
+### Primo movimento — Industry 4.0 e il suo limite (1 min)
 
-Industry 4.0 ci ha insegnato a digitalizzare i touchpoint. Industry 5.0 sposta la domanda: non *come* connettiamo i canali, ma *chi è responsabile delle conseguenze sul cliente*. È il passaggio da progetti a ecosistemi, da digital delivery a responsabilità di governance. La responsabilità diventa un differenziatore competitivo, non un costo di compliance. Questo vale a maggior ragione nel B2B italiano, dove la reputazione è capitale relazionale di lungo periodo.
+Industry 4.0 ha digitalizzato i processi e moltiplicato i canali. Il cliente è diventato misurabile, le connessioni si sono moltiplicate, le aziende hanno imparato a collegare tutto. Ma più connessioni significano più decisioni da prendere — e qui le organizzazioni hanno faticato. La tecnologia ha corso più veloce della governance. È esattamente la condizione in cui voi vi trovate oggi.
 
-### Decision Design come tesi di mestiere
+### Secondo movimento — Industry 5.0 sposta il terreno competitivo (1 min 30)
 
-Definizione canonica, da pronunciare per intero:
+Industry 5.0 è la risposta a questo squilibrio. Il pendolo torna sull'umano. Cambia chi vince e con cosa: non vince chi ha più tecnologia, vince chi è capace di gestire le **conseguenze** delle decisioni che la tecnologia abilita. La responsabilità delle conseguenze diventa la nuova posta competitiva. Ed è anche il motivo per cui i silos costano oggi più di ieri: in un mondo dove le conseguenze contano più degli output, ogni silo non rallenta solo la consegna — moltiplica le decisioni che nessuno prende davvero.
 
-> *Decision Design è la progettazione delle conseguenze — trade-off, scenari, effetti nel tempo delle scelte.*
+### Ponte operativo — cosa significa per voi, concretamente (45 sec)
 
-Orizzonte 6–12 mesi. Slogan: *"da come si naviga a come si sceglie"*.
+Tradotto nella vostra stanza: i KPI di funzione che avete sul tavolo sono ancora KPI di Industry 4.0 — efficienza, conversione, tempo medio, throughput, AHT. Ma il cliente vi giudica già con metriche di Industry 5.0 — coerenza, fiducia nel tempo, percezione di responsabilità.
 
-Tesi forte da pronunciare lentamente e ripetere:
+> *Voi misurate output. Il cliente misura conseguenze.*
 
-> *"Vendere output significa essere confrontabili. Vendere decisioni significa essere insostituibili. E per voi che siete dall'altra parte vale specularmente: comprare output vi dà cose. Comprare decisioni vi cambia l'organizzazione."*
+Questa dissonanza è la radice dei silos di cui parliamo oggi.
 
-### Frase ponte verso Domino
+### Terzo movimento — Decision Design come risposta (1 min 15)
+
+Se il terreno competitivo si sposta sulle conseguenze, allora il modo di lavorare nelle organizzazioni deve cambiare. La decisione smette di essere un atto improvviso del leader e diventa un **oggetto progettabile** — con trade-off espliciti, scenari, effetti nel tempo, un proprietario chiaro. Questo è quello che noi in Domino chiamiamo **Decision Design**: la progettazione delle conseguenze. Non è formazione, non è una nuova metodologia agile, non è un framework duplicativo. È progettazione organizzativa. Orizzonte 6–12 mesi.
+
+In concreto, per voi: la decisione su come gestire un reso, su come rispondere a un cliente arrabbiato, su quale canale prioritizzare in caso di picco, non viene presa nel momento in cui il problema arriva. *Viene progettata prima.* Con scenari, regole di trade-off, ownership esplicita. È il contrario del firefighting quotidiano in cui molti di voi vivono.
+
+Slogan canonico, da pronunciare lento:
+
+> *"Da come si naviga a come si sceglie."*
+
+### Tesi forte di chiusura (15 sec)
+
+> *"Vendere output significa essere confrontabili. Vendere decisioni significa essere insostituibili. Per voi vale specularmente: comprare output vi dà cose. Comprare decisioni vi cambia l'organizzazione."*
+
+### Frase ponte verso Domino (15 sec)
 
 > *"Il framework HBR vi dice quali sono i tre tipi di silos. Industry 5.0 vi dice perché oggi i silos costano più di ieri. Decision Design vi dice cosa fare nella stanza dove le funzioni non sono d'accordo. È esattamente lì che lavora Domino."*
 
