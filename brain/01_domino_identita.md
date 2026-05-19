@@ -62,6 +62,8 @@ L'AI ha reso l'esecuzione abbondante. Dieci prototipi in un'ora, un deck in tren
 ### 2. Dove ci posizioniamo
 **Domino CX Transformation Partner**. Cornice **Industry 5.0** (sostenibile, human-centric, resiliente — definizione Commissione Europea). Cuore: **Decision Design** — la progettazione delle conseguenze su un orizzonte di 6-12 mesi.
 
+Decision Design opera su tre piani. **Decision Design Organizzativo** progetta come l'organizzazione sceglie nel tempo, a 6-12 mesi: è il piano primario, quello che vendiamo al C-level. **Decision Design di Team** progetta come si decide nelle stanze, con facilitazione visiva, ruoli e ritmi. **Decision Design di Prodotto** progetta come decide chi usa l'artefatto digitale, attraverso default, friction e reference points. Formula canonica: *Le decisioni: simboli di un'organizzazione che sa decidere — e sa perché.*
+
 ### 3. Come lavoriamo
 Tre verbi, una sola relazione: **capiamo, costruiamo, facciamo funzionare**. Setup → misurazione → governance continua. Quattro Sprint! a coprire i tre verbi: Core Sprint! → Design Sprint! → Build Sprint! → Trainstorming!.
 

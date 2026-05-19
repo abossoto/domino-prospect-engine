@@ -30,6 +30,33 @@ Avere gli strumenti per ciascuno dei quattro verbi *(capire,progettare,  costrui
 
 ---
 
+## Decision Design — i tre piani
+
+Il filo rosso che attraversa tutti gli Sprint!. *Decision Design progetta le condizioni in cui si sceglie* — non un atto isolato del leader, ma un sistema che produce scelte consistenti nel tempo. Opera su tre piani, ciascuno con pesi diversi a seconda dello Sprint!.
+
+**Decision Design Organizzativo.** Progetta come l'organizzazione sceglie nel tempo. Trade-off espliciti, scenari, ownership chiara, orizzonte 6-12 mesi. È il livello del posizionamento: chi decide cosa, su quali criteri, con quali conseguenze. Piano primario in vendita.
+
+**Decision Design di Team.** Progetta come si decide nella stanza, quando il team lavora insieme. Tre pilastri: chiarezza visiva, gestione esplicita delle alternative, contesto e ruoli definiti. Quattro fasi: definizione del problema, esplorazione, valutazione, scelta e comunicazione. Il piano che opera dentro gli Sprint! di workshop.
+
+**Decision Design di Prodotto.** Progetta come decide chi usa l'artefatto digitale. Choice architecture, defaults, friction, reference points, cognitive load. Il piano che vive nei deliverable: siti, app, intranet, dashboard.
+
+**Mappatura sui quattro Sprint!:**
+
+| Sprint! | Piano dominante |
+|---|---|
+| Core Sprint! | Organizzativo |
+| Design Sprint! | di Team (la stanza) + di Prodotto (il prototipo) |
+| Build Sprint! | di Prodotto |
+| Trainstorming! | Organizzativo + di Team, ricorrenti nel tempo |
+
+**Formula canonica:**
+
+> *Le decisioni: simboli di un'organizzazione che sa decidere — e sa perché.*
+
+**Regola d'uso in pitch.** I piani di Team e di Prodotto non escono mai senza l'Organizzativo sopra. Al C-level si comunica solo il piano Organizzativo. Al CX manager o project owner si aggiunge il piano di Team. All'head of digital o di prodotto si aggiunge il piano di Prodotto. I tre piani insieme non vanno esposti nello stesso slide enterprise: restano architettura interna.
+
+---
+
 ## 1. Core Sprint! *(introdotto 2024)*
 
 **Cos'è:** Il passo strategico che precede il Design Sprint! Serve a costruire l'**Ipotesi Core** del progetto: la tesi che guida tutto ciò che viene dopo.
@@ -89,7 +116,7 @@ Core Sprint! → [Ipotesi Core] → Design Sprint! → Design Sprint! → ... �
 
 **Presupposto:** Il Design Sprint! funziona meglio quando la direzione strategica è già chiara. Se non lo è, il Core Sprint! viene prima.
 
-**Connessione I5.0 — Decision Design:** In un'epoca in cui UX e tecnologia diventano architetture di scelta, il Design Sprint! è lo strumento più concreto per progettare "come le persone decidono" — non solo come navigano un'interfaccia. Ogni sprint produce trade-off visibili, scenari comparabili, conseguenze tangibili: esattamente quello che serve per decidere in contesti complessi.
+**Connessione I5.0 — Decision Design:** Il Design Sprint! opera su due piani contemporaneamente. Sul piano **di Team** progetta la stanza in cui il gruppo decide insieme: facilitazione visiva, divergenza/convergenza disciplinate, ruoli espliciti. Sul piano **di Prodotto** progetta l'architettura di scelta del prototipo: come l'utente finale sceglierà davanti all'artefatto — defaults, friction, reference points. Ogni sprint produce trade-off visibili, scenari comparabili, conseguenze tangibili — esattamente quello che serve per decidere in contesti complessi.
 
 **Il format standard:**
 - **4 giorni** (o 1 settimana nelle versioni estese)
@@ -319,7 +346,7 @@ Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina,
 | "Abbiamo fatto un Design Sprint! ma non riusciamo a implementare" | Trainstorming! come continuazione |
 | "L'AI Act ci impone di ripensare come usiamo i dati" | Trainstorming!: Responsible AI assessment + roadmap |
 | "Siamo in una transizione (fusione, riorganizzazione, nuova piattaforma)" | Trainstorming!: transition program su misura |
-| "I nostri tool digitali aiutano a fare cose ma non a decidere meglio" | Design Sprint! + Decision Design |
+| "I nostri tool digitali aiutano a fare cose ma non a decidere meglio" | Design Sprint! + Decision Design di Prodotto |
 | "Vogliamo essere rilevanti nell'era dell'AI, non solo efficienti" | Core Sprint! → Trainstorming! I5.0 |
 | "Vogliamo un brain aziendale interrogabile via AI per supportare le decisioni" | Brain and Identity Design Sprint! (focus brain) |
 | "Stiamo introducendo copilot/agenti AI ma non hanno una base di conoscenza affidabile" | Brain and Identity Design Sprint! (focus brain) — eventualmente preceduto da Core Sprint! |
