@@ -59,10 +59,10 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 - **IPI — Internal Communication Onboarding** → Trainstorming! · Build Sprint!
 - **BANCOMAT — Da back-office a engagement** → Design Sprint! · Build Sprint!
 - **Links Foundation — Nuova Intranet** → Design Sprint! (Intranet) · Build Sprint! *(Design Sprint! documentato)*
-- **Demak Group — Da fornitore a leader B2B** → Design Sprint! (Brand) · Build Sprint! · Audit tattico SEO/GEO
+- **Demak Group — Da fornitore a leader B2B** → Core Sprint! · Design Sprint! (Brand) · Build Sprint! · Audit tattico SEO/GEO
 - **Frascold — SEO** → Audit tattico SEO/GEO · Build Sprint!
 - **Veritas — Scoasse** → Build Sprint!
-- **Pipein — Da startup ad azienda** → Design Sprint! (Brand) · Build Sprint!
+- **Pipein — Da startup ad azienda** → Core Sprint! · Design Sprint! (Brand) · Build Sprint!
 - **Gruppo De Eccher** → Build Sprint!
 
 ---
