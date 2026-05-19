@@ -76,14 +76,14 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 
 ## CX / eCommerce / Finance
 
-- **Arca SGR — Advisory Assistant** → Design Sprint! (Service) · Build Sprint!
+- **Arca SGR — Advisory Assistant** → Design Sprint! (Service) · Preventivo Emozionale · Build Sprint!
 - **Costa Crociere — Preventivo Emozionale** → Preventivo Emozionale · Build Sprint!
 
 ---
 
 ## AI & Innovazione
 
-- **BR-Uno — Intelligent Assistant Anti-bullying** → Brain & Identity Design Sprint! *(focus brain conversazionale)* · Build Sprint!
+- **BR-Uno — Intelligent Assistant Anti-bullying** → Brain & Identity Design Sprint! *(focus brain conversazionale)* 
 - **GEDI + Stellantis — Alfabeto del Futuro** → Design Sprint! (Brand/Service) · Build Sprint!
 
 ---
