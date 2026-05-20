@@ -206,7 +206,7 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 **Come entrare:**
 - SEO/GEO Audit (€1.500) → test diretto: l'istituzione viene citata da ChatGPT, Perplexity, Google AI nelle query turistiche e culturali rilevanti? Benchmark con istituzioni simili
 - Workshop gratuito 2h (solo per grandi istituzioni: fondazioni multi-sede, biennali, musei nazionali) → apre verso Core Sprint!
-- Design Sprint! (€10.000) → prototipa la nuova architettura di contenuto e visibilità, testata con visitatori reali. Per istituzioni multi-sede: valida il modello di coordinamento prima di investire
+- Design Sprint! (€10.000) → progetta la nuova architettura di contenuto e visibilità, testata con visitatori reali. Per istituzioni multi-sede: valida il modello di coordinamento prima di investire
 
 **[Proof point](04_domino_case_history.md):**
 - Fondazione Torino Musei — strategia digitale integrata per 4 sedi

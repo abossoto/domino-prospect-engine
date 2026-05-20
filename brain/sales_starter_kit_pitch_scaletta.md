@@ -140,7 +140,7 @@
 
 ### Slide 8 — Investimento e prossimo passo
 
-**Titolo**: *"Per chiarirvi se vale la pena: un Audit tattico, una settimana, €1.500."*
+**Titolo**: *"Per capire se vale la pena: un Audit tattico, una settimana, €1.500."*
 
 **Take-away**: il prossimo passo è basso commitment, definito, immediatamente comprabile.
 

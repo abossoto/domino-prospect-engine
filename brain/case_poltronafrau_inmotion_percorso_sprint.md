@@ -4,7 +4,7 @@
 **Settore:** B2B Industriale
 **Periodo:** Q1 2026, report consolidato a marzo 2026
 **Prodotti Domino utilizzati:** 1 Core Sprint! + 1 Design Sprint!
-**Status a maggio 2026:** Build Sprint! eseguito, sito B2B in produzione
+**Status a maggio 2026:** Build Sprint! completato, sito B2B in produzione
 **Citabilità:** Nome cliente utilizzabile pubblicamente. Mappa di differenziazione e manifesto sono **output riservati al cliente** — non citabili in materiali pubblici.
 **Uso come case-tipo:** valido sia per pitch del Core Sprint! sia per pitch del Design Sprint! (in particolare quando il cliente è una business unit industriale dentro un brand-madre consumer)
 
@@ -48,13 +48,13 @@ Il Build Sprint! è stato attivato subito dopo la consegna del report. Il sito B
 
 ## Stato a maggio 2026 e prossimi passi
 
-Il percorso dei due Sprint! è chiuso. Il Build è in produzione. I prossimi passi naturali sono di due tipi: misurazione degli outcome del sito sul ciclo di vendita (lead qualificati, durata del primo contatto, conversione) e potenziale Trainstorming! per accompagnare la rete di sales e marketing nell'adozione del nuovo posizionamento e del nuovo strumento.
+Il percorso dei due Sprint! è chiuso. Il Build è in produzione. I prossimi passi naturali sono di due tipi: misurazione degli outcome del sito sul ciclo di vendita (lead qualificati, durata del primo contatto, conversione) e potenziale Trainstorming! per far funzionare l'adozione del nuovo posizionamento e del nuovo strumento da parte della rete di sales e marketing.
 
 ## Argomenti di pitch derivati
 
 ### Per pitch del Core Sprint!
 
-**Per business unit industriali dentro brand-madre consumer.** Il pattern Poltrona Frau In Motion è replicabile ovunque ci sia una divisione B2B/industriale dentro un brand riconosciuto sul mercato consumer o contract: case parlanti su moda industriale, automotive supplier dentro brand premium, divisioni professionali dentro brand mass market, BU contract dentro retailer. La sfida è sempre la stessa — usare il brand-madre come asset senza farsene schiacciare. Il Core Sprint! con il vertice strategico chiarisce dove finisce l'eredità e dove inizia l'identità autonoma.
+**Per business unit industriali dentro brand-madre consumer.** Il pattern Poltrona Frau In Motion è replicabile ovunque ci sia una divisione B2B/industriale dentro un brand riconosciuto sul mercato consumer o contract: case parlanti su moda industriale, automotive supplier dentro brand premium, divisioni professionali dentro brand mass market, BU contract dentro retailer. La sfida è sempre la stessa — usare il brand-madre come asset senza farsene schiacciare. Il Core Sprint! con il vertice strategico fa capire dove finisce l'eredità e dove inizia l'identità autonoma.
 
 **Per direzioni generali che devono definire un perimetro commerciale a 6-12 mesi.** L'Ipotesi Core è uno strumento di committment del vertice, non un esercizio di stile. In due giorni Direttore Generale, Sales, CTO e CMO escono con un cliente ideale chiaro, una differenziazione misurabile e una leva di vendita comune. È un risultato che le ricerche di mercato e i piani strategici tradizionali non producono nei tempi richiesti.
 

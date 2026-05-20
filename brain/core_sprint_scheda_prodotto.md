@@ -33,7 +33,7 @@ Singolo deliverable (~10-15 pagine) + poster A3 di sintesi, entro 5 giorni lavor
 
 ## Cosa NON consegniamo
 
-Non è una brand strategy, non è un business plan, non è ricerca cliente, non è un Design Sprint!. Non produce prototipi, wireframe, design. Decide *cosa* prototipare — eventualmente — dopo.
+Non è una brand strategy, non è un business plan, non è ricerca cliente, non è un Design Sprint!. Non produce prototipi, wireframe, design. Decide *cosa* progettare — eventualmente — dopo.
 
 ## A chi è destinato
 
@@ -67,7 +67,7 @@ Prima del **Design Sprint!**: il Design Sprint! presuppone direzione chiara. Se 
 
 ## Perché Domino
 
-Non vendiamo strategia astratta e poi ce ne andiamo. Snelliamo e chiariamo *con voi* la decisione che già esiste nella vostra organizzazione, e poi sappiamo eseguirla — Design Sprint!, Build Sprint!, Trainstorming! — senza handoff. Il metodo (Magic Lenses, Votazione Silenziosa) fa da terzo super partes: il workshop genera consenso senza che qualcuno debba imporre un veto. È il primo passo di un percorso, non un workshop in sé.
+Non vendiamo strategia astratta e poi ce ne andiamo. Snelliamo e capiamo *con voi* la decisione che già esiste nella vostra organizzazione, e poi sappiamo realizzarla — Design Sprint!, Build Sprint!, Trainstorming! — senza handoff. Il metodo (Magic Lenses, Votazione Silenziosa) fa da terzo super partes: il workshop genera consenso senza che qualcuno debba imporre un veto. È il primo passo di un percorso, non un workshop in sé.
 
 ## Genealogia metodologica
 

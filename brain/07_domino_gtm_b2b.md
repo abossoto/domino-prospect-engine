@@ -198,7 +198,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 **Come entrare:**
 - SEO/GEO Audit internazionale (€1.500) → analisi visibilità per mercato e lingua, quantifica il costo della frammentazione in traffico perso
 - Core Sprint! (€6.000) → se HQ e filiali hanno visioni diverse: definisce architettura del brand internazionale e governance dei mercati
-- Design Sprint! (€10.000) → quando la direzione è condivisa: prototipa il nuovo modello di comunicazione e lo testa con stakeholder reali di HQ e mercati chiave prima del rollout
+- Design Sprint! (€10.000) → quando la direzione è condivisa: progetta il nuovo modello di comunicazione e lo testa con stakeholder reali di HQ e mercati chiave prima del rollout
 - **Brain & Identity Design Sprint!** *(variante di punta 2026)* → quando il problema vero è strutturale: serve un **design system** scalabile multi-mercato e/o un **brain** della conoscenza prodotto interrogabile via AI. Sono *fondamenta*, non progetti puntuali — vivono nel tempo, vengono alimentati, smettono di essere reinventati a ogni rollout. Caso di scuola: Danieli.
 
 **[Proof point](04_domino_case_history.md):**

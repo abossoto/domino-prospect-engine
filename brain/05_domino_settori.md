@@ -60,7 +60,7 @@
 - Siti B2B basati su Personas e buyer journey (Rollon, Megadyne, Demak)
 - SEO/GEO per visibilità internazionale su keyword di prodotto
 - Core Sprint! per allineare stakeholder interni sulla direzione strategica
-- Design Sprint! per prototipare soluzioni in una settimana
+- Design Sprint! per progettare soluzioni in una settimana
 - Intranet e portali per comunicazione interna complessa (Links Foundation, IPI SFERA)
 - **Trainstorming! I5.0** per aziende manifatturiere che devono navigare transizioni complesse (AI, normativa, sostenibilità) con un metodo strutturato e output concreti
 - **Decision Design tools**: configuratori, TCO calculator, comparatori — strumenti che aiutano il buyer a decidere, non solo a informarsi
@@ -182,7 +182,7 @@ La transizione più difficile non è mai quella tecnologica: è quella umana. Ad
 - Intranet ed employee portal (dalla progettazione UX alla manutenzione)
 - Chatbot AI istruiti su documentazione interna (risponde via chat, audio e video)
 - Eventi ibridi (online + offline) per engagement su temi chiave (es. elettrificazione)
-- **Trainstorming! I5.0**: programma strutturato per accompagnare l'adozione dell'AI in azienda — non un corso, non una campagna, ma un percorso di transizione con output concreti a ogni sessione. Ideale per aziende che devono introdurre responsabilmente l'AI tra le proprie persone.
+- **Trainstorming! I5.0**: programma strutturato per far funzionare l'adozione dell'AI in azienda — non un corso, non una campagna, ma un percorso di transizione con output concreti a ogni sessione. Ideale per aziende che devono introdurre responsabilmente l'AI tra le proprie persone.
 
 **KPI documentati:**
 - Stellantis Employee Portal: 88.000 dipendenti, FEIEIA Award Best European Intranet

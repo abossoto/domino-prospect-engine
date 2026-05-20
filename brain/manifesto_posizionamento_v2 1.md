@@ -132,7 +132,7 @@ Tre verbi, nessuno facoltativo: **capiamo, costruiamo, facciamo funzionare**. Qu
 
 **Costruiamo — Build Sprint!** L'esecuzione vera e propria con metodo sprint: blocchi di due settimane o un mese, deliverable verificabili a ogni blocco, perimetro aperto. Il cliente decide blocco per blocco, noi avvisiamo se la rotta sta deviando. Sostituisce la voce storica "Progetto completo" — invece di vendere un perimetro, vendiamo un metodo di consegna. Strategia, design, codice, produzione, integrazione AI: tutto sotto lo stesso tetto.
 
-**Facciamo funzionare — Trainstorming!** Un progetto digitale va live. Una transizione, no. Il Trainstorming! è il percorso di accompagnamento all'adozione su dodici mesi, tre sessioni a cadenza quadrimestrale: diagnosi, prototipazione, consolidamento con roadmap a dodici mesi. *I progetti finiscono. Le transizioni no. Il Trainstorming! accompagna l'organizzazione finché il cambiamento diventa sistema.*
+**Facciamo funzionare — Trainstorming!** Un progetto digitale va live. Una transizione, no. Il Trainstorming! è il percorso di accompagnamento all'adozione su dodici mesi, tre sessioni a cadenza quadrimestrale: diagnosi, prototipazione, consolidamento con roadmap a dodici mesi. *I progetti finiscono. Le transizioni no. Il Trainstorming! fa funzionare l'organizzazione finché il cambiamento diventa sistema.*
 
 A coprire la fase commerciale, il **Preventivo Emozionale**: prova già in proposta che sappiamo pensare e fare senza soluzione di continuità.
 

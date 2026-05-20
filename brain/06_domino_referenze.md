@@ -403,7 +403,7 @@ Nomi: Cristina, Orsola, Ilaria, Andrea, Daniele, Pietro, Elisa, Alessandro (×2)
 > "Richmond Italia ci ha scelto per 'rivedere tutta la strategia e i processi di un portale introducendo IA'. Con Case IH abbiamo vinto l'Interactive Key Award 2024 per il miglior uso dell'AI nel digital marketing."
 
 **Per prospect con agenda I5.0 (AI responsabile, transizioni, ESG):**
-> "Lavoriamo con aziende che non vogliono solo essere più veloci — vogliono scegliere meglio dove andare. Con Stellantis abbiamo accompagnato la transizione di 88.000 dipendenti in tutto il mondo. Con IVECO abbiamo costruito un configuratore AI che aiuta il buyer B2B a individuare il prodotto e l'allestimento giusto — decidere, non solo comprare. È quello che intendiamo per 'semplificare la complessità'."
+> "Lavoriamo con aziende che non vogliono solo essere più veloci — vogliono scegliere meglio dove andare. Con Stellantis abbiamo fatto funzionare la transizione di 88.000 dipendenti in tutto il mondo. Con IVECO abbiamo costruito un configuratore AI che aiuta il buyer B2B a individuare il prodotto e l'allestimento giusto — decidere, non solo comprare. È quello che intendiamo per 'semplificare la complessità'."
 
 **Per prospect che ha paura dell'AI o la percepisce come rischio:**
 > "La fiducia non si scala con l'efficienza. I tool AI che progettiamo sono comprensibili, governabili e centrati sulle persone — non sull'automazione per sé. La nostra soluzione è sempre human-in-the-loop: l'AI serve le decisioni umane, non le sostituisce."

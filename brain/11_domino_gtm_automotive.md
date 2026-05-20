@@ -89,7 +89,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 - Vs web agency: Design System + governance multi-paese documentata su brand automotive globali
 - Vs consulenza: Domino esegue — non solo strategia
 
-**CTA:** Apertura con case IVECO.com (IKA 2024) + Design Sprint! (€10K) per prototipare la nuova esperienza prima del rollout completo.
+**CTA:** Apertura con case IVECO.com (IKA 2024) + Design Sprint! (€10K) per progettare la nuova esperienza prima del rollout completo.
 
 ---
 
@@ -126,7 +126,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 **Vs competitor:**
 - Vs web agency: full stack — app + PE + video AI + analytics in un sistema integrato
 
-**CTA:** Demo E-Product App e PE automotive + Design Sprint! (€10K) per prototipare la soluzione con dealer reali prima del rollout.
+**CTA:** Demo E-Product App e PE automotive + Design Sprint! (€10K) per progettare la soluzione con dealer reali prima del rollout.
 
 ---
 
@@ -163,7 +163,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 **Vs competitor:**
 - Vs web agency: Decision Design applicato al B2B automotive — strumenti che aiutano a decidere, non solo contenuti
 
-**CTA:** Demo TCO Calculator su caso IVECO + Design Sprint! (€10K) per prototipare il loro calculator con fleet manager reali in 4 giorni.
+**CTA:** Demo TCO Calculator su caso IVECO + Design Sprint! (€10K) per progettare il loro calculator con fleet manager reali in 4 giorni.
 
 ---
 

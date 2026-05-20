@@ -12,7 +12,7 @@
 
 ## In una riga
 
-Domino ha riallineato CIA dal vertice nazionale fino a due sue unità operative — Cittadini e Imprese — costruendo una direzione confederale condivisa e prototipando il prodotto digitale che la rende visibile: CIAO CIA.
+Domino ha riallineato CIA dal vertice nazionale fino a due sue unità operative — Cittadini e Imprese — costruendo una direzione confederale condivisa e progettando il prodotto digitale che la rende visibile: CIAO CIA.
 
 ## Il contesto
 

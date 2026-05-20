@@ -13,10 +13,10 @@ Vista sintetica del catalogo Domino al 2026. Le schede di dettaglio sono nelle s
 |---|---|---|---|---|---|---|
 | 1 | **Audit tattico** *(CX, SEO/GEO o Digital Marketing)* | Capiamo | "Da dove cominciamo, concretamente?" | 1–2 settimane | €1.500 | Storico — entry point |
 | 2 | **Core Sprint!** | Capiamo | "Stiamo lavorando sul problema giusto?" | 2 giorni | €6.000 | **Novità 2026** |
-| 3 | **Design Sprint!** | Costruiamo *(progettiamo)* | "Questa soluzione funziona davvero?" | 4 giorni | €10.000 | Storico (10+ anni in Italia). Sei specializzazioni: Service · CX · Brand · Digital Marketing · Website · Intranet |
-| 4 | **Brain & Identity Design Sprint!** *(variante Design Sprint!)* | Costruiamo *(progettiamo)* | "Su quali fondamenta costruiamo?" | Sprint format | Sprint format + Brain + Design System | **Novità 2026 — prodotto di punta** |
-| 4.bis | **Starter Kit** *(specializzazioni tattiche del Brain & Identity Design Sprint!)* — Sales · Internal Comms · CX Manager | Costruiamo *(progettiamo)* | "Da quale dominio funzionale partiamo, in 4 settimane, senza IT?" | 4 settimane | Su richiesta | **Novità 2026** *(scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md))* |
-| 5 | **Build Sprint!** | Costruiamo *(realizziamo)* | "Come lo costruiamo davvero?" | 8–52 settimane (blocchi di 2 sett. o 1 mese) | €20.000–60.000 | Sostituisce la voce storica "Progetto completo" |
+| 3 | **Design Sprint!** | Progettiamo | "Questa soluzione funziona davvero?" | 4 giorni | €10.000 | Storico (10+ anni in Italia). Sei specializzazioni: Service · CX · Brand · Digital Marketing · Website · Intranet |
+| 4 | **Brain & Identity Design Sprint!** *(variante Design Sprint!)* | Progettiamo | "Su quali fondamenta costruiamo?" | Sprint format | Sprint format + Brain + Design System | **Novità 2026 — prodotto di punta** |
+| 4.bis | **Starter Kit** *(specializzazioni tattiche del Brain & Identity Design Sprint!)* — Sales · Internal Comms · CX Manager | Progettiamo | "Da quale dominio funzionale partiamo, in 4 settimane, senza IT?" | 4 settimane | Su richiesta | **Novità 2026** *(scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md))* |
+| 5 | **Build Sprint!** | Costruiamo | "Come lo costruiamo davvero?" | 8–52 settimane (blocchi di 2 sett. o 1 mese) | €20.000–60.000 | Sostituisce la voce storica "Progetto completo" |
 | 6 | **Trainstorming!** | Facciamo funzionare | "Come faccio a far diventare il cambiamento parte dell'organizzazione?" | 12 mesi · 3 sessioni | a partire da €15.000 | **Novità 2026** *(rituale interno dal 2010, oggi servizio)* |
 | + | **Preventivo Emozionale** *(tool commerciale)* | Trasversale | "Come faccio a far vivere il valore prima ancora di vendere?" | Minisite + analytics | A progetto | Storico — caso d'uso Costa Crociere |
 
@@ -137,12 +137,12 @@ Core Sprint! → [Ipotesi Core] → Design Sprint! → Design Sprint! → ... �
 - In 4 giorni si ottiene ciò che normalmente richiederebbe mesi di riunioni e briefing
 
 **Specializzazioni del Design Sprint!:**
-- **Service Design Sprint!** — prototipazione e test con modalità design thinking
+- **Service Design Sprint!** — progettazione e test con modalità design thinking
 - **CX Design Sprint!** — coerenza tra canali di comunicazione
 - **Brand Design Sprint!** — ripensare il modo in cui si comunica il brand
 - **Digital Marketing Design Sprint!** — campagne mirate di brand awareness o lead gen
-- **Website Design Sprint!** — prototipazione e test di siti web o app
-- **Intranet Design Sprint!** — prototipazione e test di strumenti collaborativi
+- **Website Design Sprint!** — progettazione e test di siti web o app
+- **Intranet Design Sprint!** — progettazione e test di strumenti collaborativi
 - **Brain & Identity Design Sprint!** *(prodotto di punta 2026)* — progettazione e prototipazione delle architetture *foundation* dell'azienda: il **brain aziendale** (conoscenza strutturata e interrogabile via AI per supportare le decisioni) e/o l'**identity / design system** (libreria di componenti UI, design token, pattern, linee guida). I due layer su cui poggiano tutti i prodotti digitali successivi: il brain governa *cosa si sa*, il design system governa *come si appare*. Sono *foundation*, non progetti — vivono nel tempo e crescono. Output dello Sprint: MVP testato con utenti reali (per il brain: 3-5 nodi pilota + interfaccia di interrogazione; per il design system: componenti core + libreria Figma + starter kit di codice), più una roadmap di crescita e governance. Domino ha costruito il proprio brain su sé stessa prima di proporlo ai clienti. *Vedi scheda dedicata sotto.*
 
 **Quando proporlo:**
@@ -152,7 +152,7 @@ Core Sprint! → [Ipotesi Core] → Design Sprint! → Design Sprint! → ... �
 - Come primo passo tangibile e a scope fisso di una relazione con un nuovo cliente
 
 **Case di riferimento per pitch:**
-- **Poltrona Frau In Motion** *(Q1 2026)*: Design Sprint! sul sito B2B con tre buyer personas votate dal tavolo (CPO, CTO, Designer Avio). Decisione architetturale presa al tavolo: il sito B2B non eredita la struttura del sito B2C del brand-madre. Build eseguito, sito in produzione. Vedi [scheda completa](case_poltronafrau_inmotion_percorso_sprint.md).
+- **Poltrona Frau In Motion** *(Q1 2026)*: Design Sprint! sul sito B2B con tre buyer personas votate dal tavolo (CPO, CTO, Designer Avio). Decisione architetturale presa al tavolo: il sito B2B non eredita la struttura del sito B2C del brand-madre. Build completato, sito in produzione. Vedi [scheda completa](case_poltronafrau_inmotion_percorso_sprint.md).
 - **CIA — Confederazione Italiana Agricoltori** *(2025-2026)*: due Design Sprint! distinti sulle unità Cittadini e Imprese, dentro un percorso che inizia con un Core Sprint! sul vertice nazionale. Pattern di vendita: organizzazioni con segmenti utente molto diversi sullo stesso brand. Vedi [scheda completa](case_cia_percorso_sprint.md).
 
 ---
@@ -400,7 +400,7 @@ Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina,
 
 ## 4. Trainstorming! *(metodo proprietario — change management e innovazione continuativa)*
 
-**Cos'è:** Il metodo Domino per accompagnare le organizzazioni attraverso transizioni complesse con un percorso strutturato nel tempo. Non è un workshop singolo, non è formazione tradizionale: è un programma di cambiamento a cadenza quadrimestrale che porta innovazione concreta e gestita all'interno dell'azienda cliente.
+**Cos'è:** Il metodo Domino per far funzionare le organizzazioni attraverso transizioni complesse con un percorso strutturato nel tempo. Non è un workshop singolo, non è formazione tradizionale: è un programma di cambiamento a cadenza quadrimestrale che porta innovazione concreta e gestita all'interno dell'azienda cliente.
 
 Nasce dalla pratica interna Domino — il team si incontra mensilmente con questo format — ed è stato strutturato come servizio replicabile per i clienti.
 

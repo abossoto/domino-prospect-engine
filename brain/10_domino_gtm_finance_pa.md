@@ -78,7 +78,7 @@ Quando si parla di PE in contesto finance, il cross-reference con Costa Crociere
 - Vs agenzia finance: il PE è un prodotto proprietario Domino — unico in Italia, già testato su reti di distribuzione complesse
 - Vs web agency: non solo sito — si trasforma il processo di vendita indiretto con analytics integrata
 
-**CTA:** Demo PE su caso Arca nel primo incontro. Se c'è interesse: Design Sprint! (€10K) per prototipare la versione sul loro prodotto e rete in 4 giorni.
+**CTA:** Demo PE su caso Arca nel primo incontro. Se c'è interesse: Design Sprint! (€10K) per progettare la versione sul loro prodotto e rete in 4 giorni.
 
 ---
 

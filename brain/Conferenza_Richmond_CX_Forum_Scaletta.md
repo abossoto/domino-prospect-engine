@@ -139,13 +139,13 @@ Workshop di **2 giorni intensivi + 5 giorni di consolidamento**. Mette nella ste
 
 **Sette deliverable canonici:** Ipotesi Core · mappa di differenziazione competitiva · mappa delle priorità · mappa stakeholder · trade-off considerati · prossimi passi · poster A3.
 
-Riferimento al polling di apertura: *"Ricordate la domanda 1? Il Core Sprint! parte esattamente da lì — chiarire chi possiede davvero il customer journey, e con quali trade-off."*
+Riferimento al polling di apertura: *"Ricordate la domanda 1? Il Core Sprint! parte esattamente da lì — capire chi possiede davvero il customer journey, e con quali trade-off."*
 
 ### Design Sprint! (3 min)
 
 Adattamento Domino del metodo Google Ventures, ricalibrato per enterprise italiana. User testing opzionale. **Sei varianti:** Service · CX · Brand · Digital Marketing · Website · Intranet.
 
-La variante CX prototipa la soluzione al momento più critico del journey e — quando ha senso — la testa con utenti reali entro pochi giorni. Non un'idea sulla slide: un prototipo che gira.
+La variante CX progetta la soluzione al momento più critico del journey e — quando ha senso — la testa con utenti reali entro pochi giorni. Non un'idea sulla slide: un prototipo che gira.
 
 Anticipazione del blocco AI: *"Sei varianti, più una settima di cui parleremo a fine sessione — il Brain & Identity Design Sprint!, prodotto di punta 2026, che ha senso introdurre solo dopo aver capito perché l'AI rende tutto urgente."*
 
@@ -161,13 +161,13 @@ Riferimento al polling 3: *"Le decisioni che non sono state prese perché due fu
 
 Accompagnamento strutturato **12 mesi, tre sessioni**. Non è formazione, non è consulenza. Formula canonica:
 
-> *"I progetti finiscono. Le transizioni no. Il Trainstorming! accompagna l'organizzazione finché il cambiamento diventa sistema."*
+> *"I progetti finiscono. Le transizioni no. Il Trainstorming! fa funzionare l'organizzazione finché il cambiamento diventa sistema."*
 
 È la risposta al silo protezionistico — quello che non si scioglie in due giorni di workshop, perché è fatto di paura, identità, abitudine.
 
 ### Chiusura del blocco
 
-> *"Quattro tempi: chiarire la direzione, prototipare la soluzione, eseguire con perimetro aperto, accompagnare la transizione. Ora vi mostro tre casi in cui questi tempi si sono incarnati in maniera diversa."*
+> *"Quattro tempi: capire la direzione, progettare la soluzione, costruire l'esecuzione, far funzionare la transizione. Ora vi mostro tre casi in cui questi tempi si sono incarnati in maniera diversa."*
 
 ---
 
@@ -202,7 +202,7 @@ Apertura del blocco: *"Tre casi, tre forme diverse di silos, tre risposte divers
 
 **Cosa è stato deciso e prototipato.** Ipotesi Core con cliente target (produttore mobility a volumi limitati e alto contenuto custom), tre problemi prioritari, soluzione descritta come *sistema* (non prodotto), competitor mappati lungo due famiglie, leva di differenziazione definita. *Mappa di differenziazione e manifesto sono output riservati al cliente*. Tre buyer personas votate al tavolo: CPO di un OEM automotive, CTO di un OEM automotive, Designer del settore aviation. Prototipo del sito B2B testato con utenti reali, con decisione architetturale netta: *il sito B2B non eredita la struttura del sito B2C*.
 
-**Stato a maggio 2026.** Build Sprint! eseguito, sito B2B in produzione. Parla ai buyer di filiera in linguaggio di filiera, mantiene la cifra estetica del brand-madre dove conta, se ne distacca dove deve.
+**Stato a maggio 2026.** Build Sprint! completato, sito B2B in produzione. Parla ai buyer di filiera in linguaggio di filiera, mantiene la cifra estetica del brand-madre dove conta, se ne distacca dove deve.
 
 **Frase-chiave per la slide.** *"Un brand consumer riconosciuto in tutto il mondo non è automaticamente un brand B2B. Servono due lingue diverse, decise al tavolo prima del Build."*
 

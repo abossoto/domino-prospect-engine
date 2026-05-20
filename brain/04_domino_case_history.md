@@ -22,7 +22,7 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Settore:** B2B Industriale (mobility supplier — automotive, nautica, aviation)
 **Periodo:** Q1 2026
 **Sprint:** 1 Core Sprint! (vertice strategico) + 1 Design Sprint! (aree operative)
-**Status:** Build Sprint! eseguito, sito B2B in produzione
+**Status:** Build Sprint! completato, sito B2B in produzione
 **Pattern di vendita:** business unit industriale dentro brand-madre consumer
 **Citabilità:** nome cliente sì; mappa di differenziazione e manifesto sono **riservati al cliente** — non divulgabili in pitch
 **Scheda completa:** [case_poltronafrau_inmotion_percorso_sprint.md](case_poltronafrau_inmotion_percorso_sprint.md)

@@ -48,7 +48,7 @@ Domino ha sviluppato metodi propri, non generici. Sono differenziatori commercia
 **Prezzo:** €6.000
 
 ### Design Sprint!
-**Cos'è:** Processo intensivo di 4-5 giorni (derivato dal metodo Google Ventures) per prototipare e testare una soluzione con utenti reali prima di investire nello sviluppo completo. Comprime mesi di lavoro in una settimana.
+**Cos'è:** Processo intensivo di 4-5 giorni (derivato dal metodo Google Ventures) per progettare e testare una soluzione con utenti reali prima di investire nello sviluppo completo. Comprime mesi di lavoro in una settimana.
 **Durata:** 4-5 giorni
 **Output:** Prototipo testato con utenti reali, decisioni d'investimento fondate su evidenze — non su opinioni interne
 **Quando usarlo:** Quando la direzione è chiara ma si vuole validare la soluzione prima di investire. Ideale dopo un Core Sprint! o quando il brief è già definito.
@@ -258,9 +258,9 @@ Brief → Analisi dei need → Strategia → Concept creativo → Produzione con
 
 > Al pari di Design Sprint!, Core Sprint! e Preventivo Emozionale: uno strumento distintivo Domino, non un servizio generico.
 
-**Posizionamento:** *"Il Core Sprint! chiarisce dove andare. Il Design Sprint! progetta come arrivarci. Il Trainstorming! è il percorso che fa accadere il cambiamento davvero."*
+**Posizionamento:** *"Il Core Sprint! fa capire dove andare. Il Design Sprint! progetta come arrivarci. Il Trainstorming! è il percorso che fa accadere il cambiamento davvero."*
 
-Il Core Sprint! chiarisce dove andare. Il Design Sprint! progetta come arrivarci. Ma tra la decisione e la realtà c'è sempre uno spazio — fatto di resistenze, abitudini, stakeholder in conflitto — che nessun workshop di due giorni può attraversare da solo.
+Il Core Sprint! fa capire dove andare. Il Design Sprint! progetta come arrivarci. Ma tra la decisione e la realtà c'è sempre uno spazio — fatto di resistenze, abitudini, stakeholder in conflitto — che nessun workshop di due giorni può attraversare da solo.
 
 Il Trainstorming! è il programma di accompagnamento che traduce le intenzioni di cambiamento in comportamenti, processi e strumenti concreti. Non è formazione. Non è consulenza. È un percorso strutturato su 12 mesi con output reali a ogni tappa.
 
@@ -269,7 +269,7 @@ Il Trainstorming! è il programma di accompagnamento che traduce le intenzioni d
 | Sessione | Focus | Output |
 |----------|-------|--------|
 | **#1** — Mese 1 | Diagnosi e allineamento stakeholder: dove si trova l'azienda, quali priorità di cambiamento esistono, Core Hypothesis della transizione | Mappa delle priorità + stakeholder allineati |
-| **#2** — Mese 5 | Prototipazione e test con utenti reali: si lavora sulle 1-2 priorità emerse, si prototipa, si testa, si decide | Prototipi testati + decisioni d'investimento chiare |
+| **#2** — Mese 5 | Progettazione e test con utenti reali: si lavora sulle 1-2 priorità emerse, si progetta, si testa, si decide | Prototipi testati + decisioni d'investimento chiare |
 | **#3** — Mese 9 | Consolidamento e roadmap 12 mesi: analisi dei risultati, consolidamento di ciò che funziona, pianificazione del passo successivo | Roadmap di transizione 12 mesi |
 
 **Metodologia — derivata dal Design Sprint!, adattata per il cambiamento continuativo:**
@@ -320,7 +320,7 @@ Il Trainstorming! non si esaurisce in sé stesso. Se durante il percorso emergon
 
 **Tag commerciali:** change management, AI adoption, innovazione, design thinking, transizione digitale, industry 5.0, responsible AI, decision design, B2B, internal communication
 
-**Tagline:** *"I progetti finiscono. Le transizioni no. Il Trainstorming! accompagna l'organizzazione finché il cambiamento diventa sistema."*
+**Tagline:** *"I progetti finiscono. Le transizioni no. Il Trainstorming! fa funzionare l'organizzazione finché il cambiamento diventa sistema."*
 
 **A chi si rivolge:**
 - **CEO / Direzione Generale** — che vogliono innovare ma non sanno da dove partire o come priorizzare
