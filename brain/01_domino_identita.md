@@ -1,5 +1,7 @@
 # DOMINO BRAIN — Identità
-> Versione 3.1 — Aprile 2026. Fonti: sito domino.it (IT+EN), presentazioni ufficiali, Sortlist, Digital Communication Forum 2025, Trainstorming! "Le transizioni, I5.0 by Design" (aprile 2026).
+> Versione 3.3 — Giugno 2026. Fonti: sito domino.it (IT+EN), presentazioni ufficiali, Sortlist, Digital Communication Forum 2025, Trainstorming! "Le transizioni, I5.0 by Design" (aprile 2026).
+>
+> **Changelog v3.3.** Sezione *Direzione*: aggiunta qualifica **Presidente del CdA** per Andrea Bosso e codificata la regola d'uso delle due qualifiche (Presidente → comunicazioni istituzionali/stampa; Strategy and Consulting Director → comunicazioni operative cliente).
 
 **Link rapidi:** [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze & premi](06_domino_referenze.md)
 
@@ -62,8 +64,6 @@ L'AI ha reso l'esecuzione abbondante. Dieci prototipi in un'ora, un deck in tren
 ### 2. Dove ci posizioniamo
 **Domino CX Transformation Partner**. Cornice **Industry 5.0** (sostenibile, human-centric, resiliente — definizione Commissione Europea). Cuore: **Decision Design** — la progettazione delle conseguenze su un orizzonte di 6-12 mesi.
 
-Decision Design opera su tre piani. **Decision Design Organizzativo** progetta come l'organizzazione sceglie nel tempo, a 6-12 mesi: è il piano primario, quello che vendiamo al C-level. **Decision Design di Team** progetta come si decide nelle stanze, con facilitazione visiva, ruoli e ritmi. **Decision Design di Prodotto** progetta come decide chi usa l'artefatto digitale, attraverso default, friction e reference points. Formula canonica: *Le decisioni: simboli di un'organizzazione che sa decidere — e sa perché.*
-
 ### 3. Come lavoriamo
 Tre verbi, una sola relazione: **capiamo, costruiamo, facciamo funzionare**. Setup → misurazione → governance continua. Quattro Sprint! a coprire i tre verbi: Core Sprint! → Design Sprint! → Build Sprint! → Trainstorming!.
 
@@ -94,9 +94,16 @@ Il cambio di paradigma in quattro dimensioni operative. Va portato esplicitament
 
 | Nome | Ruolo |
 |------|-------|
-| **Andrea Bosso** | Strategy and Consulting Director (co-founder) |
+| **Andrea Bosso** | Presidente del CdA, co-founder e Strategy and Consulting Director |
 | **Emiliano Cianci** | Product Director (co-founder) |
 | **Giovanni Borgna** | Administration and Finance Director (co-founder) |
+
+**Uso delle qualifiche di Andrea Bosso nei materiali esterni.** Andrea ricopre due ruoli formalmente distinti. La qualifica da usare dipende dal tipo di comunicazione:
+
+- **Presidente** *(forma estesa: Presidente del CdA Domino)* → comunicati stampa, comunicazioni istituzionali, materiali formali rivolti a media, istituzioni, stakeholder pubblici.
+- **Strategy and Consulting Director** → comunicazioni operative verso clienti e prospect: proposte commerciali, email di follow-up, pitch, materiali di progetto.
+
+Negli organigrammi interni e nei materiali di posizionamento (Brain, profili LinkedIn, presentazioni istituzionali) la forma completa è *Presidente del CdA, co-founder e Strategy and Consulting Director*.
 
 ---
 
