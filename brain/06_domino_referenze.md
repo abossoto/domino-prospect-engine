@@ -27,7 +27,6 @@
 | 2024 | **Interactive Key Award** — Automotive and Energy | **IVECO** |
 | 2024 | **IKA Award** — Best Website | **iveco.com** |
 | 2023 | **Interactive Key Award** — Business to Business | **ROLLON** |
-| 2021 | **TIME** — Top 100 Inventions of the Year | **Stellantis Arena del Futuro** |
 | 2019 | **Interactive Key Award** — Best Use of Digital Media | **IVECO** |
 | 2019 | **FEIEIA Grand Prix Award** — Migliore Intranet d'Europa | **FCA** (ora Stellantis) |
 | 2015 | **Interactive Key Award** — Trasporti ed energia | **JEEP** |

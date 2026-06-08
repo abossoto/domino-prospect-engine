@@ -242,7 +242,6 @@ In trent'anni Domino ha attraversato **cinque rivoluzioni**. Ogni volta il mesti
 | 2007–2012 | **Juventus.com** e **Juventusmember.com** — progetto sport e community |
 | 2009–2012 | **New Holland** — CX a partire dalla relazione con il dealer |
 | 2010 | **Fiat** — nuovo sito in **21 paesi**, primo grande progetto internazionale |
-| 2021 | Stellantis **Arena del Futuro** citata da **TIME** tra le 100 invenzioni dell'anno |
 | 2024 | Premio **IKA** per il nuovo **iveco.com** (categoria Automotive & Energy) |
 | 2024 | Premio **IKA** con **Case IH** — categoria "Innovation Technology" per integrazione AI nel processo di lead generation via campagne digital marketing |
 | 2025 | Certificazione **B Corp** ufficializzata |
@@ -296,7 +295,7 @@ Domino ha ottenuto la certificazione B Corp nel 2025. Non è un badge etico: è 
 **La risposta corretta non è difendersi, è riposizionare:**
 - "Siamo 50 persone che hanno gestito rollout in 100 paesi, connesso 88.000 dipendenti Stellantis, vinto IKA contro agenzie 10 volte più grandi. La dimensione non è la capacità."
 - Frame alternativo: **orchestratore, non esecutore monolitico**. "Portiamo i migliori specialisti quando serve — non facciamo finta di avere tutto internamente come le grandi consulenze, ma coordiniamo ecosistemi di partner selezionati."
-- Proof points da citare: Stellantis Arena del Futuro (TIME 100 Innovations), IVECO.com (IKA award), ENIT 34 paesi su dashboard Looker unica
+- Proof points da citare: IVECO.com (IKA award), ENIT 34 paesi su dashboard Looker unica, Stellantis Employee Portal (FEIEIA Best Intranet Europa, 88.000 dipendenti)
 
 **Quando è un vantaggio da vendere:**
 Prospect che hanno bruciato budget con grandi consulenze — persa nei processi interni, senior partner in vendita e junior in delivery. "Con noi i senior sono sul progetto, non in sala meeting."
