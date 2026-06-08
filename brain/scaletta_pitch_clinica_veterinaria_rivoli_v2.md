@@ -34,7 +34,6 @@ Una clinica di referenza non vende prestazioni: riceve i casi difficili da altri
 **Messaggio chiave:** online queste strutture si assomigliano. Lo spazio di differenziazione è lì.
 **Contenuto (mappa completa):**
 - **CVT — Centro Veterinario Torinese:** forte su **emergenza e h24**, rete **Gruppocvit** (prima rete italiana di strutture private), già con **sede a Rivoli dal 2011**. Posizionamento: pronto soccorso + clinica generale, scala di rete.
-- **VRC — Centro di Referenza Veterinario** (Torino, dal 2006): il competitor più vicino sul **modello referenza puro** — multidisciplinare, specialistico, *non* h24.
 - **Altri presìdi locali** (es. Clinica Veterinaria Città di Torino) `[DA CONFERMARE con mappatura di Andrea]`.
 **Lettura Domino:** siti che elencano reparti e macchinari, nessuna distinzione tra il messaggio per il veterinario e quello per il proprietario. Tutti uguali. Qui c'è il varco.
 **Nota visiva:** mappa/quadrante di posizionamento. Asse possibile: *emergenza/h24 ↔ referenza specialistica* e *rete ↔ relazione*.
@@ -71,7 +70,17 @@ Una clinica di referenza non vende prestazioni: riceve i casi difficili da altri
 - **Passo 2 — Design Sprint! mirato sulla Customer Experience (4 giorni, €10.000)**
   Progetta e valida **sito + social** a doppio pubblico. La componente **social** si imposta con la logica del **Digital Marketing Design Sprint!** (impostazione presenza social, brand awareness, contenuti). User testing opzionale.
 - **Poi — Build Sprint!**: la costruzione vera e propria di ciò che il Design Sprint! ha validato. `[citare come passo successivo, non quotare ora]`
-**Nota visiva:** timeline orizzontale: Core Sprint! (1g) → Design Sprint! CX (4g) → Build Sprint!.
+**Nota visiva:** timeline orizzontale: Core Sprint! (1g) → Design Sprint! CX (4g) → Build Sprint!. Aggiungere il blocco opzionale **Starter Kit CX** come ramo parallelo (vedi slide 8bis).
+
+## SLIDE 8bis (OPZIONALE) — Starter Kit Customer Experience: il motore dei contenuti
+**Messaggio chiave:** una volta definito *chi siete* (Core Sprint!) e *come vi presentate* (Design Sprint!), serve un motore per produrre contenuti coerenti nel tempo — senza ripartire da zero ogni volta.
+**Contenuto:**
+- Lo **Starter Kit CX** (4 settimane, senza integrazioni IT) costruisce il *brain* di brand voice della clinica: tono di voce, messaggi chiave per i due pubblici (veterinario referente / proprietario), FAQ, glossario clinico divulgativo, casi raccontabili, manuale di voce.
+- Da quel brain la clinica produce in modo coerente e veloce, human-in-the-loop: **post social, contenuti per il sito, comunicazioni generali e comunicati stampa** — tutto con la stessa voce.
+- **Output:** brain curato (40–80 nodi) + web app interrogabile via SSO + piano di governance (chi aggiorna i contenuti e ogni quanto).
+- **Prezzo:** su richiesta. Eventuale Audit tattico (€1.500) come passo zero.
+**Nota interna per Andrea (NON da slide):** la scheda canonica del **CX Manager Starter Kit** nasce per la coerenza del customer care (KPI = AHT, brain interrogabile dagli agenti), *non* per la produzione di contenuti marketing. Qui è adattato a un uso "brand-voice / content brain": estensione ragionevole, ma **fuori dal perimetro canonico** — da validare internamente prima di proporlo così. **DATI NON TROVATI:** a catalogo non esiste oggi uno Starter Kit "produzione contenuti / comunicati stampa".
+**Nota visiva:** mostrare il brain al centro e i quattro output che si irradiano (social, sito, comunicazioni, comunicati stampa).
 
 ## SLIDE 9 — Domino in sanità: competenza trasferibile
 **Messaggio chiave:** non abbiamo (ancora) un case veterinario — e per voi è un vantaggio.
@@ -96,3 +105,4 @@ Una clinica di referenza non vende prestazioni: riceve i casi difficili da altri
 - **Mappatura competitor locali** completa oltre a CVT e VRC (slide 4).
 - **Formato e prezzo del Core Sprint! ridotto (1 giorno):** quali dei sette deliverable canonici restano, e a quale prezzo. Da definire con Emiliano.
 - Eventuale apertura ancora più leggera (CX Audit €1.500) se i soci volessero un primo passo a impegno minimo prima del Core Sprint!.
+- **Starter Kit CX (slide 8bis, opzionale):** validare internamente l'adattamento "content brain" prima di proporlo — il perimetro canonico è customer care, non produzione contenuti. Decidere se presentarlo come ramo opzionale o tenerlo come carta per un secondo incontro.
