@@ -39,7 +39,7 @@ Tre interlocutori, un solo brand. La coerenza fra questi tre messaggi è il lavo
 ## SLIDE 4 — La mappa dei competitor, su tre livelli
 **Messaggio chiave:** distinguere chi vi contende il territorio da chi definisce lo standard da chi vi ispira.
 **Contenuto:**
-- **Livello 1 — Competitor locale (fase 1):** **CVT — Centro Veterinario Torinese** (h24/emergenza, rete Gruppocvit, già a **Rivoli dal 2011**) e **VRC — Centro di Referenza Veterinario** (Torino, referenza pura, non h24). È qui che si gioca la prossimità.
+- **Livello 1 — Competitor locale (fase 1):** **CVT — Centro Veterinario Torinese** (h24/emergenza, rete Gruppocvit, già a **Rivoli dal 2011**). È qui che si gioca la prossimità.
 - **Livello 2 — Benchmark di categoria** (lo standard a cui puntate, non competitor locali): **Clinica San Marco / Padova** — centro terziario, college europei, molti diplomati (ECVS, ECVIM-CA, ECVD…); **AniCura Novara** — 14 diplomati di college, gruppo consolidatore, con area dedicata "Per Veterinari" e referral come missione dichiarata.
 - **Livello 3 — Riferimenti ispirazionali:** **Clinica Vezzoni / Cremona** — autorevolezza internazionale costruita sul nome e sulla specialità (ortopedia); **Veterinaria Corlazzoli / Roma** — clinica specialistica focalizzata (neurologia + ortopedia, ECVN).
 - **Internazionali:** **Fitzpatrick Referrals**, **Davies Veterinary Specialists** (UK) — riferimento su esperienza di referral e brand.
@@ -118,7 +118,6 @@ Tre interlocutori, un solo brand. La coerenza fra questi tre messaggi è il lavo
 
 ## Fonti competitor (verificate via web, 8 giugno 2026)
 - CVT — cvttorino.it · cvtrivoli.it
-- VRC — vierreci.it
 - Clinica San Marco (Padova) — clinicaveterinariasanmarco.it
 - AniCura Istituto Veterinario Novara — anicura.it (sezione Novara, area "Per Veterinari")
 - Clinica Veterinaria Vezzoni (Cremona) — vezzoni.it
