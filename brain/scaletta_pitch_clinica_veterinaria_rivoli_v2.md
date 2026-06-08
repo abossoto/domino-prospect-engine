@@ -18,7 +18,8 @@ Una clinica di referenza non vende prestazioni: riceve i casi difficili da altri
 ## SLIDE 1 — Apertura
 **Messaggio chiave:** non siamo qui a vendere un sito, ma ad aiutarvi a decidere come diventare *la* clinica di referenza del territorio.
 **Contenuto:** Domino in una riga — Partner di Customer Experience, 30 anni, B Corp, Torino e Venezia. Payoff: *"Semplifichiamo la complessità, liberiamo il potenziale."*
-**Nota visiva:** logo Domino + una sola frase. Pulita.
+**Striscia di credibilità (ibrido):** una riga sotto il payoff per legittimarci subito senza fare l'autoritratto — *30 anni · B Corp certificata · 30+ riconoscimenti internazionali · brand come Stellantis, IVECO, Affidea, Ospedale dell'Angelo.* La prova piena resta alla slide 9, vicino alla proposta.
+**Nota visiva:** logo Domino + una sola frase + striscia discreta di loghi/numeri in basso (non invadente). `[selezionare i loghi citabili dal Domino Design System]`
 
 ## SLIDE 2 — Cosa significa lavorare "di referenza"
 **Messaggio chiave:** il vostro pubblico è doppio.
