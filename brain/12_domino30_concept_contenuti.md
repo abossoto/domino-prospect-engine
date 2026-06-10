@@ -102,5 +102,5 @@ La comunicazione è sobria e concreta. Non c'è retorica celebrativa: i 30 anni 
 
 ## Note di coerenza terminologica (interne)
 
-- La scheda press attualmente definisce Domino *"agenzia di Customer Experience"* e usa *"un cliente pilota da firmare"*: entrambe le formule violano le regole Brain (auto-definizione "agenzia" vietata → *partner*; verbo "firmare" vietato → *definire/decidere/prendere*). Da correggere alla prossima revisione del documento.
+- La scheda press attualmente definisce Domino *"agenzia di Customer Experience"* e usa *"un cliente pilota da firmare"*: entrambe le formule violano le regole Brain. Testo corretto pronto in `scheda_press_domino30_testo_corretto.md` — da riportare nel documento sorgente alla prossima revisione.
 - Notazione canonica sempre con `!`: Core Sprint!, Design Sprint!. La pagina web in alcuni punti omette il `!` nei titoli delle schede.
