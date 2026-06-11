@@ -57,6 +57,20 @@ Il filo rosso che attraversa tutti gli Sprint!. *Decision Design progetta le con
 
 ---
 
+## I silos organizzativi — chiave di lettura commerciale *(da Rimini 2026)*
+
+La tassonomia HBR dei tre tipi di silos (marzo 2025) è la chiave di lettura che lega diagnosi e metodi: ogni tipo di silo ha una contromisura, e ogni contromisura ha un metodo Domino. Validata sul campo al Richmond CX Forum di Rimini 2026 con dati primari Mentimeter. **Fonte completa: [13_silos_framework.md](13_silos_framework.md)** — tassonomia, dati citabili, evidenze primarie, regole d'uso.
+
+| Silo | Contromisura (HBR) | Metodo Domino |
+|---|---|---|
+| **Sistemico** — obiettivi disallineati, KPI mai progettati insieme | Allineare gli obiettivi | **Core Sprint!** |
+| **Elitario** — conoscenza trattenuta, il cliente è la somma di verità parziali | Aprire la conoscenza | **Brain & Identity Design Sprint!** |
+| **Protezionistico** — paura di perdere risorse, budget, controllo | Costruire fiducia | **Trainstorming!** |
+
+Design Sprint! e Build Sprint! sono il secondo e terzo tempo del percorso, una volta diagnosticato il silo dominante. Frase di framing canonica: *"I tuoi clienti non si perdono nel journey. Si perdono nei tuoi silos."*
+
+---
+
 ## 1. Core Sprint! *(introdotto 2024)*
 
 **Cos'è:** Il passo strategico che precede il Design Sprint! Serve a costruire l'**Ipotesi Core** del progetto: la tesi che guida tutto ciò che viene dopo.
@@ -352,6 +366,8 @@ Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina,
 | "Stiamo introducendo copilot/agenti AI ma non hanno una base di conoscenza affidabile" | Brain and Identity Design Sprint! (focus brain) — eventualmente preceduto da Core Sprint! |
 | "I nostri prodotti digitali sembrano fatti da aziende diverse" | Brain and Identity Design Sprint! (focus identity / design system) |
 | "Ogni nuovo progetto ricomincia da zero con i componenti UI" | Brain and Identity Design Sprint! (focus identity / design system) |
+| "I nostri clienti ricevono risposte diverse da reparti diversi" | Diagnosi silos ([13_silos_framework.md](13_silos_framework.md)) → Core Sprint! / Brain & Identity Design Sprint! / Trainstorming! a seconda del tipo |
+| "Ogni funzione sta adottando la propria AI per conto suo" | Brain & Identity Design Sprint! — l'AI dentro silos esistenti li rende permanenti ([13_silos_framework.md](13_silos_framework.md)) |
 
 ---
 
@@ -471,3 +487,4 @@ Questo file fa parte del Domino Brain. Per approfondire:
 - [09_domino_gtm_turismo_cultura.md](09_domino_gtm_turismo_cultura.md) — sales plays Turismo & Cultura
 - [10_domino_gtm_finance_pa.md](10_domino_gtm_finance_pa.md) — sales plays Finance & PA
 - [11_domino_gtm_automotive.md](11_domino_gtm_automotive.md) — sales plays Automotive
+- [13_silos_framework.md](13_silos_framework.md) — tassonomia silos, dati citabili, evidenze Mentimeter Rimini 2026, mappatura silos → metodi

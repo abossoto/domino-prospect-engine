@@ -215,6 +215,42 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 
 ---
 
+### SP6 — "I nostri clienti ricevono risposte diverse da reparti diversi"
+**Motion:** Bottom-up ⬆ (CX/Service Manager) o Top-down ⬇ (CEO/COO quando il costo dei silos è visibile a bilancio)
+**Entry:** CX Manager / Customer Service Director / COO
+**Trigger:** Reclami ricorrenti per incoerenza, NPS in calo senza causa evidente, adozione AI per funzione partita in ordine sparso
+
+**Problema:**
+- Vendite e operations non allineate: è il punto di attrito n.1 del journey B2B (64% nell'indagine live Domino, Richmond CX Forum Rimini 2026)
+- Ownership del customer journey frammentata: nessuno la possiede davvero
+- Decisioni operative (livelli di servizio, tempi di consegna, resi, preventivazione) bloccate perché due funzioni non si accordano
+- Ogni funzione sta adottando la propria AI: i silos di conoscenza diventano permanenti
+
+**Cornice** *([13_silos_framework.md](13_silos_framework.md))*: tre tipi di silos (sistemici, elitari, protezionistici — HBR marzo 2025), tre risposte diverse. Aprire sempre con la diagnosi, mai con il prodotto.
+
+**[Soluzione completa Domino](03_domino_metodi.md):**
+- Silo sistemico → **Core Sprint!**: ownership, KPI condivisi, trade-off espliciti al tavolo
+- Silo elitario → **Brain & Identity Design Sprint!**: una sola fonte canonica di ciò che l'azienda sa
+- Silo protezionistico → **Trainstorming!**: 12 mesi, perché il silo politico non si scioglie in due giorni
+
+**Come entrare:**
+- Autodiagnosi silos (3 domande, gratuita, self-service) → identifica il tipo dominante
+- Core Sprint! (€6.000) → quando l'attrito vendite-operations è il dolore dichiarato
+- Starter Kit CX (4 settimane) → quando il dolore è concentrato sul customer care e il buyer è il CX Manager con budget di funzione
+
+**[Proof point](04_domino_case_history.md):**
+- **CIA** *(2025-2026)*: 900+ sedi che parlavano lingue diverse → Core Sprint! al vertice + 2 Design Sprint! sulle unità operative. Silo di federazione
+- **Poltrona Frau In Motion** *(Q1 2026)*: BU industriale dentro brand consumer, silo elitario e identitario → Core + Design + Build, sito B2B in produzione
+- Dato primario: indagine live Domino su 25+ responsabili CX (Rimini 2026) — attrito vendite-operations al 64%, ownership del journey frammentata su 5 figure diverse
+
+**Vs competitor:**
+- Vs consulenza organizzativa: Domino non consegna un report sui silos — consegna la decisione presa al tavolo e il sistema che la implementa
+- Vs vendor AI: l'AI dentro silos esistenti li rende permanenti; Domino costruisce prima il brain, poi l'AI ha qualcosa di coerente da dire
+
+**CTA:** Apertura con il dato primario Rimini + autodiagnosi silos. Poi Core Sprint! o Starter Kit CX a seconda del buyer. *(L'Audit tattico non si propone spontaneamente su questo play: solo su valutazione manuale caso per caso.)*
+
+---
+
 ## Prospect Engine — istruzioni di utilizzo
 
 Quando generi materiali per un prospect B2B industriale:
@@ -244,3 +280,4 @@ Questo file fa parte del Domino Brain. Per approfondire:
 - [09_domino_gtm_turismo_cultura.md](09_domino_gtm_turismo_cultura.md) — sales plays Turismo & Cultura
 - [10_domino_gtm_finance_pa.md](10_domino_gtm_finance_pa.md) — sales plays Finance & PA
 - [11_domino_gtm_automotive.md](11_domino_gtm_automotive.md) — sales plays Automotive
+- [13_silos_framework.md](13_silos_framework.md) — tassonomia silos, dati citabili, evidenze Mentimeter Rimini 2026 (fonte del SP6)
