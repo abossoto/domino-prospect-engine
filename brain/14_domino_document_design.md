@@ -1,10 +1,10 @@
-# 14 · Regole di produzione e design dei documenti (Document Layer)
+# 14 · Design dei documenti — Document Layer HTML (riferimento storico)
 
-> Versione 1.0 — 3 luglio 2026. Regola operativa: **ogni documento prodotto per Domino nasce già in questo formato**, senza che Andrea lo debba chiedere. Sorgenti canonici in [`Claude Design/document-layer/`](Claude%20Design/document-layer/) (doc-tokens.css, doc-components.css, DOCUMENTS.md, README.md).
+> Versione 1.1 — 7 luglio 2026. **Superato come regola di produzione:** dal 7 luglio 2026 i documenti stampabili nascono come .docx nativo secondo [`15_domino_document_word.md`](15_domino_document_word.md). Questo file resta il riferimento visivo del Document Layer e la guida per gli eventuali deliverable HTML (pagine web, prototipi). Sorgenti canonici in [`Claude Design/document-layer/`](Claude%20Design/document-layer/) (doc-tokens.css, doc-components.css, DOCUMENTS.md, README.md).
 
 ## Quando si applica
 
-A tutti i deliverable stampabili A4/Letter: analisi e assessment, offerte, proposte e preventivi, report, one-pager, lettere formali. Il formato nativo è un **HTML autonomo** costruito sul document layer, pronto per la stampa/export PDF. Se il deliverable richiesto è .docx o .pdf diretto, le stesse regole (gerarchia tipografica, disciplina colore, voce) si traducono nel formato richiesto.
+Solo ai deliverable che nascono come **HTML autonomo** (pagine web, prototipi stampabili via browser). Per proposte, offerte, analisi, report, one-pager e lettere vale il flusso .docx del file 15. Gerarchia tipografica, disciplina colore e voce sono le stesse nei due formati; qui la scala è in px, nel 15 in pt.
 
 Non si applica ai deck (1920×1080, layer scuro separato) né al sito. **Mai portare il dramma da deck in un documento**: niente display type, niente `<flow-bg>`, niente fotografia full-bleed, niente slide rossa di chiusura.
 
