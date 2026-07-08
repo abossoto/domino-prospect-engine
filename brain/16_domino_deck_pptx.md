@@ -1,20 +1,16 @@
 # Presentazioni PowerPoint (.pptx) con il Domino Design System
 
-> **Regola di produzione (dal 7 luglio 2026):** ogni presentazione (pitch deck, sales deck, deck interno, talk) nasce come **file .pptx nativo** secondo queste regole. È il flusso primario. Il sistema HTML della deck skill (`Claude Design/deck-skill/`) resta come riferimento visivo canonico e per i casi in cui serve espressamente un deck HTML→PDF.
-
-È la traduzione del *deck layer* del Domino Design System (canvas HTML 1920×1080) in termini nativi di PowerPoint: punti tipografici, colori hex, layout, componenti.
-
-**Fonte dei valori esatti:** `Claude Design/deck-skill/` — `colors_and_type.css` (palette e font), `deck-tokens.css` (scala deck), `deck-components.css` (componenti), `SKILL.md` (voce e regole visual). In caso di dubbio su un valore, vince il CSS. **Su offerta, metodi, prezzi e naming vince sempre il Brain**, non la skill: la skill governa solo il visual (vedi §11).
+> **Regola di produzione (dal 7 luglio 2026):** ogni presentazione (pitch deck, sales deck, deck interno, talk) nasce come **file .pptx nativo** secondo queste regole. È il flusso primario. Il sistema HTML della deck skill (`Claude Design/deck-skill/`) resta come riferimento visivo e per i casi in cui serve espressamente un deck HTML→PDF.
+>
+> **Riferimento canonico:** il deck **Case IH — H1 Review & H2 Plan** (`Presentazioni/Case_IH_strategy_H2_2026.pptx`, 42 slide, luglio 2026). Tutti i valori di questa scheda sono estratti da quel file. In caso di dubbio, vince il deck di riferimento; sui contenuti (offerta, metodi, prezzi, naming) vince il Brain (§12).
 
 ---
 
 ## 0. Regola di governo
 
-> **Editoriale, sicuro, alto contrasto.** Fondazione nero/bianco + un solo rosso `#FF303F`, geometria a blocchi, tipografia enorme e stretta. Una slide si proietta, non si legge: il corpo non scende mai sotto ~14,5 pt.
+> **Editoriale, sicuro, alto contrasto.** Nero/bianco + un solo rosso `#FF303F`, geometria a blocchi, tipografia grande e stretta. Una slide si proietta, non si legge: il corpo lavora a 18–21,75 pt e non scende sotto ~14 pt (solo la chrome sta a 10,5 pt).
 
-Come costruirlo: genera un **file .pptx nativo** (es. con `python-pptx`). Slide **16:9, 13,333″ × 7,5″**. La conversione dal canvas HTML è **px → pt con fattore 0,5** (1920 px = 960 pt): tutti i valori qui sotto sono già convertiti.
-
-Lo shader animato `flow-bg` non esiste in PowerPoint: le slide dark hanno **sfondo nero pieno `#000000`**. In alternativa, un'immagine statica esportata dallo shader (scurita, scrim nero ~80%) come background picture — mai gradienti generati in pptx.
+Come costruirlo: genera un **file .pptx nativo** con slide **20″ × 11,25″** (= 1440 × 810 pt). La conversione dal canvas HTML 1920×1080 è **px → pt con fattore 0,75** (1 px = 0,75 pt): i valori qui sotto sono già convertiti.
 
 ---
 
@@ -22,34 +18,32 @@ Lo shader animato `flow-bg` non esiste in PowerPoint: le slide dark hanno **sfon
 
 | Token | Valore pptx | Origine (px) |
 | --- | --- | --- |
-| Slide | 13,333″ × 7,5″ (960 × 540 pt) | 1920×1080 |
-| Gutter orizzontale (`pad-x`) | 60 pt dai bordi sx/dx | 120 |
-| Inset alto contenuto (`pad-top`) | 55 pt | 110 |
-| Inset basso contenuto (`pad-bottom`) | 75 pt | 150 |
-| Chrome top (distanza dall'alto) | 20 pt | 40 |
-| Chrome bottom (distanza dal basso) | 18 pt | 36 |
-| Gap titolo → contenuto (`gap-title`) | 28 pt | 56 |
-| Gap tra card/item (`gap-item`) | 14 pt | 28 |
-| Gap colonne `split` (2 col) | 50 pt | 100 |
+| Slide | **20″ × 11,25″** (1440 × 810 pt) | 1920×1080 |
+| Gutter orizzontale (`pad-x`) | 90 pt dai bordi sx/dx | 120 |
+| Inset alto contenuto (`pad-top`) | ~82 pt | 110 |
+| Inset basso contenuto (`pad-bottom`) | ~112 pt | 150 |
+| Chrome top (dall'alto) | 30 pt | 40 |
+| Chrome bottom (dal basso) | ~24–27 pt | 36 |
+| Gap titolo → contenuto (`gap-title`) | 42 pt | 56 |
+| Gap tra card/item (`gap-item`) | 21 pt | 28 |
 
-Il contenuto sta sempre dentro il *frame* (60 pt laterali, 55 pt sopra, 75 pt sotto): non sfora mai, non tocca mai la chrome.
+Il contenuto sta dentro il frame (90 pt laterali, ~82 pt sopra, ~112 pt sotto): non sfora mai, non tocca mai la chrome.
 
 ---
 
 ## 2. Font
 
-Font canonici in `Claude Design/deck-skill/fonts/` (versioni Trial: i nomi famiglia interni sono questi, da usare come nome font nel .pptx).
+Nel deck di riferimento i nomi famiglia scritti nel .pptx sono **i nomi pieni, senza "Trial"**:
 
-| Ruolo | Nome famiglia nel .pptx | File |
+| Ruolo | Nome famiglia nel .pptx | Peso |
 | --- | --- | --- |
-| Corpo, sottotitoli, meta | `Aktiv Grotesk Trial` (Regular; Bold via toggle) | `AktivGrotesk-Regular.ttf` / `-Bold.ttf` |
-| H2/H3, heading card | `Aktiv Grotesk Trial XBold` (famiglia separata — non si ottiene col toggle bold) | `AktivGrotesk-XBold.ttf` |
-| Display, H1, numeri monster | `Aktiv Grotesk Trial Black` (famiglia separata) | `AktivGrotesk-Black.ttf` |
-| Citazioni, numerali romani, firma | `PT Serif` + bold (corsivo per numerali e firma) | `PTSerif-Bold.ttf` |
-| Solo messaggi di chiusura/firme, con parsimonia | `DominoType` | `DominoType.otf` |
+| Tutto il sans: headline, heading, corpo, label, chrome | `Aktiv Grotesk` | Regular; **Bold via toggle** per headline, heading, label |
+| Numerali di sezione, citazioni, firma | `PT Serif` | Bold; **corsivo** per i numerali e la firma |
 
-- **Aktiv Grotesk è il cavallo da lavoro.** PT Serif Bold è l'unico serif (citazioni, tono print-magazine). **DominoType mai** per corpo, heading o UI.
-- Fallback se i font non sono sul sistema di chi apre il file: Arial (sans), Georgia (serif). L'embedding dei font nel .pptx è inaffidabile cross-platform: per destinatari esterni valuta l'export PDF.
+- Niente famiglie XBold/Black separate nel .pptx: la gerarchia si fa con **corpo + bold + tracking**, non con pesi intermedi.
+- **PT Serif Bold** è l'unico serif: numerali giganti di sezione (spesso corsivi), citazioni, la firma "Domino" in chiusura.
+- **DominoType mai** per corpo, heading o UI; solo eventuali chiusure/firme, con parsimonia.
+- I file font stanno in `Claude Design/deck-skill/fonts/` (versioni Trial per l'installazione locale: se il .pptx deve essere aperto su macchine con le Trial installate, i nomi famiglia diventano `Aktiv Grotesk Trial` ecc. — chiedi in caso di dubbio). Fallback: Arial (sans), Georgia (serif). Per destinatari esterni senza font, valuta l'export PDF.
 
 ---
 
@@ -60,108 +54,122 @@ Font canonici in `Claude Design/deck-skill/fonts/` (versioni Trial: i nomi famig
 | Nero | `#000000` | Sfondo slide dark, testo su paper/red |
 | Near-black | `#0A0A0A` | Riempimento card/strip su slide dark |
 | Bianco | `#FFFFFF` | Testo primario su dark, card su paper |
-| **Rosso Domino** | `#FF303F` | Unico accento: eyebrow, dot, numerali, barre, chip, slide red |
-| Paper | `#F0F0F0` | Sfondo slide paper (prezzi/dati) |
-| Testo attenuato su dark | `#999999` | equivalente del bianco al 60% |
-| Chrome/meta su dark | `#595959` | equivalente del bianco al 35% |
-| Hairline su dark | `#1F1F1F` | bordi card, righe sottili (bianco 12%) |
-| Testo attenuato su paper/red | `#000000` al 55–70% → usa `#737373` (paper) / `#4D4D4D` (red) | chrome invertita |
+| **Rosso Domino** | `#FF303F` | Unico accento: eyebrow, dot, numerali, barre, delta, slide red |
+| Paper | `#F0F0F0` | Sfondo slide paper |
 
-**Disciplina del colore:** solo nero, bianco, rosso. Maroon `#7F1A3B` e navy `#09314E` sono colori di *clienti* (IBM Watson, Iveco): solo quando quel case study è in scena. Blocchi sempre flat: **niente ombre, niente gradienti, niente angoli arrotondati** (raggio 0; max 1–1,5 pt su bottoni/pill, 2–2,5 pt su tag).
+**Testo attenuato: usa l'alpha vero, non grigi equivalenti.** PowerPoint supporta la trasparenza nel colore del testo (`solidFill` + `alpha`): il deck di riferimento usa nero al 60 % / 55 % / 42 % / 13 % (su paper) e bianco al 60 % / 35 % / 12 % (su dark), come i token CSS (`--c-fg-mute` 60 %, `--c-fg-faint` 35 %, `--c-line` 12 %).
+
+**Disciplina del colore:** solo nero, bianco, rosso. Maroon `#7F1A3B` e navy `#09314E` sono colori di *clienti*: solo quando quel case study è in scena. Blocchi flat: niente ombre, niente angoli arrotondati (raggio 0; max ~2 pt su chip/tag).
+
+**Unica eccezione al "niente gradienti": il glow.** Sulle slide dark d'impatto è ammesso un **gradiente radiale** full-canvas da `#FF303F` **alpha 13 %** (centro) a nero pieno (bordo, stop ~58 %) — è il sostituto statico dello shader `flow-bg`. Nel riferimento compare su ~6 slide dark su 11: usalo per cover e momenti enfatici, non ovunque.
 
 ---
 
 ## 4. Scala tipografica → punti PowerPoint
 
-| Stile | pt | Font / peso | Note | Uso |
-| --- | --- | --- | --- | --- |
-| **Display** | 89 pt | Aktiv Black | interlinea 0,9–0,95, tracking −2% | Solo cover / closing monster |
-| **H1** | 57 pt | Aktiv Black | interlinea 0,95, tracking −2,5% | Titolo primario slide |
-| **H2** | 38 pt | Aktiv XBold | interlinea 1,0 | Heading slide di contenuto |
-| **H3** | 31 pt | Aktiv XBold/Bold | interlinea 1,05 | Heading card / colonna |
-| **Subtitle** | 25,5 pt | Aktiv Medium/Regular | interlinea 1,2, colore `#999999` | Lead sotto H2 |
-| **Body** | 18,5 pt | Aktiv Regular | interlinea 1,35 | Corpo testo slide |
-| **Small** | 14,5 pt | Aktiv Regular | | Meta / caption — **minimo assoluto** |
-| **Eyebrow** | 10,5 pt | Aktiv Bold | MAIUSCOLO, spaziatura ~2 pt, **rosso** | Label sopra i titoli |
-| **Chrome** | 7 pt | Aktiv Bold | MAIUSCOLO, spaziatura ~1,1 pt | Header/footer slide |
+Valori osservati nel deck di riferimento (Aktiv Grotesk Bold salvo indicazione).
 
-Interlinea stretta sulle headline (100% o meno): stretto, impilato. Sotto i 14,5 pt scende solo la chrome (7 pt) e le chip metodi (6,5 pt).
+| Stile | pt | Note | Uso |
+| --- | --- | --- | --- |
+| **Display** | 96 pt | interlinea ~0,95, tracking negativo (~−1,5 %) | Solo cover |
+| **H1 divider** | 85,5 pt | idem | Titolo dei divisori di sezione dark |
+| **H2** | 57 pt | il cavallo da lavoro dei titoli | Heading delle slide di contenuto |
+| **H3 / agenda** | 42–42,75 pt | | Titoli agenda, claim secondari |
+| **Card heading** | 27,75 pt | | Titolo di card / colonna |
+| **Numero fatto** | 34,5–52,5 pt | | KPI, numeri grandi nelle card |
+| **Subtitle / lead** | 24 pt | Regular, attenuato | Lead sotto i titoli, sottotitoli |
+| **Body large** | 21,75 pt | Regular | Corpo primario |
+| **Body** | 18 pt | Regular | Corpo nelle card e liste |
+| **Small** | 14,25–13,5 pt | | Caption, note |
+| **Label / eyebrow grande** | 15,75 pt | CAPS, tracking ~3,15 pt (0,2 em), rosso o attenuato | Eyebrow sopra i titoli, brand label |
+| **Eyebrow card** | 12,75 pt | CAPS, tracking ~2 pt | Label dentro card e colonne |
+| **Micro-label** | 11,25 pt | CAPS Bold | Kicker di card dense |
+| **Chrome** | 10,5 pt | CAPS Bold, tracking ~1,7 pt (0,16 em) | Header/footer slide |
+| **Numerale sezione (serif)** | 29,25–73,5 pt | **PT Serif Bold corsivo**, rosso o nero | "01", "I", numerali giganti |
+| **Citazione** | 46,5 pt | PT Serif Bold | Quote a piena slide |
+| **Firma chiusura** | 39,75 pt | PT Serif Bold ("Domino") + 20,25 pt caps | Slide red finale |
 
 ---
 
-## 5. Varianti di slide
+## 5. Varianti di slide — e quando usarle
 
-1. **Dark (default)** — sfondo nero `#000000`, testo bianco. La maggior parte del deck.
-2. **Paper** — sfondo `#F0F0F0`, testo nero. Per slide prezzi / dati / densità numerica. La chrome si inverte (testo `#737373`, logo versione dark).
-3. **Red** — sfondo `#FF303F`, testo nero. **Una sola per deck**, sempre la chiusura (total-impact / CTA).
+1. **Paper `#F0F0F0`** — **la variante dominante nei deck di contenuto**: nel riferimento 25 slide su 42. Testo nero (attenuato via alpha), card bianche `#FFFFFF`, hairline nere a bassa alpha. Per tutto ciò che è denso: dati, tabelle, griglie, piani.
+2. **Dark `#000000`** — cover, divisori di sezione, slide d'impatto e citazioni (11 su 42). Testo bianco, card `#0A0A0A`, hairline bianche al 12 %. Su una parte di queste, il glow radiale rosso (§3).
+3. **Red `#FF303F`** — **una sola per deck**, la chiusura. Tutto il testo **nero**, firma "Domino" in PT Serif Bold.
+
+Il ritmo tipico: cover dark (con glow) → divisori dark tra i capitoli → contenuto paper → chiusura red.
 
 ---
 
 ## 6. Chrome (su ogni slide)
 
-- **Top** (a 20 pt dall'alto, dentro i 60 pt laterali): logo Domino a sinistra (h ~23 pt; su dark `assets/logo-domino-bcorp-light.png`, su paper/red `-dark.png`), a destra meta MAIUSCOLA 7 pt con **quadratino rosso 4×4 pt** (nero su slide red) + etichetta slide ("01 · Cover").
-- **Bottom** (a 18 pt dal basso): due elementi agli estremi, 7 pt MAIUSCOLO, colore `#595959` su dark — es. `Evento · Città data` (sx) · `Pitch Domino` (dx).
-- **Motivo firma:** la tessera domino a due quadrati (~23×23 pt l'uno, uno rosso, uno nero/bianco) in alto a destra della cover. È chrome, non un'icona.
+- **Top:** logo Domino/cliente a sinistra a (90, 30) pt, altezza ~34,5 pt; a destra **quadratino rosso 6×6 pt** + etichetta slide 10,5 pt CAPS Bold tracking 1,7 pt (es. "03 · WHERE WE ARE"). Sulle slide red il dot diventa nero.
+- **Bottom:** a ~24 pt dal fondo, due elementi agli estremi, 10,5 pt CAPS Bold: titolo del progetto (sx) · sezione corrente (dx). Colore attenuato (bianco 35 % su dark, nero 55 % su paper, nero pieno su red).
+- **Cover:** brand label 15,75 pt CAPS tracking 3,15 pt (es. "CASE IH · DOMINO"); la tessera domino a due quadrati come chrome in alto a destra.
 
 ---
 
 ## 7. Componenti (come farli in pptx)
 
-Blocchi flat, riempimento pieno, niente ombra/bordo-raggio. Le card su dark: fill `#0A0A0A`, bordo 0,5 pt `#1F1F1F`, padding interno generoso (~13–16 pt).
+Blocchi flat, riempimento pieno. Card su dark: fill `#0A0A0A`, bordo 0,5–0,75 pt bianco 12 %. Card su paper: fill `#FFFFFF`, bordo nero ~10 %. Padding interno generoso (~20–24 pt).
 
-| Componente | Costruzione pptx (valori chiave) |
+| Componente | Costruzione (valori dal riferimento) |
 | --- | --- |
-| **Eyebrow** | Trattino rosso 24×1 pt + testo 10,5 pt MAIUSCOLO rosso, sulla stessa riga |
-| **Facts row** (3 numeri) | Riga hairline sopra; 3 colonne: numero 51 pt Black + label 10,5 pt `#999999` |
-| **Symptoms** (I·II·III) | 3 colonne: numerale romano PT Serif corsivo 21 pt rosso, titolo 18,5 pt XBold, testo 12 pt `#999999` |
-| **Problem quotes** | 3 colonne, barra sinistra rossa 2 pt: fonte 8,5 pt caps rossa + citazione PT Serif Bold 17 pt bianca |
-| **Product cols** (Brain + Identity) | 2 colonne: layer 8,5 pt caps rosso, H 31 pt Black, descrizione 13,5 pt `#999999`, meta caps 9,5 pt |
-| **AI-agnostic strip** | Rettangolo fill `#0A0A0A` bordo `#1F1F1F`: label caps rossa 8,5 pt + vendor 12 pt Bold + "l'azienda sceglie" 10,5 pt (b rosso) |
-| **Output card** | Card: kind 7,5 pt caps rosso, titolo 14,5 pt XBold, testo 10 pt `#999999` |
-| **Kit col** (×3) | Card: numerale serif corsivo 25,5 pt rosso, titolo 19,5 pt Black, buyer 9,5 pt, benefit 10,5 pt, KPI in fondo oltre hairline |
-| **Case** (×4) | Card: verticale 7 pt caps rosso, nome 16 pt Black, numero 25,5 pt Black + small 7,5 pt, desc 9 pt, chip metodi 6,5 pt bordate `#1F1F1F` |
-| **Timeline** (settimane Sprint!) | 4 colonne sopra hairline: label 8,5 pt caps rossa, titolo 18,5 pt XBold, testo 11 pt `#999999` |
-| **Audit card** (slide paper) | Card bianca bordo nero 8%: prezzo 51 pt Black (valuta 26,5 pt rossa), deliverable 11 pt con trattino rosso 6×1 pt, meta-line 7,5 pt caps |
-| **Pivot block** | Barra sinistra rossa 3 pt, rientro 28 pt: testo 21 pt `#999999` con parte barrata (strikethrough, ideale rosso) |
-| **Closing frame** (slide red) | H 57 pt Black nero max ~14 caratteri/riga (parola chiave barrata con linea nera inclinata ≈ shape); footer sopra bordo nero 2 pt: next-step 17,5 pt Bold + firma a dx (nome PT Serif corsivo 26,5 pt + ruolo 13,5 pt caps) |
-| **Clients strip** | Riga sopra hairline: label caps rossa 8,5 pt + clienti 13,5 pt Bold separati da `·` `#595959` |
-| **Cover byline** (×3) | 3 celle sopra hairline: chiave 8,5 pt caps rossa + valore 16 pt Bold |
+| **Eyebrow** | Trattino rosso ~36×1,5 pt + testo 12,75–15,75 pt CAPS rosso tracciato |
+| **Facts row** (KPI) | 3+ colonne sopra hairline: numero 34,5–52,5 pt Bold + label 12,75 pt attenuata; delta con segno in rosso (`+2.47pp`) |
+| **Lista numerata 01/02/03** | Numerale 38,25 pt **PT Serif Bold corsivo** rosso + titolo 27,75 pt Bold + testo 18 pt attenuato |
+| **Numerale gigante di sezione** | PT Serif Bold corsivo 63,75–73,5 pt, rosso su paper, bianco su dark |
+| **Quote slide** | Virgolette PT Serif 51 pt rosse + citazione PT Serif Bold 46,5 pt + chiusa secca in Bold sans ("This is the audience.") |
+| **Card contenuto** (griglie 3–4 col) | Kicker 11,25 pt CAPS rosso, titolo 16,5–21 pt Bold, testo 14,25–15 pt attenuato, hairline interne |
+| **Agenda / indice** | Numerale serif corsivo grande + voce 42,75 pt Bold + descrizione 21,75 pt attenuata, righe separate da hairline |
+| **Tabella dati** | Testata CAPS 11,25–12,75 pt attenuata, righe con hairline, numeri Bold, delta rossi |
+| **Timeline / settimane** | Colonne sopra hairline: label CAPS rossa, titolo Bold, testo attenuato |
+| **Checklist / recap** | Righe con voce Bold + stato; label CAPS; hairline tra le righe |
+| **Screenshot e mockup** | Post reali, telefoni, mockup dispositivo come immagini; foto sempre desaturate/scurite |
+| **Divider di sezione** (dark) | Eyebrow + titolo 85,5 pt con parola chiave in rosso (es. "Voice. **Keep our edge**"), eventuale glow |
+| **Closing** (red) | "Thank you." 85,5 pt nero, riepilogo 26,25 pt Bold, firma "Domino" PT Serif Bold 39,75 pt + "PROUDLY INTERACTIVE" 20,25 pt CAPS |
 
 ---
 
 ## 8. Immagini e icone
 
-- **Foto:** desaturate e scurite (scrim nero ~80%) così il testo bianco vince sempre. Mai illustrazioni disegnate a mano, texture, mesh gradient, pattern.
-- **Icone:** Domino non ha una icon library estesa. Usa **Lucide** (stroke 1,5–2) come sostituto approvato e segnalalo. Nessun icon-font, nessuna emoji.
-- **Loghi:** in `Claude Design/deck-skill/assets/` — `logo-domino-bcorp-light.png` su dark, `-dark.png` su paper/red.
+- **Foto:** desaturate e scurite (scrim nero) così il testo bianco vince sempre; a tutta slide nei divisori. Mai illustrazioni disegnate a mano, texture, pattern.
+- **Screenshot reali** (post social, SERP, device) sono benvenuti nelle slide di evidenza: incorniciati in card flat.
+- **Icone:** Lucide (stroke 1,5–2) come sostituto approvato, da segnalare. Nessun icon-font, nessuna emoji.
+- **Loghi:** `Claude Design/deck-skill/assets/` — variante light su dark, dark su paper/red. Logo cliente accanto a quello Domino quando il deck è per un cliente.
 
 ---
 
 ## 9. Voce (contenuti)
 
-- **Italiano** curato, sentence case; l'inglese resta per i termini di settore ("Customer Experience", "Inbound Marketing"). Non sovra-tradurre.
-- Tono diretto, concreto: frasi corte, zero gergo da consulenza, risultati misurabili. La CX è una *leva di business*.
-- Struttura narrativa: **problema → soluzione → proof point**. I case study partono dal partner ("Domino e Iveco…").
-- ALL CAPS tracciate solo per eyebrow, label, chrome. Title Case evitato.
-- "Noi" inclusivo + "tu" diretto. **Nessuna emoji.** Punteggiatura italiana corretta.
-- I nomi dei metodi si scrivono sempre col `!`: Core Sprint!, Design Sprint!, Build Sprint!, Brain & Identity Design Sprint!, Trainstorming!.
+- Lingua del deck secondo il destinatario (il riferimento è in inglese; l'italiano resta il default per deck interni e clienti italiani). Sentence case; l'inglese per i termini di settore.
+- Tono diretto, concreto: frasi corte, risultati misurabili. Headline con il twist in rosso.
+- Struttura narrativa: **problema → soluzione → proof point**. I dati prima delle opinioni ("Budget reduced. Engagement held.").
+- ALL CAPS tracciate solo per eyebrow, label, chrome. **Nessuna emoji.**
+- I nomi dei metodi sempre col `!`: Core Sprint!, Design Sprint!, Build Sprint!, Brain & Identity Design Sprint!, Trainstorming!.
 
 ---
 
 ## 10. Struttura tipo di un deck
 
-1. **Cover** (dark) — eyebrow, H1/Display con twist in rosso, subtitle, cover byline, tessera domino.
-2. **Slide di contenuto** (dark) — problema, sintomi, quote, prodotto, output, kit, case, timeline.
-3. **Slide paper** — prezzi, dati, densità numerica.
-4. **Chiusura** (red, una sola) — closing frame con CTA e firma.
+1. **Cover** (dark, glow) — brand label, display 96 pt con twist rosso, sottotitolo, meta (scope, timeframe, canali).
+2. **Indice/agenda** (dark) — numerali serif + voci.
+3. **Capitoli**: divisore dark → slide di contenuto paper (dati, griglie, card, tabelle).
+4. **Chiusura** (red, una sola) — thank you, riepilogo, firma Domino.
 
-Definisci prima il sistema (quali layout per cover, section header, contenuto, chiusura), poi riempi.
+Definisci prima il sistema (layout di cover, divisore, contenuto, chiusura), poi riempi.
 
 ---
 
-## 11. Gerarchia delle fonti
+## 11. QA obbligatoria
 
-- **Visual (colori, type, layout, componenti):** questa scheda + i CSS in `Claude Design/deck-skill/`.
+Dopo la generazione: converti in immagini (LibreOffice → PDF → jpg) e controlla overflow, sovrapposizioni, contrasto, coerenza chrome. Correggi e riverifica solo le slide toccate.
+
+---
+
+## 12. Gerarchia delle fonti
+
+- **Visual:** questa scheda ← deck di riferimento Case IH ← CSS in `Claude Design/deck-skill/`. In caso di conflitto tra scheda e deck di riferimento, vince il deck.
 - **Contenuti (offerta, metodi, prezzi, naming, case study):** **vince il Brain** (file 01–13 + CLAUDE.md). Il `SKILL.md` della deck skill contiene una fotografia della narrativa 2026 che può invecchiare: non usarla come fonte per prezzi o naming. In particolare: l'Audit tattico non si propone mai spontaneamente; regola "diversità 3" per i case study; mai "agenzia" in auto-definizione.
 
 ---
@@ -170,7 +178,7 @@ Definisci prima il sistema (quali layout per cover, section header, contenuto, c
 
 Quando Andrea chiede un deck (pitch, sales, interno, talk):
 
-1. Chiedi/deduci contesto, pubblico e numero indicativo di slide.
-2. Prendi i contenuti dal Brain (§11), il visual da qui.
-3. Costruisci un **file .pptx nativo** 13,333″×7,5″ con gli stili di §4 e i componenti di §7; una sola slide red, in chiusura.
-4. Consegna il .pptx pronto; PDF solo se richiesto o per destinatari senza i font.
+1. Chiedi/deduci contesto, pubblico, lingua e numero indicativo di slide.
+2. Prendi i contenuti dal Brain (§12), il visual da qui.
+3. Costruisci un **file .pptx nativo 20″×11,25″** con la scala di §4, le varianti di §5 (paper per il contenuto, dark per cover/divisori, una sola red in chiusura) e i componenti di §7.
+4. Esegui la QA di §11, poi consegna il .pptx; PDF solo se richiesto o per destinatari senza i font.
