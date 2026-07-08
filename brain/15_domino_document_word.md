@@ -37,7 +37,8 @@ la tabella è più affidabile).
 | Serif (solo standfirst e payoff) | **PT Serif Bold** | Georgia → Times New Roman |
 
 - Il corpo del testo è **Aktiv Grotesk Regular**, non il serif.
-- **PT Serif Bold** è riservato a due soli usi: il *lead* (standfirst sotto il titolo) e il
+- **PT Serif Bold** è riservato a tre soli usi: il *lead* (standfirst sotto il titolo), lo
+  *standfirst di sezione* (opzionale, una frase in apertura di sezione, 13,5 pt) e il
   *payoff* di chiusura.
 - Il font `DominoType` **non si usa mai** nei documenti.
 - Se Aktiv Grotesk non è disponibile sul sistema, usa Arial ovunque: mantiene il tono pulito.
@@ -59,7 +60,8 @@ Nella cartella ci sono anche Light, Medium, Hairline, Black e `DominoType.otf`: 
 
 | Nome | Hex | Uso |
 | --- | --- | --- |
-| Nero | `#000000` | Testo, riga masthead |
+| Nero | `#000000` | Titoli, H sezione, riga masthead |
+| Ink testo | `#141310` | Corpo del testo, lead, standfirst — mai nero puro nel corpo |
 | Ink | `#0E0E0E` | Unico blocco scuro (chiusura) |
 | Bianco | `#FFFFFF` | Pagina, testo su scuro |
 | **Rosso Domino** | `#FF303F` | Solo: eyebrow, numeri sezione, marker liste/bullet, barra callout, clausola del payoff |
@@ -81,13 +83,16 @@ Valori convertiti dal design system (px) in **punti** per la stampa. Usa questi 
 | --- | --- | --- | --- | --- |
 | **Eyebrow** | 10 pt | Aktiv Regular | MAIUSCOLO, spaziatura +1 pt, colore rosso | Kicker rosso sopra il titolo |
 | **Titolo** | 33 pt | Aktiv **XBold** (800) | interlinea 1.0 | Titolo di copertina/masthead |
-| **Lead** | 14 pt | **PT Serif Bold** | interlinea 1.5 | Standfirst sotto il titolo |
+| **Lead** | 14 pt | **PT Serif Bold** | interlinea 1.5, colore `#141310` | Standfirst sotto il titolo |
+| **Standfirst sezione** | 13,5 pt | **PT Serif Bold** | opzionale, colore `#141310` | Una frase in apertura di sezione |
 | **H sezione** | 20 pt | Aktiv **XBold** | interlinea 1.05 | Titolo di sezione |
 | **H-sub** | 12 pt | Aktiv XBold/Bold | | Titolo referenza, label agenda |
-| **Numero sezione** | 11 pt | Aktiv XBold, **rosso** | | "01", "02"… e marker romani liste |
-| **Body** | 11,5 pt | Aktiv Regular | interlinea 1.65, spazio dopo 8 pt | Corpo del testo — il workhorse |
-| **Small** | 11 pt | Aktiv Regular | | Testo denso dentro i blocchi |
-| **Meta** | 9,5 pt | Aktiv Regular | MAIUSCOLO, spaziatura +0,5 pt | Byline, piè di pagina |
+| **Numero sezione** | 11 pt | Aktiv XBold, **rosso** | | "01", "02"… |
+| **Marker romano** | 12 pt | Aktiv XBold, **rosso** | | I · II · III nella lista classificata |
+| **Body** | 11,5 pt | Aktiv Regular | interlinea 1.65, spazio dopo 8 pt, colore `#141310` | Corpo del testo — il workhorse |
+| **Small** | 11 pt | Aktiv Regular | colore `#141310` | Testo denso dentro i blocchi |
+| **Meta** | 9,5 pt | Aktiv Regular | MAIUSCOLO, spaziatura +0,5 pt | Byline |
+| **Footer** | 7 pt | Aktiv Regular | MAIUSCOLO, spaziatura +0,5 pt, grigio `#767676` | Piè di pagina |
 | **Figure** | 28 pt | Aktiv XBold | | Numero-chiave del callout (€, %, ×) |
 
 Interlinea in Word: imposta "multipla" col fattore indicato (es. body = multipla 1.65).
@@ -103,7 +108,7 @@ Interlinea in Word: imposta "multipla" col fattore indicato (es. body = multipla
 3. **Titolo** — Aktiv XBold 33 pt, anche su due righe.
 4. **Lead** — una frase in PT Serif Bold 14 pt.
 5. **Byline/meta** — riga maiuscola: "Domino · Torino e Venezia · mese anno".
-6. **Riga masthead** — bordo inferiore **nero spesso 2 pt** a piena larghezza che chiude la testata.
+6. **Riga masthead** — bordo inferiore **nero spesso 1,5 pt** a piena larghezza che chiude la testata.
 7. **Sezioni numerate** — vedi §6.
 8. **Blocco di chiusura** (opzionale, uno solo) — vedi §7.
 
@@ -120,7 +125,7 @@ Interlinea in Word: imposta "multipla" col fattore indicato (es. body = multipla
 
 **Lista classificata** (`I · II · III`)
 
-- Marker romani in grassetto a sinistra + testo.
+- Marker romani **Aktiv XBold 12 pt rossi** a sinistra + testo (incipit in grassetto nero, poi corpo normale).
 - Righe separate da hairline grigio `#C0C0C0` (bordo inferiore 1 pt del paragrafo/riga tabella).
 
 **Bullet**
@@ -130,15 +135,16 @@ Interlinea in Word: imposta "multipla" col fattore indicato (es. body = multipla
 
 **Callout** (prezzo / cifra chiave)
 
-- Tabella a cella singola, sfondo grigio `#F0F0F0`, **barra sinistra rossa spessa 4 pt**
+- Tabella a cella singola, sfondo grigio `#F0F0F0`, **barra sinistra rossa spessa 3 pt**
   (bordo sinistro cella), padding ~24 pt.
-- Dentro: label maiuscola piccola + Figure 28 pt (Aktiv XBold) + nota piccola.
+- Dentro: label maiuscola **8 pt rossa tracciata** + Figure 28 pt (Aktiv XBold) + nota piccola.
 
 **Agenda** (giorno/fase → descrizione)
 
 - Tabella a due colonne. Riga superiore chiusa da bordo **nero 1 pt**, righe interne separate
   da hairline grigio, chiusura in basso con hairline.
-- Colonna sinistra: "Giorno 1" (grassetto) + sottotitolo. Colonna destra: descrizione.
+- Colonna sinistra: "Giorno 1" (grassetto nero) + sottotitolo in **Bold rosso** (fase e
+  partecipanti, es. "Capire e scegliere (Domino, Air Dolomiti)"). Colonna destra: descrizione.
 
 **Referenze** (proof / casi)
 
@@ -158,7 +164,8 @@ Interlinea in Word: imposta "multipla" col fattore indicato (es. body = multipla
 
 ## 8. Piè di pagina
 
-- Ricorrente su ogni pagina, stile Meta (9,5 pt maiuscolo).
+- Ricorrente su ogni pagina, stile Footer (**7 pt** maiuscolo, grigio `#767676`), con
+  **hairline grigia `#C0C0C0` a piena larghezza** sopra.
 - Due elementi allineati agli estremi: `Titolo del documento` (sx) · `Domino · Proudly Interactive` (dx).
 
 ---
