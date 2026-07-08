@@ -2,7 +2,11 @@
 
 > **Regola di produzione (dal 7 luglio 2026):** ogni presentazione (pitch deck, sales deck, deck interno, talk) nasce come **file .pptx nativo** secondo queste regole. È il flusso primario. Il sistema HTML della deck skill (`Claude Design/deck-skill/`) resta come riferimento visivo e per i casi in cui serve espressamente un deck HTML→PDF.
 >
-> **Riferimento canonico:** il deck **Case IH — H1 Review & H2 Plan** (`Presentazioni/Case_IH_strategy_H2_2026.pptx`, 42 slide, luglio 2026). Tutti i valori di questa scheda sono estratti da quel file. In caso di dubbio, vince il deck di riferimento; sui contenuti (offerta, metodi, prezzi, naming) vince il Brain (§12).
+> **Riferimenti canonici (export PDF, luglio 2026):**
+> 1. **`Presentazioni/Case IH · European Social 2026.pdf`** (38 slide) — il più recente: **in caso di disaccordo vince questo**.
+> 2. **`Presentazioni/CX Forum Rimini · Pitch Domino.pdf`** (13 slide) — pitch breve, dark-dominante.
+>
+> Tutti i valori di questa scheda sono estratti da questi due file. Sui contenuti (offerta, metodi, prezzi, naming) vince il Brain (§12).
 
 ---
 
@@ -11,6 +15,8 @@
 > **Editoriale, sicuro, alto contrasto.** Nero/bianco + un solo rosso `#FF303F`, geometria a blocchi, tipografia grande e stretta. Una slide si proietta, non si legge: il corpo lavora a 18–21,75 pt e non scende sotto ~14 pt (solo la chrome sta a 10,5 pt).
 
 Come costruirlo: genera un **file .pptx nativo** con slide **20″ × 11,25″** (= 1440 × 810 pt). La conversione dal canvas HTML 1920×1080 è **px → pt con fattore 0,75** (1 px = 0,75 pt): i valori qui sotto sono già convertiti.
+
+Lo shader animato `flow-bg` in PowerPoint diventa il **fondo fumo**: frame statici del fumo rosso su nero, salvati come asset in `Claude Design/deck-skill/assets/smoke/` (§3).
 
 ---
 
@@ -33,17 +39,21 @@ Il contenuto sta dentro il frame (90 pt laterali, ~82 pt sopra, ~112 pt sotto): 
 
 ## 2. Font
 
-Nel deck di riferimento i nomi famiglia scritti nel .pptx sono **i nomi pieni, senza "Trial"**:
+I riferimenti PDF incorporano le famiglie **Trial con pesi distinti** — i nomi famiglia da scrivere nel .pptx sono questi (i file stanno in `Claude Design/deck-skill/fonts/`):
 
-| Ruolo | Nome famiglia nel .pptx | Peso |
+| Ruolo | Nome famiglia nel .pptx | File |
 | --- | --- | --- |
-| Tutto il sans: headline, heading, corpo, label, chrome | `Aktiv Grotesk` | Regular; **Bold via toggle** per headline, heading, label |
-| Numerali di sezione, citazioni, firma | `PT Serif` | Bold; **corsivo** per i numerali e la firma |
+| Display, H1, numeri grandi (KPI) | `Aktiv Grotesk Trial Black` (famiglia separata) | `AktivGrotesk-Black.ttf` |
+| H2, H3, heading card, claim | `Aktiv Grotesk Trial XBold` (famiglia separata) | `AktivGrotesk-XBold.ttf` |
+| Subtitle / lead | `Aktiv Grotesk Trial Medium` (famiglia separata) | `AktivGrotesk-Medium.ttf` |
+| Corpo | `Aktiv Grotesk Trial` (Regular) | `AktivGrotesk-Regular.ttf` |
+| Label, eyebrow, chrome, meta | `Aktiv Grotesk Trial` + bold | `AktivGrotesk-Bold.ttf` |
+| Numerali di sezione, citazioni, firma | `PT Serif` + bold (**corsivo** per numerali e firma) | `PTSerif-Bold.ttf` |
 
-- Niente famiglie XBold/Black separate nel .pptx: la gerarchia si fa con **corpo + bold + tracking**, non con pesi intermedi.
-- **PT Serif Bold** è l'unico serif: numerali giganti di sezione (spesso corsivi), citazioni, la firma "Domino" in chiusura.
+- Black, XBold e Medium sono **famiglie separate**: non si ottengono col toggle bold sul Regular.
+- **PT Serif Bold** è l'unico serif: numerali giganti di sezione (corsivi), citazioni, la firma "Domino" in chiusura.
 - **DominoType mai** per corpo, heading o UI; solo eventuali chiusure/firme, con parsimonia.
-- I file font stanno in `Claude Design/deck-skill/fonts/` (versioni Trial per l'installazione locale: se il .pptx deve essere aperto su macchine con le Trial installate, i nomi famiglia diventano `Aktiv Grotesk Trial` ecc. — chiedi in caso di dubbio). Fallback: Arial (sans), Georgia (serif). Per destinatari esterni senza font, valuta l'export PDF.
+- Fallback: Arial (sans), Georgia (serif). L'embedding font nel .pptx è inaffidabile cross-platform: **per destinatari esterni la consegna preferita è l'export PDF** (come i due riferimenti canonici).
 
 ---
 
@@ -61,43 +71,49 @@ Nel deck di riferimento i nomi famiglia scritti nel .pptx sono **i nomi pieni, s
 
 **Disciplina del colore:** solo nero, bianco, rosso. Maroon `#7F1A3B` e navy `#09314E` sono colori di *clienti*: solo quando quel case study è in scena. Blocchi flat: niente ombre, niente angoli arrotondati (raggio 0; max ~2 pt su chip/tag).
 
-**Unica eccezione al "niente gradienti": il glow.** Sulle slide dark d'impatto è ammesso un **gradiente radiale** full-canvas da `#FF303F` **alpha 13 %** (centro) a nero pieno (bordo, stop ~58 %) — è il sostituto statico dello shader `flow-bg`. Nel riferimento compare su ~6 slide dark su 11: usalo per cover e momenti enfatici, non ovunque.
+**Il fondo delle slide dark è il fumo, non il nero piatto.** Le slide dark d'impatto portano un'immagine full-bleed di **fumo rosso su nero** — il sostituto statico dello shader `flow-bg`. Tre frame canonici (3840×2160, estratti dal deck Case IH) sono in `Claude Design/deck-skill/assets/smoke/` (`smoke-01-cover.jpg`, `smoke-02-divider.jpg`, `smoke-03-closing.jpg`): inseriscili come picture a piena slide, contenuto e chrome sopra. Alterna i frame per non ripetere lo stesso fumo su slide vicine. Nel Case IH il fumo sta su cover, divisori e slide d'enfasi; nel pitch Rimini praticamente su tutte le slide dark. Nessun gradiente generato in PowerPoint.
 
 ---
 
 ## 4. Scala tipografica → punti PowerPoint
 
-Valori osservati nel deck di riferimento (Aktiv Grotesk Bold salvo indicazione).
+Valori e pesi osservati nel riferimento Case IH.
 
-| Stile | pt | Note | Uso |
-| --- | --- | --- | --- |
-| **Display** | 96 pt | interlinea ~0,95, tracking negativo (~−1,5 %) | Solo cover |
-| **H1 divider** | 85,5 pt | idem | Titolo dei divisori di sezione dark |
-| **H2** | 57 pt | il cavallo da lavoro dei titoli | Heading delle slide di contenuto |
-| **H3 / agenda** | 42–42,75 pt | | Titoli agenda, claim secondari |
-| **Card heading** | 27,75 pt | | Titolo di card / colonna |
-| **Numero fatto** | 34,5–52,5 pt | | KPI, numeri grandi nelle card |
-| **Subtitle / lead** | 24 pt | Regular, attenuato | Lead sotto i titoli, sottotitoli |
-| **Body large** | 21,75 pt | Regular | Corpo primario |
-| **Body** | 18 pt | Regular | Corpo nelle card e liste |
-| **Small** | 14,25–13,5 pt | | Caption, note |
-| **Label / eyebrow grande** | 15,75 pt | CAPS, tracking ~3,15 pt (0,2 em), rosso o attenuato | Eyebrow sopra i titoli, brand label |
-| **Eyebrow card** | 12,75 pt | CAPS, tracking ~2 pt | Label dentro card e colonne |
-| **Micro-label** | 11,25 pt | CAPS Bold | Kicker di card dense |
-| **Chrome** | 10,5 pt | CAPS Bold, tracking ~1,7 pt (0,16 em) | Header/footer slide |
-| **Numerale sezione (serif)** | 29,25–73,5 pt | **PT Serif Bold corsivo**, rosso o nero | "01", "I", numerali giganti |
-| **Citazione** | 46,5 pt | PT Serif Bold | Quote a piena slide |
-| **Firma chiusura** | 39,75 pt | PT Serif Bold ("Domino") + 20,25 pt caps | Slide red finale |
+| Stile | pt | Font / peso | Note | Uso |
+| --- | --- | --- | --- | --- |
+| **Display** | 96 pt | Aktiv **Black** | interlinea ~0,95, tracking negativo (~−1,5 %), twist in rosso | Solo cover |
+| **H1 divider** | 82,5–85,5 pt | Aktiv **Black** | idem | Titolo dei divisori di sezione dark |
+| **H2** | 57 pt | Aktiv **XBold** | il cavallo da lavoro dei titoli | Heading delle slide di contenuto |
+| **H3 / agenda** | 42–42,75 pt | Aktiv **XBold** | | Titoli agenda, claim secondari |
+| **Claim / verdetto** | 33 pt | Aktiv XBold | clausola finale in rosso | "Budget reduced. The content is working." |
+| **Card heading** | 27,75–29,25 pt | Aktiv XBold/Black | | Titolo di card / colonna |
+| **Numero fatto** | 34,5–52,5 pt | Aktiv **Black** | | KPI, numeri grandi nelle card |
+| **Subtitle / lead** | 24–38,25 pt | Aktiv **Medium** | attenuato | Lead sotto i titoli, sottotitoli |
+| **Body large** | 21,75 pt | Aktiv Regular | | Corpo primario |
+| **Body** | 18 pt | Aktiv Regular | | Corpo nelle card e liste |
+| **Small** | 13,5–14,25 pt | Aktiv Regular | | Caption, note |
+| **Label / eyebrow grande** | 15,75 pt | Aktiv Bold | CAPS, tracking ~3,15 pt (0,2 em), rosso o attenuato | Eyebrow sopra i titoli, brand label |
+| **Eyebrow card** | 12,75 pt | Aktiv Bold | CAPS, tracking ~2 pt | Label dentro card e colonne |
+| **Micro-label** | 11,25 pt | Aktiv Bold | CAPS | Kicker di card dense |
+| **Chrome** | 10,5 pt | Aktiv Bold | CAPS, tracking ~1,7 pt (0,16 em) | Header/footer slide |
+| **Numerale sezione (serif)** | 29,25–73,5 pt | **PT Serif Bold corsivo** | rosso su paper, bianco/rosso su dark | "01", "I", numerali giganti |
+| **Citazione** | 46,5 pt | PT Serif Bold | virgolette 51 pt rosse | Quote a piena slide |
+| **Firma chiusura** | 39,75 pt | PT Serif Bold corsivo ("Domino") + 20,25 pt caps | | Slide red finale |
 
 ---
 
 ## 5. Varianti di slide — e quando usarle
 
-1. **Paper `#F0F0F0`** — **la variante dominante nei deck di contenuto**: nel riferimento 25 slide su 42. Testo nero (attenuato via alpha), card bianche `#FFFFFF`, hairline nere a bassa alpha. Per tutto ciò che è denso: dati, tabelle, griglie, piani.
-2. **Dark `#000000`** — cover, divisori di sezione, slide d'impatto e citazioni (11 su 42). Testo bianco, card `#0A0A0A`, hairline bianche al 12 %. Su una parte di queste, il glow radiale rosso (§3).
-3. **Red `#FF303F`** — **una sola per deck**, la chiusura. Tutto il testo **nero**, firma "Domino" in PT Serif Bold.
+1. **Paper `#F0F0F0`** — testo nero (attenuato via alpha), card bianche `#FFFFFF`, hairline nere a bassa alpha. Per tutto ciò che è denso: dati, tabelle, griglie, piani.
+2. **Dark `#000000`** — testo bianco, card `#0A0A0A`, hairline bianche al 12 %, **fondo fumo** (§3) su cover, divisori e slide d'impatto.
+3. **Red `#FF303F`** — **una sola per deck**, la chiusura. Tutto il testo **nero**, firma "Domino" in PT Serif Bold corsivo.
 
-Il ritmo tipico: cover dark (con glow) → divisori dark tra i capitoli → contenuto paper → chiusura red.
+**Il bilanciamento dipende dal tipo di deck** (entrambi i riferimenti chiudono con una sola red):
+
+- **Deck di contenuto / report** (Case IH, 38 slide): **paper dominante** (~21), dark per cover, divisori, citazioni ed evidenze (~16).
+- **Pitch breve** (Rimini, 13 slide): **dark dominante** con fumo quasi ovunque, una sola paper (la slide prezzo/audit).
+
+Il ritmo tipico: cover dark (fumo) → divisori dark tra i capitoli → contenuto paper → chiusura red.
 
 ---
 
@@ -126,7 +142,7 @@ Blocchi flat, riempimento pieno. Card su dark: fill `#0A0A0A`, bordo 0,5–0,75 
 | **Timeline / settimane** | Colonne sopra hairline: label CAPS rossa, titolo Bold, testo attenuato |
 | **Checklist / recap** | Righe con voce Bold + stato; label CAPS; hairline tra le righe |
 | **Screenshot e mockup** | Post reali, telefoni, mockup dispositivo come immagini; foto sempre desaturate/scurite |
-| **Divider di sezione** (dark) | Eyebrow + titolo 85,5 pt con parola chiave in rosso (es. "Voice. **Keep our edge**"), eventuale glow |
+| **Divider di sezione** (dark) | Eyebrow + titolo 85,5 pt Black con parola chiave in rosso (es. "Voice. **Keep our edge**"), fondo fumo |
 | **Closing** (red) | "Thank you." 85,5 pt nero, riepilogo 26,25 pt Bold, firma "Domino" PT Serif Bold 39,75 pt + "PROUDLY INTERACTIVE" 20,25 pt CAPS |
 
 ---
@@ -152,7 +168,7 @@ Blocchi flat, riempimento pieno. Card su dark: fill `#0A0A0A`, bordo 0,5–0,75 
 
 ## 10. Struttura tipo di un deck
 
-1. **Cover** (dark, glow) — brand label, display 96 pt con twist rosso, sottotitolo, meta (scope, timeframe, canali).
+1. **Cover** (dark, fumo) — brand label, display 96 pt con twist rosso, sottotitolo, meta (scope, timeframe, canali).
 2. **Indice/agenda** (dark) — numerali serif + voci.
 3. **Capitoli**: divisore dark → slide di contenuto paper (dati, griglie, card, tabelle).
 4. **Chiusura** (red, una sola) — thank you, riepilogo, firma Domino.
@@ -169,7 +185,7 @@ Dopo la generazione: converti in immagini (LibreOffice → PDF → jpg) e contro
 
 ## 12. Gerarchia delle fonti
 
-- **Visual:** questa scheda ← deck di riferimento Case IH ← CSS in `Claude Design/deck-skill/`. In caso di conflitto tra scheda e deck di riferimento, vince il deck.
+- **Visual:** questa scheda ← i due PDF di riferimento in `Presentazioni/` (in conflitto tra loro vince **Case IH · European Social 2026**, il più recente) ← CSS in `Claude Design/deck-skill/`. In caso di conflitto tra scheda e riferimenti, vincono i riferimenti.
 - **Contenuti (offerta, metodi, prezzi, naming, case study):** **vince il Brain** (file 01–13 + CLAUDE.md). Il `SKILL.md` della deck skill contiene una fotografia della narrativa 2026 che può invecchiare: non usarla come fonte per prezzi o naming. In particolare: l'Audit tattico non si propone mai spontaneamente; regola "diversità 3" per i case study; mai "agenzia" in auto-definizione.
 
 ---
