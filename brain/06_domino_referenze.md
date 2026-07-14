@@ -345,10 +345,10 @@ Voci: Francesco (×4), Valeria, Rebecca (×2), Martina (×2), Francesca.
 #### Holden Agency *(8 voci)*
 Parole: *Visione, Veloce è bene, Valore, Super, Ricostruire mappe, Ascolta, Soluzioni, Parla come mangi*.
 
-#### Fondazione Paideia *(partner non-profit — 9 voci)*
+#### Fondazione Paideia *(progetto non-profit occasionale — 9 voci)*
 Parole: *Ascolta (×2), Valore, Grazie, Wow (×2), Imparare ad imparare, Squadra (×2)*.
 Voci: Ottavia, Elvira, Federica, Claudia, Sara, Alessandra, Carlo, Anna e Giulia, Alice.
-*Uso: referenza per prospect fondazioni/terzo settore — dimostra relazione lunga con un'istituzione benefica.*
+*Uso: referenza per prospect fondazioni/terzo settore come **progetto puntuale**. NON descriverla come partner o relazione strategica di lungo periodo (correzione Andrea, 14/07/2026): è stato un progetto occasionale.*
 
 ---
 
