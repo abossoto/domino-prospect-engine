@@ -83,19 +83,19 @@ Valori convertiti dal design system (px) in **punti** per la stampa. Usa questi 
 | --- | --- | --- | --- | --- |
 | **Eyebrow** | 10 pt | Aktiv Regular | MAIUSCOLO, spaziatura +1 pt, colore rosso | Kicker rosso sopra il titolo |
 | **Titolo** | 33 pt | Aktiv **XBold** (800) | interlinea 1.0 | Titolo di copertina/masthead |
-| **Lead** | 14 pt | **PT Serif Bold** | interlinea 1.5, colore `#141310` | Standfirst sotto il titolo |
+| **Lead** | 14 pt | **PT Serif Bold** | interlinea 1.0 (singola), colore `#141310` | Standfirst sotto il titolo |
 | **Standfirst sezione** | 13,5 pt | **PT Serif Bold** | opzionale, colore `#141310` | Una frase in apertura di sezione |
 | **H sezione** | 20 pt | Aktiv **XBold** | interlinea 1.05 | Titolo di sezione |
 | **H-sub** | 12 pt | Aktiv XBold/Bold | | Titolo referenza, label agenda |
 | **Numero sezione** | 11 pt | Aktiv XBold, **rosso** | | "01", "02"… |
 | **Marker romano** | 12 pt | Aktiv XBold, **rosso** | | I · II · III nella lista classificata |
-| **Body** | 11,5 pt | Aktiv Regular | interlinea 1.65, spazio dopo 8 pt, colore `#141310` | Corpo del testo — il workhorse |
+| **Body** | 11,5 pt | Aktiv Regular | interlinea 1.0 (singola), spazio dopo 8 pt, colore `#141310` | Corpo del testo — il workhorse |
 | **Small** | 11 pt | Aktiv Regular | colore `#141310` | Testo denso dentro i blocchi |
 | **Meta** | 9,5 pt | Aktiv Regular | MAIUSCOLO, spaziatura +0,5 pt | Byline |
 | **Footer** | 7 pt | Aktiv Regular | MAIUSCOLO, spaziatura +0,5 pt, grigio `#767676` | Piè di pagina |
 | **Figure** | 28 pt | Aktiv XBold | | Numero-chiave del callout (€, %, ×) |
 
-Interlinea in Word: imposta "multipla" col fattore indicato (es. body = multipla 1.65).
+Interlinea in Word: singola per lead e body (regola aggiornata il 14/07/2026); per gli H usare il fattore indicato.
 
 ---
 
@@ -176,7 +176,7 @@ Interlinea in Word: imposta "multipla" col fattore indicato (es. body = multipla
 - **Un solo rosso** per regione. Nessun colore extra.
 - Evita che sezioni, callout, referenze e chiusura si spezzino tra due pagine
   ("mantieni righe insieme").
-- Interlinea generosa nel corpo (1.65) per la lettura lunga.
+- Interlinea singola (1.0) nel corpo — regola aggiornata il 14/07/2026; il respiro si dà con lo spazio dopo il paragrafo (8 pt), non con l'interlinea.
 
 ---
 
