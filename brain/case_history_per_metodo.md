@@ -1,5 +1,5 @@
 # DOMINO BRAIN — Case History per metodo
-> Versione 1.0 — Maggio 2026. Mappa retrospettivo-canonica: per ciascun case history elenca i metodi/prodotti del **catalogo 2026** (Core Sprint!, Design Sprint! con le sue varianti, Brain & Identity Design Sprint!, Build Sprint!, Trainstorming!, Preventivo Emozionale, Audit tattico) che corrispondono al lavoro effettivamente svolto. Da usare per la pagina di spiegazione metodi (Figma `Domino_DesignSystem`) e per orientare la narrazione commerciale dei case.
+> Versione 1.1 — Luglio 2026. Mappa retrospettivo-canonica: per ciascun case history elenca i metodi/prodotti del **catalogo 2026** (Core Sprint!, Design Sprint! con le sue varianti, Brain & Identity Design Sprint!, Build Sprint!, Trainstorming!, Preventivo Emozionale) che corrispondono al lavoro effettivamente svolto. Da usare per la pagina di spiegazione metodi (Figma `Domino_DesignSystem`) e per orientare la narrazione commerciale dei case.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md)
 
@@ -7,7 +7,7 @@
 
 ## Avvertenza metodologica
 
-La mappatura è **retrospettivo-canonica**: rilegge case storici alla luce del catalogo 2026 a quattro Sprint! (Core → Design → Build → Trainstorming!) più Preventivo Emozionale e Audit tattico. Solo alcuni case hanno percorso documentato come tale nel Brain:
+La mappatura è **retrospettivo-canonica**: rilegge case storici alla luce del catalogo 2026 a quattro Sprint! (Core → Design → Build → Trainstorming!) più Preventivo Emozionale. Solo alcuni case hanno percorso documentato come tale nel Brain:
 
 - **CIA — Confederazione Italiana Agricoltori** *(Core Sprint! + 2 Design Sprint! — documentato)*
 - **Poltrona Frau In Motion** *(Core Sprint! + Design Sprint! + Build Sprint! — documentato)*
@@ -49,7 +49,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 
 - **Comau — Brand Identity** → Design Sprint! (Brand) · Build Sprint!
 - **Comau+ — Marketplace** → Design Sprint! (Service) · Build Sprint!
-- **Bitron — CX B2B & Web di Gruppo** → Design Sprint! (CX) · Build Sprint! · Audit tattico SEO
+- **Bitron — CX B2B & Web di Gruppo** → Design Sprint! (CX) · Build Sprint! · SEO
 - **Rollon — "Il prodotto diventa esperienza"** (IKA 2023) → Design Sprint! (Website/CX) · Build Sprint! · GEO/SEO
 - **Megadyne — Digital B2B** → Design Sprint! · Build Sprint!
 - **Contship Italia — Digital growth** → Build Sprint! · Audit Digital Marketing
@@ -59,8 +59,8 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 - **IPI — Internal Communication Onboarding** → Trainstorming! · Build Sprint!
 - **BANCOMAT — Da back-office a engagement** → Design Sprint! · Build Sprint!
 - **Links Foundation — Nuova Intranet** → Design Sprint! (Intranet) · Build Sprint! *(Design Sprint! documentato)*
-- **Demak Group — Da fornitore a leader B2B** → Core Sprint! · Design Sprint! (Brand) · Build Sprint! · Audit tattico SEO/GEO
-- **Frascold — SEO** → Audit tattico SEO/GEO · Build Sprint!
+- **Demak Group — Da fornitore a leader B2B** → Core Sprint! · Design Sprint! (Brand) · Build Sprint! · SEO/GEO
+- **Frascold — SEO** → SEO/GEO · Build Sprint!
 - **Veritas — Scoasse** → Build Sprint!
 - **Pipein — Da startup ad azienda** → Core Sprint! · Design Sprint! (Brand) · Build Sprint!
 - **Gruppo De Eccher** → Build Sprint!
@@ -69,7 +69,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 
 ## Digital Marketing & SEO/GEO
 
-- **Masi Agricola — Sito + SEO + eCommerce** → Design Sprint! (Website) · Build Sprint! · Audit tattico SEO/GEO
+- **Masi Agricola — Sito + SEO + eCommerce** → Design Sprint! (Website) · Build Sprint! · SEO/GEO
 - **ENIT — Promozione Italia nel mondo** → Design Sprint! (Digital Marketing) · Build Sprint!
 
 ---
@@ -93,7 +93,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 - **Biennale di Venezia — Sito + eCommerce** → Design Sprint! (Website) · Build Sprint!
 - **Fondazione Torino Musei — Rete museale** → Design Sprint! (CX) · Build Sprint!
 - **Museo Nazionale del Cinema** → Build Sprint!
-- **Alpitour — Digital Marketing & Sales** → Audit tattico Digital Marketing · Build Sprint!
+- **Alpitour — Digital Marketing & Sales** → Digital Marketing · Build Sprint!
 - **Langhe-Monferrato-Roero** → Build Sprint!
 - **Distretto Turistico dei Laghi** → Build Sprint!
 

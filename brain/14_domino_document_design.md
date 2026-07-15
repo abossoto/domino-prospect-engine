@@ -72,7 +72,7 @@ Italiano curato, sentence case, prima persona plurale, frasi sotto le ~25 parole
 
 ## Avvertenza sul README del pacchetto
 
-Il [`README.md`](Claude%20Design/document-layer/README.md) del design system contiene, oltre alle regole visive, contenuti commerciali **non canonici** che contraddicono il Brain: descrive il Core Sprint! come "4-day discovery sprint" (canone: 2 giorni + 5 di consolidamento), elenca varianti Sprint! con naming proprio (Web Design Sprint!, Intranet Design Sprint!, Design System Design Sprint! — canone: Design Sprint! con sei specializzazioni), definisce il Trainstorming! come "travelling brainstorming format" (canone: accompagnamento strutturato) e presenta l'Audit tattico come entry point standard (canone: mai proporlo spontaneamente). **Per tutto ciò che è offerta, metodi, prezzi e naming commerciale fa fede il Brain (CLAUDE.md e file 01–13), non il README.** Il README resta autoritativo solo per la parte visiva e tipografica.
+Il [`README.md`](Claude%20Design/document-layer/README.md) del design system contiene, oltre alle regole visive, contenuti commerciali **non canonici** che contraddicono il Brain: descrive il Core Sprint! come "4-day discovery sprint" (canone: 2 giorni + 5 di consolidamento), elenca varianti Sprint! con naming proprio (Web Design Sprint!, Intranet Design Sprint!, Design System Design Sprint! — canone: Design Sprint! con sei specializzazioni), definisce il Trainstorming! come "travelling brainstorming format" (canone: accompagnamento strutturato). **Per tutto ciò che è offerta, metodi, prezzi e naming commerciale fa fede il Brain (CLAUDE.md e file 01–13), non il README.** Il README resta autoritativo solo per la parte visiva e tipografica.
 
 ## Riferimento
 

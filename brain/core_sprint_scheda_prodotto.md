@@ -55,8 +55,6 @@ Non è una brand strategy, non è un business plan, non è ricerca cliente, non 
 
 ## Posizionamento commerciale
 
-Sopra l'**Audit tattico** (€1.500): l'Audit risponde a *"da dove cominciamo concretamente"*; il Core risponde a *"la direzione è chiara a tutta l'azienda"*. L'Audit è capability mapping; il Core è riallineamento su priorità.
-
 Sopra il **workshop gratuito 2h** (top-down): il workshop apre il rapporto e costruisce fiducia; il Core lo trasforma in decisione presa.
 
 Prima del **Design Sprint!**: il Design Sprint! presuppone direzione chiara. Se non lo è, Core prima.

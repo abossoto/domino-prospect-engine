@@ -40,7 +40,6 @@ Uno Starter Kit è una **specializzazione tattica e verticale** del [Brain & Ide
 | **Integrazioni** | Nessuna. Il brain è autonomo, vive su stack Domino, retrieval con ranking |
 | **Utenti inclusi nel pilota** | Fino a 20. Oltre va valutato — la web app scala senza limiti tecnici |
 | **Pricing** | Su richiesta — non comunicato pubblicamente in questa fase. Investimento dedicato condiviso solo all'interno della proposta. Logica: deve restare comprabile dal buyer di funzione col proprio budget |
-| **Audit tattico €1.500** | Passo zero opzionale ma consigliato: una settimana per analizzare i materiali esistenti, mappare il dolore reale del team, decidere se lo Starter Kit ha senso per quel cliente |
 
 **Tre limiti onesti, identici per tutti.**
 1. **Niente integrazioni con sistemi vivi.** Il brain non parla con CRM, ERP, HRIS, contact center, intranet. Risponde su sapere ufficiale, non su dati operativi.
@@ -132,7 +131,6 @@ KPI secondario di supporto: tasso di adozione del brain nei primi 30 giorni di u
 | **Settori naturali** | B2B Industriale, Finance/PA, Automotive | Salute & Beauty, Finance/PA, B2B Industriale | Turismo & Cultura, Automotive, Salute & Beauty |
 | **Format** | 4 settimane (3 gg + 3 sett. + 1 sett. QA) | identico | identico |
 | **Pricing** | Su richiesta | Su richiesta | Su richiesta |
-| **Audit tattico passo zero** | €1.500 (1 settimana) | €1.500 (1 settimana) | €1.500 (1 settimana) |
 | **Integrazioni IT** | Nessuna | Nessuna | Nessuna |
 
 ---
@@ -182,9 +180,6 @@ Tre decisioni di Andrea, che chiudono i nodi della v0.1:
 2. **Buyer primario CX.** **CX Manager singolo.** Niente shared ownership con COO o Marketing in scheda: la specializzazione si presenta come decisione di funzione singola, sul budget del CX Manager. Eventuali shared ownership emergono solo a livello di pitch, caso per caso, e non vanno dichiarati in scheda.
 3. **KPI Internal Comms.** **Entrambi i KPI come primari**: riduzione richieste ripetitive HR (il misurabile dai ticket) *e* time-to-productivity del nuovo joiner (il narrativo che parla al CdA). Si misurano in parallelo, su milestone definite nel workshop. Il tasso di adozione del brain a 30 giorni resta come KPI secondario di supporto.
 
-**Nodo ancora aperto** (non bloccante per il pitch):
-- L'**Audit tattico €1.500** va proposto come passo "0" del Sales Starter Kit *con sconto/credito sul prezzo finale*, oppure resta prodotto autonomo come oggi (storico, già in catalogo)? Da decidere con direzione alla prossima revisione commerciale.
-
 ---
 
 ## Note di stile per la costruzione di materiali commerciali
@@ -221,4 +216,4 @@ Quando si costruiscono deck, one-pager o pagine di sito a partire da questa sche
 
 ---
 
-*Versione 0.2 — Maggio 2026. Pricing, buyer CX e KPI Internal Comms chiusi (vedi sezione Decisioni prese). Resta da decidere se l'Audit tattico €1.500 entra come passo zero scontato o resta prodotto autonomo.*
+*Versione 0.3 — Luglio 2026. Pricing, buyer CX e KPI Internal Comms chiusi (vedi sezione Decisioni prese).*
