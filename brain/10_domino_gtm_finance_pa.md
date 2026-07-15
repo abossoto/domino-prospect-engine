@@ -30,7 +30,7 @@
 
 Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono definiti in [03_domino_metodi.md](03_domino_metodi.md) — fonte unica di verità. Non ripetere qui.
 
-**Differenza rispetto agli altri settori:** in Finance e PA l'entry point è più avanzato. Si parte quasi sempre da una presentazione capabilities nel primo incontro, non da un audit tattico a freddo. Gli audit (€1.500) restano utili per formalizzare una diagnosi già nota al prospect, non come primo touch.
+**Differenza rispetto agli altri settori:** in Finance e PA l'entry point è più avanzato. Si parte quasi sempre da una presentazione capabilities nel primo incontro. Il primo tavolo di lavoro concreto è il Core Sprint! o il Design Sprint!, secondo lo stato della direzione strategica del prospect.
 
 **Entry-point Starter Kit naturali per il settore.** Per banche e assicurazioni con rete agenti / consulenti che perde tempo su materiali commerciali multipli, il **Sales Starter Kit** del Brain & Identity Design Sprint! è entry-point naturale (4 settimane, buyer Sales Director / Capo Rete, pricing su richiesta). Per organizzazioni grandi con regolazione interna densa (banche, PA, autorità) l'**Internal Communication Starter Kit** è valutabile come entry-point HR. Scheda completa: [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
 

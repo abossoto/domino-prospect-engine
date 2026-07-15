@@ -110,7 +110,6 @@ Il **Design Sprint!** e il **Build Sprint!** entrano come secondo e terzo tempo 
 
 - **Apertura sempre con la diagnosi, mai con il prodotto.** Prima i tre tipi e i dati (inclusi i dati primari Mentimeter), poi la mappatura sui metodi.
 - **Mai una contromisura unica.** Se il prospect chiede "la soluzione ai silos", la risposta canonica è: *"dipende da quale dei tre avete — e di solito ne avete più d'uno"*. Da qui la diagnosi.
-- **Audit tattico: solo su valutazione manuale.** L'Audit tattico (€1.500) **non si propone spontaneamente** nei materiali e nelle conversazioni sul tema silos: si offre solo quando Andrea o il commerciale decidono caso per caso che è la porta giusta. Nei contenuti pubblici (home page, campagne, landing) non compare.
 - **Entry point pubblici sul tema silos:** autodiagnosi (3 domande, derivate dal Mentimeter) → contatto diretto → Core Sprint! o Starter Kit CX a seconda del silo dominante e del buyer.
 - **Dato primario prima del dato di fonte terza** quando si parla a pubblici CX italiani: "lo abbiamo misurato in sala" batte "lo dice HBR".
 - Citazioni Poltrona Frau In Motion: il caso è citabile con nome; mappa di differenziazione, competitor mappati e manifesto restano riservati.

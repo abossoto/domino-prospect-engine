@@ -1,5 +1,5 @@
 # DOMINO BRAIN — Metodi Distintivi
-> Versione 5.2 — Maggio 2026. I metodi proprietari che differenziano Domino: Core Sprint!, Design Sprint! (con il **Brain & Identity Design Sprint!** come variante di punta 2026 e i tre **Starter Kit** verticali — Sales, Internal Comms, CX Manager — come specializzazioni tattiche), Build Sprint!, Trainstorming!, Preventivo Emozionale. Aggiornato con la presentazione interna *"A new Domino"* (aprile 2026): catalogo 2026 a sei prodotti, percorso a quattro Sprint!, Decision Design come cornice. Da citare nelle proposte commerciali quando pertinenti.
+> Versione 5.3 — Luglio 2026. I metodi proprietari che differenziano Domino: Core Sprint!, Design Sprint! (con il **Brain & Identity Design Sprint!** come variante di punta 2026 e i tre **Starter Kit** verticali — Sales, Internal Comms, CX Manager — come specializzazioni tattiche), Build Sprint!, Trainstorming!, Preventivo Emozionale. Aggiornato con la presentazione interna *"A new Domino"* (aprile 2026): catalogo 2026 a cinque prodotti, percorso a quattro Sprint!, Decision Design come cornice. Da citare nelle proposte commerciali quando pertinenti.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 
@@ -11,13 +11,12 @@ Vista sintetica del catalogo Domino al 2026. Le schede di dettaglio sono nelle s
 
 | # | Prodotto | Atto | Domanda a cui risponde | Durata | Prezzo | Stato |
 |---|---|---|---|---|---|---|
-| 1 | **Audit tattico** *(CX, SEO/GEO o Digital Marketing)* | Capiamo | "Da dove cominciamo, concretamente?" | 1–2 settimane | €1.500 | Storico — entry point |
-| 2 | **Core Sprint!** | Capiamo | "Stiamo lavorando sul problema giusto?" | 2 giorni | €6.000 | **Novità 2026** |
-| 3 | **Design Sprint!** | Progettiamo | "Questa soluzione funziona davvero?" | 4 giorni | €10.000 | Storico (10+ anni in Italia). Sei specializzazioni: Service · CX · Brand · Digital Marketing · Website · Intranet |
-| 4 | **Brain & Identity Design Sprint!** *(variante Design Sprint!)* | Progettiamo | "Su quali fondamenta costruiamo?" | Sprint format | Sprint format + Brain + Design System | **Novità 2026 — prodotto di punta** |
-| 4.bis | **Starter Kit** *(specializzazioni tattiche del Brain & Identity Design Sprint!)* — Sales · Internal Comms · CX Manager | Progettiamo | "Da quale dominio funzionale partiamo, in 4 settimane, senza IT?" | 4 settimane | Su richiesta | **Novità 2026** *(scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md))* |
-| 5 | **Build Sprint!** | Costruiamo | "Come lo costruiamo davvero?" | 8–52 settimane (blocchi di 2 sett. o 1 mese) | €20.000–60.000 | Sostituisce la voce storica "Progetto completo" |
-| 6 | **Trainstorming!** | Facciamo funzionare | "Come faccio a far diventare il cambiamento parte dell'organizzazione?" | 12 mesi · 3 sessioni | a partire da €15.000 | **Novità 2026** *(rituale interno dal 2010, oggi servizio)* |
+| 1 | **Core Sprint!** | Capiamo | "Stiamo lavorando sul problema giusto?" | 2 giorni | €6.000 | **Novità 2026** |
+| 2 | **Design Sprint!** | Progettiamo | "Questa soluzione funziona davvero?" | 4 giorni | €10.000 | Storico (10+ anni in Italia). Sei specializzazioni: Service · CX · Brand · Digital Marketing · Website · Intranet |
+| 3 | **Brain & Identity Design Sprint!** *(variante Design Sprint!)* | Progettiamo | "Su quali fondamenta costruiamo?" | Sprint format | Sprint format + Brain + Design System | **Novità 2026 — prodotto di punta** |
+| 3.bis | **Starter Kit** *(specializzazioni tattiche del Brain & Identity Design Sprint!)* — Sales · Internal Comms · CX Manager | Progettiamo | "Da quale dominio funzionale partiamo, in 4 settimane, senza IT?" | 4 settimane | Su richiesta | **Novità 2026** *(scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md))* |
+| 4 | **Build Sprint!** | Costruiamo | "Come lo costruiamo davvero?" | 8–52 settimane (blocchi di 2 sett. o 1 mese) | €20.000–60.000 | Sostituisce la voce storica "Progetto completo" |
+| 5 | **Trainstorming!** | Facciamo funzionare | "Come faccio a far diventare il cambiamento parte dell'organizzazione?" | 12 mesi · 3 sessioni | a partire da €15.000 | **Novità 2026** *(rituale interno dal 2010, oggi servizio)* |
 | + | **Preventivo Emozionale** *(tool commerciale)* | Trasversale | "Come faccio a far vivere il valore prima ancora di vendere?" | Minisite + analytics | A progetto | Storico — caso d'uso Costa Crociere |
 
 **Il percorso a quattro Sprint! — capiamo, progettiamo, costruiamo, facciamo funzionare:**
@@ -210,7 +209,7 @@ Tre **specializzazioni verticali** del Brain & Identity Design Sprint! pensate p
 
 **Scheda completa con tutti i dettagli operativi:** [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
 
-**Format comune.** 4 settimane esatte: 3 giorni di workshop + 3 settimane di build (40-80 nodi canonici, web app SSO Microsoft o Google) + 1 settimana di QA. **Pricing su richiesta** — non comunicato pubblicamente in questa fase, condiviso solo all'interno della proposta. La logica resta: deve restare comprabile dal buyer di funzione col proprio budget. Audit tattico €1.500 come passo zero opzionale.
+**Format comune.** 4 settimane esatte: 3 giorni di workshop + 3 settimane di build (40-80 nodi canonici, web app SSO Microsoft o Google) + 1 settimana di QA. **Pricing su richiesta** — non comunicato pubblicamente in questa fase, condiviso solo all'interno della proposta. La logica resta: deve restare comprabile dal buyer di funzione col proprio budget.
 
 **I tre Starter Kit in tabella:**
 
@@ -277,12 +276,11 @@ Questa scala è la fonte unica di verità per il pricing. I file GTM di settore 
 
 | Step | Prodotto | Prezzo | Note |
 |---|---|---|---|
-| 1 | Audit tattico (CX, SEO/GEO o Digital Mktg) | €1.500 | Scope fisso, 1–2 settimane. Mai gratuito per prospect bottom-up |
-| 2 | Core Sprint! | €6.000 | Quando la direzione non è chiara o gli stakeholder sono divisi |
-| 3 | Design Sprint! | €10.000 | Quando la direzione è chiara e si vuole validare prima di investire — varianti incluso il **Brain & Identity Design Sprint!**, prodotto di punta 2026 |
-| 3.bis | Starter Kit del Brain & Identity Design Sprint! *(Sales / Internal Comms / CX)* | Su richiesta | Specializzazione tattica verticale, 4 settimane, no IT integration. Buyer di funzione. Pricing non comunicato pubblicamente in questa fase. Scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md) |
-| 4 | Build Sprint! *(execution)* | €20.000–60.000 | Costruzione a blocchi di 2 settimane o 1 mese, perimetro aperto. Sostituisce la voce storica "Progetto completo" |
-| 5 | Trainstorming! | a partire da €15.000 | Percorso change management 12 mesi (3 sessioni, una ogni 4) — per transizioni culturali/organizzative complesse |
+| 1 | Core Sprint! | €6.000 | Quando la direzione non è chiara o gli stakeholder sono divisi |
+| 2 | Design Sprint! | €10.000 | Quando la direzione è chiara e si vuole validare prima di investire — varianti incluso il **Brain & Identity Design Sprint!**, prodotto di punta 2026 |
+| 2.bis | Starter Kit del Brain & Identity Design Sprint! *(Sales / Internal Comms / CX)* | Su richiesta | Specializzazione tattica verticale, 4 settimane, no IT integration. Buyer di funzione. Pricing non comunicato pubblicamente in questa fase. Scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md) |
+| 3 | Build Sprint! *(execution)* | €20.000–60.000 | Costruzione a blocchi di 2 settimane o 1 mese, perimetro aperto. Sostituisce la voce storica "Progetto completo" |
+| 4 | Trainstorming! | a partire da €15.000 | Percorso change management 12 mesi (3 sessioni, una ogni 4) — per transizioni culturali/organizzative complesse |
 
 **Percorso completo opzionale:** Core Sprint! (€6K) → Design Sprint! (€10K) = €16.000 pre-esecuzione, poi Build Sprint! per la costruzione.
 **Trainstorming!** può avviarsi dopo un Design Sprint! o in parallelo al Build Sprint! su progetti di trasformazione significativi.

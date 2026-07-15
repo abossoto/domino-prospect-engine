@@ -345,11 +345,6 @@ Voci: Francesco (×4), Valeria, Rebecca (×2), Martina (×2), Francesca.
 #### Holden Agency *(8 voci)*
 Parole: *Visione, Veloce è bene, Valore, Super, Ricostruire mappe, Ascolta, Soluzioni, Parla come mangi*.
 
-#### Fondazione Paideia *(progetto non-profit occasionale — 9 voci)*
-Parole: *Ascolta (×2), Valore, Grazie, Wow (×2), Imparare ad imparare, Squadra (×2)*.
-Voci: Ottavia, Elvira, Federica, Claudia, Sara, Alessandra, Carlo, Anna e Giulia, Alice.
-*Uso: referenza per prospect fondazioni/terzo settore come **progetto puntuale**. NON descriverla come partner o relazione strategica di lungo periodo (correzione Andrea, 14/07/2026): è stato un progetto occasionale.*
-
 ---
 
 ### E. DOMINEERS — VOCE INTERNA DOMINO *(20 video, cultura team)*
@@ -440,7 +435,7 @@ Nomi: Cristina, Orsola, Ilaria, Andrea, Daniele, Pietro, Elisa, Alessandro (×2)
 | **AI responsabile / I5.0 / ESG** | Stellantis EP (88k dip.) + IVECO configuratore AI prodotto/allestimento | Andrea Pallard (Stellantis) |
 | **Transizioni organizzative** | Stellantis Employee Portal (FEIEIA), IPI Onboarding | Alessandro Bonichi (IPI — dal 2006) |
 | **Real estate / servizi** | IPI (sito + intranet + digital education) | Monica Sarri (IPI) + Alessandro Bonichi (IPI) |
-| **Non-profit / fondazioni / PA** | Links Foundation intranet, Action Aid IKA 2008 | Lucia Caretti (2 fondazioni benefiche) + testimonial Paideia |
+| **Non-profit / fondazioni / PA** | Links Foundation intranet, Action Aid IKA 2008 | Lucia Caretti (2 fondazioni benefiche) |
 | **Turismo / Cultura / DMO** | ENIT 34 paesi, Masi +175%, VisitPiemonte | Luisa Piazza (VisitPiemonte) + Maria Elena Rossi (ENIT) |
 | **Logistica / Shipping** | Contship Italia digital transformation | **Daniele Testi (Contship)** — *"cambiamento grosso per il settore"* |
 | **HVAC / Multinazionali manifatturiere** | Ariston Thermo internazionale | **Raffaele Contino (Ariston)** — *"pazienza sui progetti complessi"* |

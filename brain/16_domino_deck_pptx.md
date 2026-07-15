@@ -186,7 +186,7 @@ Dopo la generazione: converti in immagini (LibreOffice → PDF → jpg) e contro
 ## 12. Gerarchia delle fonti
 
 - **Visual:** questa scheda ← i due PDF di riferimento in `Presentazioni/` (in conflitto tra loro vince **Case IH · European Social 2026**, il più recente) ← CSS in `Claude Design/deck-skill/`. In caso di conflitto tra scheda e riferimenti, vincono i riferimenti.
-- **Contenuti (offerta, metodi, prezzi, naming, case study):** **vince il Brain** (file 01–13 + CLAUDE.md). Il `SKILL.md` della deck skill contiene una fotografia della narrativa 2026 che può invecchiare: non usarla come fonte per prezzi o naming. In particolare: l'Audit tattico non si propone mai spontaneamente; regola "diversità 3" per i case study; mai "agenzia" in auto-definizione.
+- **Contenuti (offerta, metodi, prezzi, naming, case study):** **vince il Brain** (file 01–13 + CLAUDE.md). Il `SKILL.md` della deck skill contiene una fotografia della narrativa 2026 che può invecchiare: non usarla come fonte per prezzi o naming. In particolare: regola "diversità 3" per i case study; mai "agenzia" in auto-definizione.
 
 ---
 

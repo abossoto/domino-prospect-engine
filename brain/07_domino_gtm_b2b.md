@@ -247,7 +247,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 - Vs consulenza organizzativa: Domino non consegna un report sui silos — consegna la decisione presa al tavolo e il sistema che la implementa
 - Vs vendor AI: l'AI dentro silos esistenti li rende permanenti; Domino costruisce prima il brain, poi l'AI ha qualcosa di coerente da dire
 
-**CTA:** Apertura con il dato primario Rimini + autodiagnosi silos. Poi Core Sprint! o Starter Kit CX a seconda del buyer. *(L'Audit tattico non si propone spontaneamente su questo play: solo su valutazione manuale caso per caso.)*
+**CTA:** Apertura con il dato primario Rimini + autodiagnosi silos. Poi Core Sprint! o Starter Kit CX a seconda del buyer.
 
 ---
 
@@ -256,7 +256,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 Quando generi materiali per un prospect B2B industriale:
 
 1. **Identifica il sales play più pertinente** in base a ruolo del contatto, trigger rilevato e problema principale
-2. **Seleziona il corretto entry point** in base alla situazione: se la direzione non è chiara → Core Sprint!; se è chiara → Design Sprint!; se il contatto è freddo o il budget è limitato → Audit tattico
+2. **Seleziona il corretto entry point** in base alla situazione: se la direzione non è chiara → Core Sprint!; se è chiara → Design Sprint!; se il contatto è freddo o il budget è limitato → workshop di scoperta 2h (top-down grandi clienti) o pre-work concordato a scope fisso.
 3. **Non proporre mai lavoro gratuito** a prospect bottom-up — la prima proposta è sempre a pagamento
 4. **Usa i proof point del play**, non generici: se scrivi a un'azienda con problema SEO, cita Demak e Rollon, non Biennale di Venezia
 5. **Il Preventivo Emozionale** va sempre considerato come strumento di follow-up per proposal formali su deal di medio-alto valore

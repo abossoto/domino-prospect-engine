@@ -12,7 +12,7 @@
 **Buyer primario**: Sales Director / Sales Manager / Direttore Commerciale B2B industriale italiano.
 **Profilo**: gestisce una rete vendita diretta o indiretta, presenta offerte complesse, risponde a RFP, ha pressione su tempi di risposta e tasso di conversione preventivi.
 **Stato del prospect**: non conosce Domino o conosce solo di riflesso. Nessuna fiducia preesistente, nessuna sponsorship interna. Va costruita tutta in 30 minuti.
-**Esito desiderato dell'incontro**: ottenere un secondo incontro — un **Audit tattico** (€1.500, scope fisso) sui materiali commerciali esistenti, oppure un workshop di scoperta di 2h (gratuito solo per top-down su grandi clienti, vedi regola Domino).
+**Esito desiderato dell'incontro**: ottenere un secondo incontro — un workshop di scoperta di 2h (gratuito solo per top-down su grandi clienti, vedi regola Domino) o un pre-work concordato sui materiali commerciali esistenti a scope fisso.
 
 **L'arco in quattro movimenti**:
 1. *Riconosce il dolore* (slide 1) — si vede nella diapositiva in 10 secondi
@@ -140,14 +140,14 @@
 
 ### Slide 8 — Investimento e prossimo passo
 
-**Titolo**: *"Per capire se vale la pena: un Audit tattico, una settimana, €1.500."*
+**Titolo**: *"Il prossimo passo: due ore insieme per capire se il Sales Starter Kit fa per voi."*
 
 **Take-away**: il prossimo passo è basso commitment, definito, immediatamente comprabile.
 
 **Contenuto**:
-- **Investimento Sales Starter Kit**: investimento dedicato — quotato in proposta sulla base del perimetro definito al workshop. Workshop Brain & Identity Design Sprint! (3 giorni) + build del brain (3 settimane) + go-live. **In questa fase il pricing non viene comunicato a slide**: si dichiara *"vi mandiamo la proposta dedicata dopo l'Audit"* e si rimanda al passo concreto sotto.
-- **Prima di impegnarsi**: un Audit tattico di una settimana — analizziamo i materiali commerciali esistenti, mappiamo il dolore reale del team Sales, vi diciamo se il Sales Starter Kit ha senso per voi. **€1.500, scope fisso, niente sorprese.**
-- **Il passo concreto, oggi**: *"Vi mando una mail con due date la prossima settimana per l'Audit. Se preferite parlarne in altro modo, ditemelo adesso."*
+- **Investimento Sales Starter Kit**: investimento dedicato — quotato in proposta sulla base del perimetro definito al workshop. Workshop Brain & Identity Design Sprint! (3 giorni) + build del brain (3 settimane) + go-live. **In questa fase il pricing non viene comunicato a slide**: si dichiara *"vi mandiamo la proposta dedicata dopo il primo tavolo di lavoro"* e si rimanda al passo concreto sotto.
+- **Prima di impegnarsi**: un workshop di scoperta di 2 ore — analizziamo insieme i materiali commerciali esistenti, mappiamo il dolore reale del team Sales, vi diciamo se il Sales Starter Kit ha senso per voi. Gratuito per top-down su grandi clienti secondo regola Domino.
+- **Il passo concreto, oggi**: *"Vi mando una mail con due date la prossima settimana per il workshop di scoperta. Se preferite parlarne in altro modo, ditemelo adesso."*
 
 **Da dire**: 90 secondi. Si chiude con la richiesta esplicita, non con una sintesi.
 
@@ -182,7 +182,7 @@ Tre-cinque domande tipiche con risposta secca:
 
 Tre nodi ancora aperti:
 
-1. **Pricing in slide.** Decisione presa (Maggio 2026): in questa fase **il pricing dello Starter Kit non si comunica a slide**. La cifra entra solo nella proposta dedicata, dopo l'Audit. Slide 8 va costruita di conseguenza: nessun cartellino, si chiude sul prossimo passo (Audit a €1.500). Nodo correlato ancora aperto: l'Audit tattico €1.500 va proposto come passo "0" del Sales Starter Kit *con sconto/credito sul prezzo finale*, oppure resta prodotto autonomo (storico, già in catalogo)? Da decidere alla prossima revisione commerciale.
+1. **Pricing in slide.** Decisione presa (Maggio 2026): in questa fase **il pricing dello Starter Kit non si comunica a slide**. La cifra entra solo nella proposta dedicata, dopo il primo tavolo di lavoro. Slide 8 va costruita di conseguenza: nessun cartellino, si chiude sul prossimo passo (workshop di scoperta 2h).
 2. **Statistica di apertura slide 1**. La quota di tempo che un commerciale dedica al recupero informazioni va trovata da una fonte difendibile. Se non si trova, si toglie e si lascia la domanda da sola — funziona uguale.
 3. **Terzo case study**. Il self-case Domino è onesto ma può apparire poco "cliente". Va testato in 2-3 pitch reali. Se non regge, sostituirlo.
 
