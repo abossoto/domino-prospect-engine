@@ -1,5 +1,7 @@
 # DOMINO BRAIN — Identità
-> Versione 3.3 — Giugno 2026. Fonti: sito domino.it (IT+EN), presentazioni ufficiali, Sortlist, Digital Communication Forum 2025, Trainstorming! "Le transizioni, I5.0 by Design" (aprile 2026).
+> Versione 3.4 — Agosto 2026. Fonti: sito domino.it (IT+EN), presentazioni ufficiali, Sortlist, Digital Communication Forum 2025, Trainstorming! "Le transizioni, I5.0 by Design" (aprile 2026).
+>
+> **Changelog v3.4.** Aggiornato l'indirizzo della sede di Venezia: **Calle Giovanni Legrenzi, 35 — 30171 Venezia** (precedente: Sestiere Santa Croce, 466/G — 30135). Telefono invariato: +39 041 0991410.
 >
 > **Changelog v3.3.** Sezione *Direzione*: aggiunta qualifica **Presidente del CdA** per Andrea Bosso e codificata la regola d'uso delle due qualifiche (Presidente → comunicazioni istituzionali/stampa; Strategy and Consulting Director → comunicazioni operative cliente).
 
@@ -13,7 +15,7 @@
 
 - **50 persone** (dato sito ufficiale) / 45 (Forum 2025) — team in crescita
 - **30 anni di esperienza** (fondata nel 1996)
-- **2 sedi**: Torino (Via Agostino da Montefeltro, 2 — 10134) e Venezia (Sestiere Santa Croce, 466/G — 30135)
+- **2 sedi**: Torino (Via Agostino da Montefeltro, 2 — 10134) e Venezia (Calle Giovanni Legrenzi, 35 — 30171)
 - **Società Benefit certificata B Corp** (certificazione ottenuta nel 2025)
 - **Oltre 30 riconoscimenti internazionali**
 - Partita IVA: 07098990018
