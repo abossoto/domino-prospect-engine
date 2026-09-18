@@ -1,64 +1,8 @@
-import { readFileSync, readdirSync } from 'fs';
-import { join } from 'path';
+// api/prospect-list.js
+// Generatore di liste prospect: ricerca aziende per settore, poi scoring.
 
-// ─── Brain cache — persists across warm invocations ───────────────────────────
-let _brainCache = null;
-
-function loadBrain() {
-  if (_brainCache) return _brainCache;
-  const brainDir = join(process.cwd(), 'brain');
-  const files = readdirSync(brainDir).filter(f => f.endsWith('.md')).sort();
-  _brainCache = files.map(f => {
-    try { return readFileSync(join(brainDir, f), 'utf-8'); }
-    catch { return `[ATTENZIONE: file brain/${f} non trovato]`; }
-  }).join('\n\n---\n\n');
-  return _brainCache;
-}
-
-const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-async function callClaude({ system, messages, tools, max_tokens = 8000 }) {
-  const body = { model: 'claude-sonnet-4-6', max_tokens, system, messages, output_config: { effort: 'low' } };
-  if (tools?.length) body.tools = tools;
-  const MAX_RETRIES = 5;
-  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': process.env.ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify(body),
-    });
-    if (res.status === 529 || res.status === 429) {
-      if (attempt >= MAX_RETRIES) throw new Error('OVERLOADED:Claude e\' sovraccarico. Riprova tra qualche minuto.');
-      const retryAfter = parseInt(res.headers.get('retry-after') || '0', 10);
-      const backoff = retryAfter > 0 ? retryAfter * 1000 : Math.min(1000 * Math.pow(2, attempt), 32000);
-      await sleep(backoff);
-      continue;
-    }
-    if (res.status >= 500 && res.status !== 529) {
-      if (attempt >= 2) throw new Error(`OVERLOADED:Errore temporaneo del server (${res.status}). Sto riprovando...`);
-      await sleep(2000 * (attempt + 1));
-      continue;
-    }
-    if (!res.ok) {
-      const e = await res.json().catch(() => ({}));
-      throw new Error(e?.error?.message || `Claude API ${res.status}`);
-    }
-    return res.json();
-  }
-}
-
-function extractText(data) {
-  return data.content?.filter(b => b.type === 'text').map(b => b.text).join('\n') || '';
-}
-
-function parseJSON(text) {
-  const clean = text.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
-  return JSON.parse(clean);
-}
+import { applyCors, callClaude, extractText, loadBrain, brainBlock, WEB_SEARCH_TOOL } from './_shared.js';
+import { parseJSON } from './_generate.js';
 
 const LIST_RESEARCH_SYSTEM = `Sei un analista commerciale senior per Domino, agenzia CX italiana.
 Il tuo compito è identificare aziende prospect qualificate usando ricerche web reali.
@@ -108,13 +52,16 @@ Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
 }`;
 
   return [
-    { type: 'text', text: brain, cache_control: { type: 'ephemeral' } },
+    brainBlock(brain),
     { type: 'text', text: rest },
   ];
 }
 
-async function runListAgent(settore, geografia, dimensione, keywords, numero, brain) {
-  const webSearch = { type: 'web_search_20250305', name: 'web_search' };
+// Stessa logica di _research.js: web_search e' server-side, l'unica cosa da
+// gestire client-side e' il pause_turn a fine loop server.
+const MAX_RESUMES = 3;
+
+async function runListAgent(settore, geografia, dimensione, keywords, numero) {
   const dimLabel = dimensione?.length ? dimensione.join(' o ') : 'qualsiasi dimensione';
 
   const userMsg = `Trova ${numero} aziende prospect qualificate per Domino con questi criteri:
@@ -135,30 +82,29 @@ Fai almeno 6-8 ricerche per trovare e verificare le aziende.
 Priorità: aziende con segnali chiari di bisogno digitale e dimensione coerente con progetti Domino (budget tipico 20K-200K€).
 Escludi clienti Domino già noti: Rollon, Bitron, IVECO, Case IH, Stellantis, Comau, IPI, Megadyne, Masi, Costa Crociere, Arca, Alpitour, Biennale Venezia.`;
 
-  let messages = [{ role: 'user', content: userMsg }];
-  let data = await callClaude({ system: LIST_RESEARCH_SYSTEM, messages, tools: [webSearch], max_tokens: 6000 });
+  const messages = [{ role: 'user', content: userMsg }];
+  let data = await callClaude({
+    system: LIST_RESEARCH_SYSTEM, messages, tools: [WEB_SEARCH_TOOL],
+    max_tokens: 16000, timeoutMs: 240000,
+  });
 
-  let i = 0;
-  while (data.stop_reason === 'tool_use' && i < 8) {
-    i++;
-    const toolBlocks = data.content.filter(b => b.type === 'tool_use');
-    if (!toolBlocks.length) break;
-    messages = [...messages, { role: 'assistant', content: data.content }];
-    const feedback = i < 5
-      ? `Continua — cerca altre aziende del settore ${settore}. Verifica i siti di quelle già trovate.`
-      : 'Hai trovato abbastanza aziende. Ora hai tutti i dati per produrre la lista finale.';
-    const results = toolBlocks.map(b => ({ type: 'tool_result', tool_use_id: b.id, content: feedback }));
-    messages = [...messages, { role: 'user', content: results }];
-    data = await callClaude({ system: LIST_RESEARCH_SYSTEM, messages, tools: [webSearch], max_tokens: 6000 });
+  let resumes = 0;
+  while (data.stop_reason === 'pause_turn' && resumes < MAX_RESUMES) {
+    resumes++;
+    messages.push({ role: 'assistant', content: data.content });
+    data = await callClaude({
+      system: LIST_RESEARCH_SYSTEM, messages, tools: [WEB_SEARCH_TOOL],
+      max_tokens: 16000, timeoutMs: 240000,
+    });
   }
 
-  return extractText(data);
+  const report = extractText(data).trim();
+  if (!report) throw new Error('La ricerca non ha prodotto nessun risultato. Riprova.');
+  return report;
 }
 
 export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  applyCors(res);
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
@@ -166,21 +112,21 @@ export default async function handler(req, res) {
   if (!settore?.trim()) return res.status(400).json({ error: 'Settore richiesto' });
 
   try {
-    const brain = loadBrain(); // cached after first cold start
-    const researchReport = await runListAgent(settore, geografia, dimensione, keywords, numero, brain);
-    const genSystem = buildListGenSystem(brain);
+    const researchReport = await runListAgent(settore, geografia, dimensione, keywords, numero);
 
     const genData = await callClaude({
-      system: genSystem,
+      system: buildListGenSystem(loadBrain()),
       messages: [{
         role: 'user',
         content: `Criteri: settore=${settore}, area=${geografia || 'Italia'}, dimensione=${dimensione?.join(',')}, keywords=${keywords}, numero=${numero}\n\nRisultati della ricerca:\n${researchReport}\n\nGenera la lista strutturata. Solo JSON puro.`,
       }],
-      max_tokens: 4000,
+      max_tokens: 8000,
     });
 
-    const result = parseJSON(extractText(genData));
-    return res.status(200).json(result);
+    // parseJSON condiviso con la generazione materiali: prima era un JSON.parse
+    // secco, quindi qualunque sbavatura del modello diventava un 500 dopo due
+    // minuti di attesa.
+    return res.status(200).json(parseJSON(extractText(genData)));
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: err.message });

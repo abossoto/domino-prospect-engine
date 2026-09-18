@@ -1,6 +1,8 @@
 import { useState, useCallback } from 'react';
-import { exportPPT } from './pptBuilder.js';
-import { exportDossier } from './dossierBuilder.js';
+// Import dinamici: pptxgenjs e docx pesano ~750 kB e servono solo al click sui
+// pulsanti di export. Tenerli statici triplicava il bundle iniziale.
+const exportPPT = async (...args) => (await import('./pptBuilder.js')).exportPPT(...args);
+const exportDossier = async (...args) => (await import('./dossierBuilder.js')).exportDossier(...args);
 import { LOGO_DATA_URI } from './logoBase64.js';
 
 // ─── Design System ────────────────────────────────────────────────────────────
@@ -360,10 +362,32 @@ function HsModal({ current, onClose, onSave }) {
 }
 
 // ─── Main App ─────────────────────────────────────────────────────────────────
-const VERSION = 'v4.0.0';
+const VERSION = 'v4.2.0';
 const QUICK_PICKS = ['Technogym','Humanitas','Alpitour','Amplifon','Pirelli',"De'Longhi",'Fincantieri',"Tod's"];
 const SETTORI_OPTIONS = ['Automotive','B2B Industriale / Manifatturiero','Salute & Sanità','Turismo & Cultura','Finance & Assicurazioni','Real Estate','Pubblica Amministrazione','Retail & eCommerce','Tecnologia & Software','Altro'];
-const LOADING_MSGS = ['Analisi sito web aziendale...','Ricerca dati finanziari (Cerved/CCIAA)...','Raccolta news ultimi 12 mesi...','Analisi profili LinkedIn...','Verifica job posting attivi...','Valutazione presenza digitale...','Generazione materiali sales personalizzati...'];
+const LOADING_MSGS = ['Analisi sito web aziendale...','Ricerca dati finanziari (Cerved/CCIAA)...','Raccolta news ultimi 12 mesi...','Analisi profili LinkedIn...','Verifica job posting attivi...','Valutazione presenza digitale...'];
+
+// Retry condiviso dalle chiamate API. Il server ha gia' il suo backoff sui 429/529:
+// questo copre solo i casi che sopravvivono a quello.
+async function postWithRetry(url, body, maxRetries, onRetry) {
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    if (attempt > 0) {
+      onRetry?.(attempt + 1);
+      await new Promise(r => setTimeout(r, Math.min(4000 * Math.pow(2, attempt - 1), 16000)));
+    }
+    const res = await fetch(url, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body),
+    });
+    const data = await res.json().catch(() => ({ error: `Risposta non valida dal server (${res.status})` }));
+    if (data.error?.startsWith('OVERLOADED:')) {
+      if (attempt >= maxRetries) throw new Error(data.error.replace('OVERLOADED:', ''));
+      continue;
+    }
+    if (data.error) throw new Error(data.error);
+    return data;
+  }
+  throw new Error('Troppi tentativi falliti. Riprova tra qualche minuto.');
+}
 const LISTA_MSGS = ['Ricerca aziende nel settore...','Verifica siti web e presenza digitale...','Analisi segnali di bisogno digitale...','Ricerca decisori e struttura aziendale...','Scoring e ranking prospect...'];
 
 export default function App() {
@@ -384,6 +408,9 @@ export default function App() {
   const [hsMsg, setHsMsg]             = useState('');
   const [archCount, setArchCount]     = useState(() => loadArchive().length);
   const [dossierBusy, setDossierBusy] = useState(false);
+  const [report, setReport]           = useState(null);
+  const [reportKey, setReportKey]     = useState('');
+  const [reportIncompleto, setReportIncompleto] = useState(false);
 
   const [listaSettore, setListaSettore]   = useState('');
   const [listaGeo, setListaGeo]           = useState('Italia');
@@ -396,40 +423,45 @@ export default function App() {
   const [listaError, setListaError]       = useState('');
 
   const analyze = useCallback(async (overrideInput) => {
-    const target = overrideInput || input;
-    if (!target.trim() || loading) return;
+    const target = (overrideInput || input).trim();
+    if (!target || loading) return;
     setError(''); setLoading(true); setResult(null); setTab('intel'); setHsMsg('');
-    let mi = 0; setLoadMsg(LOADING_MSGS[0]);
-    const iv = setInterval(() => { mi = Math.min(mi+1, LOADING_MSGS.length-1); setLoadMsg(LOADING_MSGS[mi]); }, 7500);
 
-    const MAX_RETRIES = 3;
-    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
-      try {
-        if (attempt > 0) {
-          const wait = Math.min(4000 * Math.pow(2, attempt-1), 16000);
-          setLoadMsg(`Claude è sovraccarico, sto riprovando (tentativo ${attempt+1})…`);
-          await new Promise(r => setTimeout(r, wait));
-        }
-        const res = await fetch('/api/analyze', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ prospect: target.trim(), note: note.trim(), layer: gtmLayer, motion: gtmMotion }),
-        });
-        const data = await res.json();
-        if (data.error?.startsWith('OVERLOADED:')) {
-          if (attempt >= MAX_RETRIES) throw new Error(data.error.replace('OVERLOADED:', ''));
-          continue;
-        }
-        if (data.error) throw new Error(data.error);
-        setResult(data); saveToArchive(data); setArchCount(loadArchive().length);
-        clearInterval(iv); setLoading(false); return;
-      } catch (e) {
-        if (attempt >= MAX_RETRIES || !e.message?.includes('sovraccarico')) {
-          setError(e.message); clearInterval(iv); setLoading(false); return;
-        }
+    // Chiave del report: finche' prospect e note non cambiano, la ricerca web
+    // gia' fatta vale ancora. Cambiare layer o motion GTM rigenera solo i
+    // materiali invece di rifare 8-10 ricerche.
+    const key = `${target}||${note.trim()}`;
+    const cached = reportKey === key ? report : null;
+
+    let mi = 0; setLoadMsg(cached ? '' : LOADING_MSGS[0]);
+    let iv = cached ? null : setInterval(() => { mi = Math.min(mi+1, LOADING_MSGS.length-1); setLoadMsg(LOADING_MSGS[mi]); }, 7500);
+    const onRetry = n => setLoadMsg(`Claude è sovraccarico, sto riprovando (tentativo ${n})…`);
+
+    try {
+      let rep = cached;
+      if (!rep) {
+        const r = await postWithRetry('/api/research', { prospect: target, note: note.trim() }, 2, onRetry);
+        rep = r.report;
+        setReport(rep); setReportKey(key); setReportIncompleto(!!r.incompleto);
       }
+      if (iv) { clearInterval(iv); iv = null; }
+      setLoadMsg(cached
+        ? 'Intelligence già raccolta — rigenero solo i materiali per questo layer…'
+        : 'Generazione materiali sales personalizzati…');
+
+      const data = await postWithRetry(
+        '/api/generate',
+        { prospect: target, layer: gtmLayer, motion: gtmMotion, report: rep },
+        3, onRetry,
+      );
+      setResult(data); saveToArchive(data); setArchCount(loadArchive().length);
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      if (iv) clearInterval(iv);
+      setLoading(false);
     }
-    clearInterval(iv); setLoading(false);
-  }, [input, note, gtmLayer, gtmMotion, loading]);
+  }, [input, note, gtmLayer, gtmMotion, loading, report, reportKey]);
 
   const generateLista = useCallback(async () => {
     if (!listaSettore || listaLoading) return;
@@ -437,31 +469,18 @@ export default function App() {
     let mi = 0; setListaMsg(LISTA_MSGS[0]);
     const iv = setInterval(() => { mi = Math.min(mi+1, LISTA_MSGS.length-1); setListaMsg(LISTA_MSGS[mi]); }, 8000);
 
-    const MAX_RETRIES = 3;
-    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
-      try {
-        if (attempt > 0) {
-          setListaMsg(`Claude è sovraccarico, sto riprovando (tentativo ${attempt+1})…`);
-          await new Promise(r => setTimeout(r, Math.min(4000 * Math.pow(2, attempt-1), 16000)));
-        }
-        const res = await fetch('/api/prospect-list', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ settore: listaSettore, geografia: listaGeo, dimensione: listaDim, keywords: listaKeywords, numero: listaNumero }),
-        });
-        const data = await res.json();
-        if (data.error?.startsWith('OVERLOADED:')) {
-          if (attempt >= MAX_RETRIES) throw new Error(data.error.replace('OVERLOADED:', ''));
-          continue;
-        }
-        if (data.error) throw new Error(data.error);
-        setListaResult(data); clearInterval(iv); setListaLoading(false); return;
-      } catch (e) {
-        if (attempt >= MAX_RETRIES || !e.message?.includes('sovraccarico')) {
-          setListaError(e.message); clearInterval(iv); setListaLoading(false); return;
-        }
-      }
+    try {
+      const data = await postWithRetry(
+        '/api/prospect-list',
+        { settore: listaSettore, geografia: listaGeo, dimensione: listaDim, keywords: listaKeywords, numero: listaNumero },
+        3, n => setListaMsg(`Claude è sovraccarico, sto riprovando (tentativo ${n})…`),
+      );
+      setListaResult(data);
+    } catch (e) {
+      setListaError(e.message);
+    } finally {
+      clearInterval(iv); setListaLoading(false);
     }
-    clearInterval(iv); setListaLoading(false);
   }, [listaSettore, listaGeo, listaDim, listaKeywords, listaNumero, listaLoading]);
 
   const doDossier = async () => {
@@ -617,6 +636,12 @@ export default function App() {
                 <div style={{ background:'rgba(232,39,42,0.1)',border:'1px solid rgba(232,39,42,0.3)',borderRadius:'8px',padding:'10px 14px',marginBottom:'14px',fontSize:'13px',color:'#ff9999',display:'flex',justifyContent:'space-between',alignItems:'center' }}>
                   <span>⚠️ {error}</span>
                   <button onClick={()=>setError('')} style={{ background:'transparent',border:'none',color:C.muted,cursor:'pointer',fontSize:'16px',lineHeight:1 }}>×</button>
+                </div>
+              )}
+
+              {reportIncompleto && !loading && (
+                <div style={{ background:'rgba(245,158,11,0.1)',border:'1px solid rgba(245,158,11,0.3)',borderRadius:'8px',padding:'10px 14px',marginBottom:'14px',fontSize:'13px',color:'#fcd34d' }}>
+                  ⚠️ La ricerca si è fermata prima di completare tutte le fonti: il report di intelligence potrebbe essere parziale. Rilancia l'analisi per riprovare.
                 </div>
               )}
 

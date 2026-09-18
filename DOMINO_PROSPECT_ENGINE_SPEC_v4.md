@@ -1,5 +1,5 @@
 # DOMINO PROSPECT ENGINE — Specifiche Complete
-## Versione sorgente: v4.1.0 (App.jsx) / Versione brain: 5.1
+## Versione sorgente: v4.2.0 (App.jsx) / Versione brain: 5.1
 
 > Documento generato dalla lettura diretta del codice sorgente. Sufficiente per ricreare il sistema identico.
 
@@ -28,7 +28,12 @@ Sales intelligence tool interno per il team commerciale di Domino (domino.it). I
 ```
 /
 ├── api/
-│   ├── analyze.js          → Research agent + generazione materiali (Domino GTM 3 livelli)
+│   ├── _shared.js          → Infrastruttura condivisa: modello, loadBrain, blocco brain cachato, callClaude, CORS. Il prefisso "_" esclude il file dal routing Vercel.
+│   ├── _research.js        → Fase 1: RESEARCH_SYSTEM + runResearch (gestione pause_turn)
+│   ├── _generate.js        → Fase 2: GTM instructions, GENERATION_SYSTEM, parseJSON, generateMaterials
+│   ├── research.js         → Endpoint fase 1 — POST {prospect, note} → {report, incompleto}
+│   ├── generate.js         → Endpoint fase 2 — POST {prospect, layer, motion, report} → materiali JSON
+│   ├── analyze.js          → Endpoint storico: fase 1 + fase 2 in una chiamata (compatibilità)
 │   └── prospect-list.js    → Generazione lista prospect qualificata
 ├── brain/                  → 11 file .md caricati a runtime (aggiornabili senza toccare il codice). Sincronizzato da OneDrive via scripts/sync-brain.sh.
 │   ├── 01_domino_identita.md       → Chi siamo, payoff, storia, contatti
@@ -55,7 +60,7 @@ Sales intelligence tool interno per il team commerciale di Domino (domino.it). I
 └── CLAUDE.md               → istruzioni per Claude Code che lavora sul repo
 ```
 
-**Principio chiave del brain:** il loader legge **tutti i file `.md` presenti nella cartella `brain/`** a runtime, ordinati per nome. Aggiungere un nuovo file brain non richiede modifiche al codice. Il brain è cached in memoria per il ciclo di vita del processo Vercel.
+**Principio chiave del brain:** il loader legge i file `.md` presenti nella cartella `brain/`** a runtime, ordinati per nome, **meno quelli elencati in `BRAIN_EXCLUDE`** (`api/_shared.js`). Dalla v4.2 sono esclusi `14_domino_document_design.md`, `15_domino_document_word.md` e `16_domino_deck_pptx.md`: descrivono il layout visivo di .docx e .pptx (punti tipografici, margini, hex) che viene prodotto client-side da `dossierBuilder.js` e `pptBuilder.js` a partire da `designSystem.js`, non dal JSON del modello. Restano autoritativi in `brain/`; per rimetterli nel contesto basta svuotare il Set. Aggiungere un nuovo file brain non richiede modifiche al codice. Il brain è cached in memoria per il ciclo di vita del processo Vercel.
 
 **Sync OneDrive → repo (v4.1):** Il brain canonico vive su OneDrive in `Documenti/Claude/Projects/Domino Brain/`. `scripts/sync-brain.sh` (lanciato ogni 10 min da un LaunchAgent macOS) fa rsync one-way OneDrive → `brain/`, auto-committa cambi e pusha su `origin/main`. La spec è esclusa dal brain perché descrive l'app, non i contenuti Domino.
 
@@ -116,7 +121,19 @@ export default defineConfig({
 
 ---
 
-## 4. BACKEND — api/analyze.js
+## 4. BACKEND — architettura a due fasi
+
+Dalla v4.2 la pipeline è spezzata in due endpoint. La ragione è che il report di intelligence è riutilizzabile: cambiare layer o motion GTM sullo stesso prospect deve costare solo una rigenerazione, non 8-10 ricerche web nuove. Lo stesso vale per un retry sulla generazione, che prima buttava via la ricerca appena completata.
+
+| Endpoint | Input | Output | Brain in contesto |
+|---|---|---|---|
+| `POST /api/research` | `{prospect, note}` | `{report, incompleto}` | no |
+| `POST /api/generate` | `{prospect, layer, motion, report}` | materiali JSON | sì |
+| `POST /api/analyze` | `{prospect, note, layer, motion}` | materiali JSON | sì |
+
+`/api/analyze` resta per compatibilità e si limita a concatenare le due fasi. Il frontend usa i due endpoint separati.
+
+**`web_search` è un tool server-side.** Anthropic esegue le query da sola e restituisce blocchi `server_tool_use` e `web_search_tool_result` nella stessa risposta: non esiste nessun loop client-side da orchestrare, e `stop_reason` non vale mai `tool_use`. L'unica cosa da gestire è `pause_turn`, restituito quando il loop server raggiunge le sue 10 iterazioni con il report ancora incompleto: si riprende rimandando la stessa conversazione con la risposta parziale in coda (nessun messaggio utente di continuazione), fino a `MAX_RESUMES`. Se dopo i resume il report è ancora parziale, `incompleto: true` arriva al frontend e diventa un avviso visibile.
 
 ### Brain loader con caching
 Il brain viene letto dalla cartella `brain/` una sola volta per ciclo di vita del processo (in-memory cache). I file vengono letti in ordine alfabetico per nome e concatenati con separatore `\n\n---\n\n`.
@@ -547,6 +564,8 @@ const GTM_MOTION_INSTRUCTIONS = {
 ---
 
 ## 7. parseJSON — normalizzazione completa
+
+> Dalla v4.2 vive in `api/_generate.js` ed è usata sia da `generate.js`/`analyze.js` sia da `prospect-list.js` (che prima aveva un `JSON.parse` secco, senza rete di sicurezza).
 
 Il JSON viene parsato e poi tutti i campi vengono normalizzati con default sicuri. Questo previene crash del frontend anche se il modello omette campi opzionali.
 
@@ -1049,6 +1068,19 @@ Token `pat-eu1-...` salvato in localStorage. Chiamate dirette dal frontend all'A
 ---
 
 ## 25. CHANGELOG DOC
+
+- **2026-09-18** — release **v4.2.0** (architettura a due fasi + performance):
+  - **Split research/generate:** nuovi endpoint `api/research.js` e `api/generate.js`, codice condiviso in `api/_shared.js`, `api/_research.js`, `api/_generate.js`. `api/analyze.js` resta come wrapper compatibile. Il frontend tiene in stato il report (`report`, `reportKey` = `prospect||note`) e lo riusa: cambiare layer o motion GTM non rifà più la ricerca web.
+  - **Loop agentico rimosso:** il `while (data.stop_reason === 'tool_use')` in `analyze.js` e `prospect-list.js` era codice morto. `web_search` è server-side e restituisce blocchi `server_tool_use`, mai `tool_use`: i messaggi di feedback ("Continua — cerca LinkedIn…") non sono mai stati inviati al modello. Sostituito dalla gestione di `pause_turn`, che invece si verificava e troncava il report in silenzio.
+  - **Modello:** `claude-sonnet-4-6` → `claude-sonnet-5`. Attenzione al tokenizer: Sonnet 5 conta ~1,37× i token di Sonnet 4.6 sullo stesso testo, quindi il risparmio reale sul prezzo per unità di testo è ~9%, non il 33% del listino.
+  - **Cache brain a 1h:** `cache_control: { type:'ephemeral', ttl:'1h' }` (era il default di 5 minuti, quasi sempre freddo nell'uso reale). Il blocco brain è identico fra tutti gli endpoint proprio per condividere una sola entry di cache.
+  - **`BRAIN_EXCLUDE`:** i file 14/15/16 (layout .docx/.pptx) non entrano più nel contesto. −11K token sul tokenizer Sonnet 4.6.
+  - **`max_tokens`:** 8000 → 16000 su ricerca e generazione. Su Sonnet 5 il thinking adattivo è attivo di default e consuma parte del budget: con 8000 il JSON rischiava il troncamento.
+  - **Timeout di rete:** `AbortSignal.timeout` su ogni chiamata (240s ricerca, 180s generazione). Prima una chiamata appesa consumava i 300s di `maxDuration` e moriva senza messaggio utile.
+  - **`web_search_20250305` → `web_search_20260209`** con `max_uses: 12` come tetto di sicurezza.
+  - **`includeFiles: "brain/**"`** in `vercel.json`: `readdirSync` è una lettura dinamica che il file tracer di Vercel non può rilevare staticamente.
+  - **Frontend:** `pptxgenjs` e `docx` passano a `import()` dinamico — bundle iniziale 1.028 kB → 272 kB (342 → 109 kB gzip). I due loop di retry duplicati sono diventati `postWithRetry`.
+  - **Rimosso:** scrittura di debug in `/tmp/domino_last_raw.json` (inutile su filesystem effimero; il logging su console resta).
 
 - **2026-05-01** — release **v4.1.0** (latency fix + prompt caching + sync OneDrive):
   - **Modello:** `claude-sonnet-4-20250514` → `claude-sonnet-4-6` (Sonnet 4.0 in deprecation, retire 15-giu-2026).
