@@ -375,7 +375,7 @@ function HsModal({ current, onClose, onSave }) {
 }
 
 // ─── Main App ─────────────────────────────────────────────────────────────────
-const VERSION = 'v4.3.0';
+const VERSION = 'v4.3.1';
 const QUICK_PICKS = ['Technogym','Humanitas','Alpitour','Amplifon','Pirelli',"De'Longhi",'Fincantieri',"Tod's"];
 const SETTORI_OPTIONS = ['Automotive','B2B Industriale / Manifatturiero','Salute & Sanità','Turismo & Cultura','Finance & Assicurazioni','Real Estate','Pubblica Amministrazione','Retail & eCommerce','Tecnologia & Software','Altro'];
 const LOADING_MSGS = ['Analisi sito web aziendale...','Ricerca dati finanziari (Cerved/CCIAA)...','Raccolta news ultimi 12 mesi...','Analisi profili LinkedIn...','Verifica job posting attivi...','Valutazione presenza digitale...'];
@@ -404,7 +404,7 @@ async function postWithRetry(url, body, maxRetries, onRetry) {
 const LISTA_MSGS = ['Ricerca aziende nel settore...','Verifica siti web e presenza digitale...','Analisi segnali di bisogno digitale...','Ricerca decisori e struttura aziendale...','Scoring e ranking prospect...'];
 
 export default function App() {
-  const [mode, setMode]               = useState('analizza');
+  const [mode, setMode]               = useState('lista');
   const [input, setInput]             = useState('');
   const [note, setNote]               = useState('');
   const [gtmLayer, setGtmLayer]       = useState('headof');
@@ -537,7 +537,7 @@ export default function App() {
       <div style={{ maxWidth:'920px',margin:'0 auto',padding:'28px 20px' }}>
         {/* Mode switcher */}
         <div style={{ display:'flex',gap:'6px',marginBottom:'20px' }}>
-          {[['analizza','🔍 Analizza Prospect'],['lista','📋 Genera Lista Prospect']].map(([m,label]) => (
+          {[['lista','📋 Genera Lista Prospect'],['analizza','🔍 Analizza Prospect']].map(([m,label]) => (
             <button key={m} onClick={() => setMode(m)} style={{ padding:'9px 20px',background:mode===m?C.red:C.card,color:mode===m?C.white:C.muted,border:`1px solid ${mode===m?C.red:C.border}`,borderRadius:'8px',cursor:'pointer',fontSize:'13px',fontWeight:mode===m?700:400,fontFamily:FONT,transition:'all 0.15s' }}>{label}</button>
           ))}
         </div>

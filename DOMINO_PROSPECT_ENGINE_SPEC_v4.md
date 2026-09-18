@@ -1,5 +1,5 @@
 # DOMINO PROSPECT ENGINE — Specifiche Complete
-## Versione sorgente: v4.3.0 (App.jsx) / Versione brain: 5.1
+## Versione sorgente: v4.3.1 (App.jsx) / Versione brain: 5.1
 
 > Documento generato dalla lettura diretta del codice sorgente. Sufficiente per ricreare il sistema identico.
 
@@ -144,6 +144,16 @@ Dalla v4.2 la pipeline è spezzata in due endpoint. La ragione è che il report 
 **Arricchimento decisori (RocketReach).** `/api/research` lancia `runResearch` e `raccogliPersone` con `Promise.all`: RocketReach impiega ~6-7s contro i ~110s della ricerca web, quindi non aggiunge latenza misurabile. Il risultato viene appeso al report come sezione `## PERSONE CHIAVE — DATI VERIFICATI (RocketReach)`, e il system prompt di generazione ha una regola che dà a quei nominativi la precedenza sui nomi dedotti dal web e vieta di dedurre email non presenti nel blocco.
 
 Due ricerche `person_search` (gratuite, nessun credito): una a livello `cxo` senza filtro di titolo — un CEO non ha "marketing" nel titolo — e una a livello `vp`/`director`/`manager` filtrata su titoli marketing/digital/CX in italiano e inglese. Poi `person_lookup` (1 lookup + 1 export credit) sui primi 3 profili, che è asincrona: si lanciano i lookup insieme e si fa un polling cumulativo su `checkStatus`. Facet geografico corretto: `location: ["Italy"]`; `country` restituisce sempre 0.
+
+**Tetto delle ricerche, per compito.** `max_uses` non è un parametro neutro di sicurezza: se è troppo basso il modello esaurisce le ricerche nella fase di scoperta e restituisce un risultato vuoto con HTTP 200, cioè un fallimento silenzioso. Va calibrato sul compito — 20 per l'analisi di un singolo prospect, dove il prompt chiede "almeno 8-10 ricerche"; 40 per la generazione lista, che deve trovare N aziende **e** verificare il sito di ognuna. Con 12 per entrambi (v4.3.0) la lista tornava sistematicamente vuota.
+
+**Budget di tempo unico per richiesta.** I timeout per-chiamata non conoscono il `maxDuration` della function: 240s di ricerca più fino a 3 riprese da 240s più 180s di generazione fanno 1140s contro i 300 disponibili, e nelle esecuzioni lente Vercel chiude la connessione con un 504 grezzo prima che l'handler possa rispondere. `creaScadenza()` in `api/_shared.js` fissa una scadenza assoluta per richiesta (275s, con 25s di margine per serializzare la risposta) che viene propagata a ogni `callClaude`:
+
+- il timeout effettivo è sempre il minimo fra quello richiesto e il tempo residuo;
+- il backoff non parte se non c'è tempo per completarlo;
+- una ripresa di `pause_turn` non viene avviata se resta meno della riserva necessaria alla generazione (70s per l'analisi, 60s per la lista).
+
+`MAX_DURATA_MS` in `_shared.js` deve restare allineato al `maxDuration` di `vercel.json`.
 
 **`web_search` è un tool server-side.** Anthropic esegue le query da sola e restituisce blocchi `server_tool_use` e `web_search_tool_result` nella stessa risposta: non esiste nessun loop client-side da orchestrare, e `stop_reason` non vale mai `tool_use`. L'unica cosa da gestire è `pause_turn`, restituito quando il loop server raggiunge le sue 10 iterazioni con il report ancora incompleto: si riprende rimandando la stessa conversazione con la risposta parziale in coda (nessun messaggio utente di continuazione), fino a `MAX_RESUMES`. Se dopo i resume il report è ancora parziale, `incompleto: true` arriva al frontend e diventa un avviso visibile.
 
@@ -812,7 +822,9 @@ const GTM_MOTIONS = [
 
 ### Stati principali
 ```js
-const [mode, setMode] = useState('analizza');       // 'analizza' | 'lista'
+const [mode, setMode] = useState('lista');          // 'lista' | 'analizza'
+// Dalla v4.3.1 l'ordine dei tab segue il flusso di lavoro reale: prima si cerca
+// (Genera Lista Prospect), poi si analizza. Il tab di partenza e' il primo.
 const [input, setInput] = useState('');
 const [note, setNote] = useState('');
 const [gtmLayer, setGtmLayer] = useState('headof'); // default: Head of
@@ -828,6 +840,10 @@ const [showArchive, setShowArchive] = useState(false);
 const [showHs, setShowHs] = useState(false);
 const [archCount, setArchCount] = useState(() => loadArchive().length);
 const [error, setError] = useState('');
+// Report di intelligence riusabile fra layer GTM (v4.2):
+const [report, setReport] = useState(null);
+const [reportKey, setReportKey] = useState('');     // `${prospect}||${note}`
+const [reportIncompleto, setReportIncompleto] = useState(false);
 ```
 
 ### handleAnalyze — retry lato client
@@ -1080,6 +1096,12 @@ Token `pat-eu1-...` salvato in localStorage. Chiamate dirette dal frontend all'A
 ---
 
 ## 25. CHANGELOG DOC
+
+- **2026-09-18** — release **v4.3.1** (fix lista vuota, fix 504, ordine dei tab):
+  - **Lista prospect vuota:** `max_uses: 12` introdotto in v4.3.0 valeva per tutti gli endpoint. Per la generazione lista non basta e il modello restituiva `lista: []` con HTTP 200, scrivendo "limite di ricerche web raggiunto" in `criteri_applicati`. Tetto ora per compito: 20 per la ricerca sul prospect, 40 per la lista. `WEB_SEARCH_TOOL` sostituito dalla factory `webSearchTool(maxUses)`.
+  - **504 sulle esecuzioni lente:** introdotta `creaScadenza()`, scadenza unica per richiesta propagata a ogni chiamata. Nel caso peggiore ora esce un errore leggibile invece di un 504 grezzo.
+  - **Ordine dei tab invertito:** prima "Genera Lista Prospect", poi "Analizza Prospect", con il tab di partenza sul primo. Segue il flusso reale: prima si cercano i prospect, poi si analizzano.
+  - Misurato dopo il fix: `prospect-list` 200 in 196s in produzione, 10 aziende su 10 complete di sito, score, decisore e segnale. Prima: 0 aziende.
 
 - **2026-09-18** — release **v4.3.0** (arricchimento decisori via RocketReach):
   - **`api/_people.js`:** nuova fase opzionale. Senza `ROCKETREACH_API_KEY` è inerte; qualunque errore di RocketReach viene loggato e ignorato, l'analisi prosegue.
