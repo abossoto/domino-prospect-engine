@@ -1,114 +1,11 @@
 // api/prospect-list.js
-// Generatore di liste prospect: ricerca aziende per settore, poi scoring.
+// Endpoint storico: ricerca + scoring in una sola chiamata.
+// Resta per compatibilita'. Il frontend usa /api/prospect-search e
+// /api/prospect-rank separati, cosi' nessuna delle due fasi si avvicina al
+// maxDuration e un retry sullo scoring non ributta via la ricerca.
 
-import { applyCors, callClaude, extractText, loadBrain, brainBlock, webSearchTool, creaScadenza, tempoResiduo } from './_shared.js';
-import { parseJSON } from './_generate.js';
-
-const LIST_RESEARCH_SYSTEM = `Sei un analista commerciale senior per Domino, agenzia CX italiana.
-Il tuo compito è identificare aziende prospect qualificate usando ricerche web reali.
-
-PROFILO ICP DI DOMINO (Ideal Customer Profile):
-- Settori: Automotive, B2B Industriale, Salute & Sanità, Turismo & Cultura, Finance, PA
-- Dimensione ideale: Mid-market (50-500 dipendenti) o Enterprise (500+)
-- Caratteristiche: presenza digitale migliorabile, processi complessi, mercati multipli
-- Segnali positivi: sito datato, poca presenza digitale, crescita recente, job posting digital, cambi management
-- Segnali negativi: già cliente Domino, già dotata di agency strutturata dedicata
-
-REGOLE:
-- Cerca SOLO aziende reali — mai inventare nomi
-- Per ogni azienda: verifica che esista davvero cercando il sito
-- Segnala "⚠️ Non verificato" se non riesci a trovare dati sufficienti
-- Priorità a aziende italiane (o con sede in Italia) a meno che non specificato diversamente`;
-
-function buildListGenSystem(brain) {
-  const rest = `Sei il generatore di liste prospect per Domino. Ricevi una lista di aziende trovate nella research e produci l'output strutturato.
-
-SCORING (1-10) — basato su fit con Domino:
-10: Fit perfetto — settore Domino, dimensione giusta, segnali digitali chiari, nessun competitor evidente
-8-9: Ottimo fit — 2-3 criteri positivi forti
-6-7: Buon potenziale — fit di settore ma meno segnali
-4-5: Potenziale — settore adiacente o segnali deboli
-1-3: Poco probabile — fuori target o già ben servito
-
-Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
-
-{
-  "lista": [
-    {
-      "nome": "string",
-      "sito": "string | null",
-      "settore": "string",
-      "sede": "string",
-      "dimensione": "PMI | Mid-market | Enterprise",
-      "fatturato_stimato": "string | null",
-      "score": 8,
-      "score_motivazione": "string — max 1 frase, perché è un buon prospect",
-      "segnale_principale": "string — il segnale più rilevante trovato",
-      "decisore_probabile": "string — es. Direttore Marketing, CMO, CDO"
-    }
-  ],
-  "totale_trovate": 10,
-  "criteri_applicati": "string — riassunto breve dei criteri usati nella ricerca"
-}`;
-
-  return [
-    brainBlock(brain),
-    { type: 'text', text: rest },
-  ];
-}
-
-// Stessa logica di _research.js: web_search e' server-side, l'unica cosa da
-// gestire client-side e' il pause_turn a fine loop server.
-const MAX_RESUMES = 3;
-// Qui servono molte piu' ricerche che per il singolo prospect: il prompt chiede
-// di TROVARE N aziende e di VERIFICARE il sito di ognuna. Con un tetto basso il
-// modello esaurisce le ricerche nella scoperta e restituisce una lista vuota.
-const MAX_RICERCHE = 40;
-const RISERVA_MS = 60000;
-
-async function runListAgent(settore, geografia, dimensione, keywords, numero, scadenza) {
-  const dimLabel = dimensione?.length ? dimensione.join(' o ') : 'qualsiasi dimensione';
-
-  const userMsg = `Trova ${numero} aziende prospect qualificate per Domino con questi criteri:
-
-SETTORE: ${settore}
-AREA GEOGRAFICA: ${geografia || 'Italia'}
-DIMENSIONE: ${dimLabel}
-PAROLE CHIAVE: ${keywords || 'nessuna specifica'}
-
-PROCEDURA:
-1. Cerca aziende del settore indicato nell'area geografica specificata
-2. Per ogni azienda trovata, verifica che esista realmente cercando il sito web
-3. Valuta la qualità della loro presenza digitale (sito, social, news)
-4. Cerca segnali di bisogno: sito datato, job posting digital, crescita recente, riorganizzazioni
-5. Identifica il probabile decisore da contattare (CMO, Direttore Marketing, CDO, ecc.)
-
-Fai almeno 6-8 ricerche per trovare e verificare le aziende.
-Priorità: aziende con segnali chiari di bisogno digitale e dimensione coerente con progetti Domino (budget tipico 20K-200K€).
-Escludi clienti Domino già noti: Rollon, Bitron, IVECO, Case IH, Stellantis, Comau, IPI, Megadyne, Masi, Costa Crociere, Arca, Alpitour, Biennale Venezia.`;
-
-  const messages = [{ role: 'user', content: userMsg }];
-  const tool = webSearchTool(MAX_RICERCHE);
-  let data = await callClaude({
-    system: LIST_RESEARCH_SYSTEM, messages, tools: [tool],
-    max_tokens: 16000, timeoutMs: 240000, scadenza,
-  });
-
-  let resumes = 0;
-  while (data.stop_reason === 'pause_turn' && resumes < MAX_RESUMES
-         && tempoResiduo(scadenza) > RISERVA_MS) {
-    resumes++;
-    messages.push({ role: 'assistant', content: data.content });
-    data = await callClaude({
-      system: LIST_RESEARCH_SYSTEM, messages, tools: [tool],
-      max_tokens: 16000, timeoutMs: 240000, scadenza,
-    });
-  }
-
-  const report = extractText(data).trim();
-  if (!report) throw new Error('La ricerca non ha prodotto nessun risultato. Riprova.');
-  return report;
-}
+import { applyCors, creaScadenza } from './_shared.js';
+import { runListAgent, rankList } from './_list.js';
 
 export default async function handler(req, res) {
   applyCors(res);
@@ -119,22 +16,11 @@ export default async function handler(req, res) {
   if (!settore?.trim()) return res.status(400).json({ error: 'Settore richiesto' });
 
   try {
+    // Una sola scadenza per le due fasi: qui stanno nella stessa function.
     const scadenza = creaScadenza();
-    const researchReport = await runListAgent(settore, geografia, dimensione, keywords, numero, scadenza);
-
-    const genData = await callClaude({
-      system: buildListGenSystem(loadBrain()),
-      messages: [{
-        role: 'user',
-        content: `Criteri: settore=${settore}, area=${geografia || 'Italia'}, dimensione=${dimensione?.join(',')}, keywords=${keywords}, numero=${numero}\n\nRisultati della ricerca:\n${researchReport}\n\nGenera la lista strutturata. Solo JSON puro.`,
-      }],
-      max_tokens: 8000, scadenza,
-    });
-
-    // parseJSON condiviso con la generazione materiali: prima era un JSON.parse
-    // secco, quindi qualunque sbavatura del modello diventava un 500 dopo due
-    // minuti di attesa.
-    return res.status(200).json(parseJSON(extractText(genData)));
+    const report = await runListAgent(settore, geografia, dimensione, keywords, numero, scadenza);
+    const lista = await rankList({ settore, geografia, dimensione, keywords, numero, report, scadenza });
+    return res.status(200).json(lista);
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: err.message });

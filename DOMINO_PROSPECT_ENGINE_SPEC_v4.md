@@ -1,5 +1,5 @@
 # DOMINO PROSPECT ENGINE — Specifiche Complete
-## Versione sorgente: v4.3.1 (App.jsx) / Versione brain: 5.1
+## Versione sorgente: v4.4.0 (App.jsx) / Versione brain: 5.1
 
 > Documento generato dalla lettura diretta del codice sorgente. Sufficiente per ricreare il sistema identico.
 
@@ -32,6 +32,9 @@ Sales intelligence tool interno per il team commerciale di Domino (domino.it). I
 │   ├── _research.js        → Fase 1: RESEARCH_SYSTEM + runResearch (gestione pause_turn)
 │   ├── _generate.js        → Fase 2: GTM instructions, GENERATION_SYSTEM, parseJSON, generateMaterials
 │   ├── _people.js          → Arricchimento decisori via RocketReach (opzionale, non bloccante)
+│   ├── _list.js            → Generazione liste: LIST_RESEARCH_SYSTEM, runListAgent, rankList
+│   ├── prospect-search.js  → Lista fase 1 — POST {criteri} → {report}
+│   ├── prospect-rank.js    → Lista fase 2 — POST {criteri, report} → lista con scoring
 │   ├── research.js         → Endpoint fase 1 — POST {prospect, note} → {report, incompleto}
 │   ├── generate.js         → Endpoint fase 2 — POST {prospect, layer, motion, report} → materiali JSON
 │   ├── analyze.js          → Endpoint storico: fase 1 + fase 2 in una chiamata (compatibilità)
@@ -111,7 +114,9 @@ export default defineConfig({
     "api/analyze.js": { "maxDuration": 300, "includeFiles": "brain/**" },
     "api/research.js": { "maxDuration": 300 },
     "api/generate.js": { "maxDuration": 300, "includeFiles": "brain/**" },
-    "api/prospect-list.js": { "maxDuration": 300, "includeFiles": "brain/**" }
+    "api/prospect-list.js": { "maxDuration": 300, "includeFiles": "brain/**" },
+    "api/prospect-search.js": { "maxDuration": 300 },
+    "api/prospect-rank.js": { "maxDuration": 300, "includeFiles": "brain/**" }
   },
   "rewrites": [{ "source": "/api/(.*)", "destination": "/api/$1" }]
 }
@@ -693,14 +698,19 @@ Il JSON è invariato rispetto alla v3, con un'unica modifica: `foundation_sprint
 
 ---
 
-## 9. BACKEND — api/prospect-list.js
+## 9. BACKEND — generazione lista, a due fasi
 
-Endpoint separato per la modalità "Genera Lista Prospect". Stessa struttura agentica di analyze.js: loop multi-turn con web search, max 8 iterazioni (era 15 in v4.0). Stesso exponential backoff in `callClaude` (5 retry su 429/529, 2 retry su 5xx, prefisso `OVERLOADED:`). Stesso `loadBrain` con `readdirSync` dinamico. Stesso `output_config: { effort: 'low' }`. Stesso pattern di `buildListGenSystem` come array di 2 blocchi (brain con `cache_control` + rest). **Non riceve layer/motion.**
+Dalla v4.4 la modalità "Genera Lista Prospect" segue la stessa architettura dell'analisi del singolo prospect. La fase di ricerca misurava ~190s dei ~196s totali: troppo vicina al `maxDuration` di 300 perché un settore più lento o una ripresa non la facessero sforare.
 
-```
-POST /api/prospect-list
-{ settore, geografia, dimensione[], keywords, numero }
-```
+| Endpoint | Input | Output | Brain in contesto |
+|---|---|---|---|
+| `POST /api/prospect-search` | `{settore, geografia, dimensione[], keywords, numero}` | `{report}` | no |
+| `POST /api/prospect-rank` | `{criteri..., report}` | `{lista[], totale_trovate, criteri_applicati}` | sì |
+| `POST /api/prospect-list` | `{settore, geografia, dimensione[], keywords, numero}` | `{lista[], ...}` | sì |
+
+`/api/prospect-list` resta per compatibilità e concatena le due fasi con una sola scadenza condivisa. Il frontend usa i due endpoint separati e tiene il report in stato con chiave `JSON.stringify(criteri)`: un retry sullo scoring non rifà 40 ricerche web.
+
+Codice condiviso in `api/_list.js`. Vale tutto quanto detto per l'analisi: backoff esponenziale in `callClaude`, `output_config: { effort: 'low' }`, blocco brain identico agli altri endpoint per condividere la cache. **Non riceve layer/motion.**
 
 **ICP Domino:**
 - Settori: Automotive, B2B Industriale, Salute & Sanità, Turismo & Cultura, Finance, PA
@@ -844,6 +854,9 @@ const [error, setError] = useState('');
 const [report, setReport] = useState(null);
 const [reportKey, setReportKey] = useState('');     // `${prospect}||${note}`
 const [reportIncompleto, setReportIncompleto] = useState(false);
+// Report di ricerca lista riusabile fra scoring successivi (v4.4):
+const [listaReport, setListaReport] = useState(null);
+const [listaReportKey, setListaReportKey] = useState('');  // JSON.stringify(criteri)
 ```
 
 ### handleAnalyze — retry lato client
@@ -1096,6 +1109,14 @@ Token `pat-eu1-...` salvato in localStorage. Chiamate dirette dal frontend all'A
 ---
 
 ## 25. CHANGELOG DOC
+
+- **2026-09-18** — release **v4.4.0** (split della generazione lista):
+  - **`api/prospect-search.js` e `api/prospect-rank.js`**, codice condiviso in `api/_list.js`. Stesso schema applicato ad `analyze` nella v4.2. `api/prospect-list.js` resta come wrapper compatibile.
+  - Motivazione: la sola fase di ricerca misurava ~190s dei ~196s totali, contro un `maxDuration` di 300. Separandola, nessuna delle due fasi si avvicina al limite e la riserva per le riprese di `pause_turn` scende da 60s a 30s, perché lo scoring non deve più stare nella stessa function.
+  - **Frontend:** il report di ricerca resta in stato con chiave sui criteri, quindi un retry sullo scoring non rifà le ricerche web.
+  - `prospect-search.js` non carica il brain: resta una function leggera.
+  - **Campo `sito` sempre vuoto o incoerente:** tre scoring sullo stesso identico report davano 3, 4 e 5 siti su 10. Non era instabilità dello scoring: il report di ricerca conteneva **0 URL espliciti** su 10 aziende. Il prompt chiedeva di *verificare* il sito di ogni azienda ma non di *trascriverlo*, e un dato verificato e non trascritto è perso. `LIST_RESEARCH_SYSTEM` ora impone il formato `Sito: https://...` per ogni azienda, o `Sito: non trovato`, mai un dominio dedotto dal nome; il prompt di scoring ha la regola speculare. Dopo il fix: 10 URL nel report e 10 siti su 10 in tre scoring consecutivi.
+  - Lezione da non riperdere: la prima correzione agiva sul prompt di scoring e non serviva a niente, perché il dato mancava a monte. Quando un campo esce vuoto, guardare prima cosa contiene il report.
 
 - **2026-09-18** — release **v4.3.1** (fix lista vuota, fix 504, ordine dei tab):
   - **Lista prospect vuota:** `max_uses: 12` introdotto in v4.3.0 valeva per tutti gli endpoint. Per la generazione lista non basta e il modello restituiva `lista: []` con HTTP 200, scrivendo "limite di ricerche web raggiunto" in `criteri_applicati`. Tetto ora per compito: 20 per la ricerca sul prospect, 40 per la lista. `WEB_SEARCH_TOOL` sostituito dalla factory `webSearchTool(maxUses)`.

@@ -4,7 +4,9 @@
     "api/analyze.js": { "maxDuration": 300, "includeFiles": "brain/**" },
     "api/research.js": { "maxDuration": 300 },
     "api/generate.js": { "maxDuration": 300, "includeFiles": "brain/**" },
-    "api/prospect-list.js": { "maxDuration": 300, "includeFiles": "brain/**" }
+    "api/prospect-list.js": { "maxDuration": 300, "includeFiles": "brain/**" },
+    "api/prospect-search.js": { "maxDuration": 300 },
+    "api/prospect-rank.js": { "maxDuration": 300, "includeFiles": "brain/**" }
   },
   "rewrites": [{ "source": "/api/(.*)", "destination": "/api/$1" }]
 }

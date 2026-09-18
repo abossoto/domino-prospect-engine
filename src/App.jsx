@@ -375,7 +375,7 @@ function HsModal({ current, onClose, onSave }) {
 }
 
 // ─── Main App ─────────────────────────────────────────────────────────────────
-const VERSION = 'v4.3.1';
+const VERSION = 'v4.4.0';
 const QUICK_PICKS = ['Technogym','Humanitas','Alpitour','Amplifon','Pirelli',"De'Longhi",'Fincantieri',"Tod's"];
 const SETTORI_OPTIONS = ['Automotive','B2B Industriale / Manifatturiero','Salute & Sanità','Turismo & Cultura','Finance & Assicurazioni','Real Estate','Pubblica Amministrazione','Retail & eCommerce','Tecnologia & Software','Altro'];
 const LOADING_MSGS = ['Analisi sito web aziendale...','Ricerca dati finanziari (Cerved/CCIAA)...','Raccolta news ultimi 12 mesi...','Analisi profili LinkedIn...','Verifica job posting attivi...','Valutazione presenza digitale...'];
@@ -401,7 +401,7 @@ async function postWithRetry(url, body, maxRetries, onRetry) {
   }
   throw new Error('Troppi tentativi falliti. Riprova tra qualche minuto.');
 }
-const LISTA_MSGS = ['Ricerca aziende nel settore...','Verifica siti web e presenza digitale...','Analisi segnali di bisogno digitale...','Ricerca decisori e struttura aziendale...','Scoring e ranking prospect...'];
+const LISTA_MSGS = ['Ricerca aziende nel settore...','Verifica siti web e presenza digitale...','Analisi segnali di bisogno digitale...','Ricerca decisori e struttura aziendale...'];
 
 export default function App() {
   const [mode, setMode]               = useState('lista');
@@ -434,6 +434,8 @@ export default function App() {
   const [listaMsg, setListaMsg]           = useState('');
   const [listaResult, setListaResult]     = useState(null);
   const [listaError, setListaError]       = useState('');
+  const [listaReport, setListaReport]     = useState(null);
+  const [listaReportKey, setListaReportKey] = useState('');
 
   const analyze = useCallback(async (overrideInput) => {
     const target = (overrideInput || input).trim();
@@ -479,22 +481,38 @@ export default function App() {
   const generateLista = useCallback(async () => {
     if (!listaSettore || listaLoading) return;
     setListaError(''); setListaLoading(true); setListaResult(null);
-    let mi = 0; setListaMsg(LISTA_MSGS[0]);
-    const iv = setInterval(() => { mi = Math.min(mi+1, LISTA_MSGS.length-1); setListaMsg(LISTA_MSGS[mi]); }, 8000);
+
+    // Come per l'analisi: finche' i criteri non cambiano, la ricerca gia' fatta
+    // vale ancora, e un retry sullo scoring non rifa' 40 ricerche web.
+    const criteri = { settore: listaSettore, geografia: listaGeo, dimensione: listaDim, keywords: listaKeywords, numero: listaNumero };
+    const key = JSON.stringify(criteri);
+    const cached = listaReportKey === key ? listaReport : null;
+
+    let mi = 0; setListaMsg(cached ? '' : LISTA_MSGS[0]);
+    let iv = cached ? null : setInterval(() => { mi = Math.min(mi+1, LISTA_MSGS.length-1); setListaMsg(LISTA_MSGS[mi]); }, 8000);
+    const onRetry = n => setListaMsg(`Claude è sovraccarico, sto riprovando (tentativo ${n})…`);
 
     try {
-      const data = await postWithRetry(
-        '/api/prospect-list',
-        { settore: listaSettore, geografia: listaGeo, dimensione: listaDim, keywords: listaKeywords, numero: listaNumero },
-        3, n => setListaMsg(`Claude è sovraccarico, sto riprovando (tentativo ${n})…`),
-      );
+      let rep = cached;
+      if (!rep) {
+        const r = await postWithRetry('/api/prospect-search', criteri, 2, onRetry);
+        rep = r.report;
+        setListaReport(rep); setListaReportKey(key);
+      }
+      if (iv) { clearInterval(iv); iv = null; }
+      setListaMsg(cached
+        ? 'Aziende già trovate — rifaccio solo scoring e ranking…'
+        : 'Scoring e ranking prospect…');
+
+      const data = await postWithRetry('/api/prospect-rank', { ...criteri, report: rep }, 3, onRetry);
       setListaResult(data);
     } catch (e) {
       setListaError(e.message);
     } finally {
-      clearInterval(iv); setListaLoading(false);
+      if (iv) clearInterval(iv);
+      setListaLoading(false);
     }
-  }, [listaSettore, listaGeo, listaDim, listaKeywords, listaNumero, listaLoading]);
+  }, [listaSettore, listaGeo, listaDim, listaKeywords, listaNumero, listaLoading, listaReport, listaReportKey]);
 
   const doDossier = async () => {
     if (!result || dossierBusy) return;
