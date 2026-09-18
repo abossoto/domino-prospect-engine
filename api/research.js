@@ -5,6 +5,7 @@
 
 import { applyCors } from './_shared.js';
 import { runResearch } from './_research.js';
+import { raccogliPersone, bloccoReport } from './_people.js';
 
 export default async function handler(req, res) {
   applyCors(res);
@@ -15,8 +16,18 @@ export default async function handler(req, res) {
   if (!prospect?.trim()) return res.status(400).json({ error: 'Prospect richiesto' });
 
   try {
-    const { report, incompleto } = await runResearch(prospect.trim(), note?.trim());
-    return res.status(200).json({ report, incompleto });
+    // Le due fasi girano in parallelo: RocketReach impiega ~15-25s contro i
+    // ~110s della ricerca web, quindi non aggiunge latenza. raccogliPersone non
+    // rigetta mai, al massimo restituisce [].
+    const [ricerca, persone] = await Promise.all([
+      runResearch(prospect.trim(), note?.trim()),
+      raccogliPersone(prospect.trim()),
+    ]);
+    return res.status(200).json({
+      report: ricerca.report + bloccoReport(persone),
+      incompleto: ricerca.incompleto,
+      persone_verificate: persone.length,
+    });
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: err.message });

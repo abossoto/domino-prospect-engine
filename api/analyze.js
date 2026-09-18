@@ -6,6 +6,7 @@
 
 import { applyCors } from './_shared.js';
 import { runResearch } from './_research.js';
+import { raccogliPersone, bloccoReport } from './_people.js';
 import { generateMaterials, GenerationParseError } from './_generate.js';
 
 export default async function handler(req, res) {
@@ -17,7 +18,11 @@ export default async function handler(req, res) {
   if (!prospect?.trim()) return res.status(400).json({ error: 'Prospect richiesto' });
 
   try {
-    const { report } = await runResearch(prospect.trim(), note?.trim());
+    const [ricerca, persone] = await Promise.all([
+      runResearch(prospect.trim(), note?.trim()),
+      raccogliPersone(prospect.trim()),
+    ]);
+    const report = ricerca.report + bloccoReport(persone);
     const materiali = await generateMaterials({ prospect: prospect.trim(), layer, motion, report });
     return res.status(200).json(materiali);
   } catch (err) {

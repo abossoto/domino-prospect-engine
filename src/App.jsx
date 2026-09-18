@@ -196,7 +196,20 @@ function IntelTab({ p }) {
           {p.persone_chiave.map((pk,i) => (
             <div key={i} style={{ display:'flex',gap:'10px',alignItems:'center',padding:'8px 0',borderBottom:`1px solid ${C.border}` }}>
               <div style={{ width:'30px',height:'30px',background:C.elevated,borderRadius:'50%',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'11px',color:C.muted,flexShrink:0 }}>{pk.nome?.charAt(0)||'?'}</div>
-              <div><div style={{ fontSize:'13px',fontWeight:600,color:C.text }}>{pk.nome}</div><div style={{ fontSize:'11px',color:C.muted }}>{pk.ruolo}{pk.anzianita?` · ${pk.anzianita}`:''}</div></div>
+              <div style={{ flex:1,minWidth:0 }}>
+                <div style={{ fontSize:'13px',fontWeight:600,color:C.text }}>{pk.nome}</div>
+                <div style={{ fontSize:'11px',color:C.muted }}>{pk.ruolo}{pk.anzianita?` · ${pk.anzianita}`:''}</div>
+              </div>
+              {(pk.email || pk.linkedin_url) && (
+                <div style={{ display:'flex',gap:'6px',alignItems:'center',flexShrink:0 }}>
+                  {pk.linkedin_url && <a href={pk.linkedin_url} target="_blank" rel="noopener noreferrer" title="Profilo LinkedIn"
+                    style={{ color:'#0077B5',fontSize:'11px',textDecoration:'none',border:`1px solid ${C.border}`,borderRadius:'5px',padding:'4px 8px' }}>in</a>}
+                  {pk.email && <>
+                    <span style={{ fontSize:'11px',color:C.muted,fontFamily:'ui-monospace, monospace' }}>{pk.email}</span>
+                    <CopyBtn text={pk.email} label="Copia" />
+                  </>}
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -362,7 +375,7 @@ function HsModal({ current, onClose, onSave }) {
 }
 
 // ─── Main App ─────────────────────────────────────────────────────────────────
-const VERSION = 'v4.2.0';
+const VERSION = 'v4.3.0';
 const QUICK_PICKS = ['Technogym','Humanitas','Alpitour','Amplifon','Pirelli',"De'Longhi",'Fincantieri',"Tod's"];
 const SETTORI_OPTIONS = ['Automotive','B2B Industriale / Manifatturiero','Salute & Sanità','Turismo & Cultura','Finance & Assicurazioni','Real Estate','Pubblica Amministrazione','Retail & eCommerce','Tecnologia & Software','Altro'];
 const LOADING_MSGS = ['Analisi sito web aziendale...','Ricerca dati finanziari (Cerved/CCIAA)...','Raccolta news ultimi 12 mesi...','Analisi profili LinkedIn...','Verifica job posting attivi...','Valutazione presenza digitale...'];

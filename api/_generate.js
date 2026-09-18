@@ -71,6 +71,15 @@ REGOLE: usa SOLO info dal report. Prima frase = problema del prospect. Tono dire
 CASE STUDY - REGOLA DEI 3: [0] stesso settore/sfida con KPI [1] settore simile con KPI [2] metodologia specifica (es. Brain & Identity Design Sprint!, Sales/Internal Comms/CX Manager Starter Kit, Build Sprint!, Preventivo Emozionale, GEO, AI B2B). MAI solo Fiat e Costa Crociere.
 BADGE: core_sprint se stakeholder multipli/no chiarezza. design_sprint_tipo = Service/CX/Brand/Digital Marketing/Website/Intranet/Brain & Identity. Se il dolore e' concentrato in UNA funzione (sales / internal comms / customer experience) con buyer di funzione disponibile, preferire uno Starter Kit verticale rispetto al Brain & Identity Design Sprint! pieno e citarlo esplicitamente in hook, mail e deck. preventivo_emozionale se ciclo lungo/rete indiretta.
 
+PERSONE CHIAVE - DATI VERIFICATI:
+Se il report contiene una sezione "PERSONE CHIAVE - DATI VERIFICATI (RocketReach)",
+quei nominativi vengono da un database di contatti B2B e hanno la PRECEDENZA su
+qualsiasi nome dedotto dalle ricerche web: usa quelli, con ruolo e grafia esatti.
+I campi email e linkedin_url si compilano SOLO copiando un valore presente in quella
+sezione. Se per una persona non c'e' email o URL, lascia il campo stringa vuota "".
+Non dedurre mai un indirizzo dal dominio aziendale, non costruire nome.cognome@azienda.it.
+Scegli decisore_target fra le persone verificate quando ce n'e' una coerente col layer GTM.
+
 SEGNALI RECENTI - VERIFICABILITA' OBBLIGATORIA:
 Ogni segnale del JSON DEVE essere un oggetto con i campi {testo, data, fonte_url, fonte_titolo}.
 Il valore di fonte_url DEVE essere una URL reale presa dal report di intelligence (sezione SEGNALI RECENTI).
@@ -83,7 +92,7 @@ ${motionInstr}
 
 Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
 
-{"prospect":{"nome":"","settore":"","dimensione":"PMI|Mid-market|Enterprise","fatturato_stimato":"","mercati":"","persone_chiave":[{"nome":"","ruolo":"","anzianita":""}],"segnali_recenti":[{"testo":"","data":"","fonte_url":"https://...","fonte_titolo":""}],"sfide_probabili":["","",""],"maturita_digitale":"","decisore_target":"","hook":"","strumenti_suggeriti":{"core_sprint":true,"core_sprint_motivazione":"","design_sprint_tipo":"Service|CX|Brand|Digital Marketing|Website|Intranet|Brain & Identity","design_sprint_motivazione":"","preventivo_emozionale":true,"preventivo_emozionale_motivazione":""},"casi_studio":[{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"affine"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"settore"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"metodologia"}]},"mail":{"oggetto":"","corpo":""},"deck":{"slide_1_titolo":"","slide_1_contenuto":"","slide_2_titolo":"","slide_2_contenuto":"","slide_3_titolo":"","slide_3_contenuto":"","slide_4_titolo":"Chi lha fatto con noi","slide_4_contenuto":"","slide_5_titolo":"","slide_5_contenuto":""},"workflow":[{"giorno":1,"canale":"LinkedIn","azione":""},{"giorno":3,"canale":"Email","azione":""},{"giorno":7,"canale":"LinkedIn","azione":""},{"giorno":10,"canale":"Email","azione":""},{"giorno":14,"canale":"Telefono","azione":""}],"linkedin":{"tipo":"Richiesta connessione|InMail","messaggio":""}}`;
+{"prospect":{"nome":"","settore":"","dimensione":"PMI|Mid-market|Enterprise","fatturato_stimato":"","mercati":"","persone_chiave":[{"nome":"","ruolo":"","anzianita":"","email":"","linkedin_url":""}],"segnali_recenti":[{"testo":"","data":"","fonte_url":"https://...","fonte_titolo":""}],"sfide_probabili":["","",""],"maturita_digitale":"","decisore_target":"","hook":"","strumenti_suggeriti":{"core_sprint":true,"core_sprint_motivazione":"","design_sprint_tipo":"Service|CX|Brand|Digital Marketing|Website|Intranet|Brain & Identity","design_sprint_motivazione":"","preventivo_emozionale":true,"preventivo_emozionale_motivazione":""},"casi_studio":[{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"affine"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"settore"},{"cliente":"","progetto":"","kpi":"","perche_affine":"","tipo":"metodologia"}]},"mail":{"oggetto":"","corpo":""},"deck":{"slide_1_titolo":"","slide_1_contenuto":"","slide_2_titolo":"","slide_2_contenuto":"","slide_3_titolo":"","slide_3_contenuto":"","slide_4_titolo":"Chi lha fatto con noi","slide_4_contenuto":"","slide_5_titolo":"","slide_5_contenuto":""},"workflow":[{"giorno":1,"canale":"LinkedIn","azione":""},{"giorno":3,"canale":"Email","azione":""},{"giorno":7,"canale":"LinkedIn","azione":""},{"giorno":10,"canale":"Email","azione":""},{"giorno":14,"canale":"Telefono","azione":""}],"linkedin":{"tipo":"Richiesta connessione|InMail","messaggio":""}}`;
 
   return [
     brainBlock(brain),

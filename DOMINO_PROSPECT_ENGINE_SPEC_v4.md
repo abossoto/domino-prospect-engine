@@ -1,5 +1,5 @@
 # DOMINO PROSPECT ENGINE — Specifiche Complete
-## Versione sorgente: v4.2.0 (App.jsx) / Versione brain: 5.1
+## Versione sorgente: v4.3.0 (App.jsx) / Versione brain: 5.1
 
 > Documento generato dalla lettura diretta del codice sorgente. Sufficiente per ricreare il sistema identico.
 
@@ -31,6 +31,7 @@ Sales intelligence tool interno per il team commerciale di Domino (domino.it). I
 │   ├── _shared.js          → Infrastruttura condivisa: modello, loadBrain, blocco brain cachato, callClaude, CORS. Il prefisso "_" esclude il file dal routing Vercel.
 │   ├── _research.js        → Fase 1: RESEARCH_SYSTEM + runResearch (gestione pause_turn)
 │   ├── _generate.js        → Fase 2: GTM instructions, GENERATION_SYSTEM, parseJSON, generateMaterials
+│   ├── _people.js          → Arricchimento decisori via RocketReach (opzionale, non bloccante)
 │   ├── research.js         → Endpoint fase 1 — POST {prospect, note} → {report, incompleto}
 │   ├── generate.js         → Endpoint fase 2 — POST {prospect, layer, motion, report} → materiali JSON
 │   ├── analyze.js          → Endpoint storico: fase 1 + fase 2 in una chiamata (compatibilità)
@@ -107,8 +108,10 @@ export default defineConfig({
 {
   "framework": "vite",
   "functions": {
-    "api/analyze.js": { "maxDuration": 300 },
-    "api/prospect-list.js": { "maxDuration": 300 }
+    "api/analyze.js": { "maxDuration": 300, "includeFiles": "brain/**" },
+    "api/research.js": { "maxDuration": 300 },
+    "api/generate.js": { "maxDuration": 300, "includeFiles": "brain/**" },
+    "api/prospect-list.js": { "maxDuration": 300, "includeFiles": "brain/**" }
   },
   "rewrites": [{ "source": "/api/(.*)", "destination": "/api/$1" }]
 }
@@ -116,8 +119,13 @@ export default defineConfig({
 
 `maxDuration: 300` (cap Pro plan) serve perché il research agent agentico con Sonnet 4.6 + web_search può raggiungere ~3-4 min su prospect complessi. Era 60 in v4.0 ma con Sonnet 4.6 sforava sistematicamente.
 
-### Variabile d'ambiente Vercel
-`ANTHROPIC_API_KEY` → necessaria per entrambe le functions API.
+### Variabili d'ambiente Vercel
+| Variabile | Obbligatoria | Usata da |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | sì | tutte le functions |
+| `ROCKETREACH_API_KEY` | no | `api/_people.js` |
+
+Se `ROCKETREACH_API_KEY` non è impostata, la fase di arricchimento decisori viene saltata in silenzio e l'analisi funziona esattamente come prima. È una scelta deliberata: nessun errore di RocketReach (chiave scaduta, rate limit, timeout, crediti esauriti) deve poter far fallire un'analisi.
 
 ---
 
@@ -127,11 +135,15 @@ Dalla v4.2 la pipeline è spezzata in due endpoint. La ragione è che il report 
 
 | Endpoint | Input | Output | Brain in contesto |
 |---|---|---|---|
-| `POST /api/research` | `{prospect, note}` | `{report, incompleto}` | no |
+| `POST /api/research` | `{prospect, note}` | `{report, incompleto, persone_verificate}` | no |
 | `POST /api/generate` | `{prospect, layer, motion, report}` | materiali JSON | sì |
 | `POST /api/analyze` | `{prospect, note, layer, motion}` | materiali JSON | sì |
 
 `/api/analyze` resta per compatibilità e si limita a concatenare le due fasi. Il frontend usa i due endpoint separati.
+
+**Arricchimento decisori (RocketReach).** `/api/research` lancia `runResearch` e `raccogliPersone` con `Promise.all`: RocketReach impiega ~6-7s contro i ~110s della ricerca web, quindi non aggiunge latenza misurabile. Il risultato viene appeso al report come sezione `## PERSONE CHIAVE — DATI VERIFICATI (RocketReach)`, e il system prompt di generazione ha una regola che dà a quei nominativi la precedenza sui nomi dedotti dal web e vieta di dedurre email non presenti nel blocco.
+
+Due ricerche `person_search` (gratuite, nessun credito): una a livello `cxo` senza filtro di titolo — un CEO non ha "marketing" nel titolo — e una a livello `vp`/`director`/`manager` filtrata su titoli marketing/digital/CX in italiano e inglese. Poi `person_lookup` (1 lookup + 1 export credit) sui primi 3 profili, che è asincrona: si lanciano i lookup insieme e si fa un polling cumulativo su `checkStatus`. Facet geografico corretto: `location: ["Italy"]`; `country` restituisce sempre 0.
 
 **`web_search` è un tool server-side.** Anthropic esegue le query da sola e restituisce blocchi `server_tool_use` e `web_search_tool_result` nella stessa risposta: non esiste nessun loop client-side da orchestrare, e `stop_reason` non vale mai `tool_use`. L'unica cosa da gestire è `pause_turn`, restituito quando il loop server raggiunge le sue 10 iterazioni con il report ancora incompleto: si riprende rimandando la stessa conversazione con la risposta parziale in coda (nessun messaggio utente di continuazione), fino a `MAX_RESUMES`. Se dopo i resume il report è ancora parziale, `incompleto: true` arriva al frontend e diventa un avviso visibile.
 
@@ -630,7 +642,7 @@ Il JSON è invariato rispetto alla v3, con un'unica modifica: `foundation_sprint
     "dimensione": "PMI | Mid-market | Enterprise",
     "fatturato_stimato": "string | null",
     "mercati": "string",
-    "persone_chiave": [{ "nome": "string", "ruolo": "string", "anzianita": "string" }],
+    "persone_chiave": [{ "nome": "string", "ruolo": "string", "anzianita": "string", "email": "string | \"\"", "linkedin_url": "string | \"\"" }],
     "segnali_recenti": ["string"],
     "sfide_probabili": ["string", "string", "string"],
     "maturita_digitale": "Bassa | Media | Alta — motivazione concreta",
@@ -1068,6 +1080,15 @@ Token `pat-eu1-...` salvato in localStorage. Chiamate dirette dal frontend all'A
 ---
 
 ## 25. CHANGELOG DOC
+
+- **2026-09-18** — release **v4.3.0** (arricchimento decisori via RocketReach):
+  - **`api/_people.js`:** nuova fase opzionale. Senza `ROCKETREACH_API_KEY` è inerte; qualunque errore di RocketReach viene loggato e ignorato, l'analisi prosegue.
+  - Gira in `Promise.all` con la ricerca web, quindi a latenza invariata (misurato: 6-7s contro ~110s).
+  - **Schema JSON:** `persone_chiave[]` guadagna `email` e `linkedin_url`, compilabili solo copiando valori presenti nel blocco verificato. Regola anti-invenzione esplicita nel system prompt: vietato dedurre `nome.cognome@azienda.it` dal dominio.
+  - **Frontend:** il tab Intelligence mostra link LinkedIn e email con pulsante di copia.
+  - Nota sui titoli: in Italia "direttore" (74.846 profili cxo/vp/director) batte "director" (64.474) e "responsabile" (2.777) batte "head of" (1.220), ma nelle aziende internazionali ai livelli alti prevale l'inglese. La ricerca usa entrambe le lingue.
+  - **`phone_lookup` non è disponibile** sul piano in uso: il touch telefonico del workflow resta senza numero.
+  - **Privacy:** email e nominativi finiscono nell'archivio `localStorage` e, se si usa la sincronizzazione, su HubSpot. È trattamento di dati personali e richiede base giuridica e informativa.
 
 - **2026-09-18** — release **v4.2.0** (architettura a due fasi + performance):
   - **Split research/generate:** nuovi endpoint `api/research.js` e `api/generate.js`, codice condiviso in `api/_shared.js`, `api/_research.js`, `api/_generate.js`. `api/analyze.js` resta come wrapper compatibile. Il frontend tiene in stato il report (`report`, `reportKey` = `prospect||note`) e lo riusa: cambiare layer o motion GTM non rifà più la ricerca web.
