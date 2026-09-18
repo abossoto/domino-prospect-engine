@@ -1,7 +1,7 @@
 // api/prospect-list.js
 // Generatore di liste prospect: ricerca aziende per settore, poi scoring.
 
-import { applyCors, callClaude, extractText, loadBrain, brainBlock, WEB_SEARCH_TOOL } from './_shared.js';
+import { applyCors, callClaude, extractText, loadBrain, brainBlock, webSearchTool, creaScadenza, tempoResiduo } from './_shared.js';
 import { parseJSON } from './_generate.js';
 
 const LIST_RESEARCH_SYSTEM = `Sei un analista commerciale senior per Domino, agenzia CX italiana.
@@ -60,8 +60,13 @@ Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
 // Stessa logica di _research.js: web_search e' server-side, l'unica cosa da
 // gestire client-side e' il pause_turn a fine loop server.
 const MAX_RESUMES = 3;
+// Qui servono molte piu' ricerche che per il singolo prospect: il prompt chiede
+// di TROVARE N aziende e di VERIFICARE il sito di ognuna. Con un tetto basso il
+// modello esaurisce le ricerche nella scoperta e restituisce una lista vuota.
+const MAX_RICERCHE = 40;
+const RISERVA_MS = 60000;
 
-async function runListAgent(settore, geografia, dimensione, keywords, numero) {
+async function runListAgent(settore, geografia, dimensione, keywords, numero, scadenza) {
   const dimLabel = dimensione?.length ? dimensione.join(' o ') : 'qualsiasi dimensione';
 
   const userMsg = `Trova ${numero} aziende prospect qualificate per Domino con questi criteri:
@@ -83,18 +88,20 @@ Priorità: aziende con segnali chiari di bisogno digitale e dimensione coerente 
 Escludi clienti Domino già noti: Rollon, Bitron, IVECO, Case IH, Stellantis, Comau, IPI, Megadyne, Masi, Costa Crociere, Arca, Alpitour, Biennale Venezia.`;
 
   const messages = [{ role: 'user', content: userMsg }];
+  const tool = webSearchTool(MAX_RICERCHE);
   let data = await callClaude({
-    system: LIST_RESEARCH_SYSTEM, messages, tools: [WEB_SEARCH_TOOL],
-    max_tokens: 16000, timeoutMs: 240000,
+    system: LIST_RESEARCH_SYSTEM, messages, tools: [tool],
+    max_tokens: 16000, timeoutMs: 240000, scadenza,
   });
 
   let resumes = 0;
-  while (data.stop_reason === 'pause_turn' && resumes < MAX_RESUMES) {
+  while (data.stop_reason === 'pause_turn' && resumes < MAX_RESUMES
+         && tempoResiduo(scadenza) > RISERVA_MS) {
     resumes++;
     messages.push({ role: 'assistant', content: data.content });
     data = await callClaude({
-      system: LIST_RESEARCH_SYSTEM, messages, tools: [WEB_SEARCH_TOOL],
-      max_tokens: 16000, timeoutMs: 240000,
+      system: LIST_RESEARCH_SYSTEM, messages, tools: [tool],
+      max_tokens: 16000, timeoutMs: 240000, scadenza,
     });
   }
 
@@ -112,7 +119,8 @@ export default async function handler(req, res) {
   if (!settore?.trim()) return res.status(400).json({ error: 'Settore richiesto' });
 
   try {
-    const researchReport = await runListAgent(settore, geografia, dimensione, keywords, numero);
+    const scadenza = creaScadenza();
+    const researchReport = await runListAgent(settore, geografia, dimensione, keywords, numero, scadenza);
 
     const genData = await callClaude({
       system: buildListGenSystem(loadBrain()),
@@ -120,7 +128,7 @@ export default async function handler(req, res) {
         role: 'user',
         content: `Criteri: settore=${settore}, area=${geografia || 'Italia'}, dimensione=${dimensione?.join(',')}, keywords=${keywords}, numero=${numero}\n\nRisultati della ricerca:\n${researchReport}\n\nGenera la lista strutturata. Solo JSON puro.`,
       }],
-      max_tokens: 8000,
+      max_tokens: 8000, scadenza,
     });
 
     // parseJSON condiviso con la generazione materiali: prima era un JSON.parse

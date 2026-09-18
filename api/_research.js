@@ -3,7 +3,7 @@
 // Non usa il brain: il contesto e' solo il system prompt di ricerca, quindi
 // questa fase costa pochi token di input.
 
-import { callClaude, extractText, WEB_SEARCH_TOOL } from './_shared.js';
+import { callClaude, extractText, webSearchTool, tempoResiduo } from './_shared.js';
 
 const RESEARCH_SYSTEM = `Sei un analista di intelligence commerciale senior per Domino, agenzia CX italiana.
 Produci un dossier completo e preciso su un'azienda prospect usando ESCLUSIVAMENTE dati reali trovati sul web.
@@ -49,25 +49,33 @@ dalla sezione SEGNALI RECENTI. Meglio segnalare 2 eventi verificabili che 5 even
 // server riconosce il server_tool_use finale e riparte da solo. Non va
 // aggiunto nessun messaggio utente di continuazione.
 const MAX_RESUMES = 3;
+// Il prompt chiede "almeno 8-10 ricerche": 20 lascia margine senza diventare un
+// assegno in bianco sul costo delle ricerche.
+const MAX_RICERCHE = 20;
+// Sotto questa soglia non si avvia un'altra ripresa: meglio un report un po'
+// piu' corto che un 504.
+const RISERVA_MS = 70000;
 
-export async function runResearch(prospect, note) {
+export async function runResearch(prospect, note, scadenza) {
   const userContent = `Produci un dossier completo su: "${prospect}"${note ? `\nNote: ${note}` : ''}
 Cerca: sito web, dati finanziari Cerved/CCIAA, news ultimi 12 mesi, LinkedIn con nomi reali, job posting, presenza digitale.
 Per ogni segnale recente raccogli SEMPRE l'URL della fonte. Senza URL non includerlo.
 Fai almeno 8-10 ricerche. Produci il report con tutte le sezioni.`;
   const messages = [{ role: 'user', content: userContent }];
+  const tool = webSearchTool(MAX_RICERCHE);
   let data = await callClaude({
-    system: RESEARCH_SYSTEM, messages, tools: [WEB_SEARCH_TOOL],
-    max_tokens: 16000, timeoutMs: 240000,
+    system: RESEARCH_SYSTEM, messages, tools: [tool],
+    max_tokens: 16000, timeoutMs: 240000, scadenza,
   });
 
   let resumes = 0;
-  while (data.stop_reason === 'pause_turn' && resumes < MAX_RESUMES) {
+  while (data.stop_reason === 'pause_turn' && resumes < MAX_RESUMES
+         && tempoResiduo(scadenza) > RISERVA_MS) {
     resumes++;
     messages.push({ role: 'assistant', content: data.content });
     data = await callClaude({
-      system: RESEARCH_SYSTEM, messages, tools: [WEB_SEARCH_TOOL],
-      max_tokens: 16000, timeoutMs: 240000,
+      system: RESEARCH_SYSTEM, messages, tools: [tool],
+      max_tokens: 16000, timeoutMs: 240000, scadenza,
     });
   }
 

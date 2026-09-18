@@ -3,7 +3,7 @@
 // client puo' riusarlo: cambiare layer o motion GTM sullo stesso prospect non
 // rifa' la ricerca web, e un retry sulla generazione non butta via la ricerca.
 
-import { applyCors } from './_shared.js';
+import { applyCors, creaScadenza } from './_shared.js';
 import { runResearch } from './_research.js';
 import { raccogliPersone, bloccoReport } from './_people.js';
 
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     // ~110s della ricerca web, quindi non aggiunge latenza. raccogliPersone non
     // rigetta mai, al massimo restituisce [].
     const [ricerca, persone] = await Promise.all([
-      runResearch(prospect.trim(), note?.trim()),
+      runResearch(prospect.trim(), note?.trim(), creaScadenza()),
       raccogliPersone(prospect.trim()),
     ]);
     return res.status(200).json({

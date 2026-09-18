@@ -15,7 +15,30 @@ export const MODEL = 'claude-sonnet-5';
 // Il tool di ricerca e' server-side: Anthropic esegue le query da sola e
 // restituisce blocchi server_tool_use / web_search_tool_result nella stessa
 // risposta. Non esiste nessun loop client-side da orchestrare.
-export const WEB_SEARCH_TOOL = { type: 'web_search_20260209', name: 'web_search', max_uses: 12 };
+// max_uses va calibrato sul compito: l'analisi di un singolo prospect chiede
+// "almeno 8-10 ricerche", la generazione di una lista deve trovare N aziende E
+// verificare il sito di ognuna, quindi ne richiede molte di piu'. Un tetto
+// troppo basso non rallenta: fa restituire al modello un risultato vuoto.
+export function webSearchTool(maxUses) {
+  return { type: 'web_search_20260209', name: 'web_search', max_uses: maxUses };
+}
+
+// ── Budget di tempo ──────────────────────────────────────────────────────────
+// I timeout per-chiamata non sanno nulla del budget totale della function: la
+// somma di ricerca + riprese + generazione puo' superare di molto il maxDuration
+// di vercel.json, e in quel caso Vercel chiude la connessione con un 504 grezzo
+// prima che il nostro handler possa rispondere. La scadenza e' unica per
+// richiesta e ogni chiamata ci si adatta.
+export const MAX_DURATA_MS = 300000;   // deve restare allineato a vercel.json
+const MARGINE_MS = 25000;              // tempo per serializzare e rispondere
+
+export function creaScadenza(ms = MAX_DURATA_MS - MARGINE_MS) {
+  return Date.now() + ms;
+}
+
+export function tempoResiduo(scadenza) {
+  return scadenza ? scadenza - Date.now() : Infinity;
+}
 
 // File brain esclusi dal contesto inviato al modello: descrivono il layout
 // visivo di .docx e .pptx (punti tipografici, margini, colori hex) che viene
@@ -53,11 +76,17 @@ export function brainBlock(brain) {
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-export async function callClaude({ system, messages, tools, max_tokens = 16000, timeoutMs = 180000 }) {
+export async function callClaude({ system, messages, tools, max_tokens = 16000, timeoutMs = 180000, scadenza }) {
   const body = { model: MODEL, max_tokens, system, messages, output_config: { effort: 'low' } };
   if (tools?.length) body.tools = tools;
   const MAX_RETRIES = 5;
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    // Il timeout effettivo non puo' mai eccedere quel che resta del budget.
+    const residuo = tempoResiduo(scadenza);
+    if (residuo <= 10000) {
+      throw new Error('OVERLOADED:Tempo massimo della richiesta esaurito. Riprova, oppure riduci il numero di aziende richieste.');
+    }
+    const timeoutEffettivo = Math.min(timeoutMs, residuo - 5000);
     let res;
     try {
       res = await fetch('https://api.anthropic.com/v1/messages', {
@@ -68,7 +97,7 @@ export async function callClaude({ system, messages, tools, max_tokens = 16000, 
           'anthropic-version': '2023-06-01',
         },
         body: JSON.stringify(body),
-        signal: AbortSignal.timeout(timeoutMs),
+        signal: AbortSignal.timeout(timeoutEffettivo),
       });
     } catch (err) {
       // Timeout o errore di rete: senza questo ramo la function restava appesa
@@ -81,6 +110,9 @@ export async function callClaude({ system, messages, tools, max_tokens = 16000, 
       if (attempt >= MAX_RETRIES) throw new Error('OVERLOADED:Claude e\' sovraccarico. Riprova tra qualche minuto.');
       const retryAfter = parseInt(res.headers.get('retry-after') || '0', 10);
       const backoff = retryAfter > 0 ? retryAfter * 1000 : Math.min(1000 * Math.pow(2, attempt), 32000);
+      if (backoff >= tempoResiduo(scadenza)) {
+        throw new Error('OVERLOADED:Claude e\' sovraccarico e non c\'e\' piu\' tempo per riprovare. Riprova fra qualche minuto.');
+      }
       await sleep(backoff);
       continue;
     }

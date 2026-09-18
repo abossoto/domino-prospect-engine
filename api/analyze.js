@@ -4,7 +4,7 @@
 // frontend usa /api/research e /api/generate separati, cosi' il report si
 // puo' riusare fra layer GTM diversi.
 
-import { applyCors } from './_shared.js';
+import { applyCors, creaScadenza } from './_shared.js';
 import { runResearch } from './_research.js';
 import { raccogliPersone, bloccoReport } from './_people.js';
 import { generateMaterials, GenerationParseError } from './_generate.js';
@@ -18,12 +18,14 @@ export default async function handler(req, res) {
   if (!prospect?.trim()) return res.status(400).json({ error: 'Prospect richiesto' });
 
   try {
+    // Una sola scadenza per le due fasi: qui stanno nella stessa function.
+    const scadenza = creaScadenza();
     const [ricerca, persone] = await Promise.all([
-      runResearch(prospect.trim(), note?.trim()),
+      runResearch(prospect.trim(), note?.trim(), scadenza),
       raccogliPersone(prospect.trim()),
     ]);
     const report = ricerca.report + bloccoReport(persone);
-    const materiali = await generateMaterials({ prospect: prospect.trim(), layer, motion, report });
+    const materiali = await generateMaterials({ prospect: prospect.trim(), layer, motion, report, scadenza });
     return res.status(200).json(materiali);
   } catch (err) {
     if (!(err instanceof GenerationParseError)) console.error(err);

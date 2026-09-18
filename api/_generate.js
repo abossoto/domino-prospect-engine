@@ -211,14 +211,14 @@ export function parseJSON(text) {
 // il messaggio giusto, senza rifare la ricerca.
 export class GenerationParseError extends Error {}
 
-export async function generateMaterials({ prospect, layer, motion, report }) {
+export async function generateMaterials({ prospect, layer, motion, report, scadenza }) {
   const genData = await callClaude({
     system: buildGenerationSystem(loadBrain(), layer, motion),
     messages: [{
       role: 'user',
       content: `Prospect: "${prospect}"\nLayer: ${layer} | Motion: ${motion}\n\nReport:\n${report}\n\nGenera i materiali. Solo JSON puro.`,
     }],
-    max_tokens: 16000,
+    max_tokens: 16000, scadenza,
   });
 
   const rawText = extractText(genData);

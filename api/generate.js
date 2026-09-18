@@ -1,7 +1,7 @@
 // api/generate.js
 // Fase 2 isolata: report di intelligence -> materiali sales in JSON.
 
-import { applyCors } from './_shared.js';
+import { applyCors, creaScadenza } from './_shared.js';
 import { generateMaterials, GenerationParseError } from './_generate.js';
 
 export default async function handler(req, res) {
@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   if (!report?.trim()) return res.status(400).json({ error: 'Report di intelligence richiesto' });
 
   try {
-    const materiali = await generateMaterials({ prospect: prospect.trim(), layer, motion, report });
+    const materiali = await generateMaterials({ prospect: prospect.trim(), layer, motion, report, scadenza: creaScadenza() });
     return res.status(200).json(materiali);
   } catch (err) {
     if (!(err instanceof GenerationParseError)) console.error(err);
