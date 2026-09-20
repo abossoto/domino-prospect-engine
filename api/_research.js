@@ -77,7 +77,7 @@ Fai almeno 8-10 ricerche. Produci il report con tutte le sezioni.`;
   const tool = webSearchTool(MAX_RICERCHE);
   let data = await callClaude({
     system: RESEARCH_SYSTEM, messages, tools: [tool],
-    max_tokens: 16000, timeoutMs: 240000, scadenza,
+    max_tokens: 16000, timeoutMs: 480000, scadenza,
   });
 
   let resumes = 0;
@@ -87,7 +87,7 @@ Fai almeno 8-10 ricerche. Produci il report con tutte le sezioni.`;
     messages.push({ role: 'assistant', content: data.content });
     data = await callClaude({
       system: RESEARCH_SYSTEM, messages, tools: [tool],
-      max_tokens: 16000, timeoutMs: 240000, scadenza,
+      max_tokens: 16000, timeoutMs: 480000, scadenza,
     });
   }
 

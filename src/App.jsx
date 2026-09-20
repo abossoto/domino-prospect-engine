@@ -375,8 +375,12 @@ function HsModal({ current, onClose, onSave }) {
 }
 
 // ─── Main App ─────────────────────────────────────────────────────────────────
-const VERSION = 'v4.5.0';
+const VERSION = 'v4.6.0';
 const QUICK_PICKS = ['Technogym','Humanitas','Alpitour','Amplifon','Pirelli',"De'Longhi",'Fincantieri',"Tod's"];
+// Soglie identiche a quelle dei prompt in api/_list.js: se cambiano li', vanno
+// cambiate anche qui, altrimenti l'interfaccia promette un filtro diverso da
+// quello che il modello applica. Il valore inviato all'API resta l'etichetta.
+const DIMENSIONI = [['PMI','< 50 dip.'],['Mid-market','50-500 dip.'],['Enterprise','> 500 dip.']];
 const SETTORI_OPTIONS = ['Automotive','B2B Industriale / Manifatturiero','Salute & Sanità','Turismo & Cultura','Finance & Assicurazioni','Real Estate','Pubblica Amministrazione','Retail & eCommerce','Tecnologia & Software','Altro'];
 const LOADING_MSGS = ['Analisi sito web aziendale...','Ricerca dati finanziari (Cerved/CCIAA)...','Raccolta news ultimi 12 mesi...','Analisi profili LinkedIn...','Verifica job posting attivi...','Valutazione presenza digitale...'];
 
@@ -583,8 +587,10 @@ export default function App() {
                 <div>
                   <div style={{ fontSize:'11px',fontWeight:700,letterSpacing:'0.08em',textTransform:'uppercase',color:C.muted,marginBottom:'6px' }}>Dimensione</div>
                   <div style={{ display:'flex',gap:'6px' }}>
-                    {['PMI','Mid-market','Enterprise'].map(d=>(
-                      <button key={d} onClick={()=>setListaDim(prev=>prev.includes(d)?prev.filter(x=>x!==d):[...prev,d])} style={{ flex:1,padding:'8px 6px',background:listaDim.includes(d)?'rgba(232,39,42,0.12)':'#0d0d0d',border:`1px solid ${listaDim.includes(d)?C.red:C.border}`,color:listaDim.includes(d)?C.red:C.muted,borderRadius:'7px',cursor:'pointer',fontSize:'11px',fontWeight:listaDim.includes(d)?700:400,fontFamily:FONT }}>{d}</button>
+                    {DIMENSIONI.map(([d,soglia])=>(
+                      <button key={d} onClick={()=>setListaDim(prev=>prev.includes(d)?prev.filter(x=>x!==d):[...prev,d])} style={{ flex:1,padding:'7px 6px',background:listaDim.includes(d)?'rgba(232,39,42,0.12)':'#0d0d0d',border:`1px solid ${listaDim.includes(d)?C.red:C.border}`,color:listaDim.includes(d)?C.red:C.muted,borderRadius:'7px',cursor:'pointer',fontSize:'11px',fontWeight:listaDim.includes(d)?700:400,fontFamily:FONT,lineHeight:1.3 }}>
+                        {d}<div style={{ fontSize:'9px',fontWeight:400,opacity:0.7,marginTop:'1px' }}>{soglia}</div>
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -641,7 +647,6 @@ export default function App() {
                           </div>
                           <div style={{ display:'flex',gap:'6px',flexWrap:'wrap',marginBottom:'6px' }}>
                             {[item.settore,item.dimensione,item.sede].filter(Boolean).map((t,ti)=><span key={ti} style={{ fontSize:'10px',color:C.muted,background:C.elevated,padding:'2px 7px',borderRadius:'3px' }}>{t}</span>)}
-                            {item.decisore_probabile && <span style={{ fontSize:'10px',color:'#93c5fd',background:'rgba(59,130,246,0.1)',border:'1px solid rgba(59,130,246,0.2)',padding:'2px 7px',borderRadius:'3px' }}>👤 {item.decisore_probabile}</span>}
                           </div>
                           <div style={{ fontSize:'12px',color:'#aaa',marginBottom:'3px' }}><span style={{ color:sc }}>●</span> {item.score_motivazione}</div>
                           {item.segnale_principale && <div style={{ fontSize:'11px',color:C.muted,fontStyle:'italic' }}>→ {item.segnale_principale}</div>}

@@ -1,5 +1,5 @@
 # DOMINO PROSPECT ENGINE — Specifiche Complete
-## Versione sorgente: v4.5.0 (App.jsx) / Versione brain: 5.1
+## Versione sorgente: v4.6.0 (App.jsx) / Versione brain: 5.1
 
 > Documento generato dalla lettura diretta del codice sorgente. Sufficiente per ricreare il sistema identico.
 
@@ -112,17 +112,19 @@ export default defineConfig({
   "framework": "vite",
   "functions": {
     "api/analyze.js": { "maxDuration": 300, "includeFiles": "brain/**" },
-    "api/research.js": { "maxDuration": 300 },
+    "api/research.js": { "maxDuration": 600 },
     "api/generate.js": { "maxDuration": 300, "includeFiles": "brain/**" },
     "api/prospect-list.js": { "maxDuration": 300, "includeFiles": "brain/**" },
-    "api/prospect-search.js": { "maxDuration": 300 },
+    "api/prospect-search.js": { "maxDuration": 600 },
     "api/prospect-rank.js": { "maxDuration": 300, "includeFiles": "brain/**" }
   },
   "rewrites": [{ "source": "/api/(.*)", "destination": "/api/$1" }]
 }
 ```
 
-`maxDuration: 300` (cap Pro plan) serve perché il research agent agentico con Sonnet 4.6 + web_search può raggiungere ~3-4 min su prospect complessi. Era 60 in v4.0 ma con Sonnet 4.6 sforava sistematicamente.
+**I 300 secondi non sono il tetto del piano Pro: sono il default di Vercel.** Su Pro ed Enterprise il massimo è 800s (1800s in beta), su Hobby 300s è anche il massimo. Fino alla v4.5 la spec dichiarava erroneamente 300 come "cap Pro plan", e su quel presupposto sbagliato sono state calibrate le strette sui tetti di ricerca della v4.4-4.5.
+
+I due endpoint di ricerca web stanno a **600s**, gli altri restano a 300: non serve dare più tempo a chi fa una sola chiamata. In `_shared.js` il budget non è una costante globale ma un parametro per endpoint (`DURATA_DEFAULT_MS`, `DURATA_RICERCA_MS`), e ognuno deve coincidere col proprio `maxDuration` in `vercel.json`. Anche il `timeoutMs` della singola chiamata va tenuto coerente: con un budget da 575s ma un timeout per chiamata da 240s, la chiamata viene abortita dal timeout e il budget non serve a niente.
 
 ### Variabili d'ambiente Vercel
 | Variabile | Obbligatoria | Usata da |
@@ -168,7 +170,13 @@ Soglie ora esplicite e **disgiunte**, dichiarate in entrambe le fasi:
 | Mid-market | 50–500 | 10–100 mln |
 | Enterprise | oltre 500 | oltre 100 mln |
 
-In conflitto decide il fatturato della società italiana. Nota che qui "PMI" significa piccola impresa sotto i 50 dipendenti, **non** la definizione UE che arriva a 250: è dichiarato nel prompt perché è una deviazione dall'uso comune. Lo scoring misura ora rispetto alla fascia *richiesta*, e penalizza chi ne sta fuori invece di penalizzare chi è più piccolo del cliente Domino tipico. Il criterio economico resta: l'azienda deve poter sostenere un progetto da 20K-200K.
+In conflitto decide il fatturato della società italiana. Le stesse soglie sono mostrate sotto le etichette dei bottoni nell'interfaccia (costante `DIMENSIONI` in `App.jsx`): se cambiano nei prompt vanno cambiate anche lì, altrimenti l'interfaccia promette un filtro diverso da quello applicato.
+
+**Il criterio economico è vincolante**, non una preferenza: l'azienda deve poter sostenere un progetto da 20-200K, ed è una condizione di ammissione. Senza, la fascia PMI restituisce microimprese da 4-8 dipendenti — verificate su fonte esterna — che rispettano la soglia dimensionale e non compreranno mai. Nota che qui "PMI" significa piccola impresa sotto i 50 dipendenti, **non** la definizione UE che arriva a 250: è dichiarato nel prompt perché è una deviazione dall'uso comune. Lo scoring misura ora rispetto alla fascia *richiesta*, e penalizza chi ne sta fuori invece di penalizzare chi è più piccolo del cliente Domino tipico. Il criterio economico resta: l'azienda deve poter sostenere un progetto da 20K-200K.
+
+**Niente decisore in fase di lista.** Dalla v4.6 la ricerca lista non cerca più il decisore probabile e il campo `decisore_probabile` è uscito dallo schema. Era lavoro duplicato: quando l'azienda passa all'analisi singola, i decisori arrivano verificati da RocketReach con nome, ruolo, LinkedIn ed email. In lista serve sapere **se** un'azienda vale il contatto, non **chi** contattare. Ogni ricerca risparmiata lì è una ricerca in più per verificarne un'altra.
+
+**Resa anticipata sugli insiemi vuoti.** Alcune combinazioni di criteri hanno pochissime aziende: fascia PMI più criterio economico dei 20-200K è il caso tipico, le due condizioni quasi si escludono nel B2B industriale italiano. Senza istruzione contraria il modello continua a cercare fino a esaurire il budget e non restituisce niente. La regola ora dice: se dopo ~15 ricerche hai meno di 3 aziende che superano tutti i filtri, fermati, restituisci quelle e scrivi nel report che la combinazione è troppo stretta e quale criterio conviene allentare. Misurato sul filtro PMI: da budget esaurito a 575s con zero risultati, a 226s con 5 aziende e la spiegazione nel report.
 
 **Tetto delle ricerche, per compito.** `max_uses` non è un parametro neutro di sicurezza: se è troppo basso il modello esaurisce le ricerche nella fase di scoperta e restituisce un risultato vuoto con HTTP 200, cioè un fallimento silenzioso. Va calibrato sul compito — 20 per l'analisi di un singolo prospect, dove il prompt chiede "almeno 8-10 ricerche"; 40 per la generazione lista, che deve trovare N aziende **e** verificare il sito di ognuna. Con 12 per entrambi (v4.3.0) la lista tornava sistematicamente vuota.
 
@@ -746,7 +754,7 @@ Codice condiviso in `api/_list.js`. Vale tutto quanto detto per l'analisi: backo
   "lista": [{
     "nome": "string", "sito": "string | null", "settore": "string", "sede": "string",
     "dimensione": "PMI | Mid-market | Enterprise", "fatturato_stimato": "string | null",
-    "score": 8, "score_motivazione": "string", "segnale_principale": "string", "decisore_probabile": "string"
+    "score": 8, "score_motivazione": "string", "segnale_principale": "string"
   }],
   "totale_trovate": 10, "criteri_applicati": "string"
 }
@@ -1129,6 +1137,14 @@ Token `pat-eu1-...` salvato in localStorage. Chiamate dirette dal frontend all'A
 ---
 
 ## 25. CHANGELOG DOC
+
+- **2026-09-20** — release **v4.6.0** (budget reali, criterio economico, lista più snella):
+  - **`maxDuration` a 600s** su `research.js` e `prospect-search.js`. I 300 erano il default di Vercel, non il cap del piano Pro, che arriva a 800: la spec dichiarava il contrario e su quell'errore erano stati calibrati i tetti di ricerca. Budget ora per endpoint (`DURATA_DEFAULT_MS` / `DURATA_RICERCA_MS`), con `timeoutMs` della singola chiamata alzato a 480s perché altrimenti abortiva prima che il budget servisse.
+  - **Criterio economico vincolante.** Verificato prima del fix: il filtro PMI restituiva microimprese da 4, 6 e 8 dipendenti — controllate su RocketReach — dentro la fascia e fuori mercato.
+  - **`decisore_probabile` rimosso** dalla fase lista, dallo schema e dall'interfaccia: duplicava quello che RocketReach dà verificato nell'analisi singola.
+  - **Resa anticipata** quando i criteri sono troppo stretti, con la spiegazione nel report.
+  - **Soglie dei dipendenti mostrate nei bottoni** dell'interfaccia.
+  - Misure finali: Mid-market 188s con 8 aziende, 6 su 7 verificabili dentro fascia su fonte esterna (85-326 dipendenti); PMI 226s con 5 aziende e punteggi 7-6-8-7-6, da un precedente budget esaurito a 575s con zero risultati.
 
 - **2026-09-20** — release **v4.5.0** (dati finanziari e fasce dimensionali):
   - **Rimosso `site:cerved.com`** dal prompt di ricerca, con divieto esplicito: cerved.com non pubblica bilanci di singole aziende, e nemmeno ufficiocamerale.it o gli altri rivenditori di visure. Il prompt indirizza ora sui portali che li espongono in chiaro. Verificato: la sezione DATI FINANZIARI su Rollon restituisce fatturato 2024 di € 92.760.822 — coincidente al centesimo col bilancio depositato — più il 2023 a confronto, dipendenti, REA e forma giuridica.

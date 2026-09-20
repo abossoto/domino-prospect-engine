@@ -29,11 +29,15 @@ export function webSearchTool(maxUses) {
 // di vercel.json, e in quel caso Vercel chiude la connessione con un 504 grezzo
 // prima che il nostro handler possa rispondere. La scadenza e' unica per
 // richiesta e ogni chiamata ci si adatta.
-export const MAX_DURATA_MS = 300000;   // deve restare allineato a vercel.json
-const MARGINE_MS = 25000;              // tempo per serializzare e rispondere
+// Su piano Pro il massimo e' 800s: i 300 sono solo il DEFAULT di Vercel, non il
+// tetto del piano. Ogni endpoint dichiara il proprio budget, che deve coincidere
+// col maxDuration che ha in vercel.json.
+export const DURATA_DEFAULT_MS = 300000;
+export const DURATA_RICERCA_MS = 600000;  // endpoint di ricerca web, i piu' lenti
+const MARGINE_MS = 25000;                 // tempo per serializzare e rispondere
 
-export function creaScadenza(ms = MAX_DURATA_MS - MARGINE_MS) {
-  return Date.now() + ms;
+export function creaScadenza(maxDurataMs = DURATA_DEFAULT_MS) {
+  return Date.now() + maxDurataMs - MARGINE_MS;
 }
 
 export function tempoResiduo(scadenza) {

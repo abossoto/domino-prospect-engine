@@ -29,6 +29,18 @@ cerved.com e i rivenditori di visure li tengono dietro login, cercarli li' e' sp
 Attenzione: qui "PMI" significa piccola impresa sotto i 50 dipendenti, NON la
 definizione UE che arriva a 250. Le soglie di questa lista sono quelle qui sopra.
 
+CRITERIO ECONOMICO - VINCOLANTE, E' UN FILTRO DI ESCLUSIONE:
+L'azienda deve poter sostenere un progetto da 20.000 a 200.000 euro. Non e' una
+preferenza, e' una condizione di ammissione. Una microimpresa da 5-10 dipendenti
+sta dentro la fascia PMI ma non compra un progetto da 20K: NON includerla, per
+quanto il settore sia giusto e i segnali digitali interessanti.
+Indicatori pratici che il filtro e' superato: fatturato almeno intorno ai 2-3
+milioni; oppure una funzione marketing/comunicazione interna; oppure segnali di
+investimento digitale gia' in corso (job posting digital, e-commerce attivo,
+rifacimento sito recente, presenza fieristica strutturata).
+Nel dubbio su un'azienda molto piccola, escludila: una lista corta di aziende
+contattabili vale piu' di una lista lunga di aziende che non risponderanno.
+
 LA FASCIA RICHIESTA COMANDA:
 Cerca aziende nella fascia dimensionale indicata nella richiesta, anche quando non
 coincide con il cuore storico dei clienti Domino. Una richiesta su PMI va servita
@@ -91,8 +103,7 @@ Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
       "fatturato_stimato": "string | null",
       "score": 8,
       "score_motivazione": "string — max 1 frase, perché è un buon prospect",
-      "segnale_principale": "string — il segnale più rilevante trovato",
-      "decisore_probabile": "string — es. Direttore Marketing, CMO, CDO"
+      "segnale_principale": "string — il segnale più rilevante trovato"
     }
   ],
   "totale_trovate": 10,
@@ -108,9 +119,14 @@ Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
 // Stessa logica di _research.js: web_search e' server-side, l'unica cosa da
 // gestire client-side e' il pause_turn a fine loop server.
 const MAX_RESUMES = 3;
-// Qui servono molte piu' ricerche che per il singolo prospect: il prompt chiede
-// di TROVARE N aziende e di VERIFICARE il sito di ognuna. Con un tetto basso il
-// modello esaurisce le ricerche nella scoperta e restituisce una lista vuota.
+// Con 12 il modello esauriva le ricerche nella scoperta e restituiva una lista
+// vuota con HTTP 200, un fallimento silenzioso. Era poi sceso a 25 per stare
+// dentro un budget di 300s che si e' rivelato inesistente: su piano Pro il
+// massimo e' 800s, i 300 erano solo il default di Vercel. Con il budget reale
+// (600s su questo endpoint) 40 ricerche ci stanno comode - la singola chiamata
+// misurava ~270s. Il numero e' dichiarato anche nel messaggio utente, perche' un
+// tetto che il modello non conosce lo fa lavorare fino a sbatterci contro invece
+// di dosarsi.
 const MAX_RICERCHE = 40;
 // Dopo lo split la generazione vive in un'altra function, quindi qui serve
 // solo il tempo per restituire il report.
@@ -131,17 +147,38 @@ PROCEDURA:
 2. Per ogni azienda trovata, verifica che esista realmente cercando il sito web
 3. Valuta la qualità della loro presenza digitale (sito, social, news)
 4. Cerca segnali di bisogno: sito datato, job posting digital, crescita recente, riorganizzazioni
-5. Identifica il probabile decisore da contattare (CMO, Direttore Marketing, CDO, ecc.)
 
-Fai almeno 6-8 ricerche per trovare e verificare le aziende.
-Priorità: aziende con segnali chiari di bisogno digitale e dimensione coerente con progetti Domino (budget tipico 20K-200K€).
+NON cercare il decisore da contattare in questa fase. E' lavoro duplicato: quando
+l'azienda passa all'analisi singola, i decisori arrivano verificati da RocketReach
+con nome, ruolo, profilo LinkedIn ed email. Qui serve solo capire SE l'azienda vale
+il contatto, non CHI contattare. Ogni ricerca risparmiata qui e' una ricerca in piu'
+per verificare un'altra azienda.
+
+BUDGET DI RICERCA: hai al massimo 40 ricerche web per l'intero compito, condivise
+fra scoperta e verifica. Spendine al massimo 3 per singola azienda e tienine da
+parte per la scoperta iniziale.
+Quando il budget sta finendo, CHIUDI con le aziende che hai gia' verificato invece
+di lasciare il lavoro a meta': meglio 6 aziende complete che 10 abbozzate, e molto
+meglio di un compito interrotto a budget esaurito.
+
+ARRENDITI PRESTO SE L'INSIEME E' VUOTO: alcune combinazioni di criteri hanno pochissime
+aziende, o nessuna. Una fascia dimensionale piccola unita al filtro economico dei
+20-200K e' il caso tipico: le due condizioni quasi si escludono. Se dopo circa 15
+ricerche hai meno di 3 aziende che superano TUTTI i filtri, fermati e restituisci
+quelle poche che hai, dicendo esplicitamente nel report che la combinazione di criteri
+e' troppo stretta e quale dei due criteri conviene allentare.
+Non continuare a cercare sperando di trovarne altre: un report che spiega perche' la
+lista e' corta vale molto piu' di una ricerca che si interrompe a budget esaurito e
+non restituisce niente.
+Priorità: aziende con segnali chiari di bisogno digitale, dentro la fascia richiesta
+e capaci di sostenere un progetto da 20K-200K.
 Escludi clienti Domino già noti: Rollon, Bitron, IVECO, Case IH, Stellantis, Comau, IPI, Megadyne, Masi, Costa Crociere, Arca, Alpitour, Biennale Venezia.`;
 
   const messages = [{ role: 'user', content: userMsg }];
   const tool = webSearchTool(MAX_RICERCHE);
   let data = await callClaude({
     system: LIST_RESEARCH_SYSTEM, messages, tools: [tool],
-    max_tokens: 16000, timeoutMs: 240000, scadenza,
+    max_tokens: 16000, timeoutMs: 480000, scadenza,
   });
 
   let resumes = 0;
@@ -151,7 +188,7 @@ Escludi clienti Domino già noti: Rollon, Bitron, IVECO, Case IH, Stellantis, Co
     messages.push({ role: 'assistant', content: data.content });
     data = await callClaude({
       system: LIST_RESEARCH_SYSTEM, messages, tools: [tool],
-      max_tokens: 16000, timeoutMs: 240000, scadenza,
+      max_tokens: 16000, timeoutMs: 480000, scadenza,
     });
   }
 
