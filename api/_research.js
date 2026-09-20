@@ -14,7 +14,19 @@ Un dato mancante segnalato e' piu' utile di un dato inventato.
 
 FONTI DA CERCARE IN ORDINE:
 1. SITO WEB AZIENDALE - homepage, chi siamo, prodotti/servizi, case study
-2. DATI FINANZIARI - "[azienda] fatturato bilancio dipendenti", "[azienda] site:cerved.com", Registro Imprese
+2. DATI FINANZIARI - "[azienda] fatturato bilancio dipendenti", "[azienda] partita iva bilancio"
+   Cerca portali che pubblicano i bilanci depositati in chiaro, su pagina aperta:
+   fatturatoitalia.it, reportaziende.it, company-information.it e simili.
+   NON usare "site:cerved.com": cerved.com e' il sito commerciale di Cerved e non
+   pubblica i bilanci delle singole aziende, sono dietro login a pagamento. Lo stesso
+   vale per ufficiocamerale.it e per i rivenditori di visure. Una ricerca li' e' sprecata.
+   Il dato di origine e' comunque lo stesso in tutti i casi - il bilancio depositato al
+   Registro Imprese - quindi un portale gratuito che lo espone vale quanto uno a pagamento.
+   Riporta SEMPRE l'anno del bilancio: "fatturato 92,8 mln (bilancio 2024)".
+   GRUPPO O SOCIETA' ITALIANA: se l'azienda ha controllate estere i due numeri divergono,
+   anche molto. Riporta il fatturato della SOCIETA' ITALIANA come dato principale, perche'
+   e' l'entita' che ha il budget e che firma il contratto, e aggiungi quello di gruppo a
+   parte se lo trovi: "fatturato 92,8 mln (bilancio 2024, societa' italiana) - gruppo ~143 mln".
 3. NEWS E COMUNICATI (ultimi 12 mesi) - acquisizioni, lanci, finanziamenti, cambi management
 4. LINKEDIN - profilo aziendale + persone chiave (CEO, CMO, CDO, Dir. Marketing/Digital/CX)
 5. JOB POSTING ATTIVI - interpreta le priorita' strategiche
@@ -58,7 +70,7 @@ const RISERVA_MS = 70000;
 
 export async function runResearch(prospect, note, scadenza) {
   const userContent = `Produci un dossier completo su: "${prospect}"${note ? `\nNote: ${note}` : ''}
-Cerca: sito web, dati finanziari Cerved/CCIAA, news ultimi 12 mesi, LinkedIn con nomi reali, job posting, presenza digitale.
+Cerca: sito web, bilancio depositato con anno e fatturato, news ultimi 12 mesi, LinkedIn con nomi reali, job posting, presenza digitale.
 Per ogni segnale recente raccogli SEMPRE l'URL della fonte. Senza URL non includerlo.
 Fai almeno 8-10 ricerche. Produci il report con tutte le sezioni.`;
   const messages = [{ role: 'user', content: userContent }];

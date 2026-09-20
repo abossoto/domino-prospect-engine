@@ -375,7 +375,7 @@ function HsModal({ current, onClose, onSave }) {
 }
 
 // ─── Main App ─────────────────────────────────────────────────────────────────
-const VERSION = 'v4.4.0';
+const VERSION = 'v4.5.0';
 const QUICK_PICKS = ['Technogym','Humanitas','Alpitour','Amplifon','Pirelli',"De'Longhi",'Fincantieri',"Tod's"];
 const SETTORI_OPTIONS = ['Automotive','B2B Industriale / Manifatturiero','Salute & Sanità','Turismo & Cultura','Finance & Assicurazioni','Real Estate','Pubblica Amministrazione','Retail & eCommerce','Tecnologia & Software','Altro'];
 const LOADING_MSGS = ['Analisi sito web aziendale...','Ricerca dati finanziari (Cerved/CCIAA)...','Raccolta news ultimi 12 mesi...','Analisi profili LinkedIn...','Verifica job posting attivi...','Valutazione presenza digitale...'];

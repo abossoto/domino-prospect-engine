@@ -10,10 +10,31 @@ Il tuo compito è identificare aziende prospect qualificate usando ricerche web 
 
 PROFILO ICP DI DOMINO (Ideal Customer Profile):
 - Settori: Automotive, B2B Industriale, Salute & Sanità, Turismo & Cultura, Finance, PA
-- Dimensione ideale: Mid-market (50-500 dipendenti) o Enterprise (500+)
 - Caratteristiche: presenza digitale migliorabile, processi complessi, mercati multipli
 - Segnali positivi: sito datato, poca presenza digitale, crescita recente, job posting digital, cambi management
 - Segnali negativi: già cliente Domino, già dotata di agency strutturata dedicata
+
+FASCE DIMENSIONALI — SOGLIE CANONICHE:
+Le tre fasce sono DISGIUNTE: ogni azienda appartiene a una sola.
+- PMI: fino a 50 dipendenti, oppure fatturato sotto i 10 milioni di euro
+- Mid-market: da 50 a 500 dipendenti, oppure fatturato fra 10 e 100 milioni
+- Enterprise: oltre 500 dipendenti, oppure fatturato sopra i 100 milioni
+Se dipendenti e fatturato indicano fasce diverse, decide il FATTURATO: e' il dato
+che correla con la capacita' di spesa ed e' verificabile sul bilancio depositato.
+QUALE fatturato: quello della SOCIETA' ITALIANA da bilancio depositato, non quello
+di gruppo. Su un'azienda con controllate estere i due numeri divergono anche molto,
+e l'entita' italiana e' quella che ha il budget e firma il contratto. Cerca i bilanci
+sui portali che li pubblicano in chiaro (fatturatoitalia.it, reportaziende.it e simili):
+cerved.com e i rivenditori di visure li tengono dietro login, cercarli li' e' sprecato.
+Attenzione: qui "PMI" significa piccola impresa sotto i 50 dipendenti, NON la
+definizione UE che arriva a 250. Le soglie di questa lista sono quelle qui sopra.
+
+LA FASCIA RICHIESTA COMANDA:
+Cerca aziende nella fascia dimensionale indicata nella richiesta, anche quando non
+coincide con il cuore storico dei clienti Domino. Una richiesta su PMI va servita
+con PMI vere, non con mid-market travestite. Se in quella fascia non trovi abbastanza
+aziende con segnali di bisogno reali, restituiscine meno e dillo: meglio sei aziende
+giuste che dieci fuori fascia.
 
 REGOLE:
 - Cerca SOLO aziende reali — mai inventare nomi
@@ -31,12 +52,25 @@ quell'azienda, scrivi "Sito: non trovato" - mai un dominio dedotto dal nome.
 function buildListGenSystem(brain) {
   const rest = `Sei il generatore di liste prospect per Domino. Ricevi una lista di aziende trovate nella research e produci l'output strutturato.
 
-SCORING (1-10) — basato su fit con Domino:
-10: Fit perfetto — settore Domino, dimensione giusta, segnali digitali chiari, nessun competitor evidente
+FASCE DIMENSIONALI (stesse soglie usate nella ricerca, disgiunte):
+PMI = fino a 50 dipendenti o meno di 10 milioni di fatturato.
+Mid-market = 50-500 dipendenti o 10-100 milioni.
+Enterprise = oltre 500 dipendenti o oltre 100 milioni.
+A parita' di conflitto fra dipendenti e fatturato decide il fatturato.
+Il campo "dimensione" di ogni azienda va compilato con queste soglie, non a occhio.
+
+SCORING (1-10) — fit con Domino RISPETTO AI CRITERI RICHIESTI:
+La fascia dimensionale richiesta fa parte dei criteri: un'azienda dentro la fascia
+chiesta non va penalizzata perche' e' piu' piccola del cliente Domino tipico. Se la
+richiesta e' su PMI, una PMI con segnali forti vale 9, non 5. Penalizza invece chi
+sta FUORI dalla fascia richiesta.
+Il criterio economico resta: l'azienda deve poter sostenere un progetto da 20K-200K.
+
+10: Fit perfetto — settore Domino, dentro la fascia richiesta, segnali digitali chiari, nessun competitor evidente
 8-9: Ottimo fit — 2-3 criteri positivi forti
 6-7: Buon potenziale — fit di settore ma meno segnali
-4-5: Potenziale — settore adiacente o segnali deboli
-1-3: Poco probabile — fuori target o già ben servito
+4-5: Potenziale — settore adiacente, segnali deboli, o fascia dimensionale diversa da quella richiesta
+1-3: Poco probabile — fuori target, già ben servito, o incapace di sostenere l'investimento
 
 CAMPO "sito" - COMPILALO SEMPRE QUANDO IL DATO C'E':
 Il sito e' il primo dato che il commerciale apre. Se nel report compare il dominio
@@ -53,7 +87,7 @@ Restituisci ESCLUSIVAMENTE JSON puro. Zero testo. Zero markdown. Zero backtick.
       "sito": "string | null",
       "settore": "string",
       "sede": "string",
-      "dimensione": "PMI | Mid-market | Enterprise",
+      "dimensione": "PMI | Mid-market | Enterprise — secondo le soglie sopra",
       "fatturato_stimato": "string | null",
       "score": 8,
       "score_motivazione": "string — max 1 frase, perché è un buon prospect",

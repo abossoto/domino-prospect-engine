@@ -1,5 +1,5 @@
 # DOMINO PROSPECT ENGINE — Specifiche Complete
-## Versione sorgente: v4.4.0 (App.jsx) / Versione brain: 5.1
+## Versione sorgente: v4.5.0 (App.jsx) / Versione brain: 5.1
 
 > Documento generato dalla lettura diretta del codice sorgente. Sufficiente per ricreare il sistema identico.
 
@@ -149,6 +149,26 @@ Dalla v4.2 la pipeline è spezzata in due endpoint. La ragione è che il report 
 **Arricchimento decisori (RocketReach).** `/api/research` lancia `runResearch` e `raccogliPersone` con `Promise.all`: RocketReach impiega ~6-7s contro i ~110s della ricerca web, quindi non aggiunge latenza misurabile. Il risultato viene appeso al report come sezione `## PERSONE CHIAVE — DATI VERIFICATI (RocketReach)`, e il system prompt di generazione ha una regola che dà a quei nominativi la precedenza sui nomi dedotti dal web e vieta di dedurre email non presenti nel blocco.
 
 Due ricerche `person_search` (gratuite, nessun credito): una a livello `cxo` senza filtro di titolo — un CEO non ha "marketing" nel titolo — e una a livello `vp`/`director`/`manager` filtrata su titoli marketing/digital/CX in italiano e inglese. Poi `person_lookup` (1 lookup + 1 export credit) sui primi 3 profili, che è asincrona: si lanciano i lookup insieme e si fa un polling cumulativo su `checkStatus`. Facet geografico corretto: `location: ["Italy"]`; `country` restituisce sempre 0.
+
+**Dati finanziari — dove cercarli davvero.** Fino alla v4.4 il prompt suggeriva `site:cerved.com`. È un vicolo cieco: `cerved.com` è il sito commerciale di Cerved e non pubblica i bilanci delle singole aziende, che stanno dietro login a pagamento. Lo stesso vale per `ufficiocamerale.it` e per i rivenditori di visure. Quella riga bruciava una delle ricerche disponibili senza restituire niente.
+
+Il dato di origine è lo stesso per tutti — il bilancio depositato al Registro Imprese — quindi un portale gratuito che lo espone in chiaro vale quanto uno a pagamento *per questo scopo*: quello che si paga in Cerved è il rating, lo scoring, la profondità storica e il controllo qualità, non la cifra del fatturato, che è un atto pubblico. Il prompt ora indirizza sui portali che pubblicano su pagina aperta e indicizzabile (`fatturatoitalia.it`, `reportaziende.it` e simili) e vieta esplicitamente le altre due piste.
+
+Due regole aggiunte sul dato: riportare **sempre l'anno del bilancio**, e distinguere **società italiana da gruppo** quando divergono. Su un'azienda con controllate estere i due numeri possono separarsi di molto — Rollon: 92,8 milioni la società italiana da bilancio 2024, ~143 milioni il gruppo — e la classificazione in fascia dimensionale cambia di conseguenza. Vince la società italiana: è l'entità che ha il budget e che firma il contratto.
+
+**Fasce dimensionali della lista prospect.** Fino alla v4.4 l'unica definizione esistente era `Dimensione ideale: Mid-market (50-500 dipendenti) o Enterprise (500+)` nell'ICP, e nel brain le occorrenze di "PMI" e "mid-market" sono **zero**. Quindi "PMI" era un'etichetta senza definizione, esposta come filtro nell'interfaccia e come valore nello schema JSON, sovrapposta a Mid-market su tutta la fascia 50-250.
+
+Peggio: il filtro scelto dall'utente e il punteggio restituito misuravano cose diverse. La riga di scoring diceva `10: Fit perfetto — settore Domino, dimensione giusta`, dove "dimensione giusta" significava l'ICP fisso, non la fascia richiesta. Chiedere PMI produceva quindi una lista che si auto-penalizzava.
+
+Soglie ora esplicite e **disgiunte**, dichiarate in entrambe le fasi:
+
+| Fascia | Dipendenti | Fatturato |
+|---|---|---|
+| PMI | fino a 50 | sotto 10 mln |
+| Mid-market | 50–500 | 10–100 mln |
+| Enterprise | oltre 500 | oltre 100 mln |
+
+In conflitto decide il fatturato della società italiana. Nota che qui "PMI" significa piccola impresa sotto i 50 dipendenti, **non** la definizione UE che arriva a 250: è dichiarato nel prompt perché è una deviazione dall'uso comune. Lo scoring misura ora rispetto alla fascia *richiesta*, e penalizza chi ne sta fuori invece di penalizzare chi è più piccolo del cliente Domino tipico. Il criterio economico resta: l'azienda deve poter sostenere un progetto da 20K-200K.
 
 **Tetto delle ricerche, per compito.** `max_uses` non è un parametro neutro di sicurezza: se è troppo basso il modello esaurisce le ricerche nella fase di scoperta e restituisce un risultato vuoto con HTTP 200, cioè un fallimento silenzioso. Va calibrato sul compito — 20 per l'analisi di un singolo prospect, dove il prompt chiede "almeno 8-10 ricerche"; 40 per la generazione lista, che deve trovare N aziende **e** verificare il sito di ognuna. Con 12 per entrambi (v4.3.0) la lista tornava sistematicamente vuota.
 
@@ -1109,6 +1129,12 @@ Token `pat-eu1-...` salvato in localStorage. Chiamate dirette dal frontend all'A
 ---
 
 ## 25. CHANGELOG DOC
+
+- **2026-09-20** — release **v4.5.0** (dati finanziari e fasce dimensionali):
+  - **Rimosso `site:cerved.com`** dal prompt di ricerca, con divieto esplicito: cerved.com non pubblica bilanci di singole aziende, e nemmeno ufficiocamerale.it o gli altri rivenditori di visure. Il prompt indirizza ora sui portali che li espongono in chiaro. Verificato: la sezione DATI FINANZIARI su Rollon restituisce fatturato 2024 di € 92.760.822 — coincidente al centesimo col bilancio depositato — più il 2023 a confronto, dipendenti, REA e forma giuridica.
+  - **Anno del bilancio obbligatorio** e **separazione società italiana / gruppo** quando divergono.
+  - **Fasce dimensionali disgiunte e definite** (PMI <50 dip. o <10 mln, Mid-market 50-500 o 10-100 mln, Enterprise >500 o >100 mln), con il fatturato della società italiana come discriminante. "PMI" prima non era definito da nessuna parte, né nel prompt né nel brain.
+  - **Scoring allineato al filtro richiesto** invece che a un ICP fisso. Prima chiedere PMI produceva punteggi sistematicamente bassi per costruzione. Dopo il fix, su un filtro PMI: 8 aziende su 8 classificate PMI, punteggi 6-6-8-7-8-5-8-5 contro una media precedente schiacciata sotto il 6.
 
 - **2026-09-18** — release **v4.4.0** (split della generazione lista):
   - **`api/prospect-search.js` e `api/prospect-rank.js`**, codice condiviso in `api/_list.js`. Stesso schema applicato ad `analyze` nella v4.2. `api/prospect-list.js` resta come wrapper compatibile.
