@@ -112,10 +112,10 @@ export default defineConfig({
   "framework": "vite",
   "functions": {
     "api/analyze.js": { "maxDuration": 300, "includeFiles": "brain/**" },
-    "api/research.js": { "maxDuration": 600 },
+    "api/research.js": { "maxDuration": 300 },
     "api/generate.js": { "maxDuration": 300, "includeFiles": "brain/**" },
     "api/prospect-list.js": { "maxDuration": 300, "includeFiles": "brain/**" },
-    "api/prospect-search.js": { "maxDuration": 600 },
+    "api/prospect-search.js": { "maxDuration": 300 },
     "api/prospect-rank.js": { "maxDuration": 300, "includeFiles": "brain/**" }
   },
   "rewrites": [{ "source": "/api/(.*)", "destination": "/api/$1" }]
@@ -124,7 +124,9 @@ export default defineConfig({
 
 **I 300 secondi non sono il tetto del piano Pro: sono il default di Vercel.** Su Pro ed Enterprise il massimo è 800s (1800s in beta), su Hobby 300s è anche il massimo. Fino alla v4.5 la spec dichiarava erroneamente 300 come "cap Pro plan", e su quel presupposto sbagliato sono state calibrate le strette sui tetti di ricerca della v4.4-4.5.
 
-I due endpoint di ricerca web stanno a **600s**, gli altri restano a 300: non serve dare più tempo a chi fa una sola chiamata. In `_shared.js` il budget non è una costante globale ma un parametro per endpoint (`DURATA_DEFAULT_MS`, `DURATA_RICERCA_MS`), e ognuno deve coincidere col proprio `maxDuration` in `vercel.json`. Anche il `timeoutMs` della singola chiamata va tenuto coerente: con un budget da 575s ma un timeout per chiamata da 240s, la chiamata viene abortita dal timeout e il budget non serve a niente.
+**Ma gli 800s richiedono Fluid Compute attivo sul progetto.** Senza, un `maxDuration` sopra 300 fa fallire il build con `invalid maxDuration for plan`: Vercel non pubblica nulla e l'ultimo deploy buono resta online. Provato sul campo nella v4.6.0, con rollback a 300. Non servivano comunque — 226s sul filtro PMI e 188s sul Mid-market stanno dentro i 275s di budget effettivo — perché il collo di bottiglia era il carico di lavoro, non il tempo concesso.
+
+Tutti gli endpoint stanno quindi a 300s: non serve dare più tempo a chi fa una sola chiamata. In `_shared.js` il budget non è una costante globale ma un parametro per endpoint (`DURATA_DEFAULT_MS`, `DURATA_RICERCA_MS`), e ognuno deve coincidere col proprio `maxDuration` in `vercel.json`. Anche il `timeoutMs` della singola chiamata va tenuto coerente: con un budget da 575s ma un timeout per chiamata da 240s, la chiamata viene abortita dal timeout e il budget non serve a niente.
 
 ### Variabili d'ambiente Vercel
 | Variabile | Obbligatoria | Usata da |
@@ -1139,7 +1141,7 @@ Token `pat-eu1-...` salvato in localStorage. Chiamate dirette dal frontend all'A
 ## 25. CHANGELOG DOC
 
 - **2026-09-20** — release **v4.6.0** (budget reali, criterio economico, lista più snella):
-  - **`maxDuration` a 600s** su `research.js` e `prospect-search.js`. I 300 erano il default di Vercel, non il cap del piano Pro, che arriva a 800: la spec dichiarava il contrario e su quell'errore erano stati calibrati i tetti di ricerca. Budget ora per endpoint (`DURATA_DEFAULT_MS` / `DURATA_RICERCA_MS`), con `timeoutMs` della singola chiamata alzato a 480s perché altrimenti abortiva prima che il budget servisse.
+  - **Budget di durata per endpoint** (`DURATA_DEFAULT_MS` / `DURATA_RICERCA_MS`) invece di una costante globale, con `timeoutMs` della singola chiamata a 480s — viene comunque limitato dal residuo, quindi vale il budget dell'endpoint. Il tentativo di portare i due endpoint di ricerca a 600s è stato **respinto da Vercel** (`invalid maxDuration for plan`): gli 800s del piano Pro richiedono Fluid Compute attivo. Rollback a 300, che basta: 226s e 188s misurati contro 275s di budget.
   - **Criterio economico vincolante.** Verificato prima del fix: il filtro PMI restituiva microimprese da 4, 6 e 8 dipendenti — controllate su RocketReach — dentro la fascia e fuori mercato.
   - **`decisore_probabile` rimosso** dalla fase lista, dallo schema e dall'interfaccia: duplicava quello che RocketReach dà verificato nell'analisi singola.
   - **Resa anticipata** quando i criteri sono troppo stretti, con la spiegazione nel report.

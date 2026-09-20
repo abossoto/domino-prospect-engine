@@ -6,7 +6,7 @@
       "includeFiles": "brain/**"
     },
     "api/research.js": {
-      "maxDuration": 600
+      "maxDuration": 300
     },
     "api/generate.js": {
       "maxDuration": 300,
@@ -17,7 +17,7 @@
       "includeFiles": "brain/**"
     },
     "api/prospect-search.js": {
-      "maxDuration": 600
+      "maxDuration": 300
     },
     "api/prospect-rank.js": {
       "maxDuration": 300,

@@ -29,11 +29,15 @@ export function webSearchTool(maxUses) {
 // di vercel.json, e in quel caso Vercel chiude la connessione con un 504 grezzo
 // prima che il nostro handler possa rispondere. La scadenza e' unica per
 // richiesta e ogni chiamata ci si adatta.
-// Su piano Pro il massimo e' 800s: i 300 sono solo il DEFAULT di Vercel, non il
-// tetto del piano. Ogni endpoint dichiara il proprio budget, che deve coincidere
-// col maxDuration che ha in vercel.json.
+// Ogni endpoint dichiara il proprio budget, che DEVE coincidere col maxDuration
+// che ha in vercel.json.
+// Nota: gli 800s del piano Pro richiedono Fluid Compute attivo sul progetto.
+// Senza, un maxDuration sopra 300 fa fallire il build con "invalid maxDuration
+// for plan" e Vercel non pubblica nulla - l'ultimo deploy buono resta online.
+// Con il carico attuale non servono comunque: misurati 226s sul filtro PMI e
+// 188s sul Mid-market, dentro i 275s di budget effettivo.
 export const DURATA_DEFAULT_MS = 300000;
-export const DURATA_RICERCA_MS = 600000;  // endpoint di ricerca web, i piu' lenti
+export const DURATA_RICERCA_MS = 300000;  // alzabile a 600000 se si attiva Fluid Compute
 const MARGINE_MS = 25000;                 // tempo per serializzare e rispondere
 
 export function creaScadenza(maxDurataMs = DURATA_DEFAULT_MS) {
