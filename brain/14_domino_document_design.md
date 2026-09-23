@@ -76,4 +76,4 @@ Il [`README.md`](Claude%20Design/document-layer/README.md) del design system con
 
 ## Riferimento
 
-Implementazione canonica citata dal design system: `Air Dolomiti · CX Design Sprint.dc.html` (masthead, otto sezioni numerate, lista risultati a marker romani, agenda a due colonne, callout €10.000, lista referenze, blocco scuro di chiusura). Il file HTML non è in questa cartella; in `Proposte Clienti/Air Dolomiti/` c'è il PDF derivato.
+Implementazione canonica citata dal design system: `Air Dolomiti · CX Design Sprint.dc.html` (masthead, otto sezioni numerate, lista risultati a marker romani, agenda a due colonne, callout €10.000, lista referenze, blocco scuro di chiusura). Il file HTML non è in questa cartella; in `Progetti Clienti/Air Dolomiti/2026_CX Design Sprint!/01_proposta/` c'è il PDF derivato.
