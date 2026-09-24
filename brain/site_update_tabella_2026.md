@@ -157,7 +157,7 @@
 
 | Cosa | Dove aggiornare | Tipo | Priorità | Perché |
 |---|---|---|---|---|
-| **Pagina manifesto** | Intera pagina | Verificare e/o riscrivere | 🟡 | Pagina storica "ripartenza" del 25° anniversario. Andrebbe rivista o sostituita con il manifesto "A new Domino" del 30°/aprile 2026 (5 idee). In alternativa, archiviare e creare `/manifesto-2026`. Brain: `01_identita` §Manifesto. |
+| **Pagina manifesto** | Intera pagina | **Fatto** | — | Pagina `/domino25` già rimossa dal sito (confermato il 24 settembre 2026). Resta aperta, se serve, la creazione di `/manifesto-2026` con il manifesto "A new Domino". Brain: `01_identita` §Manifesto. |
 
 ---
 
