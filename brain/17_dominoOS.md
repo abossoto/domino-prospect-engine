@@ -142,7 +142,7 @@ I quattro esempi portati in presentazione:
 
 | Famiglia | Skill | Che cosa fa | La possiede |
 |----------|-------|-------------|-------------|
-| Metodo | `core-sprint-facilitazione` | Prepara e conduce un Core Sprint!: i sette deliverable, i due giorni più i cinque di consolidamento, cosa fare quando gli stakeholder si bloccano | Brain Owner |
+| Metodo | `core-sprint-facilitazione` | Prepara e conduce un Core Sprint!: i sette deliverable, i due giorni con il cliente più i due di lavoro Domino, cosa fare quando gli stakeholder si bloccano | Brain Owner |
 | Funzione | `gare-pubbliche` | Il procedimento, non la normativa: legge il bando, estrae da lì requisiti e scadenze, struttura l'offerta sui criteri di aggiudicazione | Chi guida la funzione |
 | Funzione | `report-analytics` | Legge le campagne mercato per mercato e propone la riallocazione. Quello che funziona in Germania arriva in Spagna senza passare da una riunione | Loop Owner |
 | Cliente | `cliente-case-ih` | Due pagine: chi decide, il ciclo di approvazione, i vincoli multi-mercato, gli errori già fatti. Il design system allegato. Prodotti e referenti restano nel progetto | Account lead |

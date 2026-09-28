@@ -75,7 +75,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 **Come entrare / espandere:**
 - Apertura con case IVECO.com IKA 2024 (primo incontro) → credenziale più forte del settore
 - Core Sprint! (€6.000) → se stakeholder divisi su direzione, mercati prioritari o architettura del sito
-- Design Sprint! (€10.000) → prototipo del nuovo sito o buyer journey testato con utenti reali in 4 giorni, prima di avviare il **Build Sprint!** per la realizzazione (€20–60K+, blocchi di 2 settimane o 1 mese, perimetro aperto)
+- Design Sprint! (€10.000) → prototipo del nuovo sito o buyer journey in 4 giorni, da testare poi con utenti reali, prima di avviare il **Build Sprint!** per la realizzazione (€20–60K+, blocchi di 2 settimane o 1 mese, perimetro aperto)
 - **Brain & Identity Design Sprint!** *(variante di punta 2026)* → quando il problema è strutturale: serve un **design system** scalabile su tutti i mercati e modelli, non un sito puntuale che invecchierà al prossimo lancio. Sono *fondamenta*, non progetti — il design system Domino-IVECO è un esempio (nomination IKA 2025 categoria B2B).
 
 **[Proof point](04_domino_case_history.md):**
@@ -115,7 +115,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 **Come entrare / espandere:**
 - Demo E-Product App + PE automotive (primo incontro) → il dealer che genera, personalizza e traccia la proposta. Si vede il prodotto finito
 - CX Audit rete vendita (€1.500) → mappatura del processo attuale: dove i dealer perdono efficacia, dove mancano strumenti
-- Design Sprint! (€10.000) → prototipo del sales tool o del sistema di formazione AI testato con dealer reali in 4 giorni
+- Design Sprint! (€10.000) → prototipo del sales tool o del sistema di formazione AI in 4 giorni, da testare poi con dealer reali
 - **Brain & Identity Design Sprint!** *(variante di punta 2026)* → quando i dealer reinventano materiali, listini e comunicazioni a ogni lancio: serve un **design system** condiviso (componenti, template, asset multilingua) e un **brain** della conoscenza prodotto interrogabile via AI dai dealer stessi. Il chatbot tecnico per dealer non è "un chatbot": è un brain alimentato dalla rete e dal centro insieme.
 
 **[Proof point](04_domino_case_history.md):**
@@ -152,7 +152,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 **Come entrare / espandere:**
 - Demo TCO Calculator + eDailyAdvisor su caso IVECO (primo incontro) → il fleet manager inserisce i suoi dati e vede il risparmio concreto
 - Core Sprint! (€6.000) → se non è chiaro quale tool costruire o se B2B marketing, fleet sales e digital hanno visioni diverse
-- Design Sprint! (€10.000) → prototipo del TCO Calculator o configuratore EV testato con fleet manager reali in 4 giorni
+- Design Sprint! (€10.000) → prototipo del TCO Calculator o configuratore EV in 4 giorni, da testare poi con fleet manager reali
 
 **[Proof point](04_domino_case_history.md):**
 - IVECO TCO Calculator — risparmio personalizzato per flotta
@@ -163,7 +163,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 **Vs competitor:**
 - Vs web agency: Decision Design applicato al B2B automotive — strumenti che aiutano a decidere, non solo contenuti
 
-**CTA:** Demo TCO Calculator su caso IVECO + Design Sprint! (€10K) per progettare il loro calculator con fleet manager reali in 4 giorni.
+**CTA:** Demo TCO Calculator su caso IVECO + Design Sprint! (€10K) per progettare il loro calculator in 4 giorni, da testare poi con fleet manager reali.
 
 ---
 
@@ -189,7 +189,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 **Come entrare / espandere:**
 - Case Stellantis Employee Portal (primo incontro) → 88.000 dipendenti, FEIEIA Award Best European Intranet. Nato come FCA, esteso a CNH Industrial e Iveco Group
 - Core Sprint! (€6.000) → allinea HR, IT, comunicazione e business su ipotesi core del portale
-- Design Sprint! (€10.000) → prototipo testato con dipendenti reali di profili diversi in 4 giorni
+- Design Sprint! (€10.000) → prototipo in 4 giorni, da testare poi con dipendenti reali di profili diversi
 - **Trainstorming!** (da €15.000, 12 mesi · 3 sessioni) → quando la trigger è una **fusione/acquisizione** o una transizione strategica (elettrico, sostenibilità, D&I): un portale lanciato non basta. Il Trainstorming! è l'accompagnamento al cambiamento culturale, finché la nuova cultura aziendale smette di dover essere difesa. *I progetti finiscono. Le transizioni no.*
 
 **[Proof point](04_domino_case_history.md):**
@@ -226,7 +226,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 **Come entrare:**
 - Case IH IKA 2024 Innovation Technology (primo incontro) → AI in lead gen B2B premiata internazionalmente. Si apre con il case: risultati misurabili, non hype
 - Core Sprint! (€6.000) → mappa le opportunità AI concrete per il loro contesto: lead gen, formazione o GEO
-- Design Sprint! (€10.000) → prototipo del primo use case AI testato con utenti reali in 4 giorni
+- Design Sprint! (€10.000) → prototipo del primo use case AI in 4 giorni, da testare poi con utenti reali
 
 **[Proof point](04_domino_case_history.md):**
 - Case IH — IKA 2024 "Innovation Technology" per AI in lead gen B2B

@@ -59,7 +59,7 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 **Come entrare:**
 - SEO/GEO Audit (€1.500) → visibilità per mercato prioritario, keyword gap per lingua, test diretto su ChatGPT e Google AI Overview con benchmark destinazioni competitor
 - Core Sprint! (€6.000) → se non è chiaro quali mercati prioritizzare o se stakeholder interni (ente, consorzi, comuni) hanno visioni diverse
-- Design Sprint! (€10.000) → prototipo della nuova architettura di contenuto internazionale testato con viaggiatori reali dei mercati target in 4 giorni
+- Design Sprint! (€10.000) → prototipo della nuova architettura di contenuto internazionale in 4 giorni, da testare poi con viaggiatori reali dei mercati target
 
 **[Proof point](04_domino_case_history.md):**
 - ENIT — coordinamento campagne in 34 paesi, dashboard Looker unificata
@@ -132,7 +132,7 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 **Come entrare:**
 - Demo Preventivo Emozionale (gratuita) → caso Costa Crociere: si mostra il prodotto in funzione su un preventivo reale. La demo sostituisce il pitch: il prospect vede subito cosa riceve il cliente finale
 - CX Audit rete vendita (€1.500) → mappatura del processo di preventivazione attuale: touchpoint, tempi, tasso di chiusura per canale. Quantifica il problema prima di proporre la soluzione
-- Design Sprint! (€10.000) → se vogliono riprogettare il processo di vendita indiretto più in profondità: prototipo del nuovo modello testato con agenti reali in 4 giorni
+- Design Sprint! (€10.000) → se vogliono riprogettare il processo di vendita indiretto più in profondità: prototipo del nuovo modello in 4 giorni, da testare poi con agenti reali
 
 **Nota:** In questo play la demo del Preventivo Emozionale è l'apertura principale. Il Core Sprint! non è solitamente necessario — il problema è tattico e ben definito.
 
@@ -170,7 +170,7 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 **Come entrare:**
 - CX Audit visitatore (€1.500) → mappatura del percorso digitale del visitatore: dalla scoperta all'acquisto del biglietto. Dove si perde, dove abbandona, dove il sito non serve il pubblico giusto
 - Core Sprint! (€6.000) → se c'è tensione interna tra identità culturale e accessibilità, o tra i diversi pubblici da servire: allinea direzione, comunicazione e digital su un'ipotesi core
-- Design Sprint! (€10.000) → prototipo del nuovo sito o del nuovo funnel biglietteria testato con visitatori reali in 4 giorni
+- Design Sprint! (€10.000) → prototipo del nuovo sito o del nuovo funnel biglietteria in 4 giorni, da testare poi con visitatori reali
 
 **[Proof point](04_domino_case_history.md):**
 - Fondazione Torino Musei — 4 musei (Palazzo Madama, GAM, MAO, Borgo Medievale), 2000 anni di storia, 150.000 opere, rete digitale unica

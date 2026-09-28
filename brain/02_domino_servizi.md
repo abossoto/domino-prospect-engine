@@ -42,15 +42,15 @@ Domino ha sviluppato metodi propri, non generici. Sono differenziatori commercia
 
 ### Core Sprint!
 **Cos'è:** Workshop strategico di 2 giorni per produrre l'**Ipotesi Core** condivisa — la scommessa centrale su cui costruire il progetto — insieme a una mappa di differenziazione competitiva e a una scala di priorità per i 6-12 mesi successivi. Allinea stakeholder spesso in conflitto prima che il budget venga investito.
-**Durata:** 2 giorni di workshop + consolidamento dei deliverable nei 5 giorni lavorativi successivi
+**Durata:** 2 giorni di workshop con il cliente + 2 giorni di lavoro Domino sui deliverable; dossier consegnato entro 5 giorni lavorativi
 **Output:** dossier ~10-15 pagine + poster A3 con sette deliverable: Ipotesi Core, mappa di differenziazione competitiva, mappa delle priorità, mappa stakeholder, trade-off considerati, prossimi passi, poster di sintesi.
 **Quando usarlo:** Quando il cliente non ha chiarezza su dove intervenire, o quando ci sono visioni divergenti tra reparti e direzione. Quasi sempre il primo passo giusto prima di un Design Sprint! o di un progetto più ampio.
 **Prezzo:** €6.000
 
 ### Design Sprint!
-**Cos'è:** Processo intensivo di 4-5 giorni (derivato dal metodo Google Ventures) per progettare e testare una soluzione con utenti reali prima di investire nello sviluppo completo. Comprime mesi di lavoro in una settimana.
-**Durata:** 4-5 giorni
-**Output:** Prototipo testato con utenti reali, decisioni d'investimento fondate su evidenze — non su opinioni interne
+**Cos'è:** Processo intensivo di 4 giorni (derivato dal metodo Google Ventures) per progettare una soluzione e portarla a prototipo prima di investire nello sviluppo completo: 2 giorni di workshop con il cliente, poi 2 giorni di lavoro Domino. Comprime mesi di lavoro in una settimana.
+**Durata:** 4 giorni — 2 di workshop con il cliente + 2 di lavoro Domino sul prototipo
+**Output:** Prototipo pronto da testare con utenti reali (il test, opzionale, si fa dopo lo Sprint!); decisioni d'investimento fondate su evidenze — non su opinioni interne
 **Quando usarlo:** Quando la direzione è chiara ma si vuole validare la soluzione prima di investire. Ideale dopo un Core Sprint! o quando il brief è già definito.
 **Prezzo:** €10.000
 **Variante di punta 2026:** **Brain & Identity Design Sprint!** — progetta le fondamenta del cliente: il *brain aziendale* (conoscenza interrogabile via AI) e il *design system*. *"Il brain governa cosa si sa, il design system governa come si appare."* Scheda completa in [03_domino_metodi.md](03_domino_metodi.md).

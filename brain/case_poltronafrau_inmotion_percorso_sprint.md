@@ -28,13 +28,13 @@ Avremmo potuto attaccare direttamente la progettazione del sito. Ma un sito B2B 
 
 ### Core Sprint! — vertice strategico
 
-**Tavolo:** Direttore Generale (decisore designato), Direzione Sales, CTO, CMO. Format canonico Domino: due giorni in plenaria, cinque giorni di consolidamento.
+**Tavolo:** Direttore Generale (decisore designato), Direzione Sales, CTO, CMO. Format canonico Domino: due giorni in plenaria, due giorni di lavoro Domino sui deliverable.
 
 **Cosa è stato prodotto:** un'**Ipotesi Core** completa con i cinque slot compilati — cliente target identificato come archetipo di produttore mobility a volumi limitati e alto contenuto custom; tre problemi prioritari del cliente target, formulati in modo specifico e ordinato; soluzione Poltrona Frau In Motion descritta come *sistema*, non come prodotto né come singola lavorazione; competitor primari individuati lungo due famiglie (player diretti e sostituti interni dei clienti); leva di differenziazione chiave riconosciuta e definita. Una **mappa di differenziazione competitiva** su due assi che colloca Poltrona Frau In Motion in una posizione difendibile rispetto al panorama dei Tier 1 della filiera. Un **manifesto** in tre principi che traduce la differenziazione in linguaggio comunicabile internamente. *(Mappa e manifesto restano output riservati al cliente.)*
 
 ### Design Sprint! — aree operative
 
-**Tavolo allargato:** vertice strategico (gli stessi del Core) + responsabili di area di mercato (nautica, aviation, automotive) + uno specialista di design, uno di prodotto, uno di storia aziendale. Format canonico Domino: quattro giorni.
+**Tavolo allargato:** vertice strategico (gli stessi del Core) + responsabili di area di mercato (nautica, aviation, automotive) + uno specialista di design, uno di prodotto, uno di storia aziendale. Format canonico Domino: due giorni con il cliente, due di lavoro Domino.
 
 **Cosa è stato prototipato:** **tre buyer personas** votate dal tavolo come prioritarie per la prima release del sito — il Chief Procurement Officer di un OEM automotive, il Chief Technology Officer di un OEM automotive, una Designer del settore aviation. Per ognuna, l'analisi completa: obiettivi, sfide, sequenza decisionale awareness → consideration → decision, e solution sketch con le risposte concrete che Poltrona Frau In Motion porta alle loro domande. **Prototipo del sito** B2B, testato con utenti reali nel formato Domino del Design Sprint!. Decisione architetturale presa al tavolo: il sito B2B non eredita la struttura del sito B2C Poltrona Frau — sono due mondi che devono parlare due lingue diverse.
 

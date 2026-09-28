@@ -11,8 +11,8 @@ Vista sintetica del catalogo Domino al 2026. Le schede di dettaglio sono nelle s
 
 | # | Prodotto | Atto | Domanda a cui risponde | Durata | Prezzo | Stato |
 |---|---|---|---|---|---|---|
-| 1 | **Core Sprint!** | Capiamo | "Stiamo lavorando sul problema giusto?" | 2 giorni | €6.000 | **Novità 2026** |
-| 2 | **Design Sprint!** | Progettiamo | "Questa soluzione funziona davvero?" | 4 giorni | €10.000 | Storico (10+ anni in Italia). Sei specializzazioni: Service · CX · Brand · Digital Marketing · Website · Intranet |
+| 1 | **Core Sprint!** | Capiamo | "Stiamo lavorando sul problema giusto?" | 2 giorni con il cliente + 2 di lavoro Domino | €6.000 | **Novità 2026** |
+| 2 | **Design Sprint!** | Progettiamo | "Questa soluzione funziona davvero?" | 4 giorni: 2 con il cliente + 2 di lavoro Domino | €10.000 | Storico (10+ anni in Italia). Sei specializzazioni: Service · CX · Brand · Digital Marketing · Website · Intranet |
 | 3 | **Brain & Identity Design Sprint!** *(variante Design Sprint!)* | Progettiamo | "Su quali fondamenta costruiamo?" | Sprint format | Sprint format + Brain + Design System | **Novità 2026 — prodotto di punta** |
 | 3.bis | **Starter Kit** *(specializzazioni tattiche del Brain & Identity Design Sprint!)* — Sales · Internal Comms · CX Manager | Progettiamo | "Da quale dominio funzionale partiamo, in 4 settimane, senza IT?" | 4 settimane | Su richiesta | **Novità 2026** *(scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md))* |
 | 4 | **Build Sprint!** | Costruiamo | "Come lo costruiamo davvero?" | 8–52 settimane (blocchi di 2 sett. o 1 mese) | €20.000–60.000 | Sostituisce la voce storica "Progetto completo" |
@@ -22,7 +22,7 @@ Vista sintetica del catalogo Domino al 2026. Le schede di dettaglio sono nelle s
 **Il percorso a quattro Sprint! — capiamo, progettiamo, costruiamo, facciamo funzionare:**
 ```
 Core Sprint! → Design Sprint! → Build Sprint! → Trainstorming!
-    2 giorni       4 giorni       8–52 settimane     12 mesi
+   2+2 giorni     2+2 giorni     8–52 settimane     12 mesi
    capiamo       progettiamo       costruiamo      facciamo funzionare
 ```
 Avere gli strumenti per ciascuno dei quattro verbi *(capire,progettare,  costruire, far funzionare)* è ciò che ci distingue.
@@ -81,7 +81,7 @@ Design Sprint! e Build Sprint! sono il secondo e terzo tempo del percorso, una v
 **La formula dell'Ipotesi Core:**
 > "Se aiutiamo **[cliente target]** a risolvere **[problema specifico]** con **[nostra soluzione]**, allora sceglieranno la nostra soluzione al posto di **[concorrenza]** perché la nostra soluzione è **[differenziazione chiave]**."
 
-**Durata:** 2 giorni di workshop + consolidamento dei deliverable nei 5 giorni lavorativi successivi.
+**Durata:** 2 giorni di workshop con il cliente + 2 giorni di lavoro Domino sui deliverable; dossier consegnato entro 5 giorni lavorativi dalla chiusura del workshop.
 **Prezzo:** €6.000
 
 **Cosa consegniamo (7 deliverable, dossier ~10-15 pagine + poster A3, entro 5 giorni dalla chiusura):**
@@ -118,13 +118,13 @@ Core Sprint! → [Ipotesi Core] → Design Sprint! → Design Sprint! → ... �
 
 ## 2. Design Sprint! *(pionieri in Italia da 10+ anni)*
 
-**Cos'è:** La metodologia di **Google Ventures** per trasformare problemi di business complessi in prototipi testati in tempi rapidissimi. Domino è tra i primi e più esperti in Italia ad averla adottata e adattata.
+**Cos'è:** La metodologia di **Google Ventures** per trasformare problemi di business complessi in prototipi, pronti da testare, in tempi rapidissimi. Domino è tra i primi e più esperti in Italia ad averla adottata e adattata.
 
 **La domanda a cui risponde:** *"Questa soluzione funziona davvero?"*
 
-**Output:** Prototipo testato con utenti reali — una soluzione concreta e validata prima di avviare il **Build Sprint!** per la realizzazione.
+**Output:** Prototipo pronto da testare con utenti reali — una soluzione concreta da validare prima di avviare il **Build Sprint!** per la realizzazione.
 
-**Durata:** 4 giorni (versioni estese: 1 settimana)
+**Durata:** 4 giorni — 2 di workshop con il cliente + 2 di lavoro Domino sul prototipo (versioni estese: 1 settimana). Il test con utenti reali, opzionale, si fa dopo lo Sprint!
 **Prezzo:** €10.000
 
 **Presupposto:** Il Design Sprint! funziona meglio quando la direzione strategica è già chiara. Se non lo è, il Core Sprint! viene prima.
@@ -132,9 +132,9 @@ Core Sprint! → [Ipotesi Core] → Design Sprint! → Design Sprint! → ... �
 **Connessione I5.0 — Decision Design:** Il Design Sprint! opera su due piani contemporaneamente. Sul piano **di Team** progetta la stanza in cui il gruppo decide insieme: facilitazione visiva, divergenza/convergenza disciplinate, ruoli espliciti. Sul piano **di Prodotto** progetta l'architettura di scelta del prototipo: come l'utente finale sceglierà davanti all'artefatto — defaults, friction, reference points. Ogni sprint produce trade-off visibili, scenari comparabili, conseguenze tangibili — esattamente quello che serve per decidere in contesti complessi.
 
 **Il format standard:**
-- **4 giorni** (o 1 settimana nelle versioni estese)
-- **1 team unito** — cliente + Domino in full-immersion
-- **1 risultato tangibile** — prototipo testato con utenti reali
+- **4 giorni**: 2 di workshop con il cliente + 2 di lavoro Domino (o 1 settimana nelle versioni estese)
+- **1 team unito** — cliente + Domino in full-immersion nei 2 giorni di workshop
+- **1 risultato tangibile** — prototipo pronto da testare con utenti reali subito dopo lo Sprint!
 - **100% clienti soddisfatti** (dato dichiarato ufficialmente)
 
 **Cosa si progetta:**
@@ -145,7 +145,7 @@ Core Sprint! → [Ipotesi Core] → Design Sprint! → Design Sprint! → ... �
 
 **Vantaggi per il cliente:**
 - Riduzione drastica del rischio di investimento
-- Decisioni basate su test con utenti reali, non su opinioni interne
+- Decisioni basate su test con utenti reali (dopo lo Sprint!), non su opinioni interne
 - Allineamento immediato tra tutti gli stakeholder
 - In 4 giorni si ottiene ciò che normalmente richiederebbe mesi di riunioni e briefing
 
@@ -156,7 +156,7 @@ Core Sprint! → [Ipotesi Core] → Design Sprint! → Design Sprint! → ... �
 - **Digital Marketing Design Sprint!** — campagne mirate di brand awareness o lead gen
 - **Website Design Sprint!** — progettazione e test di siti web o app
 - **Intranet Design Sprint!** — progettazione e test di strumenti collaborativi
-- **Brain & Identity Design Sprint!** *(prodotto di punta 2026)* — progettazione e prototipazione delle architetture *foundation* dell'azienda: il **brain aziendale** (conoscenza strutturata e interrogabile via AI per supportare le decisioni) e/o l'**identity / design system** (libreria di componenti UI, design token, pattern, linee guida). I due layer su cui poggiano tutti i prodotti digitali successivi: il brain governa *cosa si sa*, il design system governa *come si appare*. Sono *foundation*, non progetti — vivono nel tempo e crescono. Output dello Sprint: MVP testato con utenti reali (per il brain: 3-5 nodi pilota + interfaccia di interrogazione; per il design system: componenti core + libreria Figma + starter kit di codice), più una roadmap di crescita e governance. Domino ha costruito il proprio brain su sé stessa prima di proporlo ai clienti. *Vedi scheda dedicata sotto.*
+- **Brain & Identity Design Sprint!** *(prodotto di punta 2026)* — progettazione e prototipazione delle architetture *foundation* dell'azienda: il **brain aziendale** (conoscenza strutturata e interrogabile via AI per supportare le decisioni) e/o l'**identity / design system** (libreria di componenti UI, design token, pattern, linee guida). I due layer su cui poggiano tutti i prodotti digitali successivi: il brain governa *cosa si sa*, il design system governa *come si appare*. Sono *foundation*, non progetti — vivono nel tempo e crescono. Output dello Sprint: MVP pronto da testare con utenti reali dopo lo Sprint! (per il brain: 3-5 nodi pilota + interfaccia di interrogazione; per il design system: componenti core + libreria Figma + starter kit di codice), più una roadmap di crescita e governance. Domino ha costruito il proprio brain su sé stessa prima di proporlo ai clienti. *Vedi scheda dedicata sotto.*
 
 **Quando proporlo:**
 - Quando la direzione è chiara ma il cliente esita a investire senza validazione
@@ -190,7 +190,7 @@ Variante del Design Sprint! che merita una scheda dedicata: è il prodotto su cu
 **Output dello Sprint:**
 - Per il **brain**: 3-5 nodi pilota + interfaccia di interrogazione + roadmap di crescita e governance.
 - Per il **design system**: componenti core + libreria Figma + starter kit di codice + linee guida.
-- In entrambi i casi: MVP testato con utenti reali (interni cliente o end-user), più un piano di alimentazione continua.
+- In entrambi i casi: MVP pronto da testare con utenti reali (interni cliente o end-user) dopo lo Sprint!, più un piano di alimentazione continua.
 
 **Quando proporlo:**
 - "Vogliamo un brain aziendale interrogabile via AI per supportare le decisioni."
@@ -296,8 +296,8 @@ Sono strumenti **sequenziali e complementari**, non alternativi. Rispondono a do
 | | Core Sprint! | Design Sprint! |
 |---|---|---|
 | **Domanda** | Stiamo lavorando sul problema giusto? | Questa soluzione funziona? |
-| **Output** | Ipotesi Core condivisa + mappa di differenziazione + scala di priorità | Prototipo testato con utenti reali |
-| **Durata** | 2 giorni (+ 5 giorni di consolidamento) | 4 giorni |
+| **Output** | Ipotesi Core condivisa + mappa di differenziazione + scala di priorità | Prototipo pronto da testare con utenti reali |
+| **Durata** | 2 giorni con il cliente + 2 di lavoro Domino (dossier entro 5 giorni lavorativi) | 2 giorni con il cliente + 2 di lavoro Domino |
 | **Prezzo** | €6.000 | €10.000 |
 | **Focus** | Allineamento strategico | Validazione della soluzione |
 | **Presupposto** | Nessuno — è il punto di partenza | Direzione già sufficientemente chiara |
@@ -447,9 +447,9 @@ Programma totale: 12 mesi, una sessione ogni 4.
 
 | | Core Sprint! | Design Sprint! | Build Sprint! | Trainstorming! |
 |---|---|---|---|---|
-| **Durata** | 2 giorni (+ 5 giorni consolidamento) | 4 giorni | 8–52 settimane (blocchi 2 sett. / 1 mese) | 12 mesi (3 sessioni, una ogni 4) |
+| **Durata** | 2 + 2 giorni (dossier entro 5 giorni lavorativi) | 2 + 2 giorni | 8–52 settimane (blocchi 2 sett. / 1 mese) | 12 mesi (3 sessioni, una ogni 4) |
 | **Prezzo** | €6.000 | €10.000 | €20.000–60.000 | a partire da €15.000 |
-| **Output** | Ipotesi Core + mappa differenziazione + scala priorità | Prototipo testato | Soluzione realizzata e funzionante | Roadmap + implementazione avviata |
+| **Output** | Ipotesi Core + mappa differenziazione + scala priorità | Prototipo pronto da testare | Soluzione realizzata e funzionante | Roadmap + implementazione avviata |
 | **Focus** | Allineamento strategico | Validazione soluzione | Costruzione | Cambiamento culturale/organizzativo |
 | **Quando** | Prima di un progetto | Prima di investire | Dopo la validazione | Per gestire una transizione |
 

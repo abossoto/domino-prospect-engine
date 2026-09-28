@@ -35,7 +35,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 
 - **Niente lavoro gratuito per i prospect bottom-up.** Il primo passo è sempre a pagamento (audit €1.500, Core Sprint! €6K o Design Sprint! €10K).
 - **Workshop gratuito (2h) solo per grandi clienti in approccio top-down.** Non è un servizio autonomo: apre il percorso verso un Core Sprint! a pagamento. Si usa solo quando il deal potenziale giustifica l'investimento.
-- **Il Design Sprint! (€10K) è il principale entry product** per avviare una collaborazione: budget fisso, risultato tangibile in 4 giorni (prototipo testato), bassa frizione decisionale.
+- **Il Design Sprint! (€10K) è il principale entry product** per avviare una collaborazione: budget fisso, risultato tangibile in 4 giorni (prototipo pronto da testare), bassa frizione decisionale.
 - **Non proporre mai Core Sprint! e Design Sprint! come "alternativa economica" l'uno dell'altro.** Sono strumenti diversi per situazioni diverse.
 
 ---
@@ -60,7 +60,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 **Come entrare:**
 - Audit SEO/GEO (€1.500) → fotografia oggettiva del gap con benchmark settoriale
 - Core Sprint! (€6.000) → se stakeholder divisi su cosa fare o direzione non chiara
-- Design Sprint! (€10.000) → se la direzione è chiara, prototipo del nuovo sito testato con buyer reali in 4 giorni
+- Design Sprint! (€10.000) → se la direzione è chiara, prototipo del nuovo sito in 4 giorni, da testare poi con buyer reali
 
 **[Proof point](04_domino_case_history.md):**
 - Demak: +54% lead gen, +48% traffico organico, +20% clic non-brand
@@ -97,7 +97,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 **Come entrare:**
 - CX Audit (€1.500) → mappatura del buyer journey attuale, evidenzia il collo di bottiglia
 - Core Sprint! (€6.000) → se non è chiaro quale tool costruire (selector? configuratore? chatbot?): allinea sales, marketing e prodotto
-- Design Sprint! (€10.000) → se il tool è identificato: prototipo testato con buyer reali prima dello sviluppo completo
+- Design Sprint! (€10.000) → se il tool è identificato: prototipo in 4 giorni, da testare poi con buyer reali prima dello sviluppo completo
 
 **[Proof point](04_domino_case_history.md):**
 - IVECO: TCO Calculator per fleet manager + configuratore AI per individuare prodotto/allestimento
@@ -129,7 +129,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 **Come entrare:**
 - Digital Marketing Audit (€1.500) → fotografia oggettiva di cosa ha ereditato il nuovo responsabile: campagne, budget, performance, qualità lead
 - Core Sprint! (€6.000) → se c'è confusione su priorità o visioni diverse tra reparti: ottimo primo atto per il nuovo responsabile che deve riordinare le idee
-- Design Sprint! (€10.000) → se ha già le idee chiare: risultato concreto in 4 giorni, porta subito un prototipo validato alla direzione
+- Design Sprint! (€10.000) → se ha già le idee chiare: risultato concreto in 4 giorni, porta subito un prototipo alla direzione, da validare con utenti reali
 
 **[Proof point](04_domino_case_history.md):**
 - 20+ clienti B2B industriale attivi (Danieli, COMAU, Bitron, Rollon, Megadyne, Demak, Frascold…)
@@ -162,7 +162,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 **Come entrare:**
 - Workshop gratuito 2h (solo grandi clienti) → non è un servizio autonomo, apre il percorso verso Core Sprint!
 - Core Sprint! (€6.000) → primo passo quasi sempre necessario: l'ipotesi core sblocca la paralisi strategica e allinea tutti gli stakeholder
-- Design Sprint! (€10.000) → dopo il Core Sprint!, quando la direzione è condivisa: prototipo testato che giustifica l'investimento nel **Build Sprint!**
+- Design Sprint! (€10.000) → dopo il Core Sprint!, quando la direzione è condivisa: prototipo, da testare dopo lo Sprint!, che giustifica l'investimento nel **Build Sprint!**
 
 **[Proof point](04_domino_case_history.md):**
 - 100% clienti soddisfatti Design Sprint!

@@ -68,7 +68,7 @@ Quando si parla di PE in contesto finance, il cross-reference con Costa Crociere
 **Come convertire il referral:**
 - Demo PE su caso Arca (primo incontro) → si mostra la piattaforma in funzione su un caso finanziario reale. Il collocatore che genera, personalizza e traccia la proposta. Niente pitch — si vede il prodotto
 - Core Sprint! (€6.000) → se rete, marketing e compliance hanno priorità diverse: allinea tutti sull'ipotesi core
-- Design Sprint! (€10.000) → prototipo del PE personalizzato per il loro prodotto/rete, testato con collocatori reali in 4 giorni
+- Design Sprint! (€10.000) → prototipo del PE personalizzato per il loro prodotto/rete in 4 giorni, da testare poi con collocatori reali
 
 **[Proof point](04_domino_case_history.md):**
 - Arca SGR — Advisory Assistant (Preventivo Emozionale verticalizzato per distribuzione finanziaria)
@@ -140,7 +140,7 @@ Quando si parla di PE in contesto finance, il cross-reference con Costa Crociere
 **Come convertire il referral:**
 - Presentazione capabilities istituzionali (primo incontro) → focus su Compagnia di San Paolo, Exor. Tono consulenziale e autorevole, non commerciale. Ascolto prioritario sul pitch
 - Core Sprint! (€6.000) → quasi sempre il passo giusto: bilancia identità istituzionale, pubblici diversi e obiettivi di comunicazione
-- Design Sprint! (€10.000) → prototipo del sito istituzionale o del report di impatto testato con pubblici reali in 4 giorni
+- Design Sprint! (€10.000) → prototipo del sito istituzionale o del report di impatto in 4 giorni, da testare poi con pubblici reali
 
 **[Proof point](04_domino_case_history.md):**
 - Compagnia di San Paolo
@@ -214,7 +214,7 @@ Quando si parla di PE in contesto finance, il cross-reference con Costa Crociere
 **Come convertire il referral:**
 - Nota procurement PA → il referral apre porte ma raramente bypassa le gare. Usare il Core Sprint! come co-progettazione pre-gara: orienta il capitolato prima che venga scritto
 - Core Sprint! (€6.000) → allinea decisori politici, tecnici e comunicazione sull'ipotesi core. Può anticipare e orientare la scrittura del capitolato
-- Design Sprint! (€10.000) → prototipo del portale o servizio testato con cittadini reali in 4 giorni. Produce un deliverable concreto anche prima della gara — dimostra la capacità esecutiva
+- Design Sprint! (€10.000) → prototipo del portale o servizio in 4 giorni, da testare poi con cittadini reali. Produce un deliverable concreto anche prima della gara — dimostra la capacità esecutiva
 
 **[Proof point](04_domino_case_history.md):**
 - Regione del Veneto

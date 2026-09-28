@@ -57,7 +57,7 @@ In sanità e beauty la **fiducia è il valore principale** — non si scala con 
 **Come entrare:**
 - CX Audit (€1.500) → mappatura del percorso paziente digitale: dove si perde, dove atterra su pagine inutili, dove abbandona. Report con priorità di intervento
 - Core Sprint! (€6.000) → se stakeholder interni divisi (marketing, medici, IT, direzione): allinea tutti su quali pazienti, quale percorso, quale priorità digitale
-- Design Sprint! (€10.000) → se la direzione è chiara: prototipo del nuovo percorso paziente testato con utenti reali in 4 giorni, prima di investire nello sviluppo completo
+- Design Sprint! (€10.000) → se la direzione è chiara: prototipo del nuovo percorso paziente in 4 giorni, da testare poi con utenti reali, prima di investire nello sviluppo completo
 
 **[Proof point](04_domino_case_history.md):**
 - Affidea Italia — CX digitale vicina all'utente
@@ -65,7 +65,7 @@ In sanità e beauty la **fiducia è il valore principale** — non si scala con 
 - Ospedale dell'Angelo (Venezia-Mestre) — eccellenza sanitaria nel digitale
 
 **Vs competitor:**
-- Vs agenzia healthcare: il Design Sprint! porta un prototipo testato con pazienti reali in 4 giorni — non un progetto da 6 mesi al buio
+- Vs agenzia healthcare: il Design Sprint! porta un prototipo in 4 giorni, da testare poi con pazienti reali — non un progetto da 6 mesi al buio
 - Vs web agency: conoscenza del percorso paziente e dei vincoli del settore
 
 **CTA:** CX Audit paziente (€1.500) — mappatura del percorso digitale attuale con benchmark su strutture simili. Risultato in 1–2 settimane.
@@ -92,7 +92,7 @@ In sanità e beauty la **fiducia è il valore principale** — non si scala con 
 **Come entrare:**
 - SEO/GEO Audit (€1.500) → confronto diretto con i competitor locali: chi viene citato dall'AI nelle query di salute rilevanti?
 - Workshop gratuito 2h (solo per grandi strutture) → apre il percorso verso Core Sprint!
-- Design Sprint! (€10.000) → prototipo del nuovo sito e della nuova narrazione, testato con pazienti reali in 4 giorni
+- Design Sprint! (€10.000) → prototipo del nuovo sito e della nuova narrazione in 4 giorni, da testare poi con pazienti reali
 
 **[Proof point](04_domino_case_history.md):**
 - Ospedale dell'Angelo — promuovere l'eccellenza sanitaria nel digitale
@@ -101,7 +101,7 @@ In sanità e beauty la **fiducia è il valore principale** — non si scala con 
 
 **Vs competitor:**
 - Vs web agency generalista: Domino conosce i vincoli normativi della comunicazione sanitaria
-- Vs agenzia healthcare: Design Sprint! porta prototipo in 4 giorni con pazienti reali — non solo strategia
+- Vs agenzia healthcare: Design Sprint! porta un prototipo in 4 giorni, pronto da testare con pazienti reali — non solo strategia
 
 **CTA:** Case Ospedale dell'Angelo o Affidea come apertura + SEO/GEO Audit (€1.500) per vedere come la struttura è percepita online rispetto ai competitor locali.
 
@@ -130,7 +130,7 @@ In sanità e beauty la **fiducia è il valore principale** — non si scala con 
 **Come entrare:**
 - CX Audit (€1.500) → mappatura del journey del cliente beauty: touchpoint attivi, dove si perde la relazione, dove il brand scompare dopo l'acquisto
 - Core Sprint! (€6.000) → se marketing, digital e brand hanno visioni diverse: ipotesi core su chi è il cliente e quale relazione costruire
-- Design Sprint! (€10.000) → prototipo della nuova CX testato con clienti reali in 4 giorni: sito, journey, contenuti
+- Design Sprint! (€10.000) → prototipo della nuova CX in 4 giorni, da testare poi con clienti reali: sito, journey, contenuti
 
 **[Proof point](04_domino_case_history.md):**
 - Lierac (Ales Group) — "il cliente viene prima del prodotto": strategia CX per brand beauty premium
@@ -202,7 +202,7 @@ In sanità e beauty la **fiducia è il valore principale** — non si scala con 
 **Come entrare:**
 - Workshop gratuito 2h (solo per grandi strutture) → apre il percorso verso Core Sprint! Non autonomo
 - Core Sprint! (€6.000) → quasi sempre necessario: allinea HR, IT, comunicazione e direzione su quali profili dipendente, quale portale, quali contenuti prioritari
-- Design Sprint! (€10.000) → dopo il Core Sprint!: prototipo del portale testato con dipendenti reali (medici, infermieri, amministrativi) in 4 giorni
+- Design Sprint! (€10.000) → dopo il Core Sprint!: prototipo del portale in 4 giorni, da testare poi con dipendenti reali (medici, infermieri, amministrativi)
 - **Trainstorming!** (da €15.000, 12 mesi · 3 sessioni) → quando la trigger è **fusione/acquisizione** o riorganizzazione: lanciare un portale non basta, serve accompagnamento al cambiamento culturale. Il Trainstorming! è il pezzo che fa funzionare l'adozione nel tempo, finché il nuovo modo di comunicare smette di dover essere difeso.
 
 **[Proof point](04_domino_case_history.md):**
@@ -212,7 +212,7 @@ In sanità e beauty la **fiducia è il valore principale** — non si scala con 
 
 **Vs competitor:**
 - Vs web agency: esperienza su employee portal complessi con migliaia di utenti eterogenei
-- Vs agenzia healthcare: metodo Design Sprint! porta prototipo testato con dipendenti reali in 4 giorni
+- Vs agenzia healthcare: metodo Design Sprint! porta prototipo in 4 giorni, da testare poi con dipendenti reali
 
 **CTA:** Case IPI o Stellantis Employee Portal come apertura + per grandi strutture: workshop gratuito 2h → Core Sprint! (€6K).
 

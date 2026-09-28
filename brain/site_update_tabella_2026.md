@@ -71,7 +71,7 @@
 
 | Cosa | Dove aggiornare | Tipo | Priorità | Perché |
 |---|---|---|---|---|
-| **Nuova pagina prodotto** Core Sprint! | URL dedicato (es. `/core-sprint`) | Nuova | 🔴 | Workshop 2 giorni + 5 di consolidamento, €6.000, output Ipotesi Core + 7 deliverable. È quasi sempre il *primo passo* della scala commerciale: serve una landing per inbound e per i link diretti dei pitch. Brain: `core_sprint_scheda_prodotto` + `03_metodi`. |
+| **Nuova pagina prodotto** Core Sprint! | URL dedicato (es. `/core-sprint`) | Nuova | 🔴 | 2 giorni di workshop con il cliente + 2 di lavoro Domino, €6.000, output Ipotesi Core + 7 deliverable. È quasi sempre il *primo passo* della scala commerciale: serve una landing per inbound e per i link diretti dei pitch. Brain: `core_sprint_scheda_prodotto` + `03_metodi`. |
 
 ---
 

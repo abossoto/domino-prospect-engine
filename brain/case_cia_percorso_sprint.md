@@ -30,19 +30,19 @@ L'architettura scelta — un Core Sprint! con il nazionale e due Design Sprint! 
 
 ### Core Sprint! — livello nazionale
 
-**Tavolo:** CMO, CIO, responsabili delle tre aree di servizio (cittadini, imprese, servizi finanziari). Decisore designato: il Direttore Generale. Sei-otto persone, formato canonico Domino: due giorni in plenaria, cinque giorni di consolidamento.
+**Tavolo:** CMO, CIO, responsabili delle tre aree di servizio (cittadini, imprese, servizi finanziari). Decisore designato: il Direttore Generale. Sei-otto persone, formato canonico Domino: due giorni in plenaria, due giorni di lavoro Domino sui deliverable.
 
 **Cosa è stato deciso:** un'Ipotesi Core su CIA come partner di crescita per la micro e piccola impresa agricola e per il cittadino delle aree interne, contro tre famiglie di concorrenti (i giganti come Coldiretti, i consulenti commercialisti, la P.A. e le app DIY); tre assi di forza riconosciuti come fondamenta — prossimità capillare, autorevolezza storica, servizi digitali smart; quattro priorità di intervento ordinate — branding e trasparenza, riorganizzazione digitale, skill enhancement, nuova leadership; un manifesto con missione, visione, otto valori; un prodotto-bandiera digitale destinato a fare da ponte tra il livello nazionale e le sedi locali, denominato CIAO CIA.
 
 ### Design Sprint! — area Cittadini
 
-**Tavolo:** responsabile area cittadini + primi livelli della sua organizzazione. Format canonico, quattro giorni.
+**Tavolo:** responsabile area cittadini + primi livelli della sua organizzazione. Format canonico: due giorni con il cliente, due di lavoro Domino.
 
 **Cosa è stato prototipato:** il percorso digitale del cittadino-utente sui servizi CAF e Patronato — pensioni, infortuni, diritti sociali, assistenza fiscale. Logica di "zero frizione": prenotazione online, vocali su WhatsApp, continuità tra app e sportello, copilota multicanale che ricorda scadenze e prepara bozze. Prototipo testato direttamente nel formato Domino del Design Sprint!.
 
 ### Design Sprint! — area Imprese
 
-**Tavolo:** responsabile area imprese + primi livelli della sua organizzazione. Format canonico, quattro giorni.
+**Tavolo:** responsabile area imprese + primi livelli della sua organizzazione. Format canonico: due giorni con il cliente, due di lavoro Domino.
 
 **Cosa è stato prototipato:** il percorso digitale dell'agricoltore-imprenditore. Otto pacchetti commerciali pronti all'uso (La Bussola, Check-Up, Pacchetto PAC, Turismo Rurale, Comunità Energetiche, CIA Academy, Co-tutoring, Filiere Corte) con tempo-a-risultato dichiarato esplicitamente. Riposizionamento dei servizi: dalla lista frammentata di adempimenti tecnici a combinazioni concrete con un esito misurabile. Tracciamento dati e risultati come default, non come opzione.
 
