@@ -209,7 +209,7 @@ Tre **specializzazioni verticali** del Brain & Identity Design Sprint! pensate p
 
 **Scheda completa con tutti i dettagli operativi:** [starter_kit_brain_identity.md](starter_kit_brain_identity.md).
 
-**Format comune.** 4 settimane esatte: 3 giorni di workshop + 3 settimane di build (40-80 nodi canonici, web app SSO Microsoft o Google) + 1 settimana di QA. **Pricing su richiesta** — non comunicato pubblicamente in questa fase, condiviso solo all'interno della proposta. La logica resta: deve restare comprabile dal buyer di funzione col proprio budget.
+**Format comune.** 4 settimane esatte: 2 giorni di workshop con il cliente + 3 giorni di lavoro Domino + 3 settimane di build (40-80 nodi canonici, web app SSO Microsoft o Google) + 1 settimana di QA. **Pricing su richiesta** — non comunicato pubblicamente in questa fase, condiviso solo all'interno della proposta. La logica resta: deve restare comprabile dal buyer di funzione col proprio budget.
 
 **I tre Starter Kit in tabella:**
 

@@ -16,7 +16,7 @@ Uno Starter Kit è una **specializzazione tattica e verticale** del [Brain & Ide
 - Perimetro **singolo dominio** (non l'azienda intera).
 - **Nessuna integrazione IT**: niente connettori CRM, ERP, HRIS, contact center, intranet vive. Il brain risponde su quello che l'azienda *sa ufficialmente*, non su quello che *sta succedendo adesso*.
 - **Web app SSO** Microsoft o Google: nessuna app da approvare con l'IT, niente bot dentro Teams o Slack al primo passo.
-- **4 settimane esatte**: 3 giorni di workshop + 3 settimane di build + 1 settimana di QA con il team di funzione.
+- **4 settimane esatte**: 2 giorni di workshop con il cliente + 3 giorni di lavoro Domino, poi 3 settimane di build + 1 settimana di QA con il team di funzione.
 
 **Perché esistono.**
 1. **Velocità di partenza.** Un buyer di funzione (Sales Director, HR Director, CX Manager) compra col proprio budget senza dover passare da CIO o CdA. Frizione bassa, decisione veloce.
@@ -33,7 +33,7 @@ Uno Starter Kit è una **specializzazione tattica e verticale** del [Brain & Ide
 | Cosa | Dettaglio |
 |---|---|
 | **Durata totale** | 4 settimane |
-| **Settimana 0** | Workshop di 3 giorni in formato Brain & Identity Design Sprint! — definizione perimetro, mappa materiali, decisione di interfaccia e processo, 5-10 nodi pilota validati in plenaria |
+| **Settimana 0** | Workshop di 2 giorni con il cliente in formato Brain & Identity Design Sprint! + 3 giorni di lavoro Domino — definizione perimetro, mappa materiali, decisione di interfaccia e processo, 5-10 nodi pilota validati in plenaria |
 | **Settimane 1-3** | Build: ingestion canonica di 40-80 nodi (Word, PDF, Excel, pagine sito ufficiali), costruzione web app con SSO, test interni |
 | **Settimana 4** | QA con il buyer e 1-2 utenti chiave: validazione di un sottoinsieme di risposte, correzione nodi, go-live |
 | **Output** | Brain con 40-80 nodi curati · web app SSO interrogabile · piano di governance (chi aggiorna, ogni quanto, con quale workflow) · roadmap di crescita |
@@ -129,7 +129,7 @@ KPI secondario di supporto: tasso di adozione del brain nei primi 30 giorni di u
 | **KPI primari** | Tempo medio preparazione offerta | Riduzione richieste ripetitive HR · Time-to-productivity nuovo joiner | AHT (Average Handle Time) |
 | **Cosa entra nel brain** | Schede, listini, claim, case, battle card | Policy, benefit, glossario, valori, FAQ | Procedure casi, FAQ, escalation, script |
 | **Settori naturali** | B2B Industriale, Finance/PA, Automotive | Salute & Beauty, Finance/PA, B2B Industriale | Turismo & Cultura, Automotive, Salute & Beauty |
-| **Format** | 4 settimane (3 gg + 3 sett. + 1 sett. QA) | identico | identico |
+| **Format** | 4 settimane (2 gg + 3 gg Domino + 3 sett. + 1 sett. QA) | identico | identico |
 | **Pricing** | Su richiesta | Su richiesta | Su richiesta |
 | **Integrazioni IT** | Nessuna | Nessuna | Nessuna |
 

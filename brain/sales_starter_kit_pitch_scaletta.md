@@ -111,7 +111,7 @@
 **Take-away**: scope finito, perimetro chiaro, niente sorprese.
 
 **Contenuto**:
-- **Settimana 0 — workshop di 3 giorni** (formato Brain & Identity Design Sprint!): si decide cosa il brain deve sapere (perimetro: una linea di prodotto, un mercato), si fa una mappa dei materiali esistenti, si decide l'interfaccia (web app con SSO Microsoft o Google), si decide il processo di aggiornamento. Output: progettazione del brain + 5-10 nodi pilota validati in plenaria.
+- **Settimana 0 — workshop di 2 giorni con il cliente + 3 giorni di lavoro Domino** (formato Brain & Identity Design Sprint!): si decide cosa il brain deve sapere (perimetro: una linea di prodotto, un mercato), si fa una mappa dei materiali esistenti, si decide l'interfaccia (web app con SSO Microsoft o Google), si decide il processo di aggiornamento. Output: progettazione del brain + 5-10 nodi pilota validati in plenaria.
 - **Settimane 1-3 — costruzione**: ingestion canonica di 40-80 nodi (Word, PDF, Excel, pagine sito ufficiali). Costruzione web app con SSO. Test interni.
 - **Settimana 4 — QA con Sales Director e 1-2 venditori**: validazione di un sottoinsieme di risposte, correzione di nodi mancanti o sbagliati, go-live.
 - Il fatto importante: *"Niente integrazioni con CRM o sistemi vivi. Il brain risponde su quello che la vostra azienda sa ufficialmente, non su quello che sta succedendo adesso. Onesto e veloce — il resto viene dopo."*
@@ -145,7 +145,7 @@
 **Take-away**: il prossimo passo è basso commitment, definito, immediatamente comprabile.
 
 **Contenuto**:
-- **Investimento Sales Starter Kit**: investimento dedicato — quotato in proposta sulla base del perimetro definito al workshop. Workshop Brain & Identity Design Sprint! (3 giorni) + build del brain (3 settimane) + go-live. **In questa fase il pricing non viene comunicato a slide**: si dichiara *"vi mandiamo la proposta dedicata dopo il primo tavolo di lavoro"* e si rimanda al passo concreto sotto.
+- **Investimento Sales Starter Kit**: investimento dedicato — quotato in proposta sulla base del perimetro definito al workshop. Workshop Brain & Identity Design Sprint! (2 giorni con il cliente + 3 di lavoro Domino) + build del brain (3 settimane) + go-live. **In questa fase il pricing non viene comunicato a slide**: si dichiara *"vi mandiamo la proposta dedicata dopo il primo tavolo di lavoro"* e si rimanda al passo concreto sotto.
 - **Prima di impegnarsi**: un workshop di scoperta di 2 ore — analizziamo insieme i materiali commerciali esistenti, mappiamo il dolore reale del team Sales, vi diciamo se il Sales Starter Kit ha senso per voi. Gratuito per top-down su grandi clienti secondo regola Domino.
 - **Il passo concreto, oggi**: *"Vi mando una mail con due date la prossima settimana per il workshop di scoperta. Se preferite parlarne in altro modo, ditemelo adesso."*
 
