@@ -12,6 +12,7 @@ La mappatura è **retrospettivo-canonica**: rilegge case storici alla luce del c
 - **CIA — Confederazione Italiana Agricoltori** *(Core Sprint! + 2 Design Sprint! — documentato)*
 - **Poltrona Frau In Motion** *(Core Sprint! + Design Sprint! + Build Sprint! — documentato)*
 - **Links Foundation — Nuova Intranet** *(Design Sprint! + Agile — documentato)*
+- **Slow Food — Raccolta fondi** *(Core Sprint! — documentato)*
 - **Stellantis — Employee Portal** *(letto come "transition program" nella scheda I5.0 del Brain)*
 
 Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto. Utile come griglia di spiegazione metodi, da non spacciare in pitch come storico letterale del cliente specifico.
@@ -22,6 +23,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 
 - **CIA — Confederazione Italiana Agricoltori** → Core Sprint! · Design Sprint! ×2 *(documentato)*
 - **Poltrona Frau In Motion** → Core Sprint! · Design Sprint! · Build Sprint! *(documentato)*
+- **Slow Food — Raccolta fondi** → Core Sprint! *(documentato)*
 
 ---
 
@@ -90,6 +92,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 
 ## Turismo & Cultura
 
+- **Slow Food — Raccolta fondi** → Core Sprint! *(documentato)*
 - **Biennale di Venezia — Sito + eCommerce** → Design Sprint! (Website) · Build Sprint!
 - **Fondazione Torino Musei — Rete museale** → Design Sprint! (CX) · Build Sprint!
 - **Museo Nazionale del Cinema** → Build Sprint!

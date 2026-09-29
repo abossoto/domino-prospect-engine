@@ -1,5 +1,5 @@
 # DOMINO BRAIN — Case History
-> Versione 3.0 — Aprile 2026. Tutti i case documentati da sito, presentazioni e materiali ufficiali. Da usare per settore e tipo di progetto. Aggiornato con lettura I5.0 dei principali case (Trainstorming! aprile 2026).
+> Versione 3.0 — Aprile 2026. Tutti i case documentati da sito, presentazioni e materiali ufficiali. Da usare per settore e tipo di progetto. Aggiornato con lettura I5.0 dei principali case (Trainstorming! aprile 2026). Aggiunto Slow Food (Turismo & Cultura, Core Sprint!) il 29 settembre 2026.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 
@@ -198,6 +198,12 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 ---
 
 ## TURISMO & CULTURA
+
+### Slow Food — Core Sprint! sulla raccolta fondi *(2026)*
+**Progetto:** Core Sprint! con il gruppo raccolta fondi (24 agosto 2026, Castello di Verduno) su partner, problema, vantaggi, concorrenti e soluzioni. Tesi: il valore di Slow Food è intatto ma distribuito su troppi progetti; la direzione è ricomporli in poche partnership che un'azienda possa scegliere.
+**Output:** documento «Da progetti a partnership» per il Direttivo: diagnosi di mercato, tre mosse, decisioni con opzioni e raccomandazione, percorso successivo.
+**Citabilità:** nome sì; foto utilizzabili; documento di analisi riservato al Direttivo.
+**Scheda completa:** [case_slowfood_core_sprint.md](case_slowfood_core_sprint.md) · **Visual:** `assets_case_history/turismo_cultura/turismo_slowfood_coresprint_01–06.png`
 
 ### Biennale di Venezia — Sito + eCommerce
 **Progetto:** Nuova presenza digitale per la Biennale: sito istituzionale, eCommerce (biglietteria/shop), aree profilate.
