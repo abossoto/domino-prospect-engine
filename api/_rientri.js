@@ -279,6 +279,11 @@ async function trovaSuRocketReach(c) {
 
 const WEB_SYSTEM = `Sei un ricercatore commerciale. Devi scoprire dove lavora OGGI una persona che ha lasciato la sua azienda precedente, usando solo fonti pubbliche: profilo LinkedIn pubblico (via risultati di ricerca), news, comunicati stampa, pagine "team" dei siti aziendali, relatori di eventi.
 
+METODO:
+1. Prima cerca il profilo LinkedIn pubblico: query come "Nome Cognome" site:linkedin.com/in, poi "Nome Cognome" "azienda precedente" linkedin. Dal titolo e dall'anteprima del risultato (es. "Nome Cognome - Ruolo - Azienda | LinkedIn") prendi azienda e ruolo attuali. Quella e' la fonte principale per l'azienda.
+2. Se LinkedIn non basta o e' ambiguo, conferma con news, comunicati o pagine aziendali.
+3. Poi cerca dominio e formato email dell'azienda attuale.
+
 REGOLE:
 - MAI inventare. Se non trovi prove, rispondi trovato=false.
 - Attenzione agli omonimi: la persona giusta ha lavorato presso l'azienda precedente indicata, con un ruolo coerente.
@@ -286,7 +291,8 @@ REGOLE:
 - Formati ammessi per formato_email: nome.cognome, n.cognome, ncognome, nomecognome, nome_cognome, nome-cognome, cognome.nome, cognome.n, cognomen, nome, cognome.
 
 Rispondi SOLO con JSON puro:
-{"trovato":true,"nuova_azienda":"","dominio":"","ruolo":"","fonte_url":"https://...","confidenza":"alta|media|bassa","formato_email":"","esempio_formato":"","note":""}`;
+{"trovato":true,"nuova_azienda":"","dominio":"","ruolo":"","linkedin_url":"https://www.linkedin.com/in/...","fonte":"LinkedIn|Web","fonte_url":"https://...","confidenza":"alta|media|bassa","formato_email":"","esempio_formato":"","note":""}
+linkedin_url: solo l'URL del profilo della persona giusta, se trovato. fonte: "LinkedIn" se l'azienda attuale viene dal profilo LinkedIn, altrimenti "Web".`;
 
 async function trovaSulWeb(c, rrRes, scadenza) {
   const noto = rrRes?.azienda && !stessaAzienda(rrRes.azienda, c.aziendaVecchia.nome)
@@ -299,7 +305,7 @@ Azienda precedente: ${c.aziendaVecchia.nome || 'sconosciuta'}${c.aziendaVecchia.
 Ruolo precedente: ${c.ruolo || 'sconosciuto'}
 ${c.linkedin ? `LinkedIn salvato: ${c.linkedin}` : ''}${noto}
 
-Trova azienda attuale, dominio web, ruolo attuale e formato email dell'azienda attuale.`,
+${rrRes?.esito === 'trovato' ? '' : 'RocketReach non ha trovato questa persona: parti dal profilo LinkedIn pubblico.\n'}Trova azienda attuale, dominio web, ruolo attuale e formato email dell'azienda attuale.`,
   }];
   const tool = webSearchTool(8);
   let data = await callClaude({ system: WEB_SYSTEM, messages, tools: [tool], max_tokens: 4000, timeoutMs: 150000, scadenza });
@@ -314,6 +320,8 @@ Trova azienda attuale, dominio web, ruolo attuale e formato email dell'azienda a
       azienda: j.nuova_azienda || '',
       dominio: estraiDominio(j.dominio) || '',
       ruolo: j.ruolo || '',
+      linkedin: /linkedin\.com\/in\//i.test(j.linkedin_url || '') ? url(j.linkedin_url) : null,
+      fonte: j.fonte === 'LinkedIn' ? 'LinkedIn' : 'Web',
       fonte_url: url(j.fonte_url),
       confidenza: j.confidenza || 'bassa',
       formato_email: FORMATI[j.formato_email] ? j.formato_email : '',
@@ -384,7 +392,7 @@ export async function analizzaRientro(token, contactId, scadenza) {
   if (rrNuova) {
     trovato = { azienda: rrRes.azienda, dominio: rrRes.dominio || web?.dominio || '', ruolo: rrRes.ruolo, linkedin: rrRes.linkedin || c.linkedin, fonte: 'RocketReach', fonte_url: null, confidenza: 'alta' };
   } else if (web?.trovato && !stessaAzienda(web.azienda, c.aziendaVecchia.nome)) {
-    trovato = { azienda: web.azienda, dominio: web.dominio, ruolo: web.ruolo, linkedin: rrRes.linkedin || c.linkedin, fonte: 'Web', fonte_url: web.fonte_url, confidenza: web.confidenza };
+    trovato = { azienda: web.azienda, dominio: web.dominio, ruolo: web.ruolo, linkedin: rrRes.linkedin || web.linkedin || c.linkedin, fonte: web.fonte, fonte_url: web.fonte_url, confidenza: web.confidenza };
   }
 
   // Email: verificata aziendale > personale > ricostruita dal formato.

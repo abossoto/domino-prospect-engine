@@ -354,6 +354,9 @@ const OWNER_SCELTA = [
   { id:'7474862',  nome:'Emiliano Cianci' },
 ];
 
+const HUBSPOT_PORTAL = '1752790';
+const hubspotContatto = id => `https://app.hubspot.com/contacts/${HUBSPOT_PORTAL}/record/0-1/${id}`;
+
 // La firma e' l'ultima occorrenza del nome del mittente nel corpo.
 function cambiaFirma(corpo, vecchio, nuovo) {
   const i = vecchio ? corpo.lastIndexOf(vecchio) : -1;
@@ -514,7 +517,9 @@ function RientriPanel() {
             <div key={c.id} style={{ background:C.card,border:`1px solid ${st.fase==='analisi'?C.red:C.border}`,borderRadius:'12px',padding:'14px 16px' }}>
               <div style={{ display:'flex',gap:'12px',alignItems:'center' }}>
                 <div style={{ flex:1,minWidth:0 }}>
-                  <div style={{ fontSize:'14px',fontWeight:700,color:C.text }}>{c.nome}{c.gia_lavorato && <span style={{ fontSize:'10px',color:C.muted,marginLeft:'8px' }}>già lavorato</span>}</div>
+                  <div style={{ fontSize:'14px',fontWeight:700,color:C.text }}>{c.nome}
+                    <a href={hubspotContatto(c.id)} target="_blank" rel="noopener noreferrer" style={{ fontSize:'11px',fontWeight:600,color:'#ff7a59',textDecoration:'none',marginLeft:'8px' }}>HubSpot ↗</a>
+                    {c.gia_lavorato && <span style={{ fontSize:'10px',color:C.muted,marginLeft:'8px' }}>già lavorato</span>}</div>
                   <div style={{ fontSize:'11px',color:C.muted,marginTop:'2px' }}>
                     {[c.ruolo, c.azienda].filter(Boolean).join(' · ') || 'azienda non indicata'}
                     {' · '}<span style={{ textDecoration:'line-through' }}>{c.email}</span>
