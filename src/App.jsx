@@ -336,7 +336,7 @@ function ArchiveModal({ onClose, onLoad }) {
   );
 }
 
-// ─── Rientri: contatti in hard bounce che hanno cambiato lavoro ───────────────
+// ─── Ricontatto Hard bounce (internamente "rientri"): contatti in hard bounce ─
 // Un'analisi per volta (RocketReach + web + bozza richiedono 1-2 minuti a
 // contatto). Il salvataggio su HubSpot e' sempre un click esplicito: l'email
 // ricostruita va controllata prima.
@@ -450,7 +450,7 @@ function RientriPanel() {
   return (
     <>
       <Card style={{ marginBottom:'20px' }}>
-        <h1 style={{ margin:'0 0 4px',fontSize:'20px',fontWeight:800,letterSpacing:'-0.02em' }}>Rientri</h1>
+        <h1 style={{ margin:'0 0 4px',fontSize:'20px',fontWeight:800,letterSpacing:'-0.02em' }}>Ricontatto Hard bounce</h1>
         <p style={{ margin:'0 0 16px',color:C.muted,fontSize:'13px',lineHeight:1.55 }}>
           Contatti HubSpot con un motivo di hard bounce registrato ("Unknown user" è il segnale più forte di cambio lavoro).
           Per ognuno: nuova azienda da RocketReach e fonti web pubbliche, email, bozza di ricontatto firmata dal contact owner.
@@ -692,7 +692,7 @@ export default function App() {
       <div style={{ maxWidth:'920px',margin:'0 auto',padding:'28px 20px' }}>
         {/* Mode switcher */}
         <div style={{ display:'flex',gap:'6px',marginBottom:'20px' }}>
-          {[['lista','📋 Genera Lista Prospect'],['analizza','🔍 Analizza Prospect'],['rientri','🔁 Rientri']].map(([m,label]) => (
+          {[['lista','📋 Genera Lista Prospect'],['analizza','🔍 Analizza Prospect'],['rientri','🔁 Ricontatto Hard bounce']].map(([m,label]) => (
             <button key={m} onClick={() => setMode(m)} style={{ padding:'9px 20px',background:mode===m?C.red:C.card,color:mode===m?C.white:C.muted,border:`1px solid ${mode===m?C.red:C.border}`,borderRadius:'8px',cursor:'pointer',fontSize:'13px',fontWeight:mode===m?700:400,fontFamily:FONT,transition:'all 0.15s' }}>{label}</button>
           ))}
         </div>

@@ -1086,9 +1086,9 @@ Push lato server via `api/hubspot.js` (l'API HubSpot non accetta chiamate CORS d
 
 ---
 
-## 21-bis. RIENTRI — CONTATTI CHE HANNO CAMBIATO LAVORO
+## 21-bis. RICONTATTO HARD BOUNCE — CONTATTI CHE HANNO CAMBIATO LAVORO
 
-Terza modalità dell'app (`🔁 Rientri`). Parte dai contatti HubSpot con `hs_email_hard_bounce_reason_enum` valorizzato (filtro `HAS_PROPERTY`, "Email hard bounce reason is known", circa 400 contatti al 30/09/2026; massimo 1000 in lista). Il motivo viene restituito come `motivo_bounce` e mostrato in lista: `UNKNOWN_USER` (casella inesistente) è il segnale più forte di cambio lavoro.
+Terza modalità dell'app (`🔁 Ricontatto Hard bounce`; nel codice resta il nome interno "rientri": endpoint `/api/rientri-*`, `api/_rientri.js`, marcatore `[DOMINO-RIENTRO]`, che non va cambiato perché identifica i contatti già lavorati). Parte dai contatti HubSpot con `hs_email_hard_bounce_reason_enum` valorizzato (filtro `HAS_PROPERTY`, "Email hard bounce reason is known", circa 400 contatti al 30/09/2026; massimo 1000 in lista). Il motivo viene restituito come `motivo_bounce` e mostrato in lista: `UNKNOWN_USER` (casella inesistente) è il segnale più forte di cambio lavoro.
 
 **Endpoint** (logica in `api/_rientri.js`, client HubSpot condiviso in `api/_hubspot.js`):
 - `POST /api/rientri-lista` — elenco candidati con owner; marca `gia_lavorato` i contatti che hanno già una nota con `[DOMINO-RIENTRO]`. Solo lettura.

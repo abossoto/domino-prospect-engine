@@ -1,5 +1,5 @@
 // api/_hubspot.js
-// Client HubSpot condiviso da /api/hubspot e dalla funzione Rientri.
+// Client HubSpot condiviso da /api/hubspot e dalla funzione Ricontatto Hard bounce (rientri).
 // Tutte le chiamate girano lato server: l'API HubSpot non accetta CORS dal
 // browser e il token vive solo nelle env di Vercel.
 
