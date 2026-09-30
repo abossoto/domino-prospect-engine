@@ -345,10 +345,36 @@ const EMAIL_BADGE = {
   da_verificare: { bg:'rgba(245,158,11,0.12)', bd:'rgba(245,158,11,0.35)', tx:'#fcd34d' },
 };
 
-function RientroRisultato({ r, stato, onSalva }) {
-  const { trovato: t, email: e, mail: m, diagnostica: d } = r;
+// Contatti senza owner: il backend propone Flavio, qui si puo' scegliere tra
+// questi. Cambiare owner cambia anche la firma della bozza e l'assegnatario del task.
+const OWNER_SCELTA = [
+  { id:'12386493', nome:'Flavio Pedazzini' },
+  { id:'6624973',  nome:'Andrea Bosso' },
+  { id:'6828683',  nome:'Giovanni Borgna' },
+  { id:'7474862',  nome:'Emiliano Cianci' },
+];
+
+// La firma e' l'ultima occorrenza del nome del mittente nel corpo.
+function cambiaFirma(corpo, vecchio, nuovo) {
+  const i = vecchio ? corpo.lastIndexOf(vecchio) : -1;
+  return i < 0 ? corpo : corpo.slice(0, i) + nuovo + corpo.slice(i + vecchio.length);
+}
+
+function RientroRisultato({ r, stato, onSalva, onOwner }) {
+  const { contatto: c, trovato: t, email: e, mail: m, diagnostica: d } = r;
+  const salvato = stato.salvataggio==='in_corso' || stato.salvataggio==='fatto';
   return (
     <div style={{ marginTop:'12px',paddingTop:'12px',borderTop:`1px solid ${C.border}` }}>
+      {c.owner?.predefinito && (
+        <div style={{ display:'flex',gap:'8px',alignItems:'center',flexWrap:'wrap',marginBottom:'12px',fontSize:'12px',color:C.muted }}>
+          <span>Contatto senza owner — firma e task a:</span>
+          <select value={c.owner.id} disabled={salvato} onChange={ev => onOwner(OWNER_SCELTA.find(o => o.id === ev.target.value))}
+            style={{ background:'#0d0d0d',color:C.text,border:`1px solid ${C.border}`,borderRadius:'6px',padding:'4px 8px',fontSize:'12px',fontFamily:FONT }}>
+            {!OWNER_SCELTA.some(o => o.id === c.owner.id) && <option value={c.owner.id}>{c.owner.nome}</option>}
+            {OWNER_SCELTA.map(o => <option key={o.id} value={o.id}>{o.nome}</option>)}
+          </select>
+        </div>
+      )}
       <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:'8px',marginBottom:'12px' }}>
         <div style={{ background:'#0d0d0d',borderRadius:'8px',padding:'10px 12px' }}>
           <Label>Ora</Label>
@@ -433,6 +459,15 @@ function RientriPanel() {
     setInCoda(false);
   };
 
+  const cambiaOwner = (id, nuovo) => setStati(s => {
+    const r = s[id].r, vecchio = r.contatto.owner;
+    return { ...s, [id]: { ...s[id], r: {
+      ...r,
+      contatto: { ...r.contatto, owner: { ...vecchio, id: nuovo.id, nome: nuovo.nome, email: '' } },
+      mail: { ...r.mail, corpo: cambiaFirma(r.mail.corpo, vecchio.nome, nuovo.nome) },
+    } } };
+  });
+
   const salva = async (id) => {
     aggiorna(id, { salvataggio:'in_corso', msgSalva:'' });
     try {
@@ -493,7 +528,7 @@ function RientriPanel() {
                 </Btn>
               </div>
               {st.fase==='errore' && <div style={{ fontSize:'12px',color:'#ff9999',marginTop:'8px' }}>⚠️ {st.errore}</div>}
-              {st.fase==='fatto' && st.aperto && st.r && <RientroRisultato r={st.r} stato={st} onSalva={() => salva(c.id)} />}
+              {st.fase==='fatto' && st.aperto && st.r && <RientroRisultato r={st.r} stato={st} onSalva={() => salva(c.id)} onOwner={o => cambiaOwner(c.id, o)} />}
             </div>
           );
         })}
