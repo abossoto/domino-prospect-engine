@@ -282,6 +282,7 @@ const WEB_SYSTEM = `Sei un ricercatore commerciale. Devi scoprire dove lavora OG
 METODO:
 1. Prima cerca il profilo LinkedIn pubblico: query come "Nome Cognome" site:linkedin.com/in, poi "Nome Cognome" "azienda precedente" linkedin. Dal titolo e dall'anteprima del risultato (es. "Nome Cognome - Ruolo - Azienda | LinkedIn") prendi azienda e ruolo attuali. Quella e' la fonte principale per l'azienda.
 2. Se LinkedIn non basta, e' ambiguo o non mostra il ruolo, cerca con news, comunicati o pagine aziendali (nome + nuova azienda).
+- nuova_azienda: solo il nome dell'azienda come la scriverebbe lei (es. "Ruggeri & C. S.p.A."), senza gruppo di appartenenza, parentesi o varianti.
 - ruolo: solo il titolo esatto trovato in una fonte (es. "General Manager"), senza commenti. Se nessuna fonte lo riporta, ruolo = "". Mai descrizioni o ipotesi tra parentesi.
 3. Poi cerca dominio e formato email dell'azienda attuale.
 
