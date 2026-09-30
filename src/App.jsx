@@ -50,37 +50,16 @@ function saveToArchive(r) {
   localStorage.setItem('domino_pe_arch', JSON.stringify(a.slice(0, 50)));
 }
 
-async function syncHubSpot(token, result) {
-  const p = result.prospect;
-  const search = await fetch('https://api.hubapi.com/crm/v3/objects/companies/search', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-    body: JSON.stringify({ filterGroups: [{ filters: [{ propertyName: 'name', operator: 'EQ', value: p.nome }] }] }),
+// Il push su HubSpot passa da /api/hubspot: l'API HubSpot non accetta chiamate
+// dirette dal browser e il token vive solo nelle env di Vercel.
+async function syncHubSpot(result, { input, layer, motion }) {
+  const res = await fetch('/api/hubspot', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ result, input, layer, motion, version: VERSION }),
   });
-  const existing = (await search.json()).results?.[0];
-  const props = { name: p.nome, industry: p.settore || '', description: `Domino PE — ${new Date().toLocaleDateString('it-IT')}\nHook: ${p.hook || ''}\nDecisore: ${p.decisore_target || ''}`, hs_lead_status: 'IN_PROGRESS' };
-  let companyId;
-  if (existing) {
-    await fetch(`https://api.hubapi.com/crm/v3/objects/companies/${existing.id}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify({ properties: props }) });
-    companyId = existing.id;
-  } else {
-    const cr = await fetch('https://api.hubapi.com/crm/v3/objects/companies', { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify({ properties: props }) });
-    companyId = (await cr.json()).id;
-  }
-  const noteLines = [
-    `📊 DOMINO PROSPECT ENGINE — ${new Date().toLocaleDateString('it-IT')}`,
-    `Settore: ${p.settore} | Dimensione: ${p.dimensione} | Fatturato: ${p.fatturato_stimato || 'N/D'}`,
-    `Decisore: ${p.decisore_target} | Maturità: ${p.maturita_digitale}`,
-    `\nHOOK: ${p.hook}`,
-    `\nSFIDE:\n${(p.sfide_probabili || []).map(s => `• ${s}`).join('\n')}`,
-    `\nCASI STUDIO:\n${(p.casi_studio || []).map((c,i) => `${i+1}. ${c.cliente} — ${c.kpi}`).join('\n')}`,
-    `\nWORKFLOW:\n${(result.workflow || []).map(w => `Gg${w.giorno} [${w.canale}]: ${w.azione}`).join('\n')}`,
-  ].join('\n');
-  await fetch('https://api.hubapi.com/crm/v3/objects/notes', {
-    method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-    body: JSON.stringify({ properties: { hs_note_body: noteLines, hs_timestamp: Date.now().toString() }, associations: [{ to: { id: companyId }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 190 }] }] }),
-  });
-  return { isNew: !existing };
+  const data = await res.json().catch(() => ({ error: `Risposta non valida dal server (${res.status})` }));
+  if (!res.ok || data.error) throw new Error(data.error || `Errore ${res.status}`);
+  return data;
 }
 
 
@@ -357,25 +336,8 @@ function ArchiveModal({ onClose, onLoad }) {
   );
 }
 
-function HsModal({ current, onClose, onSave }) {
-  const [val, setVal] = useState(current||'');
-  return (
-    <Modal onClose={onClose}>
-      <div style={{ width:'440px' }}>
-        <div style={{ fontWeight:700,fontSize:'15px',color:C.text,marginBottom:'6px' }}>Configura HubSpot</div>
-        <div style={{ fontSize:'12px',color:C.muted,marginBottom:'16px',lineHeight:1.6 }}>Private App Token con permessi su Companies e Notes.<br/>Crea su <span style={{ color:'#ff7a59' }}>app.hubspot.com/private-apps</span></div>
-        <input value={val} onChange={e=>setVal(e.target.value)} placeholder="pat-eu1-xxxxxxxx..." style={{ width:'100%',background:'#0d0d0d',border:`1px solid ${C.border}`,color:C.text,padding:'10px 12px',borderRadius:'7px',fontSize:'12px',fontFamily:'monospace',marginBottom:'14px',outline:'none',boxSizing:'border-box' }} />
-        <div style={{ display:'flex',gap:'8px',justifyContent:'flex-end' }}>
-          <Btn variant="ghost" onClick={onClose}>Annulla</Btn>
-          <Btn onClick={() => { onSave(val); onClose(); }}>Salva token</Btn>
-        </div>
-      </div>
-    </Modal>
-  );
-}
-
 // ─── Main App ─────────────────────────────────────────────────────────────────
-const VERSION = 'v4.6.0';
+const VERSION = 'v4.7.0';
 const QUICK_PICKS = ['Technogym','Humanitas','Alpitour','Amplifon','Pirelli',"De'Longhi",'Fincantieri',"Tod's"];
 // Soglie identiche a quelle dei prompt in api/_list.js: se cambiano li', vanno
 // cambiate anche qui, altrimenti l'interfaccia promette un filtro diverso da
@@ -419,8 +381,6 @@ export default function App() {
   const [tab, setTab]                 = useState('intel');
   const [error, setError]             = useState('');
   const [showArchive, setShowArchive] = useState(false);
-  const [showHs, setShowHs]           = useState(false);
-  const [hsToken, setHsToken]         = useState(() => localStorage.getItem('domino_hs_token')||'');
   const [hsSyncing, setHsSyncing]     = useState(false);
   const [hsMsg, setHsMsg]             = useState('');
   const [archCount, setArchCount]     = useState(() => loadArchive().length);
@@ -473,7 +433,9 @@ export default function App() {
         { prospect: target, layer: gtmLayer, motion: gtmMotion, report: rep },
         3, onRetry,
       );
-      setResult(data); saveToArchive(data); setArchCount(loadArchive().length);
+      // _input: il testo cercato (spesso il sito), serve al push HubSpot per il dominio.
+      const withInput = { ...data, _input: target };
+      setResult(withInput); saveToArchive(withInput); setArchCount(loadArchive().length);
     } catch (e) {
       setError(e.message);
     } finally {
@@ -531,9 +493,15 @@ export default function App() {
   };
 
   const doHsSync = async () => {
-    if (!hsToken) { setShowHs(true); return; }
+    if (!result || hsSyncing) return;
     setHsSyncing(true); setHsMsg('');
-    try { const { isNew } = await syncHubSpot(hsToken, result); setHsMsg(isNew ? '✓ Azienda creata' : '✓ Azienda aggiornata'); }
+    try {
+      const r = await syncHubSpot(result, { input: result._input, layer: gtmLayer, motion: gtmMotion });
+      const n = r.contatti_creati + r.contatti_aggiornati;
+      let msg = `✓ Azienda ${r.company.isNew ? 'creata' : 'aggiornata'} · ${n} contatt${n === 1 ? 'o' : 'i'} · nota aggiunta`;
+      if (r.errori_contatti?.length) msg += ` · ⚠️ ${r.errori_contatti.length} contatti non salvati`;
+      setHsMsg(msg);
+    }
     catch (e) { setHsMsg(`⚠️ ${e.message}`); }
     finally { setHsSyncing(false); }
   };
@@ -552,7 +520,6 @@ export default function App() {
         <div style={{ display:'flex',gap:'8px',alignItems:'center' }}>
           <span style={{ fontSize:'10px',color:'#333',fontFamily:'monospace' }}>{VERSION}</span>
           <Btn variant="ghost" onClick={() => setShowArchive(true)} style={{ padding:'4px 12px',fontSize:'11px' }}>📁 Archivio ({archCount})</Btn>
-          <Btn variant={hsToken?'hs':'ghost'} onClick={() => setShowHs(true)} style={{ padding:'4px 12px',fontSize:'11px' }}>{hsToken?'● HubSpot':'○ HubSpot'}</Btn>
         </div>
       </div>
 
@@ -748,7 +715,6 @@ export default function App() {
       </div>
 
       {showArchive && <ArchiveModal onClose={()=>setShowArchive(false)} onLoad={d=>{setResult(d);setTab('intel');setMode('analizza');}} />}
-      {showHs && <HsModal current={hsToken} onClose={()=>setShowHs(false)} onSave={t=>{setHsToken(t);localStorage.setItem('domino_hs_token',t);}} />}
       <div style={{ textAlign:'center',padding:'24px 0 16px',fontSize:'11px',color:'#333' }}>{VERSION} · Domino Prospect Engine · domino.it</div>
     </div>
   );
