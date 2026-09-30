@@ -32,7 +32,7 @@ export function rocketreachAttivo() {
   return !!process.env.ROCKETREACH_API_KEY;
 }
 
-async function rr(path, { method = 'GET', body } = {}) {
+export async function rr(path, { method = 'GET', body } = {}) {
   const res = await fetch(`${BASE}${path}`, {
     method,
     headers: {
@@ -77,12 +77,20 @@ async function cercaDecisori(azienda) {
     .slice(0, MAX_PROFILI);
 }
 
-function scegliEmail(d) {
+export function scegliEmail(d) {
   if (d.recommended_professional_email) return d.recommended_professional_email;
   if (d.current_work_email) return d.current_work_email;
   const pro = (d.emails || []).filter(e => e.type === 'professional' && e.smtp_valid !== 'invalid');
   pro.sort((a, b) => String(a.grade || 'Z').localeCompare(String(b.grade || 'Z')));
   return pro[0]?.email || null;
+}
+
+export function scegliEmailPersonale(d) {
+  if (d.recommended_personal_email) return d.recommended_personal_email;
+  if (d.current_personal_email) return d.current_personal_email;
+  const pers = (d.emails || []).filter(e => e.type === 'personal' && e.smtp_valid !== 'invalid');
+  pers.sort((a, b) => String(a.grade || 'Z').localeCompare(String(b.grade || 'Z')));
+  return pers[0]?.email || null;
 }
 
 // person_lookup è asincrona: la prima risposta torna quasi sempre "progress".

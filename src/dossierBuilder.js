@@ -629,8 +629,8 @@ function buildSection10(result, options) {
     H1('Note operative e integrazioni', '10'),
     H2('HubSpot CRM'),
     Para([
-      'Il match account viene eseguito al click "→ HubSpot" dall\'app. Owner e stato deal sono sincronizzati come ',
-      { c: 'note' }, ' sull\'azienda. ',
+      'Il click "→ HubSpot" dall\'app crea o aggiorna l\'azienda e le persone chiave come contatti associati, e allega questo dossier come ',
+      { c: 'nota' }, ' su azienda e contatti. Sui record esistenti vengono compilati solo i campi vuoti. ',
       { i: 'Funzionalità futura: lookup automatico nel research agent (proposta C3).' },
     ]),
     H2('Engine config usata'),

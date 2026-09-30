@@ -22,6 +22,19 @@
     "api/prospect-rank.js": {
       "maxDuration": 300,
       "includeFiles": "brain/**"
+    },
+    "api/hubspot.js": {
+      "maxDuration": 60
+    },
+    "api/rientri-lista.js": {
+      "maxDuration": 60
+    },
+    "api/rientri-analizza.js": {
+      "maxDuration": 300,
+      "includeFiles": "brain/**"
+    },
+    "api/rientri-salva.js": {
+      "maxDuration": 60
     }
   },
   "rewrites": [

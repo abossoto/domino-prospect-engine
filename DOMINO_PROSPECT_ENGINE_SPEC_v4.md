@@ -1077,12 +1077,30 @@ function saveToArchive(r) {
 
 ## 21. INTEGRAZIONE HUBSPOT
 
-Token `pat-eu1-...` salvato in localStorage. Chiamate dirette dal frontend all'API HubSpot:
-1. Search company per nome
-2. PATCH o POST company con `name, industry, description, hs_lead_status: 'IN_PROGRESS'`
-3. POST nota strutturata (settore, dimensione, hook, sfide, workflow, casi studio)
+Push lato server via `api/hubspot.js` (l'API HubSpot non accetta chiamate CORS dal browser). Il token (service key o app privata) vive solo nelle env Vercel: `HUBSPOT_TOKEN` (accettati anche `HUBSPOT_SERVICE_KEY`, `HUBSPOT_ACCESS_TOKEN`, `HUBSPOT_API_KEY`). Il frontend chiama `POST /api/hubspot` con `{ result, input, layer, motion, version }`.
+1. Company: match per `domain` (se l'input era un sito) poi per `name`. Se nuova: `name, domain, industry` (mappato sull'enum HubSpot), `description`, `hs_lead_status: IN_PROGRESS`. Se esistente: compila solo i campi vuoti.
+2. Contatti: ogni voce di `persone_chiave` → contatto (`firstname, lastname, email, jobtitle, hs_linkedin_url`), dedup per email poi per nome+cognome, associato all'azienda. Esistenti: solo campi vuoti.
+3. Nota HTML con i contenuti del dossier Word (sintesi, profilo, persone, sfide, segnali, casi studio, mail, LinkedIn, deck, workflow), associata ad azienda e contatti.
 
-**Permessi token:** Companies (read/write) + Notes (write).
+**Permessi token:** `crm.objects.companies.read/write`, `crm.objects.contacts.read/write` (le note ereditano i permessi degli oggetti associati).
+
+---
+
+## 21-bis. RIENTRI — CONTATTI CHE HANNO CAMBIATO LAVORO
+
+Terza modalità dell'app (`🔁 Rientri`). Parte dai contatti HubSpot con `hs_email_hard_bounce_reason_enum = UNKNOWN_USER` (casella inesistente: segnale di cambio lavoro; gli altri motivi di bounce sono esclusi).
+
+**Endpoint** (logica in `api/_rientri.js`, client HubSpot condiviso in `api/_hubspot.js`):
+- `POST /api/rientri-lista` — elenco candidati con owner; marca `gia_lavorato` i contatti che hanno già una nota con `[DOMINO-RIENTRO]`. Solo lettura.
+- `POST /api/rientri-analizza` `{ contactId }` — un contatto per chiamata, il client li mette in coda. Solo lettura su HubSpot.
+  1. HubSpot: contatto, azienda associata, owner.
+  2. RocketReach: lookup per `hs_linkedin_url` se presente, altrimenti search per nome + azienda precedente e lookup del profilo con nome identico (1 credito). Le email al dominio vecchio o uguali a quella rimbalzata vengono scartate.
+  3. Web (Claude + `web_search`, max 8 ricerche) se RocketReach non trova una nuova azienda o non ha un'email aziendale: nuova azienda, dominio, ruolo, fonte, confidenza e formato email dedotto da indirizzi reali di altri dipendenti. LinkedIn non viene interrogato direttamente (niente API, scraping vietato dai ToS): solo pagine pubbliche.
+  4. Email, in ordine: aziendale verificata RocketReach → ricostruita dal formato (`stato: da_verificare`) → personale RocketReach.
+  5. Bozza di ricontatto (brain in contesto) firmata dal contact owner, JSON `{oggetto, corpo}`.
+- `POST /api/rientri-salva` `{ risultato }` — click esplicito. Crea/trova l'azienda nuova e un contatto NUOVO (il vecchio resta intatto come storico), owner = contact owner. L'email va nel campo `email` solo se verificata. Nota `[DOMINO-RIENTRO]` su vecchio contatto, nuovo contatto e azienda; task `EMAIL` all'owner con la bozza, scadenza +2 giorni. Nessuna mail viene inviata.
+
+**Env Vercel:** `ROCKETREACH_API_KEY` (senza, solo web). **Scope HubSpot aggiuntivi:** `crm.objects.owners.read`; i task richiedono i permessi di scrittura sui contatti.
 
 ---
 

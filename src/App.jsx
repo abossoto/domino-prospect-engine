@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 // Import dinamici: pptxgenjs e docx pesano ~750 kB e servono solo al click sui
 // pulsanti di export. Tenerli statici triplicava il bundle iniziale.
 const exportPPT = async (...args) => (await import('./pptBuilder.js')).exportPPT(...args);
@@ -336,8 +336,172 @@ function ArchiveModal({ onClose, onLoad }) {
   );
 }
 
+// ─── Rientri: contatti in hard bounce che hanno cambiato lavoro ───────────────
+// Un'analisi per volta (RocketReach + web + bozza richiedono 1-2 minuti a
+// contatto). Il salvataggio su HubSpot e' sempre un click esplicito: l'email
+// ricostruita va controllata prima.
+const EMAIL_BADGE = {
+  verificata:    { bg:'rgba(34,197,94,0.12)',  bd:'rgba(34,197,94,0.35)',  tx:'#4ade80' },
+  da_verificare: { bg:'rgba(245,158,11,0.12)', bd:'rgba(245,158,11,0.35)', tx:'#fcd34d' },
+};
+
+function RientroRisultato({ r, stato, onSalva }) {
+  const { trovato: t, email: e, mail: m, diagnostica: d } = r;
+  return (
+    <div style={{ marginTop:'12px',paddingTop:'12px',borderTop:`1px solid ${C.border}` }}>
+      <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:'8px',marginBottom:'12px' }}>
+        <div style={{ background:'#0d0d0d',borderRadius:'8px',padding:'10px 12px' }}>
+          <Label>Ora</Label>
+          {t.azienda
+            ? <><Val>{t.azienda}</Val><div style={{ fontSize:'11px',color:C.muted,marginTop:'2px' }}>{[t.ruolo, t.dominio].filter(Boolean).join(' · ')}</div>
+                <div style={{ fontSize:'10px',color:C.muted,marginTop:'4px' }}>Fonte: {t.fonte}{t.confidenza?` · confidenza ${t.confidenza}`:''}{t.fonte_url && <> · <a href={t.fonte_url} target="_blank" rel="noopener noreferrer" style={{ color:C.red }}>link ↗</a></>}</div></>
+            : <div style={{ fontSize:'12px',color:'#fcd34d' }}>Nuova azienda non trovata</div>}
+          {t.linkedin && <a href={t.linkedin} target="_blank" rel="noopener noreferrer" style={{ fontSize:'11px',color:'#0077B5',textDecoration:'none' }}>Profilo LinkedIn ↗</a>}
+        </div>
+        <div style={{ background:'#0d0d0d',borderRadius:'8px',padding:'10px 12px' }}>
+          <Label>Email</Label>
+          {e
+            ? <><div style={{ display:'flex',gap:'6px',alignItems:'center',flexWrap:'wrap' }}>
+                  <span style={{ fontSize:'12px',color:C.text,fontFamily:'ui-monospace, monospace' }}>{e.indirizzo}</span>
+                  <CopyBtn text={e.indirizzo} />
+                </div>
+                <div style={{ marginTop:'6px',display:'flex',gap:'6px',flexWrap:'wrap' }}>
+                  <Pill color={EMAIL_BADGE[e.stato]}>{e.stato==='verificata'?'Verificata':'Da verificare'}</Pill>
+                  <Pill>{e.tipo}</Pill>
+                </div>
+                <div style={{ fontSize:'10px',color:C.muted,marginTop:'4px' }}>{e.fonte}</div></>
+            : <div style={{ fontSize:'12px',color:'#fcd34d' }}>Nessuna email trovata — valuta LinkedIn</div>}
+        </div>
+      </div>
+      <div style={{ background:'#0d0d0d',borderRadius:'8px',padding:'12px 14px',marginBottom:'10px' }}>
+        <div style={{ display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'6px' }}>
+          <Label>Bozza di ricontatto</Label>
+          <CopyBtn text={`Oggetto: ${m.oggetto}\n\n${m.corpo}`} label="Copia tutto" />
+        </div>
+        <div style={{ fontSize:'13px',fontWeight:700,color:C.text,marginBottom:'6px' }}>{m.oggetto}</div>
+        <div style={{ fontSize:'13px',color:C.text,lineHeight:1.65,whiteSpace:'pre-wrap' }}>{m.corpo}</div>
+      </div>
+      <div style={{ display:'flex',gap:'10px',alignItems:'center',flexWrap:'wrap' }}>
+        <Btn variant="hs" onClick={onSalva} disabled={stato.salvataggio==='in_corso'||stato.salvataggio==='fatto'} style={{ padding:'5px 12px',fontSize:'11px' }}>
+          {stato.salvataggio==='in_corso'?'Salvataggio…':stato.salvataggio==='fatto'?'✓ In HubSpot':'→ HubSpot (contatto + task owner)'}
+        </Btn>
+        {stato.msgSalva && <span style={{ fontSize:'11px',color:stato.salvataggio==='fatto'?'#4ade80':'#f87171' }}>{stato.msgSalva}</span>}
+        <span style={{ fontSize:'10px',color:C.muted,marginLeft:'auto' }}>RocketReach: {d.rocketreach} · Web: {d.web}</span>
+      </div>
+    </div>
+  );
+}
+
+function RientriPanel() {
+  const [contatti, setContatti]   = useState(null);
+  const [rrAttivo, setRrAttivo]   = useState(true);
+  const [caricando, setCaricando] = useState(false);
+  const [errore, setErrore]       = useState('');
+  const [stati, setStati]         = useState({});
+  const [inCoda, setInCoda]       = useState(false);
+  const [mostraFatti, setMostraFatti] = useState(false);
+  const stop = useRef(false);
+
+  const aggiorna = (id, patch) => setStati(s => ({ ...s, [id]: { ...s[id], ...patch } }));
+
+  const carica = async () => {
+    setCaricando(true); setErrore('');
+    try {
+      const r = await fetch('/api/rientri-lista', { method:'POST', headers:{ 'Content-Type':'application/json' }, body:'{}' });
+      const d = await r.json().catch(() => ({ error:`Risposta non valida (${r.status})` }));
+      if (d.error) throw new Error(d.error);
+      setContatti(d.contatti); setRrAttivo(d.rocketreach);
+    } catch (e) { setErrore(e.message); }
+    finally { setCaricando(false); }
+  };
+
+  const analizza = async (id) => {
+    aggiorna(id, { fase:'analisi', errore:'', r:null, salvataggio:null, msgSalva:'' });
+    try {
+      const r = await postWithRetry('/api/rientri-analizza', { contactId:id }, 1);
+      aggiorna(id, { fase:'fatto', r, aperto:true });
+    } catch (e) { aggiorna(id, { fase:'errore', errore:e.message }); }
+  };
+
+  const analizzaTutti = async () => {
+    stop.current = false; setInCoda(true);
+    for (const c of visibili) {
+      if (stop.current) break;
+      if (stati[c.id]?.fase === 'fatto') continue;
+      await analizza(c.id);
+    }
+    setInCoda(false);
+  };
+
+  const salva = async (id) => {
+    aggiorna(id, { salvataggio:'in_corso', msgSalva:'' });
+    try {
+      const r = await fetch('/api/rientri-salva', { method:'POST', headers:{ 'Content-Type':'application/json' }, body:JSON.stringify({ risultato:stati[id].r }) });
+      const d = await r.json().catch(() => ({ error:`Risposta non valida (${r.status})` }));
+      if (d.error) throw new Error(d.error);
+      aggiorna(id, { salvataggio:'fatto', msgSalva:`Contatto ${d.nuovo_contatto.creato?'creato':'già presente'}${d.azienda?` · azienda ${d.azienda.isNew?'creata':'collegata'}`:''} · nota + task all'owner` });
+    } catch (e) { aggiorna(id, { salvataggio:'errore', msgSalva:`⚠️ ${e.message}` }); }
+  };
+
+  const visibili = (contatti || []).filter(c => mostraFatti || !c.gia_lavorato);
+  const nFatti = (contatti || []).filter(c => c.gia_lavorato).length;
+
+  return (
+    <>
+      <Card style={{ marginBottom:'20px' }}>
+        <h1 style={{ margin:'0 0 4px',fontSize:'20px',fontWeight:800,letterSpacing:'-0.02em' }}>Rientri</h1>
+        <p style={{ margin:'0 0 16px',color:C.muted,fontSize:'13px',lineHeight:1.55 }}>
+          Contatti HubSpot con hard bounce "Unknown user": la casella non esiste più, probabile cambio di lavoro.
+          Per ognuno: nuova azienda da RocketReach e fonti web pubbliche, email, bozza di ricontatto firmata dal contact owner.
+          Nessuna mail viene inviata: in HubSpot finiscono contatto, nota e task per l'owner.
+        </p>
+        {!rrAttivo && <div style={{ background:'rgba(245,158,11,0.1)',border:'1px solid rgba(245,158,11,0.3)',borderRadius:'8px',padding:'10px 14px',marginBottom:'12px',fontSize:'13px',color:'#fcd34d' }}>⚠️ ROCKETREACH_API_KEY non configurata su Vercel: la ricerca userà solo il web.</div>}
+        {errore && <div style={{ background:'rgba(232,39,42,0.1)',border:'1px solid rgba(232,39,42,0.3)',borderRadius:'8px',padding:'10px 14px',marginBottom:'12px',fontSize:'13px',color:'#ff9999' }}>⚠️ {errore}</div>}
+        <div style={{ display:'flex',gap:'8px',flexWrap:'wrap',alignItems:'center' }}>
+          <Btn onClick={carica} disabled={caricando||inCoda}>{caricando?'Caricamento…':contatti?'↻ Ricarica da HubSpot':'Carica contatti da HubSpot'}</Btn>
+          {contatti && visibili.length > 0 && (inCoda
+            ? <Btn variant="ghost" onClick={() => { stop.current = true; }}>■ Ferma dopo quello in corso</Btn>
+            : <Btn variant="ghost" onClick={analizzaTutti}>Analizza tutti ({visibili.filter(c => stati[c.id]?.fase !== 'fatto').length})</Btn>)}
+          {nFatti > 0 && <label style={{ fontSize:'12px',color:C.muted,display:'flex',gap:'6px',alignItems:'center',cursor:'pointer' }}>
+            <input type="checkbox" checked={mostraFatti} onChange={e=>setMostraFatti(e.target.checked)} /> Mostra anche i {nFatti} già lavorati
+          </label>}
+        </div>
+        {contatti && <div style={{ fontSize:'11px',color:C.muted,marginTop:'10px' }}>Ogni analisi usa fino a 1 credito RocketReach e 1-2 minuti.</div>}
+      </Card>
+
+      {contatti && visibili.length === 0 && <Card style={{ textAlign:'center',color:C.muted }}>Nessun contatto da lavorare.</Card>}
+
+      <div style={{ display:'flex',flexDirection:'column',gap:'8px' }}>
+        {visibili.map(c => {
+          const st = stati[c.id] || {};
+          return (
+            <div key={c.id} style={{ background:C.card,border:`1px solid ${st.fase==='analisi'?C.red:C.border}`,borderRadius:'12px',padding:'14px 16px' }}>
+              <div style={{ display:'flex',gap:'12px',alignItems:'center' }}>
+                <div style={{ flex:1,minWidth:0 }}>
+                  <div style={{ fontSize:'14px',fontWeight:700,color:C.text }}>{c.nome}{c.gia_lavorato && <span style={{ fontSize:'10px',color:C.muted,marginLeft:'8px' }}>già lavorato</span>}</div>
+                  <div style={{ fontSize:'11px',color:C.muted,marginTop:'2px' }}>
+                    {[c.ruolo, c.azienda].filter(Boolean).join(' · ') || 'azienda non indicata'}
+                    {' · '}<span style={{ textDecoration:'line-through' }}>{c.email}</span>
+                  </div>
+                  <div style={{ fontSize:'11px',color:C.muted,marginTop:'2px' }}>Owner: {c.owner?.nome || <span style={{ color:'#fcd34d' }}>nessuno</span>}</div>
+                </div>
+                {st.fase==='fatto' && <button onClick={() => aggiorna(c.id, { aperto:!st.aperto })} style={{ background:'transparent',border:'none',color:C.muted,cursor:'pointer',fontSize:'12px',fontFamily:FONT }}>{st.aperto?'▲ Chiudi':'▼ Apri'}</button>}
+                <Btn variant={st.fase==='fatto'?'ghost':'primary'} onClick={() => analizza(c.id)} disabled={st.fase==='analisi'||inCoda} style={{ padding:'6px 14px',fontSize:'12px',flexShrink:0 }}>
+                  {st.fase==='analisi'?'Ricerca…':st.fase==='fatto'?'Rifai':'Analizza →'}
+                </Btn>
+              </div>
+              {st.fase==='errore' && <div style={{ fontSize:'12px',color:'#ff9999',marginTop:'8px' }}>⚠️ {st.errore}</div>}
+              {st.fase==='fatto' && st.aperto && st.r && <RientroRisultato r={st.r} stato={st} onSalva={() => salva(c.id)} />}
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+}
+
 // ─── Main App ─────────────────────────────────────────────────────────────────
-const VERSION = 'v4.7.0';
+const VERSION = 'v4.8.0';
 const QUICK_PICKS = ['Technogym','Humanitas','Alpitour','Amplifon','Pirelli',"De'Longhi",'Fincantieri',"Tod's"];
 // Soglie identiche a quelle dei prompt in api/_list.js: se cambiano li', vanno
 // cambiate anche qui, altrimenti l'interfaccia promette un filtro diverso da
@@ -526,7 +690,7 @@ export default function App() {
       <div style={{ maxWidth:'920px',margin:'0 auto',padding:'28px 20px' }}>
         {/* Mode switcher */}
         <div style={{ display:'flex',gap:'6px',marginBottom:'20px' }}>
-          {[['lista','📋 Genera Lista Prospect'],['analizza','🔍 Analizza Prospect']].map(([m,label]) => (
+          {[['lista','📋 Genera Lista Prospect'],['analizza','🔍 Analizza Prospect'],['rientri','🔁 Rientri']].map(([m,label]) => (
             <button key={m} onClick={() => setMode(m)} style={{ padding:'9px 20px',background:mode===m?C.red:C.card,color:mode===m?C.white:C.muted,border:`1px solid ${mode===m?C.red:C.border}`,borderRadius:'8px',cursor:'pointer',fontSize:'13px',fontWeight:mode===m?700:400,fontFamily:FONT,transition:'all 0.15s' }}>{label}</button>
           ))}
         </div>
@@ -627,6 +791,8 @@ export default function App() {
             )}
           </>
         )}
+
+        {mode==='rientri' && <RientriPanel />}
 
         {/* ─── ANALIZZA PROSPECT ──────────────────────────────────────────── */}
         {mode==='analizza' && (
