@@ -17,11 +17,11 @@
 import { callClaude, extractText, webSearchTool, loadBrain, brainBlock, tempoResiduo } from './_shared.js';
 import { parseJSON } from './_generate.js';
 import { rr, rocketreachAttivo, scegliEmail, scegliEmailPersonale } from './_people.js';
-import { hs, searchOne, estraiDominio, emailValida, esc, url, associaDefault } from './_hubspot.js';
+import { hs, searchOne, estraiDominio, emailValida, esc, url } from './_hubspot.js';
 
-// Il segnale di cambio lavoro: la casella non esiste piu'. Gli altri motivi di
-// hard bounce (spam, policy, casella piena) non dicono nulla sull'azienda.
-const MOTIVI_BOUNCE = ['UNKNOWN_USER'];
+// Tutti i contatti con un motivo di hard bounce valorizzato. UNKNOWN_USER
+// (casella inesistente) e' il segnale piu' forte di cambio lavoro, ma anche gli
+// altri motivi vanno ricontrollati: il motivo viene mostrato in lista.
 
 // Marcatore nelle note: permette alla lista di riconoscere i contatti gia'
 // lavorati senza creare proprieta' custom sul portale.
@@ -34,11 +34,13 @@ const CONTACT_PROPS = [
 ];
 
 // Tipi di associazione HubSpot-defined (v3).
+const CONTACT_TO_COMPANY_PRIMARY = 1;
+const CONTACT_TO_COMPANY = 279;
 const NOTE_TO_CONTACT = 202;
 const NOTE_TO_COMPANY = 190;
 const TASK_TO_CONTACT = 204;
 
-const MAX_CONTATTI = 200;
+const MAX_CONTATTI = 1000;
 
 // ── Utility ──────────────────────────────────────────────────────────────────
 
@@ -134,7 +136,7 @@ export async function listaRientri(token) {
     const d = await hs(token, '/crm/v3/objects/contacts/search', {
       method: 'POST',
       body: {
-        filterGroups: [{ filters: [{ propertyName: 'hs_email_hard_bounce_reason_enum', operator: 'IN', values: MOTIVI_BOUNCE }] }],
+        filterGroups: [{ filters: [{ propertyName: 'hs_email_hard_bounce_reason_enum', operator: 'HAS_PROPERTY' }] }],
         properties: CONTACT_PROPS,
         sorts: [{ propertyName: 'lastmodifieddate', direction: 'DESCENDING' }],
         limit: 100,
@@ -159,6 +161,7 @@ export async function listaRientri(token) {
       azienda: p.company || '',
       ruolo: p.jobtitle && p.jobtitle !== '-' ? p.jobtitle : '',
       linkedin: p.hs_linkedin_url || '',
+      motivo_bounce: p.hs_email_hard_bounce_reason_enum || '',
       owner: owner.get(String(p.hubspot_owner_id)) || null,
       gia_lavorato: fatti.has(String(c.id)),
     };
@@ -440,43 +443,47 @@ export async function salvaRientro(token, r) {
   if (!c?.id) throw new Error('Risultato di analisi mancante');
   const ownerId = c.owner?.id || null;
 
-  // Il vecchio contatto resta intatto: e' lo storico della relazione con
-  // l'azienda precedente. La persona nella nuova azienda e' un contatto nuovo.
+  // Si aggiorna il contatto esistente: niente duplicati. I dati precedenti
+  // (azienda, ruolo, email rimbalzata) restano nella nota come storico.
   const azienda = t.azienda ? await upsertAzienda(token, t, ownerId) : null;
 
   // Un'email ricostruita non va nel campo email: se e' sbagliata rimbalzerebbe
   // di nuovo e rovinerebbe la reputazione di invio. Resta nella nota e nel task.
-  const emailCampo = e?.stato === 'verificata' ? e.indirizzo.toLowerCase() : null;
-
-  let nuovo = null;
-  if (emailCampo) nuovo = await searchOne(token, 'contacts', [{ propertyName: 'email', operator: 'EQ', value: emailCampo }], ['email']);
-  if (!nuovo && c.firstname && c.lastname) {
-    nuovo = await searchOne(token, 'contacts', [
-      { propertyName: 'firstname', operator: 'EQ', value: c.firstname },
-      { propertyName: 'lastname', operator: 'EQ', value: c.lastname },
+  // Se l'indirizzo verificato e' gia' su un altro contatto, HubSpot rifiuterebbe
+  // l'aggiornamento: si lascia il campo com'e' e lo si segnala.
+  let emailCampo = e?.stato === 'verificata' ? e.indirizzo.toLowerCase() : null;
+  let emailInUso = null;
+  if (emailCampo && emailCampo !== String(c.email_vecchia || '').toLowerCase()) {
+    const altro = await searchOne(token, 'contacts', [
+      { propertyName: 'email', operator: 'EQ', value: emailCampo },
       { propertyName: 'hs_object_id', operator: 'NEQ', value: c.id },
-      ...(t.azienda ? [{ propertyName: 'company', operator: 'EQ', value: t.azienda }] : []),
     ], ['email']);
+    if (altro) { emailInUso = String(altro.id); emailCampo = null; }
+  } else emailCampo = null;
+
+  const props = {};
+  if (emailCampo) props.email = emailCampo;
+  if (t.azienda) {
+    props.company = t.azienda;
+    props.jobtitle = t.ruolo || '';
   }
-  let nuovoCreato = false;
-  if (!nuovo) {
-    const props = { firstname: c.firstname, lastname: c.lastname, hs_lead_status: 'NEW' };
-    if (emailCampo) props.email = emailCampo;
-    if (t.ruolo) props.jobtitle = t.ruolo;
-    if (t.azienda) props.company = t.azienda;
-    if (url(t.linkedin)) props.hs_linkedin_url = t.linkedin;
-    if (ownerId) props.hubspot_owner_id = ownerId;
-    nuovo = await hs(token, '/crm/v3/objects/contacts', { method: 'POST', body: { properties: props } });
-    nuovoCreato = true;
+  if (url(t.linkedin)) props.hs_linkedin_url = t.linkedin;
+  if (Object.keys(props).length) {
+    await hs(token, `/crm/v3/objects/contacts/${c.id}`, { method: 'PATCH', body: { properties: props } });
   }
-  const nuovoId = String(nuovo.id);
-  if (azienda) await associaDefault(token, 'contact', nuovoId, 'company', azienda.id);
+  // La nuova azienda diventa la primaria; quella vecchia resta associata.
+  if (azienda) {
+    await hs(token, `/crm/v4/objects/contact/${c.id}/associations/company/${azienda.id}`, {
+      method: 'PUT',
+      body: [CONTACT_TO_COMPANY_PRIMARY, CONTACT_TO_COMPANY].map(id => ({ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: id })),
+    });
+  }
 
   const body = notaHtml(r);
+  const aziendeNota = [...new Set([azienda?.id, c.azienda?.id].filter(Boolean).map(String))];
   const assocNota = [
     { to: { id: c.id }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: NOTE_TO_CONTACT }] },
-    { to: { id: nuovoId }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: NOTE_TO_CONTACT }] },
-    ...(azienda ? [{ to: { id: azienda.id }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: NOTE_TO_COMPANY }] }] : []),
+    ...aziendeNota.map(id => ({ to: { id }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: NOTE_TO_COMPANY }] })),
   ];
   await hs(token, '/crm/v3/objects/notes', {
     method: 'POST',
@@ -498,9 +505,9 @@ export async function salvaRientro(token, r) {
     method: 'POST',
     body: {
       properties: taskProps,
-      associations: [{ to: { id: nuovoId }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: TASK_TO_CONTACT }] }],
+      associations: [{ to: { id: c.id }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: TASK_TO_CONTACT }] }],
     },
   });
 
-  return { nuovo_contatto: { id: nuovoId, creato: nuovoCreato }, azienda };
+  return { contatto: { id: String(c.id), aggiornati: Object.keys(props), email_in_uso: emailInUso }, azienda };
 }

@@ -1088,7 +1088,7 @@ Push lato server via `api/hubspot.js` (l'API HubSpot non accetta chiamate CORS d
 
 ## 21-bis. RIENTRI — CONTATTI CHE HANNO CAMBIATO LAVORO
 
-Terza modalità dell'app (`🔁 Rientri`). Parte dai contatti HubSpot con `hs_email_hard_bounce_reason_enum = UNKNOWN_USER` (casella inesistente: segnale di cambio lavoro; gli altri motivi di bounce sono esclusi).
+Terza modalità dell'app (`🔁 Rientri`). Parte dai contatti HubSpot con `hs_email_hard_bounce_reason_enum` valorizzato (filtro `HAS_PROPERTY`, "Email hard bounce reason is known", circa 400 contatti al 30/09/2026; massimo 1000 in lista). Il motivo viene restituito come `motivo_bounce` e mostrato in lista: `UNKNOWN_USER` (casella inesistente) è il segnale più forte di cambio lavoro.
 
 **Endpoint** (logica in `api/_rientri.js`, client HubSpot condiviso in `api/_hubspot.js`):
 - `POST /api/rientri-lista` — elenco candidati con owner; marca `gia_lavorato` i contatti che hanno già una nota con `[DOMINO-RIENTRO]`. Solo lettura.
@@ -1098,7 +1098,7 @@ Terza modalità dell'app (`🔁 Rientri`). Parte dai contatti HubSpot con `hs_em
   3. Web (Claude + `web_search`, max 8 ricerche) se RocketReach non trova una nuova azienda o non ha un'email aziendale: nuova azienda, dominio, ruolo, fonte, confidenza e formato email dedotto da indirizzi reali di altri dipendenti. LinkedIn non viene interrogato direttamente (niente API, scraping vietato dai ToS): solo pagine pubbliche.
   4. Email, in ordine: aziendale verificata RocketReach → ricostruita dal formato (`stato: da_verificare`) → personale RocketReach.
   5. Bozza di ricontatto (brain in contesto) firmata dal contact owner, JSON `{oggetto, corpo}`.
-- `POST /api/rientri-salva` `{ risultato }` — click esplicito. Crea/trova l'azienda nuova e un contatto NUOVO (il vecchio resta intatto come storico), owner = contact owner. L'email va nel campo `email` solo se verificata. Nota `[DOMINO-RIENTRO]` su vecchio contatto, nuovo contatto e azienda; task `EMAIL` all'owner con la bozza, scadenza +2 giorni. Nessuna mail viene inviata.
+- `POST /api/rientri-salva` `{ risultato }` — click esplicito. **Aggiorna il contatto esistente, non ne crea uno nuovo** (nessun duplicato). Crea/trova l'azienda nuova (owner = contact owner) e la associa al contatto come primaria; la vecchia resta associata. Sul contatto: `company` e `jobtitle` (se trovata la nuova azienda), `hs_linkedin_url`, `email` solo se verificata e non già usata da un altro contatto (in quel caso resta invariata e la risposta riporta `email_in_uso`). I valori precedenti restano nella nota `[DOMINO-RIENTRO]`, associata al contatto, all'azienda nuova e a quella vecchia; task `EMAIL` all'owner sul contatto con la bozza, scadenza +2 giorni. Risposta: `{ contatto: { id, aggiornati, email_in_uso }, azienda }`. Nessuna mail viene inviata.
 
 **Env Vercel:** `ROCKETREACH_API_KEY` (senza, solo web). **Scope HubSpot aggiuntivi:** `crm.objects.owners.read`; i task richiedono i permessi di scrittura sui contatti.
 

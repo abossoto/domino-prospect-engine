@@ -383,7 +383,7 @@ function RientroRisultato({ r, stato, onSalva }) {
       </div>
       <div style={{ display:'flex',gap:'10px',alignItems:'center',flexWrap:'wrap' }}>
         <Btn variant="hs" onClick={onSalva} disabled={stato.salvataggio==='in_corso'||stato.salvataggio==='fatto'} style={{ padding:'5px 12px',fontSize:'11px' }}>
-          {stato.salvataggio==='in_corso'?'Salvataggio…':stato.salvataggio==='fatto'?'✓ In HubSpot':'→ HubSpot (contatto + task owner)'}
+          {stato.salvataggio==='in_corso'?'Salvataggio…':stato.salvataggio==='fatto'?'✓ In HubSpot':'→ HubSpot (aggiorna contatto + task owner)'}
         </Btn>
         {stato.msgSalva && <span style={{ fontSize:'11px',color:stato.salvataggio==='fatto'?'#4ade80':'#f87171' }}>{stato.msgSalva}</span>}
         <span style={{ fontSize:'10px',color:C.muted,marginLeft:'auto' }}>RocketReach: {d.rocketreach} · Web: {d.web}</span>
@@ -439,7 +439,8 @@ function RientriPanel() {
       const r = await fetch('/api/rientri-salva', { method:'POST', headers:{ 'Content-Type':'application/json' }, body:JSON.stringify({ risultato:stati[id].r }) });
       const d = await r.json().catch(() => ({ error:`Risposta non valida (${r.status})` }));
       if (d.error) throw new Error(d.error);
-      aggiorna(id, { salvataggio:'fatto', msgSalva:`Contatto ${d.nuovo_contatto.creato?'creato':'già presente'}${d.azienda?` · azienda ${d.azienda.isNew?'creata':'collegata'}`:''} · nota + task all'owner` });
+      const agg = d.contatto.aggiornati.length ? `aggiornato (${d.contatto.aggiornati.join(', ')})` : 'invariato';
+      aggiorna(id, { salvataggio:'fatto', msgSalva:`Contatto ${agg}${d.azienda?` · azienda ${d.azienda.isNew?'creata':'collegata'}`:''} · nota + task all'owner${d.contatto.email_in_uso?` · ⚠️ email già usata dal contatto ${d.contatto.email_in_uso}: non scritta`:''}` });
     } catch (e) { aggiorna(id, { salvataggio:'errore', msgSalva:`⚠️ ${e.message}` }); }
   };
 
@@ -451,9 +452,9 @@ function RientriPanel() {
       <Card style={{ marginBottom:'20px' }}>
         <h1 style={{ margin:'0 0 4px',fontSize:'20px',fontWeight:800,letterSpacing:'-0.02em' }}>Rientri</h1>
         <p style={{ margin:'0 0 16px',color:C.muted,fontSize:'13px',lineHeight:1.55 }}>
-          Contatti HubSpot con hard bounce "Unknown user": la casella non esiste più, probabile cambio di lavoro.
+          Contatti HubSpot con un motivo di hard bounce registrato ("Unknown user" è il segnale più forte di cambio lavoro).
           Per ognuno: nuova azienda da RocketReach e fonti web pubbliche, email, bozza di ricontatto firmata dal contact owner.
-          Nessuna mail viene inviata: in HubSpot finiscono contatto, nota e task per l'owner.
+          Nessuna mail viene inviata: in HubSpot il contatto esistente viene aggiornato (nessun duplicato), con nota e task per l'owner.
         </p>
         {!rrAttivo && <div style={{ background:'rgba(245,158,11,0.1)',border:'1px solid rgba(245,158,11,0.3)',borderRadius:'8px',padding:'10px 14px',marginBottom:'12px',fontSize:'13px',color:'#fcd34d' }}>⚠️ ROCKETREACH_API_KEY non configurata su Vercel: la ricerca userà solo il web.</div>}
         {errore && <div style={{ background:'rgba(232,39,42,0.1)',border:'1px solid rgba(232,39,42,0.3)',borderRadius:'8px',padding:'10px 14px',marginBottom:'12px',fontSize:'13px',color:'#ff9999' }}>⚠️ {errore}</div>}
@@ -482,6 +483,7 @@ function RientriPanel() {
                   <div style={{ fontSize:'11px',color:C.muted,marginTop:'2px' }}>
                     {[c.ruolo, c.azienda].filter(Boolean).join(' · ') || 'azienda non indicata'}
                     {' · '}<span style={{ textDecoration:'line-through' }}>{c.email}</span>
+                    {c.motivo_bounce && <span style={{ marginLeft:'8px',fontSize:'10px',color:c.motivo_bounce==='UNKNOWN_USER'?'#fcd34d':C.muted }}>{c.motivo_bounce}</span>}
                   </div>
                   <div style={{ fontSize:'11px',color:C.muted,marginTop:'2px' }}>Owner: {c.owner?.nome || <span style={{ color:'#fcd34d' }}>nessuno</span>}</div>
                 </div>
