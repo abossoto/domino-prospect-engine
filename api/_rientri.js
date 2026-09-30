@@ -42,6 +42,10 @@ const TASK_TO_CONTACT = 204;
 
 const MAX_CONTATTI = 1000;
 
+// Contatti senza owner: firma la bozza e riceve il task Flavio Pedazzini.
+// L'owner del contatto su HubSpot non viene cambiato.
+const OWNER_PREDEFINITO_ID = '12386493';
+
 // ── Utility ──────────────────────────────────────────────────────────────────
 
 const nomeCompleto = c => [c.firstname, c.lastname].filter(Boolean).join(' ').trim();
@@ -185,10 +189,11 @@ async function leggiContatto(token, id) {
     } catch { /* azienda non leggibile: resta quella dal campo company */ }
   }
   let owner = null;
-  if (p.hubspot_owner_id) {
+  for (const [id, predefinito] of [[p.hubspot_owner_id, false], [OWNER_PREDEFINITO_ID, true]]) {
+    if (owner || !id) continue;
     try {
-      const o = await hs(token, `/crm/v3/owners/${p.hubspot_owner_id}`);
-      owner = { id: String(o.id), nome: [o.firstName, o.lastName].filter(Boolean).join(' ') || o.email, email: o.email || '' };
+      const o = await hs(token, `/crm/v3/owners/${id}`);
+      owner = { id: String(o.id), nome: [o.firstName, o.lastName].filter(Boolean).join(' ') || o.email, email: o.email || '', predefinito };
     } catch { /* owner disattivato */ }
   }
   return {
