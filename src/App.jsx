@@ -520,7 +520,7 @@ function RientriPanel() {
                     {' · '}<span style={{ textDecoration:'line-through' }}>{c.email}</span>
                     {c.motivo_bounce && <span style={{ marginLeft:'8px',fontSize:'10px',color:c.motivo_bounce==='UNKNOWN_USER'?'#fcd34d':C.muted }}>{c.motivo_bounce}</span>}
                   </div>
-                  <div style={{ fontSize:'11px',color:C.muted,marginTop:'2px' }}>Owner: {c.owner?.nome || <span style={{ color:'#fcd34d' }}>nessuno → firma e task a Flavio Pedazzini</span>}</div>
+                  <div style={{ fontSize:'11px',color:C.muted,marginTop:'2px' }}>Owner: {c.owner?.nome || <span style={{ color:'#fcd34d' }}>nessuno → firma e task a {st.r?.contatto.owner?.nome || 'Flavio Pedazzini'}</span>}</div>
                 </div>
                 {st.fase==='fatto' && <button onClick={() => aggiorna(c.id, { aperto:!st.aperto })} style={{ background:'transparent',border:'none',color:C.muted,cursor:'pointer',fontSize:'12px',fontFamily:FONT }}>{st.aperto?'▲ Chiudi':'▼ Apri'}</button>}
                 <Btn variant={st.fase==='fatto'?'ghost':'primary'} onClick={() => analizza(c.id)} disabled={st.fase==='analisi'||inCoda} style={{ padding:'6px 14px',fontSize:'12px',flexShrink:0 }}>
