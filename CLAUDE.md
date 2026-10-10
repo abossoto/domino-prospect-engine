@@ -8,6 +8,7 @@ sales personalizzati.
 
 ## Architettura — principio chiave
 Il Domino Brain è la fonte canonica dei contenuti su Domino. Vive in OneDrive
+(`~/Library/CloudStorage/OneDrive-DominoSRL/Domino Brain - main/`)
 e viene sincronizzato in `brain/` solo al momento del deploy.
 NON modificare i file in `brain/` direttamente — sono una fotografia.
 Le modifiche di contenuto vanno fatte a monte (in OneDrive) e poi

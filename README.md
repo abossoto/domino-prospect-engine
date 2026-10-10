@@ -60,7 +60,7 @@ I file in `brain/` sono la fonte canonica dei contenuti su Domino — identità,
 servizi, metodi, prezzi, case history, referenze, sales play per settore.
 
 > **Non modificare `brain/` in questo repo.** È una fotografia. La fonte vive su
-> OneDrive in `Documenti/Claude/Projects/Domino Brain/`, e `scripts/sync-brain.sh`
+> OneDrive in `Domino Brain - main/`, e `scripts/sync-brain.sh`
 > la replica qui ogni 10 minuti via LaunchAgent, con commit e push automatici.
 > Il sync è a senso unico e usa `--delete`: qualsiasi modifica fatta qui viene
 > sovrascritta al giro successivo.

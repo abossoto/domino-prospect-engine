@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-SRC="/Users/andreabosso/Library/CloudStorage/OneDrive-DominoSRL/Documenti/Claude/Projects/Domino Brain/"
+SRC="/Users/andreabosso/Library/CloudStorage/OneDrive-DominoSRL/Domino Brain - main/"
 DST="/Users/andreabosso/Code/domino-prospect-engine/brain/"
 REPO="/Users/andreabosso/Code/domino-prospect-engine"
 

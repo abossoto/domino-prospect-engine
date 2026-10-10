@@ -66,7 +66,7 @@ Sales intelligence tool interno per il team commerciale di Domino (domino.it). I
 
 **Principio chiave del brain:** il loader legge i file `.md` presenti nella cartella `brain/`** a runtime, ordinati per nome, **meno quelli elencati in `BRAIN_EXCLUDE`** (`api/_shared.js`). Dalla v4.2 sono esclusi `14_domino_document_design.md`, `15_domino_document_word.md` e `16_domino_deck_pptx.md`: descrivono il layout visivo di .docx e .pptx (punti tipografici, margini, hex) che viene prodotto client-side da `dossierBuilder.js` e `pptBuilder.js` a partire da `designSystem.js`, non dal JSON del modello. Restano autoritativi in `brain/`; per rimetterli nel contesto basta svuotare il Set. Aggiungere un nuovo file brain non richiede modifiche al codice. Il brain è cached in memoria per il ciclo di vita del processo Vercel.
 
-**Sync OneDrive → repo (v4.1):** Il brain canonico vive su OneDrive in `Documenti/Claude/Projects/Domino Brain/`. `scripts/sync-brain.sh` (lanciato ogni 10 min da un LaunchAgent macOS) fa rsync one-way OneDrive → `brain/`, auto-committa cambi e pusha su `origin/main`. La spec è esclusa dal brain perché descrive l'app, non i contenuti Domino.
+**Sync OneDrive → repo (v4.1):** Il brain canonico vive su OneDrive in `Domino Brain - main/`. `scripts/sync-brain.sh` (lanciato ogni 10 min da un LaunchAgent macOS) fa rsync one-way OneDrive → `brain/`, auto-committa cambi e pusha su `origin/main`. La spec è esclusa dal brain perché descrive l'app, non i contenuti Domino.
 
 ---
 
@@ -1131,7 +1131,7 @@ In lista ogni contatto ha il link al record HubSpot (`https://app.hubspot.com/co
 1. *Filesystem cache* — `let _brainCache = null` a livello modulo. Prima chiamata legge `brain/*.md`, le successive usano la cache in-memory. Su Vercel ogni serverless function ha il suo ciclo di vita.
 2. *Anthropic prompt cache* — il brain è il primo blocco del `system` array con `cache_control: { type: 'ephemeral' }`. TTL 5 min. Risparmio: ~90% sul costo input del brain (~60K token) dalla 2ª chiamata. Break-even a 2 chiamate.
 
-**Sync brain da OneDrive:** il brain canonico vive su `~/Library/CloudStorage/OneDrive-DominoSRL/Documenti/Claude/Projects/Domino Brain/`. `scripts/sync-brain.sh` (lanciato ogni 10 min da `~/Library/LaunchAgents/com.domino.brain-sync.plist`) fa rsync one-way OneDrive → `brain/`, auto-commit, push. Richiede Full Disk Access su `/bin/bash` per accedere ai cloud storage da contesto launchd.
+**Sync brain da OneDrive:** il brain canonico vive su `~/Library/CloudStorage/OneDrive-DominoSRL/Domino Brain - main/` (dal 2026-10-10; prima `Documenti/Claude/Projects/Domino Brain/`). `scripts/sync-brain.sh` (lanciato ogni 10 min da `~/Library/LaunchAgents/com.domino.brain-sync.plist`) fa rsync one-way OneDrive → `brain/`, auto-commit, push. Richiede Full Disk Access su `/bin/bash` per accedere ai cloud storage da contesto launchd.
 
 **Nomenclatura prodotti:** il system prompt di generation include esplicitamente i nomi corretti come *anchor* anti-allucinazione. La fonte canonica resta `brain/03_domino_metodi.md` (sezione "Catalogo 2026"). Errori tipici da prevenire: "Foundation Sprint" al posto di "Core Sprint!", "Progetto completo" al posto di "Build Sprint!", "preventivo emozionale" minuscolo, "Trainstorming" senza `!` quando citato come prodotto.
 
