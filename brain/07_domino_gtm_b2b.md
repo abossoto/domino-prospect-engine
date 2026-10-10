@@ -1,5 +1,7 @@
 # DOMINO BRAIN — GTM B2B Industriale / Manifatturiero
-> Versione 1.1 — Aprile 2026. Sales plays, scala di pricing e regole commerciali per il settore B2B industriale. Allineata a brain v5.1 (catalogo 2026, Build Sprint!, Brain & Identity Design Sprint!, Decision Design come cornice). Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
+> Versione 1.2 — Ottobre 2026. Sales plays, scala di pricing e regole commerciali per il settore B2B industriale. Allineata a `03_domino_metodi.md` v5.4 (catalogo 2026, Build Sprint!, Brain & Identity Design Sprint!, Decision Design come cornice). Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
+>
+> **Changelog — 10 ottobre 2026 (health check).** anni di esperienza portati a 30; test con utenti spostato dopo lo Sprint!.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · Altri GTM: [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 
@@ -134,7 +136,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 **[Proof point](04_domino_case_history.md):**
 - 20+ clienti B2B industriale attivi (Danieli, COMAU, Bitron, Rollon, Megadyne, Demak, Frascold…)
 - IKA 2023 — Rollon: Best Integrated Communication Campaign B2B
-- 29 anni di esperienza, 100% clienti soddisfatti Design Sprint!
+- 30 anni di esperienza, 100% clienti soddisfatti Design Sprint!
 
 **Vs competitor:**
 - Vs web agency: vertical knowledge B2B + metodi proprietari + ownership dei risultati
@@ -198,7 +200,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 **Come entrare:**
 - SEO/GEO Audit internazionale (€1.500) → analisi visibilità per mercato e lingua, quantifica il costo della frammentazione in traffico perso
 - Core Sprint! (€6.000) → se HQ e filiali hanno visioni diverse: definisce architettura del brand internazionale e governance dei mercati
-- Design Sprint! (€10.000) → quando la direzione è condivisa: progetta il nuovo modello di comunicazione e lo testa con stakeholder reali di HQ e mercati chiave prima del rollout
+- Design Sprint! (€10.000) → quando la direzione è condivisa: progetta il nuovo modello di comunicazione, da testare poi con stakeholder reali di HQ e mercati chiave prima del rollout
 - **Brain & Identity Design Sprint!** *(variante di punta 2026)* → quando il problema vero è strutturale: serve un **design system** scalabile multi-mercato e/o un **brain** della conoscenza prodotto interrogabile via AI. Sono *fondamenta*, non progetti puntuali — vivono nel tempo, vengono alimentati, smettono di essere reinventati a ogni rollout. Caso di scuola: Danieli.
 
 **[Proof point](04_domino_case_history.md):**

@@ -184,11 +184,11 @@ Tre decisioni di Andrea, che chiudono i nodi della v0.1:
 
 ## Note di stile per la costruzione di materiali commerciali
 
-Quando si costruiscono deck, one-pager o pagine di sito a partire da questa scheda, vale la coerenza visual identity Domino 30:
+Quando si costruiscono deck, one-pager o pagine di sito a partire da questa scheda, valgono le regole del Domino Design System (`15_domino_document_word.md` per i documenti, `16_domino_deck_pptx.md` per i deck):
 
-- Sfondi `#0a0a0a` (nero canonico)
-- Accenti `#E8272A` (rosso Domino)
-- Tipografia: Helvetica Neue o Arial, mai Google Fonts
+- Nero `#000000` e paper `#F0F0F0` (bianco per i documenti)
+- Un solo rosso: `#FF303F`
+- Tipografia: Aktiv Grotesk (fallback Arial) + PT Serif Bold
 - Una decisione/idea per slide o per blocco, no testo denso
 - Citazioni e dati con fonte sempre dichiarata (data, fonte, pagina se documento)
 

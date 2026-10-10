@@ -1,24 +1,24 @@
-# DOMINO BRAIN — DominoOS
-> Versione 1.0 — 25 settembre 2026. Il sistema operativo aziendale di Domino: che cos'è, da dove viene, come è fatto, chi lo tiene in piedi e come si prova. Documento autoritativo della strategia AI interna. Fonte di riferimento visiva e narrativa: `Presentazioni/Domino Brain · Visione.pptx` (versione finale, 25 settembre 2026).
+# DOMINO BRAIN — Il sistema
+> Versione 1.0 — 25 settembre 2026. Il Domino Brain come sistema operativo aziendale: che cos'è, da dove viene, come è fatto, chi lo tiene in piedi e come si prova. Documento autoritativo della strategia AI interna. Fonte di riferimento visiva e narrativa: `Domino Brain · Visione_3 copy.pptx` (versione finale, 25 settembre 2026).
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Framework Silos](13_silos_framework.md) · [Document Layer](15_domino_document_word.md) · [Deck Layer](16_domino_deck_pptx.md)
 
 ---
 
-## 0. Che cos'è DominoOS
+## 0. Che cos'è il Domino Brain come sistema
 
-**DominoOS è il sistema operativo aziendale di Domino.** Non è uno strumento, non è un progetto AI, non è un metodo da vendere: è il modo in cui l'azienda raccoglie quello che sa, decide cosa può fare da sola, produce, controlla quello che esce e impara dagli esiti.
+**Il Domino Brain è la conoscenza condivisa di Domino e, insieme, il suo sistema operativo aziendale.** Non è uno strumento, non è un progetto AI, non è un metodo da vendere: è il modo in cui l'azienda raccoglie quello che sa, decide cosa può fare da sola, produce, controlla quello che esce e impara dagli esiti.
 
 La distinzione che regge tutto il documento:
 
-- **Il Domino Brain** è la conoscenza — cosa c'è scritto.
+- **I file del Brain** sono la conoscenza — cosa c'è scritto.
 - **Le skill** sono il metodo eseguibile — come si fa.
 - **I progetti cliente** sono il contesto — cosa sappiamo di questo cliente.
-- **DominoOS** è il sistema che li mette al lavoro insieme, con regole, proprietari e un ritmo.
+- **Il Domino Brain, inteso come sistema,** li mette al lavoro insieme, con regole, proprietari e un ritmo.
 
 Il passaggio in una riga: **da archivio a sistema operativo. Il Brain oggi risponde. Domani lavora, e impara.**
 
-> **Nota di notazione.** Il nome è stato deciso da Andrea il 25 settembre 2026. In questo documento è scritto **DominoOS** (una parola, D e OS maiuscole). Se la forma canonica deve essere diversa (`Domino OS`, `dominoOS`), va corretta qui e in tutti i materiali prima di uscire verso l'esterno.
+> **Nota di notazione.** Fino al 10 ottobre 2026 il sistema aveva un nome proprio, *DominoOS*, deciso il 25 settembre 2026. Dal 10 ottobre il nome è ritirato per non moltiplicare i nomi: conoscenza e sistema si chiamano entrambi **Domino Brain**. Nei materiali precedenti (presentazione del 25 settembre, health check di ottobre) *DominoOS* va letto come Domino Brain.
 
 ---
 
@@ -57,7 +57,7 @@ Fonte: https://thisismirage.com/ai-and-the-future-of-the-creative-agency-industr
 
 ### 1.5 Il dato che spiega perché quasi tutti falliscono
 
-Il MIT ha misurato che il 95% dei progetti pilota di AI generativa non produce ritorno. La lettura che adottiamo: **il problema non è il modello, è l'infrastruttura intorno** — dati non leggibili, nessun proprietario, nessun controllo in uscita, nessun anello di ritorno. DominoOS è esattamente il tentativo di costruire quell'infrastruttura prima di comprare altri strumenti.
+Il MIT ha misurato che il 95% dei progetti pilota di AI generativa non produce ritorno. La lettura che adottiamo: **il problema non è il modello, è l'infrastruttura intorno** — dati non leggibili, nessun proprietario, nessun controllo in uscita, nessun anello di ritorno. Il Domino Brain è esattamente il tentativo di costruire quell'infrastruttura prima di comprare altri strumenti.
 
 ---
 
@@ -106,7 +106,7 @@ Il mondo reale da cui arrivano i segnali e verso cui tornano le azioni: clienti 
 | **Gialla** | Il sistema produce, una persona approva prima dell'uscita | Tutto ciò che vede un cliente o un prospect |
 | **Rossa** | Il sistema non tocca | Prezzi, impegni contrattuali, decisioni che cambiano il perimetro di un progetto |
 
-La zona si scrive una volta per ogni loop e sta nel documento del loop, non nella testa di chi lo esegue. **Le zone non sono ancora scritte:** è il primo pezzo mancante di DominoOS.
+La zona si scrive una volta per ogni loop e sta nel documento del loop, non nella testa di chi lo esegue. **Le zone non sono ancora scritte:** è il primo pezzo mancante del sistema.
 
 ---
 
@@ -120,7 +120,7 @@ Tre pezzi, tre velocità di aggiornamento diverse. Confonderli è il modo più r
 | **I progetti cliente** | Un Brain per ogni cliente: glossario, decisioni, vincoli, cosa ha funzionato | Chi ci lavora | Cambia ogni giorno |
 | **Le skill** | Il metodo eseguibile: come si conduce un Core Sprint!, come si affronta una gara, come si crea una campagna, come si aggiorna una pagina | Caricate una volta | Si aggiornano per tutti |
 
-> **La skill dice come si fa. Il Brain dice cosa c'è scritto. Il progetto dice cosa sappiamo di questo cliente.**
+> **Il Brain tiene quello che resta. Il progetto cambia mentre il lavoro avanza. Le skill ripetono quello che abbiamo imparato.**
 
 ### 4.1 La regola delle tre volte
 
@@ -159,7 +159,7 @@ I quattro esempi portati in presentazione:
 |--------|-------|-------------|
 | Uno solo | **Brain Owner** | Presidia cosa c'è scritto. Decide cosa entra nel Brain, pubblica le release e tiene una versione sola, valida per tutti |
 | Uno per processo | **Loop Owner** | Possiede la catena intera — processi, skill, regole — e il numero che dice se funziona. Quando un output esce male cambia la regola, non l'output |
-| Uno per cliente | **Editor di progetto** | Tiene vivo il Brain del suo conto: fatti aggiornati, decisioni registrate, materiali che non invecchiano alle spalle di chi lavora |
+| Uno per cliente | **Account Manager** (fino al 10 ottobre 2026: «Editor di progetto») | Owner del Brain cliente: lo tiene vivo: fatti aggiornati, decisioni registrate, materiali che non invecchiano alle spalle di chi lavora |
 | Tutti gli altri | **Chi lavora dentro** | Non devono sapere com'è fatto il sistema. Devono trovarci quello che serve, e segnalare quando non lo trovano |
 
 **Nessun software nuovo, gli strumenti ci sono già. Servono quattro nomi veri e l'autorità di cambiare le regole.**
@@ -181,7 +181,7 @@ Differenza con il Brain Owner: il Brain Owner è uno solo e presidia **cosa c'è
 
 ## 6. La prova: Digital Communication Forum Italia, Rimini, 20–22 settembre 2026
 
-Il loop ha già girato una volta per intero, senza che lo chiamassimo per nome. È il riferimento con cui si spiega DominoOS a chi non l'ha mai sentito nominare: non una promessa, una cosa successa.
+Il loop ha già girato una volta per intero, senza che lo chiamassimo per nome. È il riferimento con cui si spiega il Domino Brain a chi non l'ha mai sentito nominare: non una promessa, una cosa successa.
 
 | # | Passaggio | Strato | Che cosa è successo |
 |---|-----------|--------|---------------------|
@@ -237,7 +237,7 @@ Partito a settembre 2026. Scelto come primo test perché il ciclo si segue dall'
 - Il controllo in uscita su ogni consegna
 - Due numeri a chiusura: **regole nuove entrate nel Brain** e **stima contro consuntivo**
 
-Cartella: `Progetti Clienti/Air Dolomiti/2026_CX Design Sprint!/`, partendo da `00_scheda_progetto.md`.
+Cartella: `Clienti/Air Dolomiti/2026_CX Design Sprint!/` (Brain cliente in `Clienti/Air Dolomiti/00_brain/`), partendo da `00_scheda_progetto.md`.
 
 ### 02 · Il seguito del Forum
 
@@ -254,7 +254,7 @@ Cinque lingue, cinque mercati, tre servizi: piano editoriale europeo, media e le
 1. **Le tre zone di policy, scritte.** Finché non esistono, ogni decisione su cosa il sistema può fare da solo è un caso singolo.
 2. **Il Quality Gate.** Il controllo in uscita che chiede «è diverso?» e non «è corretto?». Con l'AI la correttezza è gratis: la riconoscibilità no.
 3. **Il Registro degli esiti.** Il posto dove un esito diventa una regola. Senza, l'apprendimento resta mezzo giro.
-4. **I quattro nomi.** Brain Owner, Loop Owner, editor di progetto assegnati a persone che hanno già l'autorità sui rispettivi processi.
+4. **I quattro nomi.** Brain Owner, Loop Owner, Account Manager assegnati a persone che hanno già l'autorità sui rispettivi processi.
 5. **Il passaggio automatico dei contatti a HubSpot**, oggi a mano.
 
 ---
@@ -270,9 +270,9 @@ Cinque lingue, cinque mercati, tre servizi: piano editoriale europeo, media e le
 
 ## 11. Fonti e file collegati
 
-**Presentazione:** `Presentazioni/Domino Brain · Visione.pptx` — 12 slide, Deck Layer, versione finale del 25 settembre 2026.
+**Presentazione:** `Domino Brain · Visione_3 copy.pptx` — 12 slide, Deck Layer, versione finale del 25 settembre 2026.
 
-**Nel Brain:** `CLAUDE.md` (terminologia canonica e regole di produzione) · `03_domino_metodi.md` (metodi e prezzi, fonte unica) · `13_silos_framework.md` · `16_domino_deck_pptx.md` · `Progetti Clienti/Air Dolomiti/2026_CX Design Sprint!/`
+**Nel Brain:** `CLAUDE.md` (terminologia canonica e regole di produzione) · `03_domino_metodi.md` (metodi e prezzi, fonte unica) · `13_silos_framework.md` · `16_domino_deck_pptx.md` · `Clienti/Air Dolomiti/2026_CX Design Sprint!/`
 
 **Nel progetto Claude *Domino Brain*:** `17_domino_ai_native.md` (l'analisi preparatoria da cui nasce questo documento: i quattro casi d'uso, la simulazione del ciclo commerciale e dei tre loop Case IH) · `18_dcf_rimini_2026.md` · le sedici schede `dcf2026_scheda_*`.
 
@@ -282,7 +282,7 @@ Cinque lingue, cinque mercati, tre servizi: piano editoriale europeo, media e le
 
 ## 12. Regole d'uso di questo documento
 
-- **DominoOS è un nome interno.** Non esce verso clienti o prospect finché i tre test del §8 non hanno prodotto numeri. Verso l'esterno si parla di quello che sappiamo fare, non del sistema con cui lo facciamo.
-- **DominoOS non è il Brain & Identity Design Sprint!.** Il Design Sprint! è un prodotto che vendiamo; DominoOS è come lavoriamo noi. La tentazione di presentarlo come «il nostro metodo applicato a noi stessi» va evitata: è un'altra cosa, ed è più grande.
+- **Il Domino Brain come sistema è un tema interno.** Non si presenta a clienti o prospect finché i tre test del §8 non hanno prodotto numeri. Verso l'esterno si parla di quello che sappiamo fare, non del sistema con cui lo facciamo.
+- **Il Domino Brain non è il Brain & Identity Design Sprint!.** Il Design Sprint! è un prodotto che vendiamo; il Domino Brain è come lavoriamo noi. La tentazione di presentarlo come «il nostro metodo applicato a noi stessi» va evitata: è un'altra cosa, ed è più grande.
 - Su offerta, metodi, prezzi e naming **vince il Brain**, non questo documento.
 - Dove un dato non c'è, si scrive **DATI NON TROVATI**. Non si arrotonda.

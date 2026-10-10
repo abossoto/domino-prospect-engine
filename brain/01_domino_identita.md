@@ -1,5 +1,7 @@
 # DOMINO BRAIN — Identità
-> Versione 3.4 — Agosto 2026. Fonti: sito domino.it (IT+EN), presentazioni ufficiali, Sortlist, Digital Communication Forum 2025, Trainstorming! "Le transizioni, I5.0 by Design" (aprile 2026).
+> Versione 3.5 — Ottobre 2026. Fonti: sito domino.it (IT+EN), presentazioni ufficiali, Sortlist, Digital Communication Forum 2025, Trainstorming! "Le transizioni, I5.0 by Design" (aprile 2026).
+>
+> **Changelog — 10 ottobre 2026 (health check).** sostituita un'espressione vietata (§ posizionamento) e un'auto-definizione implicita come agenzia (ora «I partner che…»); dato B Corp Italia aggiornato (345 a maggio 2025); link a `02_domino_servizi.md` corretto.
 >
 > **Changelog v3.4.** Aggiornato l'indirizzo della sede di Venezia: **Calle Giovanni Legrenzi, 35 — 30171 Venezia** (precedente: Sestiere Santa Croce, 466/G — 30135). Telefono invariato: +39 041 0991410.
 >
@@ -35,7 +37,7 @@
 
 > *"Proudly Interactive dal 1996"* — claim storico, ancora usato
 
-Domino è il **Domino CX Transformation Partner**: non un vendor di software, non una web agency generica. Siamo il partner che trasforma problemi di business complessi in soluzioni digitali concrete, gestendo internamente l'intero workflow — dalla strategia alla creatività, fino alla messa a terra tecnologica.
+Domino è il **Domino CX Transformation Partner**: non un vendor di software, non una web agency generica. Siamo il partner che trasforma problemi di business complessi in soluzioni digitali concrete, gestendo internamente l'intero workflow — dalla strategia alla creatività, fino alla realizzazione tecnologica.
 
 > *Vi accompagniamo nella trasformazione, con metodi collaudati da anni. Siamo abituati a gestire la complessità dei mercati e dei nostri* `[completare]`
 
@@ -204,13 +206,13 @@ L'AI Act è in vigore. I sistemi AI ad alto rischio (HR, credit scoring, infrast
 - Opportunità concreta: workshop di AI governance per clienti (nuovo revenue stream, soprattutto in finance, healthcare, automotive)
 
 **Come cambia il mercato:**
-I clienti stanno passando da "AI = magia" a "AI = liability da gestire". Le agenzie che sanno operazionalizzare la governance — non solo consegnare modelli — vinceranno nei settori regolati. Domino è già posizionata: va detto esplicitamente.
+I clienti stanno passando da "AI = magia" a "AI = liability da gestire". I partner che sanno operazionalizzare la governance — non solo consegnare modelli — vinceranno nei settori regolati. Domino è già posizionata: va detto esplicitamente.
 
 **Frase da usare nei pitch:**
 > *"L'AI Act non è un problema da risolvere — è un filtro che separa chi ha progettato responsabilmente da chi ha solo implementato velocemente. Noi siamo dalla parte giusta di quel filtro."*
 
 ### B Corp Momentum — Il mercato si sta allineando
-In Italia ci sono oltre 300 B Corp (2025), inclusi Lavazza, Illy, Chiesi. Il 40%+ degli RFP EU include già criteri ESG nella selezione dei fornitori.
+In Italia le B Corp erano 345 a maggio 2025 (fonte: B Lab Italia, via Media Key), inclusi Lavazza, Illy, Chiesi. Il 40%+ degli RFP EU include già criteri ESG nella selezione dei fornitori.
 
 **Opportunità non ancora sfruttate:**
 - **Co-marketing con B Corp vicine**: Lavazza, Illy e Chiesi sono tutte piemontesi — case study congiunti, eventi e visibilità reciproca sono a portata di mano
@@ -278,7 +280,7 @@ Domino ha ottenuto la certificazione B Corp nel 2025. Non è un badge etico: è 
 
 > **Tesi-cardine 2026:** *Vendere output significa essere confrontabili. Vendere decisioni significa essere insostituibili.*
 >
-> L'AI ha reso schermate, codice e deck una commodity disponibile a tutti per quasi niente. Quello che resta scarso — e nostro — è il **giudizio**: capire cosa vale la pena decidere, su quali fondamenta, con quali conseguenze a 6-12 mesi. È quello che noi chiamiamo Decision Design (vedi `02_servizi.md`). Tutti gli USP qui sotto si leggono attraverso questa lente.
+> L'AI ha reso schermate, codice e deck una commodity disponibile a tutti per quasi niente. Quello che resta scarso — e nostro — è il **giudizio**: capire cosa vale la pena decidere, su quali fondamenta, con quali conseguenze a 6-12 mesi. È quello che noi chiamiamo Decision Design (vedi `02_domino_servizi.md`). Tutti gli USP qui sotto si leggono attraverso questa lente.
 
 1. **Risultati prima degli strumenti** — non siamo vendor di software, la tecnologia serve il progetto
 2. **Full workflow interno** — strategia, creatività, tecnologia, produzione, manutenzione tutto sotto lo stesso tetto (o coordinando fornitori selezionati)

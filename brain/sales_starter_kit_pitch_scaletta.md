@@ -1,7 +1,7 @@
 # Pitch Brain & Identity Design Sprint! — Sales Starter Kit
 ## Scaletta deck primo incontro freddo · 8-10 slide · B2B industriale
 
-> Versione 0.2 — Maggio 2026. Scaletta del pitch per il **Sales Starter Kit**, specializzazione Sales del **Brain & Identity Design Sprint!**, da portare al primo incontro con un Sales Director di azienda B2B industriale italiana che non conosce ancora Domino. Pitch da 20-30 minuti, formato PPTX Domino 30 (sfondi `#0a0a0a`, accenti `#E8272A`, Helvetica Neue / Arial). **Versione di lavoro** — da consolidare prima di costruire le slide.
+> Versione 0.2 — Maggio 2026. Scaletta del pitch per il **Sales Starter Kit**, specializzazione Sales del **Brain & Identity Design Sprint!**, da portare al primo incontro con un Sales Director di azienda B2B industriale italiana che non conosce ancora Domino. Pitch da 20-30 minuti, formato PPTX Deck Layer (regole in `16_domino_deck_pptx.md`). **Versione di lavoro** — da consolidare prima di costruire le slide.
 
 > **Scheda prodotto canonica del Sales Starter Kit (e dei due Starter Kit fratelli — Internal Comms e CX Manager):** [`starter_kit_brain_identity.md`](starter_kit_brain_identity.md). Questo file resta dedicato alla **scaletta del deck di pitch**, non alla scheda prodotto. In caso di disallineamento, la fonte autoritativa per format, pricing e KPI è la scheda umbrella.
 
@@ -145,7 +145,7 @@
 **Take-away**: il prossimo passo è basso commitment, definito, immediatamente comprabile.
 
 **Contenuto**:
-- **Investimento Sales Starter Kit**: investimento dedicato — quotato in proposta sulla base del perimetro definito al workshop. Workshop Brain & Identity Design Sprint! (2 giorni con il cliente + 3 di lavoro Domino) + build del brain (3 settimane) + go-live. **In questa fase il pricing non viene comunicato a slide**: si dichiara *"vi mandiamo la proposta dedicata dopo il primo tavolo di lavoro"* e si rimanda al passo concreto sotto.
+- **Investimento Sales Starter Kit**: investimento dedicato — quotato in proposta sulla base del perimetro definito al workshop. Workshop Brain & Identity Design Sprint! (2 giorni con il cliente + 3 di lavoro Domino) + build del brain (3 settimane) + QA e go-live (1 settimana). **In questa fase il pricing non viene comunicato a slide**: si dichiara *"vi mandiamo la proposta dedicata dopo il primo tavolo di lavoro"* e si rimanda al passo concreto sotto.
 - **Prima di impegnarsi**: un workshop di scoperta di 2 ore — analizziamo insieme i materiali commerciali esistenti, mappiamo il dolore reale del team Sales, vi diciamo se il Sales Starter Kit ha senso per voi. Gratuito per top-down su grandi clienti secondo regola Domino.
 - **Il passo concreto, oggi**: *"Vi mando una mail con due date la prossima settimana per il workshop di scoperta. Se preferite parlarne in altro modo, ditemelo adesso."*
 
@@ -190,10 +190,10 @@ Tre nodi ancora aperti:
 
 ## Note di stile per la costruzione PPTX
 
-Coerenza visual identity Domino 30:
-- Sfondi `#0a0a0a` (nero canonico)
-- Accenti `#E8272A` (rosso Domino)
-- Tipografia: Helvetica Neue o Arial, mai Google Fonts
+Regole del Deck Layer (`16_domino_deck_pptx.md`):
+- Nero `#000000` e paper `#F0F0F0`
+- Un solo rosso: `#FF303F`
+- Tipografia: Aktiv Grotesk + PT Serif Bold
 - Una decisione/idea per slide, no testo denso
 - Visual nel rapporto 60-70% spazio bianco, 30-40% contenuto
 - Citazioni e dati con fonte sempre dichiarata (data, fonte, pagina se documento)

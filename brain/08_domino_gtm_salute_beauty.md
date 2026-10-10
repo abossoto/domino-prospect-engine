@@ -1,5 +1,7 @@
 # DOMINO BRAIN — GTM Salute, Sanità & Beauty
-> Versione 1.1 — Aprile 2026. Sales plays, scala di pricing e regole commerciali per il settore Salute, Sanità e Beauty. Allineata a brain v5.1 (catalogo 2026, Build Sprint!, Trainstorming! come servizio per change management). Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
+> Versione 1.2 — Ottobre 2026. Sales plays, scala di pricing e regole commerciali per il settore Salute, Sanità e Beauty. Allineata a `03_domino_metodi.md` v5.4 (catalogo 2026, Build Sprint!, Trainstorming! come servizio per change management). Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
+>
+> **Changelog — 10 ottobre 2026 (health check).** Test con utenti spostato dopo lo Sprint!.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · Altri GTM: [B2B](07_domino_gtm_b2b.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 
@@ -167,7 +169,7 @@ In sanità e beauty la **fiducia è il valore principale** — non si scala con 
 **Come entrare:**
 - SEO/GEO Audit (€1.500) → test concreto: il brand viene citato da ChatGPT, Perplexity, Google AI Overview nelle query rilevanti? Report con gap e priorità
 - Core Sprint! (€6.000) → se non è chiaro quale strategia di contenuto adottare o se marketing e digital sono su posizioni diverse
-- Design Sprint! (€10.000) → prototipo della nuova architettura di contenuto testata con utenti reali: si valida quali contenuti generano fiducia e citabilità prima di produrre il piano editoriale completo
+- Design Sprint! (€10.000) → prototipo della nuova architettura di contenuto, da testare con utenti reali dopo lo Sprint!: si valida quali contenuti generano fiducia e citabilità prima di produrre il piano editoriale completo
 
 **[Proof point](04_domino_case_history.md):**
 - GEO — competenza Domino dal 2024, unica in Italia su questo approccio

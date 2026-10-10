@@ -1,5 +1,7 @@
 # DOMINO BRAIN — Settori
-> Versione 3.0 — Aprile 2026. Linguaggio specifico, pain point reali e approccio Domino per ciascun verticale. Aggiornato con scenari Industry 5.0 (Trainstorming! aprile 2026).
+> Versione 3.1 — Ottobre 2026. Linguaggio specifico, pain point reali e approccio Domino per ciascun verticale. Aggiornato con scenari Industry 5.0 (Trainstorming! aprile 2026).
+>
+> **Changelog — 10 ottobre 2026 (health check).** Registrato l'allineamento al formato Sprint! 2 + 2 del 28 settembre 2026.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Referenze](06_domino_referenze.md) · GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 

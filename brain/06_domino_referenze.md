@@ -1,5 +1,7 @@
 # DOMINO BRAIN — Referenze, Premi e Testimonianze
-> Versione 3.0 — Aprile 2026. Fonti: Sortlist (profilo verificato, 10 recensioni, 4.83/5), sito domino.it, blog Domino25. Aggiornato con frame I5.0 per le formule di pitch (Trainstorming! aprile 2026).
+> Versione 3.1 — Ottobre 2026. Fonti: Sortlist (profilo verificato, 10 recensioni, 4.83/5), sito domino.it, blog Domino25. Aggiornato con frame I5.0 per le formule di pitch (Trainstorming! aprile 2026).
+>
+> **Changelog — 10 ottobre 2026 (health check).** Premi IKA verificati su Media Key: Case IH Innovation Technology Award (2024), IVECO Design System vincitore Business to Business (2025), Rollon Best Integrated Communication Campaign B2B (2023); due IKA nel 2024, non tre; Case IH 18 mercati; tabella premi a 21 voci.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 
@@ -16,17 +18,17 @@
 
 ---
 
-## 16 PREMI E RICONOSCIMENTI
-*(Lista completa da profilo Sortlist ufficiale)*
+## PREMI E RICONOSCIMENTI (21 voci)
+*(Base: profilo Sortlist ufficiale. Esiti e categorie IKA 2024 e 2025 verificati su Media Key il 9 ottobre 2026.)*
 
 | Anno | Premio | Progetto / Cliente |
 |------|--------|--------------------|
-| 2025 | **Interactive Key Award** — Nomination B2B | **IVECO Design System** |
+| 2025 | **Interactive Key Award** — Business to Business (vincitore, 26ª edizione) | **IVECO Design System** |
 | 2025 | **Interactive Key Award** — Nomination AI Best Use in ADV | **IVECO MY METALLICA TRUCK** |
-| 2024 | **Interactive Key Award** — AI Best Use in ADV in Social Media Marketing | **Case IH** |
+| 2024 | **Interactive Key Award** — Innovation Technology Award (premio speciale) | **Case IH** |
 | 2024 | **Interactive Key Award** — Automotive and Energy | **IVECO** |
-| 2024 | **IKA Award** — Best Website | **iveco.com** |
-| 2023 | **Interactive Key Award** — Business to Business | **ROLLON** |
+| 2024 | **IKA Award** — Best Website *(come premio distinto da Automotive and Energy: DATI NON TROVATI; Media Key riporta un solo premio IVECO nel 2024)* | **iveco.com** |
+| 2023 | **Interactive Key Award** — Best Integrated Communication Campaign B2B | **ROLLON** |
 | 2019 | **Interactive Key Award** — Best Use of Digital Media | **IVECO** |
 | 2019 | **FEIEIA Grand Prix Award** — Migliore Intranet d'Europa | **FCA** (ora Stellantis) |
 | 2015 | **Interactive Key Award** — Trasporti ed energia | **JEEP** |
@@ -224,7 +226,7 @@ Sulla parola scelta:
 
 > "Nel mondo della comunicazione digitale, rimanere aggiornati non basta: per essere davvero competitivi bisogna stare un passo avanti."
 
-**Uso:** prospect agri/macchine. Da affiancare a IKA 2024 Case IH (AI Best Use in ADV) + Grace Cleary (Sortlist 5/5).
+**Uso:** prospect agri/macchine. Da affiancare a IKA 2024 Case IH (Innovation Technology Award) + Grace Cleary (Sortlist 5/5).
 
 ---
 
@@ -385,7 +387,7 @@ Nomi: Cristina, Orsola, Ilaria, Andrea, Daniele, Pietro, Elisa, Alessandro (×2)
 ### Formule pronte per mail e LinkedIn (adattare al prospect)
 
 **Per prospect in automotive / multinazionale:**
-> "IVECO France lo ha detto chiaramente: 'le persone, la disponibilità e i consigli'. Abbiamo vinto 3 Interactive Key Award su progetti IVECO e Case IH nel solo 2024."
+> "IVECO France lo ha detto chiaramente: 'le persone, la disponibilità e i consigli'. Abbiamo vinto due Interactive Key Award su progetti IVECO e Case IH nel solo 2024."
 
 **Per prospect B2B industriale:**
 > "Il Communication Manager di Bitron ci definisce 'una delle migliori web agency B2B del panorama italiano'. Rollon ci ha affidato il sito in 16 mercati — risultato: +48% di traffico organico negli USA."
@@ -394,7 +396,7 @@ Nomi: Cristina, Orsola, Ilaria, Andrea, Daniele, Pietro, Elisa, Alessandro (×2)
 > "L'intranet che abbiamo costruito per FCA ha vinto il FEIEIA Grand Prix come Migliore Intranet d'Europa — 88.000 dipendenti connessi in un unico portale."
 
 **Per prospect interessato a AI / innovazione digitale:**
-> "Richmond Italia ci ha scelto per 'rivedere tutta la strategia e i processi di un portale introducendo IA'. Con Case IH abbiamo vinto l'Interactive Key Award 2024 per il miglior uso dell'AI nel digital marketing."
+> "Richmond Italia ci ha scelto per 'rivedere tutta la strategia e i processi di un portale introducendo IA'. Con Case IH abbiamo vinto l'Interactive Key Award 2024, Innovation Technology Award, per l'uso dell'AI nella lead generation."
 
 **Per prospect con agenda I5.0 (AI responsabile, transizioni, ESG):**
 > "Lavoriamo con aziende che non vogliono solo essere più veloci — vogliono scegliere meglio dove andare. Con Stellantis abbiamo fatto funzionare la transizione di 88.000 dipendenti in tutto il mondo. Con IVECO abbiamo costruito un configuratore AI che aiuta il buyer B2B a individuare il prodotto e l'allestimento giusto — decidere, non solo comprare. È quello che intendiamo per 'semplificare la complessità'."
@@ -426,9 +428,9 @@ Nomi: Cristina, Orsola, Ilaria, Andrea, Daniele, Pietro, Elisa, Alessandro (×2)
 
 | Settore prospect | Premio/KPI da citare | Citazione cliente da usare |
 |---|---|---|
-| **Automotive** | IKA 2024 IVECO + IKA 2024 Case IH + nomination IKA 2025 | BABYLON Kévin (IVECO France) |
+| **Automotive** | IKA 2024 IVECO + IKA 2024 Case IH + IKA 2025 IVECO Design System | BABYLON Kévin (IVECO France) |
 | **B2B industriale** | IKA 2023 ROLLON, +48% organico US | Alessandra Manzato (Bitron) |
-| **Agricultural / macchine** | IKA 2024 Case IH, 16 mercati | Marie Mouton (CNH Industrial) + Grace Cleary (CNH) |
+| **Agricultural / macchine** | IKA 2024 Case IH, 18 mercati | Marie Mouton (CNH Industrial) + Grace Cleary (CNH) |
 | **Intranet / Internal Comm** | FEIEIA Best Intranet Europa, 88.000 dip. | **Fulvia (Stellantis)** — *"non ricordo quanti progetti insieme"* |
 | **SEO / Lead generation** | Demak +48% organico, +54% lead | Alessandra Manzato (Bitron) |
 | **AI / Digital transformation** | IKA 2024 AI Case IH | Claudio Honegger (Richmond) |

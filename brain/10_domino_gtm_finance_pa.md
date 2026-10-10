@@ -1,5 +1,7 @@
 # DOMINO BRAIN — GTM Finance, Assicurazioni & PA
-> Versione 1.1 — Aprile 2026. Sales plays e regole commerciali per il settore Finance e PA. Allineata a brain v5.1 (catalogo 2026, Build Sprint!, Brain & Identity Design Sprint! come architettura per AI Act, Decision Design come cornice). Da usare dal Prospect Engine per generare materiali calibrati sul prospect.
+> Versione 1.2 — Ottobre 2026. Sales plays e regole commerciali per il settore Finance e PA. Allineata a `03_domino_metodi.md` v5.4 (catalogo 2026, Build Sprint!, Brain & Identity Design Sprint! come architettura per AI Act, Decision Design come cornice). Da usare dal Prospect Engine per generare materiali calibrati sul prospect.
+>
+> **Changelog — 10 ottobre 2026 (health check).** Allineamento a `03_domino_metodi.md` v5.4 (formato Sprint! 2 + 2).
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · Altri GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Automotive](11_domino_gtm_automotive.md)
 

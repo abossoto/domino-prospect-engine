@@ -1,5 +1,7 @@
 # DOMINO BRAIN — GTM Automotive
-> Versione 1.1 — Aprile 2026. Sales plays e regole commerciali per il settore Automotive. Allineata a brain v5.1 (catalogo 2026, **Build Sprint!** sostituisce "progetto completo", **Brain & Identity Design Sprint!** per design system multi-mercato e rete vendita, Trainstorming! per change management). Da usare dal Prospect Engine per generare materiali calibrati sul prospect.
+> Versione 1.2 — Ottobre 2026. Sales plays e regole commerciali per il settore Automotive. Allineata a `03_domino_metodi.md` v5.4 (catalogo 2026, **Build Sprint!** sostituisce "progetto completo", **Brain & Identity Design Sprint!** per design system multi-mercato e rete vendita, Trainstorming! per change management). Da usare dal Prospect Engine per generare materiali calibrati sul prospect.
+>
+> **Changelog — 10 ottobre 2026 (health check).** Cronologia IKA rifatta da 06 con gli esiti verificati: 6 edizioni, 5 clienti; IVECO Design System vincitore B2B 2025; Fiat 2012 (sito lanciato nel 2010); Rollon spostato fuori dall'automotive.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · Altri GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md)
 
@@ -11,25 +13,26 @@
 
 **Ticket:** €50K–100K+ per i progetti grandi (siti multi-paese, employee portal). Design Sprint! (€10K) e Core Sprint! (€6K) servono come entry product per nuove relazioni o nuovi scope su clienti esistenti.
 
-**Posizionamento:** Settore con la history più profonda di Domino — presente dall'automotive dal 1996 (Fiat). Premio IKA vinto in 5 edizioni diverse. Nessun competitor ha una credenziale paragonabile nel mercato italiano.
+**Posizionamento:** Settore con la history più profonda di Domino — presente dall'automotive dal 1996 (Fiat). Premio IKA vinto in 6 edizioni diverse. Nessun competitor ha una credenziale paragonabile nel mercato italiano.
 
 ---
 
 ## Premi IKA in automotive (cronologia completa)
 
-| Anno  | Cliente | Progetto                            | Categoria                                  |
-| ----- | ------- | ----------------------------------- | ------------------------------------------ |
-| 2010  | Fiat    | fiat.it — nuovo sito internazionale | Automotive                                 |
-| 2019  | IVECO   | MyIVECO portal                      | Best Use of Digital Media                  |
-| 2023  | Rollon  | Sito B2B + SEO                      | Best Integrated Communication Campaign B2B |
-| 2024  | IVECO   | iveco.com                           | Automotive & Energy                        |
-| 2024  | Case IH | AI in lead generation               | Premio Speciale Innovation Technology      |
-| 2025* | IVECO   | IVECO Design System                 | Nomination — B2B                           |
-| 2025* | IVECO   | MY METALLICA TRUCK                  | Nomination — AI Best Use in ADV            |
+| Anno | Cliente | Progetto | Categoria |
+| ---- | ------- | -------- | --------- |
+| 2011 | Alfa Romeo | DATI NON TROVATI | Automotive |
+| 2012 | Fiat | fiat.it — nuovo sito internazionale (lanciato nel 2010 in 21 paesi EMEA) | Trasporti ed energia |
+| 2015 | Jeep | DATI NON TROVATI | Trasporti ed energia |
+| 2019 | IVECO | MyIVECO portal | Best Use of Digital Media |
+| 2024 | IVECO | iveco.com | Automotive and Energy |
+| 2024 | Case IH | AI in lead generation | Innovation Technology Award (premio speciale) |
+| 2025 | IVECO | IVECO Design System | Business to Business (vincitore) |
+| 2025 | IVECO | MY METALLICA TRUCK | Nomination — AI Best Use in ADV |
 
-*Nomination 2025 (IKA 26° edizione) — esito non ancora nel Brain.
+*Fonte: `06_domino_referenze.md`; esiti 2024 e 2025 verificati su Media Key (ottobre 2026). Rollon (IKA 2023, Best Integrated Communication Campaign B2B) è B2B industriale, non automotive: sta in 06 e in `07_domino_gtm_b2b.md`.*
 
-**Come usare questa credenziale:** Domino è l'unico partner italiano che ha vinto IKA in automotive in 5 edizioni diverse, con 3 clienti diversi (Fiat, IVECO, Case IH) e in categorie diverse (sito, B2B, AI, digital media). È la prova più forte di expertise settoriale che esiste.
+**Come usare questa credenziale:** Domino è l'unico partner italiano che ha vinto IKA in automotive in 6 edizioni diverse, con 5 clienti diversi (Alfa Romeo, Fiat, Jeep, IVECO, Case IH) e in categorie diverse (automotive, digital media, innovazione e AI, B2B). È la prova più forte di expertise settoriale che esiste.
 
 ---
 
@@ -80,8 +83,8 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 
 **[Proof point](04_domino_case_history.md):**
 - IVECO.com — IKA 2024 categoria Automotive & Energy ("miglior sito automotive")
-- IVECO Design System — nomination IKA 2025 categoria B2B
-- Fiat.it — IKA 2010, rollout in 21 paesi EMEA
+- IVECO Design System — IKA 2025 categoria Business to Business (vincitore)
+- Fiat.it — IKA 2012, rollout in 21 paesi EMEA (lancio 2010)
 - Case IH — sito con Personas lanciato in 18 mercati simultaneamente
 - CNH Industrial, Stellantis
 

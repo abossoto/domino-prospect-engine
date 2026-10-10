@@ -1,5 +1,7 @@
 # DOMINO BRAIN — GTM Turismo & Cultura
-> Versione 1.1 — Aprile 2026. Sales plays, scala di pricing e regole commerciali per il settore Turismo e Cultura. Allineata a brain v5.1 (catalogo 2026, Build Sprint!, Decision Design come cornice del Preventivo Emozionale). Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
+> Versione 1.2 — Ottobre 2026. Sales plays, scala di pricing e regole commerciali per il settore Turismo e Cultura. Allineata a `03_domino_metodi.md` v5.4 (catalogo 2026, Build Sprint!, Decision Design come cornice del Preventivo Emozionale). Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
+>
+> **Changelog — 10 ottobre 2026 (health check).** Test con visitatori spostato dopo lo Sprint!.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · Altri GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 
@@ -179,7 +181,7 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 - Galleria Borghese
 
 **Vs competitor:**
-- Vs agenzia cultura: il Design Sprint! testa le scelte con visitatori reali — non solo con il curatore o il CDA
+- Vs agenzia cultura: il Design Sprint! porta a scelte da testare poi con visitatori reali — non solo con il curatore o il CDA
 - Vs web agency: profonda conoscenza delle istituzioni culturali italiane + metodi proprietari
 
 **CTA:** Case Fondazione Torino Musei o Biennale come apertura + CX Audit visitatore (€1.500) per mappare il percorso digitale attuale.
@@ -206,7 +208,7 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 **Come entrare:**
 - SEO/GEO Audit (€1.500) → test diretto: l'istituzione viene citata da ChatGPT, Perplexity, Google AI nelle query turistiche e culturali rilevanti? Benchmark con istituzioni simili
 - Workshop gratuito 2h (solo per grandi istituzioni: fondazioni multi-sede, biennali, musei nazionali) → apre verso Core Sprint!
-- Design Sprint! (€10.000) → progetta la nuova architettura di contenuto e visibilità, testata con visitatori reali. Per istituzioni multi-sede: valida il modello di coordinamento prima di investire
+- Design Sprint! (€10.000) → progetta la nuova architettura di contenuto e visibilità, da testare con visitatori reali dopo lo Sprint!. Per istituzioni multi-sede: valida il modello di coordinamento prima di investire
 
 **[Proof point](04_domino_case_history.md):**
 - Fondazione Torino Musei — strategia digitale integrata per 4 sedi

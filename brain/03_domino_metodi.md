@@ -1,5 +1,7 @@
 # DOMINO BRAIN — Metodi Distintivi
-> Versione 5.3 — Luglio 2026. I metodi proprietari che differenziano Domino: Core Sprint!, Design Sprint! (con il **Brain & Identity Design Sprint!** come variante di punta 2026 e i tre **Starter Kit** verticali — Sales, Internal Comms, CX Manager — come specializzazioni tattiche), Build Sprint!, Trainstorming!, Preventivo Emozionale. Aggiornato con la presentazione interna *"A new Domino"* (aprile 2026): catalogo 2026 a cinque prodotti, percorso a quattro Sprint!, Decision Design come cornice. Da citare nelle proposte commerciali quando pertinenti.
+> Versione 5.4 — Ottobre 2026. I metodi proprietari che differenziano Domino: Core Sprint!, Design Sprint! (con il **Brain & Identity Design Sprint!** come variante di punta 2026 e i tre **Starter Kit** verticali — Sales, Internal Comms, CX Manager — come specializzazioni tattiche), Build Sprint!, Trainstorming!, Preventivo Emozionale. Aggiornato con la presentazione interna *"A new Domino"* (aprile 2026): catalogo 2026 a cinque prodotti, percorso a quattro Sprint!, Decision Design come cornice. Da citare nelle proposte commerciali quando pertinenti.
+>
+> **Changelog — 10 ottobre 2026 (health check).** Formato Sprint! 2 + 2 (28 settembre 2026); audit tattici a €1.500 nella scala di entrata; sostituita un'espressione vietata in due punti; link alla scheda prodotto del Core Sprint!, al manifesto e alla tabella di aggiornamento del sito.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 
@@ -71,6 +73,8 @@ Design Sprint! e Build Sprint! sono il secondo e terzo tempo del percorso, una v
 ---
 
 ## 1. Core Sprint! *(introdotto 2024)*
+
+**Scheda prodotto completa:** [core_sprint_scheda_prodotto.md](core_sprint_scheda_prodotto.md).
 
 **Cos'è:** Il passo strategico che precede il Design Sprint! Serve a costruire l'**Ipotesi Core** del progetto: la tesi che guida tutto ciò che viene dopo.
 
@@ -276,6 +280,7 @@ Questa scala è la fonte unica di verità per il pricing. I file GTM di settore 
 
 | Step | Prodotto | Prezzo | Note |
 |---|---|---|---|
+| 0 | Audit tattico *(SEO/GEO, CX, Digital Marketing, Process)* | €1.500 | Scope fisso, 1–2 settimane, report con priorità e benchmark. Primo passo a pagamento per prospect bottom-up; porta a Core Sprint! o Design Sprint!. Le varianti per settore sono nei file GTM |
 | 1 | Core Sprint! | €6.000 | Quando la direzione non è chiara o gli stakeholder sono divisi |
 | 2 | Design Sprint! | €10.000 | Quando la direzione è chiara e si vuole validare prima di investire — varianti incluso il **Brain & Identity Design Sprint!**, prodotto di punta 2026 |
 | 2.bis | Starter Kit del Brain & Identity Design Sprint! *(Sales / Internal Comms / CX)* | Su richiesta | Specializzazione tattica verticale, 4 settimane, no IT integration. Buyer di funzione. Pricing non comunicato pubblicamente in questa fase. Scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md) |
@@ -354,7 +359,7 @@ Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina,
 | "Dobbiamo rinnovare il sito ma gli stakeholder non sono d'accordo" | Design Sprint! |
 | "Dobbiamo gestire un cambiamento culturale o tecnologico importante" | Trainstorming! |
 | "Vogliamo introdurre l'AI in azienda ma non sappiamo come" | Trainstorming! |
-| "Facciamo fatica a mettere a terra le idee nel tempo" | Trainstorming! (follow-through strutturato) |
+| "Facciamo fatica a tradurre le idee in pratica nel tempo" | Trainstorming! (follow-through strutturato) |
 | "Abbiamo fatto un Design Sprint! ma non riusciamo a implementare" | Trainstorming! come continuazione |
 | "L'AI Act ci impone di ripensare come usiamo i dati" | Trainstorming!: Responsible AI assessment + roadmap |
 | "Siamo in una transizione (fusione, riorganizzazione, nuova piattaforma)" | Trainstorming!: transition program su misura |
@@ -455,7 +460,7 @@ Programma totale: 12 mesi, una sessione ogni 4.
 
 **Quando proporlo:**
 - Quando il cliente deve gestire una trasformazione culturale o tecnologica rilevante (AI, nuovi strumenti, riorganizzazione)
-- Quando ha già fatto un Design Sprint! ma fatica a mettere a terra
+- Quando ha già fatto un Design Sprint! ma fatica a tradurlo in pratica
 - Quando l'innovazione è bloccata da resistenze interne o conflitti tra stakeholder
 - Come programma annuale di innovazione per aziende che vogliono mantenere un ritmo di cambiamento
 - Come naturale continuazione di un onboarding su nuove piattaforme (intranet, CRM, Microsoft 365)
@@ -486,3 +491,6 @@ Questo file fa parte del Domino Brain. Per approfondire:
 - [10_domino_gtm_finance_pa.md](10_domino_gtm_finance_pa.md) — sales plays Finance & PA
 - [11_domino_gtm_automotive.md](11_domino_gtm_automotive.md) — sales plays Automotive
 - [13_silos_framework.md](13_silos_framework.md) — tassonomia silos, dati citabili, evidenze Mentimeter Rimini 2026, mappatura silos → metodi
+- [core_sprint_scheda_prodotto.md](core_sprint_scheda_prodotto.md) — scheda prodotto completa del Core Sprint!
+- [manifesto_posizionamento_v2 1.md](manifesto_posizionamento_v2%201.md) — manifesto di posizionamento (v6, maggio 2026, documento interno)
+- [site_update_tabella_2026.md](site_update_tabella_2026.md) — tabella di aggiornamento del sito domino.it rispetto al Brain (v1.1, maggio 2026)

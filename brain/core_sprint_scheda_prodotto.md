@@ -69,7 +69,7 @@ Non vendiamo strategia astratta e poi ce ne andiamo. Snelliamo e capiamo *con vo
 
 ## Genealogia metodologica
 
-Il Core Sprint! è l'**adattamento Domino per organizzazioni strutturate** del framework **Foundation Sprint** (Jake Knapp / AJ&Smart). L'adattamento agisce su tre assi:
+Il Core Sprint! è l'**adattamento Domino per organizzazioni strutturate** del framework **Foundation Sprint** (Jake Knapp e John Zeratsky, *Click*, 2025). L'adattamento agisce su tre assi:
 
 1. **Composizione del tavolo** — dimensionata per CdA, direzioni di business e funzioni, non per team founder di startup. Il setup di partecipanti, dinamica e linguaggio del workshop tiene conto di gerarchie, politiche interne e tempi decisionali tipici dell'enterprise.
 2. **Tempo di consolidamento dei deliverable** — i sette deliverable escono dal workshop dei 2 giorni con il cliente e vengono formalizzati da Domino in 2 giorni di lavoro in un dossier (~10-15 pagine), consegnato entro 5 giorni lavorativi. Il dossier è leggibile a board e committenti che non erano in sala — la differenza rispetto al Foundation Sprint originale, dove gli output restano artefatti di lavoro del team.

@@ -1,9 +1,9 @@
-# Case Slow Food — Core Sprint! sulla raccolta fondi
+# Case Slow Food — Workshop di attivazione sulla raccolta fondi
 
 **Cliente:** Slow Food
 **Settore:** Turismo & Cultura
 **Periodo:** Agosto → settembre 2026 (workshop il 24 agosto 2026 al Castello di Verduno, documento finale a settembre)
-**Prodotti Domino utilizzati:** 1 Core Sprint!
+**Prodotti Domino utilizzati:** 1 workshop di attivazione pre-Core Sprint! (una giornata, costruito sulle tavole del Core Sprint!)
 **Citabilità:** nome cliente utilizzabile pubblicamente; foto del workshop utilizzabili. Il documento di analisi è destinato al Direttivo Slow Food e non si distribuisce: il case ne racconta la tesi, non il testo.
 **Uso come case-tipo:** pitch del Core Sprint! verso fondazioni, enti culturali, organizzazioni non profit e, in generale, organizzazioni con un'offerta ricca di progetti che fatica a essere scelta dalle aziende.
 **Visual:** `assets_case_history/turismo_cultura/turismo_slowfood_coresprint_01.png` → `_06.png` (dettaglio in [INDICE_immagini.md](assets_case_history/INDICE_immagini.md))
@@ -22,9 +22,9 @@ Il mercato intorno è cambiato. La sostenibilità è diventata un mercato, con f
 
 Il contatto è nato dentro la rete B Corp: Slow Food aveva visto il metodo Domino al workshop B Local Piemonte facilitato da Domino a Torino, il 29 maggio 2026.
 
-## Perché un Core Sprint!
+## Perché le tavole del Core Sprint!
 
-Il problema non era di comunicazione. Prima di decidere come raccontare l'offerta bisognava chiarire a chi si rivolge, quale problema risolve per chi paga, su quali vantaggi si regge e contro chi si confronta. È esattamente il perimetro del Core Sprint!: partner, problema, vantaggi, concorrenti, soluzioni.
+Il problema non era di comunicazione. Prima di decidere come raccontare l'offerta bisognava chiarire a chi si rivolge, quale problema risolve per chi paga, su quali vantaggi si regge e contro chi si confronta. È esattamente il perimetro del Core Sprint!: partner, problema, vantaggi, concorrenti, soluzioni. Il formato è stato un workshop di attivazione di una giornata, non il Core Sprint! canonico (2 giorni di workshop con il cliente + 2 di lavoro Domino).
 
 **Tavolo:** il gruppo raccolta fondi, con i due sottogruppi che seguono le aziende private e le istituzioni.
 
@@ -52,13 +52,13 @@ Sotto c'è un nodo strutturale: chi Slow Food aiuta e chi Slow Food deve finanzi
 
 Il documento **«Da progetti a partnership»** (settembre 2026), pensato per il Direttivo, raccoglie:
 
-La sintesi delle tavole del Core Sprint! e i quattro dati che contano di più. La diagnosi di mercato: perché le alternative vincono e dove l'offerta Slow Food perde. La raccomandazione centrale, *pacchettizzare*, articolata in tre mosse: poche porte d'ingresso invece di un catalogo (tre o quattro livelli di partnership definiti per impegno, con i progetti come contenuto); la misurabilità dentro il prodotto e non nel report finale; un perimetro chiaro dentro il mondo Slow Food, con un interlocutore unico per ogni livello. Le decisioni da prendere per procedere, ciascuna con le opzioni e la raccomandazione Domino, e il percorso successivo: un Design Sprint! sul perimetro raccolta fondi per costruire l'offerta e un secondo Core Sprint! allargato all'intero sistema Slow Food, perché all'azienda arrivi una voce sola.
+La sintesi delle tavole del workshop e i quattro dati che contano di più. La diagnosi di mercato: perché le alternative vincono e dove l'offerta Slow Food perde. La raccomandazione centrale, *pacchettizzare*, articolata in tre mosse: poche porte d'ingresso invece di un catalogo (tre o quattro livelli di partnership definiti per impegno, con i progetti come contenuto); la misurabilità dentro il prodotto e non nel report finale; un perimetro chiaro dentro il mondo Slow Food, con un interlocutore unico per ogni livello. Le decisioni da prendere per procedere, ciascuna con le opzioni e la raccomandazione Domino, e il percorso successivo: un Design Sprint! sul perimetro raccolta fondi per costruire l'offerta e un Core Sprint! allargato all'intero sistema Slow Food, perché all'azienda arrivi una voce sola.
 
 ## Argomenti di pitch derivati
 
 ### Per pitch del Core Sprint!
 
-**Per fondazioni, musei, enti culturali e organizzazioni non profit che vivono di partnership aziendali.** Il caso Slow Food mostra che il problema raramente è la qualità dei progetti: è la forma dell'offerta. Il Core Sprint! porta il gruppo a leggere la propria proposta con gli occhi di chi deve comprarla, e produce una direzione (*da catalogo a offerta*) invece di un piano di comunicazione.
+**Per fondazioni, musei, enti culturali e organizzazioni non profit che vivono di partnership aziendali.** Il caso Slow Food mostra che il problema raramente è la qualità dei progetti: è la forma dell'offerta. Il metodo del Core Sprint! porta il gruppo a leggere la propria proposta con gli occhi di chi deve comprarla, e produce una direzione (*da catalogo a offerta*) invece di un piano di comunicazione.
 
 **Per organizzazioni con molti progetti e un solo marchio.** Quando ogni progetto ha il proprio referente, il proprio linguaggio e la propria economia, il partner non riesce a scegliere. Il pattern è replicabile su reti museali, consorzi turistici, destinazioni, gruppi con molte linee di servizio.
 
@@ -68,10 +68,10 @@ La sintesi delle tavole del Core Sprint! e i quattro dati che contano di più. L
 
 ### Per il settore Turismo & Cultura
 
-Slow Food è il primo case documentato del settore costruito su un Core Sprint!. Si affianca ai case digitali storici (Biennale di Venezia, Fondazione Torino Musei, Museo Nazionale del Cinema) come prova che Domino lavora anche a monte, sulla direzione e sull'offerta, prima del progetto digitale.
+Slow Food è il primo case documentato del settore costruito sul metodo del Core Sprint!, in formato di workshop di attivazione. Si affianca ai case digitali storici (Biennale di Venezia, Fondazione Torino Musei, Museo Nazionale del Cinema) come prova che Domino lavora anche a monte, sulla direzione e sull'offerta, prima del progetto digitale.
 
 ## Note di ingaggio
 
 Il nome del cliente è citabile pubblicamente. Le foto del workshop sono utilizzabili; ritraggono persone riconoscibili, quindi per un uso pubblicato (sito, social) conviene un passaggio con Slow Food. Il documento «Da progetti a partnership» è materiale per il Direttivo: in pitch si cita la tesi, non si mostra il documento. Non si citano i nomi delle persone Slow Food coinvolte. Il racconto poggia su processo e output: al momento non ci sono metriche di esito.
 
-**Fonti interne:** `Progetti Clienti/Slow Food/` (documento autoritativo «Da progetti a partnership»); tavole e foto nel team Teams Slow Food, `General/core sprint/`.
+**Fonti interne:** `Clienti/Slow Food/2026_Core Sprint!/04_consolidamento/` (documento autoritativo «Da progetti a partnership»); tavole e foto nel team Teams Slow Food, `General/core sprint/`.

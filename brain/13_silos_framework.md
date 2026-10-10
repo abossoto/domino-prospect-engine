@@ -100,6 +100,7 @@ Il **Design Sprint!** e il **Build Sprint!** entrano come secondo e terzo tempo 
 |---|---|---|
 | Presentazione completa (45 slide) | `Eventi e Talk/Customer experience Forum Rimini 2026/Conferenza_CX_forum_silos.pptx` | Usata a Rimini 2026 |
 | Scaletta con frasi canoniche e fonti | `Eventi e Talk/.../Conferenza_Richmond_CX_Forum_Scaletta.md` | v1.1 |
+| Note del relatore (testo parlato, parallelo alla scaletta) | `Eventi e Talk/.../CX Forum Diagnostic Cards/Note Relatore - CX Forum.md` | Allineate il 10/10/2026 |
 | Diagnostic Cards (3 docx, una per tipo di silo) | `Eventi e Talk/.../CX Forum Diagnostic Cards/` | Pronte |
 | Diagnosi silos personalizzata (8 pagine, per partecipante) | promessa ai presenti di Rimini — base per lead magnet self-service | Da industrializzare |
 | Screenshot Mentimeter (4 PNG, dati primari) | `Eventi e Talk/.../mentimeter feedback/` | Raccolti |

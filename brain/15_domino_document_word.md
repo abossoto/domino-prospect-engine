@@ -104,7 +104,7 @@ Interlinea in Word: singola per lead e body (regola aggiornata il 14/07/2026); p
 1. **Masthead** — logo Domino in alto (usa `Claude Design/logo-domino-bcorp.png`, variante scura
    su carta chiara: la versione chiara ha il wordmark bianco e sparisce). Altezza ~0,9 cm; se il
    lockup include la dicitura B Corp, portala a ~1,3 cm perché resti leggibile.
-2. **Eyebrow** — kicker rosso maiuscolo (es. "Analisi · CX Design Sprint").
+2. **Eyebrow** — kicker rosso maiuscolo (es. "Analisi · CX Design Sprint!").
 3. **Titolo** — Aktiv XBold 33 pt, anche su due righe.
 4. **Lead** — una frase in PT Serif Bold 14 pt.
 5. **Byline/meta** — riga maiuscola: "Domino · Torino e Venezia · mese anno".

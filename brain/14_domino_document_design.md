@@ -72,8 +72,10 @@ Italiano curato, sentence case, prima persona plurale, frasi sotto le ~25 parole
 
 ## Avvertenza sul README del pacchetto
 
-Il [`README.md`](Claude%20Design/document-layer/README.md) del design system contiene, oltre alle regole visive, contenuti commerciali **non canonici** che contraddicono il Brain: descrive il Core Sprint! come "4-day discovery sprint" (canone: 2 giorni di workshop con il cliente + 2 di lavoro Domino), elenca varianti Sprint! con naming proprio (Web Design Sprint!, Intranet Design Sprint!, Design System Design Sprint! — canone: Design Sprint! con sei specializzazioni), definisce il Trainstorming! come "travelling brainstorming format" (canone: accompagnamento strutturato). **Per tutto ciò che è offerta, metodi, prezzi e naming commerciale fa fede il Brain (CLAUDE.md e file 01–13), non il README.** Il README resta autoritativo solo per la parte visiva e tipografica.
+Il [`README.md`](Claude%20Design/document-layer/README.md) del design system contiene, oltre alle regole visive, una sezione su naming e metodi, allineata al Brain il 10 ottobre 2026 (Design Sprint! con sei specializzazioni, Build Sprint! 8–52 settimane, Trainstorming! come accompagnamento strutturato). **Per tutto ciò che è offerta, metodi, prezzi e naming commerciale fa fede il Brain (CLAUDE.md e file 01–13), non il README.** Il README resta autoritativo solo per la parte visiva e tipografica.
 
 ## Riferimento
 
-Implementazione canonica citata dal design system: `Air Dolomiti · CX Design Sprint.dc.html` (masthead, otto sezioni numerate, lista risultati a marker romani, agenda a due colonne, callout €10.000, lista referenze, blocco scuro di chiusura). Il file HTML non è in questa cartella; in `Progetti Clienti/Air Dolomiti/2026_CX Design Sprint!/01_proposta/` c'è il PDF derivato.
+Implementazione canonica citata dal design system: `Air Dolomiti · CX Design Sprint.dc.html` (masthead, otto sezioni numerate, lista risultati a marker romani, agenda a due colonne, callout €10.000, lista referenze, blocco scuro di chiusura). Il file HTML non è in questa cartella; in `Clienti/Air Dolomiti/2026_CX Design Sprint!/01_proposta/` c'è il PDF derivato.
+
+Ponte tra Brain e Claude Design (flussi e template dei brief): `Claude Design/00_PONTE_brain_claude_design.md`.

@@ -1,5 +1,7 @@
 # DOMINO BRAIN — Servizi
-> Versione 4.3 — Maggio 2026. Fonti: sito domino.it, presentazioni, Sortlist, blog domino.it, Codice Etico Domino (8 luglio 2024), presentazione interna *"A new Domino"* (aprile 2026). Aggiornato con scenari Industry 5.0, **Decision Design come cuore del lavoro**, e i tre **Starter Kit** del Brain & Identity Design Sprint! (Sales, Internal Comms, CX Manager).
+> Versione 4.4 — Ottobre 2026. Fonti: sito domino.it, presentazioni, Sortlist, blog domino.it, Codice Etico Domino (8 luglio 2024), presentazione interna *"A new Domino"* (aprile 2026). Aggiornato con scenari Industry 5.0, **Decision Design come cuore del lavoro**, e i tre **Starter Kit** del Brain & Identity Design Sprint! (Sales, Internal Comms, CX Manager).
+>
+> **Changelog — 10 ottobre 2026 (health check).** Registrato l'allineamento al formato Sprint! 2 + 2 (Core Sprint! e Design Sprint!: 2 giorni di workshop con il cliente + 2 di lavoro Domino) del 28 settembre 2026.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
 
