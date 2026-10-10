@@ -415,7 +415,7 @@ function RientroRisultato({ r, stato, onSalva, onOwner }) {
           {stato.salvataggio==='in_corso'?'Salvataggio…':stato.salvataggio==='fatto'?'✓ In HubSpot':'→ HubSpot (aggiorna contatto + task owner)'}
         </Btn>
         {stato.msgSalva && <span style={{ fontSize:'11px',color:stato.salvataggio==='fatto'?'#4ade80':'#f87171' }}>{stato.msgSalva}</span>}
-        <span style={{ fontSize:'10px',color:C.muted,marginLeft:'auto' }}>RocketReach: {d.rocketreach} · Web: {d.web}</span>
+        <span style={{ fontSize:'10px',color:C.muted,marginLeft:'auto' }}>RocketReach: {d.rocketreach} · Web: {d.web}{d.tempi ? ` · ${Math.round(d.tempi.totale_s)}s` : ''}</span>
       </div>
     </div>
   );
@@ -454,11 +454,14 @@ function RientriPanel() {
 
   const analizzaTutti = async () => {
     stop.current = false; setInCoda(true);
-    for (const c of visibili) {
-      if (stop.current) break;
-      if (stati[c.id]?.fase === 'fatto') continue;
-      await analizza(c.id);
-    }
+    // Tre contatti alla volta: ogni analisi passa quasi tutto il tempo ad
+    // aspettare RocketReach e Claude, quindi in parallelo la coda si accorcia
+    // di circa tre volte. Oltre si rischiano i rate limit delle due API.
+    const coda = visibili.filter(c => stati[c.id]?.fase !== 'fatto');
+    const worker = async () => {
+      while (coda.length && !stop.current) await analizza(coda.shift().id);
+    };
+    await Promise.all(Array.from({ length: 3 }, worker));
     setInCoda(false);
   };
 
@@ -499,7 +502,7 @@ function RientriPanel() {
         <div style={{ display:'flex',gap:'8px',flexWrap:'wrap',alignItems:'center' }}>
           <Btn onClick={carica} disabled={caricando||inCoda}>{caricando?'Caricamento…':contatti?'↻ Ricarica da HubSpot':'Carica contatti da HubSpot'}</Btn>
           {contatti && visibili.length > 0 && (inCoda
-            ? <Btn variant="ghost" onClick={() => { stop.current = true; }}>■ Ferma dopo quello in corso</Btn>
+            ? <Btn variant="ghost" onClick={() => { stop.current = true; }}>■ Ferma dopo quelli in corso</Btn>
             : <Btn variant="ghost" onClick={analizzaTutti}>Analizza tutti ({visibili.filter(c => stati[c.id]?.fase !== 'fatto').length})</Btn>)}
           {nFatti > 0 && <label style={{ fontSize:'12px',color:C.muted,display:'flex',gap:'6px',alignItems:'center',cursor:'pointer' }}>
             <input type="checkbox" checked={mostraFatti} onChange={e=>setMostraFatti(e.target.checked)} /> Mostra anche i {nFatti} già lavorati

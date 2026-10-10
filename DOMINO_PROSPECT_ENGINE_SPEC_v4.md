@@ -1,5 +1,5 @@
 # DOMINO PROSPECT ENGINE — Specifiche Complete
-## Versione sorgente: v4.6.0 (App.jsx) / Versione brain: 5.1
+## Versione sorgente: v4.7.0 (App.jsx) / Versione brain: 5.1
 
 > Documento generato dalla lettura diretta del codice sorgente. Sufficiente per ricreare il sistema identico.
 
@@ -29,7 +29,7 @@ Sales intelligence tool interno per il team commerciale di Domino (domino.it). I
 /
 ├── api/
 │   ├── _shared.js          → Infrastruttura condivisa: modello, loadBrain, blocco brain cachato, callClaude, CORS. Il prefisso "_" esclude il file dal routing Vercel.
-│   ├── _research.js        → Fase 1: RESEARCH_SYSTEM + runResearch (gestione pause_turn)
+│   ├── _research.js        → Fase 1: RESEARCH_SYSTEM + runResearch (4 parti in parallelo, gestione pause_turn)
 │   ├── _generate.js        → Fase 2: GTM instructions, GENERATION_SYSTEM, parseJSON, generateMaterials
 │   ├── _people.js          → Arricchimento decisori via RocketReach (opzionale, non bloccante)
 │   ├── _list.js            → Generazione liste: LIST_RESEARCH_SYSTEM, runListAgent, rankList
@@ -150,7 +150,7 @@ Dalla v4.2 la pipeline è spezzata in due endpoint. La ragione è che il report 
 
 `/api/analyze` resta per compatibilità e si limita a concatenare le due fasi. Il frontend usa i due endpoint separati.
 
-**Arricchimento decisori (RocketReach).** `/api/research` lancia `runResearch` e `raccogliPersone` con `Promise.all`: RocketReach impiega ~6-7s contro i ~110s della ricerca web, quindi non aggiunge latenza misurabile. Il risultato viene appeso al report come sezione `## PERSONE CHIAVE — DATI VERIFICATI (RocketReach)`, e il system prompt di generazione ha una regola che dà a quei nominativi la precedenza sui nomi dedotti dal web e vieta di dedurre email non presenti nel blocco.
+**Arricchimento decisori (RocketReach).** `/api/research` lancia `runResearch` e `raccogliPersone` con `Promise.all`: RocketReach impiega ~6-7s contro i ~30-40s della ricerca web (v4.7.0; prima ~110s), quindi non aggiunge latenza misurabile. Il risultato viene appeso al report come sezione `## PERSONE CHIAVE — DATI VERIFICATI (RocketReach)`, e il system prompt di generazione ha una regola che dà a quei nominativi la precedenza sui nomi dedotti dal web e vieta di dedurre email non presenti nel blocco.
 
 Due ricerche `person_search` (gratuite, nessun credito): una a livello `cxo` senza filtro di titolo — un CEO non ha "marketing" nel titolo — e una a livello `vp`/`director`/`manager` filtrata su titoli marketing/digital/CX in italiano e inglese. Poi `person_lookup` (1 lookup + 1 export credit) sui primi 3 profili, che è asincrona: si lanciano i lookup insieme e si fa un polling cumulativo su `checkStatus`. Facet geografico corretto: `location: ["Italy"]`; `country` restituisce sempre 0.
 
@@ -180,7 +180,7 @@ In conflitto decide il fatturato della società italiana. Le stesse soglie sono 
 
 **Resa anticipata sugli insiemi vuoti.** Alcune combinazioni di criteri hanno pochissime aziende: fascia PMI più criterio economico dei 20-200K è il caso tipico, le due condizioni quasi si escludono nel B2B industriale italiano. Senza istruzione contraria il modello continua a cercare fino a esaurire il budget e non restituisce niente. La regola ora dice: se dopo ~15 ricerche hai meno di 3 aziende che superano tutti i filtri, fermati, restituisci quelle e scrivi nel report che la combinazione è troppo stretta e quale criterio conviene allentare. Misurato sul filtro PMI: da budget esaurito a 575s con zero risultati, a 226s con 5 aziende e la spiegazione nel report.
 
-**Tetto delle ricerche, per compito.** `max_uses` non è un parametro neutro di sicurezza: se è troppo basso il modello esaurisce le ricerche nella fase di scoperta e restituisce un risultato vuoto con HTTP 200, cioè un fallimento silenzioso. Va calibrato sul compito — 20 per l'analisi di un singolo prospect, dove il prompt chiede "almeno 8-10 ricerche"; 40 per la generazione lista, che deve trovare N aziende **e** verificare il sito di ognuna. Con 12 per entrambi (v4.3.0) la lista tornava sistematicamente vuota.
+**Tetto delle ricerche, per compito.** `max_uses` non è un parametro neutro di sicurezza: se è troppo basso il modello esaurisce le ricerche nella fase di scoperta e restituisce un risultato vuoto con HTTP 200, cioè un fallimento silenzioso. Va calibrato sul compito — 6 per ciascuna delle quattro parti dell'analisi di un singolo prospect (sezione 5); 40 per la generazione lista, che deve trovare N aziende **e** verificare il sito di ognuna. Con 12 per entrambi (v4.3.0) la lista tornava sistematicamente vuota.
 
 **Budget di tempo unico per richiesta.** I timeout per-chiamata non conoscono il `maxDuration` della function: 240s di ricerca più fino a 3 riprese da 240s più 180s di generazione fanno 1140s contro i 300 disponibili, e nelle esecuzioni lente Vercel chiude la connessione con un 504 grezzo prima che l'handler possa rispondere. `creaScadenza()` in `api/_shared.js` fissa una scadenza assoluta per richiesta (275s, con 25s di margine per serializzare la risposta) che viene propagata a ogni `callClaude`:
 
@@ -317,61 +317,22 @@ POST /api/analyze  { prospect: string, note?: string, layer?: string, motion?: s
 
 ---
 
-## 5. SYSTEM PROMPT — RESEARCH_SYSTEM (completo)
+## 5. RICERCA — RESEARCH_SYSTEM e quattro parti in parallelo
 
-```
-Sei un analista di intelligence commerciale senior per Domino, agenzia CX italiana.
-Produci un dossier completo e preciso su un'azienda prospect usando ESCLUSIVAMENTE dati reali trovati sul web.
+Dalla v4.7.0 il dossier non è più una sola chiamata con 8-10 ricerche in fila. Dentro una chiamata le ricerche sono sequenziali (il modello legge un risultato prima di scegliere la query successiva), quindi `runResearch` lancia **quattro chiamate in parallelo** (`Promise.allSettled`), ognuna con il proprio perimetro, `max_uses: 6`, `max_tokens: 8000` e il proprio loop di ripresa su `pause_turn`. I testi vengono concatenati.
 
-REGOLA FONDAMENTALE — MAI INVENTARE:
-Se una fonte non dà risultati concreti, scrivi "⚠️ Non trovato" per quella sezione.
-Un dato mancante segnalato è più utile di un dato inventato.
-Se i dati trovati sono pochi, segnala la scarsezza esplicitamente.
+| Parte | Ricerche chieste | Sezioni scritte |
+|---|---|---|
+| `profilo` | 2-3 | PROFILO AZIENDA · PRESENZA E MATURITÀ DIGITALE · SFIDE PROBABILI · OPPORTUNITÀ PER DOMINO · DATI NON TROVATI |
+| `finanza` | 2-3 | DATI FINANZIARI |
+| `persone` | 2-3 | PERSONE CHIAVE · JOB POSTING E PRIORITÀ STRATEGICHE |
+| `segnali` | 2-3 | SEGNALI RECENTI (ultimi 12 mesi), con URL obbligatoria |
 
-FONTI DA CERCARE IN ORDINE:
+I titoli sono gli stessi della versione a chiamata unica; cambia solo l'ordine, irrilevante per la generazione. Se una parte fallisce, le sue sezioni entrano nel report come "Non trovato (ricerca non riuscita)" e il report è marcato `incompleto`; l'errore si propaga solo se falliscono tutte.
 
-1. SITO WEB AZIENDALE
-   - Leggi homepage + chi siamo + prodotti/servizi + case study
-   - Estrai: mission, prodotti/servizi chiave, mercati, clienti nominati, valori
-   - Valuta qualità sito: design, CTA, lead generation, blog, newsletter, area riservata
+Misure (2026-10-10, ricerca + generazione, headof/bottomup): Rollon 77s (ricerca 33s) contro ~175s (ricerca 133s); Masi Agricola 82s (ricerca 38s) contro ricerca 122s. Ricerca su Bitron e Alpitour: 32s e 35s. Report equivalenti: fatturato con anno e società italiana vs gruppo, segnali con URL, persone con nomi reali.
 
-2. DATI FINANZIARI ITALIANI
-   - Query: "[azienda] fatturato bilancio dipendenti", "[azienda] site:cerved.com",
-     "[azienda] Registro Imprese CCIAA", "[azienda] annual report risultati finanziari"
-   - Estrai: forma giuridica, anno fondazione, fatturato ultimo anno, dipendenti, ATECO, rating
-   - Se non trovi nulla: "⚠️ Dati finanziari non trovati pubblicamente"
-
-3. NEWS E COMUNICATI (ultimi 12 mesi)
-   - Query: "[azienda] news 2024 2025", "[azienda] comunicato stampa acquisizione partnership"
-   - Estrai eventi con date precise. Se nulla: "⚠️ Nessuna news rilevante trovata"
-
-4. LINKEDIN
-   - Cerca profilo aziendale + persone chiave (CEO, CMO, CDO, Dir. Marketing/Commerciale/Digital/CX)
-   - Per ogni persona: nome completo, ruolo, anzianità
-   - Se non accessibili: "⚠️ Profili LinkedIn non accessibili"
-
-5. JOB POSTING ATTIVI
-   - Query: "[azienda] lavora con noi offerte lavoro", "[azienda] site:linkedin.com/jobs"
-   - Interpreta cosa rivelano strategicamente
-   - Se nulla: "⚠️ Nessun job posting trovato"
-
-6. PRESENZA DIGITALE E SOCIAL
-   - Valuta sito, social attivi, frequenza post, blog, newsletter
-   - Rating maturità: Bassa / Media / Alta con motivazione concreta
-
-Fai almeno 8-10 ricerche. Quando trovi un URL rilevante, leggi la pagina intera.
-
-STRUTTURA OBBLIGATORIA DEL REPORT:
-## PROFILO AZIENDA
-## DATI FINANZIARI
-## PERSONE CHIAVE
-## SEGNALI RECENTI (ultimi 12 mesi)
-## JOB POSTING E PRIORITÀ STRATEGICHE
-## PRESENZA E MATURITÀ DIGITALE
-## SFIDE PROBABILI
-## OPPORTUNITÀ PER DOMINO
-## ⚠️ DATI NON TROVATI (obbligatoria — guida la ricerca manuale del commerciale)
-```
+`RESEARCH_SYSTEM` (testo in `api/_research.js`) è condiviso dalle quattro parti e contiene: regola MAI INVENTARE, regole sui dati finanziari (portali con bilanci in chiaro, niente `site:cerved.com`/ufficiocamerale, anno del bilancio, società italiana vs gruppo), l'avviso che altri analisti coprono le altre sezioni, e la regola di verificabilità dei segnali recenti. Il perimetro di ciascuna parte e i titoli esatti delle sezioni arrivano nel messaggio utente.
 
 ---
 
@@ -1094,10 +1055,10 @@ In lista ogni contatto ha il link al record HubSpot (`https://app.hubspot.com/co
 
 **Endpoint** (logica in `api/_rientri.js`, client HubSpot condiviso in `api/_hubspot.js`):
 - `POST /api/rientri-lista` — elenco candidati con owner; marca `gia_lavorato` i contatti che hanno già una nota con `[DOMINO-RIENTRO]`. Solo lettura.
-- `POST /api/rientri-analizza` `{ contactId }` — un contatto per chiamata, il client li mette in coda. Solo lettura su HubSpot.
-  1. HubSpot: contatto, azienda associata, owner. Se il contatto non ha owner (o l'owner è disattivato) si usa Flavio Pedazzini (`12386493`) per firma della bozza, task e owner dell'eventuale azienda nuova; l'owner del contatto non viene modificato. Nel risultato `owner.predefinito = true`. Nel dettaglio dell'analisi una tendina permette di scegliere tra Flavio Pedazzini (`12386493`), Andrea Bosso (`6624973`), Giovanni Borgna (`6828683`, owner "Gianni Borgna" gianni@domino.it) ed Emiliano Cianci (`7474862`): il client aggiorna `owner` nel risultato e sostituisce la firma nella bozza, e `rientri-salva` usa quell'owner per task e azienda nuova.
+- `POST /api/rientri-analizza` `{ contactId }` — un contatto per chiamata; "Analizza tutti" ne lancia tre alla volta. Solo lettura su HubSpot. La risposta include `diagnostica.tempi` (secondi per fase: `hubspot_s`, `rocketreach_s`, `web_s`, `mail_s`, `totale_s`); il totale è mostrato nella riga del risultato.
+  1. HubSpot: contatto, poi azienda associata, owner e owner di riserva in parallelo. Se il contatto non ha owner (o l'owner è disattivato) si usa Flavio Pedazzini (`12386493`) per firma della bozza, task e owner dell'eventuale azienda nuova; l'owner del contatto non viene modificato. Nel risultato `owner.predefinito = true`. Nel dettaglio dell'analisi una tendina permette di scegliere tra Flavio Pedazzini (`12386493`), Andrea Bosso (`6624973`), Giovanni Borgna (`6828683`, owner "Gianni Borgna" gianni@domino.it) ed Emiliano Cianci (`7474862`): il client aggiorna `owner` nel risultato e sostituisce la firma nella bozza, e `rientri-salva` usa quell'owner per task e azienda nuova.
   2. RocketReach: lookup per `hs_linkedin_url` se presente, altrimenti search per nome + azienda precedente e lookup del profilo con nome identico (1 credito). Le email al dominio vecchio o uguali a quella rimbalzata vengono scartate.
-  3. Web (Claude + `web_search`, max 8 ricerche) se RocketReach non trova una nuova azienda o non ha un'email aziendale. Si parte dal profilo LinkedIn pubblico cercato via motore (`"Nome Cognome" site:linkedin.com/in`, poi con l'azienda precedente): azienda e ruolo attuali si prendono dal titolo/anteprima del risultato, e `trovato.fonte = "LinkedIn"` con l'URL del profilo in `trovato.linkedin`. News e pagine aziendali servono a confermare. Il resto: nuova azienda, dominio, ruolo, fonte, confidenza e formato email dedotto da indirizzi reali di altri dipendenti. LinkedIn non viene interrogato direttamente (niente API, scraping vietato dai ToS): solo pagine pubbliche.
+  3. Web (Claude + `web_search`, max 8 ricerche). Parte **insieme** a RocketReach, non dopo: se RocketReach trova una nuova azienda con email aziendale verificata, la ricerca web viene interrotta (`AbortController`, parametro `signal` di `callClaude`, che non ritenta un'interruzione voluta); altrimenti se ne usa il risultato. Non riceve più l'azienda trovata da RocketReach come suggerimento. Si parte dal profilo LinkedIn pubblico cercato via motore (`"Nome Cognome" site:linkedin.com/in`, poi con l'azienda precedente): azienda e ruolo attuali si prendono dal titolo/anteprima del risultato, e `trovato.fonte = "LinkedIn"` con l'URL del profilo in `trovato.linkedin`. News e pagine aziendali servono a confermare. Il resto: nuova azienda, dominio, ruolo, fonte, confidenza e formato email dedotto da indirizzi reali di altri dipendenti. LinkedIn non viene interrogato direttamente (niente API, scraping vietato dai ToS): solo pagine pubbliche.
   4. Email, in ordine: aziendale verificata RocketReach → ricostruita dal formato (`stato: da_verificare`) → personale RocketReach.
   5. Bozza di ricontatto (brain in contesto) firmata dal contact owner, JSON `{oggetto, corpo}`.
 - `POST /api/rientri-salva` `{ risultato }` — click esplicito. **Aggiorna il contatto esistente, non ne crea uno nuovo** (nessun duplicato). Crea/trova l'azienda nuova (owner = contact owner) e la associa al contatto come primaria; la vecchia resta associata. Sul contatto: `company` e `jobtitle` (se trovata la nuova azienda), `hs_linkedin_url`, `email` solo se verificata e non già usata da un altro contatto (in quel caso resta invariata e la risposta riporta `email_in_uso`). I valori precedenti restano nella nota `[DOMINO-RIENTRO]`, associata al contatto, all'azienda nuova e a quella vecchia; task `EMAIL` all'owner sul contatto con la bozza, scadenza +2 giorni. Risposta: `{ contatto: { id, aggiornati, email_in_uso }, azienda }`. Nessuna mail viene inviata.
@@ -1160,6 +1121,13 @@ In lista ogni contatto ha il link al record HubSpot (`https://app.hubspot.com/co
 
 ## 25. CHANGELOG DOC
 
+- **2026-10-10** — release **v4.7.0** (velocità: parallelismo):
+  - **Tool di ricerca: `web_search_20260209` → `web_search_20250305`** per analisi prospect e Hard bounce. La 20260209 esegue le ricerche dentro blocchi `code_execution`; quando il modello ne apre due insieme il server li tiene fermi **~95s** prima di rispondere (misurato più volte, sempre 95-96s, anche due volte nella stessa chiamata). `disable_parallel_tool_use` non è utilizzabile: l'API lo rifiuta con il programmatic tool calling. La **lista** resta sulla 20260209 (`webSearchTool(n, { filtroDinamico: true })`): nell'unica prova con la 20250305 è uscita con 5 aziende invece di 10 (Turismo / Mid-market), in 136s contro 196s. Da rimisurare prima di cambiarla.
+  - **Ricerca prospect in quattro parti parallele** (profilo / finanza / persone / segnali) invece di una chiamata con 8-10 ricerche in fila. Vedi sezione 5.
+  - **`callClaude` in streaming** (`stream: true`, risposta ricostruita in `leggiStream` con gli stessi blocchi della risposta non-streaming, necessari per `pause_turn`), con controllo di **stream fermo a 60s** → nuovo tentativo. Errori dentro lo stream (`overloaded_error`, `rate_limit_error`) trattati come 529/429. Backoff esponenziale invariato. Nuovo parametro `signal` per interrompere una chiamata: un'interruzione voluta non si ritenta.
+  - **Ricontatto Hard bounce: RocketReach e web in parallelo**, con interruzione del web quando RocketReach trova nuova azienda ed email aziendale; letture HubSpot in parallelo; polling RocketReach a 1,5s invece di 3s; tempi per fase in `diagnostica.tempi` e totale mostrato nella riga. Misurato con HubSpot e RocketReach simulati (RocketReach 8s, nessun risultato): 13s contro 32s.
+  - **"Analizza tutti" a tre contatti alla volta** invece che in sequenza.
+
 - **2026-09-20** — release **v4.6.0** (budget reali, criterio economico, lista più snella):
   - **Budget di durata per endpoint** (`DURATA_DEFAULT_MS` / `DURATA_RICERCA_MS`) invece di una costante globale, con `timeoutMs` della singola chiamata a 480s — viene comunque limitato dal residuo, quindi vale il budget dell'endpoint. Il tentativo di portare i due endpoint di ricerca a 600s è stato **respinto da Vercel** (`invalid maxDuration for plan`): gli 800s del piano Pro richiedono Fluid Compute attivo. Rollback a 300, che basta: 226s e 188s misurati contro 275s di budget.
   - **Criterio economico vincolante.** Verificato prima del fix: il filtro PMI restituiva microimprese da 4, 6 e 8 dipendenti — controllate su RocketReach — dentro la fascia e fuori mercato.
@@ -1205,7 +1173,7 @@ In lista ogni contatto ha il link al record HubSpot (`https://app.hubspot.com/co
   - **`BRAIN_EXCLUDE`:** i file 14/15/16 (layout .docx/.pptx) non entrano più nel contesto. −11K token sul tokenizer Sonnet 4.6.
   - **`max_tokens`:** 8000 → 16000 su ricerca e generazione. Su Sonnet 5 il thinking adattivo è attivo di default e consuma parte del budget: con 8000 il JSON rischiava il troncamento.
   - **Timeout di rete:** `AbortSignal.timeout` su ogni chiamata (240s ricerca, 180s generazione). Prima una chiamata appesa consumava i 300s di `maxDuration` e moriva senza messaggio utile.
-  - **`web_search_20250305` → `web_search_20260209`** con `max_uses: 12` come tetto di sicurezza.
+  - **`web_search_20250305` → `web_search_20260209`** con `max_uses: 12` come tetto di sicurezza. (Riportato a `20250305` nella v4.7.0 per analisi e Hard bounce, vedi changelog.)
   - **`includeFiles: "brain/**"`** in `vercel.json`: `readdirSync` è una lettura dinamica che il file tracer di Vercel non può rilevare staticamente.
   - **Frontend:** `pptxgenjs` e `docx` passano a `import()` dinamico — bundle iniziale 1.028 kB → 272 kB (342 → 109 kB gzip). I due loop di retry duplicati sono diventati `postWithRetry`.
   - **Rimosso:** scrittura di debug in `/tmp/domino_last_raw.json` (inutile su filesystem effimero; il logging su console resta).

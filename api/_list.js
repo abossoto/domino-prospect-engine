@@ -175,7 +175,7 @@ e capaci di sostenere un progetto da 20K-200K.
 Escludi clienti Domino già noti: Rollon, Bitron, IVECO, Case IH, Stellantis, Comau, IPI, Megadyne, Masi, Costa Crociere, Arca, Alpitour, Biennale Venezia.`;
 
   const messages = [{ role: 'user', content: userMsg }];
-  const tool = webSearchTool(MAX_RICERCHE);
+  const tool = webSearchTool(MAX_RICERCHE, { filtroDinamico: true });
   let data = await callClaude({
     system: LIST_RESEARCH_SYSTEM, messages, tools: [tool],
     max_tokens: 16000, timeoutMs: 480000, scadenza,

@@ -1,7 +1,7 @@
 // api/rientri-analizza.js
 // Un contatto alla volta: RocketReach + web + bozza mail possono prendere un paio
 // di minuti, e 36 contatti in una sola function sforerebbero il maxDuration.
-// Il client li chiama in sequenza. Non scrive nulla su HubSpot.
+// Il client ne lancia tre alla volta. Non scrive nulla su HubSpot.
 
 import { applyCors, creaScadenza } from './_shared.js';
 import { hubspotToken, TOKEN_ENV, messaggioErrore } from './_hubspot.js';
