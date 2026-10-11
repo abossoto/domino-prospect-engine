@@ -484,11 +484,13 @@ export async function salvaRientro(token, r) {
   // (azienda, ruolo, email rimbalzata) restano nella nota come storico.
   const azienda = t.azienda ? await upsertAzienda(token, t, ownerId) : null;
 
-  // Un'email ricostruita non va nel campo email: se e' sbagliata rimbalzerebbe
-  // di nuovo e rovinerebbe la reputazione di invio. Resta nella nota e nel task.
-  // Se l'indirizzo verificato e' gia' su un altro contatto, HubSpot rifiuterebbe
+  // L'email trovata sostituisce sempre quella vecchia, anche se ricostruita dal
+  // formato: la vecchia e' in hard bounce, quindi lasciarla non serve a niente
+  // (prima le ricostruite restavano solo nella nota e il contatto teneva
+  // l'indirizzo morto). Lo stato "da verificare" resta nella nota e nel task.
+  // Se l'indirizzo e' gia' su un altro contatto, HubSpot rifiuterebbe
   // l'aggiornamento: si lascia il campo com'e' e lo si segnala.
-  let emailCampo = e?.stato === 'verificata' ? e.indirizzo.toLowerCase() : null;
+  let emailCampo = e?.indirizzo ? e.indirizzo.toLowerCase() : null;
   let emailInUso = null;
   if (emailCampo && emailCampo !== String(c.email_vecchia || '').toLowerCase()) {
     const altro = await searchOne(token, 'contacts', [

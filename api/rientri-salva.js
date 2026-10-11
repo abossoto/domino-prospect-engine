@@ -1,7 +1,7 @@
 // api/rientri-salva.js
 // Scrive su HubSpot il risultato di un'analisi Rientri, dopo che l'utente l'ha
-// visto: nuovo contatto sulla nuova azienda, nota su vecchio e nuovo contatto,
-// task all'owner con la bozza. Il contatto vecchio non viene modificato.
+// visto: aggiorna il contatto esistente (email, azienda, ruolo, LinkedIn),
+// collega la nuova azienda, nota e task all'owner con la bozza.
 
 import { applyCors } from './_shared.js';
 import { hubspotToken, TOKEN_ENV, messaggioErrore } from './_hubspot.js';
