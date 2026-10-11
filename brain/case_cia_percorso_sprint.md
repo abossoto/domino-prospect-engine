@@ -1,12 +1,16 @@
 # Case CIA — Percorso a tre Sprint!
 
-**Cliente:** CIA — Confederazione Italiana Agricoltori
+**Cliente:** CIA – Agricoltori Italiani (Confederazione Italiana Agricoltori)
 **Settore:** B2B Industriale
-**Periodo:** Giugno 2025 → Gennaio 2026 (~7 mesi)
-**Prodotti Domino utilizzati:** 1 Core Sprint! + 2 Design Sprint!
-**Status a maggio 2026:** Output consegnati, Build Sprint! non ancora avviato
-**Citabilità:** Nome cliente utilizzabile pubblicamente
-**Uso come case-tipo:** valido sia per pitch del Core Sprint! sia per pitch del Design Sprint! (in particolare quando il cliente ha più segmenti utente che richiedono percorsi distinti)
+**Periodo:** Giugno 2025 → gennaio 2026 (offerta accettata l'11 giugno 2025; Core Sprint! 23–24 luglio 2025 a Roma; Design Sprint! di area 25–26 novembre e 10–11 dicembre 2025 a Roma; presentazione del whitepaper il 12 gennaio 2026)
+**Prodotti Domino utilizzati:** 1 Core Sprint! + 2 Design Sprint! (nei materiali dell'epoca il primo atto si chiamava «Foundation Sprint»: la notazione canonica è Core Sprint!)
+**Status:** progetto chiuso il 12 gennaio 2026 (scheda in `Clienti/CIA/2025_Percorso Sprint!/`); il seguito non è contrattualizzato
+**Citabilità:** nome cliente pubblico · foto dei workshop e schermate del prototipo CIAO CIA pubbliche (decisione del Brain Owner, 11 ottobre 2026) · il whitepaper «La Nuova CIA» è materiale del cliente, condivisibile in pitch su autorizzazione, non pubblicabile · frase del cliente: DATI NON TROVATI (richiesta di testimonianza preparata per Antonio Del Vecchio) · approvazione del case: Emiliano Cianci (Direttore Clienti)
+**Uso come case-tipo:** pitch del Core Sprint! e del Design Sprint!, in particolare per organizzazioni federate, multi-livello o con più segmenti utente sullo stesso brand; GTM B2B Industriale, Sales Play SP4 («abbiamo un budget ma non sappiamo da dove partire») e SP5 («comunicare in modo coerente su più mercati»)
+**Visual:** da caricare in `assets_case_history/b2b_industriale/` come `b2b_cia_workshop_NN.png` (foto dei workshop, su Teams «CIA-Agricoltori») e `b2b_cia_ciaocia_NN.png` (schermate del prototipo, dal Report&Proposal); indice in `assets_case_history/INDICE_immagini.md`
+**Numeri (con fonte):** oltre 900 sedi sul territorio (case e whitepaper) · 19 siti regionali (sito cia.it, 11 ottobre 2026) · whitepaper di 37 pagine (12 gennaio 2026) · 3 Sprint! in 7 mesi · KPI di outcome: DATI NON TROVATI
+**Fonti:** `Clienti/CIA/2025_Percorso Sprint!/00_scheda_progetto.md`, estratto dell'offerta OFF_052_25_02, deliverable su Teams (`Branding/`), Brain cliente `Clienti/CIA/00_brain/`
+**Da confermare con Emiliano Cianci:** la carica del decisore (qui «Direttore Generale», nei documenti del cliente «Direttore Nazionale») e la composizione dei tavoli (CMO, CIO), non verificabile dalle fonti nel Brain
 
 ---
 
@@ -58,10 +62,6 @@ Il vertice CIA è uscito dai sette mesi di percorso con una direzione condivisa,
 
 Niente di tutto questo era disponibile a giugno 2025.
 
-## Stato a maggio 2026 e prossimi passi
-
-Il Build Sprint! non è ancora stato avviato. Il sito CIAO CIA è prototipo, non sistema in produzione. La rete delle 900 sedi non è ancora stata accompagnata in un percorso strutturato di transizione: è il candidato naturale per un Trainstorming!. Il percorso a quattro Sprint! di CIA è quindi **aperto**: i primi tre atti — Core e i due Design — sono completi e visibili nel dossier; il Build e il Trainstorming! sono il seguito coerente, non ancora contrattualizzato.
-
 ## Argomenti di pitch derivati
 
 ### Per pitch del Core Sprint!
@@ -82,4 +82,4 @@ Il Build Sprint! non è ancora stato avviato. Il sito CIAO CIA è prototipo, non
 
 ## Note di ingaggio
 
-Il caso è citabile pubblicamente. Il dossier "La Nuova CIA" è materiale interno CIA condivisibile in pitch su autorizzazione. Le metriche di outcome verranno aggiunte al caso quando saranno disponibili — al momento, il racconto poggia sulle evidenze di processo e sui prodotti consegnati, non su KPI numerici.
+Il caso è citabile pubblicamente, foto e schermate comprese. Il whitepaper «La Nuova CIA» è materiale interno CIA: si mostra in pitch su autorizzazione, non si pubblica. Il seguito del percorso (Build Sprint! su CIAO CIA, Trainstorming! per la rete delle sedi) non è contrattualizzato: si propone, non si racconta come fatto. Le metriche di outcome verranno aggiunte quando saranno disponibili: oggi il racconto poggia sulle evidenze di processo e sui prodotti consegnati, non su KPI numerici. Referente per materiali e autorizzazioni: Antonio Del Vecchio; approvazione del case e delle sue declinazioni: Emiliano Cianci.

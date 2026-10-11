@@ -13,11 +13,11 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 
 ### CIA — Confederazione Italiana Agricoltori
 **Settore:** B2B Industriale
-**Periodo:** Giugno 2025 → Gennaio 2026 (~7 mesi)
+**Periodo:** Giugno 2025 → gennaio 2026 (Core Sprint! 23–24 luglio 2025; Design Sprint! 25–26 novembre e 10–11 dicembre 2025; whitepaper il 12 gennaio 2026)
 **Sprint:** 1 Core Sprint! (vertice nazionale) + 2 Design Sprint! (unità Cittadini, unità Imprese)
-**Status:** Output consegnati, Build Sprint! non ancora avviato
+**Status:** chiuso il 12 gennaio 2026; seguito (Build Sprint!, Trainstorming!) da proporre
 **Pattern di vendita:** organizzazione federata, multi-livello, multi-segmento utente
-**Citabilità:** nome utilizzabile pubblicamente
+**Citabilità:** nome, foto dei workshop e schermate del prototipo pubblici; whitepaper su autorizzazione
 **Scheda completa:** [case_cia_percorso_sprint.md](case_cia_percorso_sprint.md)
 
 ### Poltrona Frau In Motion
