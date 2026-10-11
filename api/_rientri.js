@@ -175,27 +175,25 @@ export async function listaRientri(token) {
 async function leggiContatto(token, id) {
   const c = await hs(token, `/crm/v3/objects/contacts/${id}?properties=${CONTACT_PROPS.join(',')}&associations=companies`);
   const p = c.properties || {};
-  let aziendaVecchia = { nome: p.company || '', dominio: dominioEmail(p.email) };
   const companyId = c.associations?.companies?.results?.[0]?.id;
-  if (companyId) {
-    try {
-      const co = await hs(token, `/crm/v3/objects/companies/${companyId}?properties=name,domain,industry`);
-      aziendaVecchia = {
-        id: String(companyId),
-        nome: co.properties?.name || aziendaVecchia.nome,
-        dominio: co.properties?.domain || aziendaVecchia.dominio,
-        settore: co.properties?.industry || '',
-      };
-    } catch { /* azienda non leggibile: resta quella dal campo company */ }
-  }
-  let owner = null;
-  for (const [id, predefinito] of [[p.hubspot_owner_id, false], [OWNER_PREDEFINITO_ID, true]]) {
-    if (owner || !id) continue;
+  const leggiOwner = async (id, predefinito) => {
+    if (!id) return null;
     try {
       const o = await hs(token, `/crm/v3/owners/${id}`);
-      owner = { id: String(o.id), nome: [o.firstName, o.lastName].filter(Boolean).join(' ') || o.email, email: o.email || '', predefinito };
-    } catch { /* owner disattivato */ }
-  }
+      return { id: String(o.id), nome: [o.firstName, o.lastName].filter(Boolean).join(' ') || o.email, email: o.email || '', predefinito };
+    } catch { return null; /* owner disattivato */ }
+  };
+  // Azienda, owner e owner di riserva sono letture indipendenti: in parallelo.
+  const [co, ownerContatto, ownerPredefinito] = await Promise.all([
+    companyId ? hs(token, `/crm/v3/objects/companies/${companyId}?properties=name,domain,industry`).catch(() => null) : null,
+    leggiOwner(p.hubspot_owner_id, false),
+    leggiOwner(OWNER_PREDEFINITO_ID, true),
+  ]);
+  // Azienda non leggibile: resta quella dal campo company.
+  const aziendaVecchia = co
+    ? { id: String(companyId), nome: co.properties?.name || p.company || '', dominio: co.properties?.domain || dominioEmail(p.email), settore: co.properties?.industry || '' }
+    : { nome: p.company || '', dominio: dominioEmail(p.email) };
+  const owner = ownerContatto || ownerPredefinito;
   return {
     id: String(c.id),
     firstname: p.firstname || '',
@@ -218,8 +216,10 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 // person/lookup e' asincrona: si fa polling su checkStatus finche' e' completa.
 async function lookupCompleto(query) {
   let d = await rr(`/person/lookup?${query}`);
-  for (let i = 0; i < 6 && d?.status && d.status !== 'complete' && d.id; i++) {
-    await sleep(3000);
+  // Il profilo e' spesso pronto in 2-4 secondi: un polling da 3s faceva
+  // aspettare fino a 3s in piu' per niente. checkStatus non consuma crediti.
+  for (let i = 0; i < 12 && d?.status && d.status !== 'complete' && d.id; i++) {
+    await sleep(1500);
     const lista = await rr(`/person/checkStatus?ids=${d.id}`);
     d = Array.isArray(lista) ? lista[0] : lista;
   }
@@ -296,24 +296,21 @@ Rispondi SOLO con JSON puro:
 {"trovato":true,"nuova_azienda":"","dominio":"","ruolo":"","linkedin_url":"https://www.linkedin.com/in/...","fonte":"LinkedIn|Web","fonte_url":"https://...","confidenza":"alta|media|bassa","formato_email":"","esempio_formato":"","note":""}
 linkedin_url: solo l'URL del profilo della persona giusta, se trovato. fonte: "LinkedIn" se l'azienda attuale viene dal profilo LinkedIn, altrimenti "Web".`;
 
-async function trovaSulWeb(c, rrRes, scadenza) {
-  const noto = rrRes?.azienda && !stessaAzienda(rrRes.azienda, c.aziendaVecchia.nome)
-    ? `\nRocketReach indica che ora lavora presso "${rrRes.azienda}"${rrRes.dominio ? ` (${rrRes.dominio})` : ''}: verificalo e concentrati sul dominio e sul formato email.`
-    : '';
+async function trovaSulWeb(c, scadenza, signal) {
   const messages = [{
     role: 'user',
     content: `Persona: ${c.nome}
 Azienda precedente: ${c.aziendaVecchia.nome || 'sconosciuta'}${c.aziendaVecchia.dominio ? ` (${c.aziendaVecchia.dominio})` : ''}
 Ruolo precedente: ${c.ruolo || 'sconosciuto'}
-${c.linkedin ? `LinkedIn salvato: ${c.linkedin}` : ''}${noto}
+${c.linkedin ? `LinkedIn salvato: ${c.linkedin}` : ''}
 
-${rrRes?.esito === 'trovato' ? '' : 'RocketReach non ha trovato questa persona: parti dal profilo LinkedIn pubblico.\n'}Trova azienda attuale, dominio web, ruolo attuale e formato email dell'azienda attuale.`,
+Parti dal profilo LinkedIn pubblico. Trova azienda attuale, dominio web, ruolo attuale e formato email dell'azienda attuale.`,
   }];
   const tool = webSearchTool(8);
-  let data = await callClaude({ system: WEB_SYSTEM, messages, tools: [tool], max_tokens: 4000, timeoutMs: 150000, scadenza });
+  let data = await callClaude({ system: WEB_SYSTEM, messages, tools: [tool], max_tokens: 4000, timeoutMs: 150000, scadenza, signal });
   if (data.stop_reason === 'pause_turn' && tempoResiduo(scadenza) > 80000) {
     messages.push({ role: 'assistant', content: data.content });
-    data = await callClaude({ system: WEB_SYSTEM, messages, tools: [tool], max_tokens: 4000, timeoutMs: 120000, scadenza });
+    data = await callClaude({ system: WEB_SYSTEM, messages, tools: [tool], max_tokens: 4000, timeoutMs: 120000, scadenza, signal });
   }
   try {
     const j = parseJSON(extractText(data));
@@ -380,14 +377,35 @@ Scrivi la mail. Solo JSON puro.`,
 // ── Orchestrazione per un contatto ───────────────────────────────────────────
 
 export async function analizzaRientro(token, contactId, scadenza) {
+  const t0 = Date.now();
+  const tempi = {};
   const c = await leggiContatto(token, contactId);
+  tempi.hubspot_s = (Date.now() - t0) / 1000;
+
+  // RocketReach e ricerca web partono insieme: prima il web aspettava la fine di
+  // RocketReach, e i due tempi si sommavano. Se RocketReach trova la nuova
+  // azienda con un'email aziendale verificata, il web non serve piu' e viene
+  // interrotto: si paga solo la parte di ricerca gia' fatta.
+  const stopWeb = new AbortController();
+  const tWeb = Date.now();
+  const webPromise = trovaSulWeb(c, scadenza, stopWeb.signal)
+    .then(w => { tempi.web_s = (Date.now() - tWeb) / 1000; return w; })
+    .catch(e => {
+      if (stopWeb.signal.aborted) return null;
+      console.warn('Ricerca web Rientri fallita:', e.message);
+      return { trovato: false, note: `Ricerca web non riuscita: ${e.message.replace(/^OVERLOADED:/, '')}` };
+    });
+
+  const tRr = Date.now();
   const rrRes = await trovaSuRocketReach(c);
+  tempi.rocketreach_s = (Date.now() - tRr) / 1000;
 
   const rrNuova = rrRes.esito === 'trovato' && rrRes.azienda && !stessaAzienda(rrRes.azienda, c.aziendaVecchia.nome);
   // Il web serve se RocketReach non ha una nuova azienda, oppure se ce l'ha ma
-  // senza email aziendale e senza dominio (serve il formato per ricostruirla).
-  const serveWeb = !rrNuova || (!rrRes.email_pro && tempoResiduo(scadenza) > 120000);
-  const web = serveWeb ? await trovaSulWeb(c, rrRes, scadenza) : null;
+  // senza email aziendale (serve il formato per ricostruirla).
+  const serveWeb = !rrNuova || !rrRes.email_pro;
+  if (!serveWeb) stopWeb.abort();
+  const web = await webPromise;
 
   // Nuova azienda: RocketReach vince sul web (dato strutturato), il web completa.
   let trovato = { azienda: '', dominio: '', ruolo: '', linkedin: c.linkedin, fonte: '', fonte_url: null, confidenza: '' };
@@ -409,7 +427,10 @@ export async function analizzaRientro(token, contactId, scadenza) {
     email = { indirizzo: rrRes.email_personale, tipo: 'personale', stato: 'verificata', fonte: 'RocketReach' };
   }
 
+  const tMail = Date.now();
   const mail = await scriviMail(c, trovato, email?.tipo === 'personale' ? 'personale' : 'aziendale', scadenza);
+  tempi.mail_s = (Date.now() - tMail) / 1000;
+  tempi.totale_s = (Date.now() - t0) / 1000;
 
   return {
     contatto: { id: c.id, nome: c.nome, firstname: c.firstname, lastname: c.lastname, email_vecchia: c.email, ruolo: c.ruolo, azienda: c.aziendaVecchia, owner: c.owner },
@@ -421,6 +442,7 @@ export async function analizzaRientro(token, contactId, scadenza) {
       rocketreach_errore: rrRes.errore || null,
       web: web ? (web.trovato ? `trovato (${web.confidenza})` : 'non trovato') : 'non necessario',
       web_note: web?.note || '',
+      tempi,
     },
   };
 }

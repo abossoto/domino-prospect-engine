@@ -19,8 +19,19 @@ export const MODEL = 'claude-sonnet-5';
 // "almeno 8-10 ricerche", la generazione di una lista deve trovare N aziende E
 // verificare il sito di ognuna, quindi ne richiede molte di piu'. Un tetto
 // troppo basso non rallenta: fa restituire al modello un risultato vuoto.
-export function webSearchTool(maxUses) {
-  return { type: 'web_search_20260209', name: 'web_search', max_uses: maxUses };
+//
+// Versione 20250305, non 20260209. La 20260209 fa girare le ricerche dentro
+// blocchi di code_execution ("dynamic filtering"); quando il modello ne apre
+// due insieme il server li tiene fermi ~95s prima di rispondere (misurato,
+// sempre 95-96s, anche due volte nella stessa chiamata). Non si puo' impedire:
+// disable_parallel_tool_use e' rifiutato con il programmatic tool calling.
+// Con la 20250305 la ricerca di un prospect e' passata da 120-270s a 29-38s
+// a parita' di qualita' del report.
+// La lista resta sulla 20260209 (filtroDinamico): con 40 ricerche in una sola
+// chiamata il filtro tiene il contesto piu' corto, e nell'unica prova con la
+// 20250305 la lista e' uscita con 5 aziende invece di 10. Da rimisurare.
+export function webSearchTool(maxUses, { filtroDinamico = false } = {}) {
+  return { type: filtroDinamico ? 'web_search_20260209' : 'web_search_20250305', name: 'web_search', max_uses: maxUses };
 }
 
 // ── Budget di tempo ──────────────────────────────────────────────────────────
@@ -84,8 +95,80 @@ export function brainBlock(brain) {
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-export async function callClaude({ system, messages, tools, max_tokens = 16000, timeoutMs = 180000, scadenza }) {
-  const body = { model: MODEL, max_tokens, system, messages, output_config: { effort: 'low' } };
+// Le risposte arrivano in streaming. Senza, la connessione resta muta per tutto
+// il tempo in cui Claude cerca e scrive (anche oltre un minuto) e ogni tanto
+// la risposta non arrivava mai: misurato su 8 chiamate di ricerca identiche,
+// 3 appese fino al timeout, mentre le stesse in streaming finivano tutte in
+// 50-80s. Con lo streaming arrivano eventi (e ping) continui, e un flusso
+// fermo si riconosce subito.
+const STREAM_FERMO_MS = 60000;
+
+// Ricostruisce dallo stream lo stesso oggetto della risposta non-streaming
+// (content, stop_reason, usage). I blocchi devono essere identici a quelli
+// originali: in caso di pause_turn vengono rimandati tali e quali.
+async function leggiStream(res, vivo) {
+  const msg = { content: [], stop_reason: null, usage: {} };
+  const json = new Map();   // indice blocco -> input JSON parziale
+  const dec = new TextDecoder();
+  let buf = '';
+  for await (const chunk of res.body) {
+    vivo();
+    buf += dec.decode(chunk, { stream: true });
+    let fine;
+    while ((fine = buf.indexOf('\n\n')) >= 0) {
+      const evento = buf.slice(0, fine);
+      buf = buf.slice(fine + 2);
+      const riga = evento.split('\n').find(l => l.startsWith('data:'));
+      if (!riga) continue;
+      const d = JSON.parse(riga.slice(5));
+      switch (d.type) {
+        case 'message_start':
+          Object.assign(msg, d.message, { content: [] });
+          break;
+        case 'content_block_start':
+          msg.content[d.index] = { ...d.content_block };
+          if ('input' in d.content_block) json.set(d.index, '');
+          break;
+        case 'content_block_delta': {
+          const b = msg.content[d.index], x = d.delta;
+          if (x.type === 'text_delta') b.text = (b.text || '') + x.text;
+          else if (x.type === 'input_json_delta') json.set(d.index, json.get(d.index) + x.partial_json);
+          else if (x.type === 'thinking_delta') b.thinking = (b.thinking || '') + x.thinking;
+          else if (x.type === 'signature_delta') b.signature = x.signature;
+          else if (x.type === 'citations_delta') (b.citations ||= []).push(x.citation);
+          break;
+        }
+        case 'content_block_stop':
+          if (json.has(d.index)) {
+            const raw = json.get(d.index);
+            msg.content[d.index].input = raw ? JSON.parse(raw) : (msg.content[d.index].input || {});
+            json.delete(d.index);
+          }
+          break;
+        case 'message_delta':
+          Object.assign(msg, d.delta);
+          Object.assign(msg.usage, d.usage);
+          break;
+        case 'error': {
+          // Errore a stream gia' aperto (tipicamente overloaded_error): lo si
+          // tratta come il corrispondente codice HTTP.
+          const tipo = d.error?.type;
+          const e = new Error(d.error?.message || tipo || 'errore nello stream');
+          e.status = tipo === 'overloaded_error' ? 529 : tipo === 'rate_limit_error' ? 429 : 500;
+          throw e;
+        }
+      }
+    }
+  }
+  if (!msg.stop_reason) throw new Error('stream interrotto prima della fine');
+  return msg;
+}
+
+// signal: interruzione dall'esterno, per le chiamate lanciate in parallelo
+// "per sicurezza" che diventano inutili (es. la ricerca web dei Rientri quando
+// RocketReach ha gia' trovato tutto). Un'interruzione voluta non si ritenta.
+export async function callClaude({ system, messages, tools, max_tokens = 16000, timeoutMs = 180000, scadenza, signal }) {
+  const body = { model: MODEL, max_tokens, system, messages, output_config: { effort: 'low' }, stream: true };
   if (tools?.length) body.tools = tools;
   const MAX_RETRIES = 5;
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
@@ -95,9 +178,21 @@ export async function callClaude({ system, messages, tools, max_tokens = 16000, 
       throw new Error('OVERLOADED:Tempo massimo della richiesta esaurito. Riprova, oppure riduci il numero di aziende richieste.');
     }
     const timeoutEffettivo = Math.min(timeoutMs, residuo - 5000);
-    let res;
+    signal?.throwIfAborted();
+
+    const fermo = new AbortController();
+    let timerFermo;
+    const vivo = () => {
+      clearTimeout(timerFermo);
+      timerFermo = setTimeout(() => fermo.abort(Object.assign(new Error('stream fermo'), { name: 'StreamFermo' })), STREAM_FERMO_MS);
+    };
+    const segnali = [AbortSignal.timeout(timeoutEffettivo), fermo.signal];
+    if (signal) segnali.push(signal);
+
+    let status, retryAfter = 0;
     try {
-      res = await fetch('https://api.anthropic.com/v1/messages', {
+      vivo();
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -105,18 +200,33 @@ export async function callClaude({ system, messages, tools, max_tokens = 16000, 
           'anthropic-version': '2023-06-01',
         },
         body: JSON.stringify(body),
-        signal: AbortSignal.timeout(timeoutEffettivo),
+        signal: AbortSignal.any(segnali),
       });
+      if (res.ok) return await leggiStream(res, vivo);
+      status = res.status;
+      retryAfter = parseInt(res.headers.get('retry-after') || '0', 10);
+      if (status < 500 && status !== 429) {
+        const e = await res.json().catch(() => ({}));
+        throw Object.assign(new Error(e?.error?.message || `Claude API ${status}`), { definitivo: true });
+      }
     } catch (err) {
-      // Timeout o errore di rete: senza questo ramo la function restava appesa
-      // fino ai 300s di maxDuration e moriva senza messaggio utile.
-      if (attempt >= 2) throw new Error(`OVERLOADED:Claude non risponde (${err.name}). Riprova tra qualche minuto.`);
-      await sleep(2000 * (attempt + 1));
-      continue;
+      if (signal?.aborted) throw signal.reason;
+      if (err.definitivo) throw err;
+      if (err.status) status = err.status;
+      else {
+        // Timeout, stream fermo o errore di rete: senza questo ramo la function
+        // restava appesa fino ai 300s di maxDuration e moriva senza messaggio utile.
+        const nome = fermo.signal.aborted ? 'StreamFermo' : err.name;
+        if (attempt >= 2) throw new Error(`OVERLOADED:Claude non risponde (${nome}). Riprova tra qualche minuto.`);
+        await sleep(2000 * (attempt + 1));
+        continue;
+      }
+    } finally {
+      clearTimeout(timerFermo);
     }
-    if (res.status === 529 || res.status === 429) {
+
+    if (status === 529 || status === 429) {
       if (attempt >= MAX_RETRIES) throw new Error('OVERLOADED:Claude e\' sovraccarico. Riprova tra qualche minuto.');
-      const retryAfter = parseInt(res.headers.get('retry-after') || '0', 10);
       const backoff = retryAfter > 0 ? retryAfter * 1000 : Math.min(1000 * Math.pow(2, attempt), 32000);
       if (backoff >= tempoResiduo(scadenza)) {
         throw new Error('OVERLOADED:Claude e\' sovraccarico e non c\'e\' piu\' tempo per riprovare. Riprova fra qualche minuto.');
@@ -124,16 +234,9 @@ export async function callClaude({ system, messages, tools, max_tokens = 16000, 
       await sleep(backoff);
       continue;
     }
-    if (res.status >= 500 && res.status !== 529) {
-      if (attempt >= 2) throw new Error(`OVERLOADED:Errore temporaneo del server (${res.status}). Sto riprovando...`);
-      await sleep(2000 * (attempt + 1));
-      continue;
-    }
-    if (!res.ok) {
-      const e = await res.json().catch(() => ({}));
-      throw new Error(e?.error?.message || `Claude API ${res.status}`);
-    }
-    return res.json();
+    // 5xx diversi da 529
+    if (attempt >= 2) throw new Error(`OVERLOADED:Errore temporaneo del server (${status}). Sto riprovando...`);
+    await sleep(2000 * (attempt + 1));
   }
   throw new Error('OVERLOADED:Claude non ha risposto dopo piu\' tentativi. Riprova tra qualche minuto.');
 }
