@@ -13,6 +13,7 @@ La mappatura è **retrospettivo-canonica**: rilegge case storici alla luce del c
 - **Poltrona Frau In Motion** *(Core Sprint! + Design Sprint! + Build Sprint! — documentato)*
 - **Links Foundation — Nuova Intranet** *(Design Sprint! + Agile — documentato)*
 - **[Slow Food — Raccolta fondi](case_slowfood_core_sprint.md)** *(workshop di attivazione pre-Core Sprint! — documentato)*
+- **[FourStars — Website Design Sprint!](case_fourstars_website_design_sprint.md)** *(Design Sprint! Website + Build Sprint! a storypoint — documentato)*
 - **Stellantis — Employee Portal** *(letto come "transition program" nella scheda I5.0 del Brain)*
 
 Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto. Utile come griglia di spiegazione metodi, da non spacciare in pitch come storico letterale del cliente specifico.
@@ -24,6 +25,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 - **CIA — Confederazione Italiana Agricoltori** → Core Sprint! · Design Sprint! ×2 *(documentato)*
 - **Poltrona Frau In Motion** → Core Sprint! · Design Sprint! · Build Sprint! *(documentato)*
 - **[Slow Food — Raccolta fondi](case_slowfood_core_sprint.md)** → workshop di attivazione pre-Core Sprint! *(documentato)*
+- **[FourStars — Website Design Sprint!](case_fourstars_website_design_sprint.md)** → Design Sprint! (Website) · Build Sprint! a storypoint *(documentato: offerta OFF_149_23, sprint luglio 2024, sito in produzione dicembre 2024)*
 
 ---
 

@@ -99,6 +99,15 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 
 ## B2B INDUSTRIALE
 
+### FourStars — Website Design Sprint! e launch pad a storypoint
+**Settore:** B2B Industriale/Manifatturiero (servizi B2B: stage, selezione, formazione)
+**Periodo:** Ottobre 2023 → gennaio 2025 (Design Sprint! 2–5 luglio 2024; sito in produzione dal 19 dicembre 2024); manutenzione evolutiva dal 2025
+**Sprint:** 1 Website Design Sprint! + mini-sprint + 1 ciclo Build Sprint! a storypoint (34 storypoint)
+**Status:** sito in produzione; relazione attiva (manutenzione; proposta gestionale ottobre 2026)
+**Pattern di vendita:** sito che dipende da un gestionale; wishlist lunga e budget definito; launch pad e cicli a storypoint
+**Citabilità:** nome, screenshot e foto pubblici
+**Scheda completa:** [case_fourstars_website_design_sprint.md](case_fourstars_website_design_sprint.md)
+
 ### Comau — Brand Identity
 **Progetto:** Brand identity completa: analisi valori, concept, immaginario visivo, sistema di identità.
 
