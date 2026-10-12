@@ -2,6 +2,7 @@
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
 ## 2026-10-12
+- Skill crea-cliente e crea-progetto: i referenti nuovi nascono in HubSpot con legal basis «Legitimate interest – existing customer» e stato marketing; l'iscrizione alla subscription «Comunicazione» la fa il workflow HubSpot «Referenti clienti → iscrizione Comunicazione» (da creare in HubSpot: istruzioni in `_skills/domino-crea-cliente/hubspot_workflow_comunicazione.md`).
 - Health check: generale + 3 clienti; 53 punti aperti.
 
 ## 2026-10-10
