@@ -475,6 +475,32 @@ async function upsertAzienda(token, t, ownerId) {
   return { id: String(cr.id), isNew: true };
 }
 
+// Etichetta di associazione contatto -> azienda per l'azienda che il contatto
+// ha lasciato: senza, nella scheda della vecchia azienda il contatto compare
+// come se ci lavorasse ancora. Si cerca per nome e la si crea la prima volta.
+// Creare un'etichetta richiede permessi di schema che il token potrebbe non
+// avere: in quel caso si restituisce l'errore e il salvataggio prosegue.
+const ETICHETTA_EX = 'Ex dipendente';
+let _etichettaEx = null;
+
+async function etichettaExDipendente(token) {
+  if (_etichettaEx) return _etichettaEx;
+  const trova = async () => {
+    const d = await hs(token, '/crm/v4/associations/contact/company/labels');
+    return (d.results || []).find(l => String(l.label || '').trim().toLowerCase() === ETICHETTA_EX.toLowerCase()) || null;
+  };
+  let l = await trova();
+  if (!l) {
+    await hs(token, '/crm/v4/associations/contact/company/labels', {
+      method: 'POST', body: { label: ETICHETTA_EX, name: 'ex_dipendente' },
+    });
+    l = await trova();
+  }
+  if (!l) throw new Error('etichetta non trovata dopo la creazione');
+  _etichettaEx = { associationCategory: l.category || 'USER_DEFINED', associationTypeId: l.typeId };
+  return _etichettaEx;
+}
+
 export async function salvaRientro(token, r) {
   const { contatto: c, trovato: t, email: e, mail: m } = r;
   if (!c?.id) throw new Error('Risultato di analisi mancante');
@@ -517,6 +543,25 @@ export async function salvaRientro(token, r) {
       body: [CONTACT_TO_COMPANY_PRIMARY, CONTACT_TO_COMPANY].map(id => ({ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: id })),
     });
   }
+  // La vecchia azienda resta associata (lo storico serve) ma con l'etichetta
+  // "Ex dipendente". Solo se c'e' davvero una nuova azienda e non e' la stessa.
+  // Il PUT imposta l'insieme completo delle etichette: si toglie cosi' anche
+  // un'eventuale "primaria" rimasta sulla vecchia.
+  let exDipendente = null;
+  const vecchiaId = c.azienda?.id ? String(c.azienda.id) : null;
+  if (azienda && vecchiaId && vecchiaId !== azienda.id) {
+    try {
+      const etichetta = await etichettaExDipendente(token);
+      await hs(token, `/crm/v4/objects/contact/${c.id}/associations/company/${vecchiaId}`, {
+        method: 'PUT',
+        body: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: CONTACT_TO_COMPANY }, etichetta],
+      });
+      exDipendente = { azienda_id: vecchiaId, ok: true };
+    } catch (err) {
+      console.warn('Etichetta Ex dipendente non applicata:', err.message);
+      exDipendente = { azienda_id: vecchiaId, ok: false, errore: err.status === 403 ? 'permesso mancante sul token HubSpot' : err.message };
+    }
+  }
 
   const body = notaHtml(r);
   const aziendeNota = [...new Set([azienda?.id, c.azienda?.id].filter(Boolean).map(String))];
@@ -548,5 +593,5 @@ export async function salvaRientro(token, r) {
     },
   });
 
-  return { contatto: { id: String(c.id), aggiornati: Object.keys(props), email_in_uso: emailInUso }, azienda };
+  return { contatto: { id: String(c.id), aggiornati: Object.keys(props), email_in_uso: emailInUso }, azienda, ex_dipendente: exDipendente };
 }

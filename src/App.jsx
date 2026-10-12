@@ -481,7 +481,7 @@ function RientriPanel() {
       const d = await r.json().catch(() => ({ error:`Risposta non valida (${r.status})` }));
       if (d.error) throw new Error(d.error);
       const agg = d.contatto.aggiornati.length ? `aggiornato (${d.contatto.aggiornati.join(', ')})` : 'invariato';
-      aggiorna(id, { salvataggio:'fatto', msgSalva:`Contatto ${agg}${d.azienda?` · azienda ${d.azienda.isNew?'creata':'collegata'}`:''} · nota + task all'owner${d.contatto.email_in_uso?` · ⚠️ email già usata dal contatto ${d.contatto.email_in_uso}: non scritta`:''}` });
+      aggiorna(id, { salvataggio:'fatto', msgSalva:`Contatto ${agg}${d.azienda?` · azienda ${d.azienda.isNew?'creata':'collegata'}`:''} · nota + task all'owner${d.contatto.email_in_uso?` · ⚠️ email già usata dal contatto ${d.contatto.email_in_uso}: non scritta`:''}${d.ex_dipendente?(d.ex_dipendente.ok?' · vecchia azienda: Ex dipendente':` · ⚠️ etichetta Ex dipendente non applicata (${d.ex_dipendente.errore})`):''}` });
     } catch (e) { aggiorna(id, { salvataggio:'errore', msgSalva:`⚠️ ${e.message}` }); }
   };
 
