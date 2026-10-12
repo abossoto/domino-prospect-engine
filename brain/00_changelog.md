@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-10-12
+- Health check: generale + 3 clienti; 53 punti aperti.
+
 ## 2026-10-10
 - Il Brain passa dalla cartella personale di Andrea alla cartella condivisa «Domino Brain - main» (SharePoint, Domino SRL).
 - Nuovo CLAUDE.md di team: ruoli (Brain Owner, Direttore Clienti, Account Manager, Loop Owner), tre zone, mappa delle cartelle, skill, terminologia, regole di produzione. Il precedente in `_superate/`.
