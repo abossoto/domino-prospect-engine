@@ -1,5 +1,5 @@
 # DOMINO BRAIN — Case History
-> Versione 3.1 — Ottobre 2026. Tutti i case documentati da sito, presentazioni e materiali ufficiali. Da usare per settore e tipo di progetto. Aggiornato con lettura I5.0 dei principali case (Trainstorming! aprile 2026). Aggiunto Slow Food (Turismo & Cultura, Core Sprint!) il 29 settembre 2026.
+> Versione 3.1 — Ottobre 2026. Tutti i case documentati da sito, presentazioni e materiali ufficiali. Da usare per settore e tipo di progetto. Aggiornato con lettura I5.0 dei principali case (Trainstorming! aprile 2026). Aggiunto Slow Food (Turismo & Cultura, Core Sprint!) il 29 settembre 2026. Fiat Professional E-Product: visual e collegamento al Preventivo Emozionale il 15 ottobre 2026.
 >
 > **Changelog — 10 ottobre 2026 (health check).** Slow Food: la giornata del 24 agosto si chiama «workshop di attivazione pre-Core Sprint!» (decisione del 10 ottobre 2026).
 
@@ -76,6 +76,8 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 ### Fiat Professional (Ducato) — App E-Product
 **Progetto:** App per la rete vendita Fiat Professional.
 **Funzionalità:** Cataloghi interattivi, listini con comparatori vs concorrenza, valutatori costi di gestione, offline-ready, personalizzabile per punto vendita, area training, area documentale, analytics.
+**Preventivo Emozionale:** dall'app il venditore genera il minisito personalizzato per il cliente (pulsante «Genera minisito»).
+**Visual:** `assets_case_history/automotive/automotive_fiatprofessional_eproduct_01.png` … `_04.png` (home Nuovo Ducato, gamma motori, vantaggi trazione anteriore vs concorrenza, comparatore consumi). Citabilità: Pubblica (15 ottobre 2026).
 
 ### Jeep — Community digitale
 **Progetto:** Come nasce una community Jeep. Progettazione e realizzazione della community digitale per i proprietari Jeep.

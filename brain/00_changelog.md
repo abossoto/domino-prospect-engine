@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-10-15
+- Case Fiat Professional E-Product: 4 schermate dell'app in `assets_case_history/automotive/` (citabilità Pubblica), righe in `INDICE_immagini.md`, riga Visual e collegamento al Preventivo Emozionale nella scheda del `04_`.
+
 ## 2026-10-12
 - Skill crea-cliente e crea-progetto: i referenti nuovi nascono in HubSpot con legal basis «Legitimate interest – existing customer» e stato marketing; l'iscrizione alla subscription «Comunicazione» la fa il workflow HubSpot «Referenti clienti → iscrizione Comunicazione» (da creare in HubSpot: istruzioni in `_skills/domino-crea-cliente/hubspot_workflow_comunicazione.md`).
 - Health check: generale + 3 clienti; 53 punti aperti.
