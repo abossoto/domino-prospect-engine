@@ -157,10 +157,12 @@ I quattro esempi portati in presentazione:
 
 | Quanti | Ruolo | Che cosa fa |
 |--------|-------|-------------|
-| Uno solo | **Brain Owner** | Presidia cosa c'è scritto. Decide cosa entra nel Brain, pubblica le release e tiene una versione sola, valida per tutti |
+| Due (Andrea Bosso, Emiliano Cianci) | **Brain Owner** | Presidia cosa c'è scritto. Decide cosa entra nel Brain, pubblica le release e tiene una versione sola, valida per tutti |
 | Uno per processo | **Loop Owner** | Possiede la catena intera — processi, skill, regole — e il numero che dice se funziona. Quando un output esce male cambia la regola, non l'output |
 | Uno per cliente | **Account Manager** (fino al 10 ottobre 2026: «Editor di progetto») | Owner del Brain cliente: lo tiene vivo: fatti aggiornati, decisioni registrate, materiali che non invecchiano alle spalle di chi lavora |
 | Tutti gli altri | **Chi lavora dentro** | Non devono sapere com'è fatto il sistema. Devono trovarci quello che serve, e segnalare quando non lo trovano |
+
+**Brain Owner in due (16 ottobre 2026).** Andrea Bosso ed Emiliano Cianci (co-founder) sono entrambi Brain Owner, con gli stessi permessi: scrivono nel Domino Brain e ovunque, creano, cambiano e fanno partire clienti e progetti, decidono cosa entra e pubblicano le release.
 
 **Nessun software nuovo, gli strumenti ci sono già. Servono quattro nomi veri e l'autorità di cambiare le regole.**
 
@@ -173,7 +175,7 @@ I quattro esempi portati in presentazione:
 3. **Presidia il Quality Gate.** Non controlla ogni output — sarebbe il contrario del punto — ma decide dove sta il gate e con quale criterio. Quando il gate boccia sempre la stessa cosa, il difetto è a monte e si cambiano le regole invece di continuare a bocciare.
 4. **Chiude l'anello dell'apprendimento.** Ogni scarto del gate, ogni correzione a mano, ogni «l'ho dovuto rifare» torna dentro come modifica alla skill o al Brain. Vale la regola delle tre volte.
 
-Differenza con il Brain Owner: il Brain Owner è uno solo e presidia **cosa c'è scritto**; i Loop Owner sono diversi, uno per processo, e presidiano **come funziona**.
+Differenza con il Brain Owner: i Brain Owner sono due e presidiano **cosa c'è scritto**; i Loop Owner sono diversi, uno per processo, e presidiano **come funziona**.
 
 **Assegnazioni:** DATI NON TROVATI. I quattro nomi non sono ancora stati decisi.
 

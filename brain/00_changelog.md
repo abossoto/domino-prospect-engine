@@ -2,6 +2,7 @@
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
 ## 2026-10-16
+- Permessi: Emiliano Cianci (co-founder) è Brain Owner insieme ad Andrea Bosso, con gli stessi permessi (scrivere ovunque, creare, cambiare e far partire clienti e progetti, decidere cosa entra, pubblicare le release). Aggiornati `CLAUDE.md`, `17_domino_brain_sistema.md`, skill `domino-brain-init`, `domino-crea-cliente`, `domino-crea-progetto`, `domino-health-check` (zip da ricaricare in Claude Team), CLAUDE.md di Air Dolomiti e Slow Food.
 - Domino30: voto pubblico chiuso (5.274 voti); giuria costituita, 12 giurati, presidente Paolo Accossato. Voto della giuria online fino al 25 ottobre: 1°, 2° e 3° posto per categoria (5, 3, 1 punto) riportati su 70; originalità e innovazione solo per le startup (regolamento da allineare). Aggiornati `12b_stato.md`, `12c_serata_30ottobre.md`, `12_concept.md`, `00_indice.md`, `00_scheda_progetto.md` e la riga Domino30 del CLAUDE.md.
 
 ## 2026-10-15
