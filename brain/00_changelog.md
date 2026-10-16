@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-10-16
+- Domino30: voto pubblico chiuso (5.274 voti); giuria costituita, 12 giurati, presidente Paolo Accossato. Voto della giuria online fino al 25 ottobre: 1°, 2° e 3° posto per categoria (5, 3, 1 punto) riportati su 70; originalità e innovazione solo per le startup (regolamento da allineare). Aggiornati `12b_stato.md`, `12c_serata_30ottobre.md`, `12_concept.md`, `00_indice.md`, `00_scheda_progetto.md` e la riga Domino30 del CLAUDE.md.
+
 ## 2026-10-15
 - Case Fiat Professional E-Product: 4 schermate dell'app in `assets_case_history/automotive/` (citabilità Pubblica), righe in `INDICE_immagini.md`, riga Visual e collegamento al Preventivo Emozionale nella scheda del `04_`.
 
