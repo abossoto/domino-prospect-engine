@@ -138,7 +138,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 
 **[Proof point](04_domino_case_history.md):**
 - Tra i nostri clienti B2B industriali: IVECO, Comau, Bitron, Rollon e decine di altri
-- Comau: due voci del cliente in video (Maurizio Cremonini, Duilio Amico), relazione lunga con un gruppo enterprise
+- Comau: brand identity e sito worldwide, più due voci del cliente in video (Maurizio Cremonini, Duilio Amico), relazione lunga con un gruppo enterprise
 - IKA 2023 — Rollon: Best Integrated Communication Campaign B2B
 - 30 anni di esperienza, 100% clienti soddisfatti Design Sprint!
 
@@ -209,7 +209,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 
 **[Proof point](04_domino_case_history.md):**
 - Danieli: Design System per digitalizzare e uniformare la comunicazione internazionale del brand
-- Comau: brand identity completa (analisi dei valori, concept, immaginario visivo, sistema di identità) per un gruppo internazionale dell'automazione industriale
+- **Comau: brand identity e sito worldwide** — identità completa (analisi dei valori, concept, immaginario visivo, sistema di identità) portata sul sito globale di un gruppo internazionale dell'automazione industriale
 - Rollon US: +48% traffico organico, "linear rails" = prima keyword organica USA
 - Case IH: rollout in 18 mercati
 - Fiat: nuovo sito in 21 paesi
@@ -268,7 +268,7 @@ Quando generi materiali per un prospect B2B industriale:
 4. **Usa i proof point del play**, non generici: se scrivi a un'azienda con problema SEO, cita Demak e Rollon, non Biennale di Venezia
 5. **Il Preventivo Emozionale** va sempre considerato come strumento di follow-up per proposal formali su deal di medio-alto valore
 6. **Non confondere Core Sprint! e Design Sprint!** come alternative di prezzo: sono strumenti diversi per situazioni diverse. Vedi distinzione completa in [03_domino_metodi.md](03_domino_metodi.md)
-7. **Automazione industriale, robotica, macchine e impianti: il case di apertura è Comau.** Due lavori diversi, da scegliere in base al problema. **Comau+ Marketplace** (SP2, SP3) quando il prospect ha una rete di integratori, partner o clienti che deve far incontrare con il prodotto: è il caso del modello di partnership digitale, non di un sito. **Comau Brand Identity** (SP5) quando il prospect è un gruppo con più marchi o mercati e un'identità da riordinare. Si aggiungono Danieli (design system, anch'esso automazione e impianti) e Rollon (prodotto tecnico che diventa esperienza). Lo stesso vale per chi vende macchine e linee di produzione (esempio: Cama Group, confezionamento secondario). Dati sul caso Comau da non citare finché non sono nel Brain: anno, risultati misurati, tipo di Sprint usato e citabilità (**DATI NON TROVATI**, vedi la scheda in `04_`). Le due voci del cliente sono in `06_`.
+7. **Automazione industriale, robotica, macchine e impianti: il case di apertura è Comau.** Due lavori diversi, da scegliere in base al problema. **Comau+ Marketplace** (SP2, SP3) quando il prospect ha una rete di integratori, partner o clienti che deve far incontrare con il prodotto: è il caso del modello di partnership digitale, non di un sito. **Comau Brand Identity e sito worldwide** (SP5) quando il prospect è un gruppo con più marchi o mercati e un'identità da riordinare: il sito globale è parte del lavoro e va detto subito, perché mostra l'identità messa in produzione su scala internazionale. Si aggiungono Danieli (design system, anch'esso automazione e impianti) e Rollon (prodotto tecnico che diventa esperienza). Lo stesso vale per chi vende macchine e linee di produzione (esempio: Cama Group, confezionamento secondario). Dati sul caso Comau da non citare finché non sono nel Brain: anno, risultati misurati, tipo di Sprint usato e citabilità (**DATI NON TROVATI**, vedi la scheda in `04_`). Le due voci del cliente sono in `06_`.
 
 
 ---
