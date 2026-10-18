@@ -115,6 +115,7 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Sito worldwide (da evidenziare):** il nuovo sito, presente in più di 20 mercati *(ricordo di Andrea Bosso, 18 ottobre 2026, da confermare con una fonte)*, fa parte del lavoro: cinque rubriche editoriali, pagina prodotto come racconto con call to action, ingresso per industria. Va messo in primo piano ogni volta che si cita Comau Brand Identity.
 **Citabilità:** nome, screenshot e foto pubblici; frasi delle due voci in video autorizzate (`06_`)
 **Numeri:** nessun risultato misurato (DATI NON TROVATI)
+**Visual:** 25 file in `assets_case_history/b2b_industriale/` (`b2b_comau_sito_01.png` … ), citabilità Pubblica (18 ottobre 2026)
 **Scheda completa:** [case_comau_brand_identity.md](case_comau_brand_identity.md)
 
 ### Comau+ — Marketplace

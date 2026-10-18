@@ -4,10 +4,10 @@
 **Settore:** B2B Industriale
 **Periodo:** 2016 (titolo del deck «Comau 2016 — Ridisegnare un Brand»; nel materiale compare anche la brochure Robotics 2015). Durata: DATI NON TROVATI.
 **Prodotti Domino utilizzati:** identità di brand (concetto, linee guida visive, storytelling), personas, nuovo sito, brochure e schede tecniche, advertising, segnaletica. Uno Sprint! non è documentato: il lavoro precede il catalogo 2026. In pitch si dice il metodo di allora (ricerca con personas, concetto, linee guida, sito); la lettura canonica (Design Sprint! Brand + Build Sprint!) sta in `case_history_per_metodo.md`.
-**Status:** chiuso; il rapporto è proseguito con Comau+ (marketplace, vedi `04_`).
+**Status:** chiuso. Comau+ (marketplace) è un case separato, con la sua scheda in `04_`.
 **Citabilità:** nome cliente, screenshot e foto del deck: pubblici (confermato da Andrea Bosso, 18 ottobre 2026). Frasi del cliente: autorizzate per le due voci in video (Maurizio Cremonini, Duilio Amico), in `06_domino_referenze.md`.
 **Uso come case-tipo:** pitch verso gruppi industriali con più marchi, divisioni o mercati e un'identità da riordinare (SP5 del `07_`); apertura per l'automazione industriale, la robotica, le macchine e gli impianti (istruzione 7 del Prospect Engine).
-**Visual:** nessuno ancora caricato in `assets_case_history/`. Fonte: deck `PRES_COMAU-CASEHISTORY2 2 2020-07-08` (51 pagine), da cui estrarre i visual del sito, delle brochure e della firma «Made in Comau». DA CARICARE.
+**Visual:** 25 file in `assets_case_history/b2b_industriale/`, `b2b_comau_sito_01.png` … `_09`, `identita_01` … `_03`, `brochure_01` … `_04`, `schede_01`, `advertising_01` … `_03`, `segnaletica_01` … `_02`, `prima_01` … `_03` (dettaglio e citabilità in [INDICE_immagini.md](assets_case_history/INDICE_immagini.md)). Estratti dal deck `PRES_COMAU-CASEHISTORY2 2 2020-07-08`. Per evidenziare il sito worldwide partire da `sito_01` (home «A global spirit, a local presence»).
 **Numeri:** sito presente in **più di 20 mercati** *(ricordo di Andrea Bosso, 18 ottobre 2026, da confermare con una fonte prima di usarlo in un documento verso il cliente)*. Nessun risultato misurato su traffico, lead o brand: DATI NON TROVATI. Dato di partenza del sito corporate (analytics Domino, ottobre 2014-settembre 2015): 313.629 sessioni, +1% sull'anno, 82% desktop, 64% da ricerca organica; non è un risultato del nuovo sito.
 
 ---
@@ -51,7 +51,7 @@ Linee guida visive e storytelling; personas; sito; brochure Robotics (64 pagine)
 
 ## Cosa è successo, in concreto
 
-Risultati misurati: DATI NON TROVATI. Fatti documentati: il rapporto è proseguito con il marketplace Comau+ (`04_`), e due persone di Comau, il responsabile marketing e il responsabile comunicazione, hanno raccontato Domino in video (`06_`).
+Risultati misurati: DATI NON TROVATI. Fatto documentato: due persone di Comau, il responsabile marketing e il responsabile comunicazione, hanno raccontato Domino in video (`06_`).
 
 ## Argomenti di pitch derivati
 
@@ -64,5 +64,5 @@ Risultati misurati: DATI NON TROVATI. Fatti documentati: il rapporto è prosegui
 
 - Si può dire: nome Comau, il lavoro di identità e il sito, più di 20 mercati *(prima conferma la cifra con una fonte)*, le voci in video.
 - Non si può dire: risultati misurati (non esistono nel Brain); un metodo Sprint! per questo lavoro (nel 2016 non c'era).
-- Relazione: Comau+ è il seguito; i riferimenti sono Maurizio Cremonini e Duilio Amico (`06_`).
+- Comau+ è un case separato (`04_`); le voci in video di Maurizio Cremonini e Duilio Amico sono in `06_`.
 - Fonte: deck `PRES_COMAU-CASEHISTORY2 2 2020-07-08` (OneDrive di Andrea Bosso), più l'indicazione di Andrea Bosso del 18 ottobre 2026.

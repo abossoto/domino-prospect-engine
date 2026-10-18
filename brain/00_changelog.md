@@ -2,6 +2,7 @@
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
 ## 2026-10-18
+- Case Comau Brand Identity: 25 visual estratti dal deck (sito worldwide, identità, brochure, schede, advertising, segnaletica, «prima») in `assets_case_history/b2b_industriale/`; righe in `INDICE_immagini.md` v1.4 (citabilità Pubblica). Comau+ resta un case separato. Backup in `_superate/_backup_20261018_comau_visual/`.
 - Case Comau Brand Identity: nuova scheda estesa `case_comau_brand_identity.md` dal deck PRES_COMAU-CASEHISTORY2 (2020) e da Andrea Bosso: 2016, sito worldwide in più di 20 mercati (da confermare), citabilità sì per nome, screenshot e voci in video; nessun risultato misurato. Aggiornati `04_` (scheda breve) e `07_` (istruzione 7). Backup in `_superate/_backup_20261018_comau_scheda/`.
 - Comau: il sito worldwide è incluso nel lavoro di Brand Identity e messo in evidenza (`04_`, `05_`, `07_`, `case_history_per_metodo.md`). Fonte: Andrea Bosso. Backup in `_superate/_backup_20261018_comau_sito_worldwide/`.
 - GTM B2B (`07_`): Comau come case di apertura per l'automazione industriale: proof point in SP2 (Comau+ Marketplace), SP3 e SP5 (Brand Identity), nuova istruzione 7 nel Prospect Engine. Scheda Comau in `04_`: aggiunte le voci del cliente e segnati i dati mancanti (anno, risultati, tipo di Sprint, citabilità). Backup in `_superate/_backup_20261018_comau_gtm/`.
