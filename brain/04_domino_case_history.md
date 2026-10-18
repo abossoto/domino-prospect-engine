@@ -35,7 +35,7 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 
 ### IVECO — iveco.com (Premio IKA 2024)
 **Progetto:** Nuovo sito istituzionale globale per IVECO.
-**Riconoscimento:** Premio **IKA 2024** — massimo riconoscimento internazionale per siti automotive.
+**Riconoscimento:** Interactive Key Award 2024, categoria Automotive and Energy.
 
 ### IVECO — MyIVECO App
 **Progetto:** Customer experience personalizzata per ogni utente MyIVECO.
@@ -122,7 +122,8 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Scope:** Nuovo sito di Gruppo, ottimizzazione SEO, gestione di campagne web *(referente: Alessandra Manzato — Communication & Corporate Identity Manager)*.
 
 ### Rollon — "Il prodotto diventa esperienza" *(IKA 2023)*
-**Riconoscimento:** Premio **IKA 2023** — categoria "Best Integrated Communication Campaign B2B".
+**Riconoscimento:** Interactive Key Award 2023, Best Integrated Communication Campaign B2B.
+**Mercati:** sito in 16 mercati *(fonte: Andrea Bosso, 18 ottobre 2026)*.
 **Progetto:** Trasformazione del sito B2B in una vera esperienza di prodotto.
 **SEO US:** +**48% traffico organico** USA. "Linear rails" = prima keyword organica US (preceduta solo dal brand "Rollon").
 

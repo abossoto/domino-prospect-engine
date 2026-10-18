@@ -390,7 +390,7 @@ Nomi: Cristina, Orsola, Ilaria, Andrea, Daniele, Pietro, Elisa, Alessandro (×2)
 > "IVECO France lo ha detto chiaramente: 'le persone, la disponibilità e i consigli'. Abbiamo vinto due Interactive Key Award su progetti IVECO e Case IH nel solo 2024."
 
 **Per prospect B2B industriale:**
-> "Il Communication Manager di Bitron ci definisce 'una delle migliori web agency B2B del panorama italiano'. Rollon ci ha affidato il sito in 16 mercati — risultato: +48% di traffico organico negli USA."
+> "Il Communication Manager di Bitron ci definisce 'una delle migliori web agency B2B del panorama italiano'. Rollon ci ha affidato il sito in 16 mercati. Risultati: +48% di traffico organico negli Stati Uniti e 'linear rails' prima keyword organica dopo il brand. Interactive Key Award 2023, Best Integrated Communication Campaign B2B."
 
 **Per prospect interessato a intranet / comunicazione interna:**
 > "L'intranet che abbiamo costruito per FCA ha vinto il FEIEIA Grand Prix come Migliore Intranet d'Europa — 88.000 dipendenti connessi in un unico portale."

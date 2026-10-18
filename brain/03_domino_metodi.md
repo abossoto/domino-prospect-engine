@@ -335,6 +335,8 @@ Sono strumenti **sequenziali e complementari**, non alternativi. Rispondono a do
 **Caso d'uso reale — Costa Crociere:**
 Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina, prezzo, foto dell'agente, contatti e CTA prenotazione diretta. Ogni preventivo è tracciato. Il sistema scala su tutta la rete agenzie.
 
+**Referenze:** Minisite personalizzato per ogni proposta, con analytics su chi lo apre, quando e per quanto tempo. In uso su Costa Crociere, Arca SGR, Fiat Professional e Petronas.
+
 **Quando proporlo:**
 - Sempre in contesti B2B con ciclo di vendita complesso
 - Quando il valore dell'offerta è difficile da comunicare con un documento tradizionale

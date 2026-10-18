@@ -75,6 +75,7 @@ Quando si parla di PE in contesto finance, il cross-reference con Costa Crociere
 **[Proof point](04_domino_case_history.md):**
 - Arca SGR — Advisory Assistant (Preventivo Emozionale verticalizzato per distribuzione finanziaria)
 - Costa Crociere — stessa piattaforma PE applicata a rete agenzie (cross-reference settoriale)
+- Fiat Professional e Petronas — Preventivo Emozionale in uso anche in questi due casi
 
 **Vs competitor:**
 - Vs agenzia finance: il PE è un prodotto proprietario Domino — unico in Italia, già testato su reti di distribuzione complesse

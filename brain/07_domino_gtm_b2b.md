@@ -134,7 +134,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 - Design Sprint! (€10.000) → se ha già le idee chiare: risultato concreto in 4 giorni, porta subito un prototipo alla direzione, da validare con utenti reali
 
 **[Proof point](04_domino_case_history.md):**
-- 20+ clienti B2B industriale attivi (Danieli, COMAU, Bitron, Rollon, Megadyne, Demak, Frascold…)
+- Tra i nostri clienti B2B industriali: IVECO, Comau, Bitron, Rollon e decine di altri
 - IKA 2023 — Rollon: Best Integrated Communication Campaign B2B
 - 30 anni di esperienza, 100% clienti soddisfatti Design Sprint!
 

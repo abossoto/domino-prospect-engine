@@ -82,7 +82,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 - **Brain & Identity Design Sprint!** *(variante di punta 2026)* → quando il problema è strutturale: serve un **design system** scalabile su tutti i mercati e modelli, non un sito puntuale che invecchierà al prossimo lancio. Sono *fondamenta*, non progetti — il design system Domino-IVECO è un esempio (nomination IKA 2025 categoria B2B).
 
 **[Proof point](04_domino_case_history.md):**
-- IVECO.com — IKA 2024 categoria Automotive & Energy ("miglior sito automotive")
+- IVECO.com — Interactive Key Award 2024, categoria Automotive and Energy
 - IVECO Design System — IKA 2025 categoria Business to Business (vincitore)
 - Fiat.it — IKA 2012, rollout in 21 paesi EMEA (lancio 2010)
 - Case IH — sito con Personas lanciato in 18 mercati simultaneamente
@@ -124,7 +124,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 **[Proof point](04_domino_case_history.md):**
 - Fiat Professional E-Product App — cataloghi interattivi, listini, comparatori, offline-ready, multilingua
 - IVECO Training AI Video — formazione rete con video AI personalizzati per ruolo e mercato
-- Preventivo Emozionale — già su reti automotive e automotive-adjacent (Costa Crociere, Arca SGR)
+- Preventivo Emozionale — già su reti automotive e automotive-adjacent (Fiat Professional, Petronas, Costa Crociere, Arca SGR)
 
 **Vs competitor:**
 - Vs web agency: full stack — app + PE + video AI + analytics in un sistema integrato
@@ -234,7 +234,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 **[Proof point](04_domino_case_history.md):**
 - Case IH — IKA 2024 "Innovation Technology" per AI in lead gen B2B
 - IVECO Training AI Video — formazione rete con AI, multilingua per mercato
-- GEO — competenza esclusiva Domino in Italia
+- SEO e GEO con risultati misurati: Masi +44% utenti, Demak +48% traffico organico, Frascold +62% utenti organici in un mese. GEO dal 2024.
 - IVECO MY METALLICA TRUCK — nomination IKA 2025 AI Best Use in ADV
 
 **Vs competitor:**

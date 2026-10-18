@@ -29,11 +29,11 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 
 In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competitivo sta nell'essere citati, scelti e ricordati — non solo trovati. Due differenziali principali da portare sempre:
 
-**GEO** — pochissime agenzie in Italia sanno applicarlo al settore turismo/cultura. Il test di apertura più efficace: "cercate la vostra destinazione o istituzione su ChatGPT — vi cita?" Il risultato quasi sempre sorprende il prospect e apre la conversazione senza bisogno di pitch.
+**GEO** — Domino lo applica dal 2024, con risultati misurati su SEO e GEO (Masi +44% utenti, Demak +48% traffico organico, Frascold +62% utenti organici in un mese). Il test di apertura più efficace: "cercate la vostra destinazione o istituzione su ChatGPT — vi cita?" Il risultato quasi sempre sorprende il prospect e apre la conversazione senza bisogno di pitch.
 
-**Preventivo Emozionale** — il tool killer per tour operator e reti di vendita indirette. Costa Crociere è il case perfetto: il preventivo viaggio diventa un minisite con analytics integrata. Unico in Italia. Quando rilevante, aprire con la demo invece dell'audit.
+**Preventivo Emozionale** — il tool killer per tour operator e reti di vendita indirette. Costa Crociere è il case perfetto: il preventivo viaggio diventa un minisite con analytics integrata. Unico in Italia; in uso anche su Arca SGR, Fiat Professional e Petronas. Quando rilevante, aprire con la demo invece dell'audit.
 
-**Differenziale vs agenzie specializzate turismo/cultura:** Domino porta metodi proprietari (Core Sprint!, Design Sprint!) + execution full-stack + competenza GEO che le agenzie verticali non hanno.
+**Differenziale vs agenzie specializzate turismo/cultura:** Domino porta metodi proprietari (Core Sprint!, Design Sprint!) + execution full-stack + SEO e GEO con risultati misurati (GEO dal 2024).
 
 **Differenziale vs web agency generaliste:** Domino conosce il settore in profondità — case history documentati su destinazioni, tour operator e istituzioni culturali di primo livello.
 
@@ -69,7 +69,7 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 - Visit Piemonte — gestione sito e promozione turistica
 
 **Vs competitor:**
-- Vs agenzia turismo: GEO è una competenza che pochissime agenzie in Italia sanno applicare
+- Vs agenzia turismo: SEO e GEO con risultati misurati (Masi +44% utenti, Demak +48% traffico organico, Frascold +62% utenti organici in un mese); GEO dal 2024
 - Vs web agency: coordinamento multi-paese documentato su decine di mercati internazionali
 
 **CTA:** SEO/GEO Audit (€1.500) con test diretto — "cercate la vostra destinazione su ChatGPT nei mercati chiave: cosa risponde?" Quasi sempre la miglior apertura commerciale del settore.
@@ -213,10 +213,10 @@ In turismo e cultura il **significato batte l'efficienza**. Il vantaggio competi
 **[Proof point](04_domino_case_history.md):**
 - Fondazione Torino Musei — strategia digitale integrata per 4 sedi
 - Masi Agricola: +44% utenti, +175% pagine viste in 6 mesi
-- GEO — competenza esclusiva Domino in Italia
+- SEO e GEO con risultati misurati: Masi +44% utenti, Demak +48% traffico organico, Frascold +62% utenti organici in un mese. GEO dal 2024.
 
 **Vs competitor:**
-- Vs agenzia cultura: GEO è una competenza che le agenzie verticali non hanno ancora sviluppato
+- Vs agenzia cultura: SEO e GEO con risultati misurati (Masi +44% utenti, Demak +48% traffico organico, Frascold +62% utenti organici in un mese); GEO dal 2024
 - Vs web agency: conoscenza profonda del settore culturale + capacità analytics avanzata
 
 **CTA:** Test di apertura: "cercate il nome dell'istituzione su ChatGPT — vi cita tra le prime cose da vedere?" + SEO/GEO Audit (€1.500) per il quadro completo.

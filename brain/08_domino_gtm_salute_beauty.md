@@ -172,13 +172,13 @@ In sanità e beauty la **fiducia è il valore principale** — non si scala con 
 - Design Sprint! (€10.000) → prototipo della nuova architettura di contenuto, da testare con utenti reali dopo lo Sprint!: si valida quali contenuti generano fiducia e citabilità prima di produrre il piano editoriale completo
 
 **[Proof point](04_domino_case_history.md):**
-- GEO — competenza Domino dal 2024, unica in Italia su questo approccio
+- SEO e GEO con risultati misurati: Masi +44% utenti, Demak +48% traffico organico, Frascold +62% utenti organici in un mese. GEO dal 2024.
 - Frascold: +62% utenti organici in 1 mese (metodo SEO applicabile a GEO)
 - Demak: +54% lead gen, +48% traffico organico
 
 **Vs competitor:**
 - Vs web agency: GEO non è SEO con un nuovo nome — richiede una strategia di contenuto radicalmente diversa
-- Vs agenzia healthcare: i KPI SEO/GEO documentati vengono da settori diversi ma il metodo è lo stesso; Domino ha competenza GEO che le agenzie verticali non hanno ancora
+- Vs agenzia healthcare: i KPI SEO/GEO documentati vengono da settori diversi ma il metodo è lo stesso; Domino fa SEO e GEO con risultati misurati (GEO dal 2024)
 
 **CTA:** SEO/GEO Audit (€1.500) con test diretto — "cercate il vostro brand o i vostri prodotti su ChatGPT: cosa risponde?" Il risultato è quasi sempre la miglior apertura commerciale.
 
