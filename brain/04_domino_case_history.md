@@ -110,9 +110,12 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Citabilità:** nome, screenshot e foto pubblici
 **Scheda completa:** [case_fourstars_website_design_sprint.md](case_fourstars_website_design_sprint.md)
 
-### Comau — Brand Identity e sito worldwide
-**Progetto:** Brand identity completa: analisi valori, concept, immaginario visivo, sistema di identità.
-**Sito worldwide (da evidenziare):** il sito globale di Comau rientra nel lavoro di brand identity (fonte: Andrea Bosso, 18 ottobre 2026). È la prova che l'identità è stata portata su un sito di gruppo internazionale, non fermata al manuale. Va messo in primo piano ogni volta che si cita Comau Brand Identity.
+### Comau — Brand Identity e sito worldwide *(2016)*
+**Progetto:** Brand identity completa per un gruppo con tante Business Unit: ricerca con personas, concetto «Il Brand al centro», firma «Made in Comau», storytelling, linee guida visive, brochure, schede tecniche, advertising.
+**Sito worldwide (da evidenziare):** il nuovo sito, presente in più di 20 mercati *(ricordo di Andrea Bosso, 18 ottobre 2026, da confermare con una fonte)*, fa parte del lavoro: cinque rubriche editoriali, pagina prodotto come racconto con call to action, ingresso per industria. Va messo in primo piano ogni volta che si cita Comau Brand Identity.
+**Citabilità:** nome, screenshot e foto pubblici; frasi delle due voci in video autorizzate (`06_`)
+**Numeri:** nessun risultato misurato (DATI NON TROVATI)
+**Scheda completa:** [case_comau_brand_identity.md](case_comau_brand_identity.md)
 
 ### Comau+ — Marketplace
 **Progetto:** Nuovo modello di partnership digitale tra Comau (hardware), clienti industriali (acquirenti) e system integrator (software applicativo).
