@@ -1,403 +1,469 @@
 // src/pptBuilder.js
-// Funzione di export PowerPoint del Prospect Engine.
-// Applica il Domino Design System (vedi designSystem.js).
-// Genera un PPTX di 5 slide pensato per essere aperto su Mac con i font
-// Aktiv Grotesk e PT Serif installati. Su sistemi senza i font, PowerPoint
-// usa il fallback automatico (Helvetica / Calibri / Arial).
+// Export PowerPoint del Prospect Engine secondo brain/16_domino_deck_pptx.md.
+// Tutti i valori visivi vengono da designSystem.js; le misure sono in pt
+// (slide 1440 × 810 pt = 20″ × 11,25″) e vengono convertite in pollici solo
+// quando si passano a pptxgenjs.
 //
-// Regole DS rispettate:
-// - Solo nero, bianco e rosso #FF303F (più grigi del DS).
-// - Aktiv Grotesk per heading/UI, PT Serif Bold per body editoriale.
-// - Niente emoji, niente Title Case, niente icone disegnate a mano.
-// - Card a radius 0, senza bordo, senza ombra.
-// - Eyebrow ALL CAPS con tracking 4.3px (≈3pt in PPTX).
-// - Domino tiles 46x46 in alto a destra dell'hero.
-// - Frame bianco 20px attorno alle artboard hero (slide 1 e 5).
+// Struttura (pitch breve, dark dominante come il riferimento CX Forum Rimini):
+//   1. Cover      — dark, fumo 01: display 96 pt con twist rosso, lead, meta
+//   2. Sfida      — dark, fumo 02: H2, corpo, sfide con numerali romani serif
+//   3. Soluzione  — paper: H2, corpo, strumenti in lista numerata 01/02/03
+//   4. Proof      — dark, fumo 03: H2, corpo, tre card case study
+//   5. Chiusura   — red (una sola): titolo nero, riepilogo, firma "Domino"
+//
+// Il twist rosso dei titoli arriva dal modello tra asterischi: "Il problema
+// *non è la tecnologia*." Senza asterischi la cover colora l'ultima frase.
 
 import pptxgen from 'pptxgenjs';
-import { LOGO_DATA_URI } from './logoBase64.js';
 import {
-  colors, fonts, type, tracking, lineHeight, canvas, margin, tiles
+  colors, alpha, fonts, type, tracking, lineHeight, slide as SLIDE, grid, chrome, assetPaths,
 } from './designSystem.js';
 
-// ─── HELPER ──────────────────────────────────────────────────────────────────
+const IN = pt => pt / 72;
+const CONTENT_W = SLIDE.w - 2 * grid.padX;
+const CONTENT_BOTTOM = SLIDE.h - grid.padBottom;
 
-// Logo: immagine PNG sulle slide a sfondo chiaro,
-// wordmark testuale "domino" sulle slide a sfondo dark/red.
-function addLogo(slide, variant = 'image') {
-  if (variant === 'image') {
-    slide.addImage({
-      data: LOGO_DATA_URI,
-      x: margin.outer, y: 0.18,
-      w: 0.9, h: 0.32,
-    });
-  } else {
-    // Wordmark testuale per slide 1 (dark) e slide 5 (red)
-    slide.addText('domino', {
-      x: margin.outer, y: 0.18, w: 1.4, h: 0.3,
-      fontSize: type.meta, bold: true,
-      fontFace: fonts.sans,
-      color: variant === 'white' ? colors.white : colors.red,
-      charSpacing: tracking.eyebrow,
-    });
+// ─── TESTO: twist e adattamento ──────────────────────────────────────────────
+
+// "Titolo con *twist*" → [{ text, twist }]
+export function parseTwist(str) {
+  const parts = String(str || '').split(/\*+/);
+  return parts
+    .map((text, i) => ({ text, twist: i % 2 === 1 }))
+    .filter(p => p.text);
+}
+
+export const stripTwist = str => String(str || '').replace(/\*+/g, '');
+
+// Senza marcatori: l'ultima frase diventa il twist (come la cover di riferimento).
+function twistOrLastSentence(str) {
+  const runs = parseTwist(str);
+  if (runs.some(r => r.twist)) return runs;
+  const plain = stripTwist(str).trim();
+  const m = plain.match(/^(.*?[.!?:])\s+(\S.*)$/s);
+  return m ? [{ text: m[1] + ' ', twist: false }, { text: m[2], twist: true }] : [{ text: plain, twist: false }];
+}
+
+// Larghezza media del carattere in em, per stimare gli a capo. Misurata sul
+// render PowerPoint con Aktiv Grotesk Trial (Black ~0,51, Regular ~0,44,
+// Bold ~0,50) più un margine: meglio un corpo un filo più piccolo che un testo che sfora.
+const CHAR_EM = {
+  [fonts.black]: 0.53, [fonts.xbold]: 0.48, [fonts.medium]: 0.48,
+  [fonts.sans]: 0.46, [fonts.serif]: 0.5,
+};
+
+function countLines(text, size, font, track, widthPt, bold) {
+  const em = (CHAR_EM[font] || 0.5) + (bold ? 0.05 : 0);
+  const charW = size * em + (track || 0);
+  const maxChars = Math.max(1, Math.floor(widthPt / charW));
+  let lines = 0;
+  for (const para of String(text).split('\n')) {
+    let cur = 0;
+    let n = 1;
+    for (const word of para.split(/\s+/).filter(Boolean)) {
+      const len = word.length;
+      if (cur === 0) cur = len;
+      else if (cur + 1 + len <= maxChars) cur += 1 + len;
+      else { n += 1; cur = len; }
+      while (cur > maxChars) { n += 1; cur -= maxChars; }
+    }
+    lines += n;
   }
+  return lines;
 }
 
-// Numero di slide in alto a destra (rosso, ALL CAPS feel)
-function addSlideNumber(slide, n) {
-  slide.addText(String(n).padStart(2, '0'), {
-    x: canvas.width - 1.0, y: 0.18, w: 0.6, h: 0.3,
-    fontSize: type.caption, bold: true,
-    fontFace: fonts.sans,
-    color: colors.red,
-    charSpacing: tracking.eyebrow,
-    align: 'right',
-  });
+const blockHeight = (lines, size, lh) => lines * size * lh * 1.2;
+
+// Sceglie il corpo più grande tra max e min che sta nel riquadro; se non basta
+// neanche il minimo, accorcia il testo a parole intere e chiude con "…".
+export function fitText({ text, font, max, min, w, h, lh = lineHeight.body, track = 0, bold = false }) {
+  let content = String(text || '').trim();
+  // Se non c'è spazio neanche per una riga al corpo minimo, il testo non entra.
+  if (!content || h < blockHeight(1, min, lh)) return { text: '', size: max, height: 0 };
+  for (let size = max; size >= min; size -= 0.75) {
+    const lines = countLines(content, size, font, track, w, bold);
+    if (blockHeight(lines, size, lh) <= h) return { text: content, size, height: blockHeight(lines, size, lh) };
+  }
+  const words = content.split(/\s+/);
+  while (words.length > 1) {
+    words.pop();
+    content = words.join(' ').replace(/[,;:.\s]+$/, '') + '…';
+    const lines = countLines(content, min, font, track, w, bold);
+    if (blockHeight(lines, min, lh) <= h) return { text: content, size: min, height: blockHeight(lines, min, lh) };
+  }
+  return { text: content, size: min, height: blockHeight(1, min, lh) };
 }
 
-// Brand chrome: due tile 0.4"x0.4" in alto a destra (rosso + ink),
-// firma del DS sulle slide hero.
-function addBrandTiles(slide) {
-  const x2 = canvas.width - margin.outer - tiles.size;
-  const x1 = x2 - tiles.size - tiles.gap;
-  const y  = 0.6;
-  slide.addShape('rect', {
-    x: x1, y, w: tiles.size, h: tiles.size,
-    fill: { color: colors.red },
-    line: { color: colors.red, width: 0 },
-  });
-  slide.addShape('rect', {
-    x: x2, y, w: tiles.size, h: tiles.size,
-    fill: { color: colors.ink },
-    line: { color: colors.ink, width: 0 },
-  });
+// ─── PRIMITIVE ───────────────────────────────────────────────────────────────
+
+// Le dimensioni non possono mai essere negative: PowerPoint considera il file
+// corrotto e lo "ripara". Le linee orizzontali restano a h = 0.
+function box(x, y, w, h) {
+  return { x: IN(x), y: IN(y), w: IN(Math.max(w, 1)), h: IN(Math.max(h, 0)) };
 }
 
-// Frame bianco "firma" attorno a una slide intera (per hero/CTA).
-function addWhiteFrame(slide) {
-  const f = margin.frame;
-  const fillWhite = { fill: { color: colors.white }, line: { color: colors.white, width: 0 } };
-  slide.addShape('rect', { x: 0, y: 0, w: canvas.width, h: f, ...fillWhite });
-  slide.addShape('rect', { x: 0, y: canvas.height - f, w: canvas.width, h: f, ...fillWhite });
-  slide.addShape('rect', { x: 0, y: 0, w: f, h: canvas.height, ...fillWhite });
-  slide.addShape('rect', { x: canvas.width - f, y: 0, w: f, h: canvas.height, ...fillWhite });
-}
-
-// Eyebrow ALL CAPS rosso (o personalizzato) — pattern ricorrente del DS.
-function addEyebrow(slide, text, position) {
-  slide.addText((text || '').toUpperCase(), {
-    fontFace: fonts.sans,
-    fontSize: type.eyebrow,
-    color: position.color || colors.red,
-    bold: false,
-    charSpacing: tracking.eyebrow,
-    ...position,
+function text(s, content, { x, y, w, h, ...opts }) {
+  s.addText(content, {
+    ...box(x, y, w, h),
+    margin: 0, valign: 'top', fit: 'none', paraSpaceAfter: 0,
+    ...opts,
   });
 }
 
-// ─── EXPORT PPT ──────────────────────────────────────────────────────────────
+function hairline(s, x, y, w, color, transparency = 0, width = 0.75) {
+  s.addShape('line', { ...box(x, y, w, 0), line: { color, width, transparency } });
+}
 
-export function exportPPT(result) {
-  const prs = new pptxgen();
-  prs.layout = 'LAYOUT_WIDE';
+function rect(s, x, y, w, h, fill, line) {
+  s.addShape('rect', {
+    ...box(x, y, w, h),
+    fill: { color: fill },
+    line: line || { color: fill, width: 0 },
+  });
+}
 
-  const p = result.prospect;
-  const d = result.deck;
+// Titolo con twist: restituisce l'altezza occupata per impilare il resto.
+function addTitle(s, raw, { x, y, w, h, font, max, min, color, twistColor, lh, track, forceTwist = false }) {
+  const runs = forceTwist ? twistOrLastSentence(raw) : parseTwist(raw);
+  const plain = runs.map(r => r.text).join('');
+  const fit = fitText({ text: plain, font, max, min, w, h, lh, track });
+  if (!fit.text) return 0;
+  const truncated = fit.text !== plain;
+  const parts = truncated ? [{ text: fit.text, twist: false }] : runs;
+  text(s, parts.map(r => ({
+    text: r.text,
+    options: { color: r.twist ? twistColor : color },
+  })), {
+    x, y, w, h: fit.height + 4,
+    fontFace: font, fontSize: fit.size, charSpacing: track, lineSpacingMultiple: lh,
+  });
+  return fit.height;
+}
 
-  // ─── SLIDE 1: Hero ────────────────────────────────────────────────────────
-  // Sfondo dark + frame bianco firma + Domino tiles in alto a destra.
-  const s1 = prs.addSlide();
-  s1.background = { color: colors.ink };
+function addBody(s, raw, { x, y, w, h, font = fonts.sans, max = type.bodyLarge, min = type.minBody, color, transparency = 0, bold = false, lh = lineHeight.body, cautious = false }) {
+  // cautious: stima più larga (come il bold) per i testi impilati in spazi stretti.
+  const fit = fitText({ text: stripTwist(raw), font, max, min, w, h, lh, bold: bold || cautious });
+  if (!fit.text) return 0;
+  text(s, fit.text, {
+    x, y, w, h: fit.height + 4,
+    fontFace: font, fontSize: fit.size, bold, color, transparency, lineSpacingMultiple: lh,
+  });
+  return fit.height;
+}
 
-  addWhiteFrame(s1);
-  addLogo(s1, 'red');           // wordmark rosso su dark
-  addSlideNumber(s1, 1);
-  addBrandTiles(s1);
+// Eyebrow: trattino rosso 36 × 1,5 pt + testo CAPS rosso tracciato.
+function addEyebrow(s, label, x, y, color = colors.red) {
+  rect(s, x, y + 7, 36, 1.5, color);
+  text(s, String(label).toUpperCase(), {
+    x: x + 48, y, w: CONTENT_W - 48, h: 18,
+    fontFace: fonts.sans, bold: true, fontSize: type.eyebrow,
+    charSpacing: tracking.eyebrow, color,
+  });
+  return 18;
+}
 
-  addEyebrow(s1, `Prospect · ${p.nome || ''}`, {
-    x: margin.outer + 0.2, y: 1.1, w: 12, h: 0.4,
+// Etichetta CAPS piccola (kicker di card, label dei meta).
+function addLabel(s, label, { x, y, w, color, transparency = 0, size = type.micro }) {
+  text(s, String(label).toUpperCase(), {
+    x, y, w, h: size * 1.4,
+    fontFace: fonts.sans, bold: true, fontSize: size,
+    charSpacing: tracking.card, color, transparency,
+  });
+}
+
+// ─── SFONDO E CHROME ─────────────────────────────────────────────────────────
+
+const VARIANTS = {
+  dark:  { bg: colors.black, fg: colors.white, mute: alpha.onDark.mute, faint: alpha.onDark.faint, line: alpha.onDark.line, dot: colors.red, logo: 'logoOnDark' },
+  paper: { bg: colors.paper, fg: colors.black, mute: alpha.onPaper.mute, faint: alpha.onPaper.soft, line: alpha.onPaper.line, dot: colors.red, logo: 'logoOnLight' },
+  red:   { bg: colors.red,   fg: colors.black, mute: 0, faint: 0, line: 0, dot: colors.black, logo: 'logoOnRed' },
+};
+
+function newSlide(prs, assets, variant, smoke) {
+  const s = prs.addSlide();
+  s.background = { color: VARIANTS[variant].bg };
+  if (smoke && assets[smoke]) {
+    s.addImage({ data: assets[smoke], x: 0, y: 0, w: SLIDE.widthIn, h: SLIDE.heightIn });
+  }
+  return s;
+}
+
+function addChrome(s, assets, variant, { n, label, footerLeft, footerRight }) {
+  const v = VARIANTS[variant];
+  const logoW = chrome.logoH * chrome.logoAspect;
+  if (assets[v.logo]) {
+    s.addImage({ data: assets[v.logo], ...box(grid.padX, grid.chromeTop, logoW, chrome.logoH) });
+  }
+
+  // In alto a destra: quadratino 6 × 6 + "02 · SFIDA"
+  const tag = `${String(n).padStart(2, '0')} · ${label}`.toUpperCase();
+  const right = SLIDE.w - grid.padX;
+  const tagW = tag.length * (type.chrome * 0.62 + tracking.chrome);
+  const tagY = grid.chromeTop + chrome.logoH / 2 - 7;
+  rect(s, right - tagW - 14, tagY + 4, chrome.dot, chrome.dot, v.dot);
+  text(s, tag, {
+    x: right - tagW, y: tagY, w: tagW, h: 14, align: 'right',
+    fontFace: fonts.sans, bold: true, fontSize: type.chrome, charSpacing: tracking.chrome,
+    color: v.fg, transparency: variant === 'red' ? 0 : v.mute,
   });
 
-  // Hero title (Aktiv Grotesk XBold 800 — pptxgenjs usa bold:true)
-  s1.addText(d.slide_1_titolo || '', {
-    x: margin.outer + 0.2, y: 1.7, w: 11.5, h: 3.0,
-    fontFace: fonts.sans,
-    fontSize: type.hero,
-    bold: true,
-    color: colors.white,
-    charSpacing: tracking.tightest,
-    lineSpacingMultiple: lineHeight.tight,
-  });
+  // In basso: progetto (sx) · sezione (dx)
+  const fy = SLIDE.h - grid.chromeBottom - 13;
+  const footer = { y: fy, w: CONTENT_W / 2, h: 14, fontFace: fonts.sans, bold: true, fontSize: type.chrome, charSpacing: tracking.chrome, color: v.fg, transparency: v.faint };
+  text(s, footerLeft.toUpperCase(), { ...footer, x: grid.padX });
+  text(s, footerRight.toUpperCase(), { ...footer, x: grid.padX + CONTENT_W / 2, align: 'right' });
+}
 
-  // Body editoriale (PT Serif Bold)
-  s1.addText(d.slide_1_contenuto || '', {
-    x: margin.outer + 0.2, y: 4.9, w: 10, h: 1.7,
-    fontFace: fonts.serif,
-    fontSize: type.bodyLead,
-    bold: true,
-    color: colors.grey300,
-    breakLine: true,
-    lineSpacingMultiple: lineHeight.serif,
-  });
+// ─── STRUMENTI E CASE STUDY ──────────────────────────────────────────────────
 
-  // Footer meta
-  s1.addText(`${new Date().toLocaleDateString('it-IT')}   ·   domino.it`, {
-    x: margin.outer + 0.2, y: 6.85, w: 8, h: 0.3,
-    fontFace: fonts.sans,
-    fontSize: type.caption,
-    color: colors.grey500,
-    charSpacing: tracking.eyebrow,
-  });
+function designSprintName(tipo) {
+  const t = String(tipo || '').replace(/design sprint!?/i, '').trim();
+  return t ? `${t} Design Sprint!` : 'Design Sprint!';
+}
 
-  // ─── SLIDE 2: Sfida / Problema ────────────────────────────────────────────
-  // Sfondo bianco + accent bar rossa + eyebrow + H2.
-  const s2 = prs.addSlide();
-  s2.background = { color: colors.white };
-
-  addLogo(s2, 'image');
-  addSlideNumber(s2, 2);
-
-  addEyebrow(s2, 'Sfida · contesto', {
-    x: margin.outer, y: 1.1, w: 12, h: 0.3,
-  });
-
-  // Accent bar rossa (sottile)
-  s2.addShape('rect', {
-    x: margin.outer, y: 1.6, w: 0.05, h: 0.95,
-    fill: { color: colors.red },
-    line: { color: colors.red, width: 0 },
-  });
-
-  s2.addText(d.slide_2_titolo || '', {
-    x: margin.outer + 0.2, y: 1.5, w: 11.5, h: 1.3,
-    fontFace: fonts.sans,
-    fontSize: type.h2,
-    bold: true,
-    color: colors.ink,
-    charSpacing: tracking.tight,
-    lineSpacingMultiple: lineHeight.tight,
-  });
-
-  // Body editoriale (PT Serif Bold)
-  s2.addText(d.slide_2_contenuto || '', {
-    x: margin.outer, y: 3.1, w: 12.5, h: 3.7,
-    fontFace: fonts.serif,
-    fontSize: type.body,
-    bold: true,
-    color: colors.grey700,
-    breakLine: true,
-    lineSpacingMultiple: lineHeight.serif,
-  });
-
-  // ─── SLIDE 3: Soluzione + Strumenti ───────────────────────────────────────
-  const s3 = prs.addSlide();
-  s3.background = { color: colors.white };
-
-  addLogo(s3, 'image');
-  addSlideNumber(s3, 3);
-
-  addEyebrow(s3, 'Soluzione · approccio', {
-    x: margin.outer, y: 1.1, w: 12, h: 0.3,
-  });
-
-  s3.addShape('rect', {
-    x: margin.outer, y: 1.6, w: 0.05, h: 0.95,
-    fill: { color: colors.red },
-    line: { color: colors.red, width: 0 },
-  });
-
-  s3.addText(d.slide_3_titolo || '', {
-    x: margin.outer + 0.2, y: 1.5, w: 11.5, h: 1.3,
-    fontFace: fonts.sans,
-    fontSize: type.h2,
-    bold: true,
-    color: colors.ink,
-    charSpacing: tracking.tight,
-    lineSpacingMultiple: lineHeight.tight,
-  });
-
-  s3.addText(d.slide_3_contenuto || '', {
-    x: margin.outer, y: 3.1, w: 12.5, h: 2.5,
-    fontFace: fonts.serif,
-    fontSize: type.body,
-    bold: true,
-    color: colors.grey700,
-    breakLine: true,
-    lineSpacingMultiple: lineHeight.serif,
-  });
-
-  // Strumenti suggeriti — strip in basso (rispettando "!" canonico)
+function strumenti(p) {
   const ss = p.strumenti_suggeriti || {};
-  const tools = [
-    ss.core_sprint && 'Core Sprint!',
-    ss.design_sprint_tipo && `${ss.design_sprint_tipo} Design Sprint!`,
-    ss.preventivo_emozionale && 'Preventivo Emozionale',
+  return [
+    ss.core_sprint && { nome: 'Core Sprint!', testo: ss.core_sprint_motivazione },
+    ss.design_sprint_tipo && { nome: designSprintName(ss.design_sprint_tipo), testo: ss.design_sprint_motivazione },
+    ss.preventivo_emozionale && { nome: 'Preventivo Emozionale', testo: ss.preventivo_emozionale_motivazione },
   ].filter(Boolean);
+}
 
-  if (tools.length) {
-    // Divider
-    s3.addShape('rect', {
-      x: margin.outer, y: 5.85, w: 12.5, h: 0.02,
-      fill: { color: colors.grey300 },
-      line: { color: colors.grey300, width: 0 },
+const CASE_KICKER = { affine: 'Sfida affine', settore: 'Settore vicino', metodologia: 'Metodo' };
+
+// ─── BUILD ───────────────────────────────────────────────────────────────────
+
+export function buildPPT(result, assets = {}) {
+  const prs = new pptxgen();
+  prs.defineLayout({ name: 'DOMINO_20x11', width: SLIDE.widthIn, height: SLIDE.heightIn });
+  prs.layout = 'DOMINO_20x11';
+  prs.company = 'Domino — Proudly Interactive';
+
+  const p = result.prospect || {};
+  const d = result.deck || {};
+  const nome = p.nome || 'Prospect';
+  const data = new Date().toLocaleDateString('it-IT');
+  const footerLeft = `${nome} · Domino · ${data}`;
+  const X = grid.padX;
+
+  // ─── 1. Cover ─────────────────────────────────────────────────────────────
+  {
+    const s = newSlide(prs, assets, 'dark', 'smokeCover');
+    addChrome(s, assets, 'dark', { n: 1, label: 'Proposta', footerLeft, footerRight: 'Pitch Domino' });
+
+    let y = 180;
+    y += addEyebrow(s, `${nome} · Domino`, X, y) + 24;
+    y += addTitle(s, d.slide_1_titolo, {
+      x: X, y, w: CONTENT_W, h: 260,
+      font: fonts.black, max: type.display, min: 56, lh: lineHeight.display, track: tracking.display,
+      color: colors.white, twistColor: colors.red, forceTwist: true,
+    }) + 28;
+    addBody(s, d.slide_1_contenuto, {
+      x: X, y, w: 820, h: 580 - y,  // titolo al massimo fino a ~510: restano almeno due righe di lead
+      font: fonts.medium, max: type.lead, min: 18, color: colors.white, transparency: alpha.onDark.mute,
     });
-    addEyebrow(s3, 'Strumenti', {
-      x: margin.outer, y: 6.05, w: 2.5, h: 0.3,
-    });
-    s3.addText(tools.join('   ·   '), {
-      x: margin.outer, y: 6.4, w: 12.5, h: 0.5,
-      fontFace: fonts.sans,
-      fontSize: type.bodyLead,
-      bold: true,
-      color: colors.ink,
+
+    hairline(s, X, 600, CONTENT_W, colors.red, 0, 1);
+    const meta = [
+      ['Per', p.decisore_target],
+      ['Settore', p.settore],
+      ['Mercati', p.mercati],
+    ].filter(([, v]) => v);
+    const colW = CONTENT_W / 3;
+    meta.forEach(([label, value], i) => {
+      const x = X + i * colW;
+      addLabel(s, label, { x, y: 620, w: colW - 24, color: colors.white, transparency: alpha.onDark.faint });
+      addBody(s, value, { x, y: 640, w: colW - 24, h: 60, bold: true, max: type.eyebrow, min: 12, color: colors.white });
     });
   }
 
-  // ─── SLIDE 4: Casi studio (split layout) ──────────────────────────────────
-  const s4 = prs.addSlide();
-  s4.background = { color: colors.white };
+  // ─── 2. Sfida ─────────────────────────────────────────────────────────────
+  {
+    const s = newSlide(prs, assets, 'dark', 'smokeDivider');
+    addChrome(s, assets, 'dark', { n: 2, label: 'Sfida', footerLeft, footerRight: 'Sfida' });
 
-  // Colonna scura a sinistra (~50%)
-  s4.addShape('rect', {
-    x: 0, y: 0, w: 6.4, h: canvas.height,
-    fill: { color: colors.ink },
-    line: { color: colors.ink, width: 0 },
-  });
-
-  addSlideNumber(s4, 4);
-
-  // Logo wordmark sulla colonna dark (rosso brand)
-  s4.addText('domino', {
-    x: margin.outer, y: 0.18, w: 1.4, h: 0.3,
-    fontFace: fonts.sans, fontSize: type.meta, bold: true,
-    color: colors.red,
-    charSpacing: tracking.eyebrow,
-  });
-
-  // Eyebrow + titolo a destra (colonna chiara)
-  addEyebrow(s4, 'Proof point', {
-    x: 6.7, y: 0.6, w: 6, h: 0.3,
-  });
-  s4.addText(d.slide_4_titolo || 'Chi l\'ha fatto con noi', {
-    x: 6.7, y: 1.0, w: 6.4, h: 1.0,
-    fontFace: fonts.sans,
-    fontSize: type.cardTitle,
-    bold: true,
-    color: colors.ink,
-    charSpacing: tracking.tight,
-    lineSpacingMultiple: lineHeight.tight,
-  });
-
-  // 3 case study sulla colonna dark — accent bar in gerarchia DS-compliant
-  // (rosso brand per il più affine, grigi per gli altri due)
-  const caseAccents = [colors.red, colors.grey500, colors.grey700];
-  (p.casi_studio || []).slice(0, 3).forEach((cs, i) => {
-    const y = 1.0 + i * 1.95;
-
-    // Accent bar
-    s4.addShape('rect', {
-      x: margin.outer, y, w: 0.04, h: 1.5,
-      fill: { color: caseAccents[i] },
-      line: { color: caseAccents[i], width: 0 },
+    const sfide = (p.sfide_probabili || []).filter(Boolean).slice(0, 3);
+    const colsTop = sfide.length ? 500 : CONTENT_BOTTOM;
+    let y = 120;
+    y += addEyebrow(s, 'Sfida · contesto', X, y) + 30;
+    y += addTitle(s, d.slide_2_titolo, {
+      x: X, y, w: 1150, h: 200,
+      font: fonts.xbold, max: type.h2, min: 38, lh: lineHeight.heading, track: tracking.heading,
+      color: colors.white, twistColor: colors.red,
+    }) + 28;
+    addBody(s, d.slide_2_contenuto, {
+      x: X, y, w: 980, h: colsTop - 32 - y, color: colors.white, transparency: alpha.onDark.mute,
     });
 
-    // Cliente (Aktiv Grotesk Bold)
-    s4.addText(cs.cliente || '', {
-      x: margin.outer + 0.2, y, w: 5.6, h: 0.4,
-      fontFace: fonts.sans,
-      fontSize: type.bodyLead,
-      bold: true,
-      color: colors.white,
-    });
-
-    // Progetto
-    s4.addText(cs.progetto || '', {
-      x: margin.outer + 0.2, y: y + 0.42, w: 5.6, h: 0.35,
-      fontFace: fonts.sans,
-      fontSize: type.bodySmall,
-      color: colors.grey300,
-    });
-
-    // KPI (niente emoji — DS vieta)
-    if (cs.kpi) {
-      s4.addText(cs.kpi, {
-        x: margin.outer + 0.2, y: y + 0.78, w: 5.6, h: 0.3,
-        fontFace: fonts.sans,
-        fontSize: type.meta,
-        bold: true,
-        color: caseAccents[i] === colors.red ? colors.red : colors.grey300,
+    const romani = ['I', 'II', 'III'];
+    const colW = (CONTENT_W - 2 * 40) / 3;
+    sfide.forEach((sfida, i) => {
+      const x = X + i * (colW + 40);
+      hairline(s, x, colsTop, colW, colors.red, 0, 1);
+      text(s, romani[i], {
+        x, y: colsTop + 14, w: 80, h: 44,
+        fontFace: fonts.serif, bold: true, italic: true, fontSize: type.numeral, color: colors.red,
       });
-    }
-
-    // Perché affine (PT Serif Bold)
-    if (cs.perche_affine) {
-      s4.addText(cs.perche_affine, {
-        x: margin.outer + 0.2, y: y + 1.1, w: 5.6, h: 0.4,
-        fontFace: fonts.serif,
-        fontSize: type.bodySmall,
-        bold: true,
-        color: colors.grey500,
-        breakLine: true,
-        lineSpacingMultiple: lineHeight.serif,
+      addBody(s, sfida, {
+        x, y: colsTop + 66, w: colW, h: CONTENT_BOTTOM - colsTop - 66,
+        bold: true, max: type.body, min: type.minBody, color: colors.white,
       });
-    }
+    });
+  }
+
+  // ─── 3. Soluzione ─────────────────────────────────────────────────────────
+  {
+    const s = newSlide(prs, assets, 'paper');
+    addChrome(s, assets, 'paper', { n: 3, label: 'Soluzione', footerLeft, footerRight: 'Soluzione' });
+
+    const tools = strumenti(p);
+    const listTop = tools.length ? 470 : CONTENT_BOTTOM;
+    let y = 120;
+    y += addEyebrow(s, 'Soluzione · approccio', X, y) + 30;
+    y += addTitle(s, d.slide_3_titolo, {
+      x: X, y, w: 1150, h: 200,
+      font: fonts.xbold, max: type.h2, min: 38, lh: lineHeight.heading, track: tracking.heading,
+      color: colors.black, twistColor: colors.red,
+    }) + 28;
+    addBody(s, d.slide_3_contenuto, {
+      x: X, y, w: 980, h: listTop - 32 - y, color: colors.black, transparency: alpha.onPaper.mute,
+    });
+
+    const colW = (CONTENT_W - (tools.length - 1) * 40) / Math.max(tools.length, 1);
+    tools.forEach((t, i) => {
+      const x = X + i * (colW + 40);
+      hairline(s, x, listTop, colW, colors.black, alpha.onPaper.line);
+      text(s, String(i + 1).padStart(2, '0'), {
+        x, y: listTop + 14, w: 90, h: 44,
+        fontFace: fonts.serif, bold: true, italic: true, fontSize: type.numeral, color: colors.red,
+      });
+      const th = addBody(s, t.nome, {
+        x, y: listTop + 66, w: colW, h: 70,
+        font: fonts.xbold, max: 27.75, min: 20, lh: lineHeight.heading, color: colors.black,
+      });
+      addBody(s, t.testo, {
+        x, y: listTop + 66 + th + 12, w: colW, h: CONTENT_BOTTOM - (listTop + 66 + th + 12),
+        max: type.body, min: type.minBody, color: colors.black, transparency: alpha.onPaper.mute,
+      });
+    });
+  }
+
+  // ─── 4. Proof point ───────────────────────────────────────────────────────
+  {
+    const s = newSlide(prs, assets, 'dark', 'smokeClosing');
+    addChrome(s, assets, 'dark', { n: 4, label: 'Le prove', footerLeft, footerRight: 'Casi studio' });
+
+    const casi = (p.casi_studio || []).filter(c => c && c.cliente).slice(0, 3);
+    const cardH = 270;
+    const cardsTop = casi.length ? CONTENT_BOTTOM - cardH : CONTENT_BOTTOM;
+    let y = 120;
+    y += addEyebrow(s, 'Proof point · casi studio', X, y) + 30;
+    y += addTitle(s, d.slide_4_titolo || 'Chi l\'ha fatto con noi', {
+      x: X, y, w: 1150, h: 140,
+      font: fonts.xbold, max: type.h2, min: 38, lh: lineHeight.heading, track: tracking.heading,
+      color: colors.white, twistColor: colors.red,
+    }) + 20;
+    addBody(s, d.slide_4_contenuto, {
+      x: X, y, w: 980, h: cardsTop - 28 - y, max: type.body, color: colors.white, transparency: alpha.onDark.mute,
+    });
+
+    const gap = grid.gapItem;
+    const cardW = (CONTENT_W - (casi.length - 1) * gap) / Math.max(casi.length, 1);
+    const pad = grid.cardPad;
+    casi.forEach((cs, i) => {
+      const x = X + i * (cardW + gap);
+      const innerW = cardW - 2 * pad;
+      rect(s, x, cardsTop, cardW, cardH, colors.ink, { color: colors.white, width: 0.75, transparency: alpha.onDark.line });
+      addLabel(s, CASE_KICKER[cs.tipo] || 'Caso studio', { x: x + pad, y: cardsTop + pad, w: innerW, color: colors.red });
+      let cy = cardsTop + pad + 24;
+      cy += addBody(s, cs.cliente, {
+        x: x + pad, y: cy, w: innerW, h: 64,
+        font: fonts.xbold, max: 24, min: 18, lh: lineHeight.heading, color: colors.white,
+      }) + 10;
+      if (cs.kpi) {
+        cy += addBody(s, cs.kpi, {
+          x: x + pad, y: cy, w: innerW, h: 76,
+          font: fonts.black, max: 34.5, min: 18, lh: lineHeight.heading, color: colors.white, cautious: true,
+        }) + 8;
+      }
+      if (cs.progetto) {
+        const ph = addBody(s, cs.progetto.toUpperCase(), {
+          x: x + pad, y: cy, w: innerW, h: 34,
+          bold: true, max: type.micro, min: 10.5, lh: 1.15, color: colors.white, transparency: alpha.onDark.faint,
+        });
+        cy += ph + 10;
+      }
+      addBody(s, cs.perche_affine, {
+        x: x + pad, y: cy, w: innerW, h: cardsTop + cardH - pad - cy,
+        max: type.small, min: 12, lh: 1.25, color: colors.white, transparency: alpha.onDark.mute,
+      });
+    });
+  }
+
+  // ─── 5. Chiusura (red) ────────────────────────────────────────────────────
+  {
+    const s = newSlide(prs, assets, 'red');
+    addChrome(s, assets, 'red', { n: 5, label: 'Prossimo passo', footerLeft, footerRight: 'Pitch Domino' });
+
+    let y = 150;
+    addTitle(s, stripTwist(d.slide_5_titolo), {
+      x: X, y, w: 1150, h: 330,
+      font: fonts.black, max: type.h1, min: 48, lh: lineHeight.display, track: tracking.display,
+      color: colors.black, twistColor: colors.black,
+    });
+
+    y = 520;
+    hairline(s, X, y, CONTENT_W, colors.black, 0, 1);
+    addBody(s, d.slide_5_contenuto, {
+      x: X, y: y + 26, w: 760, h: CONTENT_BOTTOM - y - 26,
+      font: fonts.sans, bold: true, max: type.lead, min: 16, lh: 1.2, color: colors.black,
+    });
+
+    const fx = SLIDE.w - grid.padX - 420;
+    text(s, 'Domino', {
+      x: fx, y: y + 22, w: 420, h: 50, align: 'right',
+      fontFace: fonts.serif, bold: true, italic: true, fontSize: type.signature, color: colors.black,
+    });
+    text(s, 'PROUDLY INTERACTIVE', {
+      x: fx, y: y + 76, w: 420, h: 26, align: 'right',
+      fontFace: fonts.sans, bold: true, fontSize: type.signatureTag, charSpacing: tracking.card, color: colors.black,
+    });
+    text(s, 'DOMINO.IT · TORINO +39 011 544770 · VENEZIA +39 041 0991410', {
+      x: fx - 200, y: y + 112, w: 620, h: 16, align: 'right',
+      fontFace: fonts.sans, bold: true, fontSize: type.chrome, charSpacing: tracking.chrome, color: colors.black,
+    });
+  }
+
+  return prs;
+}
+
+// ─── ASSET E DOWNLOAD ────────────────────────────────────────────────────────
+
+async function toDataUri(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
+  const blob = await res.blob();
+  return new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve(r.result);
+    r.onerror = reject;
+    r.readAsDataURL(blob);
   });
+}
 
-  // Body content sulla colonna chiara (destra)
-  s4.addText(d.slide_4_contenuto || '', {
-    x: 6.7, y: 2.5, w: 6.4, h: 4.3,
-    fontFace: fonts.serif,
-    fontSize: type.body,
-    bold: true,
-    color: colors.grey700,
-    breakLine: true,
-    lineSpacingMultiple: lineHeight.serif,
-  });
+// Un asset mancante non blocca l'export: la slide resta sul colore pieno.
+export async function loadDeckAssets() {
+  const entries = await Promise.all(Object.entries(assetPaths).map(async ([key, url]) => {
+    try { return [key, await toDataUri(url)]; }
+    catch (e) { console.warn('[pptBuilder] asset non caricato', e); return [key, null]; }
+  }));
+  return Object.fromEntries(entries);
+}
 
-  // ─── SLIDE 5: CTA / Closing ───────────────────────────────────────────────
-  // Sfondo rosso brand + frame bianco firma.
-  const s5 = prs.addSlide();
-  s5.background = { color: colors.red };
-
-  addWhiteFrame(s5);
-  addLogo(s5, 'white');         // wordmark bianco su rosso
-  addSlideNumber(s5, 5);
-
-  addEyebrow(s5, 'Next step', {
-    x: margin.outer + 0.2, y: 1.1, w: 12, h: 0.4,
-    color: colors.white,
-  });
-
-  s5.addText(d.slide_5_titolo || '', {
-    x: margin.outer + 0.2, y: 1.8, w: 12.2, h: 2.6,
-    fontFace: fonts.sans,
-    fontSize: type.hero,
-    bold: true,
-    color: colors.white,
-    charSpacing: tracking.tightest,
-    lineSpacingMultiple: lineHeight.tight,
-  });
-
-  s5.addText(d.slide_5_contenuto || '', {
-    x: margin.outer + 0.2, y: 4.6, w: 10.5, h: 1.8,
-    fontFace: fonts.serif,
-    fontSize: type.bodyLead,
-    bold: true,
-    color: colors.white,
-    breakLine: true,
-    lineSpacingMultiple: lineHeight.serif,
-  });
-
-  s5.addText('domino.it   ·   +39 011 544770   ·   Torino & Venezia', {
-    x: margin.outer + 0.2, y: 6.85, w: 12, h: 0.3,
-    fontFace: fonts.sans,
-    fontSize: type.caption,
-    color: colors.white,
-    charSpacing: tracking.eyebrow,
-  });
-
-  // ─── Download ─────────────────────────────────────────────────────────────
-  prs.writeFile({
-    fileName: `domino-prospect-${(p.nome || 'export').replace(/\s+/g, '-').toLowerCase()}.pptx`,
-  });
+export async function exportPPT(result) {
+  const assets = await loadDeckAssets();
+  const prs = buildPPT(result, assets);
+  const nome = (result.prospect?.nome || 'export').replace(/\s+/g, '-').toLowerCase();
+  await prs.writeFile({ fileName: `domino-prospect-${nome}.pptx` });
 }

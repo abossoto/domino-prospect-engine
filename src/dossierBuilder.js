@@ -518,27 +518,31 @@ function buildSection7(result) {
   ];
 }
 
+const stripStars = t => (t == null ? t : String(t).replace(/\*+/g, ''));
+
 // 8. Deck
 function buildSection8(result) {
   const d = result.deck || {};
   const slides = [
-    { n: '01', title: d.slide_1_titolo, content: d.slide_1_contenuto, style: 'Hero — sfondo dark, frame bianco firma.' },
-    { n: '02', title: d.slide_2_titolo, content: d.slide_2_contenuto, style: 'Sfondo bianco, accent bar rossa.' },
-    { n: '03', title: d.slide_3_titolo, content: d.slide_3_contenuto, style: 'Soluzione + strip strumenti in basso.' },
-    { n: '04', title: d.slide_4_titolo || "Chi l'ha fatto con noi", content: d.slide_4_contenuto, style: 'Split layout: case visivo a sinistra, KPI a destra.' },
-    { n: '05', title: d.slide_5_titolo, content: d.slide_5_contenuto, style: 'CTA — sfondo rosso brand, frame bianco firma.' },
+    { n: '01', title: d.slide_1_titolo, content: d.slide_1_contenuto, style: 'Cover — dark con fondo fumo, titolo con twist rosso.' },
+    { n: '02', title: d.slide_2_titolo, content: d.slide_2_contenuto, style: 'Sfida — dark con fondo fumo, sfide con numerali I/II/III.' },
+    { n: '03', title: d.slide_3_titolo, content: d.slide_3_contenuto, style: 'Soluzione — paper, strumenti in lista 01/02/03.' },
+    { n: '04', title: d.slide_4_titolo || "Chi l'ha fatto con noi", content: d.slide_4_contenuto, style: 'Proof point — dark con fondo fumo, tre card case study.' },
+    { n: '05', title: d.slide_5_titolo, content: d.slide_5_contenuto, style: 'Chiusura — rossa, testo nero, firma Domino.' },
   ];
 
   const out = [
     H1('Deck 5 slide — sintesi', '8'),
     Para([
-      'Il deck viene prodotto come PPTX brandizzato (Domino Design System v1, Aktiv Grotesk + PT Serif, accent rosso ',
+      'Il deck viene prodotto come PPTX nativo 20″ × 11,25″ secondo il Domino Design System (Aktiv Grotesk, PT Serif per numerali e firma, unico accento rosso ',
       { c: '#FF303F' }, '). Sintesi qui per il dossier.',
     ]),
     P(''),
   ];
 
   slides.forEach(s => {
+    // Gli asterischi marcano il twist rosso nel .pptx: nel dossier non servono.
+    s = { ...s, title: stripStars(s.title), content: stripStars(s.content) };
     out.push(cellBox({
       shadeColor: 'FFFFFF',
       leftBorderColor: RED,

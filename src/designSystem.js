@@ -1,97 +1,112 @@
 // src/designSystem.js
-// Domino Design System — tokens condivisi (colori, type, dimensioni canvas).
-// Fonte: Domino Design System v1 (project Claude Design 63d38cf9-...).
-// Le costanti possono essere usate sia dalla UI React (con prefisso "#"
-// per i colori) sia dal PPT builder.
+// Domino Design System per le presentazioni .pptx — token condivisi.
+// Fonte: brain/16_domino_deck_pptx.md (valori estratti dai deck di riferimento
+// "Case IH · European Social 2026" e "CX Forum Rimini · Pitch Domino").
+// Se la scheda del Brain cambia, si aggiorna qui: il builder legge solo questi token.
 //
-// Regola d'oro del DS: solo nero, bianco e rosso #FF303F come brand.
-// I client accents (maroon, navy) si usano SOLO nelle case study.
-// I sector accents non si usano nei materiali sales generici.
+// Regola di governo: editoriale, sicuro, alto contrasto. Nero/bianco + un solo
+// rosso #FF303F, blocchi flat (niente ombre, raggio 0), tipografia grande.
+// Il corpo non scende sotto ~14 pt; solo la chrome sta a 10,5 pt.
 
 // ─── COLORI ─────────────────────────────────────────────────────────────────
-// Hex senza "#" (formato richiesto da pptxgenjs).
-// Per la UI React si possono comporre come `#${colors.red}`.
+// Hex senza "#" (formato pptxgenjs).
 export const colors = {
-  // Core
-  black:    '000000',
-  ink:      '0E0E0E',  // near-black per superfici UI
-  white:    'FFFFFF',
-  red:      'FF303F',  // signature red — unico accent brand
+  black:    '000000',  // sfondo slide dark, testo su paper/red
+  ink:      '0A0A0A',  // near-black: card e strip su slide dark
+  white:    'FFFFFF',  // testo primario su dark, card su paper
+  red:      'FF303F',  // unico accento
+  paper:    'F0F0F0',  // sfondo slide paper
 
-  // Greys (dal DS — niente grigi inventati)
-  grey100:  'F0F0F0',  // page bg
-  grey300:  'C0C0C0',  // dividers
-  grey500:  '767676',  // muted copy
-  grey700:  '222222',  // dark tag bg
-  grey800:  '272727',  // menu dividers
-
-  // Client accents — esistono SOLO nelle case study, non in UI generica
+  // Colori di clienti: solo quando quel case study è in scena.
   clientMaroon: '7F1A3B',
   clientNavy:   '09314E',
 };
 
-// ─── TIPOGRAFIA ──────────────────────────────────────────────────────────────
-// Famiglie del DS. PowerPoint le risolve così:
-// - Font installato sul sistema → render perfetto (target: Mac con font Domino).
-// - Font non installato → fallback automatico (Helvetica/Calibri/Arial).
-// Nota: pptxgenjs non supporta una fallback chain inline come il CSS.
-// Specifichiamo solo il primo nome del DS e ci affidiamo al fallback PowerPoint.
+// Testo attenuato: alpha vero, non grigi equivalenti. pptxgenjs esprime
+// l'alpha come "transparency" (0 = pieno, 100 = invisibile).
+export const alpha = {
+  onPaper: { mute: 40, soft: 45, faint: 58, line: 87 },  // nero al 60 / 55 / 42 / 13 %
+  onDark:  { mute: 40, faint: 65, line: 88 },            // bianco al 60 / 35 / 12 %
+};
+
+// ─── FONT ───────────────────────────────────────────────────────────────────
+// Black, XBold e Medium sono famiglie separate: non si ottengono col bold.
+// Fallback PowerPoint: Arial / Georgia. Per destinatari esterni conviene il PDF.
 export const fonts = {
-  sans:    'Aktiv Grotesk',  // workhorse — Regular 400 / Bold 700 / XBold 800
-  serif:   'PT Serif',       // body lungo + lead editoriali (solo Bold)
-  display: 'DominoType',     // sign-off / chiusura — MAI body o headings
+  black:  'Aktiv Grotesk Trial Black',   // display, H1, numeri grandi
+  xbold:  'Aktiv Grotesk Trial XBold',   // H2, H3, heading card, claim
+  medium: 'Aktiv Grotesk Trial Medium',  // subtitle / lead
+  sans:   'Aktiv Grotesk Trial',         // corpo (Regular) e, con bold, label/chrome
+  serif:  'PT Serif',                    // solo numerali, citazioni, firma (bold)
 };
 
-// Scala tipografica (pt) — adattata da scala web del DS per slide 13.33"×7.5".
-// La conversione web→PPT non è 1:1: in slide servono dimensioni più contenute.
+// ─── SCALA TIPOGRAFICA (pt) ─────────────────────────────────────────────────
 export const type = {
-  display:    72,   // editoriale, raro
-  hero:       44,   // hero H1 (web fs-4xl 58px → 44pt slide)
-  h1:         36,
-  h2:         28,
-  cardTitle:  22,
-  subhead:    20,
-  bodyLead:   16,
-  body:       14,   // PT Serif Bold standard
-  bodySmall:  12,
-  meta:       11,   // logo wordmark, nav
-  eyebrow:    10,   // ALL CAPS labels
-  caption:     9,   // fine print, footer
+  display:     96,     // solo cover
+  h1:          85.5,   // divisori dark e chiusura
+  h2:          57,     // titoli delle slide di contenuto
+  h3:          42,
+  claim:       33,
+  cardHeading: 28.5,
+  fact:        52.5,   // KPI (range 34,5–52,5)
+  lead:        26.25,  // subtitle / lead (range 24–38,25)
+  bodyLarge:   21.75,
+  body:        18,
+  small:       14.25,
+  eyebrow:     15.75,
+  eyebrowCard: 12.75,
+  micro:       11.25,
+  chrome:      10.5,
+  numeral:     38.25,  // numerali serif delle liste 01/02/03
+  signature:   39.75,  // firma "Domino" in chiusura
+  signatureTag: 20.25, // "PROUDLY INTERACTIVE"
+  minBody:     14,     // soglia sotto cui il corpo non scende
 };
 
-// Char spacing (pt). pptxgenjs misura il tracking in punti tipografici.
-// Il DS web usa 4.3px per l'eyebrow, che a queste dimensioni di slide ≈ 3pt.
+// Tracking in pt (charSpacing di pptxgenjs).
 export const tracking = {
-  eyebrow:   3,    // ALL CAPS labels
-  flat:      0,
-  tight:    -0.5,  // headline condensate
-  tightest: -1,
+  eyebrow:  3.15,  // 0,2 em
+  card:     2,
+  chrome:   1.7,   // 0,16 em
+  display: -1.4,   // ~−1,5 %
+  heading: -0.6,
 };
 
-// Line spacing — moltiplicatori (pptxgenjs lineSpacingMultiple).
 export const lineHeight = {
-  tight: 1.0,    // headings — impilate, zero aria
-  snug:  1.15,
-  body:  1.5,    // body sans
-  serif: 1.55,   // PT Serif body
+  display: 0.95,
+  heading: 1.0,
+  body:    1.3,
 };
 
-// ─── CANVAS / GEOMETRIA ──────────────────────────────────────────────────────
-// pptxgenjs LAYOUT_WIDE = 13.333" × 7.5" (16:9).
-export const canvas = {
-  width:  13.333,
-  height:  7.5,
+// ─── SLIDE E GRIGLIA ─────────────────────────────────────────────────────────
+// 20″ × 11,25″ = 1440 × 810 pt. Le misure sono in pt, il builder converte in pollici.
+export const slide = { widthIn: 20, heightIn: 11.25, w: 1440, h: 810 };
+
+export const grid = {
+  padX:      90,   // gutter sx/dx
+  padTop:    82,   // inset alto del contenuto
+  padBottom: 112,  // inset basso del contenuto
+  chromeTop: 30,
+  chromeBottom: 24,
+  gapTitle:  42,
+  gapItem:   21,
+  cardPad:   22,
 };
 
-// Margini standard.
-export const margin = {
-  outer:  0.4,    // sx/dx/top
-  bottom: 0.5,
-  frame:  0.2,    // frame bianco "firma" attorno hero/CTA (= 20px web del DS)
+// Chrome: logo in alto a sinistra, quadratino rosso + etichetta a destra.
+export const chrome = {
+  logoH:   34.5,
+  logoAspect: 2610 / 1350,  // logo Domino + B Corp
+  dot:     6,
 };
 
-// Domino tiles — brand chrome in alto a destra (46×46 px web ≈ 0.4"×0.4").
-export const tiles = {
-  size: 0.4,    // pollici
-  gap:  0.05,   // gap tra le due tile
+// Fondi fumo (sostituto statico dello shader flow-bg) e loghi, in public/deck/.
+// Copie degli asset in Brain/Claude Design/deck-skill/assets/.
+export const assetPaths = {
+  smokeCover:   '/deck/smoke-01-cover.jpg',
+  smokeDivider: '/deck/smoke-02-divider.jpg',
+  smokeClosing: '/deck/smoke-03-closing.jpg',
+  logoOnDark:   '/deck/logo-on-dark.png',
+  logoOnLight:  '/deck/logo-on-light.png',
+  logoOnRed:    '/deck/logo-on-red.png',  // tutto nero: il marchio rosso sparirebbe sul rosso
 };

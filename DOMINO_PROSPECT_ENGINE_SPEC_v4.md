@@ -361,15 +361,18 @@ REGOLE FONDAMENTALI:
 - Next step sempre specifico ("30 minuti per capire se c'è fit")
 
 NOMI PRODOTTI DOMINO — USARE ESATTAMENTE QUESTI NOMI (fonte canonica: brain/03_domino_metodi.md, sezione "Catalogo 2026"):
-- "Core Sprint!" (€6.000) — NON "Foundation Sprint" (linguaggio startup, noi serviamo enterprise)
-- "Design Sprint!" (€10.000) — con le specializzazioni:
+- "Core Sprint!" (€6.000, 2 giorni con il cliente + 2 di lavoro Domino, dossier entro 5 giorni lavorativi) — NON "Foundation Sprint" (linguaggio startup, noi serviamo enterprise)
+- "Design Sprint!" (€10.000, 4 giorni: 2 con il cliente + 2 di lavoro Domino) — con le specializzazioni:
   Service Design Sprint! / CX Design Sprint! / Brand Design Sprint! /
   Digital Marketing Design Sprint! / Website Design Sprint! / Intranet Design Sprint! /
   Brain & Identity Design Sprint! (variante di punta 2026 — fondamenta brain aziendale + design system)
 - "Build Sprint!" (€20.000–60.000) — esecuzione a blocchi di 2 settimane o 1 mese, perimetro aperto. Sostituisce la voce storica "Progetto completo".
-- "Trainstorming!" (a partire da €15.000) — percorso change management 12 mesi (3 sessioni, una ogni 4). Era rituale interno dal 2010, dal 2026 è anche servizio venduto.
-- "Preventivo Emozionale" — NON "preventivo emozionale" minuscolo
-- "Audit tattico" (€1.500) — entry point, scope fisso 1–2 settimane
+- Starter Kit Sales / Internal Communication / CX Manager — specializzazioni tattiche del Brain & Identity Design Sprint!: 4 settimane (2 gg di workshop + 3 gg di lavoro Domino + 3 sett. di build + 1 sett. di QA), pricing su richiesta e mai comunicato fuori dalla proposta.
+- "Trainstorming!" (a partire da €15.000, 12 mesi, 3 sessioni, una ogni 4 mesi) — accompagnamento strutturato al cambiamento, NON formazione né consulenza. Era rituale interno dal 2010, dal 2026 è anche servizio venduto.
+- "Preventivo Emozionale" — NON "preventivo emozionale" minuscolo. Minisite con analytics, prezzo a progetto; in uso su Costa Crociere, Arca SGR, Fiat Professional e Petronas.
+- "Audit tattico" (€1.500) — entry point a pagamento per prospect bottom-up, scope fisso 1–2 settimane, varianti SEO/GEO, CX, Digital Marketing, Process
+
+DECK (fonte: brain/16_domino_deck_pptx.md, par. 9-10): 5 slide (cover, sfida, soluzione, proof point, chiusura); problema → soluzione → proof point; titoli ≤ 60 caratteri, contenuti ≤ 280; nei titoli 1-4 il twist rosso va tra asterischi (*così*), mai nei contenuti né in slide_5_titolo; niente prezzi per gli Starter Kit.
 
 SCALA COMMERCIALE 2026 (catalogo a 6 prodotti — fonte: brain/03_domino_metodi.md):
 Audit tattico (€1.500) → Core Sprint! (€6K) → Design Sprint! (€10K, variante di punta Brain & Identity) → Build Sprint! (€20K–60K) → Trainstorming! (da €15K, in parallelo o a valle)
@@ -980,23 +983,29 @@ Null guard: se `mail.oggetto` è vuoto mostra avviso. Card oggetto + card corpo 
 
 ## 15. TAB — DECK (DeckTab)
 
-5 slide come card colorate + bottone "⬇ Scarica PPT". Null guard: se `deck.slide_1_titolo` è vuoto mostra avviso.
+5 slide come card nelle stesse varianti del .pptx + bottone "⬇ PPT". Il twist dei titoli (testo tra asterischi) è reso in rosso dal componente `Twist`; gli asterischi non compaiono mai.
 
-| Slide | Sfondo | Testo titolo |
+| Slide | Variante | Titolo |
 |---|---|---|
-| 1 — Cover | `#0a0a0a` | bianco |
-| 2 — Problema | `#FFFFFF` | `#111` + barra rossa sinistra |
-| 3 — Soluzione | `#FFFFFF` | `#111` + barra rossa sinistra |
-| 4 — Case study | `#f5f5f5` | `#E8272A` rosso |
-| 5 — Next step | `#E8272A` | bianco |
+| 1 — Cover | dark `#000` | bianco, twist rosso |
+| 2 — Sfida | dark `#000` | bianco, twist rosso |
+| 3 — Soluzione | paper `#F0F0F0` | nero, twist rosso |
+| 4 — Casi studio | dark `#000` | bianco, twist rosso |
+| 5 — Chiusura | red `#FF303F` | nero |
 
 ---
 
 ## 16. EXPORT PPT (pptxgenjs)
 
-**`import pptxgen from 'pptxgenjs'`** — importato nel bundle React, NON da CDN.
+Fonte visiva: `brain/16_domino_deck_pptx.md` (che rimanda ai PDF di riferimento *Case IH · European Social 2026* e *CX Forum Rimini · Pitch Domino*). I token stanno in `src/designSystem.js`, il builder in `src/pptBuilder.js` (import dinamico, fuori dal bundle iniziale).
 
-Layout: LAYOUT_WIDE (13.33" × 7.5"). Badge strumenti in slide 3 usa `core_sprint` (non `foundation_sprint`).
+- **Formato:** slide 20″ × 11,25″ (1440 × 810 pt, layout custom `DOMINO_20x11`). Le misure del builder sono in pt e si convertono in pollici solo per pptxgenjs.
+- **Font:** famiglie separate `Aktiv Grotesk Trial Black` (display, KPI), `… XBold` (H2, card), `… Medium` (lead), `Aktiv Grotesk Trial` (corpo e, in bold, label e chrome); `PT Serif` bold solo per numerali corsivi e firma "Domino". Testo attenuato con alpha vero (`transparency`), non con grigi.
+- **Slide:** 1 cover dark con fumo 01 (eyebrow, display con twist rosso, lead, meta Per/Settore/Mercati); 2 sfida dark con fumo 02 (sfide_probabili con numerali romani); 3 soluzione paper (strumenti_suggeriti in lista 01/02/03 con motivazione); 4 proof point dark con fumo 03 (tre card `#0A0A0A` da casi_studio); 5 chiusura red, una sola, testo nero e firma "Domino · PROUDLY INTERACTIVE" con contatti delle due sedi.
+- **Chrome** su ogni slide: logo Domino + B Corp in alto a sinistra, quadratino rosso (nero sulla red) ed etichetta "NN · SEZIONE" a destra, progetto e sezione in basso.
+- **Asset** in `public/deck/` (copie da `Claude Design/deck-skill/assets/` del Brain): tre frame di fumo, logo per fondo scuro, chiaro e rosso (quest'ultimo tutto nero, ricavato dal logo per fondo chiaro). Caricati con `fetch` al momento dell'export; se uno manca la slide resta a colore pieno.
+- **Adattamento del testo:** `fitText` stima gli a capo (larghezza media del carattere per famiglia, misurata sul render PowerPoint) e scende dal corpo massimo al minimo della scheda (14 pt per il corpo); se non basta accorcia a parole intere con "…". Nessuna dimensione può essere negativa: un `cx`/`cy` negativo fa "riparare" il file a PowerPoint.
+- **QA:** generato in Node con `buildPPT(result, assets)`, esportato in PDF con PowerPoint e controllato a vista su un caso normale e uno con testi molto lunghi.
 
 **Filename:** `domino-prospect-{nome-kebab}.pptx`
 
@@ -1120,6 +1129,8 @@ In lista ogni contatto ha il link al record HubSpot (`https://app.hubspot.com/co
 ---
 
 ## 25. CHANGELOG DOC
+
+- **2026-10-18** — **Deck .pptx rifatto sul Domino Design System del Brain** (`brain/16_domino_deck_pptx.md`): 20″ × 11,25″, fondi fumo, famiglie Aktiv separate, chrome, varianti dark/paper/red, componenti della scheda (eyebrow, numerali serif, card, firma). Vedi sezione 16. Corretto un difetto per cui PowerPoint "riparava" il file (dimensioni negative quando il titolo occupava troppo spazio). Prompt: catalogo allineato al Brain del 18 ottobre (durate 2 + 2 giorni di Core Sprint! e Design Sprint!, format degli Starter Kit, Trainstorming! come accompagnamento strutturato, Audit tattico con varianti, referenze del Preventivo Emozionale) e nuovo blocco DECK con il twist rosso tra asterischi, tolto dai testi in dossier .docx, nota HubSpot e anteprima.
 
 - **2026-10-10** — release **v4.7.0** (velocità: parallelismo):
   - **Tool di ricerca: `web_search_20260209` → `web_search_20250305`** per analisi prospect e Hard bounce. La 20260209 esegue le ricerche dentro blocchi `code_execution`; quando il modello ne apre due insieme il server li tiene fermi **~95s** prima di rispondere (misurato più volte, sempre 95-96s, anche due volte nella stessa chiamata). `disable_parallel_tool_use` non è utilizzabile: l'API lo rifiuta con il programmatic tool calling. La **lista** resta sulla 20260209 (`webSearchTool(n, { filtroDinamico: true })`): nell'unica prova con la 20250305 è uscita con 5 aziende invece di 10 (Turismo / Mid-market), in 136s contro 196s. Da rimisurare prima di cambiarla.

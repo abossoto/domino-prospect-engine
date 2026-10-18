@@ -241,27 +241,40 @@ function MailTab({ mail }) {
   );
 }
 
+// Il twist dei titoli arriva tra asterischi: "Il sapere c'e'. *Solo che non si trova.*"
+function Twist({ text, color }) {
+  return String(text || '').split(/\*+/).map((part, i) =>
+    i % 2 ? <span key={i} style={{ color }}>{part}</span> : part
+  );
+}
+
 function DeckTab({ deck }) {
   if (!deck) return null;
+  // Varianti come nel .pptx (brain/16_domino_deck_pptx.md): dark, paper, una sola red in chiusura.
+  const V = {
+    dark:  { bg:C.black,   fg:'#fff', mute:'rgba(255,255,255,0.6)', twist:C.red },
+    paper: { bg:'#F0F0F0', fg:'#000', mute:'rgba(0,0,0,0.6)',       twist:C.red },
+    red:   { bg:C.red,     fg:'#000', mute:'rgba(0,0,0,0.8)',       twist:'#000' },
+  };
   const slides = [
-    { n:1, bg:C.black,   t:deck.slide_1_titolo, c:deck.slide_1_contenuto, accent:false },
-    { n:2, bg:C.white,   t:deck.slide_2_titolo, c:deck.slide_2_contenuto, accent:true },
-    { n:3, bg:C.white,   t:deck.slide_3_titolo, c:deck.slide_3_contenuto, accent:true },
-    { n:4, bg:'#f5f5f5', t:deck.slide_4_titolo, c:deck.slide_4_contenuto, accent:true, sub:'Casi studio' },
-    { n:5, bg:C.red,     t:deck.slide_5_titolo, c:deck.slide_5_contenuto, accent:false },
+    { n:1, v:'dark',  sub:'Cover',       t:deck.slide_1_titolo, c:deck.slide_1_contenuto },
+    { n:2, v:'dark',  sub:'Sfida',       t:deck.slide_2_titolo, c:deck.slide_2_contenuto },
+    { n:3, v:'paper', sub:'Soluzione',   t:deck.slide_3_titolo, c:deck.slide_3_contenuto },
+    { n:4, v:'dark',  sub:'Casi studio', t:deck.slide_4_titolo, c:deck.slide_4_contenuto },
+    { n:5, v:'red',   sub:'Chiusura',    t:deck.slide_5_titolo, c:deck.slide_5_contenuto },
   ];
   return (
     <div style={{ display:'flex',flexDirection:'column',gap:'8px' }}>
-      {slides.map(({ n,bg,t,c,accent,sub }) => (
-        <div key={n} style={{ background:bg,border:`1px solid ${C.border}`,borderRadius:'8px',padding:'14px 16px',display:'flex',gap:'12px' }}>
-          {accent && <div style={{ width:'4px',borderRadius:'2px',background:C.red,flexShrink:0 }} />}
-          <div style={{ flex:1 }}>
-            <div style={{ fontSize:'10px',fontWeight:700,letterSpacing:'0.1em',color:n===5?'rgba(255,255,255,0.6)':C.muted,textTransform:'uppercase',marginBottom:'4px' }}>SLIDE {n}{sub?` — ${sub}`:''}</div>
-            <div style={{ fontSize:'14px',fontWeight:800,color:n===5?C.white:n<=1?C.white:'#111',marginBottom:'5px' }}>{t}</div>
-            <div style={{ fontSize:'12px',color:n===5?'rgba(255,255,255,0.8)':n<=1?C.muted:'#555',lineHeight:1.6 }}>{c}</div>
+      {slides.map(({ n,v,sub,t,c }) => {
+        const s = V[v];
+        return (
+          <div key={n} style={{ background:s.bg,border:`1px solid ${C.border}`,padding:'14px 16px' }}>
+            <div style={{ fontSize:'10px',fontWeight:700,letterSpacing:'0.1em',color:s.mute,textTransform:'uppercase',marginBottom:'4px' }}>SLIDE {n} — {sub}</div>
+            <div style={{ fontSize:'14px',fontWeight:800,color:s.fg,marginBottom:'5px' }}><Twist text={t} color={s.twist} /></div>
+            <div style={{ fontSize:'12px',color:s.mute,lineHeight:1.6 }}>{String(c || '').replace(/\*+/g, '')}</div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

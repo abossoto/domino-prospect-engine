@@ -41,6 +41,9 @@ const lista = items => (items.length ? `<ul>${items.map(i => `<li>${i}</li>`).jo
 const LAYER_LABELS  = { clevel: 'C-Level', headof: 'Head of', manager: 'Manager / Operativo' };
 const MOTION_LABELS = { bottomup: 'Bottom-up', topdown: 'Top-down' };
 
+// Gli asterischi marcano il twist rosso dei titoli nel .pptx.
+const senzaTwist = t => String(t || '').replace(/\*+/g, '');
+
 function costruisciNota(result, { layer, motion, version }) {
   const p = result.prospect || {};
   const ss = p.strumenti_suggeriti || {};
@@ -103,7 +106,7 @@ function costruisciNota(result, { layer, motion, version }) {
   // 8. Deck
   const slide = [1, 2, 3, 4, 5]
     .filter(n => d[`slide_${n}_titolo`] || d[`slide_${n}_contenuto`])
-    .map(n => `<b>${n}. ${esc(d[`slide_${n}_titolo`])}</b><br>${nl2br(d[`slide_${n}_contenuto`])}`);
+    .map(n => `<b>${n}. ${esc(senzaTwist(d[`slide_${n}_titolo`]))}</b><br>${nl2br(senzaTwist(d[`slide_${n}_contenuto`]))}`);
   if (slide.length) out.push(h('8. Deck 5 slide — sintesi'), lista(slide));
 
   // 9. Workflow

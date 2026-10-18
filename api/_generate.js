@@ -57,19 +57,25 @@ Eccezioni (NON portano "!"): "Preventivo Emozionale" (storico), "Audit tattico" 
 Prima di restituire il JSON, RILEGGI ogni occorrenza dei nomi prodotto e verifica che il "!" finale sia presente.
 
 CATALOGO 2026 - prodotti Domino (fonte canonica: brain/03_domino_metodi.md, brain/starter_kit_brain_identity.md):
-- "Core Sprint!" (6.000 euro, 1-2 giorni) - allineamento strategico, NON "Foundation Sprint" (linguaggio startup, noi serviamo enterprise).
-- "Design Sprint!" (10.000 euro, 4 giorni) - prototipo testato. Specializzazioni: Service / CX / Brand / Digital Marketing / Website / Intranet / Brain & Identity (variante di punta 2026, fondamenta brain aziendale + design system).
-- "Sales Starter Kit" / "Internal Communication Starter Kit" / "CX Manager Starter Kit" - specializzazioni tattiche verticali del Brain & Identity Design Sprint! (solo layer brain, no identity / design system, nessuna integrazione IT). Format 4 settimane (3 gg workshop + 3 sett. build + 1 sett. QA), web app SSO Microsoft/Google, 40-80 nodi curati, pricing su richiesta. Buyer di funzione singolo che compra col proprio budget: Sales Director per Sales Starter Kit, HR/Internal Comms/CPO per Internal Communication, CX Manager per CX. Proporli quando il dolore e' concentrato in UNA funzione e si vuole partire veloce con perimetro chiuso e ROI in 4 settimane - apertura naturale al Brain & Identity Design Sprint! pieno a valle. Fonte: brain/starter_kit_brain_identity.md.
+- "Core Sprint!" (6.000 euro, 2 giorni con il cliente + 2 di lavoro Domino, dossier entro 5 giorni lavorativi) - allineamento strategico, NON "Foundation Sprint" (linguaggio startup, noi serviamo enterprise).
+- "Design Sprint!" (10.000 euro, 4 giorni: 2 con il cliente + 2 di lavoro Domino) - prototipo testato. Specializzazioni: Service / CX / Brand / Digital Marketing / Website / Intranet / Brain & Identity (variante di punta 2026, fondamenta brain aziendale + design system).
+- "Sales Starter Kit" / "Internal Communication Starter Kit" / "CX Manager Starter Kit" - specializzazioni tattiche verticali del Brain & Identity Design Sprint! (solo layer brain, no identity / design system, nessuna integrazione IT). Format 4 settimane (2 gg di workshop con il cliente + 3 gg di lavoro Domino + 3 sett. di build + 1 sett. di QA), web app SSO Microsoft/Google, 40-80 nodi curati, pricing su richiesta e mai comunicato fuori dalla proposta. Buyer di funzione singolo che compra col proprio budget: Sales Director per Sales Starter Kit, HR/Internal Comms/CPO per Internal Communication, CX Manager per CX. Proporli quando il dolore e' concentrato in UNA funzione e si vuole partire veloce con perimetro chiuso e ROI in 4 settimane - apertura naturale al Brain & Identity Design Sprint! pieno a valle. Fonte: brain/starter_kit_brain_identity.md.
 - "Build Sprint!" (20-60K euro, 8-52 settimane) - esecuzione a blocchi di 2 settimane o 1 mese, perimetro aperto. Sostituisce la voce storica "Progetto completo".
-- "Trainstorming!" (da 15.000 euro, 12 mesi, 3 sessioni) - change management. Era rituale interno dal 2010, dal 2026 anche servizio venduto.
-- "Preventivo Emozionale" - tool commerciale (minisite preventivo con analytics).
-- "Audit tattico" (1.500 euro, 1-2 settimane) - entry point.
+- "Trainstorming!" (da 15.000 euro, 12 mesi, 3 sessioni, una ogni 4 mesi) - accompagnamento strutturato al cambiamento: NON e' formazione ne' consulenza. Era rituale interno dal 2010, dal 2026 anche servizio venduto.
+- "Preventivo Emozionale" - tool commerciale (minisite preventivo con analytics, prezzo a progetto). In uso su Costa Crociere, Arca SGR, Fiat Professional e Petronas.
+- "Audit tattico" (1.500 euro, 1-2 settimane, varianti SEO/GEO, CX, Digital Marketing, Process) - entry point a pagamento per prospect bottom-up, porta a Core Sprint! o Design Sprint!.
 
 CORNICE TRASVERSALE: "Decision Design" - progettazione delle conseguenze (trade-off, scenari, effetti a 6-12 mesi). Slogan: "da come si naviga a come si sceglie". Citarlo come postura strategica, non come tool.
 
 REGOLE: usa SOLO info dal report. Prima frase = problema del prospect. Tono diretto, concreto.
 CASE STUDY - REGOLA DEI 3: [0] stesso settore/sfida con KPI [1] settore simile con KPI [2] metodologia specifica (es. Brain & Identity Design Sprint!, Sales/Internal Comms/CX Manager Starter Kit, Build Sprint!, Preventivo Emozionale, GEO, AI B2B). MAI solo Fiat e Costa Crociere.
 BADGE: core_sprint se stakeholder multipli/no chiarezza. design_sprint_tipo = Service/CX/Brand/Digital Marketing/Website/Intranet/Brain & Identity. Se il dolore e' concentrato in UNA funzione (sales / internal comms / customer experience) con buyer di funzione disponibile, preferire uno Starter Kit verticale rispetto al Brain & Identity Design Sprint! pieno e citarlo esplicitamente in hook, mail e deck. preventivo_emozionale se ciclo lungo/rete indiretta.
+
+DECK (fonte: brain/16_domino_deck_pptx.md, par. 9-10) - 5 slide di un pitch breve: 1 cover, 2 sfida, 3 soluzione, 4 proof point, 5 chiusura con prossimo passo.
+- Struttura narrativa: problema -> soluzione -> proof point. I dati prima delle opinioni.
+- Una slide si proietta, non si legge: titoli corti (massimo 60 caratteri, frasi brevi), contenuti massimo 280 caratteri, frasi corte e concrete. Sentence case, nessuna emoji, nessun ALL CAPS.
+- Twist rosso: in slide_1_titolo, slide_2_titolo, slide_3_titolo e slide_4_titolo racchiudi tra asterischi la parola o la frase che fa la svolta, una sola per titolo. Esempio: "Il sapere c'e'. *Solo che non si trova.*" Niente asterischi nei contenuti ne' in slide_5_titolo.
+- slide_5_titolo e' il prossimo passo concreto (es. le date del Core Sprint!), slide_5_contenuto lo spiega in due frasi. Prezzi solo se presenti nel catalogo e mai per gli Starter Kit.
 
 PERSONE CHIAVE - DATI VERIFICATI:
 Se il report contiene una sezione "PERSONE CHIAVE - DATI VERIFICATI (RocketReach)",
