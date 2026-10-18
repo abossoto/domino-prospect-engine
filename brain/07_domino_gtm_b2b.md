@@ -1,6 +1,8 @@
 # DOMINO BRAIN — GTM B2B Industriale / Manifatturiero
 > Versione 1.2 — Ottobre 2026. Sales plays, scala di pricing e regole commerciali per il settore B2B industriale. Allineata a `03_domino_metodi.md` v5.4 (catalogo 2026, Build Sprint!, Brain & Identity Design Sprint!, Decision Design come cornice). Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
 >
+> **Changelog — 18 ottobre 2026.** Comau come case di apertura per l'automazione industriale (SP2, SP3, SP5, istruzione 7 del Prospect Engine); claim GEO, IVECO, Rollon e «20+ clienti» corretti.
+>
 > **Changelog — 10 ottobre 2026 (health check).** anni di esperienza portati a 30; test con utenti spostato dopo lo Sprint!.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · Altri GTM: [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
@@ -104,6 +106,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 **[Proof point](04_domino_case_history.md):**
 - IVECO: TCO Calculator per fleet manager + configuratore AI per individuare prodotto/allestimento
 - Fiat Professional: E-Product App per rete vendita (usabile offline)
+- **Comau+ Marketplace**: nuovo modello di partnership digitale tra Comau (hardware), clienti industriali e system integrator; progettazione di processo, UX, design, front-end, erogazione e manutenzione gestiti interamente da Domino. Voce del cliente: Duilio Amico, Responsabile Comunicazione Comau
 
 **Vs competitor:**
 - Vs consulenza digital (Accenture, Reply): Domino non consegna un report — consegna il tool funzionante
@@ -135,6 +138,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 
 **[Proof point](04_domino_case_history.md):**
 - Tra i nostri clienti B2B industriali: IVECO, Comau, Bitron, Rollon e decine di altri
+- Comau: due voci del cliente in video (Maurizio Cremonini, Duilio Amico), relazione lunga con un gruppo enterprise
 - IKA 2023 — Rollon: Best Integrated Communication Campaign B2B
 - 30 anni di esperienza, 100% clienti soddisfatti Design Sprint!
 
@@ -205,6 +209,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 
 **[Proof point](04_domino_case_history.md):**
 - Danieli: Design System per digitalizzare e uniformare la comunicazione internazionale del brand
+- Comau: brand identity completa (analisi dei valori, concept, immaginario visivo, sistema di identità) per un gruppo internazionale dell'automazione industriale
 - Rollon US: +48% traffico organico, "linear rails" = prima keyword organica USA
 - Case IH: rollout in 18 mercati
 - Fiat: nuovo sito in 21 paesi
@@ -263,6 +268,7 @@ Quando generi materiali per un prospect B2B industriale:
 4. **Usa i proof point del play**, non generici: se scrivi a un'azienda con problema SEO, cita Demak e Rollon, non Biennale di Venezia
 5. **Il Preventivo Emozionale** va sempre considerato come strumento di follow-up per proposal formali su deal di medio-alto valore
 6. **Non confondere Core Sprint! e Design Sprint!** come alternative di prezzo: sono strumenti diversi per situazioni diverse. Vedi distinzione completa in [03_domino_metodi.md](03_domino_metodi.md)
+7. **Automazione industriale, robotica, macchine e impianti: il case di apertura è Comau.** Due lavori diversi, da scegliere in base al problema. **Comau+ Marketplace** (SP2, SP3) quando il prospect ha una rete di integratori, partner o clienti che deve far incontrare con il prodotto: è il caso del modello di partnership digitale, non di un sito. **Comau Brand Identity** (SP5) quando il prospect è un gruppo con più marchi o mercati e un'identità da riordinare. Si aggiungono Danieli (design system, anch'esso automazione e impianti) e Rollon (prodotto tecnico che diventa esperienza). Lo stesso vale per chi vende macchine e linee di produzione (esempio: Cama Group, confezionamento secondario). Dati sul caso Comau da non citare finché non sono nel Brain: anno, risultati misurati, tipo di Sprint usato e citabilità (**DATI NON TROVATI**, vedi la scheda in `04_`). Le due voci del cliente sono in `06_`.
 
 
 ---

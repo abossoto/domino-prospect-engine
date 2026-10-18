@@ -116,6 +116,8 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 ### Comau+ — Marketplace
 **Progetto:** Nuovo modello di partnership digitale tra Comau (hardware), clienti industriali (acquirenti) e system integrator (software applicativo).
 **Scope:** Progettazione di processo + UX + design + front-end + erogazione + manutenzione. Gestito interamente da Domino.
+**Voce del cliente:** Duilio Amico, Responsabile Comunicazione Comau, e Maurizio Cremonini, Marketing & Business Developer *(video in `06_domino_referenze.md`)*.
+**Da completare (case chiave per l'automazione industriale):** anno, risultati misurati, tipo di Sprint, citabilità: DATI NON TROVATI.
 
 ### Bitron — Customer Experience B2B & Web di Gruppo
 **Progetto:** Nuova customer experience per valorizzare il know-how B2B di Bitron, con integrazione dei settori diversi presidiati dal Gruppo in un'unica architettura coerente.

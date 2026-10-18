@@ -2,6 +2,7 @@
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
 ## 2026-10-18
+- GTM B2B (`07_`): Comau come case di apertura per l'automazione industriale: proof point in SP2 (Comau+ Marketplace), SP3 e SP5 (Brand Identity), nuova istruzione 7 nel Prospect Engine. Scheda Comau in `04_`: aggiunte le voci del cliente e segnati i dati mancanti (anno, risultati, tipo di Sprint, citabilità). Backup in `_superate/_backup_20261018_comau_gtm/`.
 - Claim corretti dopo verifica con Andrea Bosso. Preventivo Emozionale: aggiunti Fiat Professional e Petronas tra i casi (`03_`, `09_`, `10_`, `11_`). GEO: tolti «unica in Italia», «competenza esclusiva» e «le agenzie verticali non hanno»; al loro posto SEO e GEO con risultati misurati (Masi, Demak, Frascold), GEO dal 2024 (`08_`, `09_`, `11_`). IVECO: «Interactive Key Award 2024, categoria Automotive and Energy», tolto «miglior sito automotive» (`04_`, `11_`). Rollon: 16 mercati, «linear rails» prima keyword organica dopo il brand, Interactive Key Award 2023 (`04_`, `06_`). `07_`: «20+ clienti B2B industriale attivi» sostituito da «Tra i nostri clienti B2B industriali: IVECO, Comau, Bitron, Rollon e decine di altri». Lasciati invariati: «unico in Italia» sul Preventivo Emozionale e «100% clienti soddisfatti». Backup in `_superate/_backup_20261018_claim_corretti/`. Da fare: scheda Petronas in `04_` (servono cosa, quando, rete).
 
 ## 2026-10-16
