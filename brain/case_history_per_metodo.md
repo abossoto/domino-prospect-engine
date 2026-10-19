@@ -51,7 +51,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 
 ## B2B Industriale
 
-- **Comau — Brand Identity** → Design Sprint! (Brand) · Build Sprint!
+- **Comau — Brand Identity e sito worldwide** → Design Sprint! (Brand) · Build Sprint!
 - **Comau+ — Marketplace** → Design Sprint! (Service) · Build Sprint!
 - **Bitron — CX B2B & Web di Gruppo** → Design Sprint! (CX) · Build Sprint! · SEO
 - **Rollon — "Il prodotto diventa esperienza"** (IKA 2023) → Design Sprint! (Website/CX) · Build Sprint! · GEO/SEO

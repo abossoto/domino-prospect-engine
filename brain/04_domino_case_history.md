@@ -110,12 +110,19 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Citabilità:** nome, screenshot e foto pubblici
 **Scheda completa:** [case_fourstars_website_design_sprint.md](case_fourstars_website_design_sprint.md)
 
-### Comau — Brand Identity
-**Progetto:** Brand identity completa: analisi valori, concept, immaginario visivo, sistema di identità.
+### Comau — Brand Identity e sito worldwide *(2016)*
+**Progetto:** Brand identity completa per un gruppo con tante Business Unit: ricerca con personas, concetto «Il Brand al centro», firma «Made in Comau», storytelling, linee guida visive, brochure, schede tecniche, advertising.
+**Sito worldwide (da evidenziare):** il nuovo sito, presente in più di 20 mercati *(ricordo di Andrea Bosso, 18 ottobre 2026, da confermare con una fonte)*, fa parte del lavoro: cinque rubriche editoriali, pagina prodotto come racconto con call to action, ingresso per industria. Va messo in primo piano ogni volta che si cita Comau Brand Identity.
+**Citabilità:** nome, screenshot e foto pubblici; frasi delle due voci in video autorizzate (`06_`)
+**Numeri:** nessun risultato misurato (DATI NON TROVATI)
+**Visual:** 25 file in `assets_case_history/b2b_industriale/` (`b2b_comau_sito_01.png` … ), citabilità Pubblica (18 ottobre 2026)
+**Scheda completa:** [case_comau_brand_identity.md](case_comau_brand_identity.md)
 
 ### Comau+ — Marketplace
 **Progetto:** Nuovo modello di partnership digitale tra Comau (hardware), clienti industriali (acquirenti) e system integrator (software applicativo).
 **Scope:** Progettazione di processo + UX + design + front-end + erogazione + manutenzione. Gestito interamente da Domino.
+**Voce del cliente:** Duilio Amico, Responsabile Comunicazione Comau, e Maurizio Cremonini, Marketing & Business Developer *(video in `06_domino_referenze.md`)*.
+**Da completare (case chiave per l'automazione industriale):** anno, risultati misurati, tipo di Sprint, citabilità: DATI NON TROVATI.
 
 ### Bitron — Customer Experience B2B & Web di Gruppo
 **Progetto:** Nuova customer experience per valorizzare il know-how B2B di Bitron, con integrazione dei settori diversi presidiati dal Gruppo in un'unica architettura coerente.

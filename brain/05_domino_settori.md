@@ -72,7 +72,7 @@
 - Demak: +48% organico, +54% lead gen, +20% clic non-brand
 - Frascold: +62% utenti organici in 1 mese
 
-**[Case da citare](04_domino_case_history.md):** Bitron CX B2B & Web di Gruppo, Comau+ Marketplace, Danieli Design System, Rollon US SEO, Demak riposizionamento, Links Foundation Intranet (Design Sprint! + Agile)
+**[Case da citare](04_domino_case_history.md):** Bitron CX B2B & Web di Gruppo, Comau (brand identity e sito worldwide), Comau+ Marketplace, Danieli Design System, Rollon US SEO, Demak riposizionamento, Links Foundation Intranet (Design Sprint! + Agile)
 
 ---
 
