@@ -7,7 +7,9 @@
 //   3. Web (Claude + web_search) - solo se RocketReach non basta: nuova azienda
 //      da profili pubblici/news e formato email dell'azienda
 //   4. Email     - verificata > personale > ricostruita dal formato ("da verificare")
-//   5. Bozza     - mail di ricontatto firmata dal contact owner
+//   5. Bozza     - mail di ricontatto firmata dal contact owner, con 1-2 referenze
+//                  dal brain coerenti con l'impiego attuale e un'apertura che
+//                  dipende da quando e' avvenuto il cambio lavoro
 // Il salvataggio su HubSpot e' un passo separato (salvaRientro), lanciato a mano
 // dopo aver visto il risultato: un'email ricostruita non va scritta sul record.
 //
@@ -91,6 +93,59 @@ export function ricostruisciEmail(firstname, lastname, formato, dominio) {
   const n = slugNome(firstname), c = slugNome(lastname);
   if (!f || !n || !c || !dominio) return null;
   return `${f(n, c)}@${dominio}`;
+}
+
+// ── Data del cambio lavoro ───────────────────────────────────────────────────
+// Serve alla bozza: i complimenti per il "nuovo" ruolo hanno senso solo se il
+// cambio e' recente. Una persona in hard bounce puo' aver cambiato azienda anni
+// fa: l'indirizzo rimbalza solo quando qualcuno ci scrive.
+
+const MESI = { gen: 1, jan: 1, feb: 2, mar: 3, apr: 4, mag: 5, may: 5, giu: 6, jun: 6, lug: 7, jul: 7, ago: 8, aug: 8, set: 9, sep: 9, ott: 10, oct: 10, nov: 11, dic: 12, dec: 12 };
+const NOMI_MESI = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+
+// "2023-03-01", "2023-03", "mar 2023", "March 2023", "2023" -> "2023-03" o "2023".
+export function normData(s) {
+  const t = String(s || '').trim().toLowerCase();
+  let m = t.match(/^(\d{4})-(\d{1,2})\b/);
+  if (m && +m[2] >= 1 && +m[2] <= 12) return `${m[1]}-${m[2].padStart(2, '0')}`;
+  m = t.match(/^([a-z]{3})[a-z]*\.?\s+(\d{4})$/);
+  if (m && MESI[m[1]]) return `${m[2]}-${String(MESI[m[1]]).padStart(2, '0')}`;
+  m = t.match(/^(\d{4})$/);
+  return m ? m[1] : null;
+}
+
+// Oltre questa soglia il cambio non e' piu' "recente".
+const MESI_RECENTE = 12;
+
+// recente | non_recente | ignota. Con il solo anno: anno in corso = recente,
+// anno scorso = ignota (puo' essere 1 come 21 mesi fa), prima = non recente.
+export function anzianita(data, oggi = new Date()) {
+  if (!data) return 'ignota';
+  const [a, m] = data.split('-').map(Number);
+  if (!m) {
+    const diff = oggi.getFullYear() - a;
+    return diff <= 0 ? 'recente' : diff === 1 ? 'ignota' : 'non_recente';
+  }
+  const mesi = (oggi.getFullYear() - a) * 12 + (oggi.getMonth() + 1 - m);
+  if (mesi < 0) return 'ignota';
+  return mesi <= MESI_RECENTE ? 'recente' : 'non_recente';
+}
+
+// "2023-03" -> "marzo 2023"; "2023" -> "2023".
+function dataLeggibile(data) {
+  const [a, m] = String(data || '').split('-').map(Number);
+  return m ? `${NOMI_MESI[m - 1]} ${a}` : String(a || '');
+}
+
+// Inizio del ruolo attuale dalla job_history di RocketReach. Con piu' ruoli
+// nella stessa azienda conta il primo: e' quando la persona ci e' entrata.
+function inizioDaRocketReach(profilo) {
+  const storia = Array.isArray(profilo.job_history) ? profilo.job_history.filter(Boolean) : [];
+  const conFlag = storia.filter(j => j.is_current === true);
+  const attuali = conFlag.length ? conFlag : storia.filter(j => !j.end_date);
+  const inAzienda = attuali.filter(j => stessaAzienda(j.company_name || j.company, profilo.current_employer));
+  const date = inAzienda.map(j => normData(j.start_date)).filter(Boolean).sort();
+  return date[0] || null;
 }
 
 // ── 1. HubSpot: lista e dettaglio ────────────────────────────────────────────
@@ -265,6 +320,7 @@ async function trovaSuRocketReach(c) {
       azienda: profilo.current_employer || '',
       dominio: estraiDominio(profilo.current_employer_domain || profilo.current_employer_website || '') || '',
       ruolo: profilo.current_title || '',
+      dal: inizioDaRocketReach(profilo),
       linkedin: url(profilo.linkedin_url),
       email_pro: utile(pro) ? pro : null,
       email_personale: utile(pers) ? pers : null,
@@ -285,6 +341,8 @@ METODO:
 - nuova_azienda: solo il nome dell'azienda come la scriverebbe lei (es. "Ruggeri & C. S.p.A."), senza gruppo di appartenenza, parentesi o varianti.
 - ruolo: solo il titolo esatto trovato in una fonte (es. "General Manager"), senza commenti. Se nessuna fonte lo riporta, ruolo = "". Mai descrizioni o ipotesi tra parentesi.
 3. Poi cerca dominio e formato email dell'azienda attuale.
+4. data_inizio: quando la persona e' entrata nell'azienda attuale, dal profilo LinkedIn (es. "mar 2023 - Presente") o da una news di nomina. Formato "AAAA-MM", oppure "AAAA" se c'e' solo l'anno. Se nessuna fonte la riporta, data_inizio = "". Mai stimarla.
+5. settore: il settore dell'azienda attuale in poche parole (es. "componentistica automotive", "banca retail").
 
 REGOLE:
 - MAI inventare. Se non trovi prove, rispondi trovato=false.
@@ -293,7 +351,7 @@ REGOLE:
 - Formati ammessi per formato_email: nome.cognome, n.cognome, ncognome, nomecognome, nome_cognome, nome-cognome, cognome.nome, cognome.n, cognomen, nome, cognome.
 
 Rispondi SOLO con JSON puro:
-{"trovato":true,"nuova_azienda":"","dominio":"","ruolo":"","linkedin_url":"https://www.linkedin.com/in/...","fonte":"LinkedIn|Web","fonte_url":"https://...","confidenza":"alta|media|bassa","formato_email":"","esempio_formato":"","note":""}
+{"trovato":true,"nuova_azienda":"","dominio":"","ruolo":"","data_inizio":"","settore":"","linkedin_url":"https://www.linkedin.com/in/...","fonte":"LinkedIn|Web","fonte_url":"https://...","confidenza":"alta|media|bassa","formato_email":"","esempio_formato":"","note":""}
 linkedin_url: solo l'URL del profilo della persona giusta, se trovato. fonte: "LinkedIn" se l'azienda attuale viene dal profilo LinkedIn, altrimenti "Web".`;
 
 async function trovaSulWeb(c, scadenza, signal) {
@@ -304,7 +362,7 @@ Azienda precedente: ${c.aziendaVecchia.nome || 'sconosciuta'}${c.aziendaVecchia.
 Ruolo precedente: ${c.ruolo || 'sconosciuto'}
 ${c.linkedin ? `LinkedIn salvato: ${c.linkedin}` : ''}
 
-Parti dal profilo LinkedIn pubblico. Trova azienda attuale, dominio web, ruolo attuale e formato email dell'azienda attuale.`,
+Parti dal profilo LinkedIn pubblico. Trova azienda attuale, dominio web, ruolo attuale, da quando ci lavora, settore e formato email dell'azienda attuale.`,
   }];
   const tool = webSearchTool(8);
   let data = await callClaude({ system: WEB_SYSTEM, messages, tools: [tool], max_tokens: 4000, timeoutMs: 150000, scadenza, signal });
@@ -319,6 +377,8 @@ Parti dal profilo LinkedIn pubblico. Trova azienda attuale, dominio web, ruolo a
       azienda: j.nuova_azienda || '',
       dominio: estraiDominio(j.dominio) || '',
       ruolo: j.ruolo || '',
+      data_inizio: normData(j.data_inizio),
+      settore: String(j.settore || '').trim(),
       linkedin: /linkedin\.com\/in\//i.test(j.linkedin_url || '') ? url(j.linkedin_url) : null,
       fonte: j.fonte === 'LinkedIn' ? 'LinkedIn' : 'Web',
       fonte_url: url(j.fonte_url),
@@ -341,37 +401,103 @@ function sistemaMail(brain) {
 
 REGOLE:
 - Mittente: il contact owner indicato, in prima persona. Firma solo con nome e cognome del mittente e "Domino".
-- Apertura personale: hai saputo del nuovo ruolo / della nuova azienda, complimenti sinceri e brevi. Mai dire che la mail e' rimbalzata o che l'hai cercato su database.
-- Richiama in una riga il rapporto precedente (azienda e ruolo di allora) senza inventare progetti o incontri che non sono nei dati.
-- Un solo aggancio Domino pertinente al settore della nuova azienda, preso dal brain. Niente elenco di servizi.
+- Mai dire che la mail e' rimbalzata o che l'hai cercato su database.
+- Apertura secondo il campo "Cambio lavoro" dei dati:
+  - recente: hai saputo del nuovo ruolo / della nuova azienda, complimenti sinceri e brevi.
+  - non_recente: NIENTE complimenti per il nuovo incarico e niente "ho saputo che..." come se fosse una novita'. Riallaccia il filo dopo un periodo in cui vi siete persi di vista: riconosci che e' passato del tempo, mostra che sai dove lavora oggi e da quanto (es. "ho visto che da qualche anno guida il marketing di X"), e motiva il ricontatto con qualcosa di utile per il suo lavoro di oggi.
+  - ignota: non dire ne' che il cambio e' recente ne' che e' di anni fa. Apertura neutra su dove lavora oggi ("ho visto che oggi e' in X come Y"). Vietati complimenti, "nuovo ruolo", "nuovo incarico", "nuova avventura", "approdo", "bel passo", "nuovo osservatorio", "nuovo capitolo", "nuova esperienza" e ogni parola che presenta il cambio come appena avvenuto.
+- Richiama in una riga il rapporto precedente (azienda e ruolo di allora) senza inventare progetti o incontri che non sono nei dati, ne' quante volte vi siete sentiti. L'azienda precedente serve solo a questo: non e' una referenza, anche se Domino ci ha lavorato.
+- Referenze: cita 1 o 2 case history Domino coerenti con l'impiego attuale, cioe' con il settore della nuova azienda e con la funzione del ruolo attuale (es. marketing -> brand e digital marketing, HR -> intranet e comunicazione interna, vendite -> strumenti per la rete commerciale). Per ognuna: nome del cliente e cosa abbiamo fatto in mezza riga, con un risultato SOLO se e' scritto nel brain e non e' segnato "da confermare". Non aggiungere dettagli che nel brain non ci sono (mercati, reti, numeri, durata). Regole: solo case presenti nel brain e con il nome del cliente citabile (mai quelli segnati come riservati o con citabilita' "DATI NON TROVATI"); mai l'azienda attuale del destinatario ne' la sua azienda precedente; se nessun case e' davvero coerente, nessuna referenza (meglio niente che una forzata).
+- Niente elenco di servizi: le referenze sono la prova, non un catalogo.
 - CTA leggera: un caffe' o una call di 20 minuti per raccontarsi.
-- Se l'indirizzo e' personale: tono piu' informale, nessun riferimento commerciale esplicito oltre la CTA.
-- 80-130 parole. Italiano, dando del Lei salvo che il ruolo e il contesto suggeriscano il tu; se la persona o l'azienda sono chiaramente estere, in inglese.
-- Rispetta la nomenclatura dei prodotti Domino (terminano con "!").
-- Se la nuova azienda non e' nota, scrivi una mail che chiede come sta andando e dove e' approdato, senza pitch.
+- Se l'indirizzo e' personale: tono piu' informale, al massimo una referenza, nessun riferimento commerciale esplicito oltre la CTA.
+- 100-150 parole. Italiano, dando del Lei salvo che il ruolo e il contesto suggeriscano il tu; se la persona o l'azienda sono chiaramente estere, in inglese.
+- Rispetta la nomenclatura dei prodotti Domino (terminano con "!"). Domino e' un partner, mai "agenzia".
+- Nel testo della mail usa sempre gli accenti veri (è, à, perché, caffè, più), mai l'apostrofo al posto dell'accento.
+- Se la nuova azienda non e' nota, scrivi una mail che chiede come sta andando e dove e' approdato, senza pitch e senza referenze.
 
-Rispondi SOLO con JSON puro: {"oggetto":"","corpo":""}` },
+Rispondi SOLO con JSON puro: {"oggetto":"","corpo":"","referenze":[{"cliente":"","perche":""}]}
+referenze: i case citati nel corpo, con il motivo della scelta in poche parole; [] se non ne citi.` },
   ];
 }
 
+// Parole che presentano il cambio lavoro come appena avvenuto: ammesse solo se
+// il cambio e' recente.
+const PAROLE_NOVITA = /\b(complimenti|congratulazioni|auguri|nuov[oae] (ruolo|incarico|avventura|sfida|percorso|osservatorio|capitolo|esperienza|posizione|realtà|casa|squadra|team|azienda|sede)|appena (arrivat|entrat)\w*|approd\w*|bel passo)(?![\wàèéìòù])/i;
+
+// Controlli che il prompt da solo non garantisce. Restituisce cosa correggere,
+// o null se la bozza va bene.
+function problemiBozza(m, c, trovato) {
+  const problemi = [];
+  const vietate = [trovato.azienda, c.aziendaVecchia.nome].filter(Boolean);
+  const citate = m.referenze.filter(r => vietate.some(v => stessaAzienda(r.cliente, v)));
+  if (citate.length) {
+    problemi.push(`hai citato come referenza ${citate.map(r => r.cliente).join(' e ')}. Come referenza non puoi usare né ${vietate.join(' né ')}: sono l'azienda attuale e quella precedente del destinatario. L'azienda precedente si nomina solo per ricordare il rapporto di allora, mai come case. Sostituisci con un altro case del brain coerente con il ruolo, oppure togli la referenza`);
+  }
+  if (trovato.anzianita !== 'recente') {
+    const parola = m.corpo.match(PAROLE_NOVITA)?.[0];
+    if (parola) problemi.push(`hai scritto "${parola}", ma il cambio lavoro e' ${trovato.anzianita === 'non_recente' ? 'di tempo fa' : 'di data non nota'}: togli ogni riferimento al cambio come novita'`);
+  }
+  if (/\b\w*[aeiou]'(?=\s|[.,;:!?]|$)/i.test(m.corpo.replace(/\b(po'|un po')/gi, ''))) {
+    problemi.push("hai usato l'apostrofo al posto dell'accento: scrivi è, à, caffè, perché, più");
+  }
+  return problemi.length ? problemi : null;
+}
+
+function leggiBozza(data) {
+  const j = parseJSON(extractText(data));
+  const referenze = (Array.isArray(j.referenze) ? j.referenze : [])
+    .filter(r => r?.cliente)
+    .slice(0, 2)
+    .map(r => ({ cliente: String(r.cliente).trim(), perche: String(r.perche || '').trim() }));
+  return { oggetto: String(j.oggetto || '').trim(), corpo: String(j.corpo || '').trim(), referenze };
+}
+
 async function scriviMail(c, trovato, canale, scadenza) {
-  const data = await callClaude({
-    system: sistemaMail(loadBrain()),
-    messages: [{
-      role: 'user',
-      content: `Mittente (contact owner): ${c.owner?.nome || 'il team Domino'}
+  const system = sistemaMail(loadBrain());
+  const messages = [{
+    role: 'user',
+    content: `Mittente (contact owner): ${c.owner?.nome || 'il team Domino'}
 Destinatario: ${c.nome}
 Prima: ${c.ruolo || 'ruolo non noto'} presso ${c.aziendaVecchia.nome || 'azienda non nota'}
 Ultimo contatto registrato: ${c.ultimo_contatto ? c.ultimo_contatto.slice(0, 10) : 'non registrato'}
 Ora: ${trovato.azienda ? `${trovato.ruolo || 'ruolo non noto'} presso ${trovato.azienda}` : 'azienda attuale non nota'}
+Settore della nuova azienda: ${trovato.settore || 'non noto (deducilo dal nome solo se e\' evidente, altrimenti scegli le referenze in base al ruolo)'}
+Nella nuova azienda dal: ${trovato.dal ? dataLeggibile(trovato.dal) : 'data non nota'}
+Cambio lavoro: ${trovato.anzianita || 'ignota'}
 Indirizzo usato: ${canale === 'personale' ? 'email personale' : 'email aziendale'}
 
 Scrivi la mail. Solo JSON puro.`,
-    }],
-    max_tokens: 2000, scadenza,
-  });
-  const j = parseJSON(extractText(data));
-  return { oggetto: String(j.oggetto || '').trim(), corpo: String(j.corpo || '').trim() };
+  }];
+  const data = await callClaude({ system, messages, max_tokens: 2000, scadenza });
+  const mail = leggiBozza(data);
+
+  // Una sola correzione: se anche la seconda bozza ha problemi si tiene quella,
+  // tanto passa comunque sotto gli occhi dell'owner prima dell'invio.
+  const problemi = problemiBozza(mail, c, trovato);
+  if (!problemi || tempoResiduo(scadenza) < 30000) return mail;
+  messages.push(
+    { role: 'assistant', content: extractText(data) },
+    { role: 'user', content: `Correggi la mail:\n- ${problemi.join('\n- ')}\nResto invariato. Solo JSON puro.` },
+  );
+  try {
+    return leggiBozza(await callClaude({ system, messages, max_tokens: 2000, scadenza }));
+  } catch (e) {
+    console.warn('Correzione bozza Rientri non riuscita:', e.message);
+    return mail;
+  }
+}
+
+// Settore dall'anagrafica HubSpot, se la nuova azienda c'e' gia': serve quando
+// la ricerca web e' stata interrotta perche' RocketReach bastava.
+async function settoreDaHubspot(token, t) {
+  try {
+    let co = null;
+    if (t.dominio) co = await searchOne(token, 'companies', [{ propertyName: 'domain', operator: 'EQ', value: t.dominio }], ['industry']);
+    if (!co && t.azienda) co = await searchOne(token, 'companies', [{ propertyName: 'name', operator: 'EQ', value: t.azienda }], ['industry']);
+    // "MECHANICAL_OR_INDUSTRIAL_ENGINEERING" -> "mechanical or industrial engineering"
+    return String(co?.properties?.industry || '').toLowerCase().replace(/_/g, ' ');
+  } catch { return ''; }
 }
 
 // ── Orchestrazione per un contatto ───────────────────────────────────────────
@@ -408,12 +534,23 @@ export async function analizzaRientro(token, contactId, scadenza) {
   const web = await webPromise;
 
   // Nuova azienda: RocketReach vince sul web (dato strutturato), il web completa.
-  let trovato = { azienda: '', dominio: '', ruolo: '', linkedin: c.linkedin, fonte: '', fonte_url: null, confidenza: '' };
+  let trovato = { azienda: '', dominio: '', ruolo: '', dal: null, settore: '', linkedin: c.linkedin, fonte: '', fonte_url: null, confidenza: '' };
   if (rrNuova) {
-    trovato = { azienda: rrRes.azienda, dominio: rrRes.dominio || web?.dominio || '', ruolo: rrRes.ruolo, linkedin: rrRes.linkedin || c.linkedin, fonte: 'RocketReach', fonte_url: null, confidenza: 'alta' };
+    // Data e settore dal web solo se il web ha trovato la stessa azienda.
+    const webStessa = web?.trovato && stessaAzienda(web.azienda, rrRes.azienda);
+    trovato = {
+      azienda: rrRes.azienda, dominio: rrRes.dominio || web?.dominio || '', ruolo: rrRes.ruolo,
+      dal: rrRes.dal || (webStessa ? web.data_inizio : null), settore: webStessa ? web.settore : '',
+      linkedin: rrRes.linkedin || c.linkedin, fonte: 'RocketReach', fonte_url: null, confidenza: 'alta',
+    };
   } else if (web?.trovato && !stessaAzienda(web.azienda, c.aziendaVecchia.nome)) {
-    trovato = { azienda: web.azienda, dominio: web.dominio, ruolo: web.ruolo, linkedin: rrRes.linkedin || web.linkedin || c.linkedin, fonte: web.fonte, fonte_url: web.fonte_url, confidenza: web.confidenza };
+    trovato = {
+      azienda: web.azienda, dominio: web.dominio, ruolo: web.ruolo, dal: web.data_inizio, settore: web.settore,
+      linkedin: rrRes.linkedin || web.linkedin || c.linkedin, fonte: web.fonte, fonte_url: web.fonte_url, confidenza: web.confidenza,
+    };
   }
+  if (trovato.azienda && !trovato.settore) trovato.settore = await settoreDaHubspot(token, trovato);
+  trovato.anzianita = trovato.azienda ? anzianita(trovato.dal) : 'ignota';
 
   // Email: verificata aziendale > personale > ricostruita dal formato.
   let email = null;
@@ -454,11 +591,12 @@ function notaHtml(r) {
   const righe = [
     `<p><b>${MARCATORE} Ricontatto dopo cambio lavoro</b><br>Rilevato dal Domino Prospect Engine il ${new Date().toLocaleDateString('it-IT', { timeZone: 'Europe/Rome' })}</p>`,
     `<p><b>Prima:</b> ${esc(c.ruolo || 'ruolo n/d')} presso ${esc(c.azienda?.nome || 'n/d')} — email ${esc(c.email_vecchia)} (hard bounce)<br>`,
-    `<b>Ora:</b> ${t.azienda ? `${esc(t.ruolo || 'ruolo n/d')} presso ${esc(t.azienda)}${t.dominio ? ` (${esc(t.dominio)})` : ''}` : 'azienda attuale non trovata'}<br>`,
+    `<b>Ora:</b> ${t.azienda ? `${esc(t.ruolo || 'ruolo n/d')} presso ${esc(t.azienda)}${t.dominio ? ` (${esc(t.dominio)})` : ''}${t.dal ? `, dal ${esc(dataLeggibile(t.dal))}` : ''}` : 'azienda attuale non trovata'}<br>`,
     t.fonte ? `<b>Fonte:</b> ${esc(t.fonte)}${t.confidenza ? `, confidenza ${esc(t.confidenza)}` : ''}${t.fonte_url ? ` — <a href="${esc(t.fonte_url)}">link</a>` : ''}<br>` : '',
     t.linkedin ? `<b>LinkedIn:</b> <a href="${esc(t.linkedin)}">${esc(t.linkedin)}</a><br>` : '',
     `<b>Email:</b> ${e ? `${esc(e.indirizzo)} — ${e.tipo}, ${e.stato === 'verificata' ? 'verificata' : '<b>DA VERIFICARE</b>'} (${esc(e.fonte)})` : 'nessuna trovata'}</p>`,
     `<h3>Bozza di ricontatto</h3><p><b>Oggetto:</b> ${esc(m.oggetto)}</p><p>${esc(m.corpo).replace(/\r?\n/g, '<br>')}</p>`,
+    m.referenze?.length ? `<p><b>Referenze citate:</b> ${m.referenze.map(x => `${esc(x.cliente)}${x.perche ? ` (${esc(x.perche)})` : ''}`).join('; ')}</p>` : '',
   ];
   return righe.join('');
 }

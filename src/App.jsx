@@ -370,6 +370,13 @@ const OWNER_SCELTA = [
 const HUBSPOT_PORTAL = '1752790';
 const hubspotContatto = id => `https://app.hubspot.com/contacts/${HUBSPOT_PORTAL}/record/0-1/${id}`;
 
+// "2023-03" -> "marzo 2023"; "2023" resta com'e'.
+const NOMI_MESI = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+function dataLeggibile(d) {
+  const [a, m] = String(d || '').split('-').map(Number);
+  return m ? `${NOMI_MESI[m - 1]} ${a}` : String(a || '');
+}
+
 // La firma e' l'ultima occorrenza del nome del mittente nel corpo.
 function cambiaFirma(corpo, vecchio, nuovo) {
   const i = vecchio ? corpo.lastIndexOf(vecchio) : -1;
@@ -395,7 +402,8 @@ function RientroRisultato({ r, stato, onSalva, onOwner }) {
         <div style={{ background:'#0d0d0d',borderRadius:'8px',padding:'10px 12px' }}>
           <Label>Ora</Label>
           {t.azienda
-            ? <><Val>{t.azienda}</Val><div style={{ fontSize:'11px',color:C.muted,marginTop:'2px' }}>{[t.ruolo, t.dominio].filter(Boolean).join(' · ')}</div>
+            ? <><Val>{t.azienda}</Val><div style={{ fontSize:'11px',color:C.muted,marginTop:'2px' }}>{[t.ruolo, t.dominio, t.settore].filter(Boolean).join(' · ')}</div>
+                <div style={{ fontSize:'11px',color:t.anzianita==='recente'?'#4ade80':C.muted,marginTop:'2px' }}>{t.dal ? `Dal ${dataLeggibile(t.dal)}${t.anzianita==='recente'?' · cambio recente':t.anzianita==='non_recente'?' · cambio non recente':''}` : 'Data del cambio non trovata'}</div>
                 <div style={{ fontSize:'10px',color:C.muted,marginTop:'4px' }}>Fonte: {t.fonte}{t.confidenza?` · confidenza ${t.confidenza}`:''}{t.fonte_url && <> · <a href={t.fonte_url} target="_blank" rel="noopener noreferrer" style={{ color:C.red }}>link ↗</a></>}</div></>
             : <div style={{ fontSize:'12px',color:'#fcd34d' }}>Nuova azienda non trovata</div>}
           {t.linkedin && <a href={t.linkedin} target="_blank" rel="noopener noreferrer" style={{ fontSize:'11px',color:'#0077B5',textDecoration:'none' }}>Profilo LinkedIn ↗</a>}
@@ -422,6 +430,11 @@ function RientroRisultato({ r, stato, onSalva, onOwner }) {
         </div>
         <div style={{ fontSize:'13px',fontWeight:700,color:C.text,marginBottom:'6px' }}>{m.oggetto}</div>
         <div style={{ fontSize:'13px',color:C.text,lineHeight:1.65,whiteSpace:'pre-wrap' }}>{m.corpo}</div>
+        {m.referenze?.length > 0 && (
+          <div style={{ fontSize:'11px',color:C.muted,marginTop:'8px' }}>
+            Referenze citate: {m.referenze.map(x => x.perche ? `${x.cliente} (${x.perche})` : x.cliente).join(' · ')}
+          </div>
+        )}
       </div>
       <div style={{ display:'flex',gap:'10px',alignItems:'center',flexWrap:'wrap' }}>
         <Btn variant="hs" onClick={onSalva} disabled={stato.salvataggio==='in_corso'||stato.salvataggio==='fatto'} style={{ padding:'5px 12px',fontSize:'11px' }}>
