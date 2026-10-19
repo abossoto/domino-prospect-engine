@@ -2,6 +2,8 @@
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
 ## 2026-10-19
+- Release 2026-10-19. Raccoglie le modifiche del 12, 15, 16 e 18 ottobre. Registrata nel CLAUDE.md la skill `domino-proposta-cliente` (13 ottobre); aggiunti alla tabella §6 la proposta ED&F Man Sugar Plus e il cliente Poltrona Frau In Motion. Correzioni dall'health check: voto della giuria (non «voto online») fino al 25 ottobre in CLAUDE.md e scheda Domino30, «4 Sprint!» in 12b, IKA 2025 vincitore nella scheda CNH del DCF, «cifra visiva» nel case Comau, backtick nella riga CIA; Air Dolomiti (skill disponibile, passi fatti spuntati, call del 1° ottobre confermata, referenti cliente Francesca Montessori e Alessandro Gambardella) e Slow Food (skill disponibile). Backup in `_superate/_backup_20261019_health_check/`. Nota: le voci sotto il 10 ottobre comprendono lavori dell'11. Il progetto Claude «Domino Brain» va ricaricato.
+- `domino-brain-init` tolta da tutti i `05_skill.md` dei Brain cliente (Air Dolomiti, CIA, Poltrona Frau In Motion, Slow Food): è una skill generale, non del cliente. `domino-crea-cliente` aggiornata di conseguenza (zip da ricaricare in Claude Team).
 - Health check: generale + 3 clienti; 66 punti aperti.
 
 ## 2026-10-18

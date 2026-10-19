@@ -55,7 +55,7 @@ Risultati misurati: DATI NON TROVATI. Fatto documentato: due persone di Comau, i
 
 ## Argomenti di pitch derivati
 
-- **Gruppo con più marchi o mercati (SP5):** «Comau aveva tante Business Unit e comunicava a più voci. Abbiamo dato un concetto, una firma e un sito che le tiene insieme su più di 20 mercati.»
+- **Gruppo con più marchi o mercati (SP5):** «Comau aveva tante Business Unit e comunicava a più voci. Abbiamo dato un concetto, una cifra visiva e un sito che le tiene insieme su più di 20 mercati.»
 - **Prodotti tecnici complessi (SP1, SP2):** pagina prodotto come racconto con call to action e ingresso per industria.
 - **Contenuti editoriali B2B:** le cinque rubriche e il tone of voice «people» come modello per chi vende tecnologia.
 - Entrata oggi: Core Sprint! se le Business Unit hanno visioni diverse; Design Sprint! variante Brand se l'identità è da ridisegnare; Brain & Identity Design Sprint! se serve un design system. Prezzi in `03_domino_metodi.md`.
