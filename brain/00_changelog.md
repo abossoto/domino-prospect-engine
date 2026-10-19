@@ -4,8 +4,10 @@
 ## 2026-10-19
 - Release 2026-10-19. Raccoglie le modifiche del 12, 15, 16 e 18 ottobre. Registrata nel CLAUDE.md la skill `domino-proposta-cliente` (13 ottobre); aggiunti alla tabella §6 la proposta ED&F Man Sugar Plus e il cliente Poltrona Frau In Motion. Correzioni dall'health check: voto della giuria (non «voto online») fino al 25 ottobre in CLAUDE.md e scheda Domino30, «4 Sprint!» in 12b, IKA 2025 vincitore nella scheda CNH del DCF, «cifra visiva» nel case Comau, backtick nella riga CIA; Air Dolomiti (skill disponibile, passi fatti spuntati, call del 1° ottobre confermata, referenti cliente Francesca Montessori e Alessandro Gambardella) e Slow Food (skill disponibile). Backup in `_superate/_backup_20261019_health_check/`. Nota: le voci sotto il 10 ottobre comprendono lavori dell'11. Il progetto Claude «Domino Brain» va ricaricato.
 - `domino-brain-init` tolta da tutti i `05_skill.md` dei Brain cliente (Air Dolomiti, CIA, Poltrona Frau In Motion, Slow Food): è una skill generale, non del cliente. `domino-crea-cliente` aggiornata di conseguenza (zip da ricaricare in Claude Team).
+- Domino30: orario della serata deciso (Andrea Bosso): due ingressi, alle 18:30 Domineers e clienti VIP, alle 21:00 ex Domineers, clienti ed ex clienti. Aggiornato `12c_serata_30ottobre.md` (testata, scaletta, invito in due versioni).
+- Domino30: `12e_domande_pannelli.md` affidato a Fabrizio Porro; regolamento lasciato com'è (decisione di Andrea Bosso), chiusi i `DA FARE` in 12b, 12c, 12_concept; utenti di prova della webapp giuria: verifica di Andrea Bosso.
 - Health check: generale + 3 clienti; 66 punti aperti.
-- Nuovo progetto: FARID · Website Design Sprint! (Loop Owner Antonio Rossi). Creato a posteriori, stato attivo; perimetro offerta 90_25, giornate extra e monte ore 107_26.
+- Nuovo progetto: FARID · Website Design Sprint! (Loop Owner Antonio Rossi). Creato a posteriori, stato attivo; perimetro offerta 90_25 e monte ore 107_26; sintesi del Design Sprint! dal report di restituzione.
 - Nuovo Brain cliente: FARID (Direttore Clienti Emiliano Cianci, Account Manager Antonio Rossi, anche Project Manager). Riga aggiunta alla tabella Clienti del CLAUDE.md. HubSpot da completare (connettore non attivo).
 
 ## 2026-10-18
