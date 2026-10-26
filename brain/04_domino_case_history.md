@@ -110,6 +110,15 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Citabilità:** nome, screenshot e foto pubblici
 **Scheda completa:** [case_fourstars_website_design_sprint.md](case_fourstars_website_design_sprint.md)
 
+### FARID — Website Design Sprint! per un leader italiano che diventa internazionale
+**Settore:** B2B Industriale/Manifatturiero (veicoli e attrezzature per la raccolta rifiuti e l'igiene urbana; gruppo Zoeller)
+**Periodo:** maggio 2025 → in corso (Design Sprint! a Vinovo tra settembre e ottobre 2025; report a gennaio 2026; go live atteso entro il 3 novembre 2026, per EIMA)
+**Sprint:** 1 Website Design Sprint! + 3 Build Sprint! a storypoint (96 SP); poi monte ore e attività puntuali
+**Status:** sito completo in italiano in staging, in attesa delle traduzioni; presentato al meeting dei dirigenti del gruppo Zoeller; Domino è partner di riferimento per la strategia di comunicazione
+**Pattern di vendita:** azienda italiana entrata in un gruppo internazionale; nuovo Direttore Commerciale che cerca un partner; offerta ampia e tecnica (comparatore); rete internazionale da mostrare (network locator)
+**Citabilità:** nome del cliente e del gruppo e screenshot pubblici; frase del cliente da chiedere ad Alessandro Oitana, che approva il case
+**Scheda completa:** [case_farid_website_design_sprint.md](case_farid_website_design_sprint.md)
+
 ### Comau — Brand Identity e sito worldwide *(2016)*
 **Progetto:** Brand identity completa per un gruppo con tante Business Unit: ricerca con personas, concetto «Il Brand al centro», firma «Made in Comau», storytelling, linee guida visive, brochure, schede tecniche, advertising.
 **Sito worldwide (da evidenziare):** il nuovo sito, presente in più di 20 mercati *(ricordo di Andrea Bosso, 18 ottobre 2026, da confermare con una fonte)*, fa parte del lavoro: cinque rubriche editoriali, pagina prodotto come racconto con call to action, ingresso per industria. Va messo in primo piano ogni volta che si cita Comau Brand Identity.
