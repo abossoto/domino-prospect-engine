@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-10-26
+- Health check: generale + 6 clienti; 79 punti aperti (CIA sospeso, 9 punti fermi).
+
 ## 2026-10-24
 - Proposte a clienti esistenti (regola di Emiliano Cianci, 24/10/2026): una nuova proposta a chi è già cliente si registra in `Clienti/<Cliente>/Proposte/<Tema>/`, con la stessa struttura e scheda delle proposte a prospect; all'Awarded diventa un progetto `<anno>_<Progetto>/` e la cartella passa nel suo `01_proposta/`. CLAUDE.md aggiornato: §3 (mappa e regola), §4 (righe `domino-proposta-prospect` e `domino-health-check`), §6 (riga FARID), §7 (voce Cliente). Skill aggiornate in `_skills/` (SKILL.md e zip): `domino-proposta-prospect` (cliente esistente, cartella `materiali_partner/`, limite di 1 MB del connettore, testo del deck in `deck_contenuto.md`, nuova riga FARID Digitale 2027 negli esempi, uscita per cliente esistente) e `domino-health-check` (sezione B2 «Proposte aperte» nel rapporto cliente; proposte a clienti esistenti finite in `Proposte a prospect/` tra le cartelle fuori standard). Zip caricati in Claude Team e in `_skills/` da Emiliano Cianci il 24/10/2026. Release non cambiata.
 - FARID, nuova proposta Digitale 2027 (`Clienti/FARID/Proposte/Digitale 2027/`): roadmap e budget per le attività digitali 2027, da presentare ad Alessandro Oitana e Giorgia Panico il 29/10/2026 presso Farid. Scheda proposta, nota per chi presenta, scheda di passaggio per l'offerta, testo del deck, estratto delle proposte social del partner Eskimo. Il PDF e il .pptx del deck e i .pptx di Eskimo superano il limite del connettore: da caricare a mano. CLAUDE.md del cliente e `00_brain/00_cliente.md` aggiornati.
