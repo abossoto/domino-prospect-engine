@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-10-27
+- Casappa: registrate le due call sulla variante A2 (sito del 75°): «Minisito Anniversario» con Paita il 27/10 alle 15:30 e «Sito web Casappa» con Castellani e Paita il 29/10 alle 14. Aggiornati `00_scheda_proposta.md` e `01_brief/mail/2026-10-25_sito_75_proposta_castellani.md`.
+
 ## 2026-10-26
 - Casappa: risposta di Castellani del 26/10 (hosting in Casappa; redirect della sola home a 75.casappa.com) e nostra replica con call tecnica proposta per il 29/10, in `01_brief/mail/2026-10-25_sito_75_proposta_castellani.md` e nella scheda proposta.
 - Casappa (`Proposte a prospect/`): proposta di Castellani del 25/10 (sito WordPress del 75° su www, sito attuale su web.casappa.com) e risposta Domino del 26/10 con forchetta €10.500–12.000 in `01_brief/mail/2026-10-25_sito_75_proposta_castellani.md`; scheda proposta e stime aggiornate.
