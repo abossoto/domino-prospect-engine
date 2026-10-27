@@ -2,6 +2,7 @@
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
 ## 2026-10-27
+- Nuovo progetto: FARID · Evento verniciatura (Loop Owner Antonio Rossi), in `Clienti/FARID/2026_Evento verniciatura/`, creato a posteriori: supporto all'inaugurazione del reparto verniciatura del 16/10/2026, offerta 142_26 (5.550 €, ordine atteso), costi esterni previsti 3.210 €. CLAUDE.md del cliente e `00_brain/02_sistemi_e_link.md` aggiornati.
 - Casappa: registrate le due call sulla variante A2 (sito del 75°): «Minisito Anniversario» con Paita il 27/10 alle 15:30 e «Sito web Casappa» con Castellani e Paita il 29/10 alle 14. Aggiornati `00_scheda_proposta.md` e `01_brief/mail/2026-10-25_sito_75_proposta_castellani.md`.
 
 ## 2026-10-26
