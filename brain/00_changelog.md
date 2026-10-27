@@ -8,6 +8,7 @@
 - Casappa: registrate le due call sulla variante A2 (sito del 75°): «Minisito Anniversario» con Paita il 27/10 alle 15:30 e «Sito web Casappa» con Castellani e Paita il 29/10 alle 14. Aggiornati `00_scheda_proposta.md` e `01_brief/mail/2026-10-25_sito_75_proposta_castellani.md`.
 - Casappa: esito della call con Paita del 27/10 (cinque eventi per senso, home più 5 pagine, news e rimandi ai prodotti, online fino a inizio 2028, budget €12.000). Nuovo `01_brief/call/2026-10-27_call_minisito_anniversario_paita.md`, aggiornata la scheda proposta.
 - Casappa: completati senso della vista (video) e composizione del budget (€11.000 sito + €1.000 varie; contenuti forniti da Paita; traduzioni EN con l'AI comprese).
+- Casappa: registrata la mail di recap a Paita del 27/10 e aggiornata la tempistica del sito di Gruppo (Sprint! nel secondo semestre 2027, online nel Q1 2028).
 
 ## 2026-10-26
 - Casappa: risposta di Castellani del 26/10 (hosting in Casappa; redirect della sola home a 75.casappa.com) e nostra replica con call tecnica proposta per il 29/10, in `01_brief/mail/2026-10-25_sito_75_proposta_castellani.md` e nella scheda proposta.
