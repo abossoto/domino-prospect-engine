@@ -2,6 +2,7 @@
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
 ## 2026-10-29
+- Nuova cartella `Offerte/`: bozza della procedura per le offerte formali (`00_procedura_offerte.md`, da completare con Flavio Pedazzini) e registro 2026 copiato dal file SharePoint `Codici_Offerte_2026.xlsx` (148 offerte, prossima la 149). Non ancora collegata al `CLAUDE.md` principale.
 - Casappa: esito della call tecnica con Castellani (favorevole ad andare avanti, hosting del WordPress in verifica interna). Nuovo `01_brief/call/2026-10-29_call_tecnica_castellani.md`, aggiornata la scheda proposta.
 
 ## 2026-10-27
