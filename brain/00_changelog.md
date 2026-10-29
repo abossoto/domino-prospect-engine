@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-10-29
+- Casappa: esito della call tecnica con Castellani (favorevole ad andare avanti, hosting del WordPress in verifica interna). Nuovo `01_brief/call/2026-10-29_call_tecnica_castellani.md`, aggiornata la scheda proposta.
+
 ## 2026-10-27
 - Nuovi progetti: 4stars · Manutenzione gestionale (Loop Owner Antonio Rossi), Rifondazione e ottimizzazione gestionale e Hosting gestionale (Loop Owner da assegnare), in `Clienti/4stars/`. Dalla riunione del 26/10 l'offerta 140_26 è divisa in tre progetti con ordini separati, tutti attesi; versione del 20/10 in `_superate/`, rev01 del 27/10 non ancora recepita. Meeting notes del 26/10 salvate come sintesi.
 - Nuovo Brain cliente: 4stars (FourStars S.r.l.; Direttore Clienti Andrea Bosso, Account Manager e PM Antonio Rossi; cliente storico dal 2023; filone hosting e gestionale con ordine atteso, accordo verbale del 19/10/2026). HubSpot: azienda portata a customer, Orietta Lunghi con qualifica «Direzione Generale»; Chiara Grosso, Orietta Lunghi e Marco Carbonai già customer / Active. CLAUDE.md §2 (elenco Direttori Clienti) e §6 (tabella Clienti) aggiornati. Release non cambiata. Chiude il punto 0.7 del health check del 26/10.
