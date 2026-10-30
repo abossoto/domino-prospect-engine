@@ -1,6 +1,10 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-10-30
+- Nuova regola nel CLAUDE.md §2, «Messaggi ai colleghi» (Emiliano Cianci): mail e messaggi Teams di Claude ai colleghi dicono che sono automatici e sono firmati «Domino.Brain»; «per conto di <nome>» solo se il mittente visibile non è la persona per cui Claude scrive. Andrea Bosso avvisato su Teams. Release non cambiata.
+- Nuova proposta a prospect: FPT Listino Digitale (gara privata Iveco Group «Digitalization Commercial Catalogue»), in `Proposte a prospect/FPT Listino Digitale/`, referente Emiliano Cianci. Aggiunta alla tabella prospect del CLAUDE.md §6.
+
 ## 2026-10-29
 - Nuova cartella `Offerte/`: bozza della procedura per le offerte formali (`00_procedura_offerte.md`, da completare con Flavio Pedazzini) e registro 2026 copiato dal file SharePoint `Codici_Offerte_2026.xlsx` (148 offerte, prossima la 149). Non ancora collegata al `CLAUDE.md` principale.
 - Casappa: esito della call tecnica con Castellani (favorevole ad andare avanti, hosting del WordPress in verifica interna). Nuovo `01_brief/call/2026-10-29_call_tecnica_castellani.md`, aggiornata la scheda proposta.
