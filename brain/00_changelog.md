@@ -4,6 +4,7 @@
 ## 2026-10-30
 - Nuova regola nel CLAUDE.md §2, «Messaggi ai colleghi» (Emiliano Cianci): mail e messaggi Teams di Claude ai colleghi dicono che sono automatici e sono firmati «Domino.Brain»; «per conto di <nome>» solo se il mittente visibile non è la persona per cui Claude scrive. Andrea Bosso avvisato su Teams. Release non cambiata.
 - Nuova proposta a prospect: FPT Listino Digitale (gara privata Iveco Group «Digitalization Commercial Catalogue»), in `Proposte a prospect/FPT Listino Digitale/`, referente Emiliano Cianci. Aggiunta alla tabella prospect del CLAUDE.md §6.
+- Copiato in `Offerte/` lo storico delle offerte da SharePoint (*Proposte ed Offerte* › `Offerte/`): cartelle 2021–2026 e Canoni_2022–2025. Copia autorizzata da Emiliano Cianci per telefono il 30/10/2026, eseguita da Flavio Pedazzini con Claude. La fonte resta SharePoint.
 
 ## 2026-10-29
 - Nuova cartella `Offerte/`: bozza della procedura per le offerte formali (`00_procedura_offerte.md`, da completare con Flavio Pedazzini) e registro 2026 copiato dal file SharePoint `Codici_Offerte_2026.xlsx` (148 offerte, prossima la 149). Non ancora collegata al `CLAUDE.md` principale.
