@@ -1,5 +1,5 @@
 # DOMINO BRAIN — GTM Salute, Sanità & Beauty
-> Versione 1.2 — Ottobre 2026. Sales plays, scala di pricing e regole commerciali per il settore Salute, Sanità e Beauty. Allineata a `03_domino_metodi.md` v5.4 (catalogo 2026, Build Sprint!, Trainstorming! come servizio per change management). Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
+> Versione 1.2 — Ottobre 2026. Sales plays, scala di pricing e regole commerciali per il settore Salute, Sanità e Beauty. Allineata a `03_domino_metodi.md` v5.4 (catalogo 2026, Build Sprint!, Trainstorming Sprint! come servizio per change management). Da usare dal Prospect Engine per generare email, deck e sequenze outbound calibrate sul prospect.
 >
 > **Changelog — 10 ottobre 2026 (health check).** Test con utenti spostato dopo lo Sprint!.
 
@@ -205,7 +205,7 @@ In sanità e beauty la **fiducia è il valore principale** — non si scala con 
 - Workshop gratuito 2h (solo per grandi strutture) → apre il percorso verso Core Sprint! Non autonomo
 - Core Sprint! (€6.000) → quasi sempre necessario: allinea HR, IT, comunicazione e direzione su quali profili dipendente, quale portale, quali contenuti prioritari
 - Design Sprint! (€10.000) → dopo il Core Sprint!: prototipo del portale in 4 giorni, da testare poi con dipendenti reali (medici, infermieri, amministrativi)
-- **Trainstorming!** (da €15.000, 12 mesi · 3 sessioni) → quando la trigger è **fusione/acquisizione** o riorganizzazione: lanciare un portale non basta, serve accompagnamento al cambiamento culturale. Il Trainstorming! è il pezzo che fa funzionare l'adozione nel tempo, finché il nuovo modo di comunicare smette di dover essere difeso.
+- **Trainstorming Sprint!** (da €15.000, 12 mesi · 3 sessioni) → quando la trigger è **fusione/acquisizione** o riorganizzazione: lanciare un portale non basta, serve accompagnamento al cambiamento culturale. Il Trainstorming Sprint! è il pezzo che fa funzionare l'adozione nel tempo, finché il nuovo modo di comunicare smette di dover essere difeso.
 
 **[Proof point](04_domino_case_history.md):**
 - IPI — SFERA Intranet + piano di comunicazione per lancio (video AI, email, mini news formative)
@@ -240,7 +240,7 @@ Questo file fa parte del Domino Brain. Per approfondire:
 
 - [01_domino_identita.md](01_domino_identita.md) — storia, valori, team, B Corp, premi, tensioni da gestire
 - [02_domino_servizi.md](02_domino_servizi.md) — tassonomia dei servizi e capabilities
-- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming Sprint!, Preventivo Emozionale *(pricing e regole — fonte unica)*
 - [04_domino_case_history.md](04_domino_case_history.md) — case per cliente con KPI e categoria
 - [05_domino_settori.md](05_domino_settori.md) — mappa settori, sub-segmenti, messaggi chiave
 - [06_domino_referenze.md](06_domino_referenze.md) — review Sortlist, premi, testimonianze video Domino25

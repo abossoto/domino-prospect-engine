@@ -21,7 +21,7 @@ Uno Starter Kit è una **specializzazione tattica e verticale** del [Brain & Ide
 **Perché esistono.**
 1. **Velocità di partenza.** Un buyer di funzione (Sales Director, HR Director, CX Manager) compra col proprio budget senza dover passare da CIO o CdA. Frizione bassa, decisione veloce.
 2. **Misurabilità.** Ogni Starter Kit ha un KPI di funzione difendibile — tempo preparazione offerta, riduzione ticket ricorrenti HR, AHT del customer care. Il ROI è mostrabile in CdA.
-3. **Apre la porta al percorso.** Chi compra uno Starter Kit ha più probabilità di proseguire verso il Brain & Identity Design Sprint! pieno (brain esteso + identity / design system) e poi verso Build Sprint! e Trainstorming!.
+3. **Apre la porta al percorso.** Chi compra uno Starter Kit ha più probabilità di proseguire verso il Brain & Identity Design Sprint! pieno (brain esteso + identity / design system) e poi verso Build Sprint! e Trainstorming Sprint!.
 
 **Tesi commerciale comune.**
 > *"Senza un brain curato, l'AI generica risponde come una qualsiasi. Quello che la rende vostra è quello che le fate sapere di voi. Lo Starter Kit costruisce questo sapere, su un dominio per volta, in quattro settimane."*
@@ -160,14 +160,14 @@ Lo Starter Kit è un **acceleratore tattico** dentro il percorso Domino, non un 
 
 1. **Brain & Identity Design Sprint! pieno** — estensione del brain ad altri domini funzionali, e introduzione del layer identity / design system. Sprint format, pricing dedicato in fase di proposta.
 2. **Build Sprint!** — costruzione di prodotti digitali che *consumano* il brain (sales tool, employee portal, customer portal, agente AI di funzione). €20.000-60.000, blocchi di 2 settimane o 1 mese (vedi [03_domino_metodi.md](03_domino_metodi.md)).
-3. **Trainstorming!** — accompagnamento 12 mesi sull'adozione organizzativa del brain e del cambiamento culturale che porta con sé. A partire da €15.000 (vedi [03_domino_metodi.md](03_domino_metodi.md)).
+3. **Trainstorming Sprint!** — accompagnamento 12 mesi sull'adozione organizzativa del brain e del cambiamento culturale che porta con sé. A partire da €15.000 (vedi [03_domino_metodi.md](03_domino_metodi.md)).
 
 ```
 Starter Kit (4 settimane)
         ↓
 Brain & Identity Design Sprint! pieno
         ↓
-Build Sprint! → Trainstorming!
+Build Sprint! → Trainstorming Sprint!
 ```
 
 ---
@@ -203,7 +203,7 @@ Quando si costruiscono deck, one-pager o pagine di sito a partire da questa sche
 
 - [01_domino_identita.md](01_domino_identita.md) — storia, valori, team, B Corp, premi
 - [02_domino_servizi.md](02_domino_servizi.md) — tassonomia dei servizi e capabilities
-- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!** e gli **Starter Kit** descritti qui), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!** e gli **Starter Kit** descritti qui), Build Sprint!, Trainstorming Sprint!, Preventivo Emozionale *(pricing e regole — fonte unica)*
 - [04_domino_case_history.md](04_domino_case_history.md) — case per cliente con KPI e categoria
 - [05_domino_settori.md](05_domino_settori.md) — mappa settori, sub-segmenti, messaggi chiave
 - [06_domino_referenze.md](06_domino_referenze.md) — review Sortlist, premi, testimonianze video Domino25

@@ -238,7 +238,7 @@ Mappatura del buyer journey attuale: dove si perde il buyer, dove i commerciali 
 **[Soluzione completa Domino](03_domino_metodi.md):**
 - Silo sistemico → **Core Sprint!**: ownership, KPI condivisi, trade-off espliciti al tavolo
 - Silo elitario → **Brain & Identity Design Sprint!**: una sola fonte canonica di ciò che l'azienda sa
-- Silo protezionistico → **Trainstorming!**: 12 mesi, perché il silo politico non si scioglie in due giorni
+- Silo protezionistico → **Trainstorming Sprint!**: 12 mesi, perché il silo politico non si scioglie in due giorni
 
 **Come entrare:**
 - Autodiagnosi silos (3 domande, gratuita, self-service) → identifica il tipo dominante
@@ -279,7 +279,7 @@ Questo file fa parte del Domino Brain. Per approfondire:
 
 - [01_domino_identita.md](01_domino_identita.md) — storia, valori, team, B Corp, premi, tensioni da gestire
 - [02_domino_servizi.md](02_domino_servizi.md) — tassonomia dei servizi e capabilities
-- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming Sprint!, Preventivo Emozionale *(pricing e regole — fonte unica)*
 - [04_domino_case_history.md](04_domino_case_history.md) — case per cliente con KPI e categoria
 - [05_domino_settori.md](05_domino_settori.md) — mappa settori, sub-segmenti, messaggi chiave
 - [06_domino_referenze.md](06_domino_referenze.md) — review Sortlist, premi, testimonianze video Domino25

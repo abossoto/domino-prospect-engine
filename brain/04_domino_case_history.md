@@ -15,7 +15,7 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Settore:** B2B Industriale
 **Periodo:** Giugno 2025 → gennaio 2026 (Core Sprint! 23–24 luglio 2025; Design Sprint! 25–26 novembre e 10–11 dicembre 2025; whitepaper il 12 gennaio 2026)
 **Sprint:** 1 Core Sprint! (vertice nazionale) + 2 Design Sprint! (unità Cittadini, unità Imprese)
-**Status:** chiuso il 12 gennaio 2026; seguito (Build Sprint!, Trainstorming!) da proporre
+**Status:** chiuso il 12 gennaio 2026; seguito (Build Sprint!, Trainstorming Sprint!) da proporre
 **Pattern di vendita:** organizzazione federata, multi-livello, multi-segmento utente
 **Citabilità:** nome, foto dei workshop e schermate del prototipo pubblici; whitepaper su autorizzazione
 **Scheda completa:** [case_cia_percorso_sprint.md](case_cia_percorso_sprint.md)
@@ -303,7 +303,7 @@ Questo file fa parte del Domino Brain. Per approfondire:
 
 - [01_domino_identita.md](01_domino_identita.md) — storia, valori, team, B Corp, premi, tensioni da gestire
 - [02_domino_servizi.md](02_domino_servizi.md) — tassonomia dei servizi e capabilities
-- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming Sprint!, Preventivo Emozionale *(pricing e regole — fonte unica)*
 - [04_domino_case_history.md](04_domino_case_history.md) — case per cliente con KPI e categoria
 - [05_domino_settori.md](05_domino_settori.md) — mappa settori, sub-segmenti, messaggi chiave
 - [06_domino_referenze.md](06_domino_referenze.md) — review Sortlist, premi, testimonianze video Domino25

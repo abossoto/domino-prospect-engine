@@ -48,7 +48,7 @@ Il Build Sprint! è stato attivato subito dopo la consegna del report. Il sito B
 
 ## Stato a maggio 2026 e prossimi passi
 
-Il percorso dei due Sprint! è chiuso. Il Build è in produzione. I prossimi passi naturali sono di due tipi: misurazione degli outcome del sito sul ciclo di vendita (lead qualificati, durata del primo contatto, conversione) e potenziale Trainstorming! per far funzionare l'adozione del nuovo posizionamento e del nuovo strumento da parte della rete di sales e marketing.
+Il percorso dei due Sprint! è chiuso. Il Build è in produzione. I prossimi passi naturali sono di due tipi: misurazione degli outcome del sito sul ciclo di vendita (lead qualificati, durata del primo contatto, conversione) e potenziale Trainstorming Sprint! per far funzionare l'adozione del nuovo posizionamento e del nuovo strumento da parte della rete di sales e marketing.
 
 ## Argomenti di pitch derivati
 

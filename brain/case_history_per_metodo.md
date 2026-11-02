@@ -1,5 +1,5 @@
 # DOMINO BRAIN — Case History per metodo
-> Versione 1.1 — Luglio 2026. Mappa retrospettivo-canonica: per ciascun case history elenca i metodi/prodotti del **catalogo 2026** (Core Sprint!, Design Sprint! con le sue varianti, Brain & Identity Design Sprint!, Build Sprint!, Trainstorming!, Preventivo Emozionale) che corrispondono al lavoro effettivamente svolto. Da usare per la pagina di spiegazione metodi (Figma `Domino_DesignSystem`) e per orientare la narrazione commerciale dei case.
+> Versione 1.1 — Luglio 2026. Mappa retrospettivo-canonica: per ciascun case history elenca i metodi/prodotti del **catalogo 2026** (Core Sprint!, Design Sprint! con le sue varianti, Brain & Identity Design Sprint!, Build Sprint!, Trainstorming Sprint!, Preventivo Emozionale) che corrispondono al lavoro effettivamente svolto. Da usare per la pagina di spiegazione metodi (Figma `Domino_DesignSystem`) e per orientare la narrazione commerciale dei case.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md)
 
@@ -7,7 +7,7 @@
 
 ## Avvertenza metodologica
 
-La mappatura è **retrospettivo-canonica**: rilegge case storici alla luce del catalogo 2026 a quattro Sprint! (Core → Design → Build → Trainstorming!) più Preventivo Emozionale. Solo alcuni case hanno percorso documentato come tale nel Brain:
+La mappatura è **retrospettivo-canonica**: rilegge case storici alla luce del catalogo 2026 a quattro Sprint! (Core → Design → Build → Trainstorming Sprint!) più Preventivo Emozionale. Solo alcuni case hanno percorso documentato come tale nel Brain:
 
 - **CIA — Confederazione Italiana Agricoltori** *(Core Sprint! + 2 Design Sprint! — documentato)*
 - **Poltrona Frau In Motion** *(Core Sprint! + Design Sprint! + Build Sprint! — documentato)*
@@ -36,10 +36,10 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 - **IVECO — MyIVECO App** → Design Sprint! (CX) · Build Sprint!
 - **IVECO — TCO Calculator** → Design Sprint! (Service) · Build Sprint!
 - **IVECO — eDailyAdvisor** → Design Sprint! (Service) · Build Sprint!
-- **IVECO — Training con AI Video** → Trainstorming! · Build Sprint!
-- **Stellantis — Employee Portal** → Design Sprint! (Intranet) · Trainstorming! · Build Sprint!
-- **Stellantis — Electrification Days** → Design Sprint! · Trainstorming! · Build Sprint!
-- **Stellantis — D&I People Stories** → Design Sprint! · Trainstorming! · Build Sprint!
+- **IVECO — Training con AI Video** → Trainstorming Sprint! · Build Sprint!
+- **Stellantis — Employee Portal** → Design Sprint! (Intranet) · Trainstorming Sprint! · Build Sprint!
+- **Stellantis — Electrification Days** → Design Sprint! · Trainstorming Sprint! · Build Sprint!
+- **Stellantis — D&I People Stories** → Design Sprint! · Trainstorming Sprint! · Build Sprint!
 - **Fiat — Sito internazionale EMEA** → Design Sprint! (Website) · Build Sprint!
 - **Fiat Professional (Ducato) — App E-Product** → Design Sprint! (Service) · Build Sprint! · Preventivo Emozionale *(logica analoga)*
 - **Jeep — Community digitale** → Design Sprint! (Service) · Build Sprint!
@@ -61,7 +61,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 - **Danieli Automation — Design System** → Brain & Identity Design Sprint! *(focus design system)* · Build Sprint!
 - **IPI Agency — Real Estate** → Build Sprint!
 - **IPI — SFERA Intranet** → Design Sprint! (Intranet) · Build Sprint!
-- **IPI — Internal Communication Onboarding** → Trainstorming! · Build Sprint!
+- **IPI — Internal Communication Onboarding** → Trainstorming Sprint! · Build Sprint!
 - **BANCOMAT — Da back-office a engagement** → Design Sprint! · Build Sprint!
 - **Links Foundation — Nuova Intranet** → Design Sprint! (Intranet) · Build Sprint! *(Design Sprint! documentato)*
 - **Demak Group — Da fornitore a leader B2B** → Core Sprint! · Design Sprint! (Brand) · Build Sprint! · SEO/GEO
@@ -116,7 +116,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 
 ## Collegamenti al Brain
 
-- [03_domino_metodi.md](03_domino_metodi.md) — schede complete dei metodi (Core Sprint!, Design Sprint! + varianti, Brain & Identity Design Sprint!, Build Sprint!, Trainstorming!, Preventivo Emozionale)
+- [03_domino_metodi.md](03_domino_metodi.md) — schede complete dei metodi (Core Sprint!, Design Sprint! + varianti, Brain & Identity Design Sprint!, Build Sprint!, Trainstorming Sprint!, Preventivo Emozionale)
 - [04_domino_case_history.md](04_domino_case_history.md) — schede dei case per cliente con KPI e categoria
 - [case_cia_percorso_sprint.md](case_cia_percorso_sprint.md) — scheda completa CIA
 - [case_poltronafrau_inmotion_percorso_sprint.md](case_poltronafrau_inmotion_percorso_sprint.md) — scheda completa Poltrona Frau In Motion

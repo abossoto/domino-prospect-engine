@@ -69,7 +69,7 @@ L'AI ha reso l'esecuzione abbondante. Dieci prototipi in un'ora, un deck in tren
 **Domino CX Transformation Partner**. Cornice **Industry 5.0** (sostenibile, human-centric, resiliente — definizione Commissione Europea). Cuore: **Decision Design** — la progettazione delle conseguenze su un orizzonte di 6-12 mesi.
 
 ### 3. Come lavoriamo
-Tre verbi, una sola relazione: **capiamo, costruiamo, facciamo funzionare**. Setup → misurazione → governance continua. Quattro Sprint! a coprire i tre verbi: Core Sprint! → Design Sprint! → Build Sprint! → Trainstorming!.
+Tre verbi, una sola relazione: **capiamo, costruiamo, facciamo funzionare**. Setup → misurazione → governance continua. Quattro Sprint! a coprire i tre verbi: Core Sprint! → Design Sprint! → Build Sprint! → Trainstorming Sprint!.
 
 ### 4. Cosa non cambia
 **Semplifichiamo la complessità, liberiamo il potenziale.** È la mission che il Codice Etico Domino ha messo per iscritto nel 2024 e che la pratica del 2026 conferma — la definizione più asciutta di Decision Design che potessimo darci.
@@ -359,7 +359,7 @@ Questo file fa parte del Domino Brain. Per approfondire:
 
 - [01_domino_identita.md](01_domino_identita.md) — storia, valori, team, B Corp, premi, tensioni da gestire
 - [02_domino_servizi.md](02_domino_servizi.md) — tassonomia dei servizi e capabilities
-- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming Sprint!, Preventivo Emozionale *(pricing e regole — fonte unica)*
 - [04_domino_case_history.md](04_domino_case_history.md) — case per cliente con KPI e categoria
 - [05_domino_settori.md](05_domino_settori.md) — mappa settori, sub-segmenti, messaggi chiave
 - [06_domino_referenze.md](06_domino_referenze.md) — review Sortlist, premi, testimonianze video Domino25

@@ -64,7 +64,7 @@
 - Core Sprint! per allineare stakeholder interni sulla direzione strategica
 - Design Sprint! per progettare soluzioni in 4 giorni (2 con il cliente + 2 di lavoro Domino)
 - Intranet e portali per comunicazione interna complessa (Links Foundation, IPI SFERA)
-- **Trainstorming! I5.0** per aziende manifatturiere che devono navigare transizioni complesse (AI, normativa, sostenibilità) con un metodo strutturato e output concreti
+- **Trainstorming Sprint! I5.0** per aziende manifatturiere che devono navigare transizioni complesse (AI, normativa, sostenibilità) con un metodo strutturato e output concreti
 - **Decision Design tools**: configuratori, TCO calculator, comparatori — strumenti che aiutano il buyer a decidere, non solo a informarsi
 
 **KPI documentati:**
@@ -184,7 +184,7 @@ La transizione più difficile non è mai quella tecnologica: è quella umana. Ad
 - Intranet ed employee portal (dalla progettazione UX alla manutenzione)
 - Chatbot AI istruiti su documentazione interna (risponde via chat, audio e video)
 - Eventi ibridi (online + offline) per engagement su temi chiave (es. elettrificazione)
-- **Trainstorming! I5.0**: programma strutturato per far funzionare l'adozione dell'AI in azienda — non un corso, non una campagna, ma un percorso di transizione con output concreti a ogni sessione. Ideale per aziende che devono introdurre responsabilmente l'AI tra le proprie persone.
+- **Trainstorming Sprint! I5.0**: programma strutturato per far funzionare l'adozione dell'AI in azienda — non un corso, non una campagna, ma un percorso di transizione con output concreti a ogni sessione. Ideale per aziende che devono introdurre responsabilmente l'AI tra le proprie persone.
 
 **KPI documentati:**
 - Stellantis Employee Portal: 88.000 dipendenti, FEIEIA Award Best European Intranet
@@ -202,7 +202,7 @@ Questo file fa parte del Domino Brain. Per approfondire:
 
 - [01_domino_identita.md](01_domino_identita.md) — storia, valori, team, B Corp, premi, tensioni da gestire
 - [02_domino_servizi.md](02_domino_servizi.md) — tassonomia dei servizi e capabilities
-- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming Sprint!, Preventivo Emozionale *(pricing e regole — fonte unica)*
 - [04_domino_case_history.md](04_domino_case_history.md) — case per cliente con KPI e categoria
 - [05_domino_settori.md](05_domino_settori.md) — mappa settori, sub-segmenti, messaggi chiave
 - [06_domino_referenze.md](06_domino_referenze.md) — review Sortlist, premi, testimonianze video Domino25

@@ -162,7 +162,7 @@ Blocchi flat, riempimento pieno. Card su dark: fill `#0A0A0A`, bordo 0,5–0,75 
 - Tono diretto, concreto: frasi corte, risultati misurabili. Headline con il twist in rosso.
 - Struttura narrativa: **problema → soluzione → proof point**. I dati prima delle opinioni ("Budget reduced. Engagement held.").
 - ALL CAPS tracciate solo per eyebrow, label, chrome. **Nessuna emoji.**
-- I nomi dei metodi sempre col `!`: Core Sprint!, Design Sprint!, Build Sprint!, Brain & Identity Design Sprint!, Trainstorming!.
+- I nomi dei metodi sempre col `!`: Core Sprint!, Design Sprint!, Build Sprint!, Brain & Identity Design Sprint!, Trainstorming Sprint!.
 
 ---
 

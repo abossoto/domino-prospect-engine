@@ -86,7 +86,7 @@ Fonti: Shah, *The Silo Effect in the AI Age*, California Management Review, sett
 |---|---|---|---|
 | **I — Sistemico** | Allineare gli obiettivi: KPI condivisi che attraversano le funzioni | **Core Sprint!** | Mette nella stessa stanza chi crede di possedere il problema, chi lo possiede davvero e chi paga le conseguenze. Ipotesi Core, ownership, trade-off espliciti |
 | **II — Elitario** | Aprire la conoscenza: strutture che la rendono bene comune | **Brain & Identity Design Sprint!** | Una sola fonte canonica di ciò che l'azienda sa — interrogabile, governata, pronta per l'AI senza moltiplicare i silos |
-| **III — Protezionistico** | Costruire fiducia: condivisione sicura, riconoscimento del contributo | **Trainstorming!** | Il silo politico non si scioglie in due giorni di workshop: è fatto di paura, identità, abitudine. Serve accompagnamento — 12 mesi, 3 sessioni |
+| **III — Protezionistico** | Costruire fiducia: condivisione sicura, riconoscimento del contributo | **Trainstorming Sprint!** | Il silo politico non si scioglie in due giorni di workshop: è fatto di paura, identità, abitudine. Serve accompagnamento — 12 mesi, 3 sessioni |
 
 Il **Design Sprint!** e il **Build Sprint!** entrano come secondo e terzo tempo del percorso una volta che il silo dominante è stato diagnosticato e la direzione definita: progettano e costruiscono la soluzione che attraversa le funzioni (piani di Team e di Prodotto del Decision Design).
 

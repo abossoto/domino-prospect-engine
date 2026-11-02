@@ -68,11 +68,11 @@ Ordine di caricamento canonico: `colors_and_type.css` → `doc-tokens.css` → `
 
 ## Voce nei documenti
 
-Italiano curato, sentence case, prima persona plurale, frasi sotto le ~25 parole, ordine problema → soluzione → prova. Nomi dei metodi sempre verbatim con il `!` (Core Sprint!, Design Sprint!, Build Sprint!, Brain & Identity Design Sprint!, Trainstorming!). Valgono tutte le regole ferme del CLAUDE.md: mai "agenzia" in auto-definizione, mai il verbo "firmare", "nostra soluzione" nella Core Hypothesis, DATI NON TROVATI dove il dato manca.
+Italiano curato, sentence case, prima persona plurale, frasi sotto le ~25 parole, ordine problema → soluzione → prova. Nomi dei metodi sempre verbatim con il `!` (Core Sprint!, Design Sprint!, Build Sprint!, Brain & Identity Design Sprint!, Trainstorming Sprint!). Valgono tutte le regole ferme del CLAUDE.md: mai "agenzia" in auto-definizione, mai il verbo "firmare", "nostra soluzione" nella Core Hypothesis, DATI NON TROVATI dove il dato manca.
 
 ## Avvertenza sul README del pacchetto
 
-Il [`README.md`](Claude%20Design/document-layer/README.md) del design system contiene, oltre alle regole visive, una sezione su naming e metodi, allineata al Brain il 10 ottobre 2026 (Design Sprint! con sei specializzazioni, Build Sprint! 8–52 settimane, Trainstorming! come accompagnamento strutturato). **Per tutto ciò che è offerta, metodi, prezzi e naming commerciale fa fede il Brain (CLAUDE.md e file 01–13), non il README.** Il README resta autoritativo solo per la parte visiva e tipografica.
+Il [`README.md`](Claude%20Design/document-layer/README.md) del design system contiene, oltre alle regole visive, una sezione su naming e metodi, allineata al Brain il 10 ottobre 2026 (Design Sprint! con sei specializzazioni, Build Sprint! 8–52 settimane, Trainstorming Sprint! come accompagnamento strutturato). **Per tutto ciò che è offerta, metodi, prezzi e naming commerciale fa fede il Brain (CLAUDE.md e file 01–13), non il README.** Il README resta autoritativo solo per la parte visiva e tipografica.
 
 ## Riferimento
 

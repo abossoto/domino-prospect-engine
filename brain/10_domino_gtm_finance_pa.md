@@ -102,12 +102,12 @@ Quando si parla di PE in contesto finance, il cross-reference con Costa Crociere
 - Ottimizzazione processi back-office con UX centrata sull'operatore
 - Portale stakeholder o intranet per engagement interno
 - Comunicazione istituzionale che costruisce autorevolezza e fiducia
-- Programma di change management digitale (Trainstorming!)
+- Programma di change management digitale (Trainstorming Sprint!)
 
 **Come convertire il referral:**
 - CX / Process Audit (€1.500) → mappatura del processo o touchpoint critico. Utile per formalizzare una diagnosi già nota al prospect
 - Core Sprint! (€6.000) → se ci sono più problemi da affrontare o stakeholder con priorità diverse: roadmap condivisa prima di investire
-- Trainstorming! → per organizzazioni in piena trasformazione digitale: percorso in 3 sessioni (una ogni 4 mesi, 12 mesi in tutto) con output concreti
+- Trainstorming Sprint! → per organizzazioni in piena trasformazione digitale: percorso in 3 sessioni (una ogni 4 mesi, 12 mesi in tutto) con output concreti
 
 **[Proof point](04_domino_case_history.md):**
 - Bancomat SpA — da ottimizzazione back-office a engagement digitale
@@ -175,13 +175,13 @@ Quando si parla di PE in contesto finance, il cross-reference con Costa Crociere
 - Responsible AI assessment — mappatura strumenti AI esistenti rispetto all'AI Act
 - Progettazione human-in-the-loop per tool digitali e chatbot
 - Comunicazione della governance AI verso stakeholder esterni
-- Trainstorming! I5.0 — percorso strutturato per trasformare la compliance in posizionamento competitivo
+- Trainstorming Sprint! I5.0 — percorso strutturato per trasformare la compliance in posizionamento competitivo
 
 **Come convertire il referral:**
 - Apertura I5.0 (primo incontro) → frame strategico: "chi progetta tecnologia responsabile prima dei competitor costruisce fiducia istituzionale duratura." Domino lo vive internamente (B Corp 2025) — non è solo una proposta consulenziale
 - Core Sprint! (€6.000) → mappa gli strumenti digitali esistenti rispetto alle normative. Output: ipotesi core su dove intervenire e come comunicarlo come differenziatore
 - **Brain & Identity Design Sprint!** *(variante di punta 2026)* → quando il problema è strutturale: il **brain aziendale** interrogabile via AI è l'architettura concreta che rende un sistema AI **documentabile per audit** — fonti tracciate, *human-in-the-loop* by design, conoscenza versionata. È la risposta operativa all'AI Act: smette di essere "compliance come costo", diventa "compliance come asset".
-- Trainstorming! I5.0 (da €15.000, 12 mesi · 3 sessioni) → Responsible AI, ESG, GDPR. Per chi vuole un percorso strutturato, non un progetto puntuale
+- Trainstorming Sprint! I5.0 (da €15.000, 12 mesi · 3 sessioni) → Responsible AI, ESG, GDPR. Per chi vuole un percorso strutturato, non un progetto puntuale
 
 **[Proof point](04_domino_case_history.md):**
 - Trainstorming! I5.0 — "Le transizioni, I5.0 by Design" aprile 2026
@@ -251,7 +251,7 @@ Questo file fa parte del Domino Brain. Per approfondire:
 
 - [01_domino_identita.md](01_domino_identita.md) — storia, valori, team, B Corp, premi, tensioni da gestire
 - [02_domino_servizi.md](02_domino_servizi.md) — tassonomia dei servizi e capabilities
-- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!**), Build Sprint!, Trainstorming Sprint!, Preventivo Emozionale *(pricing e regole — fonte unica)*
 - [04_domino_case_history.md](04_domino_case_history.md) — case per cliente con KPI e categoria
 - [05_domino_settori.md](05_domino_settori.md) — mappa settori, sub-segmenti, messaggi chiave
 - [06_domino_referenze.md](06_domino_referenze.md) — review Sortlist, premi, testimonianze video Domino25

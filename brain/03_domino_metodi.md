@@ -1,5 +1,7 @@
 # DOMINO BRAIN — Metodi Distintivi
-> Versione 5.4 — Ottobre 2026. I metodi proprietari che differenziano Domino: Core Sprint!, Design Sprint! (con il **Brain & Identity Design Sprint!** come variante di punta 2026 e i tre **Starter Kit** verticali — Sales, Internal Comms, CX Manager — come specializzazioni tattiche), Build Sprint!, Trainstorming!, Preventivo Emozionale. Aggiornato con la presentazione interna *"A new Domino"* (aprile 2026): catalogo 2026 a cinque prodotti, percorso a quattro Sprint!, Decision Design come cornice. Da citare nelle proposte commerciali quando pertinenti.
+> Versione 5.4 — Ottobre 2026. I metodi proprietari che differenziano Domino: Core Sprint!, Design Sprint! (con il **Brain & Identity Design Sprint!** come variante di punta 2026 e i tre **Starter Kit** verticali — Sales, Internal Comms, CX Manager — come specializzazioni tattiche), Build Sprint!, Trainstorming Sprint!, Preventivo Emozionale. Aggiornato con la presentazione interna *"A new Domino"* (aprile 2026): catalogo 2026 a cinque prodotti, percorso a quattro Sprint!, Decision Design come cornice. Da citare nelle proposte commerciali quando pertinenti.
+>
+> **Changelog — 2 novembre 2026.** §4 riscritto sul deck commerciale del 25 settembre 2026: prodotto rinominato Trainstorming Sprint!, tre sessioni da 2 giorni, check-in mensile, strumenti (Sailboat, Iceberg, Stop/Start/Continue, Pre-mortem, Crazy-8, Solution Sketch, Domino Radar, Transition Hypothesis, Commitment); tolti Core Sprint! integrato, Magic Lenses, Votazione Silenziosa e AI Assessment dalle tecniche. Nuova [scheda prodotto](trainstorming_scheda_prodotto.md).
 >
 > **Changelog — 10 ottobre 2026 (health check).** Formato Sprint! 2 + 2 (28 settembre 2026); audit tattici a €1.500 nella scala di entrata; sostituita un'espressione vietata in due punti; link alla scheda prodotto del Core Sprint!, al manifesto e alla tabella di aggiornamento del sito.
 
@@ -18,12 +20,12 @@ Vista sintetica del catalogo Domino al 2026. Le schede di dettaglio sono nelle s
 | 3 | **Brain & Identity Design Sprint!** *(variante Design Sprint!)* | Progettiamo | "Su quali fondamenta costruiamo?" | Sprint format | Sprint format + Brain + Design System | **Novità 2026 — prodotto di punta** |
 | 3.bis | **Starter Kit** *(specializzazioni tattiche del Brain & Identity Design Sprint!)* — Sales · Internal Comms · CX Manager | Progettiamo | "Da quale dominio funzionale partiamo, in 4 settimane, senza IT?" | 4 settimane | Su richiesta | **Novità 2026** *(scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md))* |
 | 4 | **Build Sprint!** | Costruiamo | "Come lo costruiamo davvero?" | 8–52 settimane (blocchi di 2 sett. o 1 mese) | €20.000–60.000 | Sostituisce la voce storica "Progetto completo" |
-| 5 | **Trainstorming!** | Facciamo funzionare | "Come faccio a far diventare il cambiamento parte dell'organizzazione?" | 12 mesi · 3 sessioni | a partire da €15.000 | **Novità 2026** *(rituale interno dal 2010, oggi servizio)* |
+| 5 | **Trainstorming Sprint!** | Facciamo funzionare | "Come faccio a far diventare il cambiamento parte dell'organizzazione?" | 12 mesi · 3 sessioni da 2 giorni + check-in mensile | a partire da €15.000 | **Novità 2026** *(rituale interno dal 2010, oggi servizio)* |
 | + | **Preventivo Emozionale** *(tool commerciale)* | Trasversale | "Come faccio a far vivere il valore prima ancora di vendere?" | Minisite + analytics | A progetto | Storico — caso d'uso Costa Crociere |
 
 **Il percorso a quattro Sprint! — capiamo, progettiamo, costruiamo, facciamo funzionare:**
 ```
-Core Sprint! → Design Sprint! → Build Sprint! → Trainstorming!
+Core Sprint! → Design Sprint! → Build Sprint! → Trainstorming Sprint!
    2+2 giorni     2+2 giorni     8–52 settimane     12 mesi
    capiamo       progettiamo       costruiamo      facciamo funzionare
 ```
@@ -48,7 +50,7 @@ Il filo rosso che attraversa tutti gli Sprint!. *Decision Design progetta le con
 | Core Sprint! | Organizzativo |
 | Design Sprint! | di Team (la stanza) + di Prodotto (il prototipo) |
 | Build Sprint! | di Prodotto |
-| Trainstorming! | Organizzativo + di Team, ricorrenti nel tempo |
+| Trainstorming Sprint! | Organizzativo + di Team, ricorrenti nel tempo |
 
 **Formula canonica:**
 
@@ -66,7 +68,7 @@ La tassonomia HBR dei tre tipi di silos (marzo 2025) è la chiave di lettura che
 |---|---|---|
 | **Sistemico** — obiettivi disallineati, KPI mai progettati insieme | Allineare gli obiettivi | **Core Sprint!** |
 | **Elitario** — conoscenza trattenuta, il cliente è la somma di verità parziali | Aprire la conoscenza | **Brain & Identity Design Sprint!** |
-| **Protezionistico** — paura di perdere risorse, budget, controllo | Costruire fiducia | **Trainstorming!** |
+| **Protezionistico** — paura di perdere risorse, budget, controllo | Costruire fiducia | **Trainstorming Sprint!** |
 
 Design Sprint! e Build Sprint! sono il secondo e terzo tempo del percorso, una volta diagnosticato il silo dominante. Frase di framing canonica: *"I tuoi clienti non si perdono nel journey. Si perdono nei tuoi silos."*
 
@@ -189,7 +191,7 @@ Variante del Design Sprint! che merita una scheda dedicata: è il prodotto su cu
 **Perché ora è prodotto di punta:**
 1. L'AI rende l'esecuzione abbondante. Senza un brain curato, l'output dei modelli è generico. Curare il brain è ciò che rende l'AI *insostituibile* per quel cliente specifico.
 2. È il salto da strumento interno a metodo replicabile: *"il brain non è uno strumento che abbiamo costruito per Domino — è un metodo che possiamo costruire con e per ogni cliente"*.
-3. Apre il percorso ai tre Sprint! successivi (Design / Build / Trainstorming!): chi compra qui ha più probabilità di proseguire.
+3. Apre il percorso ai tre Sprint! successivi (Design / Build / Trainstorming Sprint!): chi compra qui ha più probabilità di proseguire.
 
 **Output dello Sprint:**
 - Per il **brain**: 3-5 nodi pilota + interfaccia di interrogazione + roadmap di crescita e governance.
@@ -256,7 +258,7 @@ Tre **specializzazioni verticali** del Brain & Identity Design Sprint! pensate p
 
 **Connessione al percorso:**
 ```
-Core Sprint! → Design Sprint! → Build Sprint! → Trainstorming!
+Core Sprint! → Design Sprint! → Build Sprint! → Trainstorming Sprint!
    capiamo       progettiamo      costruiamo     facciamo funzionare
 ```
 Il Build Sprint! è il terzo passo del percorso a quattro Sprint!. È lo strumento con cui Domino traduce decisioni e prototipi in **sistema**.
@@ -285,10 +287,10 @@ Questa scala è la fonte unica di verità per il pricing. I file GTM di settore 
 | 2 | Design Sprint! | €10.000 | Quando la direzione è chiara e si vuole validare prima di investire — varianti incluso il **Brain & Identity Design Sprint!**, prodotto di punta 2026 |
 | 2.bis | Starter Kit del Brain & Identity Design Sprint! *(Sales / Internal Comms / CX)* | Su richiesta | Specializzazione tattica verticale, 4 settimane, no IT integration. Buyer di funzione. Pricing non comunicato pubblicamente in questa fase. Scheda: [starter_kit_brain_identity.md](starter_kit_brain_identity.md) |
 | 3 | Build Sprint! *(execution)* | €20.000–60.000 | Costruzione a blocchi di 2 settimane o 1 mese, perimetro aperto. Sostituisce la voce storica "Progetto completo" |
-| 4 | Trainstorming! | a partire da €15.000 | Percorso change management 12 mesi (3 sessioni, una ogni 4) — per transizioni culturali/organizzative complesse |
+| 4 | Trainstorming Sprint! | a partire da €15.000 | Percorso change management 12 mesi (3 sessioni da 2 giorni, una ogni 4, più check-in mensile) — per transizioni culturali/organizzative complesse |
 
 **Percorso completo opzionale:** Core Sprint! (€6K) → Design Sprint! (€10K) = €16.000 pre-esecuzione, poi Build Sprint! per la costruzione.
-**Trainstorming!** può avviarsi dopo un Design Sprint! o in parallelo al Build Sprint! su progetti di trasformazione significativi.
+**Trainstorming Sprint!** di solito conclude un percorso Sprint! (spesso dopo un Core Sprint!), ma può partire anche da solo, dopo una call di qualifica di 30 minuti; si può avviare dopo un Design Sprint! o in parallelo al Build Sprint! su progetti di trasformazione significativi.
 
 **Regola sul gratuito:** niente lavoro gratuito per prospect bottom-up. Workshop gratuito (2h) solo per grandi clienti in approccio top-down — non è un servizio autonomo, apre il percorso verso Core Sprint!
 
@@ -359,19 +361,19 @@ Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina,
 | "La rete vendita fatica a spiegare il valore" | Preventivo Emozionale |
 | "Dobbiamo innovare ma non sappiamo cosa fare" | Core Sprint! → Design Sprint! |
 | "Dobbiamo rinnovare il sito ma gli stakeholder non sono d'accordo" | Design Sprint! |
-| "Dobbiamo gestire un cambiamento culturale o tecnologico importante" | Trainstorming! |
-| "Vogliamo introdurre l'AI in azienda ma non sappiamo come" | Trainstorming! |
-| "Facciamo fatica a tradurre le idee in pratica nel tempo" | Trainstorming! (follow-through strutturato) |
-| "Abbiamo fatto un Design Sprint! ma non riusciamo a implementare" | Trainstorming! come continuazione |
-| "L'AI Act ci impone di ripensare come usiamo i dati" | Trainstorming!: Responsible AI assessment + roadmap |
-| "Siamo in una transizione (fusione, riorganizzazione, nuova piattaforma)" | Trainstorming!: transition program su misura |
+| "Dobbiamo gestire un cambiamento culturale o tecnologico importante" | Trainstorming Sprint! |
+| "Vogliamo introdurre l'AI in azienda ma non sappiamo come" | Trainstorming Sprint! |
+| "Facciamo fatica a tradurre le idee in pratica nel tempo" | Trainstorming Sprint! (follow-through strutturato) |
+| "Abbiamo fatto un Design Sprint! ma non riusciamo a implementare" | Trainstorming Sprint! come continuazione |
+| "L'AI Act ci impone di ripensare come usiamo i dati" | Trainstorming Sprint!: Responsible AI assessment + roadmap |
+| "Siamo in una transizione (fusione, riorganizzazione, nuova piattaforma)" | Trainstorming Sprint!: transition program su misura |
 | "I nostri tool digitali aiutano a fare cose ma non a decidere meglio" | Design Sprint! + Decision Design di Prodotto |
-| "Vogliamo essere rilevanti nell'era dell'AI, non solo efficienti" | Core Sprint! → Trainstorming! I5.0 |
+| "Vogliamo essere rilevanti nell'era dell'AI, non solo efficienti" | Core Sprint! → Trainstorming Sprint! I5.0 |
 | "Vogliamo un brain aziendale interrogabile via AI per supportare le decisioni" | Brain and Identity Design Sprint! (focus brain) |
 | "Stiamo introducendo copilot/agenti AI ma non hanno una base di conoscenza affidabile" | Brain and Identity Design Sprint! (focus brain) — eventualmente preceduto da Core Sprint! |
 | "I nostri prodotti digitali sembrano fatti da aziende diverse" | Brain and Identity Design Sprint! (focus identity / design system) |
 | "Ogni nuovo progetto ricomincia da zero con i componenti UI" | Brain and Identity Design Sprint! (focus identity / design system) |
-| "I nostri clienti ricevono risposte diverse da reparti diversi" | Diagnosi silos ([13_silos_framework.md](13_silos_framework.md)) → Core Sprint! / Brain & Identity Design Sprint! / Trainstorming! a seconda del tipo |
+| "I nostri clienti ricevono risposte diverse da reparti diversi" | Diagnosi silos ([13_silos_framework.md](13_silos_framework.md)) → Core Sprint! / Brain & Identity Design Sprint! / Trainstorming Sprint! a seconda del tipo |
 | "Ogni funzione sta adottando la propria AI per conto suo" | Brain & Identity Design Sprint! — l'AI dentro silos esistenti li rende permanenti ([13_silos_framework.md](13_silos_framework.md)) |
 
 ---
@@ -419,44 +421,52 @@ Il preventivo viaggio diventa un minisite con: destinazione, nave, date, cabina,
 
 ---
 
-## 4. Trainstorming! *(metodo proprietario — change management e innovazione continuativa)*
+## 4. Trainstorming Sprint! *(metodo proprietario — change management e innovazione continuativa)*
 
-**Cos'è:** Il metodo Domino per far funzionare le organizzazioni attraverso transizioni complesse con un percorso strutturato nel tempo. Non è un workshop singolo, non è formazione tradizionale: è un programma di cambiamento a cadenza quadrimestrale che porta innovazione concreta e gestita all'interno dell'azienda cliente.
+> Scheda completa (agenda, strumenti, output): [trainstorming_scheda_prodotto.md](trainstorming_scheda_prodotto.md). Fonte prevalente: deck *Trainstorming-Sprint-Pitch-Deck* (25 settembre 2026) e documenti di lavoro di Valentina e Orsola (maggio 2026).
 
-Nasce dalla pratica interna Domino — il team si incontra mensilmente con questo format — ed è stato strutturato come servizio replicabile per i clienti.
+**Cos'è:** Il metodo Domino per portare una transizione in corso fino a quando diventa reale e continua a produrre valore da sola. Non è formazione, non è consulenza, non è un Design Sprint!: è un percorso di accompagnamento di 12 mesi, con 3 sessioni da 2 giorni (mese 1, 5 e 9) per gruppi di 8–15 persone e un check-in mensile di un'ora con il referente del cliente. Il prodotto si chiama Trainstorming Sprint! (modulo Sprint!, decisione di Andrea Bosso del 2/11/2026); «Trainstorming!» resta il nome del rituale interno mensile.
+
+Nasce dalla pratica interna Domino — dal 2010 il team si incontra con questo format — ed è stato strutturato come servizio replicabile per i clienti.
 
 **Connessione I5.0 — Da Progetti a Transizioni:**
-Il Trainstorming! è la risposta operativa al cambio di paradigma di Industry 5.0: i clienti non cercano più soluzioni puntuali, ma partner che li accompagnino attraverso transizioni lunghe e continue (AI adoption, regolazione, sostenibilità, cambi organizzativi). Il Trainstorming! è esattamente questo — non un deliverable, ma un programma di accompagnamento. I progetti finiscono; le transizioni no.
+Il Trainstorming Sprint! è la risposta operativa al cambio di paradigma di Industry 5.0: i clienti non cercano più soluzioni puntuali, ma partner che li accompagnino attraverso transizioni lunghe e continue (AI adoption, regolazione, sostenibilità, cambi organizzativi). Il Trainstorming Sprint! è esattamente questo — non un deliverable, ma un programma di accompagnamento. I progetti finiscono; le transizioni no.
 
-I tre temi I5.0 che guidano ogni percorso Trainstorming!:
+I tre temi I5.0 che guidano ogni percorso Trainstorming Sprint!:
 - **Responsabilità come differenziatore** — come usare l'AI in modo governabile, comprensibile, fiduciario
 - **Dai Progetti alle Transizioni** — il cliente non cerca un deliverable, cerca un partner che resti finché il cambiamento diventa sistema
 - **Decision Design** — come costruire strumenti e processi che aiutano le persone a decidere meglio
 
 **Il flusso completo:**
 ```
-Sessione 1 [Mese 1]      Sessione 2 [Mese 5]      Sessione 3 [Mese 9]
-Diagnosi + Ipotesi   →   Prototipazione + Test  →   Scala + Roadmap
-Core                     con utenti reali            12 mesi successivi
-     ↑______________________________________________|
-                    (loop iterativo se necessario)
+Sessione 1 [Mese 1]       Sessione 2 [Mese 5]         Sessione 3 [Mese 9]
+Diagnosi e direzione  →   Verifica e correzione   →   Consolidamento e futuro
+Iceberg Model             Stop / Start / Continue     Pre-mortem
+      └── check-in mensile di 1 ora con il referente, tra una sessione e l'altra ──┘
 ```
-Programma totale: 12 mesi, una sessione ogni 4.
+Programma totale: 12 mesi, una sessione ogni 4. Ogni sessione ha lo stesso scheletro (Sailboat in apertura, modulo centrale, Crazy-8, Solution Sketch, Domino at work, Domino Radar, discussione e votazione, Commitment) e cambia solo il modulo centrale.
 
-**Tecniche interne usate:**
-- **Core Sprint!** — costruisce l'ipotesi core della transizione nella sessione 1
-- **Magic Lenses** — mette alla prova le idee di cambiamento rispetto a criteri critici
-- **Votazione Silenziosa** — fa emergere il consenso reale senza gerarchie
-- **Prototipazione rapida** — rende tangibile il cambiamento prima di investire
-- **AI Assessment** — mappa le opportunità AI concrete per quel contesto specifico
+**Strumenti usati:**
+- **Sailboat Retrospective** — apertura di ogni sessione: vento, ancora, rocce, isola
+- **Iceberg Model** (Peter Senge) — sessione 1: dai sintomi visibili alle cause invisibili
+- **Stop / Start / Continue** — sessione 2: verifica a 4 mesi su dati reali
+- **Pre-mortem** (Gary Klein) — sessione 3: «siamo a 12 mesi, la transizione è fallita: cosa è andato storto?»
+- **Crazy-8 e Solution Sketch** (Design Sprint!, Jake Knapp) — generazione idee e approfondimento, giorno 1
+- **Domino Radar** — le ipotesi di aggiustamento che Domino presenta il giorno 2
+- **Transition Hypothesis** — *«Se facciamo X, allora Y accadrà, e lo sapremo perché vedremo Z misurabile»*, definita insieme dal gruppo a fine sessione
+- **Commitment individuale** — 1 azione concreta per il mese successivo, ripresa all'inizio della sessione dopo
+
+**Output di ogni sessione:** report di sessione (entro 48 ore), Domino Radar, Transition Hypothesis, commitment individuali.
+
+**Come si entra:** come conclusione di un percorso Sprint! (di solito dopo un Core Sprint! e, quando c'è, un Build Sprint!; il Core Sprint! non è necessario e non fa parte del Trainstorming Sprint!) oppure come prodotto autonomo, dopo una call di qualifica gratuita di 30 minuti.
 
 **Differenza con Core Sprint!, Design Sprint! e Build Sprint!:**
 
-| | Core Sprint! | Design Sprint! | Build Sprint! | Trainstorming! |
+| | Core Sprint! | Design Sprint! | Build Sprint! | Trainstorming Sprint! |
 |---|---|---|---|---|
-| **Durata** | 2 + 2 giorni (dossier entro 5 giorni lavorativi) | 2 + 2 giorni | 8–52 settimane (blocchi 2 sett. / 1 mese) | 12 mesi (3 sessioni, una ogni 4) |
+| **Durata** | 2 + 2 giorni (dossier entro 5 giorni lavorativi) | 2 + 2 giorni | 8–52 settimane (blocchi 2 sett. / 1 mese) | 12 mesi (3 sessioni da 2 giorni, una ogni 4, più check-in mensile) |
 | **Prezzo** | €6.000 | €10.000 | €20.000–60.000 | a partire da €15.000 |
-| **Output** | Ipotesi Core + mappa differenziazione + scala priorità | Prototipo pronto da testare | Soluzione realizzata e funzionante | Roadmap + implementazione avviata |
+| **Output** | Ipotesi Core + mappa differenziazione + scala priorità | Prototipo pronto da testare | Soluzione realizzata e funzionante | Per ogni sessione: report, Domino Radar, Transition Hypothesis, commitment individuali |
 | **Focus** | Allineamento strategico | Validazione soluzione | Costruzione | Cambiamento culturale/organizzativo |
 | **Quando** | Prima di un progetto | Prima di investire | Dopo la validazione | Per gestire una transizione |
 
@@ -467,10 +477,10 @@ Programma totale: 12 mesi, una sessione ogni 4.
 - Come programma annuale di innovazione per aziende che vogliono mantenere un ritmo di cambiamento
 - Come naturale continuazione di un onboarding su nuove piattaforme (intranet, CRM, Microsoft 365)
 - Quando il cliente è sotto pressione normativa (AI Act, ESG, data ethics) e deve trasformare la compliance in vantaggio competitivo
-- Quando l'azienda vuole adottare l'AI ma teme l'impatto sulle persone e sui processi: il Trainstorming! costruisce una governance responsabile dall'interno
+- Quando l'azienda vuole adottare l'AI ma teme l'impatto sulle persone e sui processi: il Trainstorming Sprint! costruisce una governance responsabile dall'interno
 - Quando il cliente sta ripensando il proprio modello di business in risposta a transizioni sistemiche (energia, supply chain, demografia)
 
-**Pitch I5.0 per il Trainstorming!:**
+**Pitch I5.0 per il Trainstorming Sprint!:**
 > *"I progetti finiscono. Le transizioni no. Vi accompagniamo attraverso le vostre — AI, regolazione, organizzazione — con un metodo che usiamo ogni mese su noi stessi: tre sessioni nell'anno, output concreti a ogni tappa, nessuna slide da dimenticare in un cassetto."*
 
 
@@ -482,7 +492,7 @@ Questo file fa parte del Domino Brain. Per approfondire:
 
 - [01_domino_identita.md](01_domino_identita.md) — storia, valori, team, B Corp, premi, tensioni da gestire
 - [02_domino_servizi.md](02_domino_servizi.md) — tassonomia dei servizi e capabilities
-- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!** e i tre **Starter Kit** Sales / Internal Comms / CX), Build Sprint!, Trainstorming!, Preventivo Emozionale *(pricing e regole — fonte unica)*
+- [03_domino_metodi.md](03_domino_metodi.md) — Catalogo 2026: Core Sprint!, Design Sprint! (+ variante di punta **Brain & Identity Design Sprint!** e i tre **Starter Kit** Sales / Internal Comms / CX), Build Sprint!, Trainstorming Sprint!, Preventivo Emozionale *(pricing e regole — fonte unica)*
 - [starter_kit_brain_identity.md](starter_kit_brain_identity.md) — schede dei tre Starter Kit (specializzazioni tattiche del Brain & Identity Design Sprint!)
 - [04_domino_case_history.md](04_domino_case_history.md) — case per cliente con KPI e categoria
 - [05_domino_settori.md](05_domino_settori.md) — mappa settori, sub-segmenti, messaggi chiave

@@ -134,7 +134,7 @@ Tre famiglie, con un prefisso che dice subito a quale appartiene una skill.
 
 | Famiglia | Prefisso | Contiene |
 |----------|----------|----------|
-| **Metodo** | `domino-metodo-*` | I metodi Domino resi eseguibili: Core Sprint!, Design Sprint!, Build Sprint!, Trainstorming! |
+| **Metodo** | `domino-metodo-*` | I metodi Domino resi eseguibili: Core Sprint!, Design Sprint!, Build Sprint!, Trainstorming Sprint! |
 | **Funzione** | `domino-funzione-*` | I mestieri trasversali: gare pubbliche, RFQ e gare private, offerte, report analytics |
 | **Cliente** | `cliente-*` | Un cliente per skill: come funziona l'azienda, chi decide, i vincoli, il design system |
 
