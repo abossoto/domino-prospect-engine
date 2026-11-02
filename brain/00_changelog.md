@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-11-02
+- Health check: generale + 7 clienti; 108 punti aperti (generale 37, clienti 62, CIA sospeso con 9 punti fermi).
+
 ## 2026-10-30
 - Nuova regola nel CLAUDE.md §2, «Messaggi ai colleghi» (Emiliano Cianci): mail e messaggi Teams di Claude ai colleghi dicono che sono automatici e sono firmati «Domino.Brain»; «per conto di <nome>» solo se il mittente visibile non è la persona per cui Claude scrive. Andrea Bosso avvisato su Teams. Release non cambiata.
 - Nuova proposta a prospect: FPT Listino Digitale (gara privata Iveco Group «Digitalization Commercial Catalogue»), in `Proposte a prospect/FPT Listino Digitale/`, referente Emiliano Cianci. Aggiunta alla tabella prospect del CLAUDE.md §6.
