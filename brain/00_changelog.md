@@ -2,6 +2,7 @@
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
 ## 2026-11-02
+- Nuovo Brain cliente: CNH Industrial (Direttore Clienti Andrea Bosso, Account Manager e PM Giulia Palazzo; brand Case IH e STEYR; cliente storico, nessuna proposta Awarded da registrare). Creato con `domino-crea-cliente` a partire dal Brain di Giulia Palazzo, aggiornato con i siti Case IH di UK, Italia, Germania e Francia. Referente Jana Wolf creata in HubSpot. Aggiunto ad Andrea Bosso tra i Direttori Clienti (CLAUDE.md §2) e alla tabella clienti (§6). La proposta CNH Capital EMEA SEO/GEO 2027 è passata da `Proposte a prospect/` a `Clienti/CNH Industrial/Proposte/` (regola «Gruppi già clienti»). Release non cambiata.
 - Health check: generale + 7 clienti; 108 punti aperti (generale 37, clienti 62, CIA sospeso con 9 punti fermi).
 
 ## 2026-10-30
