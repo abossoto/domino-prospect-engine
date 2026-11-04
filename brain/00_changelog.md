@@ -3,6 +3,10 @@
 
 ## 2026-11-04
 - Nuovo Brain cliente: LNP (Lega Nazionale Pallacanestro, contraente LNP Servizi Srl; Direttore Clienti Emiliano Cianci, Account Manager Paolo Zampicinini; cliente storico, nessuna proposta Awarded da registrare; contratto OFF_103_26 accettato il 07/07/2026, ordine arrivato). Settore «Sport», fuori dai cinque target. HubSpot: azienda e Julio Trovato portati a customer. Aggiunto a Emiliano Cianci tra i Direttori Clienti (CLAUDE.md §2) e alla tabella clienti (§6). Release non cambiata.
+- LNP: OFF_103_26 descritto in tre parti (hosting e manutenzione, piccole manutenzioni AMS, restyling mobile-first); il restyling è un progetto a sé che parte con un Design Sprint! (decisione di Emiliano Cianci, 4/11/2026). Aggiornati il CLAUDE.md del cliente, 00_cliente, 05_skill e la riga del §6.
+- Nuovo progetto: LNP · 2026_Website Design Sprint! (Loop Owner Paolo Zampicinini), restyling mobile-first con avvio in Design Sprint!, date da fissare.
+- Nuovo progetto: LNP · 2026_Hosting e manutenzione (Loop Owner Paolo Zampicinini), creato a posteriori, 07/2026–06/2029.
+- Nuovo progetto: LNP · 2026_Piccole manutenzioni AMS (Loop Owner Paolo Zampicinini), creato a posteriori, 200 ore all'anno, 07/2026–06/2029.
 
 ## 2026-11-02
 
