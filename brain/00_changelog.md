@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-11-04
+- Nuovo Brain cliente: LNP (Lega Nazionale Pallacanestro, contraente LNP Servizi Srl; Direttore Clienti Emiliano Cianci, Account Manager Paolo Zampicinini; cliente storico, nessuna proposta Awarded da registrare; contratto OFF_103_26 accettato il 07/07/2026, ordine arrivato). Settore «Sport», fuori dai cinque target. HubSpot: azienda e Julio Trovato portati a customer. Aggiunto a Emiliano Cianci tra i Direttori Clienti (CLAUDE.md §2) e alla tabella clienti (§6). Release non cambiata.
+
 ## 2026-11-02
 
 - Skill `domino-brain-init`: nuovo passo 5, dopo file system e connettori la persona crea un progetto privato e aggancia la cartella al progetto in modo permanente (non alla skill né alla singola conversazione); sette passi, rapporto con la voce «progetto privato».
