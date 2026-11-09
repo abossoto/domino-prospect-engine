@@ -3,6 +3,8 @@
 
 ## 2026-11-09
 - Health check: generale + 10 clienti (CIA sospeso, 9 punti fermi); 123 punti aperti (generale 30, clienti 84, CIA 9) e 5 segnalazioni aperte. Release non cambiata.
+- Risposte di Emiliano Cianci all'health check. FPT Listino Digitale è un prospect a sé, non sotto IVECO: resta in `Proposte a prospect/`; precisazione nella regola «Gruppi già clienti» (§3), nel CLAUDE.md e in `00_cliente.md` di IVECO e nella riga prospect (§6); la mail RFQ 2538 passa dalla proposta Workshop Assistant a `Proposte a prospect/FPT Listino Digitale/01_brief/materiali_cliente/`. IVECO Workshop Assistant Contenuti: CV e SOW consegnati, colloquio con Xavier Lucas e Andrea Russotto il 5/11, feedback il 9/11; ok di Lucas al pacchetto da 25.000 € (circa 5.000 € erogati, il resto tra fine 2026 e 2027), 137_26 Awarded; numero dell'offerta body rental chiesto a Flavio Pedazzini. IVECO Phoenix: POT14440 (67/26) da chiudere; ordine del nuovo POC non prima di dicembre, check con Flavio Pedazzini a fine novembre. Release non cambiata.
+- Nuovo progetto: IVECO · 2026_Workshop Assistant Supporto (Loop Owner Gianluca Pelissetti, team Giulia Schiazzano), dal pacchetto 137_26 Awarded il 9/11/2026; ordini attesi nel 2027, fine prevista 31/12/2027. Proposta e job description copiate in `01_proposta/`; la proposta resta in `Proposte/` per il body rental.
 
 ## 2026-11-06
 - Nuova regola nel CLAUDE.md §2, «Lavoro a più mani» (Emiliano Cianci): rileggere prima di scrivere, aggiungere invece di riscrivere, una persona alla volta sulla scheda, controllare dopo aver scritto. Nata dalla proposta IVECO Storybook Multibrand, dove Emiliano e Fabrizio Porro hanno scritto sulla stessa scheda a due minuti di distanza. Release non cambiata.
