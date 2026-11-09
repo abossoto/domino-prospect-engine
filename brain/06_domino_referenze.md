@@ -30,7 +30,7 @@
 | 2024 | **IKA Award** — Best Website *(come premio distinto da Automotive and Energy: DATI NON TROVATI; Media Key riporta un solo premio IVECO nel 2024)* | **iveco.com** |
 | 2023 | **Interactive Key Award** — Best Integrated Communication Campaign B2B | **ROLLON** |
 | 2019 | **Interactive Key Award** — Best Use of Digital Media | **IVECO** |
-| 2019 | **FEIEIA Grand Prix Award** — Migliore Intranet d'Europa | **FCA** (ora Stellantis) |
+| 2019 | **FEIEA Grand Prix** — Migliore Intranet d'Europa | **FCA** (ora Stellantis) |
 | 2015 | **Interactive Key Award** — Trasporti ed energia | **JEEP** |
 | 2012 | **Interactive Key Award** — Trasporti ed energia | **FIAT** (fiat.it — sito lanciato nel 2010 in 21 paesi EMEA) |
 | 2012 | **NC Digital Award** — Best Corporate Website | **FIAT** |
@@ -190,7 +190,7 @@ Sul rapporto con Domino:
 Sulla parola scelta:
 > "La cosa più importante è avere il coraggio di provare, e a provarci… la curiosità porta a individuare nuovi ambiti di azione, nuove idee da proporre. E avere coraggio a riprovarci è un po' lo spirito che ci ha sempre accompagnato."
 
-**Uso:** prospect grandi gruppi industriali/multinazionali su internal comm, engagement, intranet. Il "non ricordo quanti progetti" = prova di relazione continuativa. Abbinare a Stellantis Employee Portal (FEIEIA Best Intranet Europa, 88.000 dip.).
+**Uso:** prospect grandi gruppi industriali/multinazionali su internal comm, engagement, intranet. Il "non ricordo quanti progetti" = prova di relazione continuativa. Abbinare a Stellantis Employee Portal (FEIEA Grand Prix 2019 – Best European Intranet, 88.000 dip.).
 
 ---
 
@@ -393,7 +393,7 @@ Nomi: Cristina, Orsola, Ilaria, Andrea, Daniele, Pietro, Elisa, Alessandro (×2)
 > "Il Communication Manager di Bitron ci definisce 'una delle migliori web agency B2B del panorama italiano'. Rollon ci ha affidato il sito in 16 mercati. Risultati: +48% di traffico organico negli Stati Uniti e 'linear rails' prima keyword organica dopo il brand. Interactive Key Award 2023, Best Integrated Communication Campaign B2B."
 
 **Per prospect interessato a intranet / comunicazione interna:**
-> "L'intranet che abbiamo costruito per FCA ha vinto il FEIEIA Grand Prix come Migliore Intranet d'Europa — 88.000 dipendenti connessi in un unico portale."
+> "L'intranet che abbiamo costruito per FCA ha vinto il FEIEA Grand Prix come Migliore Intranet d'Europa — 88.000 dipendenti connessi in un unico portale."
 
 **Per prospect interessato a AI / innovazione digitale:**
 > "Richmond Italia ci ha scelto per 'rivedere tutta la strategia e i processi di un portale introducendo IA'. Con Case IH abbiamo vinto l'Interactive Key Award 2024, Innovation Technology Award, per l'uso dell'AI nella lead generation."
@@ -431,11 +431,11 @@ Nomi: Cristina, Orsola, Ilaria, Andrea, Daniele, Pietro, Elisa, Alessandro (×2)
 | **Automotive** | IKA 2024 IVECO + IKA 2024 Case IH + IKA 2025 IVECO Design System | BABYLON Kévin (IVECO France) |
 | **B2B industriale** | IKA 2023 ROLLON, +48% organico US | Alessandra Manzato (Bitron) |
 | **Agricultural / macchine** | IKA 2024 Case IH, 18 mercati | Marie Mouton (CNH Industrial) + Grace Cleary (CNH) |
-| **Intranet / Internal Comm** | FEIEIA Best Intranet Europa, 88.000 dip. | **Fulvia (Stellantis)** — *"non ricordo quanti progetti insieme"* |
+| **Intranet / Internal Comm** | FEIEA Grand Prix 2019 – Best European Intranet, 88.000 dip. | **Fulvia (Stellantis)** — *"non ricordo quanti progetti insieme"* |
 | **SEO / Lead generation** | Demak +48% organico, +54% lead | Alessandra Manzato (Bitron) |
 | **AI / Digital transformation** | IKA 2024 AI Case IH | Claudio Honegger (Richmond) |
 | **AI responsabile / I5.0 / ESG** | Stellantis EP (88k dip.) + IVECO configuratore AI prodotto/allestimento | Andrea Pallard (Stellantis) |
-| **Transizioni organizzative** | Stellantis Employee Portal (FEIEIA), IPI Onboarding | Alessandro Bonichi (IPI — dal 2006) |
+| **Transizioni organizzative** | Stellantis Employee Portal (FEIEA), IPI Onboarding | Alessandro Bonichi (IPI — dal 2006) |
 | **Real estate / servizi** | IPI (sito + intranet + digital education) | Monica Sarri (IPI) + Alessandro Bonichi (IPI) |
 | **Non-profit / fondazioni / PA** | Links Foundation intranet, Action Aid IKA 2008 | Lucia Caretti (2 fondazioni benefiche) |
 | **Turismo / Cultura / DMO** | ENIT 34 paesi, Masi +175%, VisitPiemonte | Luisa Piazza (VisitPiemonte) + Maria Elena Rossi (ENIT) |

@@ -254,7 +254,7 @@ Brief → Analisi dei need → Strategia → Concept creativo → Produzione con
 - Piani di training strutturati (per manager + tutti i dipendenti)
 - Chatbot AI istruiti via PDF e siti web (risponde via chat, audio e video)
 
-**[Case history collegati](04_domino_case_history.md):** Stellantis Employee Portal (88.000 dipendenti, FEIEIA Award), Stellantis D&I People Stories, Stellantis Electrification Days, IPI Onboarding
+**[Case history collegati](04_domino_case_history.md):** Stellantis Employee Portal (88.000 dipendenti, FEIEA Grand Prix), Stellantis D&I People Stories, Stellantis Electrification Days, IPI Onboarding
 
 ---
 

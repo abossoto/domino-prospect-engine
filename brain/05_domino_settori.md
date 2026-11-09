@@ -33,7 +33,7 @@
 - Video training AI personalizzati per team commerciali
 - Community digitali (Jeep)
 
-**[Case da citare](04_domino_case_history.md):** IVECO.com (IKA 2024), Case IH (18 mercati), Stellantis Employee Portal (FEIEIA Award), Fiat Professional E-Product App, IVECO TCO Calculator, IVECO eDailyAdvisor, Jeep Community
+**[Case da citare](04_domino_case_history.md):** IVECO.com (IKA 2024), Case IH (18 mercati), Stellantis Employee Portal (FEIEA Grand Prix), Fiat Professional E-Product App, IVECO TCO Calculator, IVECO eDailyAdvisor, Jeep Community
 
 ---
 
@@ -187,7 +187,7 @@ La transizione più difficile non è mai quella tecnologica: è quella umana. Ad
 - **Trainstorming Sprint! I5.0**: programma strutturato per far funzionare l'adozione dell'AI in azienda — non un corso, non una campagna, ma un percorso di transizione con output concreti a ogni sessione. Ideale per aziende che devono introdurre responsabilmente l'AI tra le proprie persone.
 
 **KPI documentati:**
-- Stellantis Employee Portal: 88.000 dipendenti, FEIEIA Award Best European Intranet
+- Stellantis Employee Portal: 88.000 dipendenti, FEIEA Grand Prix 2019 – Best European Intranet
 - Stellantis D&I People Stories: tra i più visti in intranet, rilanciate dal COO
 - Stellantis Electrification Days: prime manifestazioni sold-out in poche ore
 
@@ -195,6 +195,36 @@ La transizione più difficile non è mai quella tecnologica: è quella umana. Ad
 
 
 ---
+
+## CLIENTI ATTIVI 2025-2026 E REFERENZE
+
+Elenco indicato da Giovanni Borgna il 4/11/2026 per la presentazione istituzionale e adottato da Andrea Bosso il 9/11/2026. Vale per presentazioni, proposte e materiali istituzionali: **cliente attivo** = ha lavorato con Domino nel biennio 2025-2026; **referenza** = progetti realizzati negli anni. Dove l'elenco per settore qui sopra non coincide, vince questa sezione. Il Brain cliente in `Clienti/` c'è solo per una parte dei clienti attivi (tabella nel `CLAUDE.md` §6).
+
+**Principali clienti attivi 2025-2026**
+
+| Settore | Clienti attivi |
+|---|---|
+| Automotive | Stellantis, IVECO, CNH Industrial, Case IH, Maserati |
+| B2B industriale | Comau, Bitron, Rollon, Frascold, Demak |
+| Salute e beauty | Ospedale dell'Angelo, Affidea |
+| Turismo e cultura | Abbonamento Musei, La Biennale di Venezia, Costa Crociere, Fondazione Torino Musei, Museo Nazionale del Cinema |
+| Finance e PA | Comune di Padova, Regione del Veneto |
+| Altri settori e brand | Universal Music, Lega Nazionale Pallacanestro, Masi Agricola |
+
+Primi clienti 2025 per ricavi (relazione sulla gestione 2025): CNH Industrial, IVECO, Stellantis. I primi 20 clienti valgono il 92% dei ricavi 2025; clienti totali circa 90.
+
+**Referenze**
+
+| Settore | Referenze |
+|---|---|
+| Automotive | New Holland, Fiat Professional, Jeep |
+| B2B industriale | Texa, Danieli, Volvo Penta, SKF |
+| Salute e beauty | Humanitas, CDI, Lierac, Phyto, Solgar |
+| Turismo e cultura | ENIT, Alpitour |
+| Finance e PA | Arca SGR, Bancomat, Exor, Compagnia di San Paolo |
+| Altri settori e brand | Sony, Martini & Rossi, Seat Pagine Gialle, Juventus FC, Coca-Cola, Nike |
+
+Note: Masi Agricola va in «Altri settori e brand», non in Turismo e cultura; Texa è una referenza, non un cliente attivo. Sony, Coca-Cola e Nike non hanno altre tracce nel Brain: citabilità da verificare prima dell'uso esterno.
 
 ## Collegamenti al Brain
 

@@ -98,16 +98,18 @@ Il cambio di paradigma in quattro dimensioni operative. Va portato esplicitament
 
 | Nome | Ruolo |
 |------|-------|
-| **Andrea Bosso** | Presidente del CdA, co-founder e Strategy and Consulting Director |
-| **Emiliano Cianci** | Product Director (co-founder) |
-| **Giovanni Borgna** | Administration and Finance Director (co-founder) |
+| **Andrea Bosso** | Presidente del CdA, co-founder e Strategy & Marketing Director |
+| **Emiliano Cianci** | Amministratore Delegato, co-founder e Operation Director |
+| **Giovanni Borgna** | Amministratore Delegato, co-founder e Administration and Finance Director |
+
+Tutti e tre i soci sono anche Direttori Clienti (Client Director). Ruoli indicati da Giovanni Borgna il 4/11/2026 e confermati da Andrea Bosso il 9/11/2026; «Product Director» per Emiliano Cianci non si usa più.
 
 **Uso delle qualifiche di Andrea Bosso nei materiali esterni.** Andrea ricopre due ruoli formalmente distinti. La qualifica da usare dipende dal tipo di comunicazione:
 
 - **Presidente** *(forma estesa: Presidente del CdA Domino)* → comunicati stampa, comunicazioni istituzionali, materiali formali rivolti a media, istituzioni, stakeholder pubblici.
-- **Strategy and Consulting Director** → comunicazioni operative verso clienti e prospect: proposte commerciali, email di follow-up, pitch, materiali di progetto.
+- **Strategy & Marketing Director** → comunicazioni operative verso clienti e prospect: proposte commerciali, email di follow-up, pitch, materiali di progetto.
 
-Negli organigrammi interni e nei materiali di posizionamento (Brain, profili LinkedIn, presentazioni istituzionali) la forma completa è *Presidente del CdA, co-founder e Strategy and Consulting Director*.
+Negli organigrammi interni e nei materiali di posizionamento (Brain, profili LinkedIn, presentazioni istituzionali) la forma completa è *Presidente del CdA, co-founder e Strategy & Marketing Director*.
 
 ---
 
@@ -299,7 +301,7 @@ Domino ha ottenuto la certificazione B Corp nel 2025. Non è un badge etico: è 
 **La risposta corretta non è difendersi, è riposizionare:**
 - "Siamo 50 persone che hanno gestito rollout in 100 paesi, connesso 88.000 dipendenti Stellantis, vinto IKA contro agenzie 10 volte più grandi. La dimensione non è la capacità."
 - Frame alternativo: **orchestratore, non esecutore monolitico**. "Portiamo i migliori specialisti quando serve — non facciamo finta di avere tutto internamente come le grandi consulenze, ma coordiniamo ecosistemi di partner selezionati."
-- Proof points da citare: IVECO.com (IKA award), ENIT 34 paesi su dashboard Looker unica, Stellantis Employee Portal (FEIEIA Best Intranet Europa, 88.000 dipendenti)
+- Proof points da citare: IVECO.com (IKA award), ENIT 34 paesi su dashboard Looker unica, Stellantis Employee Portal (FEIEA Grand Prix 2019 – Best European Intranet, 88.000 dipendenti)
 
 **Quando è un vantaggio da vendere:**
 Prospect che hanno bruciato budget con grandi consulenze — persa nei processi interni, senior partner in vendita e junior in delivery. "Con noi i senior sono sul progetto, non in sala meeting."

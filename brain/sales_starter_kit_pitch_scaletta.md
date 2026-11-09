@@ -47,7 +47,7 @@
 
 **Contenuto**:
 - 30 anni, sedi Torino e Venezia, circa 50 persone, B Corp certificata.
-- Tre logo riconoscibili nel B2B industriale: **Iveco**, **Stellantis**, **Poltrona Frau**. Un dato concreto: Stellantis Employee Portal serve 88.000 dipendenti, premio FEIEIA.
+- Tre logo riconoscibili nel B2B industriale: **Iveco**, **Stellantis**, **Poltrona Frau**. Un dato concreto: Stellantis Employee Portal serve 88.000 dipendenti, FEIEA Grand Prix.
 - Una frase di posizionamento: *"Da 30 anni costruiamo prodotti digitali per aziende che vendono cose complesse a clienti complessi."*
 
 **Da dire**: 60 secondi massimi. Nessuna timeline storica, nessun manifesto. Si dichiara, si passa oltre.

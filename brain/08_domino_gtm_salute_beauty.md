@@ -209,7 +209,7 @@ In sanità e beauty la **fiducia è il valore principale** — non si scala con 
 
 **[Proof point](04_domino_case_history.md):**
 - IPI — SFERA Intranet + piano di comunicazione per lancio (video AI, email, mini news formative)
-- Stellantis Employee Portal — premio FEIEIA
+- Stellantis Employee Portal — FEIEA Grand Prix
 - Links Foundation — Design Sprint! + Agile per nuova intranet
 
 **Vs competitor:**

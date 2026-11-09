@@ -190,13 +190,13 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 - Piano di engagement e adozione per il lancio
 
 **Come entrare / espandere:**
-- Case Stellantis Employee Portal (primo incontro) → 88.000 dipendenti, FEIEIA Award Best European Intranet. Nato come FCA, esteso a CNH Industrial e Iveco Group
+- Case Stellantis Employee Portal (primo incontro) → 88.000 dipendenti, FEIEA Grand Prix 2019 – Best European Intranet. Nato come FCA, esteso a CNH Industrial e Iveco Group
 - Core Sprint! (€6.000) → allinea HR, IT, comunicazione e business su ipotesi core del portale
 - Design Sprint! (€10.000) → prototipo in 4 giorni, da testare poi con dipendenti reali di profili diversi
 - **Trainstorming Sprint!** (da €15.000, 12 mesi · 3 sessioni) → quando la trigger è una **fusione/acquisizione** o una transizione strategica (elettrico, sostenibilità, D&I): un portale lanciato non basta. Il Trainstorming Sprint! è l'accompagnamento al cambiamento culturale, finché la nuova cultura aziendale smette di dover essere difesa. *I progetti finiscono. Le transizioni no.*
 
 **[Proof point](04_domino_case_history.md):**
-- Stellantis Employee Portal — 88.000 dipendenti, FEIEIA Award Best European Intranet, esteso a CNH Industrial e Iveco Group
+- Stellantis Employee Portal — 88.000 dipendenti, FEIEA Grand Prix 2019 – Best European Intranet, esteso a CNH Industrial e Iveco Group
 - Stellantis Electrification Days — evento globale sold-out in poche ore
 - Stellantis D&I People Stories — video più visti sull'intranet, rilanciate dal COO
 

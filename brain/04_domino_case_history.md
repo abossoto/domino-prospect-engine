@@ -56,7 +56,7 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 ### Stellantis — Employee Portal (ex-FCA)
 **Progetto:** Migrazione da intranet multiple a un unico Employee Portal globale.
 **Approccio:** Assessment processi esistenti, survey su audience specifiche, employee journey mapping.
-**Risultato:** Rete che connette **88.000 dipendenti nel mondo**. Premio **FEIEIA Award – Best European Intranet**. Esteso successivamente a CNH Industrial e Iveco Group.
+**Risultato:** Rete che connette **88.000 dipendenti nel mondo**. Premio **FEIEA Grand Prix 2019 – Best European Intranet**. Esteso successivamente a CNH Industrial e Iveco Group.
 **Lettura I5.0:** Case emblematico di "transition program" — non un sito, ma l'infrastruttura di una transizione organizzativa globale. Domino non ha consegnato un deliverable: ha accompagnato una transizione. Il valore non era nell'output, ma nella continuità della relazione.
 
 ### Stellantis — Electrification Days
