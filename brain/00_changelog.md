@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-11-09
+- Health check: generale + 10 clienti (CIA sospeso, 9 punti fermi); 123 punti aperti (generale 30, clienti 84, CIA 9) e 5 segnalazioni aperte. Release non cambiata.
+
 ## 2026-11-06
 - Nuova regola nel CLAUDE.md §2, «Lavoro a più mani» (Emiliano Cianci): rileggere prima di scrivere, aggiungere invece di riscrivere, una persona alla volta sulla scheda, controllare dopo aver scritto. Nata dalla proposta IVECO Storybook Multibrand, dove Emiliano e Fabrizio Porro hanno scritto sulla stessa scheda a due minuti di distanza. Release non cambiata.
 
