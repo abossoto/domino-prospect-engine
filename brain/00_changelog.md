@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-11-11
+- LNP · Website Design Sprint!: riunione con LNP dell'11/11, metodo approvato (due giornate in presenza, condivisione intermedia e restituzione online), si parte con la roadmap (Sprint! a gennaio 2027, go-live entro luglio 2027); invitati, data e luogo da fissare a dicembre; CMS fuori dal restyling. Scheda progetto aggiornata, deck in `02_preparazione/`.
+
 ## 2026-11-10
 - Casappa: mail di aggiornamento a Paita e Castellani del 10/11 con budget indicativo di hosting di €1.500/anno; offerta formale solo se interessati. Aggiornati scheda proposta e file mail.
 
