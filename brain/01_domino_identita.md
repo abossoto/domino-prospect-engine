@@ -1,5 +1,7 @@
 # DOMINO BRAIN — Identità
-> Versione 3.5 — Ottobre 2026. Fonti: sito domino.it (IT+EN), presentazioni ufficiali, Sortlist, Digital Communication Forum 2025, Trainstorming! "Le transizioni, I5.0 by Design" (aprile 2026).
+> Versione 3.6 — Novembre 2026. Fonti: sito domino.it (IT+EN), presentazioni ufficiali, Sortlist, Digital Communication Forum 2025, Trainstorming! "Le transizioni, I5.0 by Design" (aprile 2026).
+>
+> **Changelog — 10 novembre 2026.** Aggiunti ragione sociale completa e sede legale (Via Sebastiano Valfré, 4 — 10121 Torino), indicata da Andrea Bosso; P. IVA confermata dal footer di domino.it.
 >
 > **Changelog — 10 ottobre 2026 (health check).** sostituita un'espressione vietata (§ posizionamento) e un'auto-definizione implicita come agenzia (ora «I partner che…»); dato B Corp Italia aggiornato (345 a maggio 2025); link a `02_domino_servizi.md` corretto.
 >
@@ -20,7 +22,9 @@
 - **2 sedi**: Torino (Via Agostino da Montefeltro, 2 — 10134) e Venezia (Calle Giovanni Legrenzi, 35 — 30171)
 - **Società Benefit certificata B Corp** (certificazione ottenuta nel 2025)
 - **Oltre 30 riconoscimenti internazionali**
-- Partita IVA: 07098990018
+- Ragione sociale: Domino S.r.l. Società Benefit (nel footer di domino.it: «Domino Srl Società Benefit»)
+- Sede legale: Via Sebastiano Valfré, 4 — 10121 Torino (TO)
+- Partita IVA: 07098990018 (codice fiscale: DATI NON TROVATI)
 
 **Contatti:**
 - Torino: +39 011 544770
