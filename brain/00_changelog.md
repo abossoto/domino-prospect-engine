@@ -3,6 +3,7 @@
 
 ## 2026-11-16
 - Health check: generale + 10 clienti; 139 punti aperti (generale 37, clienti 102); 4 segnalazioni aperte. Rapporti in `_health_check/` e `_health_check/clienti/`. Segnalato che CLAUDE.md e changelog sono tornati il 13/11 alla versione del 5/11 (punto 0.26).
+- Ripristinate le voci LNP perse con la sovrascrittura del 13/11 (punto 0.26 dell'health check): Emiliano Cianci tra i Direttori Clienti con LNP (§2), riga LNP nella tabella Clienti (§6), voci di changelog del 4/11 e dell'11/11 ricostruite dal Brain cliente e dalle schede progetto. Restano da recuperare le altre voci perse (§1 ruoli, §2 «Quale modello di Claude», riga B Corp Comunicazione, changelog del 6 e 9/11) dalla cronologia versioni di OneDrive.
 
 ## 2026-11-13
 - Poltrona Frau In Motion (Emiliano Cianci): nuova proposta `Clienti/Poltrona Frau In Motion/Proposte/Attività 2027/` dal prospetto del 24/09/2026 (11 voci, €132.500 + fee ADV) e dalla mail di Elena Lorenzon del 12/11 (Tier 1 per €68.000, richiesta di condizioni migliorative). Offerta formale e trattativa vTiger dopo l'ok del cliente al budget 2027. Aggiornati CLAUDE.md del cliente, `00_brain/00_cliente.md`, scheda del Trainstorming! (ghostwriting di Maiolo non coperto) e riga del §6. Release non cambiata.
@@ -12,11 +13,21 @@
 - Casappa: risposta di Paita del 12/11 (budget 2027: sito del 75° e parte strategica; resto nel 2028; attesa feedback sui costi e decisione sull'hosting). Ricontatto spostato al 15/12. Parte strategica 2027 = Core Sprint! + Design Sprint!, Build Sprint! nel 2028 (circa €28.000 più eventuale hosting). Aggiornati scheda proposta e file mail.
 - Casappa: mail di aggiornamento a Paita e Castellani del 10/11 con budget indicativo di hosting di €1.500/anno; offerta formale solo se interessati; senza risposta, ricontatto nella prima settimana di dicembre. Aggiornati scheda proposta e file mail (riscritti il 12/11: l'aggiornamento del 10/11 non risultava salvato).
 
+## 2026-11-11
+- LNP · Website Design Sprint!: riunione con LNP dell'11/11, metodo approvato (due giornate in presenza, condivisione intermedia e restituzione online), si parte con la roadmap (Sprint! a gennaio 2027, go-live entro luglio 2027); invitati, data e luogo da fissare a dicembre; CMS fuori dal restyling. Scheda progetto aggiornata, deck in `02_preparazione/`.
+
 ## 2026-11-05
 
 - Skill: `domino-health-check` aggiornata (sezione S Segnalazioni, tabella «Chi risponde», sezione Domande per persona, mail ai Loop Owner dei progetti Domino, regola «Messaggi ai colleghi»; soglia 14 giorni per le segnalazioni; nessun limite al numero di domande) e nuova skill `domino-segnalazione` (crea il file in `_segnalazioni/` con domande mirate e instradamento). SKILL.md e zip in `_skills/`, versione precedente in `_superate/`; da caricare in Claude Team (Andrea Bosso). Aggiornati il CLAUDE.md §4 (riga `domino-segnalazione`, riga `domino-health-check`) e `_segnalazioni/00_leggimi.md`. Release non cambiata.
 - Health check: generale + 9 clienti; 27 punti aperti nel generale e 63 nei clienti (rapporti in `_health_check/` e `_health_check/clienti/`, mail non inviate); `_segnalazioni/` senza segnalazioni aperte.
 - ED&F Man Sugar Plus: proposta presentata da Andrea Bosso il 5/11/2026 (deck a 13 slide, due versioni: Completa €11.306, Smart €4.564, IVA esclusa); in riunione Alice Bizzarri ha ringraziato e detto che decideranno a marzo 2027. Stand by dal 5/11/2026 (decisione di Andrea Bosso), ripresa a marzo 2027, Flavio Pedazzini può risentire la cliente nel frattempo. Aggiornati `00_scheda_proposta.md` (stato, investimento, decisioni, punti aperti), `03_consegna/scheda_passaggio_offerta.md` e riga ED&F Man nel §6 del CLAUDE.md. Release non cambiata.
+
+## 2026-11-04
+- Nuovo Brain cliente: LNP (Lega Nazionale Pallacanestro, contraente LNP Servizi Srl; Direttore Clienti Emiliano Cianci, Account Manager Paolo Zampicinini; cliente storico, nessuna proposta Awarded da registrare; contratto OFF_103_26 accettato il 07/07/2026, ordine arrivato). Settore «Sport», fuori dai cinque target. HubSpot: azienda e Julio Trovato portati a customer. Aggiunto a Emiliano Cianci tra i Direttori Clienti (CLAUDE.md §2) e alla tabella clienti (§6). Release non cambiata.
+- LNP: OFF_103_26 descritto in tre parti (hosting e manutenzione, piccole manutenzioni AMS, restyling mobile-first); il restyling è un progetto a sé che parte con un Design Sprint! (decisione di Emiliano Cianci, 4/11/2026).
+- Nuovo progetto: LNP · 2026_Website Design Sprint! (Loop Owner Paolo Zampicinini), restyling mobile-first con avvio in Design Sprint!.
+- Nuovo progetto: LNP · 2026_Hosting e manutenzione (Loop Owner Paolo Zampicinini), creato a posteriori, 07/2026–06/2029.
+- Nuovo progetto: LNP · 2026_Piccole manutenzioni AMS (Loop Owner Paolo Zampicinini), creato a posteriori, 200 ore all'anno, 07/2026–06/2029.
 
 ## 2026-11-03
 
