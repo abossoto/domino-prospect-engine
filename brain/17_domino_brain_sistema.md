@@ -7,7 +7,7 @@
 
 ## 0. Che cos'è il Domino Brain come sistema
 
-**Il Domino Brain è la conoscenza condivisa di Domino e, insieme, il suo sistema operativo aziendale.** Non è uno strumento, non è un progetto AI, non è un metodo da vendere: è il modo in cui l'azienda raccoglie quello che sa, decide cosa può fare da sola, produce, controlla quello che esce e impara dagli esiti.
+**Il Domino Brain è la conoscenza condivisa di Domino e, insieme, il suo sistema operativo aziendale.** è il modo in cui l'azienda raccoglie quello che sa, decide cosa può fare da sola, produce, controlla quello che esce e impara dagli esiti.
 
 La distinzione che regge tutto il documento:
 
@@ -142,7 +142,6 @@ I quattro esempi portati in presentazione:
 
 | Famiglia | Skill | Che cosa fa | La possiede |
 |----------|-------|-------------|-------------|
-| Metodo | `core-sprint-facilitazione` | Prepara e conduce un Core Sprint!: i sette deliverable, i due giorni con il cliente più i due di lavoro Domino, cosa fare quando gli stakeholder si bloccano | Brain Owner |
 | Funzione | `gare-pubbliche` | Il procedimento, non la normativa: legge il bando, estrae da lì requisiti e scadenze, struttura l'offerta sui criteri di aggiudicazione | Chi guida la funzione |
 | Funzione | `report-analytics` | Legge le campagne mercato per mercato e propone la riallocazione. Quello che funziona in Germania arriva in Spagna senza passare da una riunione | Loop Owner |
 | Cliente | `cliente-case-ih` | Due pagine: chi decide, il ciclo di approvazione, i vincoli multi-mercato, gli errori già fatti. Il design system allegato. Prodotti e referenti restano nel progetto | Account lead |
@@ -181,36 +180,7 @@ Differenza con il Brain Owner: i Brain Owner sono due e presidiano **cosa c'è s
 
 ---
 
-## 6. La prova: Digital Communication Forum Italia, Rimini, 20–22 settembre 2026
-
-Il loop ha già girato una volta per intero, senza che lo chiamassimo per nome. È il riferimento con cui si spiega il Domino Brain a chi non l'ha mai sentito nominare: non una promessa, una cosa successa.
-
-| # | Passaggio | Strato | Che cosa è successo |
-|---|-----------|--------|---------------------|
-| 01 | **Fonti** | Sensori | 43 delegati profilati, agenda, sessione E05. Più il Brain |
-| 02 | **Brief** | Strumenti | Sedici schede incontro nel design system. In due giorni |
-| 03 | **Incontro** | Sensori | Registrato dove possibile. La trascrizione è materia prima |
-| 04 | **Esito** | Apprendimento (1° grado) | Aldino, Compass, CNH: cosa è successo e cosa fare |
-| 05 | **Regole** | Apprendimento (2° grado) | Quattordici lezioni generalizzate dalle sedici schede |
-| 06 | **Recap** | Da chiudere | Mail di riepilogo e contatti in HubSpot. Oggi a mano |
-
-**Il loop gira già. Non si chiude:** le lezioni restano in un documento invece di diventare regole, e il passaggio a HubSpot è manuale. Sono i due buchi che il primo test commerciale deve chiudere.
-
-### 6.1 Che cosa produce — la scheda Casappa
-
-L'esempio concreto di output: **Scheda incontro · Casappa SpA**, nove pagine preparate per Emiliano prima di un appuntamento da quindici minuti, nel formato Document Layer. Sedici schede come questa, una per ogni appuntamento dei due giorni.
-
-Come è fatta:
-
-- **La conoscenza viene dal Brain.** Il GTM B2B e i case dello stesso mondo — CNH, Rollon, Comau, Danieli. Nessuno li ha riscritti a mano.
-- **I dati vengono dalle fonti.** Il file di selezione Richmond: delegato numero 8, budget dichiarato, cosa ha scritto nel form.
-- **Il giudizio resta umano.** L'obiettivo dell'incontro lo decide chi ci va: quindici minuti per ottenere un secondo appuntamento a Collecchio.
-
-Le sedici schede sono nel progetto Claude *Domino Brain* con prefisso `dcf2026_scheda_*`; il quadro d'insieme dei due giorni è in `18_dcf_rimini_2026.md` (stesso progetto).
-
----
-
-## 7. Dove le persone contano ancora
+## 6.  Dove le persone contano ancora
 
 Non è una clausola di cortesia: è il perimetro che tiene il sistema dentro il rischio accettabile. Sette ambiti in cui la decisione resta umana per intero.
 
@@ -226,28 +196,7 @@ Non è una clausola di cortesia: è il perimetro che tiene il sistema dentro il 
 
 ---
 
-## 8. Il prossimo passo: tre test, in quest'ordine
 
-Non si annuncia un sistema. Si prova su lavoro vero.
-
-### 01 · Air Dolomiti · CX Design Sprint!
-
-Partito a settembre 2026. Scelto come primo test perché il ciclo si segue dall'inizio, il metodo è già codificato e la dimensione è governabile. Le quattro condizioni con cui si conduce:
-
-- Brain di progetto dal primo giorno
-- Tutto il lavoro dentro il progetto condiviso
-- Il controllo in uscita su ogni consegna
-- Due numeri a chiusura: **regole nuove entrate nel Brain** e **stima contro consuntivo**
-
-Cartella: `Clienti/Air Dolomiti/2026_CX Design Sprint!/` (Brain cliente in `Clienti/Air Dolomiti/00_brain/`), partendo da `00_scheda_progetto.md`.
-
-### 02 · Il seguito del Forum
-
-Aldino, Compass, TÜV Italia, Casappa, Engel & Völkers portate fino all'esito, con il Registro compilato. È il test del ciclo commerciale, e serve a chiudere i due buchi del §6: le lezioni che diventano regole e il passaggio a HubSpot.
-
-### 03 · Case IH
-
-Cinque lingue, cinque mercati, tre servizi: piano editoriale europeo, media e lead generation, gestione e manutenzione del sito europeo. È il test difficile e si affronta **quando i primi due hanno prodotto numeri**, non prima.
 
 ---
 
@@ -271,8 +220,6 @@ Cinque lingue, cinque mercati, tre servizi: piano editoriale europeo, media e le
 ---
 
 ## 11. Fonti e file collegati
-
-**Presentazione:** `Domino Brain · Visione_3 copy.pptx` — 12 slide, Deck Layer, versione finale del 25 settembre 2026.
 
 **Nel Brain:** `CLAUDE.md` (terminologia canonica e regole di produzione) · `03_domino_metodi.md` (metodi e prezzi, fonte unica) · `13_silos_framework.md` · `16_domino_deck_pptx.md` · `Clienti/Air Dolomiti/2026_CX Design Sprint!/`
 
