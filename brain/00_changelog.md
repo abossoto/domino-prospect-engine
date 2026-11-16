@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-11-16
+- Health check: generale + 10 clienti; 139 punti aperti (generale 37, clienti 102); 4 segnalazioni aperte. Rapporti in `_health_check/` e `_health_check/clienti/`. Segnalato che CLAUDE.md e changelog sono tornati il 13/11 alla versione del 5/11 (punto 0.26).
+
 ## 2026-11-13
 - Poltrona Frau In Motion (Emiliano Cianci): nuova proposta `Clienti/Poltrona Frau In Motion/Proposte/Attività 2027/` dal prospetto del 24/09/2026 (11 voci, €132.500 + fee ADV) e dalla mail di Elena Lorenzon del 12/11 (Tier 1 per €68.000, richiesta di condizioni migliorative). Offerta formale e trattativa vTiger dopo l'ok del cliente al budget 2027. Aggiornati CLAUDE.md del cliente, `00_brain/00_cliente.md`, scheda del Trainstorming! (ghostwriting di Maiolo non coperto) e riga del §6. Release non cambiata.
 - IVECO Phoenix (Emiliano Cianci): Vincenzo Iannone chiede un'offerta da 15.000 € + IVA per POC e altri video, intestata a Iveco N.V. (rif. Remo Nadali). Impostazione: POC e template 3.500 €, pillole a consumo 11.500 € a 500 € l'una (circa 23); richiesta a Flavio Pedazzini. Aggiornata la scheda proposta.
