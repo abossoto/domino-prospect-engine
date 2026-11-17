@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-11-17
+- Nuovo Brain cliente: Bitron (Direttore Clienti Giovanni Borgna, Account Manager e PM Antonio Rossi; cliente storico dal 2012, controllo Awarded non applicabile). Contenuti preparati da Giovanni Borgna il 9/11 con domino-crea-cliente (segnalazione S.8), applicati da Emiliano Cianci: cartella `Clienti/Bitron/`, riga nel §6, Giovanni Borgna tra i Direttori Clienti nel §2, link vTiger aggiunto in `02_sistemi_e_link.md`, correzioni HubSpot su azienda e contatto Manzato. Release non cambiata.
+
 ## 2026-11-16
 - Health check: generale + 10 clienti; 139 punti aperti (generale 37, clienti 102); 4 segnalazioni aperte. Rapporti in `_health_check/` e `_health_check/clienti/`. Segnalato che CLAUDE.md e changelog sono tornati il 13/11 alla versione del 5/11 (punto 0.26).
 - Ripristinate le voci LNP perse con la sovrascrittura del 13/11 (punto 0.26 dell'health check): Emiliano Cianci tra i Direttori Clienti con LNP (§2), riga LNP nella tabella Clienti (§6), voci di changelog del 4/11 e dell'11/11 ricostruite dal Brain cliente e dalle schede progetto. Restano da recuperare le altre voci perse (§1 ruoli, §2 «Quale modello di Claude», riga B Corp Comunicazione, changelog del 6 e 9/11) dalla cronologia versioni di OneDrive.
