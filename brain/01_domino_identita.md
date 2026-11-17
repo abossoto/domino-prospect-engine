@@ -25,6 +25,7 @@
 - Ragione sociale: Domino S.r.l. Società Benefit (nel footer di domino.it: «Domino Srl Società Benefit»)
 - Sede legale: Via Sebastiano Valfré, 4 — 10121 Torino (TO)
 - Partita IVA: 07098990018 (codice fiscale: DATI NON TROVATI)
+- DUNS: 43-183-1879 (richiesto nelle anagrafiche fornitori e nelle gare dei grandi gruppi, per esempio Stellantis; segnalazione di Flavio Pedazzini, confermato da Andrea Bosso il 17/11/2026)
 
 **Contatti:**
 - Torino: +39 011 544770
