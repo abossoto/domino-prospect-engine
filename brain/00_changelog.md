@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-11-19
+- Stellantis, Brain cliente: Valentina Venza e Orsola Di Donato possono modificare `00_brain/` insieme a Marta Carletti e Nadia Ortale (Andrea Bosso). Riga aggiunta nel `CLAUDE.md` del cliente.
+
 ## 2026-11-17
 - Recupero della sovrascrittura del 13/11 (punti 0.26 e 0.27 dell'health check del 16/11), su indicazione di Andrea Bosso: dal CLAUDE.md del 9/11 recuperato dalla cronologia di OneDrive sono tornati la riga di release (Release 2026-11-09), i soci nel §1, la regola «Lavoro a più mani» nel §2 (Emiliano Cianci, 6/11), la riga `Claude outputs/` nella mappa del §3 (un mese e poi si cancella, Andrea Bosso, 9/11), la frase su IVECO S.p.A. e Iveco Group nella regola «Gruppi già clienti», la riga Domino30 dopo la serata e la riga B Corp Comunicazione nel §5, le righe FARID, IVECO, 4stars e FPT nel §6. Tenute le modifiche successive al 9/11 (Poltrona Frau In Motion, LNP, Bitron, ED&F Man, Clinica, §4). Le voci di changelog del 6 e del 9/11 non sono nella cronologia di OneDrive: ricostruite dalle fonti del Brain e marcate come tali.
 - Nessuna regola sul modello di Claude nel Brain: decide Claude o il default (Andrea Bosso). Aggiornata la nota di chiusura della segnalazione di Gianluca Pelissetti del 4/11.
