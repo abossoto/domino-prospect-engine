@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-11-23
+- Health check: generale + 11 clienti; 140 punti aperti (generale 32, clienti 108); 2 segnalazioni aperte. Rapporti in `_health_check/` e `_health_check/clienti/` (primo rapporto Bitron).
+
 ## 2026-11-19
 - Stellantis, Brain cliente: Valentina Venza e Orsola Di Donato possono modificare `00_brain/` insieme a Marta Carletti e Nadia Ortale (Andrea Bosso). Riga aggiunta nel `CLAUDE.md` del cliente.
 
