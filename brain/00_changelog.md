@@ -2,6 +2,7 @@
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
 ## 2026-11-23
+- IVECO Phoenix (Emiliano Cianci): registrata la 165_26, 20 video a 10.000 € intestati a Iveco Group N.V., richiesta da Vincenzo Iannone il 18/11 e inviata da Flavio Pedazzini il 20/11; totale Phoenix 25.000 € (POC 3.500, 164_26 11.500, 165_26 10.000). Numero 165_26 da verificare (compare anche per CNH Capital nella voce del 17/11): chiesto a Flavio Pedazzini. Aggiornati scheda proposta, CLAUDE.md del cliente, `00_cliente.md` e riga IVECO del §6.
 - Nuova cartella `Concorrenti/` (mappa del §3): `Concorrenti/Datapizza/` con i deck Dual OS e AI Adoption e la scheda `00_datapizza.md` (offerta, metodo, quotazione a canone annuo), da usare per rivedere l'offerta Brain & Identity Design Sprint!; collegata alla proposta Frascold «Brain Sprint» come prototipo (Emiliano Cianci).
 - Frascold: proposta «AI Sprint» rinominata «Brain Sprint» (cartella `Clienti/Frascold/Proposte/Brain Sprint/`); ideatore e redattore Emiliano Cianci, annotato nella scheda proposta e nel CLAUDE.md del cliente.
 - Frascold: nuova proposta «AI Sprint» (nome di lavoro; prodotto Brain & Identity Design Sprint!) in `Clienti/Frascold/Proposte/AI Sprint/`, aperta da Emiliano Cianci; CLAUDE.md del cliente, `00_cliente.md` e riga del §6 aggiornati.
