@@ -242,6 +242,17 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **SEO US:** +**48% traffico organico** USA. "Linear rails" = prima keyword organica US (preceduta solo dal brand "Rollon").
 **Visual:** `b2b_rollon_sito_01.png` (Pubblica).
 
+### Rollon — Design Sprint! Website e Build Sprint! per un sito che genera contatti
+**Settore:** B2B Industriale/Manifatturiero (sistemi di movimento lineare; gruppo Timken)
+**Periodo:** non dichiarato (scelta di Andrea Bosso, 25/11/2026: nessuna data né tempo)
+**Sprint:** 1 Design Sprint! (Website) + Build Sprint!, con consegna dell'intero sito e di altri materiali; il sito è praticamente identico al prototipo
+**Status:** Build Sprint! concluso, sito consegnato; il deck di restituzione proponeva uno sprint sui sales tool (esito: DATI NON TROVATI)
+**Pattern di vendita:** produttore B2B con catalogo tecnico che vende a ingegneri e buyer e vuole più lead; più mercati; piattaforma di prodotto esistente (myRollon)
+**Citabilità:** nome del cliente e visual del prototipo pubblici (Andrea Bosso, 25/11/2026); personas, buyer journey e report da verificare; nessuna frase del cliente, nessun numero, nessun tempo
+**Rapporto con il case IKA 2023 qui sopra:** da confermare; non attribuire a questo case il premio né il +48%
+**Visual:** 11 file `b2b_rollon_prototipo_*` in `assets_case_history/b2b_industriale/` (Pubblica, 25/11/2026)
+**Scheda completa:** [case_rollon_design_build_sprint.md](case_rollon_design_build_sprint.md)
+
 ### Megadyne — Digital B2B
 **Progetto:** Il digitale B2B apre nuove opportunità di business per Megadyne (trasmissioni di potenza): individuazione di nuove opportunità di business, analisi e miglioramento dei servizi offerti *(slide 41)*.
 **Metodo personas (slide 126–130):** buyer persona «Mark, Design Engineer» con journey (awareness, consideration, decision) e campagna collegata (prospect → lead → MQL → SQL). Esempio utile del metodo personas nel B2B.

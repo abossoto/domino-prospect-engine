@@ -28,6 +28,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 - **[FourStars — Website Design Sprint!](case_fourstars_website_design_sprint.md)** → Design Sprint! (Website) · Build Sprint! a storypoint *(documentato: offerta OFF_149_23, sprint luglio 2024, sito in produzione dicembre 2024)*
 - **[FARID — Website Design Sprint!](case_farid_website_design_sprint.md)** → Design Sprint! (Website) · Build Sprint! a storypoint *(documentato: offerta 90_25, sprint settembre–ottobre 2025, go live atteso entro il 3 novembre 2026)*
 - **[IPI — ITACA, Design Sprint! e Build Sprint!](case_ipi_intranet_design_sprint.md)** → Design Sprint! (Intranet) · Build Sprint! *(documentato: deck Sabaf e conferma di Andrea Bosso del 25/11/2026; formato 2 + 2 giorni, la slide scrive «1 settimana»; date DATI NON TROVATI)*
+- **[Rollon — Design Sprint! Website e Build Sprint!](case_rollon_design_build_sprint.md)** → Design Sprint! (Website) · Build Sprint! *(documentato: deck di restituzione `PRES_Rollon_DS_Report_Proposal.pptx` e racconto di Andrea Bosso del 25/11/2026; date non dichiarate per scelta; rapporto con il case IKA 2023 da confermare)*
 
 ---
 
