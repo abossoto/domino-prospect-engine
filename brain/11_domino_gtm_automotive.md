@@ -1,6 +1,8 @@
 # DOMINO BRAIN — GTM Automotive
 > Versione 1.2 — Ottobre 2026. Sales plays e regole commerciali per il settore Automotive. Allineata a `03_domino_metodi.md` v5.4 (catalogo 2026, **Build Sprint!** sostituisce "progetto completo", **Brain & Identity Design Sprint!** per design system multi-mercato e rete vendita, Trainstorming Sprint! per change management). Da usare dal Prospect Engine per generare materiali calibrati sul prospect.
 >
+> **Changelog — 25 novembre 2026 (Andrea Bosso).** Brain & Identity Design Sprint!: il design system IVECO è vincitore dell'IKA 2025 (categoria B2B), non nomination; aggiunto il rimando alla scheda case e la regola di citabilità tra i proof point.
+>
 > **Changelog — 10 ottobre 2026 (health check).** Cronologia IKA rifatta da 06 con gli esiti verificati: 6 edizioni, 5 clienti; IVECO Design System vincitore B2B 2025; Fiat 2012 (sito lanciato nel 2010); Rollon spostato fuori dall'automotive.
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Case history](04_domino_case_history.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · Altri GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md)
@@ -79,11 +81,11 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 - Apertura con case IVECO.com IKA 2024 (primo incontro) → credenziale più forte del settore
 - Core Sprint! (€6.000) → se stakeholder divisi su direzione, mercati prioritari o architettura del sito
 - Design Sprint! (€10.000) → prototipo del nuovo sito o buyer journey in 4 giorni, da testare poi con utenti reali, prima di avviare il **Build Sprint!** per la realizzazione (€20–60K+, blocchi di 2 settimane o 1 mese, perimetro aperto)
-- **Brain & Identity Design Sprint!** *(variante di punta 2026)* → quando il problema è strutturale: serve un **design system** scalabile su tutti i mercati e modelli, non un sito puntuale che invecchierà al prossimo lancio. Sono *fondamenta*, non progetti — il design system Domino-IVECO è un esempio (nomination IKA 2025 categoria B2B).
+- **Brain & Identity Design Sprint!** *(variante di punta 2026)* → quando il problema è strutturale: serve un **design system** scalabile su tutti i mercati e modelli, non un sito puntuale che invecchierà al prossimo lancio. Sono *fondamenta*, non progetti — il design system Domino-IVECO è un esempio (vincitore IKA 2025, categoria B2B; [scheda case](case_iveco_design_system.md)).
 
 **[Proof point](04_domino_case_history.md):**
 - IVECO.com — Interactive Key Award 2024, categoria Automotive and Energy
-- IVECO Design System — IKA 2025 categoria Business to Business (vincitore)
+- IVECO Design System — IKA 2025 categoria Business to Business (vincitore); [scheda case](case_iveco_design_system.md), citabile nelle presentazioni ai clienti, per sito e comunicati stampa serve l'autorizzazione di IVECO
 - Fiat.it — IKA 2012, rollout in 21 paesi EMEA (lancio 2010)
 - Case IH — sito con Personas lanciato in 18 mercati simultaneamente
 - CNH Industrial, Stellantis

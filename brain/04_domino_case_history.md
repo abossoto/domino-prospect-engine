@@ -64,6 +64,14 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Dalla presentazione generale (Asian market Training Program, slide 51):** percorso di training per i dealer dell'intero mercato asiatico, con dati e contenuti veicolati da video di avatar AI progettati per ogni lingua e mercato.
 **Visual:** `automotive_iveco_training_01.png` (Pubblica).
 
+### IVECO — Design System
+**Progetto:** il primo design system ufficiale di IVECO: hub con componenti, linee guida e risorse per designer, sviluppatori e product manager, pensato per dipendenti, fornitori, concessionari e distributori.
+**Riconoscimento:** Interactive Key Award 2025 (26ª edizione), categoria Business to Business, vincitore.
+**Periodo e numeri:** DATI NON TROVATI. Nessun risultato misurato con fonte.
+**Citabilità (Andrea Bosso, 25/11/2026):** sì nelle presentazioni dirette ai clienti; per domino.it e comunicati stampa serve l'autorizzazione di IVECO, da chiedere tramite Emiliano Cianci.
+**Visual:** DA CARICARE (`automotive_iveco_designsystem_01.png`).
+**Scheda completa:** [case_iveco_design_system.md](case_iveco_design_system.md)
+
 ### Stellantis — Employee Portal (ex-FCA)
 **Progetto:** Migrazione da intranet multiple a un unico Employee Portal globale.
 **Approccio:** Assessment processi esistenti, survey su audience specifiche, employee journey mapping. Definizione della UX e sviluppo delle componenti di front-end in coordinamento con il system integrator incaricato dell'implementazione *(slide 10)*.

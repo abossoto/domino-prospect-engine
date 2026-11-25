@@ -38,6 +38,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 - **IVECO — TCO Calculator** → Design Sprint! (Service) · Build Sprint!
 - **IVECO — eDailyAdvisor** → Design Sprint! (Service) · Build Sprint!
 - **IVECO — Training con AI Video** → Trainstorming Sprint! · Build Sprint!
+- **[IVECO — Design System](case_iveco_design_system.md)** → Brain & Identity Design Sprint! (focus design system) · Build Sprint! *(per affinità: lo Sprint! usato allora è DATI NON TROVATI; IKA 2025 Business to Business)*
 - **Stellantis — Employee Portal** → Design Sprint! (Intranet) · Trainstorming Sprint! · Build Sprint!
 - **Stellantis — Electrification Days** → Design Sprint! · Trainstorming Sprint! · Build Sprint!
 - **Stellantis — D&I People Stories** → Design Sprint! · Trainstorming Sprint! · Build Sprint!
