@@ -24,7 +24,7 @@
 - `automotive_iveco_designsystem_03.png`: hero slider, descrizione del componente (slide 13); logo DAILY e Amazon Alexa.
 - `automotive_iveco_designsystem_04.png`: panoramica dei componenti in Figma (slide 14).
 - `automotive_iveco_designsystem_05.png`: home del sito del design system (slide 15).
-- `automotive_iveco_designsystem_grafico_01.png`: slide 16 intera, i progetti IVECO a cui il design system si applica (ambito dichiarato); nome di Enrico Brignano nel visual di iveco.com. Esportata da PowerPoint (Andrea Bosso, 25/11/2026), 1600×900.
+- `automotive_iveco_designsystem_grafico_01.png`: slide 16 intera, i progetti IVECO a cui il design system si applica (ambito dichiarato); nome di Enrico Brignano nel visual di iveco.com. Esportata da PowerPoint senza le frecce di collegamento (Andrea Bosso, 25/11/2026), 1600×900.
 Prima di domino.it e dei comunicati stampa vanno verificati con IVECO i contenuti di terzi (PlayStation, Amazon Alexa, Enrico Brignano).
 **Numeri:** nessuno con fonte. Il deck parla di «risparmio economico di larga scala» senza cifre: è un beneficio dichiarato della categoria, non un risultato misurato di IVECO. Adozione, ore risparmiate, mercati e team che lo usano: DATI NON TROVATI.
 
