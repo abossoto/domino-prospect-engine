@@ -8,6 +8,7 @@
 **Citabilità:** nome cliente, screenshot e foto del deck: pubblici (confermato da Andrea Bosso, 18 ottobre 2026). Frasi del cliente: autorizzate per le due voci in video (Maurizio Cremonini, Duilio Amico), in `06_domino_referenze.md`.
 **Uso come case-tipo:** pitch verso gruppi industriali con più marchi, divisioni o mercati e un'identità da riordinare (SP5 del `07_`); apertura per l'automazione industriale, la robotica, le macchine e gli impianti (istruzione 7 del Prospect Engine).
 **Visual:** 25 file in `assets_case_history/b2b_industriale/`, `b2b_comau_sito_01.png` … `_09`, `identita_01` … `_03`, `brochure_01` … `_04`, `schede_01`, `advertising_01` … `_03`, `segnaletica_01` … `_02`, `prima_01` … `_03` (dettaglio e citabilità in [INDICE_immagini.md](assets_case_history/INDICE_immagini.md)). Estratti dal deck `PRES_COMAU-CASEHISTORY2 2 2020-07-08`. Per evidenziare il sito worldwide partire da `sito_01` (home «A global spirit, a local presence»).
+**Video:** [Marco Belinelli e il robot Racer, «We learn from challenges»](https://dominoitalia.sharepoint.com/sites/ProposteedOfferte/Documenti%20condivisi/Forms/DispForm.aspx?ID=4136): lo spot con Marco Belinelli fa parte del lavoro di brand e di advertising di Comau (indicazione di Andrea Bosso, 25 novembre 2026). File `05_We learn from challenges. Marco Belinelli and Comau Racer robot.mp4` sul sito SharePoint «Proposte ed Offerte», cartella `Offerte/Presentazioni_nuovi_progetti/Stellantis_Video_Connect_2526_Plico/Stellantis_Video_2526_source`; non è copiato nel Brain, si usa dal link. Citabilità del video e persone che compaiono: DATI NON TROVATI.
 **Numeri:** sito presente in **più di 20 mercati** *(ricordo di Andrea Bosso, 18 ottobre 2026, da confermare con una fonte prima di usarlo in un documento verso il cliente)*. Nessun risultato misurato su traffico, lead o brand: DATI NON TROVATI. Dato di partenza del sito corporate (analytics Domino, ottobre 2014-settembre 2015): 313.629 sessioni, +1% sull'anno, 82% desktop, 64% da ricerca organica; non è un risultato del nuovo sito.
 
 ---
@@ -47,7 +48,7 @@ Il problema non era grafico. Con tante Business Unit serviva un concetto che des
 
 ## Output consegnati
 
-Linee guida visive e storytelling; personas; sito; brochure Robotics (64 pagine), Powertrain (24), Master in Industrial Automation Management (24) e brochure di prodotto (4); schede tecniche; griglie ed esempi di advertising; targhe e segnaletica.
+Linee guida visive e storytelling; personas; sito; brochure Robotics (64 pagine), Powertrain (24), Master in Industrial Automation Management (24) e brochure di prodotto (4); schede tecniche; griglie ed esempi di advertising; targhe e segnaletica. Il video con Marco Belinelli e il robot Racer (campo **Video**).
 
 ## Cosa è successo, in concreto
 

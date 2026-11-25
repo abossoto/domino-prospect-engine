@@ -3,6 +3,8 @@
 >
 > **Changelog — 25 novembre 2026 (integrazione da PRES_DOMINO_GENERALE _008, versione PDF del 25/11/2026, 140 slide).** Aggiunti 22 case presenti nella presentazione generale e assenti da questo file; arricchiti i case già presenti con testi e risultati delle slide; aggiunti 5 visual (Comau comunicazione online e offline, Case IH full funnel ×2, Stellantis video project, Danieli Design System). Decisioni del Brain Owner (Andrea Bosso, 25/11/2026): tutti i case della presentazione generale sono citabili; per questi case non si indicano gli anni; Fiat EMEA = 20 mercati; Costa Crociere = più di 120.000 minisiti ogni anno; «potting sprint» è il nome di un metodo; i dati Comau della slide 32 sono citabili. I numeri di slide indicati sono quelli del PDF del 25/11/2026.
 >
+> **Changelog — 25 novembre 2026 (video dei case).** Aggiunto il campo **Video**, con il link ai file su SharePoint (sito «Proposte ed Offerte», cartella `Stellantis_Video_2526_source`; i file non sono copiati nel Brain), ai case Comau Brand Identity (video Belinelli e Racer), Stellantis EE COO Communication (Filosa, Listening Tour), Stellantis Video project (Peugeot, Jeep, Fiat) e Case IH Digital communication EMEA (Dealers Squad). Abbinamenti decisi da Andrea Bosso.
+>
 > **Changelog — 10 ottobre 2026 (health check).** Slow Food: la giornata del 24 agosto si chiama «workshop di attivazione pre-Core Sprint!» (decisione del 10 ottobre 2026).
 
 **Link rapidi:** [Identità](01_domino_identita.md) · [Servizi](02_domino_servizi.md) · [Metodi proprietari](03_domino_metodi.md) · [Settori](05_domino_settori.md) · [Referenze](06_domino_referenze.md) · GTM: [B2B](07_domino_gtm_b2b.md) · [Salute & Beauty](08_domino_gtm_salute_beauty.md) · [Turismo & Cultura](09_domino_gtm_turismo_cultura.md) · [Finance & PA](10_domino_gtm_finance_pa.md) · [Automotive](11_domino_gtm_automotive.md)
@@ -102,6 +104,7 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Attività:** Concept & Strategy, supporto alla content creation, design, coordinamento del progetto.
 **Risultato:** Una survey ha confermato il gradimento dei dipendenti, con un **valore medio di 8,5 su 10**.
 **Scheda estesa:** `case_stellantis_ee_coo_communication.md` · **Visual:** `automotive_stellantis_eecoo_01.png` (Pubblica).
+**Video:** [Stellantis, Filosa, Listening Tour](https://dominoitalia.sharepoint.com/sites/ProposteedOfferte/Documenti%20condivisi/Forms/DispForm.aspx?ID=4134) (file su SharePoint, non nel Brain; dettagli nella scheda estesa).
 
 ### Stellantis — Star*Up
 **Progetto:** Programma in cui i dipendenti presentano idee anche in video; le più votate passano a una seconda fase.
@@ -125,6 +128,7 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Progetto:** Ideazione e produzione video per le attività di comunicazione di tutti i brand Stellantis in area EMEA *(slide 43)*.
 **Citabilità:** Pubblica.
 **Visual:** `automotive_stellantis_videoproject_01.jpg` (fotogramma di un video, Pubblica).
+**Video:** tre video di brand, file su SharePoint (sito «Proposte ed Offerte», cartella `Stellantis_Video_2526_source`), non nel Brain: [Peugeot, «Restez connecté à votre véhicule»](https://dominoitalia.sharepoint.com/sites/ProposteedOfferte/Documenti%20condivisi/Forms/DispForm.aspx?ID=4135) · [Jeep, «Connect ONE essential connectivity for your JEEP»](https://dominoitalia.sharepoint.com/sites/ProposteedOfferte/Documenti%20condivisi/Forms/DispForm.aspx?ID=4133) · [Fiat, «Stellantis EasySmartUseful Worklife», 16x9 EN](https://dominoitalia.sharepoint.com/sites/ProposteedOfferte/Documenti%20condivisi/Forms/DispForm.aspx?ID=4132).
 **Da completare:** numero di video e risultati: DATI NON TROVATI.
 
 ### Fiat — Sito internazionale EMEA
@@ -170,6 +174,7 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Esempi full funnel (slide 34–35):** Loader campaign (awareness con video per creare audience di retargeting → pagina prodotto → modulo nativo); Axial-flow campaign (awareness → configuratore e pagina prodotto → landing page con l'offerta Safeguard).
 **Citabilità:** Pubblica.
 **Visual:** `automotive_caseih_social_01.png`, `automotive_caseih_fullfunnel_01.png`, `automotive_caseih_fullfunnel_02.png` (Pubblica).
+**Video:** [Dealers Squad](https://dominoitalia.sharepoint.com/sites/ProposteedOfferte/Documenti%20condivisi/Forms/DispForm.aspx?ID=4139) (file `07_DEALERS SQUAD.mp4` su SharePoint, sito «Proposte ed Offerte», cartella `Stellantis_Video_2526_source`; non nel Brain). Citabilità del video: DATI NON TROVATI.
 **Da completare:** risultati delle campagne: DATI NON TROVATI.
 
 ### Case IH — Digital communication e AI
@@ -215,6 +220,7 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Citabilità:** nome, screenshot e foto pubblici; frasi delle due voci in video autorizzate (`06_`)
 **Numeri:** nessun risultato misurato sul sito (DATI NON TROVATI); numeri di perimetro come sopra.
 **Visual:** 25 file in `assets_case_history/b2b_industriale/` (`b2b_comau_sito_01.png` … ), citabilità Pubblica (18 ottobre 2026); `b2b_comau_comunicazione_01.png` (sito in cinese, Pubblica, 25 novembre 2026).
+**Video:** [Marco Belinelli e il robot Racer, «We learn from challenges»](https://dominoitalia.sharepoint.com/sites/ProposteedOfferte/Documenti%20condivisi/Forms/DispForm.aspx?ID=4136): lo spot con Marco Belinelli fa parte del lavoro di brand e di advertising di Comau (file su SharePoint, non nel Brain; dettagli nella scheda completa).
 **Scheda completa:** [case_comau_brand_identity.md](case_comau_brand_identity.md)
 
 ### Comau+ — Marketplace
