@@ -12,18 +12,21 @@
 **Status:** Build Sprint! concluso, sito consegnato. Il sito è praticamente identico al prototipo del Design Sprint! (Andrea Bosso, 25/11/2026). Il deck di restituzione proponeva come passo successivo uno sprint sui sales tool (campagne, integrazione con myRollon, altri strumenti); se sia partito: DATI NON TROVATI.
 **Citabilità** (Andrea Bosso, 25/11/2026):
 - nome del cliente, riconoscimento IKA 2023 e numeri del sito qui sotto: sì (già pubblici nel Brain, `04_`, `06_`, `07_`);
-- visual del sito e del prototipo: sì;
+- visual della home del prototipo: sì;
 - personas, buyer journey e report di restituzione: DA VERIFICARE, non dichiarato; non usarli fuori dai pitch finché non c'è la conferma;
 - frase del cliente: nessuna, per scelta di Andrea Bosso; la sezione «Dicono di noi» si omette;
 - approvazione del case: Andrea Bosso, Direttore Clienti.
 **Uso come case-tipo:**
 - pitch del Design Sprint! Website per produttori B2B industriali con un catalogo tecnico, che vendono a ingegneri e buyer e vogliono più contatti commerciali;
 - B2B, SP1 (il sito non porta contatti qualificati) come play principale, con il proof point SEO; SP2 (i commerciali perdono tempo a spiegare il prodotto) e SP5 (più mercati) come secondari.
-**Visual:** 12 file in `assets_case_history/b2b_industriale/`, citabilità Pubblica.
-- `b2b_rollon_sito_01.png`: screenshot del sito (Pubblica, 25/11/2026).
-- 11 file `b2b_rollon_prototipo_*`, estratti il 25/11/2026 dalle slide 38-75 di `PRES_Rollon_DS_Report_Proposal.pptx`, schermate del prototipo intere e senza ritagli (Pubblica, Andrea Bosso, 25/11/2026):
-  - pagine intere: `b2b_rollon_prototipo_home_01.png`, `…_famiglia_linear_line_02.png`, `…_famiglia_linear_line_stock_03.png`, `…_prodotto_compact_rail_testata_04.png`, `…_prodotto_compact_rail_completa_05.png`, `…_prodotto_compact_rail_download_prezzi_06.png`; contengono testi segnaposto e il marchio Timken nel footer;
-  - sezioni di prodotto: `…_prodotto_affidabilita_07.png`, `…_lunga_durata_08.png`, `…_alta_dinamica_09.png`, `…_bassa_manutenzione_10.png`, `…_robustezza_11.png`; senza segnaposto né Timken, sono quelle da usare su sito e social.
+**Visual:** 6 file in `assets_case_history/b2b_industriale/`, citabilità Pubblica (Andrea Bosso, 25/11/2026). Sono la home del prototipo, estratta il 25/11/2026 dalle slide 38 e 40-44 di `PRES_Rollon_DS_Report_Proposal.pptx`, schermate intere e senza ritagli. Tutti gli altri visual Rollon sono stati eliminati su decisione di Andrea Bosso.
+- `b2b_rollon_prototipo_home_hero_01.png`: apertura con Compact Rail (slide 38);
+- `…_home_attuatori_02.png`: attuatori integrati per l'automazione industriale (slide 40);
+- `…_home_scegli_rollon_03.png`: «Choose Rollon», i sei vantaggi (slide 41);
+- `…_home_case_study_04.png`: case study (slide 42);
+- `…_home_webinar_tech_talk_05.png`: webinar e tech talk (slide 43);
+- `…_home_preventivo_06.png`: richiesta di preventivo con tre ingressi (slide 44).
+Nelle sezioni «Choose Rollon» e case study i testi sono in parte segnaposto.
 **Numeri:**
 - sito in 17 mercati;
 - +48% di traffico organico negli Stati Uniti; «linear rails» è la prima keyword organica US, preceduta solo dal brand «Rollon» (dati già presenti in `04_` e `07_`);
@@ -99,9 +102,9 @@ Un sito che deve generare contatti non si progetta partendo dalle pagine, ma da 
 
 ## Note di ingaggio
 
-- **Cosa è citabile:** nome di Rollon, IKA 2023, 17 mercati, numeri SEO US e visual del sito e del prototipo.
+- **Cosa è citabile:** nome di Rollon, IKA 2023, 17 mercati, numeri SEO US e visual della home del prototipo.
 - **Da non usare in pubblico, per ora:** personas, buyer journey e report di restituzione, finché non c'è la conferma. Nessuna frase del cliente; per il percorso nessun altro numero e nessun tempo.
-- **Visual:** per sito e social usare lo screenshot del sito, le sezioni di prodotto (07-11) e la testata (04); le pagine intere del prototipo hanno testi segnaposto e il marchio Timken.
+- **Visual:** solo la home del prototipo (6 file); nelle sezioni «Choose Rollon» e case study i testi sono in parte segnaposto.
 - **Unificazione:** questo è il case unico su Rollon. Riunisce il vecchio case IKA 2023 «Il prodotto diventa esperienza» e il percorso Design Sprint! + Build Sprint! (conferma di Andrea Bosso, 25/11/2026).
 - **Riferimenti:** Direttore Clienti Andrea Bosso; Account Manager e Project Manager Giulia Palazzo.
 - **Da aggiornare quando ci sono:** quali sono gli altri materiali del Build Sprint!, esito dello sprint sui sales tool, altri risultati misurati e, se Andrea Bosso lo decide, date e frase del cliente.

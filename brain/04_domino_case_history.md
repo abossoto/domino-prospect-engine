@@ -245,7 +245,7 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Pattern di vendita:** produttore B2B con catalogo tecnico che vende a ingegneri e buyer e vuole più lead; più mercati; piattaforma di prodotto esistente (myRollon)
 **Status:** Build Sprint! concluso, sito consegnato; il deck di restituzione proponeva uno sprint sui sales tool (esito: DATI NON TROVATI)
 **Citabilità:** nome, IKA, numeri e visual pubblici; personas, buyer journey e report da verificare
-**Visual:** `b2b_rollon_sito_01.png` (Pubblica) e 11 file `b2b_rollon_prototipo_*` (Pubblica, 25/11/2026)
+**Visual:** 6 file `b2b_rollon_prototipo_home_*`, la home del prototipo (Pubblica, 25/11/2026)
 **Scheda completa:** [case_rollon_design_build_sprint.md](case_rollon_design_build_sprint.md)
 
 ### Megadyne — Digital B2B
