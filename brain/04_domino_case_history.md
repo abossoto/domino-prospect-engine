@@ -223,7 +223,7 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 
 ### Rollon — "Il prodotto diventa esperienza" *(IKA 2023)*
 **Riconoscimento:** Interactive Key Award 2023, Best Integrated Communication Campaign B2B.
-**Mercati:** sito in 16 mercati *(fonte: Andrea Bosso, 18 ottobre 2026)*.
+**Mercati:** sito in 17 mercati *(fonte: Andrea Bosso, 25 novembre 2026; selettore paese di rollon.com)*.
 **Progetto:** Trasformazione del sito B2B in una vera esperienza di prodotto. Posizionamento premium orientato alla lead generation, progettazione con Design Sprint!, produzione in Growth Driven Design con affinamenti periodici sui dati; integrazione con il CRM HubSpot anche nella visualizzazione degli elementi *(slide 17)*.
 **SEO US:** +**48% traffico organico** USA. "Linear rails" = prima keyword organica US (preceduta solo dal brand "Rollon").
 **Visual:** `b2b_rollon_sito_01.png` (Pubblica).
