@@ -27,6 +27,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 - **[Slow Food — Raccolta fondi](case_slowfood_core_sprint.md)** → workshop di attivazione pre-Core Sprint! *(documentato)*
 - **[FourStars — Website Design Sprint!](case_fourstars_website_design_sprint.md)** → Design Sprint! (Website) · Build Sprint! a storypoint *(documentato: offerta OFF_149_23, sprint luglio 2024, sito in produzione dicembre 2024)*
 - **[FARID — Website Design Sprint!](case_farid_website_design_sprint.md)** → Design Sprint! (Website) · Build Sprint! a storypoint *(documentato: offerta 90_25, sprint settembre–ottobre 2025, go live atteso entro il 3 novembre 2026)*
+- **[IPI — Design Sprint! intranet](case_ipi_intranet_design_sprint.md)** → Design Sprint! (Intranet) *(documentato: deck Sabaf, «Design Sprint! L'esperienza con IPI»; data DATI NON TROVATI; nella slide dura «1 settimana»)*
 
 ---
 

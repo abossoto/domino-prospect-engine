@@ -63,11 +63,43 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Progetto:** Evento globale (online + offline) sulla mobilità elettrica per dipendenti.
 **Attività:** Concept & Strategy, Visual Identity, Content Production, coordinamento progetto, utilizzo AI.
 **Risultato:** Le prime due manifestazioni locali sono state **sold-out in poche ore**.
+**Scheda estesa:** `case_stellantis_electrification_days.md` · **Visual:** `assets_case_history/automotive/automotive_stellantis_electrificationdays_01.png` e `_02.png` (Pubblica).
 
 ### Stellantis — D&I People Stories
 **Progetto:** Due video series con dipendenti donne Stellantis come protagoniste, su temi D&I.
 **Attività:** Concept, visual identity, storyboard, produzione video.
 **Risultato:** Tra i **video più visti sulla intranet Stellantis**, rilanciate dal COO nella sua comunicazione settimanale.
+**Scheda estesa:** `case_stellantis_people_stories.md` · **Visual:** `automotive_stellantis_peoplestories_01.png` e `_02.png` (Pubblica).
+
+### Stellantis — Value Teller
+**Progetto:** Programma di influencer interni per far vivere i nuovi Core Values nei progetti.
+**Attività:** Concept & Strategy, casting, video e produzione di contenuti, community management.
+**Risultato:** **Più di 200 Value Teller in tutta Europa**; progetto rinnovato ed esteso a una seconda edizione.
+**Scheda estesa:** `case_stellantis_value_teller.md` · **Visual:** `automotive_stellantis_valueteller_01.png` (Pubblica).
+
+### Stellantis — EE COO Communication
+**Progetto:** Appuntamento settimanale del COO Enlarged Europe con i dipendenti, su quattro macrotemi (What we do, What we will do, What you can do, People Stories).
+**Attività:** Concept & Strategy, supporto alla content creation, design, coordinamento del progetto.
+**Risultato:** Una survey ha confermato il gradimento dei dipendenti, con un **valore medio di 8,5 su 10**.
+**Scheda estesa:** `case_stellantis_ee_coo_communication.md` · **Visual:** `automotive_stellantis_eecoo_01.png` (Pubblica).
+
+### Stellantis — Star*Up
+**Progetto:** Programma in cui i dipendenti presentano idee anche in video; le più votate passano a una seconda fase.
+**Attività:** Concept creativo, naming, communication strategy.
+**Risultato:** Nel primo anno **una start up nata concretamente**; rinnovato per una seconda edizione.
+**Scheda estesa:** `case_stellantis_star_up.md` · **Visual:** `automotive_stellantis_starup_01.png` (Pubblica).
+
+### Stellantis — Ethics Experience
+**Progetto:** Percorso di engagement in tre passi (Join, Speak-up, Act) per avvicinare i dipendenti al Codice di Condotta, con quick poll, iniziative, video e podcast.
+**Attività:** Concept & Strategy, visual identity, video teaser, gamification e recognition.
+**Risultato:** Dopo i primi mesi una survey ha rilevato che **oltre l'80% dei dipendenti** conosce le principali informazioni sul Codice e il modo di fare reporting. Il programma prosegue nel filone Ethics & Compliance 2026.
+**Scheda estesa:** `case_stellantis_ethics_experience.md` · **Visual:** `automotive_stellantis_ethicsexperience_01.png` (Pubblica).
+
+### Stellantis — Finance STAR[T]
+**Progetto:** Community e area intranet per accompagnare la business unit Finance nella digital transformation, con interviste, newsletter e contenuti.
+**Attività:** Concept & Strategy, visual identity, video teaser, newsletter, produzione di contenuti, «landing page».
+**Risultato:** Apprezzamento riportato dal top management; progetto rinnovato per il lancio di un altro tool. Nessun dato quantitativo.
+**Scheda estesa:** `case_stellantis_finance_start.md` · **Visual:** `automotive_stellantis_financestart_01.png` (layout con testi segnaposto, usato com'è).
 
 ### Fiat — Sito internazionale EMEA
 **Progetto:** Nuovo sito Fiat in **21 paesi**, primo grande progetto di rollout internazionale Domino.
@@ -157,6 +189,7 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 
 ### IPI — SFERA Intranet
 **Progetto:** Nuova intranet SFERA per il Gruppo IPI.
+**Scheda estesa:** `case_ipi_intranet_design_sprint.md` (Design Sprint! per la nuova intranet di Gruppo: tre personas, modello di gestione degli strumenti, prototipo della home; il prototipo si chiama «ITACA», il nome SFERA va confermato) · **Visual:** `assets_case_history/finance_pa/finance_ipi_*` (Pubblica).
 
 ### IPI — Internal Communication Onboarding
 **Progetto:** Piano di comunicazione per lancio nuova intranet e tool Microsoft 365.
