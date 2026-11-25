@@ -1,5 +1,7 @@
 # DOMINO BRAIN — Case History
-> Versione 3.1 — Ottobre 2026. Tutti i case documentati da sito, presentazioni e materiali ufficiali. Da usare per settore e tipo di progetto. Aggiornato con lettura I5.0 dei principali case (Trainstorming! aprile 2026). Aggiunto Slow Food (Turismo & Cultura, Core Sprint!) il 29 settembre 2026. Fiat Professional E-Product: visual e collegamento al Preventivo Emozionale il 15 ottobre 2026.
+> Versione 3.2 — Novembre 2026. Tutti i case documentati da sito, presentazioni e materiali ufficiali. Da usare per settore e tipo di progetto. Aggiornato con lettura I5.0 dei principali case (Trainstorming! aprile 2026). Aggiunto Slow Food (Turismo & Cultura, Core Sprint!) il 29 settembre 2026. Fiat Professional E-Product: visual e collegamento al Preventivo Emozionale il 15 ottobre 2026.
+>
+> **Changelog — 25 novembre 2026 (integrazione da PRES_DOMINO_GENERALE _008, versione PDF del 25/11/2026, 140 slide).** Aggiunti 22 case presenti nella presentazione generale e assenti da questo file; arricchiti i case già presenti con testi e risultati delle slide; aggiunti 5 visual (Comau comunicazione online e offline, Case IH full funnel ×2, Stellantis video project, Danieli Design System). Decisioni del Brain Owner (Andrea Bosso, 25/11/2026): tutti i case della presentazione generale sono citabili; per questi case non si indicano gli anni; Fiat EMEA = 20 mercati; Costa Crociere = più di 120.000 minisiti ogni anno; «potting sprint» è il nome di un metodo; i dati Comau della slide 32 sono citabili. I numeri di slide indicati sono quelli del PDF del 25/11/2026.
 >
 > **Changelog — 10 ottobre 2026 (health check).** Slow Food: la giornata del 24 agosto si chiama «workshop di attivazione pre-Core Sprint!» (decisione del 10 ottobre 2026).
 
@@ -34,33 +36,43 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 ## AUTOMOTIVE
 
 ### IVECO — iveco.com (Premio IKA 2024)
-**Progetto:** Nuovo sito istituzionale globale per IVECO.
+**Progetto:** Nuovo sito istituzionale globale per IVECO: progettazione, implementazione e manutenzione del portale, con rollout in tutti i mercati worldwide *(PRES008, slide 50)*.
 **Riconoscimento:** Interactive Key Award 2024, categoria Automotive and Energy.
+**Visual:** `automotive_iveco_sito_01.png` (Pubblica).
 
 ### IVECO — MyIVECO App
 **Progetto:** Customer experience personalizzata per ogni utente MyIVECO.
 **Approccio:** Progettazione UX centrata sull'utente, area riservata con contenuti profilati.
+**Dalla presentazione generale (MY IVECO – IVECO ON, slide 9):** un'unica piattaforma che riunisce gli attori della customer experience; il processo non si chiude con l'acquisto del veicolo ma accompagna tutta la relazione con servizi di qualità, alzando la percezione del brand.
+**Visual:** `automotive_iveco_myiveco_01.png` (Pubblica).
 
 ### IVECO — TCO Calculator
 **Progetto:** Tool B2B per il calcolo del risparmio personalizzato (Total Cost of Ownership).
 **Obiettivo:** Guidare i fleet manager verso scelte più consapevoli con dati concreti.
+**Dalla presentazione generale (slide 60):** calcola il costo del carburante a seconda dell'uso di diversi modelli IVECO a gas o diesel, con informazioni sull'impatto economico e ambientale.
+**Visual:** `automotive_iveco_tco_01.png` (Pubblica).
 
 ### IVECO — eDailyAdvisor
 **Progetto:** Tool B2B per guidare le scelte di mobilità sostenibile/elettrica.
 **Contesto:** Supporto alla transizione verso l'elettrico nella flotta aziendale.
+**Dalla presentazione generale (Your eDaily, slide 61):** a seconda di modello e tipologia d'uso, il sistema restituisce consumi previsti, tipologia di batterie necessarie e costi stimati.
+**Visual:** `automotive_iveco_edaily_01.png` (Pubblica).
 
 ### IVECO — Training con AI Video
 **Progetto:** Contenuti formativi personalizzati e video AI per coinvolgere ogni team commerciale.
 **Tecnologia:** Video generati con AI, personalizzati per ruolo e mercato.
+**Dalla presentazione generale (Asian market Training Program, slide 51):** percorso di training per i dealer dell'intero mercato asiatico, con dati e contenuti veicolati da video di avatar AI progettati per ogni lingua e mercato.
+**Visual:** `automotive_iveco_training_01.png` (Pubblica).
 
 ### Stellantis — Employee Portal (ex-FCA)
 **Progetto:** Migrazione da intranet multiple a un unico Employee Portal globale.
-**Approccio:** Assessment processi esistenti, survey su audience specifiche, employee journey mapping.
-**Risultato:** Rete che connette **88.000 dipendenti nel mondo**. Premio **FEIEA Grand Prix 2019 – Best European Intranet**. Esteso successivamente a CNH Industrial e Iveco Group.
+**Approccio:** Assessment processi esistenti, survey su audience specifiche, employee journey mapping. Definizione della UX e sviluppo delle componenti di front-end in coordinamento con il system integrator incaricato dell'implementazione *(slide 10)*.
+**Risultato:** Rete che connette **88.000 dipendenti nel mondo**, con contenuti personalizzati e consultabile su ogni device. Premio **FEIEA Grand Prix 2019 – Best European Intranet**. Esteso successivamente a CNH Industrial e Iveco Group.
 **Lettura I5.0:** Case emblematico di "transition program" — non un sito, ma l'infrastruttura di una transizione organizzativa globale. Domino non ha consegnato un deliverable: ha accompagnato una transizione. Il valore non era nell'output, ma nella continuità della relazione.
+**Visual:** `automotive_stellantis_employeeportal_01.png` (Pubblica).
 
 ### Stellantis — Electrification Days
-**Progetto:** Evento globale (online + offline) sulla mobilità elettrica per dipendenti.
+**Progetto:** Evento globale (online + offline) sulla mobilità elettrica per dipendenti. Nella presentazione generale *(slide 11)*: la mobilità elettrica «raccontata come esperienza da vivere, non da spiegare»; nello spazio dedicato i dipendenti scoprono le nuove tecnologie e portano famiglia e amici.
 **Attività:** Concept & Strategy, Visual Identity, Content Production, coordinamento progetto, utilizzo AI.
 **Risultato:** Le prime due manifestazioni locali sono state **sold-out in poche ore**.
 **Scheda estesa:** `case_stellantis_electrification_days.md` · **Visual:** `assets_case_history/automotive/automotive_stellantis_electrificationdays_01.png` e `_02.png` (Pubblica).
@@ -101,9 +113,17 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Risultato:** Apprezzamento riportato dal top management; progetto rinnovato per il lancio di un altro tool. Nessun dato quantitativo.
 **Scheda estesa:** `case_stellantis_finance_start.md` · **Visual:** `automotive_stellantis_financestart_01.png` (layout con testi segnaposto, usato com'è).
 
+### Stellantis — Video project
+**Progetto:** Ideazione e produzione video per le attività di comunicazione di tutti i brand Stellantis in area EMEA *(slide 43)*.
+**Citabilità:** Pubblica.
+**Visual:** `automotive_stellantis_videoproject_01.jpg` (fotogramma di un video, Pubblica).
+**Da completare:** numero di video e risultati: DATI NON TROVATI.
+
 ### Fiat — Sito internazionale EMEA
-**Progetto:** Nuovo sito Fiat in **21 paesi**, primo grande progetto di rollout internazionale Domino.
+**Progetto:** Nuovo sito Fiat in **20 mercati**, primo grande progetto di rollout internazionale Domino. Strategia, produzione, governance (mercati e lingue), gestione della campagna internazionale *(slide 68)*.
+**Risultato:** In 9 mesi **oltre il 40% di visite in più** e **+120% di richieste di test drive**.
 **Anno:** 2010.
+**Visual:** `automotive_fiat_sito_01.png` (Pubblica).
 
 ### Fiat Professional (Ducato) — App E-Product
 **Progetto:** App per la rete vendita Fiat Professional.
@@ -111,14 +131,43 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Preventivo Emozionale:** dall'app il venditore genera il minisito personalizzato per il cliente (pulsante «Genera minisito»).
 **Visual:** `assets_case_history/automotive/automotive_fiatprofessional_eproduct_01.png` … `_04.png` (home Nuovo Ducato, gamma motori, vantaggi trazione anteriore vs concorrenza, comparatore consumi). Citabilità: Pubblica (15 ottobre 2026).
 
+### Mopar — Strategia e presenza digitale EMEA
+**Progetto:** In occasione del lancio del marchio in area EMEA, strategia per far conoscere il nuovo brand e promuovere servizi e prodotti Mopar convertendo il traffico online in vendite *(slide 44)*.
+**Obiettivi:** fidelizzazione dei proprietari di vetture Fiat Chrysler; database building dei clienti FCA; lead generation; promozione di campagne mirate; integrazione e coinvolgimento di dealer e officine, con uno storico per cliente.
+**Citabilità:** Pubblica.
+**Visual:** `automotive_mopar_sito_01.png` (Pubblica).
+
 ### Jeep — Community digitale
 **Progetto:** Come nasce una community Jeep. Progettazione e realizzazione della community digitale per i proprietari Jeep.
 
 ### CIFA — Interazioni guidate dall'innovazione
 **Progetto:** Costruire interazioni digitali guidate dall'innovazione per un produttore di macchine da costruzione.
 
+### BCA Vehicle Remarketing — Sprint e strategia
+**Progetto:** Definizione della strategia di comunicazione e del riposizionamento del brand sul mercato Italia con il metodo Sprint! *(slide 40)*.
+**Citabilità:** Pubblica.
+**Visual:** `automotive_bca_sprint_01.png` (Pubblica).
+**Da completare:** tipo di Sprint! ed esito: DATI NON TROVATI.
+
+### CNH Industrial — World Class Manufacturing
+**Progetto:** Identificazione dei flussi delle informazioni tra stakeholder e creazione di nuove metodologie orientate al risparmio di tempi e costi *(slide 13)*.
+**Citabilità:** Pubblica.
+**Visual:** `automotive_cnh_wcm_01.png` (Pubblica).
+
 ### Case IH — Lead generation Europa + Brand Awareness
 **Progetto:** Campagne di lead generation per il mercato europeo e incremento brand awareness.
+
+### Case IH — Digital communication EMEA, 12 mercati
+**Progetto:** Coordinamento continuo con un team internazionale per la strategia e la gestione dei social media e delle campagne in area EMEA. Campagne di lead generation con definizione dei canali per personas e mercati, realizzazione degli annunci, gestione delle traduzioni, setup e budget per ogni campagna. Le campagne accompagnano gli utenti nelle fasi della journey, con focus sui messaggi ad alto potenziale di conversione *(slide 33)*.
+**Esempi full funnel (slide 34–35):** Loader campaign (awareness con video per creare audience di retargeting → pagina prodotto → modulo nativo); Axial-flow campaign (awareness → configuratore e pagina prodotto → landing page con l'offerta Safeguard).
+**Citabilità:** Pubblica.
+**Visual:** `automotive_caseih_social_01.png`, `automotive_caseih_fullfunnel_01.png`, `automotive_caseih_fullfunnel_02.png` (Pubblica).
+**Da completare:** risultati delle campagne: DATI NON TROVATI.
+
+### Case IH — Digital communication e AI
+**Progetto:** Nei contenuti social viene introdotto progressivamente l'uso dell'AI per la realizzazione di video, il doppiaggio in real time e la personalizzazione degli asset *(slide 36)*. Collegato al premio IKA 2024 qui sotto.
+**Citabilità:** Pubblica.
+**Visual:** `automotive_caseih_ai_01.png` (Pubblica).
 
 ### Case IH — IKA 2024 "Innovation Technology"
 **Riconoscimento:** Premio **IKA 2024** — categoria "Premio Speciale Innovation Technology".
@@ -154,38 +203,82 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 ### Comau — Brand Identity e sito worldwide *(2016)*
 **Progetto:** Brand identity completa per un gruppo con tante Business Unit: ricerca con personas, concetto «Il Brand al centro», firma «Made in Comau», storytelling, linee guida visive, brochure, schede tecniche, advertising.
 **Sito worldwide (da evidenziare):** il nuovo sito, presente in più di 20 mercati *(ricordo di Andrea Bosso, 18 ottobre 2026, da confermare con una fonte)*, fa parte del lavoro: cinque rubriche editoriali, pagina prodotto come racconto con call to action, ingresso per industria. Va messo in primo piano ogni volta che si cita Comau Brand Identity.
+**Comunicazione online e offline (PRES008, slide 32):** revisione completa dell'immagine e della comunicazione di Comau online e offline: **9 rollout del portale**, **29 uffici in 16 paesi** coinvolti nella riorganizzazione della comunicazione interna, **15.000 persone**, **6 fiere internazionali**. Sito anche in cinese. Dato citabile (Brain Owner, 25/11/2026); i 16 paesi riguardano gli uffici della comunicazione interna, non i mercati del sito.
 **Citabilità:** nome, screenshot e foto pubblici; frasi delle due voci in video autorizzate (`06_`)
-**Numeri:** nessun risultato misurato (DATI NON TROVATI)
-**Visual:** 25 file in `assets_case_history/b2b_industriale/` (`b2b_comau_sito_01.png` … ), citabilità Pubblica (18 ottobre 2026)
+**Numeri:** nessun risultato misurato sul sito (DATI NON TROVATI); numeri di perimetro come sopra.
+**Visual:** 25 file in `assets_case_history/b2b_industriale/` (`b2b_comau_sito_01.png` … ), citabilità Pubblica (18 ottobre 2026); `b2b_comau_comunicazione_01.png` (sito in cinese, Pubblica, 25 novembre 2026).
 **Scheda completa:** [case_comau_brand_identity.md](case_comau_brand_identity.md)
 
 ### Comau+ — Marketplace
 **Progetto:** Nuovo modello di partnership digitale tra Comau (hardware), clienti industriali (acquirenti) e system integrator (software applicativo).
 **Scope:** Progettazione di processo + UX + design + front-end + erogazione + manutenzione. Gestito interamente da Domino.
 **Voce del cliente:** Duilio Amico, Responsabile Comunicazione Comau, e Maurizio Cremonini, Marketing & Business Developer *(video in `06_domino_referenze.md`)*.
-**Da completare (case chiave per l'automazione industriale):** anno, risultati misurati, tipo di Sprint, citabilità: DATI NON TROVATI.
+**Citabilità:** Pubblica (25/11/2026). **Visual:** `b2b_comau_comauplus_01.png`.
+**Da completare (case chiave per l'automazione industriale):** risultati misurati, tipo di Sprint: DATI NON TROVATI.
 
 ### Bitron — Customer Experience B2B & Web di Gruppo
-**Progetto:** Nuova customer experience per valorizzare il know-how B2B di Bitron, con integrazione dei settori diversi presidiati dal Gruppo in un'unica architettura coerente.
+**Progetto:** Nuova customer experience per valorizzare il know-how B2B di Bitron, con integrazione dei settori diversi presidiati dal Gruppo in un'unica architettura coerente. Il lavoro parte da sessioni di Design Sprint! per definire personas, customer journey e UX dei touchpoint principali *(slide 18)*.
 **Scope:** Nuovo sito di Gruppo, ottimizzazione SEO, gestione di campagne web *(referente: Alessandra Manzato — Communication & Corporate Identity Manager)*.
+**Visual:** `b2b_bitron_sito_01.png` (Pubblica).
 
 ### Rollon — "Il prodotto diventa esperienza" *(IKA 2023)*
 **Riconoscimento:** Interactive Key Award 2023, Best Integrated Communication Campaign B2B.
 **Mercati:** sito in 16 mercati *(fonte: Andrea Bosso, 18 ottobre 2026)*.
-**Progetto:** Trasformazione del sito B2B in una vera esperienza di prodotto.
+**Progetto:** Trasformazione del sito B2B in una vera esperienza di prodotto. Posizionamento premium orientato alla lead generation, progettazione con Design Sprint!, produzione in Growth Driven Design con affinamenti periodici sui dati; integrazione con il CRM HubSpot anche nella visualizzazione degli elementi *(slide 17)*.
 **SEO US:** +**48% traffico organico** USA. "Linear rails" = prima keyword organica US (preceduta solo dal brand "Rollon").
+**Visual:** `b2b_rollon_sito_01.png` (Pubblica).
 
 ### Megadyne — Digital B2B
-**Progetto:** Il digitale B2B apre nuove opportunità di business per Megadyne (trasmissioni di potenza).
+**Progetto:** Il digitale B2B apre nuove opportunità di business per Megadyne (trasmissioni di potenza): individuazione di nuove opportunità di business, analisi e miglioramento dei servizi offerti *(slide 41)*.
+**Metodo personas (slide 126–130):** buyer persona «Mark, Design Engineer» con journey (awareness, consideration, decision) e campagna collegata (prospect → lead → MQL → SQL). Esempio utile del metodo personas nel B2B.
+**Visual:** `b2b_megadyne_sito_01.png` (Pubblica).
 
 ### Contship Italia — Digital growth
-**Progetto:** Crescita digitale del brand per il gruppo leader nella logistica portuale.
+**Progetto:** Crescita digitale del brand per il gruppo leader nella logistica portuale. Strategia, UX, produzione e manutenzione della presenza digitale, anche in lingua cinese; sito integrato con uno strumento per esplorare tutte le connessioni marittime e intermodali della rete *(slide 66)*.
+**Visual:** `b2b_contship_sito_01.png` (Pubblica).
 
 ### Danieli Automation — Design System
-**Progetto:** Design System completo per digitalizzare e uniformare la comunicazione internazionale del brand.
+**Progetto:** Design System completo per digitalizzare e uniformare la comunicazione internazionale del brand. Nella presentazione generale *(slide 116)*: «Prima: un insieme di schermate non coerenti. Dopo: un sistema unico per interagire con tutti i tool».
+**Visual:** `b2b_danieli_designsystem_01.png` (prima e dopo; attribuzione a Danieli dedotta dalle schermate, Pubblica).
+
+### TEXA — Mobile Diagnostic Solutions
+**Progetto:** Progettazione UX per l'applicativo di gestione dei dati utente ricavati dalle black box TEXA *(slide 12)*.
+**Citabilità:** Pubblica. **Visual:** `b2b_texa_app_01.png`.
+
+### beanTech — Brainkin Design Sprint!
+**Progetto:** Design Sprint! per definire UX e UI di Brainkin, lo strumento per il controllo delle performance delle linee produttive aziendali *(slide 14)*.
+**Citabilità:** Pubblica. **Visual:** `b2b_beantech_brainkin_01.png`.
+
+### Ermes — Revisione dell'immagine digitale
+**Settore:** sicurezza informatica basata su AI (dal sito del cliente; ipotesi confermata dal Brain Owner il 25/11/2026).
+**Progetto:** Completa revisione dell'immagine del brand sul digitale, con una UX progettata sui bisogni delle personas lungo le loro journey *(slide 20)*.
+**Citabilità:** Pubblica. **Visual:** `b2b_ermes_sito_01.png`.
+
+### iFog — Brand identity da un nuovo posizionamento
+**Progetto:** Design Sprint! per ideare la brand identity (nome, logo) a partire da un nuovo posizionamento di mercato. Definizione della CX, UX/UI e produzione del sito web *(slide 24)*.
+**Nota:** caso in cui lo Sprint! produce anche il nome del brand; utile per il Brand Design Sprint!.
+**Citabilità:** Pubblica. **Visual:** `b2b_ifog_brand_01.png`.
+
+### Teksid — Presenza digitale di gruppo
+**Progetto:** Presenza digitale del gruppo rivista per offrire le informazioni sui singoli prodotti realizzati nelle diverse sedi nel mondo *(slide 56)*.
+**Citabilità:** Pubblica. **Visual:** `b2b_teksid_sito_01.png`.
+
+### Sabaf — Presenza digitale con cicli di Design Sprint!
+**Progetto:** Cinque anni dopo la realizzazione del portale corporate, riorganizzazione generale della presenza digitale del Gruppo con cicli di Design Sprint! per definire i touchpoint e i loro elementi *(slide 59)*.
+**Nota:** esiste una proposta SABAF su intranet e comunicazione interna (sito «Proposte ed Offerte», cartella SABAF_IC_AI).
+**Citabilità:** Pubblica. **Visual:** `b2b_sabaf_sito_01.png`.
+
+### Setten Genesio — «We are builders»
+**Progetto:** Nuova presenza digitale costruita sul concept chiave «We are builders», alla base di ogni touchpoint, con un percorso di comunicazione per i contenuti del gruppo. Design e sviluppo del sito, consulenza continua su tecnica e comunicazione, erogazione e manutenzione *(slide 63)*.
+**Citabilità:** Pubblica. **Visual:** `b2b_setten_sito_01.png`.
+
+### Arper — E-commerce outlet
+**Progetto:** E-commerce riservato agli utenti registrati per la ricerca e l'acquisto di prodotti a marchio, con numerosi filtri e varianti per colore *(slide 69)*.
+**Citabilità:** Pubblica. **Visual:** `b2b_arper_ecommerce_01.png`.
 
 ### IPI Agency — Real Estate advisory leader
-**Progetto:** Come raccontare un leader nella consulenza immobiliare B2B.
+**Progetto:** Come raccontare un leader nella consulenza immobiliare B2B. Nella presentazione generale (IPI Immobiliare, slide 55): riorganizzazione della presenza digitale di IPI SpA con una user experience strettamente funzionale ai target.
+**Visual:** `finance_ipi_sito_01.png` (Pubblica).
 
 ### IPI — ITACA Intranet
 **Progetto:** Nuova intranet ITACA per il Gruppo IPI (nome corretto da Andrea Bosso il 25/11/2026; prima nel Brain era «SFERA»). Design Sprint! (Intranet) in 2 giorni di workshop + 2 di lavoro Domino, poi Build Sprint! per realizzarla.
@@ -196,53 +289,78 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Attività:** Video teaser, email di lancio, 12 mini news formative, 8 mini video AI con avatar (3-5 min), 1 meeting stakeholder.
 
 ### BANCOMAT — Da ottimizzazione back-office a engagement
-**Progetto:** Ottimizzazione dei processi back-office e aumento dell'engagement digitale.
+**Progetto:** Ottimizzazione dei processi back-office e aumento dell'engagement digitale. Nella presentazione generale *(slide 58)*: progettazione UX e sviluppo del sito bancomat.it e di un'area riservata per gli operatori; app mobile Bmap per trovare gli sportelli ATM con la geolocalizzazione.
+**Visual:** `finance_bancomat_sito_01.png` (Pubblica).
 
 ### Links Foundation — Nuova Intranet
-**Progetto:** Nuova intranet per Links Foundation – Leading Innovation & Knowledge for Society.
+**Progetto:** Nuova intranet per Links Foundation – Leading Innovation & Knowledge for Society. «Connecting tools for researchers», dal 2020 a oggi: prima analisi tecnologica, intranet, supporto alla gestione del cambiamento, configurazione di strumenti tecnici e di personalizzazione *(slide 27)*.
 **Approccio:** Design Sprint! + Metodo Agile + piano di engagement e formazione.
+**Visual:** `b2b_links_intranet_01.png` (Pubblica).
 
 ### Demak Group — Da fornitore a leader B2B
-**Progetto:** Riposizionamento da fornitore a player di riferimento nel settore B2B.
+**Progetto:** Riposizionamento da fornitore a player di riferimento nel settore B2B: nuovo sito con una CX in linea con la natura consulenziale del brand, campagne multichannel per la visibilità del nuovo posizionamento e la lead generation, affiancamento a un nuovo approccio per i progetti Demak secondo il metodo potting sprint *(slide 19)*.
 **SEO:** +48% traffico organico totale, +54% lead generation, +20% clic non-brand, +18% audit score.
+**Visual:** `b2b_demak_sito_01.png` (Pubblica).
 
-### Frascold — SEO
+### Frascold — SEO e campagna social
 **Progetto:** SEO post-lancio nuovo sito per produttore compressori HVACR.
 **Risultato:** +**62% utenti organici già nel primo mese**.
+**Campagna social (slide 28):** carousel con landing page su 3 lingue e mercati; **click rate in linea con la previsione dell'1% della reach, conversion rate oltre il 15%**.
+**Visual:** `b2b_frascold_campagna_01.png` (Pubblica).
 
 ### Veritas — Scoasse
-**Progetto:** Comunicazione digitale per Veritas sul tema ambiente e raccolta rifiuti.
+**Progetto:** Comunicazione digitale per Veritas sul tema ambiente e raccolta rifiuti. Domino cura il portale dal 2010 e da oltre 10 anni altri aspetti della comunicazione digitale della multiutility veneziana: sottoportali, app mobile, messaggistica al cittadino *(slide 64)*.
+**Visual:** `b2b_veritas_sito_01.png` (Pubblica).
 
 ### Pipein — Da startup ad azienda
-**Progetto:** Nuova comunicazione più matura per Pipein, dalla fase startup alla fase scale-up.
+**Progetto:** Nuova comunicazione più matura per Pipein, dalla fase startup alla fase scale-up. Prodotto DDS3: lo Sprint! è partito da una richiesta di identità visiva ed è arrivato a un nuovo posizionamento, che aumenta la percezione di solidità e affidabilità e presenta il prodotto come soluzione a un problema, non come strumento tecnologico *(slide 22–23)*.
+**Visual:** `b2b_pipein_sito_01.png`, `b2b_pipein_sito_prima_02.png` (prima e dopo, Pubblica).
 
 ### Gruppo De Eccher — B2B
-**Progetto:** Presenza digitale per il gruppo di costruzioni.
+**Progetto:** Presenza digitale per il gruppo di costruzioni. Siti Tensa e Deal, con una UX completamente rinnovata rispetto alle altre presenze del gruppo e un'area dedicata alla ricerca dei progetti *(slide 62)*.
+**Visual:** `b2b_deeccher_tensadeal_01.png` (Pubblica).
 
 ---
 
 ## DIGITAL MARKETING & SEO/GEO
 
 ### Masi Agricola — Sito + SEO + eCommerce
-**Progetto:** Nuovo sito (istituzionale + enoteca + cantine), campagne SEO/SEM, Google Ads ecommerce.
+**Progetto:** Nuovo sito (istituzionale + enoteca + cantine), campagne SEO/SEM, Google Ads ecommerce. Aree dedicate al prodotto, alle iniziative speciali e alle visite in cantina; integrazione dei contenuti turistici nel TDH nazionale *(slide 67)*.
 **Risultati SEO (6 mesi):** Utenti +**44,22%** | Sessioni +**54,19%** | Pagine viste +**175,52%**
+**Visual:** `turismo_masi_sito_01.png` (Pubblica).
 
 ### ENIT — Promozione Italia nel mondo
 **Progetto:** Analisi e coordinamento campagne di web marketing sul brand Italia in **34 paesi**.
 **Attività:** Iniziative local + global, dashboard unificata su **Looker** per monitoraggio performance.
+**Visual:** `turismo_enit_campagne_01.png` (Pubblica).
 
 ---
 
 ## CX / ECOMMERCE / FINANCE
 
 ### Arca SGR — Advisory Assistant
-**Progetto:** Tool interattivo per collocatori bancari distribuito presso istituti bancari.
+**Progetto:** Tool interattivo per collocatori bancari distribuito presso istituti bancari. Strumenti individuati con workshop di Design Sprint! e prodotti in Growth Driven Design, con rilasci progressivi secondo il framework Agile *(slide 15–16)*.
 **Come funziona:** Guida la definizione degli investimenti del cliente finale in modo personalizzato.
+**Visual:** `finance_arca_advisoryassistant_01.png`, `_02.png` (Pubblica).
 
 ### Costa Crociere — Preventivo Emozionale
-**Progetto:** Il preventivo viaggio diventa un minisite personalizzato per ogni agenzia e cliente.
+**Progetto:** Il preventivo viaggio diventa un minisite personalizzato per ogni agenzia e cliente. Il viaggiatore interagisce solo con l'agente proponente; l'attenzione si sposta dal prezzo alle USP del prodotto, differenziandosi dai competitor *(slide 31)*.
 **Include:** Destinazione, nave, date, cabina, prezzo, foto e contatti dell'agente, CTA prenotazione.
 **Analytics:** Monitoraggio lead per prodotto e punto vendita, conversione tracciata per operatore.
+**Risultato:** **più di 120.000 minisiti ogni anno** in area EMEA (Brain Owner, 25/11/2026).
+**Visual:** `turismo_costa_preventivoemozionale_01.png` (Pubblica).
+
+### Occhiblu — Da ottico locale a e-commerce internazionale
+**Progetto:** Consulenza e affiancamento nella trasformazione da ottico tradizionale a e-commerce internazionale su Shopify: digital strategy, implementazione, pianificazione e gestione delle campagne di web marketing *(slide 70)*.
+**Citabilità:** Pubblica. **Visual:** `salute_occhiblu_ecommerce_01.png`.
+
+### Gruppo editoriale Studium — E-commerce
+**Progetto:** Canale di vendita centralizzato per tutte le realtà del gruppo ed e-commerce verticali per ogni brand, per l'acquisto e la gestione online delle riviste *(slide 71)*.
+**Citabilità:** Pubblica. **Visual:** `altri_studium_ecommerce_01.png`.
+
+### Dolce & Gabbana — Underwear
+**Progetto:** Gestione unica di tutti i contenuti: oltre 20 siti in 9 lingue (anche alfabeti non latini), migliaia di immagini in tutte le risoluzioni, video, attenzione alla SEO *(slide 47)*.
+**Citabilità:** Pubblica. **Visual:** `altri_dolcegabbana_sito_01.png`.
 
 ---
 
@@ -258,6 +376,15 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Cosa ha fatto Domino:** Uso dell'AI per creare un'installazione/esperienza immersiva che rende tangibili le possibilità del progresso tecnologico al grande pubblico.
 **Rilevanza:** Case che dimostra la capacità Domino di portare l'AI fuori dai contesti B2B puri, in esperienze phygital rivolte al consumatore finale.
 
+### Esosphera — Smile CX GAIA
+**Settore:** tecnologia per il customer care (ipotesi confermata dal Brain Owner il 25/11/2026).
+**Progetto:** Design Sprint! per un nuovo posizionamento del brand sul digitale, centrato sul prodotto principale GAIA, la receptionist virtuale con AI che risponde su telefono, chat, WhatsApp e mail; navigazione orientata alla lead generation per le diverse personas *(slide 25–26)*.
+**Citabilità:** Pubblica. **Visual:** `altri_esosphera_gaia_01.png`, `_02.png`.
+
+### Lega Nazionale Pallacanestro — Portale web e Skill Alexa
+**Progetto:** Punto informativo per pubblico e addetti ai lavori, con statistiche aggiornate dinamicamente per giocatore e partita. La Skill Alexa risponde in tempo reale sui dispositivi degli utenti *(slide 53)*.
+**Citabilità:** Pubblica. **Visual:** `altri_lnp_sito_01.png`.
+
 ---
 
 ## TURISMO & CULTURA
@@ -269,7 +396,8 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Scheda completa:** [case_slowfood_core_sprint.md](case_slowfood_core_sprint.md) · **Visual:** `assets_case_history/turismo_cultura/turismo_slowfood_coresprint_01–06.png`
 
 ### Biennale di Venezia — Sito + eCommerce
-**Progetto:** Nuova presenza digitale per la Biennale: sito istituzionale, eCommerce (biglietteria/shop), aree profilate.
+**Progetto:** Nuova presenza digitale per la Biennale: sito istituzionale, eCommerce (biglietteria/shop), aree profilate. La sfida *(slide 52)*: far percepire come semplice e uniforme una realtà fatta di sette mondi molto diversi (Arte, Architettura, Cinema, Danza, Musica, Teatro, Archivio storico), con una UX funzionale che trasmetta lo spirito estetico della Biennale.
+**Visual:** `turismo_biennale_sito_01.png` (Pubblica).
 
 ### Fondazione Torino Musei — Rete museale
 **Progetto:** 4 musei (Palazzo Madama, GAM, MAO, Borgo Medievale), 2000 anni di storia, 150.000 opere, una rete digitale unica.
@@ -288,7 +416,8 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Progetto:** L'eccellenza del territorio parte dal digitale. Promozione turistica integrata.
 
 ### Distretto Turistico dei Laghi
-**Progetto:** Una destinazione turistica a portata di dita. Presenza digitale per il distretto.
+**Progetto:** Una destinazione turistica a portata di dita. Presenza digitale per il distretto: sviluppo del portale, integrazione dei contenuti con il portale regionale Visit Piemonte, erogazione e manutenzione *(slide 65)*.
+**Visual:** `turismo_distrettolaghi_sito_01.png` (Pubblica).
 
 ### Masi Agricola — *vedi Digital Marketing sopra*
 
@@ -299,18 +428,44 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 ## SALUTE & BEAUTY
 
 ### Lierac + Phyto (Ales Group) — CX prima del prodotto
-**Progetto:** Per Lierac e Phyto il cliente viene prima (anche del prodotto). Strategia CX per due brand beauty premium.
+**Progetto:** Per Lierac e Phyto il cliente viene prima (anche del prodotto). Strategia CX per due brand beauty premium. Gestione delle attività social per il mercato Italia: dalla comunicazione di prodotto a quella orientata alle persone, con più occasioni di interazione, iniziative speciali ed eventi live *(slide 38)*.
+**Risultato:** in un anno **+30% condivisioni**, **+20% engagement**, **1.300 lead a settimana** in fase di campagna.
+**Visual:** `salute_lieracphyto_social_01.png`, `_02.png` (Pubblica).
 
 ### Ospedale dell'Angelo (Venezia-Mestre)
-**Progetto:** Promuovere l'eccellenza nel settore sanitario attraverso il digitale.
+**Progetto:** Promuovere l'eccellenza nel settore sanitario attraverso il digitale. Strategia per consolidare l'awareness sul territorio e attrarre utenti da altre aree d'Italia; sito costruito su personas e journey per orientare alla scoperta dei reparti e alla lead generation *(slide 46)*.
+**Visual:** `salute_ospedaleangelo_sito_01.png` (Pubblica).
 
 ### Affidea Italia
-**Progetto:** Portare il servizio più vicino all'utente attraverso la CX digitale.
+**Progetto:** Portare il servizio più vicino all'utente attraverso la CX digitale. Social strategy e gestione delle pagine social dei centri Affidea e CDC, con temi generali e approfondimenti con i medici *(slide 37)*.
+**Visual:** `salute_affidea_social_01.png` (Pubblica).
 
 ### LARC — Digital innovation in healthcare
-**Progetto:** Innovazione digitale al servizio della sanità per Gruppo LARC.
+**Progetto:** Innovazione digitale al servizio della sanità per Gruppo LARC. Progettazione UX e sviluppo del portale degli ambulatori, con prenotazione e richiesta di informazioni per servizio o per medico e attenzione all'accessibilità per utenti con disabilità visive *(slide 54)*.
+**Visual:** `salute_larc_sito_01.png` (Pubblica).
 
-**Altri clienti salute:** CDI, Humanitas, Asalaser, Solgar, Azienda Ospedaliera di Padova, Labo Cosprophar
+### Asa Laser — 15 anni di attività digitali
+**Progetto:** Domino segue da 15 anni le attività digitali di ASA Laser, produttore di apparecchiature laser elettromedicali, anche per la veterinaria (AsaVet). Strategia definita con un Design Sprint! su personas e journey; sito pensato per diverse tipologie di utenti, con caratteristiche di prodotto, ricerca scientifica e miglioramenti tecnologici *(slide 45)*.
+**Nota:** relazione di lunga durata, utile come prova di continuità.
+**Citabilità:** Pubblica. **Visual:** `salute_asalaser_sito_01.png`.
+
+### Solgar e Nature's Bounty — Presenza digitale
+**Progetto:** Progettazione e produzione della presenza digitale dei due marchi: campagne di comunicazione, servizi IT, e-commerce per la diffusione di pubblicazioni *(slide 57)*.
+**Citabilità:** Pubblica. **Visual:** `salute_solgar_sito_01.png`.
+
+### Occhiblu — *vedi sezione CX sopra*
+
+**Altri clienti salute:** CDI, Humanitas, Azienda Ospedaliera di Padova, Labo Cosprophar
+
+---
+
+## ALTRI SETTORI (fuori dai cinque target)
+
+### Italiacamp — CX e Inbound Marketing
+**Progetto:** Digital strategy e customer experience con workshop di Design Sprint!, personas e journey; nuovi touchpoint e percorsi di inbound marketing *(slide 21)*.
+**Citabilità:** Pubblica. **Visual:** `altri_italiacamp_sito_01.png`.
+
+**Altri case in questa area, collocati sopra per tipo di progetto:** Dolce & Gabbana e Studium (CX / eCommerce), Esosphera e Lega Nazionale Pallacanestro (AI & Innovazione).
 
 ---
 
@@ -318,14 +473,15 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 
 | Settore | Clienti |
 |---|---|
-| **Automotive** | Fiat, Fiat Professional, Jeep, Abarth, Alfa Romeo, IVECO, Ford Authos, Motor Village, CIFA, Askoll, Mopar, Steyr, CNH Industrial, New Holland, Case IH, Stellantis |
-| **B2B Industriale** | CIA — Confederazione Italiana Agricoltori, Poltrona Frau In Motion, Danieli, COMAU, Bitron, Volvo Penta, Petronas, Frascold, Teksid, Rollon, TEXA, B3, SKF, Ewellix, DFS, Links Foundation, Megadyne, Contship Italia, Veritas, Pipein, Gruppo De Eccher, Demak |
+| **Automotive** | Fiat, Fiat Professional, Jeep, Abarth, Alfa Romeo, IVECO, Ford Authos, Motor Village, CIFA, Askoll, Mopar, Steyr, CNH Industrial, New Holland, Case IH, Stellantis, BCA Vehicle Remarketing |
+| **B2B Industriale** | CIA — Confederazione Italiana Agricoltori, Poltrona Frau In Motion, Danieli, COMAU, Bitron, Volvo Penta, Petronas, Frascold, Teksid, Rollon, TEXA, B3, SKF, Ewellix, DFS, Links Foundation, Megadyne, Contship Italia, Veritas, Pipein, Gruppo De Eccher, Demak, beanTech, Ermes, iFog, Sabaf, Setten Genesio, Arper |
 | **Finance & PA** | Arca SGR, Bancomat SpA, Exor, Zoomlion Capital, Compagnia di San Paolo, Regione del Veneto, Consiglio Regionale Veneto |
-| **Salute & Beauty** | Affidea, Ospedale dell'Angelo, CDI, Humanitas, Asalaser, LARC, Lierac, Phyto, Solgar, Azienda Ospedaliera di Padova, Labo Cosprophar |
+| **Salute & Beauty** | Affidea, Ospedale dell'Angelo, CDI, Humanitas, Asalaser, LARC, Lierac, Phyto, Solgar, Nature's Bounty, Occhiblu, Azienda Ospedaliera di Padova, Labo Cosprophar |
 | **Turismo & Cultura** | Alpitour, ENIT, Costa Crociere, Biennale di Venezia, Fondazione Torino Musei, Palazzo Madama, GAM, MAO, Museo Nazionale del Cinema, Galleria Borghese, Fondazione Aquileia, Museo Poldi Pezzoli, Turismo Torino, Visit Piemonte, Terre dei Savoia, Marcegaglia Tourism, Provincia di Padova, Langhe-Monferrato-Roero, Distretto Turistico dei Laghi, Masi Agricola |
-| **Media, Sport & PA** | RAI, Universal, Lega Nazionale Pallacanestro, FIMI, Juventus, IPI Group, Bancomat |
-| **AI & Tech** | BR-Uno (Intelligent Assistant), Links Foundation, TEXA, Neosperience |
-| **Startup & Scale-up** | Demak, Pipein, iFog, CheProfessionista, MIND |
+| **Media, Sport & PA** | RAI, Universal, Lega Nazionale Pallacanestro, FIMI, Juventus, IPI Group, Bancomat, Gruppo editoriale Studium |
+| **Moda & Retail** | Dolce & Gabbana |
+| **AI & Tech** | BR-Uno (Intelligent Assistant), Links Foundation, TEXA, Neosperience, Esosphera |
+| **Startup & Scale-up** | Demak, Pipein, iFog, CheProfessionista, MIND, Italiacamp |
 
 
 ---
@@ -345,3 +501,4 @@ Questo file fa parte del Domino Brain. Per approfondire:
 - [09_domino_gtm_turismo_cultura.md](09_domino_gtm_turismo_cultura.md) — sales plays Turismo & Cultura
 - [10_domino_gtm_finance_pa.md](10_domino_gtm_finance_pa.md) — sales plays Finance & PA
 - [11_domino_gtm_automotive.md](11_domino_gtm_automotive.md) — sales plays Automotive
+- [assets_case_history/descrizioni_case_PRES008.md](assets_case_history/descrizioni_case_PRES008.md) — testi verbatim delle slide dei case della presentazione generale
