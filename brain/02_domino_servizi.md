@@ -170,7 +170,7 @@ Progettiamo e realizziamo prodotti digitali che funzionano e sono memorabili. Pu
 - Analytics & reporting dashboard (anche su Looker)
 - Ottimizzazione & management continuativo
 
-**[Case history collegati](04_domino_case_history.md):** Stellantis Employee Portal, IVECO.com, Comau+, Biennale di Venezia, Arca Advisory Assistant, Fiat Professional E-Product, IPI SFERA Intranet, Links Foundation intranet, Bancomat, Museo Nazionale del Cinema, Fondazione Torino Musei
+**[Case history collegati](04_domino_case_history.md):** Stellantis Employee Portal, IVECO.com, Comau+, Biennale di Venezia, Arca Advisory Assistant, Fiat Professional E-Product, IPI ITACA Intranet, Links Foundation intranet, Bancomat, Museo Nazionale del Cinema, Fondazione Torino Musei
 
 ---
 

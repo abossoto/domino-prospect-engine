@@ -208,7 +208,7 @@ In sanità e beauty la **fiducia è il valore principale** — non si scala con 
 - **Trainstorming Sprint!** (da €15.000, 12 mesi · 3 sessioni) → quando la trigger è **fusione/acquisizione** o riorganizzazione: lanciare un portale non basta, serve accompagnamento al cambiamento culturale. Il Trainstorming Sprint! è il pezzo che fa funzionare l'adozione nel tempo, finché il nuovo modo di comunicare smette di dover essere difeso.
 
 **[Proof point](04_domino_case_history.md):**
-- IPI — SFERA Intranet + piano di comunicazione per lancio (video AI, email, mini news formative)
+- IPI — ITACA Intranet + piano di comunicazione per lancio (video AI, email, mini news formative)
 - Stellantis Employee Portal — FEIEA Grand Prix
 - Links Foundation — Design Sprint! + Agile per nuova intranet
 

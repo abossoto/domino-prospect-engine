@@ -187,9 +187,9 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 ### IPI Agency — Real Estate advisory leader
 **Progetto:** Come raccontare un leader nella consulenza immobiliare B2B.
 
-### IPI — SFERA Intranet
-**Progetto:** Nuova intranet SFERA per il Gruppo IPI.
-**Scheda estesa:** `case_ipi_intranet_design_sprint.md` (Design Sprint! per la nuova intranet di Gruppo: tre personas, modello di gestione degli strumenti, prototipo della home; il prototipo si chiama «ITACA», il nome SFERA va confermato) · **Visual:** `assets_case_history/finance_pa/finance_ipi_*` (Pubblica).
+### IPI — ITACA Intranet
+**Progetto:** Nuova intranet ITACA per il Gruppo IPI (nome corretto da Andrea Bosso il 25/11/2026; prima nel Brain era «SFERA»). Design Sprint! (Intranet) in 2 giorni di workshop + 2 di lavoro Domino, poi Build Sprint! per realizzarla.
+**Scheda estesa:** `case_ipi_intranet_design_sprint.md` (tre personas, modello di gestione degli strumenti, prototipo della home) · **Visual:** `assets_case_history/finance_pa/finance_ipi_*` (Pubblica).
 
 ### IPI — Internal Communication Onboarding
 **Progetto:** Piano di comunicazione per lancio nuova intranet e tool Microsoft 365.

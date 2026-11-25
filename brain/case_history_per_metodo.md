@@ -27,7 +27,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 - **[Slow Food — Raccolta fondi](case_slowfood_core_sprint.md)** → workshop di attivazione pre-Core Sprint! *(documentato)*
 - **[FourStars — Website Design Sprint!](case_fourstars_website_design_sprint.md)** → Design Sprint! (Website) · Build Sprint! a storypoint *(documentato: offerta OFF_149_23, sprint luglio 2024, sito in produzione dicembre 2024)*
 - **[FARID — Website Design Sprint!](case_farid_website_design_sprint.md)** → Design Sprint! (Website) · Build Sprint! a storypoint *(documentato: offerta 90_25, sprint settembre–ottobre 2025, go live atteso entro il 3 novembre 2026)*
-- **[IPI — Design Sprint! intranet](case_ipi_intranet_design_sprint.md)** → Design Sprint! (Intranet) *(documentato: deck Sabaf, «Design Sprint! L'esperienza con IPI»; data DATI NON TROVATI; nella slide dura «1 settimana»)*
+- **[IPI — ITACA, Design Sprint! e Build Sprint!](case_ipi_intranet_design_sprint.md)** → Design Sprint! (Intranet) · Build Sprint! *(documentato: deck Sabaf e conferma di Andrea Bosso del 25/11/2026; formato 2 + 2 giorni, la slide scrive «1 settimana»; date DATI NON TROVATI)*
 
 ---
 
@@ -61,7 +61,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 - **Contship Italia — Digital growth** → Build Sprint! · Audit Digital Marketing
 - **Danieli Automation — Design System** → Brain & Identity Design Sprint! *(focus design system)* · Build Sprint!
 - **IPI Agency — Real Estate** → Build Sprint!
-- **IPI — SFERA Intranet** → Design Sprint! (Intranet) · Build Sprint!
+- **IPI — ITACA Intranet** → Design Sprint! (Intranet) · Build Sprint!
 - **IPI — Internal Communication Onboarding** → Trainstorming Sprint! · Build Sprint!
 - **BANCOMAT — Da back-office a engagement** → Design Sprint! · Build Sprint!
 - **Links Foundation — Nuova Intranet** → Design Sprint! (Intranet) · Build Sprint! *(Design Sprint! documentato)*

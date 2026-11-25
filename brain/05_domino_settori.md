@@ -63,7 +63,7 @@
 - SEO/GEO per visibilità internazionale su keyword di prodotto
 - Core Sprint! per allineare stakeholder interni sulla direzione strategica
 - Design Sprint! per progettare soluzioni in 4 giorni (2 con il cliente + 2 di lavoro Domino)
-- Intranet e portali per comunicazione interna complessa (Links Foundation, IPI SFERA)
+- Intranet e portali per comunicazione interna complessa (Links Foundation, IPI ITACA)
 - **Trainstorming Sprint! I5.0** per aziende manifatturiere che devono navigare transizioni complesse (AI, normativa, sostenibilità) con un metodo strutturato e output concreti
 - **Decision Design tools**: configuratori, TCO calculator, comparatori — strumenti che aiutano il buyer a decidere, non solo a informarsi
 
