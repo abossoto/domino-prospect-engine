@@ -1,32 +1,40 @@
-# Case Rollon — Design Sprint! Website e Build Sprint! per un sito che genera contatti
+# Case Rollon — Il prodotto diventa esperienza: Design Sprint! Website e Build Sprint! per un sito che genera contatti
 
 **Cliente:** Rollon S.p.A. (gruppo Timken), sistemi di movimento lineare
 **Settore:** B2B Industriale/Manifatturiero
-**Periodo:** non dichiarato. Scelta di Andrea Bosso (25/11/2026): in questo case non compaiono date né tempi.
+**Riconoscimento:** Interactive Key Award 2023, Best Integrated Communication Campaign B2B.
+**Mercati:** sito in 17 mercati (Andrea Bosso, 25/11/2026; selettore paese di rollon.com).
+**Periodo:** non dichiarato. Scelta di Andrea Bosso (25/11/2026): per il percorso non compaiono date né tempi.
 **Prodotti Domino utilizzati:**
 - Design Sprint! (variante Website);
-- Build Sprint!, che ha consegnato l'intero sito e altri materiali (quali: DATI NON TROVATI).
+- Build Sprint!, che ha consegnato l'intero sito e altri materiali (quali: DATI NON TROVATI);
+- produzione con affinamenti periodici sui dati (Growth Driven Design) e integrazione con il CRM HubSpot, anche nella visualizzazione degli elementi (PRES_DOMINO_GENERALE _008, slide 17).
 **Status:** Build Sprint! concluso, sito consegnato. Il sito è praticamente identico al prototipo del Design Sprint! (Andrea Bosso, 25/11/2026). Il deck di restituzione proponeva come passo successivo uno sprint sui sales tool (campagne, integrazione con myRollon, altri strumenti); se sia partito: DATI NON TROVATI.
 **Citabilità** (Andrea Bosso, 25/11/2026):
-- nome del cliente: sì (già pubblico con il case IKA 2023 in `04_domino_case_history.md`);
-- visual del prototipo: sì;
+- nome del cliente, riconoscimento IKA 2023 e numeri del sito qui sotto: sì (già pubblici nel Brain, `04_`, `06_`, `07_`);
+- visual del sito e del prototipo: sì;
 - personas, buyer journey e report di restituzione: DA VERIFICARE, non dichiarato; non usarli fuori dai pitch finché non c'è la conferma;
 - frase del cliente: nessuna, per scelta di Andrea Bosso; la sezione «Dicono di noi» si omette;
 - approvazione del case: Andrea Bosso, Direttore Clienti.
 **Uso come case-tipo:**
 - pitch del Design Sprint! Website per produttori B2B industriali con un catalogo tecnico, che vendono a ingegneri e buyer e vogliono più contatti commerciali;
-- B2B, SP1 (il sito non porta contatti qualificati) come play principale; SP2 (i commerciali perdono tempo a spiegare il prodotto) e SP5 (più mercati) come secondari.
-**Visual:** 11 file in `assets_case_history/b2b_industriale/`, estratti il 25/11/2026 dalle slide 38-75 di `PRES_Rollon_DS_Report_Proposal.pptx`, citabilità Pubblica (Andrea Bosso, 25/11/2026). Sono schermate del prototipo, intere e senza ritagli.
-- Pagine intere: `b2b_rollon_prototipo_home_01.png`, `…_famiglia_linear_line_02.png`, `…_famiglia_linear_line_stock_03.png`, `…_prodotto_compact_rail_testata_04.png`, `…_prodotto_compact_rail_completa_05.png`, `…_prodotto_compact_rail_download_prezzi_06.png`. Contengono testi segnaposto e il marchio Timken nel footer.
-- Sezioni di prodotto: `…_prodotto_affidabilita_07.png`, `…_lunga_durata_08.png`, `…_alta_dinamica_09.png`, `…_bassa_manutenzione_10.png`, `…_robustezza_11.png`. Senza segnaposto né Timken: sono quelle da usare su sito e social.
-**Numeri:** nessuno dichiarato. Per scelta di Andrea Bosso non si danno numeri né tempi. Risultati misurati: DATI NON TROVATI.
-**Fonti:** `PRES_Rollon_DS_Report_Proposal.pptx` (report e proposta di restituzione, 78 slide); racconto di Andrea Bosso, 25/11/2026; Brain cliente Rollon (`Clienti/Rollon/00_brain/`).
+- B2B, SP1 (il sito non porta contatti qualificati) come play principale, con il proof point SEO; SP2 (i commerciali perdono tempo a spiegare il prodotto) e SP5 (più mercati) come secondari.
+**Visual:** 12 file in `assets_case_history/b2b_industriale/`, citabilità Pubblica.
+- `b2b_rollon_sito_01.png`: screenshot del sito (Pubblica, 25/11/2026).
+- 11 file `b2b_rollon_prototipo_*`, estratti il 25/11/2026 dalle slide 38-75 di `PRES_Rollon_DS_Report_Proposal.pptx`, schermate del prototipo intere e senza ritagli (Pubblica, Andrea Bosso, 25/11/2026):
+  - pagine intere: `b2b_rollon_prototipo_home_01.png`, `…_famiglia_linear_line_02.png`, `…_famiglia_linear_line_stock_03.png`, `…_prodotto_compact_rail_testata_04.png`, `…_prodotto_compact_rail_completa_05.png`, `…_prodotto_compact_rail_download_prezzi_06.png`; contengono testi segnaposto e il marchio Timken nel footer;
+  - sezioni di prodotto: `…_prodotto_affidabilita_07.png`, `…_lunga_durata_08.png`, `…_alta_dinamica_09.png`, `…_bassa_manutenzione_10.png`, `…_robustezza_11.png`; senza segnaposto né Timken, sono quelle da usare su sito e social.
+**Numeri:**
+- sito in 17 mercati;
+- +48% di traffico organico negli Stati Uniti; «linear rails» è la prima keyword organica US, preceduta solo dal brand «Rollon» (dati già presenti in `04_` e `07_`);
+- per il percorso non si danno altri numeri né tempi (scelta di Andrea Bosso); altri risultati misurati: DATI NON TROVATI.
+**Fonti:** `PRES_Rollon_DS_Report_Proposal.pptx` (report e proposta di restituzione, 78 slide); `PRES_DOMINO_GENERALE _008` (slide 17); racconto di Andrea Bosso, 25/11/2026; Brain cliente Rollon (`Clienti/Rollon/00_brain/`).
 
 ---
 
 ## In una riga
 
-Rollon, produttore di sistemi di movimento lineare, voleva un sito che generasse più contatti commerciali. Il Design Sprint! ha deciso per chi progettarlo e il Build Sprint! ha consegnato un sito praticamente identico al prototipo.
+Rollon, produttore di sistemi di movimento lineare, voleva un sito che generasse più contatti commerciali. Il Design Sprint! ha deciso per chi progettarlo, il Build Sprint! ha consegnato un sito praticamente identico al prototipo e il progetto ha vinto l'IKA 2023 come miglior campagna di comunicazione integrata B2B.
 
 ## Il contesto
 
@@ -40,7 +48,7 @@ Le parole del cliente sul problema di partenza: DATI NON TROVATI.
 
 ## Perché questo percorso
 
-Un sito che deve generare contatti non si progetta partendo dalle pagine, ma da chi cerca e da come decide. Il Design Sprint! ha lavorato su questo e ha prodotto un prototipo. Il Build Sprint! ha portato in produzione quello che il prototipo aveva già mostrato.
+Un sito che deve generare contatti non si progetta partendo dalle pagine, ma da chi cerca e da come decide. Il Design Sprint! ha lavorato su questo e ha prodotto un prototipo. Il Build Sprint! ha portato in produzione quello che il prototipo aveva già mostrato: trasformare il sito B2B in una vera esperienza di prodotto, con un posizionamento premium orientato alla lead generation.
 
 ## Cosa è stato fatto
 
@@ -48,7 +56,7 @@ Un sito che deve generare contatti non si progetta partendo dalle pagine, ma da 
 - **Secondo giorno:** cercate le soluzioni, una serie per Klaus e una per Ivan.
 - **Direzione:** dai risultati è venuta la scelta di partire dai prodotti, non da valori astratti su azienda e qualità, e di inserire poi una gamma di valori; il messaggio giusto al momento giusto; il confronto con i siti dei concorrenti; l'approccio al sito Rollon.
 - **Prototipo:** home, pagina famiglia di prodotto e pagina prodotto, nelle schermate delle slide 38-75.
-- **Build Sprint!:** consegna dell'intero sito e di altri materiali (quali: DATI NON TROVATI).
+- **Build Sprint!:** consegna dell'intero sito e di altri materiali (quali: DATI NON TROVATI); produzione con affinamenti periodici sui dati e integrazione con il CRM HubSpot.
 
 ## Output consegnati
 
@@ -69,9 +77,11 @@ Un sito che deve generare contatti non si progetta partendo dalle pagine, ma da 
 
 ## Cosa è successo, in concreto
 
-- **Il sito consegnato** è praticamente identico al prototipo (Andrea Bosso, 25/11/2026).
+- **Il sito consegnato** è praticamente identico al prototipo (Andrea Bosso, 25/11/2026) ed è online in 17 mercati.
+- **Riconoscimento:** Interactive Key Award 2023, Best Integrated Communication Campaign B2B.
+- **SEO negli Stati Uniti:** +48% di traffico organico; «linear rails» è la prima keyword organica, preceduta solo dal brand.
 - **Il passo successivo proposto** nel deck: uno sprint sui sales tool (campagne, integrazione con myRollon, altri strumenti). Esito: DATI NON TROVATI.
-- **Risultati misurati:** DATI NON TROVATI. Per scelta, in questo case non si dichiarano numeri né tempi.
+- **Altri risultati misurati:** DATI NON TROVATI.
 
 ## Argomenti di pitch derivati
 
@@ -81,17 +91,17 @@ Un sito che deve generare contatti non si progetta partendo dalle pagine, ma da 
 - *Per chi vende su più mercati.* Selettore di mercato, supporto telefonico rilevato in automatico, griglia, stock, download e prezzi che cambiano secondo il mercato.
 - *Per chi ha già una piattaforma di prodotto.* Il sito si lega a myRollon: il percorso continua lì, senza ripartire da zero.
 
-**SP1, il sito non porta contatti qualificati.** Case principale: l'obiettivo dichiarato dello Sprint! è la lead generation.
+**SP1, il sito non porta contatti qualificati.** Case principale: l'obiettivo dichiarato dello Sprint! è la lead generation, e il proof point SEO (+48% di traffico organico US, «linear rails» prima keyword) è già nel play.
 **SP2, i commerciali perdono tempo a spiegare il prodotto.** Pagine con USP chiare, download tecnici e preventivo rapido tolgono lavoro alla prima spiegazione.
-**SP5, più mercati.** Il sito si adatta al mercato senza moltiplicare le versioni.
+**SP5, più mercati.** Il sito si adatta al mercato senza moltiplicare le versioni; è online in 17 mercati.
 
 **Relazione.** Il Design Sprint! è l'ingresso, il Build Sprint! la consegna, uno sprint sui sales tool il passo che il deck propone dopo il sito.
 
 ## Note di ingaggio
 
-- **Cosa è citabile:** nome di Rollon e visual del prototipo (Andrea Bosso, 25/11/2026).
-- **Da non usare in pubblico, per ora:** personas, buyer journey e report di restituzione, finché non c'è la conferma. Nessuna frase del cliente, nessun numero, nessun tempo.
-- **Visual:** per sito e social usare le sezioni di prodotto (07-11) e la testata (04); le pagine intere hanno testi segnaposto e il marchio Timken.
-- **Rapporto con il case IKA 2023 («Il prodotto diventa esperienza», in `04_domino_case_history.md`):** da confermare. Entrambi parlano di un sito Rollon orientato alla lead generation e progettato con un Design Sprint!, ma il Brain non dice che siano lo stesso lavoro. Finché non è confermato, non attribuire a questo case il premio IKA, il +48% di traffico organico US né il Growth Driven Design.
+- **Cosa è citabile:** nome di Rollon, IKA 2023, 17 mercati, numeri SEO US e visual del sito e del prototipo.
+- **Da non usare in pubblico, per ora:** personas, buyer journey e report di restituzione, finché non c'è la conferma. Nessuna frase del cliente; per il percorso nessun altro numero e nessun tempo.
+- **Visual:** per sito e social usare lo screenshot del sito, le sezioni di prodotto (07-11) e la testata (04); le pagine intere del prototipo hanno testi segnaposto e il marchio Timken.
+- **Unificazione:** questo è il case unico su Rollon. Riunisce il vecchio case IKA 2023 «Il prodotto diventa esperienza» e il percorso Design Sprint! + Build Sprint! (conferma di Andrea Bosso, 25/11/2026).
 - **Riferimenti:** Direttore Clienti Andrea Bosso; Account Manager e Project Manager Giulia Palazzo.
-- **Da aggiornare quando ci sono:** quali sono gli altri materiali del Build Sprint!, esito dello sprint sui sales tool, risultati misurati e, se Andrea Bosso lo decide, date, numeri e frase del cliente.
+- **Da aggiornare quando ci sono:** quali sono gli altri materiali del Build Sprint!, esito dello sprint sui sales tool, altri risultati misurati e, se Andrea Bosso lo decide, date e frase del cliente.

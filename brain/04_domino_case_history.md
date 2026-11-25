@@ -235,22 +235,17 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Scope:** Nuovo sito di Gruppo, ottimizzazione SEO, gestione di campagne web *(referente: Alessandra Manzato — Communication & Corporate Identity Manager)*.
 **Visual:** `b2b_bitron_sito_01.png` (Pubblica).
 
-### Rollon — "Il prodotto diventa esperienza" *(IKA 2023)*
+### Rollon — "Il prodotto diventa esperienza": Design Sprint! Website e Build Sprint! *(IKA 2023)*
+**Settore:** B2B Industriale/Manifatturiero (sistemi di movimento lineare; gruppo Timken)
 **Riconoscimento:** Interactive Key Award 2023, Best Integrated Communication Campaign B2B.
 **Mercati:** sito in 17 mercati *(fonte: Andrea Bosso, 25 novembre 2026; selettore paese di rollon.com)*.
-**Progetto:** Trasformazione del sito B2B in una vera esperienza di prodotto. Posizionamento premium orientato alla lead generation, progettazione con Design Sprint!, produzione in Growth Driven Design con affinamenti periodici sui dati; integrazione con il CRM HubSpot anche nella visualizzazione degli elementi *(slide 17)*.
+**Progetto:** Trasformazione del sito B2B in una vera esperienza di prodotto. Posizionamento premium orientato alla lead generation, progettazione con Design Sprint! (Website), produzione con Build Sprint! e affinamenti periodici sui dati (Growth Driven Design); integrazione con il CRM HubSpot anche nella visualizzazione degli elementi *(slide 17)*. Il sito consegnato è praticamente identico al prototipo.
 **SEO US:** +**48% traffico organico** USA. "Linear rails" = prima keyword organica US (preceduta solo dal brand "Rollon").
-**Visual:** `b2b_rollon_sito_01.png` (Pubblica).
-
-### Rollon — Design Sprint! Website e Build Sprint! per un sito che genera contatti
-**Settore:** B2B Industriale/Manifatturiero (sistemi di movimento lineare; gruppo Timken)
-**Periodo:** non dichiarato (scelta di Andrea Bosso, 25/11/2026: nessuna data né tempo)
-**Sprint:** 1 Design Sprint! (Website) + Build Sprint!, con consegna dell'intero sito e di altri materiali; il sito è praticamente identico al prototipo
-**Status:** Build Sprint! concluso, sito consegnato; il deck di restituzione proponeva uno sprint sui sales tool (esito: DATI NON TROVATI)
+**Periodo e tempi:** non dichiarati (scelta di Andrea Bosso, 25/11/2026). Nessuna frase del cliente.
 **Pattern di vendita:** produttore B2B con catalogo tecnico che vende a ingegneri e buyer e vuole più lead; più mercati; piattaforma di prodotto esistente (myRollon)
-**Citabilità:** nome del cliente e visual del prototipo pubblici (Andrea Bosso, 25/11/2026); personas, buyer journey e report da verificare; nessuna frase del cliente, nessun numero, nessun tempo
-**Rapporto con il case IKA 2023 qui sopra:** da confermare; non attribuire a questo case il premio né il +48%
-**Visual:** 11 file `b2b_rollon_prototipo_*` in `assets_case_history/b2b_industriale/` (Pubblica, 25/11/2026)
+**Status:** Build Sprint! concluso, sito consegnato; il deck di restituzione proponeva uno sprint sui sales tool (esito: DATI NON TROVATI)
+**Citabilità:** nome, IKA, numeri e visual pubblici; personas, buyer journey e report da verificare
+**Visual:** `b2b_rollon_sito_01.png` (Pubblica) e 11 file `b2b_rollon_prototipo_*` (Pubblica, 25/11/2026)
 **Scheda completa:** [case_rollon_design_build_sprint.md](case_rollon_design_build_sprint.md)
 
 ### Megadyne — Digital B2B
