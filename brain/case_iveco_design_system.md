@@ -18,7 +18,14 @@
 - Automotive SP1 (presenza digitale internazionale: governance e coerenza tra mercati), accanto a iveco.com (IKA 2024);
 - secondario in SP2 (rete vendita), solo per l'ambito dichiarato nel deck (linee guida dei siti dei dealer), da non presentare come uso misurato;
 - prodotto d'ingresso: Brain & Identity Design Sprint! (focus design system).
-**Visual:** nessuno in cartella. DA CARICARE da `DOMINO_IVECO_DESIGN SYSTEM.pptx` (SharePoint, IKA 25) o dal sito del design system: bottoni ed elementi molecolari, card e componenti advertising, hero slider. Nome previsto: `automotive_iveco_designsystem_01.png`.
+**Visual:** in `assets_case_history/automotive/`, estratti il 25/11/2026 da `DOMINO_IVECO_DESIGN SYSTEM.pptx` (marzo 2025). Sono gli originali interi, non i ritagli delle slide.
+- `automotive_iveco_designsystem_01.png`: bottoni ed elementi molecolari (slide 11).
+- `automotive_iveco_designsystem_02.png`: card e componenti advertising (slide 12); logo PlayStation sul visore, immagine di terzi.
+- `automotive_iveco_designsystem_03.png`: hero slider, descrizione del componente (slide 13); logo DAILY e Amazon Alexa.
+- `automotive_iveco_designsystem_04.png`: panoramica dei componenti in Figma (slide 14).
+- `automotive_iveco_designsystem_05.png`: home del sito del design system (slide 15).
+- `automotive_iveco_designsystem_grafico_01.png`: slide 16 intera, i progetti IVECO a cui il design system si applica (ambito dichiarato); nome di Enrico Brignano nel visual di iveco.com. Esportata da PowerPoint (Andrea Bosso, 25/11/2026), 1600×900.
+Prima di domino.it e dei comunicati stampa vanno verificati con IVECO i contenuti di terzi (PlayStation, Amazon Alexa, Enrico Brignano).
 **Numeri:** nessuno con fonte. Il deck parla di «risparmio economico di larga scala» senza cifre: è un beneficio dichiarato della categoria, non un risultato misurato di IVECO. Adozione, ore risparmiate, mercati e team che lo usano: DATI NON TROVATI.
 
 ---
@@ -48,7 +55,7 @@ Dal 2026 il lavoro continua come monte ore Design System. Sottoprogetti e propos
 - Hub del design system: componenti, linee guida, risorse.
 - Componenti mostrati nel deck: bottoni ed elementi molecolari, card e componenti advertising, hero slider e linee guida di brand.
 - Libreria Figma con Foundations, kit di componenti e icone (dal Brain cliente).
-- Sito di documentazione del design system: previsto nel piano del 2024; stato e copertura dei componenti: DATI NON TROVATI.
+- Sito di documentazione del design system («Welcome to IVECO Design System», con Brand identity, Foundations, Components, UX writing, Icons, F.A.Q.): visibile nella slide 15 del deck; indirizzo e copertura dei componenti: DATI NON TROVATI.
 
 ## Cosa è successo, in concreto
 

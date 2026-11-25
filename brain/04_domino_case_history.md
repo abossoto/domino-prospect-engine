@@ -69,7 +69,7 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Riconoscimento:** Interactive Key Award 2025 (26ª edizione), categoria Business to Business, vincitore.
 **Periodo e numeri:** DATI NON TROVATI. Nessun risultato misurato con fonte.
 **Citabilità (Andrea Bosso, 25/11/2026):** sì nelle presentazioni dirette ai clienti; per domino.it e comunicati stampa serve l'autorizzazione di IVECO, da chiedere tramite Emiliano Cianci.
-**Visual:** DA CARICARE (`automotive_iveco_designsystem_01.png`).
+**Visual:** `automotive_iveco_designsystem_01.png` … `_05.png` e `automotive_iveco_designsystem_grafico_01.png` (nome sì nelle presentazioni ai clienti; domino.it e stampa da verificare).
 **Scheda completa:** [case_iveco_design_system.md](case_iveco_design_system.md)
 
 ### Stellantis — Employee Portal (ex-FCA)
