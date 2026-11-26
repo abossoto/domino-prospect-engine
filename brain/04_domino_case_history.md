@@ -82,10 +82,12 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Visual:** `automotive_stellantis_employeeportal_01.png` (Pubblica).
 
 ### Stellantis — Electrification Days
-**Progetto:** Evento globale (online + offline) sulla mobilità elettrica per dipendenti. Nella presentazione generale *(slide 11)*: la mobilità elettrica «raccontata come esperienza da vivere, non da spiegare»; nello spazio dedicato i dipendenti scoprono le nuove tecnologie e portano famiglia e amici.
-**Attività:** Concept & Strategy, Visual Identity, Content Production, coordinamento progetto, utilizzo AI.
-**Risultato:** Le prime due manifestazioni locali sono state **sold-out in poche ore**.
+**Progetto:** Domino ha ampliato per Enlarged Europe il progetto Electrification Days, fino a un programma di eventi per i dipendenti sulla mobilità elettrica, online e dal vivo, aperto a famiglia e amici: edizione pilota nel giugno 2023 (lancio Enlarged Europe con il video del COO EE, BEV Exhibition a Mirafiori), seconda edizione nel 2024 in dieci paesi (a Torino BEV Exhibition, plant eDCT, Centro Stile, Circular Economy Hub, test drive). Nella presentazione generale *(slide 11)*: la mobilità elettrica «raccontata come esperienza da vivere, non da spiegare». L'identità visiva di Domino è diventata quella globale del programma.
+**Attività:** identità visiva (poi adottata a livello globale), concept e ideazione delle iniziative per EE, contenuti, coordinamento delle attività editoriali e di comunicazione, UX, design e copy dell'area su The Hub e dell'area web pubblica (sviluppo non di Domino). Per la seconda edizione, un Design Sprint! (febbraio 2024) per creare più engagement e novità, da cui sono nati i video tour dei colleghi nei paesi. Gli eventi, il booking tool e il quiz Learn'in sono di Stellantis.
+**AI:** ED, host virtuale creato da Domino con l'AI, accompagna i dipendenti in ogni passo del programma, nel 2023 e nel 2024.
+**Risultato:** Eventi **sempre sold-out**, in entrambe le edizioni, le prime due manifestazioni locali in poche ore; il programma è tornato con una seconda edizione in dieci paesi.
 **Scheda estesa:** `case_stellantis_electrification_days.md` · **Visual:** `assets_case_history/automotive/automotive_stellantis_electrificationdays_01.png` e `_02.png` (Pubblica).
+**Video:** best of 2024, realizzato da Domino (2'30", testimonianze di dipendenti di più paesi, mappa dei dieci paesi), file su SharePoint (sito FCA, cartella `SED/2024/VIDEO RECAP 2024`), non nel Brain: [STELLANTIS_video_SED_bestof2024_v03.mp4](https://dominoitalia.sharepoint.com/sites/FCA/Documenti%20condivisi/SED/2024/VIDEO%20RECAP%202024/STELLANTIS_video_SED_bestof2024_v03.mp4).
 
 ### Stellantis — D&I People Stories
 **Progetto:** Due video series con dipendenti donne Stellantis come protagoniste, su temi D&I.

@@ -29,6 +29,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 - **[FARID — Website Design Sprint!](case_farid_website_design_sprint.md)** → Design Sprint! (Website) · Build Sprint! a storypoint *(documentato: offerta 90_25, sprint settembre–ottobre 2025, go live atteso entro il 3 novembre 2026)*
 - **[IPI — ITACA, Design Sprint! e Build Sprint!](case_ipi_intranet_design_sprint.md)** → Design Sprint! (Intranet) · Build Sprint! *(documentato: deck Sabaf e conferma di Andrea Bosso del 25/11/2026; formato 2 + 2 giorni, la slide scrive «1 settimana»; date DATI NON TROVATI)*
 - **[Rollon — Il prodotto diventa esperienza](case_rollon_design_build_sprint.md)** (IKA 2023) → Design Sprint! (Website) · Build Sprint! *(documentato: deck di restituzione `PRES_Rollon_DS_Report_Proposal.pptx` e racconto di Andrea Bosso del 25/11/2026; case unificato con quello IKA 2023; date non dichiarate per scelta)*
+- **[Stellantis — Electrification Days](case_stellantis_electrification_days.md)** → Design Sprint! per la seconda edizione *(documentato: report della sessione del 27/02/2024 e racconto di Orsola Di Donato del 26/11/2026; seconda sessione prevista il 6/03/2024; il pilota 2023 resta letto per affinità)*
 
 ---
 
@@ -41,7 +42,7 @@ Tutti gli altri sono assegnati per affinità con il pattern di lavoro descritto.
 - **IVECO — Training con AI Video** → Trainstorming Sprint! · Build Sprint!
 - **[IVECO — Design System](case_iveco_design_system.md)** → Brain & Identity Design Sprint! (focus design system) · Build Sprint! *(per affinità: lo Sprint! usato allora è DATI NON TROVATI; IKA 2025 Business to Business)*
 - **Stellantis — Employee Portal** → Design Sprint! (Intranet) · Trainstorming Sprint! · Build Sprint!
-- **Stellantis — Electrification Days** → Design Sprint! · Trainstorming Sprint! · Build Sprint!
+- **Stellantis — Electrification Days** → Design Sprint! *(seconda edizione, documentato)* · Trainstorming Sprint! · Build Sprint! *(per affinità)*
 - **Stellantis — D&I People Stories** → Design Sprint! · Trainstorming Sprint! · Build Sprint!
 - **Fiat — Sito internazionale EMEA** → Design Sprint! (Website) · Build Sprint!
 - **Fiat Professional (Ducato) — App E-Product** → Design Sprint! (Service) · Build Sprint! · Preventivo Emozionale *(logica analoga)*

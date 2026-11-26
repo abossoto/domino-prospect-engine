@@ -199,7 +199,7 @@ Pricing, regole sul gratuito e distinzione Core Sprint! vs Design Sprint! sono d
 
 **[Proof point](04_domino_case_history.md):**
 - Stellantis Employee Portal — 88.000 dipendenti, FEIEA Grand Prix 2019 – Best European Intranet, esteso a CNH Industrial e Iveco Group
-- Stellantis Electrification Days — evento globale sold-out in poche ore
+- Stellantis Electrification Days — programma ampliato da Domino per Enlarged Europe (dieci paesi nel 2024), con un'identità poi adottata a livello globale e ED, host virtuale creato con l'AI; per la seconda edizione un Design Sprint!; eventi sempre sold-out
 - Stellantis D&I People Stories — video più visti sull'intranet, rilanciate dal COO
 
 **Vs competitor:**
