@@ -1,6 +1,6 @@
 # Presentazioni (Claude Slides e .pptx) con il Domino Design System
 
-> **Versione 2.0 — 26 novembre 2026** (Andrea Bosso). Cambiano: canale di produzione, scala tipografica (valori interi, **corpo minimo 24 pt, nota 16 pt**), fumo su tutte le slide dark, grigi, rosso come segno, foto, tessera ritirata.
+> **Versione 3.0 — 26 novembre 2026** (Andrea Bosso). Cambiano: canale di produzione, scala tipografica (valori interi, **corpo minimo 24 pt, nota 16,5 pt, px come misura di riferimento**), fumo su tutte le slide dark, grigi, rosso come segno, foto, tessera ritirata.
 >
 > **Regola di produzione (dal 26 novembre 2026):** ogni presentazione (pitch deck, sales deck, deck interno, talk) nasce in **Claude Slides** (artifact) secondo queste regole; il **.pptx** e il PDF si esportano da lì. Il **.pptx nativo** costruito per script resta per i casi in cui serve espressamente. Sostituisce la regola del 7 luglio 2026 (".pptx nativo come flusso primario"). La deck skill HTML (`Claude Design/deck-skill/`) è la sorgente di token, componenti, font e asset, non più un canale di produzione.
 >
@@ -17,7 +17,7 @@
 
 ## 0. Regola di governo
 
-> **Editoriale, sicuro, alto contrasto.** Nero/bianco + un solo rosso `#FF303F`, geometria a blocchi, tipografia grande e stretta. Una slide si proietta, non si legge: il **corpo non scende sotto 24 pt** (28 pt il corpo grande) e le **note** possono stare a 16 pt. Sotto i 16 pt stanno solo la chrome (10,5 pt) e le label in maiuscolo (11–13 pt).
+> **Editoriale, sicuro, alto contrasto.** Nero/bianco + un solo rosso `#FF303F`, geometria a blocchi, tipografia grande e stretta. Una slide si proietta, non si legge: il **corpo non scende sotto 24 pt** (27 pt il corpo grande) e le **note** possono stare a 16,5 pt. Sotto stanno solo la chrome (10,5 pt) e le label in maiuscolo (12–15 pt).
 
 Come costruirlo: in Claude Slides su tela **1920 × 1080 px**; per il .pptx nativo con slide **20″ × 11,25″** (= 1440 × 810 pt). La conversione è **px → pt con fattore 0,75** (1 px = 0,75 pt).
 
@@ -30,7 +30,7 @@ Lo shader animato `flow-bg` diventa il **fondo fumo**: in Claude Slides l'immagi
 | Token | Valore pptx | Origine (px) |
 | --- | --- | --- |
 | Slide | **20″ × 11,25″** (1440 × 810 pt) | 1920×1080 |
-| Gutter orizzontale (`pad-x`) | 90 pt dai bordi sx/dx | 120 |
+| Gutter orizzontale (`pad-x`) | 96 pt dai bordi sx/dx | 128 |
 | Inset alto contenuto (`pad-top`) | ~82 pt | 110 |
 | Inset basso contenuto (`pad-bottom`) | ~112 pt | 150 |
 | Chrome top (dall'alto) | 30 pt | 40 |
@@ -38,7 +38,7 @@ Lo shader animato `flow-bg` diventa il **fondo fumo**: in Claude Slides l'immagi
 | Gap titolo → contenuto (`gap-title`) | 42 pt | 56 |
 | Gap tra card/item (`gap-item`) | 21 pt | 28 |
 
-Il contenuto sta dentro il frame (90 pt laterali, ~82 pt sopra, ~112 pt sotto): non sfora mai, non tocca mai la chrome.
+Il contenuto sta dentro il frame (96 pt laterali, ~82 pt sopra, ~112 pt sotto): non sfora mai, non tocca mai la chrome.
 
 ---
 
@@ -85,28 +85,27 @@ I riferimenti PDF incorporano le famiglie **Trial con pesi distinti** — i nomi
 
 Valori e pesi osservati nel riferimento Case IH.
 
-Valori interi dal 26/11/2026. Colonna px = tela Claude Slides 1920 × 1080 (1 pt = 1,333 px).
+**Il px è la misura di riferimento** (tela Claude Slides 1920 × 1080); il pt si ricava con **pt = px × 0,75**. Tutte le misure sono multipli di 4 px, così i pt escono interi o a mezzo punto (scala v3, 26/11/2026). Al posto dei 13 stili precedenti ce ne sono 11 per il testo corrente: «claim» è fuso con «H3», le label in maiuscolo sono due.
 
-| Stile | pt | px | Font / peso | Note | Uso |
+| Stile | px (tela Slides) | pt (.pptx) | Font / peso | Note | Uso |
 | --- | --- | --- | --- | --- | --- |
-| **Display** | 96 pt | 128 px | Aktiv **Black** | interlinea ~0,95, tracking negativo (~−1,5 %), twist in rosso | Solo cover |
-| **H1 divider** | 84 pt | 112 px | Aktiv **Black** | idem | Titolo dei divisori di sezione dark |
-| **H2** | 57 pt | 76 px | Aktiv **XBold** | il cavallo da lavoro dei titoli | Heading delle slide di contenuto |
-| **H3 / agenda** | 42 pt | 56 px | Aktiv **XBold** | | Titoli agenda, claim secondari |
-| **Claim / verdetto** | 33 pt | 44 px | Aktiv XBold | clausola finale in rosso | "Budget reduced. The content is working." |
-| **Card heading** | 32 pt | 43 px | Aktiv XBold/Black | | Titolo di card / colonna |
-| **Numero fatto** | 36–52 pt | 48–69 px | Aktiv **Black** | | KPI, numeri grandi nelle card |
-| **Subtitle / lead** | 24–38 pt | 32–51 px | Aktiv **Medium** | attenuato | Lead sotto i titoli, sottotitoli |
-| **Body large** | 28 pt | 37 px | Aktiv Regular | | Corpo primario |
-| **Body** | 24 pt | 32 px | Aktiv Regular | | Corpo nelle card e liste |
-| **Nota** | 16 pt | 21 px | Aktiv Regular | | Caption, note: l'unico testo corrente sotto il corpo minimo; più in basso solo label in maiuscolo e chrome (§0) |
-| **Label / eyebrow grande** | 16 pt | 21 px | Aktiv Bold | CAPS, tracking ~3 pt (0,2 em), nero, bianco o attenuato (non rosso) | Eyebrow sopra i titoli, brand label |
-| **Eyebrow card** | 13 pt | 17 px | Aktiv Bold | CAPS, tracking ~2 pt | Label dentro card e colonne |
-| **Micro-label** | 11 pt | 15 px | Aktiv Bold | CAPS | Kicker di card dense (nero, non rosso) |
-| **Chrome** | 10,5 pt | 14 px | Aktiv Bold | CAPS, tracking ~1,7 pt (0,16 em) | Header/footer slide. Eccezione ai minimi |
-| **Numerale sezione (serif)** | 29–74 pt | 39–98 px | **PT Serif Bold corsivo** | rosso su paper, bianco/rosso su dark | "01", "I", numerali giganti |
-| **Citazione** | 46 pt | 61 px | PT Serif Bold | virgolette 51 pt rosse | Quote a piena slide |
-| **Firma chiusura** | 40 pt | 53 px | PT Serif Bold corsivo ("Domino") + 20 pt caps | | Slide red finale |
+| **Display** | 128 px | 96 pt | Aktiv **Black** | interlinea ~0,95, tracking negativo (~−1,5 %), twist in rosso | Solo cover |
+| **H1 divider** | 112 px | 84 pt | Aktiv **Black** | idem | Titolo dei divisori di sezione dark e della chiusura |
+| **H2** | 80 px | 60 pt | Aktiv **XBold** | il cavallo da lavoro dei titoli | Heading delle slide di contenuto |
+| **H3 / agenda / claim** | 56 px | 42 pt | Aktiv **XBold** | clausola finale in rosso nei claim | Titoli agenda, claim e verdetti ("Budget reduced. The content is working.") |
+| **Card heading** | 40 px | 30 pt | Aktiv XBold/Black | | Titolo di card / colonna, numerale di lista |
+| **Numero fatto** | 52 px | 39 pt | Aktiv **Black** | | KPI, importi nelle card |
+| **Cifra grande** | 104 px | 78 pt | Aktiv **Black** | | Facts row e prezzo in evidenza |
+| **Subtitle / lead** | 32–52 px (di norma 48) | 24–39 pt (di norma 36) | Aktiv **Medium** | attenuato | Lead sotto i titoli, sottotitoli |
+| **Body large** | 36 px | 27 pt | Aktiv Regular | | Corpo primario |
+| **Body** | 32 px | 24 pt | Aktiv Regular | | Corpo nelle card e liste: **minimo del corpo** |
+| **Nota** | 22 px | 16,5 pt | Aktiv Regular | | Caption, note: l'unico testo corrente sotto il corpo minimo; più in basso solo label in maiuscolo e chrome (§0) |
+| **Label / eyebrow** | 20 px | 15 pt | Aktiv Bold | CAPS, tracking 0,2 em, nero, bianco o attenuato (non rosso) | Eyebrow sopra i titoli, brand label |
+| **Label di card** | 16 px | 12 pt | Aktiv Bold | CAPS, tracking 0,18 em | Label e kicker dentro card e colonne, dettagli |
+| **Chrome** | 14 px | 10,5 pt | Aktiv Bold | CAPS, tracking 0,16 em | Header/footer slide. Eccezione ai minimi |
+| **Numerale sezione (serif)** | 40–96 px | 30–72 pt | **PT Serif Bold corsivo** | rosso su paper, bianco/rosso su dark | "01", "I", numerali giganti |
+| **Citazione** | 60 px | 45 pt | PT Serif Bold | virgolette 52 px rosse | Quote a piena slide |
+| **Firma chiusura** | 52 px | 39 pt | PT Serif Bold corsivo ("Domino") + 28 px caps | | Slide red finale |
 
 ---
 
@@ -127,9 +126,9 @@ Il ritmo tipico: cover dark (fumo) → divisori dark tra i capitoli → contenut
 
 ## 6. Chrome (su ogni slide)
 
-- **Top:** logo Domino/cliente a sinistra a (90, 30) pt, altezza ~34,5 pt; a destra **quadratino rosso 6×6 pt** (un dot, segno di chrome; non è la tessera domino) + etichetta slide 10,5 pt CAPS Bold tracking 1,7 pt (es. "03 · WHERE WE ARE"). Sulle slide red il dot diventa nero.
+- **Top:** logo Domino/cliente a sinistra a (96, 30) pt, altezza ~34,5 pt; a destra **quadratino rosso 6×6 pt** (un dot, segno di chrome; non è la tessera domino) + etichetta slide 10,5 pt CAPS Bold tracking 1,7 pt (es. "03 · WHERE WE ARE"). Sulle slide red il dot diventa nero.
 - **Bottom:** a ~24 pt dal fondo, due elementi agli estremi, 10,5 pt CAPS Bold: titolo del progetto (sx) · sezione corrente (dx). Colore attenuato (bianco 35 % su dark, nero 55 % su paper, nero pieno su red).
-- **Cover:** brand label 16 pt CAPS tracking 3 pt (es. "CASE IH · DOMINO"). **La tessera domino a due quadrati è ritirata** (26/11/2026): non si usa come chrome né come motivo.
+- **Cover:** brand label 15 pt CAPS tracking 0,2 em (es. "CASE IH · DOMINO"). **La tessera domino a due quadrati è ritirata** (26/11/2026): non si usa come chrome né come motivo.
 
 ---
 
@@ -139,19 +138,19 @@ Blocchi flat, riempimento pieno. Card su dark: fill `#0A0A0A`, bordo 0,5–0,75 
 
 | Componente | Costruzione (valori dal riferimento) |
 | --- | --- |
-| **Eyebrow** | Trattino rosso ~36×1,5 pt + testo 13–16 pt CAPS tracciato, nero o bianco |
-| **Facts row** (KPI) | 3+ colonne sopra hairline: numero 36–52 pt Bold + label 13 pt attenuata; delta con segno (`+2.47pp`) in rosso solo se il corpo è da 24 pt in su, altrimenti nero |
-| **Lista numerata 01/02/03** | Numerale 38 pt **PT Serif Bold corsivo** rosso + titolo 32 pt Bold + testo 24 pt attenuato |
-| **Numerale gigante di sezione** | PT Serif Bold corsivo 64–74 pt, rosso su paper, bianco su dark |
-| **Quote slide** | Virgolette PT Serif 51 pt rosse + citazione PT Serif Bold 46 pt + chiusa secca in Bold sans ("This is the audience.") |
-| **Card contenuto** (griglie 3–4 col) | Kicker 11 pt CAPS nero, titolo 28–32 pt Bold, testo 24 pt attenuato (16 pt solo se è una nota), hairline interne |
-| **Agenda / indice** | Numerale serif corsivo grande + voce 42 pt Bold + descrizione 28 pt attenuata, righe separate da hairline |
-| **Tabella dati** | Testata CAPS 11–13 pt attenuata, righe con hairline, numeri Bold, delta in nero |
+| **Eyebrow** | Trattino rosso ~36×1,5 pt + testo 15 pt CAPS tracciato, nero o bianco |
+| **Facts row** (KPI) | 3+ colonne sopra hairline: numero 39 pt (cifra grande 78 pt) Bold + nota 16,5 pt attenuata; delta con segno (`+2.47pp`) in rosso solo se il corpo è da 24 pt in su, altrimenti nero |
+| **Lista numerata 01/02/03** | Numerale 30 pt **PT Serif Bold corsivo** rosso + titolo 30 pt Bold + testo 24 pt attenuato |
+| **Numerale gigante di sezione** | PT Serif Bold corsivo 48–72 pt, rosso su paper, bianco su dark |
+| **Quote slide** | Virgolette PT Serif 39 pt rosse + citazione PT Serif Bold 45 pt + chiusa secca in Bold sans ("This is the audience.") |
+| **Card contenuto** (griglie 3–4 col) | Kicker 12 pt CAPS nero, titolo 30 pt Bold, testo 24 pt attenuato (16,5 pt solo se è una nota), hairline interne |
+| **Agenda / indice** | Numerale serif corsivo grande + voce 42 pt Bold + descrizione 27 pt attenuata, righe separate da hairline |
+| **Tabella dati** | Testata CAPS 12 pt attenuata, righe con hairline, numeri Bold, delta in nero |
 | **Timeline / settimane** | Colonne sopra hairline: label CAPS nera, titolo Bold, testo attenuato |
 | **Checklist / recap** | Righe con voce Bold + stato; label CAPS; hairline tra le righe |
 | **Screenshot e mockup** | Post reali, telefoni, mockup dispositivo come immagini; foto sempre desaturate/scurite |
 | **Divider di sezione** (dark) | Eyebrow + titolo 84 pt Black con parola chiave in rosso (es. "Voice. **Keep our edge**"), fondo fumo |
-| **Closing** (red) | "Thank you." 84 pt nero, riepilogo 26 pt Bold, firma "Domino" PT Serif Bold 40 pt + "PROUDLY INTERACTIVE" 20 pt CAPS |
+| **Closing** (red) | "Thank you." 84 pt nero, riepilogo 27 pt Bold, firma "Domino" PT Serif Bold 39 pt + "PROUDLY INTERACTIVE" 21 pt CAPS |
 
 ---
 
