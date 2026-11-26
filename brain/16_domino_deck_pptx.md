@@ -99,7 +99,7 @@ Valori interi dal 26/11/2026. Colonna px = tela Claude Slides 1920 × 1080 (1 pt
 | **Subtitle / lead** | 24–38 pt | 32–51 px | Aktiv **Medium** | attenuato | Lead sotto i titoli, sottotitoli |
 | **Body large** | 28 pt | 37 px | Aktiv Regular | | Corpo primario |
 | **Body** | 24 pt | 32 px | Aktiv Regular | | Corpo nelle card e liste |
-| **Nota** | 16 pt | 21 px | Aktiv Regular | | Caption, note: l'unico testo sotto il corpo minimo |
+| **Nota** | 16 pt | 21 px | Aktiv Regular | | Caption, note: l'unico testo corrente sotto il corpo minimo; più in basso solo label in maiuscolo e chrome (§0) |
 | **Label / eyebrow grande** | 16 pt | 21 px | Aktiv Bold | CAPS, tracking ~3 pt (0,2 em), nero, bianco o attenuato (non rosso) | Eyebrow sopra i titoli, brand label |
 | **Eyebrow card** | 13 pt | 17 px | Aktiv Bold | CAPS, tracking ~2 pt | Label dentro card e colonne |
 | **Micro-label** | 11 pt | 15 px | Aktiv Bold | CAPS | Kicker di card dense (nero, non rosso) |
