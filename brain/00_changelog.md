@@ -2,7 +2,8 @@
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
 ## 2026-11-26
-- Direttori Clienti (Emiliano Cianci, 26/11/2026): in vTiger il Direttore Clienti è il campo «Assegnato a» delle opportunità. Antonio Rossi risulta Direttore Clienti di Fondazione Aquileia, Edizioni Studium, Consiglio Regionale Veneto, MMV – Medicines for Malaria Venture e Creanova (opportunità degli ultimi 12 mesi), più clienti con soli canoni e servizi tecnologici: CLAUDE.md §2 aggiornato, finora diceva «nessun cliente ancora assegnato». La Biennale di Venezia, assegnata ad Antonio in vTiger, non è stata riportata: probabilmente di Andrea Bosso, da verificare. Release non cambiata.
+- Direttori Clienti (Emiliano Cianci, 26/11/2026): in vTiger il Direttore Clienti è il campo «Assegnato a» delle opportunità. Antonio Rossi risulta Direttore Clienti di Fondazione Aquileia, Edizioni Studium, Consiglio Regionale Veneto, MMV – Medicines for Malaria Venture e Creanova (opportunità degli ultimi 12 mesi), più clienti con soli canoni e servizi tecnologici: CLAUDE.md §2 aggiornato, finora diceva «nessun cliente ancora assegnato». Release non cambiata.
+- La Biennale di Venezia (Emiliano Cianci, 26/11/2026): confermato Antonio Rossi come Direttore Clienti, come in vTiger; aggiunta alla sua riga nel CLAUDE.md §2.
 
 ## 2026-11-25
 - Asset Rollon: restano solo 6 visual della home del prototipo (slide 38 e 40-44 di `PRES_Rollon_DS_Report_Proposal.pptx`); eliminati gli altri 12 visual (decisione di Andrea Bosso). Aggiornati `INDICE_immagini.md` (v1.9), `descrizioni_case_PRES008.md`, `case_rollon_design_build_sprint.md`, `04_domino_case_history.md` e il Brain cliente Rollon.
