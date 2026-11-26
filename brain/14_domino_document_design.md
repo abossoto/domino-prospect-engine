@@ -1,6 +1,6 @@
 # 14 · Design dei documenti — Document Layer HTML (riferimento storico)
 
-> Versione 1.1 — 7 luglio 2026. **Superato come regola di produzione:** dal 7 luglio 2026 i documenti stampabili nascono come .docx nativo secondo [`15_domino_document_word.md`](15_domino_document_word.md). Questo file resta il riferimento visivo del Document Layer e la guida per gli eventuali deliverable HTML (pagine web, prototipi). Sorgenti canonici in [`Claude Design/document-layer/`](Claude%20Design/document-layer/) (doc-tokens.css, doc-components.css, DOCUMENTS.md, README.md).
+> Versione 1.2 — 26 novembre 2026 (v1.1 del 7 luglio 2026). **Superato come regola di produzione:** dal 7 luglio 2026 i documenti stampabili nascono come .docx nativo secondo [`15_domino_document_word.md`](15_domino_document_word.md). Questo file resta il riferimento visivo del Document Layer e la guida per gli eventuali deliverable HTML (pagine web, prototipi). Sorgenti canonici in [`Claude Design/document-layer/`](Claude%20Design/document-layer/) (doc-tokens.css, doc-components.css, DOCUMENTS.md, README.md).
 
 ## Quando si applica
 
@@ -23,8 +23,8 @@ Stessa palette del brand — nero, bianco e un solo rosso `#FF303F` — stessi f
 
 ## Struttura canonica del documento
 
-1. **Masthead**: logo `logo-domino-bcorp.png` (variante scura vietata su foglio chiaro: il wordmark bianco sparisce).
-2. **Eyebrow**: kicker rosso in maiuscoletto tracciato (tipo documento).
+1. **Masthead**: logo `Claude Design/deck-skill/assets/logo-domino-bcorp-su-chiaro.png` (la variante `-su-scuro` è vietata su foglio chiaro: il wordmark bianco sparisce).
+2. **Eyebrow**: kicker nero in maiuscoletto tracciato (tipo documento).
 3. **Titolo** Aktiv XBold, anche su due righe.
 4. **Lead**: una frase di standfirst in PT Serif Bold.
 5. **Byline/meta**: "Domino · Torino e Venezia · mese anno" in caps tracciato.
@@ -37,15 +37,15 @@ Stessa palette del brand — nero, bianco e un solo rosso `#FF303F` — stessi f
 
 | Token | Dimensione | Font / peso | Uso |
 | --- | --- | --- | --- |
-| eyebrow | 13 px | Aktiv Regular, caps, +4px | Kicker rosso sopra il titolo |
+| eyebrow | 13 px | Aktiv Regular, caps, +1,33px (= +1 pt Word) | Kicker nero sopra il titolo |
 | title | 44 px | Aktiv XBold | Titolo di copertina/masthead |
 | lead | 19 px | PT Serif Bold | Standfirst sotto il titolo |
 | h | 27 px | Aktiv XBold | Titolo di sezione |
 | h-sub | 16 px | Aktiv XBold/Bold | Titolo ref, label agenda, marker |
 | num | 15 px | Aktiv XBold, rosso | Numero di sezione |
-| body | 15.5 px | Aktiv Regular, lh 1.65 | Corpo — il cavallo da lavoro |
+| body | 15.5 px | Aktiv Regular, lh 1.2 (singola, come Word) | Corpo — il cavallo da lavoro |
 | small | 14.5 px | Aktiv Regular | Testo denso dentro i blocchi |
-| meta | 12.5 px | Aktiv Regular, caps, +2px | Byline, footer |
+| meta | 12.5 px | Aktiv Regular, caps, +0,67px (= +0,5 pt Word) | Byline, footer |
 | figure | 38 px | Aktiv XBold | Numero in evidenza nel callout (€, %, ×) |
 
 ## Componenti disponibili (doc-components.css)
@@ -55,7 +55,7 @@ Stessa palette del brand — nero, bianco e un solo rosso `#FF303F` — stessi f
 ## Regole di layout
 
 - Pagina Letter o A4, margine 0.82in; ritmo verticale 38px tra sezioni.
-- **Disciplina colore**: testo nero su bianco; il rosso solo su kicker, numeri di sezione, marker di liste e bullet, barra del callout e clausola del payoff. Nessun altro colore. I colori accento dei clienti (maroon IBM Watson, navy Iveco) compaiono solo se il lavoro di quel cliente è in pagina.
+- **Disciplina colore**: testo nero su bianco; il rosso come segno: numeri di sezione, marker di liste e bullet, barra del callout e clausola del payoff. Il testo piccolo (kicker, label, sottotitoli) è nero. Nessun altro colore. I colori accento dei clienti (maroon IBM Watson, navy Iveco) compaiono solo se il lavoro di quel cliente è in pagina.
 - **Un solo blocco scuro per documento**, alla fine.
 - Blocchi piatti: callout grigio `#F0F0F0`, chiusura ink `#0E0E0E` — senza ombra, raggio o gradiente.
 - Igiene di impaginazione: sezioni, callout, refs e blocco di chiusura non si spezzano tra pagine; il titolo di sezione non resta mai orfano dal suo corpo.
@@ -64,15 +64,15 @@ Stessa palette del brand — nero, bianco e un solo rosso `#FF303F` — stessi f
 
 Ordine di caricamento canonico: `colors_and_type.css` → `doc-tokens.css` → `doc-components.css` → `doc-page.js` (shell `<doc-page size margin>` che governa la geometria di stampa — non scrivere `@page` a mano). Skeleton completo in [`Claude Design/document-layer/DOCUMENTS.md`](Claude%20Design/document-layer/DOCUMENTS.md).
 
-**Nota pratica**: il pacchetto in cartella contiene solo doc-tokens e doc-components; `colors_and_type.css` e `doc-page.js` non sono inclusi (vivono nel Domino Design System su Claude Design). Quando si produce un documento senza accesso a quei file, l'HTML va reso **autonomo**: CSS inline, variabili base definite a mano (`--domino-red: #FF303F`, `--domino-ink: #0E0E0E`, `--domino-grey-100: #F0F0F0`, nero/bianco puri; per `--domino-grey-300`, `--domino-grey-500`, `--domino-ink-2` i valori esatti sono DATI NON TROVATI nel pacchetto — usare neutri coerenti e allineare quando il file canonico è disponibile), font con fallback (`Aktiv Grotesk, "Helvetica Neue", Arial, sans-serif` / `"PT Serif", Georgia, serif`) e paginazione via `@media print`.
+**Nota pratica**: il pacchetto in cartella contiene `doc-tokens.css`, `doc-components.css` e (in `Claude Design/deck-skill/`) `colors_and_type.css`; `doc-page.js` non è incluso (DATI NON TROVATI). Quando si produce un documento senza accesso a quei file, l'HTML va reso **autonomo**: CSS inline, variabili base definite a mano (`--domino-red: #FF303F`, `--domino-ink: #0E0E0E`, `--domino-grey-100: #F0F0F0`, `--domino-grey-300: #C0C0C0`, `--domino-grey-500: #767676`, nero/bianco puri; per `--domino-ink-2`: `rgb(20, 19, 16)` = `#141310`), font con fallback (`Aktiv Grotesk, "Helvetica Neue", Arial, sans-serif` / `"PT Serif", Georgia, serif`) e paginazione via `@media print`.
 
 ## Voce nei documenti
 
 Italiano curato, sentence case, prima persona plurale, frasi sotto le ~25 parole, ordine problema → soluzione → prova. Nomi dei metodi sempre verbatim con il `!` (Core Sprint!, Design Sprint!, Build Sprint!, Brain & Identity Design Sprint!, Trainstorming Sprint!). Valgono tutte le regole ferme del CLAUDE.md: mai "agenzia" in auto-definizione, mai il verbo "firmare", "nostra soluzione" nella Core Hypothesis, DATI NON TROVATI dove il dato manca.
 
-## Avvertenza sul README del pacchetto
+## README del pacchetto
 
-Il [`README.md`](Claude%20Design/document-layer/README.md) del design system contiene, oltre alle regole visive, una sezione su naming e metodi, allineata al Brain il 10 ottobre 2026 (Design Sprint! con sei specializzazioni, Build Sprint! 8–52 settimane, Trainstorming Sprint! come accompagnamento strutturato). **Per tutto ciò che è offerta, metodi, prezzi e naming commerciale fa fede il Brain (CLAUDE.md e file 01–13), non il README.** Il README resta autoritativo solo per la parte visiva e tipografica.
+Dal 26 novembre 2026 il [`README.md`](Claude%20Design/document-layer/README.md) contiene solo le regole visive e tipografiche: la sezione su naming, metodi e posizionamento è stata tolta per non duplicare il Brain. Per offerta, metodi, prezzi e naming commerciale fa fede il Brain (CLAUDE.md e file 01–13).
 
 ## Riferimento
 

@@ -1,6 +1,8 @@
 # Documenti Word (.docx) con il Domino Design System
 
-> **Regola di produzione (dal 7 luglio 2026):** ogni documento stampabile (proposta, offerta, analisi, report, one-pager, lettera) nasce come **file .docx nativo** secondo queste regole. Sostituisce il flusso HTML del Document Layer descritto in `14_domino_document_design.md`, che resta come riferimento visivo storico.
+> **Versione 2.0 — 26 novembre 2026** (Andrea Bosso). Cambiano: canale di produzione, rosso come segno, congruenza interna (masthead, usi del rosso), tracking e interlinea di riferimento anche nel CSS.
+>
+> **Regola di produzione (dal 26 novembre 2026):** ogni documento stampabile (proposta, offerta, analisi, report, one-pager, lettera) nasce in **Claude Docs** secondo queste regole; il **.docx** e il PDF si esportano da lì. Il **.docx nativo** costruito per script resta per i casi in cui serve espressamente (offerte formali con numerazione, file da modificare in Word). Le regole di questo file valgono per entrambi i canali e **vincono su qualunque modello Word preesistente**. Sostituisce la regola del 7 luglio 2026; il flusso HTML del file 14 resta riferimento visivo.
 
 È la traduzione del *document layer* del Domino Design System in termini nativi di Word: punti tipografici, colori hex, stili di paragrafo, margini.
 
@@ -25,7 +27,7 @@ la tabella è più affidabile).
 
 - **Formato:** A4 (21 × 29,7 cm) oppure Letter (21,6 × 27,9 cm) — chiedi/deduci dal contesto.
 - **Margini:** 2,1 cm su tutti i lati (equivale a 0,82").
-- **Colonna unica.** Nessuna intestazione grafica; solo il piè di pagina ricorrente (§8).
+- **Colonna unica.** Nessuna intestazione grafica ricorrente: solo il masthead della prima pagina (§5) e il piè di pagina su ogni pagina (§8).
 
 ---
 
@@ -64,7 +66,7 @@ Nella cartella ci sono anche Light, Medium, Hairline, Black e `DominoType.otf`: 
 | Ink testo | `#141310` | Corpo del testo, lead, standfirst — mai nero puro nel corpo |
 | Ink | `#0E0E0E` | Unico blocco scuro (chiusura) |
 | Bianco | `#FFFFFF` | Pagina, testo su scuro |
-| **Rosso Domino** | `#FF303F` | Solo: eyebrow, numeri sezione, marker liste/bullet, barra callout, clausola del payoff |
+| **Rosso Domino** | `#FF303F` | Come **segno**: numeri sezione, marker romani, bullet, barra callout, clausola del payoff. Il testo piccolo (eyebrow, label del callout, sottotitoli agenda) è nero: il rosso su bianco ha contrasto 3,65:1, sotto la soglia per il testo piccolo |
 | Grigio 100 | `#F0F0F0` | Sfondo callout |
 | Grigio 300 | `#C0C0C0` | Righe sottili (hairline) |
 | Grigio 500 | `#767676` | Testo attenuato (meta) |
@@ -81,7 +83,7 @@ Valori convertiti dal design system (px) in **punti** per la stampa. Usa questi 
 
 | Stile | Dimensione | Font / peso | Note | Uso |
 | --- | --- | --- | --- | --- |
-| **Eyebrow** | 10 pt | Aktiv Regular | MAIUSCOLO, spaziatura +1 pt, colore rosso | Kicker rosso sopra il titolo |
+| **Eyebrow** | 10 pt | Aktiv Regular | MAIUSCOLO, spaziatura +1 pt, colore nero | Kicker sopra il titolo |
 | **Titolo** | 33 pt | Aktiv **XBold** (800) | interlinea 1.0 | Titolo di copertina/masthead |
 | **Lead** | 14 pt | **PT Serif Bold** | interlinea 1.0 (singola), colore `#141310` | Standfirst sotto il titolo |
 | **Standfirst sezione** | 13,5 pt | **PT Serif Bold** | opzionale, colore `#141310` | Una frase in apertura di sezione |
@@ -95,16 +97,16 @@ Valori convertiti dal design system (px) in **punti** per la stampa. Usa questi 
 | **Footer** | 7 pt | Aktiv Regular | MAIUSCOLO, spaziatura +0,5 pt, grigio `#767676` | Piè di pagina |
 | **Figure** | 28 pt | Aktiv XBold | | Numero-chiave del callout (€, %, ×) |
 
-Interlinea in Word: singola per lead e body (regola aggiornata il 14/07/2026); per gli H usare il fattore indicato.
+Interlinea in Word: singola per lead e body (regola aggiornata il 14/07/2026); per gli H usare il fattore indicato. Il CSS del Document Layer è allineato a questi valori dal 26/11/2026 (interlinea 1,2, tracking +1 pt / +0,5 pt, spazio dopo il paragrafo 8 pt).
 
 ---
 
 ## 5. Struttura del documento (nell'ordine)
 
-1. **Masthead** — logo Domino in alto (usa `Claude Design/logo-domino-bcorp.png`, variante scura
-   su carta chiara: la versione chiara ha il wordmark bianco e sparisce). Altezza ~0,9 cm; se il
+1. **Masthead** — logo Domino in alto (usa `Claude Design/deck-skill/assets/logo-domino-bcorp-su-chiaro.png`,
+   wordmark scuro per carta chiara: la variante `-su-scuro` ha il wordmark bianco e sparisce). Altezza ~0,9 cm; se il
    lockup include la dicitura B Corp, portala a ~1,3 cm perché resti leggibile.
-2. **Eyebrow** — kicker rosso maiuscolo (es. "Analisi · CX Design Sprint!").
+2. **Eyebrow** — kicker maiuscolo nero (es. "Analisi · CX Design Sprint!").
 3. **Titolo** — Aktiv XBold 33 pt, anche su due righe.
 4. **Lead** — una frase in PT Serif Bold 14 pt.
 5. **Byline/meta** — riga maiuscola: "Domino · Torino e Venezia · mese anno".
@@ -137,13 +139,13 @@ Interlinea in Word: singola per lead e body (regola aggiornata il 14/07/2026); p
 
 - Tabella a cella singola, sfondo grigio `#F0F0F0`, **barra sinistra rossa spessa 3 pt**
   (bordo sinistro cella), padding ~24 pt.
-- Dentro: label maiuscola **8 pt rossa tracciata** + Figure 28 pt (Aktiv XBold) + nota piccola.
+- Dentro: label maiuscola **8 pt nera tracciata** + Figure 28 pt (Aktiv XBold) + nota piccola.
 
 **Agenda** (giorno/fase → descrizione)
 
 - Tabella a due colonne. Riga superiore chiusa da bordo **nero 1 pt**, righe interne separate
   da hairline grigio, chiusura in basso con hairline.
-- Colonna sinistra: "Giorno 1" (grassetto nero) + sottotitolo in **Bold rosso** (fase e
+- Colonna sinistra: "Giorno 1" (grassetto nero) + sottotitolo in **Bold nero** (fase e
   partecipanti, es. "Capire e scegliere (Domino, Air Dolomiti)"). Colonna destra: descrizione.
 
 **Referenze** (proof / casi)
@@ -173,7 +175,7 @@ Interlinea in Word: singola per lead e body (regola aggiornata il 14/07/2026); p
 ## 9. Regole di impaginazione
 
 - **Blocchi piatti:** nessuna ombra, nessun angolo arrotondato, nessun gradiente.
-- **Un solo rosso** per regione. Nessun colore extra.
+- **Un solo rosso** per regione, usato come segno (§3). Nessun colore extra. Nessun blu o altro colore predefinito di Word nei titoli: gli stili di §4 sostituiscono quelli di default.
 - Evita che sezioni, callout, referenze e chiusura si spezzino tra due pagine
   ("mantieni righe insieme").
 - Interlinea singola (1.0) nel corpo — regola aggiornata il 14/07/2026; il respiro si dà con lo spazio dopo il paragrafo (8 pt), non con l'interlinea.
@@ -195,4 +197,4 @@ Quando Andrea chiede un documento (offerta, analisi, report, one-pager, lettera)
 1. Chiedi/deduci formato (A4 o Letter) e lingua.
 2. Definisci gli stili di §4 nel .docx e applicali.
 3. Costruisci nell'ordine di §5, usando i componenti di §6–8.
-4. Consegna un **file .docx** pronto, non HTML.
+4. Consegna il documento in **Claude Docs** (export .docx o PDF dalla stessa pagina); un **.docx** nativo solo se richiesto o per le offerte formali. Mai HTML.
