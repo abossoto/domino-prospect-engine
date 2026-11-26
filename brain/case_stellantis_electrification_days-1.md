@@ -1,0 +1,73 @@
+# Case Stellantis — Electrification Days, la mobilità elettrica da toccare con mano
+
+> **Proposta di aggiornamento del 26/11/2026** (Orsola Di Donato, con domino-case-history), da approvare da Andrea Bosso, owner della scheda. Fonti nuove: il piano di comunicazione pilota del giugno 2023 e il piano di comunicazione Torino 2024. Le parti nuove sono segnate con *(26/11)*; il ruolo di Domino viene dal racconto di Orsola Di Donato dello stesso giorno.
+
+**Cliente:** Stellantis. Lancio nella regione Enlarged Europe (EE) e attività locali nei paesi; a Torino gli eventi di Mirafiori (il visual riporta «Stellantis Electrification Days 2023»)
+**Settore:** Automotive
+**Periodo:** due edizioni *(26/11)*. **2023**, edizione pilota: teaser il 15-16 giugno, lancio EE il 19 giugno con il video del COO EE, attività locali dal 20 giugno; a Mirafiori la BEV Exhibition dal 21 al 28 giugno 2023. **2024**, seconda edizione: a Torino eventi a giugno 2024 (BEV Exhibition, plant eDCT, Centro Stile, Circular Economy Hub, test drive). Date di chiusura e calendario degli altri paesi: DATI NON TROVATI
+**Prodotti Domino utilizzati:** Concept & Strategy, visual identity, produzione di contenuti online e offline, coordinamento del progetto, uso dell'AI (slide 37 del deck Sabaf). *(26/11)* Nel racconto di Orsola Di Donato: ampliamento per Enlarged Europe di un progetto che esisteva già (Domino non l'ha creato da zero); identità visiva, poi diventata quella globale del programma; concept e ideazione delle iniziative per EE; coordinamento delle attività editoriali e di comunicazione (è questo il «coordinamento del progetto» della slide 37); ED, creato da Domino con uno strumento di AI; UX, design e copy dell'area su The Hub e dell'area web pubblica, che Domino non ha sviluppato. Dai piani: piano di comunicazione modulare per la regione e kit per i paesi, video teaser, testi per news, mail, billboard digitali e messaggi WhatsApp, materiali di stampa. **Non di Domino:** l'organizzazione degli eventi, il booking tool e il quiz con l'app Learn'in, che sono di Stellantis; lo sviluppo dei siti. Metodo e prodotto del catalogo: `case_history_per_metodo.md` lo legge per affinità come Design Sprint! · Trainstorming Sprint! · Build Sprint!; nei materiali non è dichiarato
+**Status:** due edizioni, 2023 e 2024 *(26/11)*. Edizioni successive: DATI NON TROVATI
+**Citabilità:** Pubblica, citabile e verificata (decisione di Andrea Bosso, 25/11/2026): nome Stellantis, visual e persone nei visual utilizzabili · frase del cliente: DATI NON TROVATI · approvazione del case: Andrea Bosso (Direttore Clienti). Visual nuovi `_03`–`_05`: da confermare *(26/11)*
+**Uso come case-tipo:** pitch di engagement legato a prodotto e tecnologia, identità nata in una regione e adottata a livello globale *(26/11)*, eventi ibridi per dipendenti, uso dell'AI nei contenuti, programmi che tornano ogni anno; GTM Automotive, Sales Play SP4 (Employee experience)
+**Visual:** `automotive_stellantis_electrificationdays_01.png` (fotogramma video «Nice to meet you, I'm Ed.»: è ED, l'host virtuale creato da Domino con l'AI *(26/11)*) e `automotive_stellantis_electrificationdays_02.png` (key visual «Stellantis Electrification Days 2023»), citabilità Pubblica. Proposti *(26/11)*: `_03.png` (vetrofanie e roll-up «The event of all of us», 2023), `_04.png` (ED nel video «Scopri il programma di Torino», 2024), `_05.png` (billboard digitale «Mirafiori BEV Exhibition», 2024)
+**Numeri (con fonte):** le prime due manifestazioni locali sold-out in poche ore (slide 37). Formato degli eventi *(26/11)*: BEV Exhibition 2023 con visite di circa un'ora per gruppi di 30 persone; fino a tre accompagnatori per dipendente (nel 2024, per eDCT, Centro Stile e Circular Economy, sopra i 14 anni). Numero di eventi, posti, iscritti, partecipanti e paesi: DATI NON TROVATI
+**Fonti:** slide 37 (Innovation & Engagement) del deck «PRES_SABAF_intranet internal communication IC Incontro_25_01» (PDF inviato da Andrea Bosso il 2/11/2026, uso interno); *(26/11)* `PRES_SED_CommPlan_LAST` («Stellantis Electrification Days 2023 – Pilot Communication Plan», giugno 2023, 44 slide) e `Piano_Torino_SED_seconda_versione` («Stellantis Electrification Days 2024 – Piano Comunicazione Torino», 28 slide, bozza di lavoro), allegati da Orsola Di Donato il 26/11/2026; racconto di Orsola Di Donato sul ruolo di Domino (26/11/2026); Brain cliente `Clienti/Stellantis/`
+**Scheda creata:** 25/11/2026 da Claude per Andrea Bosso, dal PDF delle slide 32-40. Aggiornata il 26/11/2026 con i due piani di comunicazione e con il racconto di Orsola Di Donato, su sua proposta
+
+---
+
+## In una riga
+
+Per Stellantis Domino ha fatto crescere gli Electrification Days in Enlarged Europe fino a un programma di eventi in cui i dipendenti, con famiglia e amici, toccano con mano la mobilità elettrica, e ne ha curato identità e comunicazione, poi adottate a livello globale: dall'edizione pilota del 2023, lanciata con il video del COO Enlarged Europe e con ED, l'host virtuale che Domino ha creato con l'AI, alla seconda edizione del 2024. Le prime due edizioni locali sono andate sold-out in poche ore.
+
+## Il contesto
+
+L'obiettivo era rafforzare il legame tra dipendenti e prodotto, con attenzione alle nuove tecnologie (slide 37). Un evento esclusivo per i dipendenti, aperto anche a famiglia e amici. Il teaser del 2023 lo dice così: «Our products are what we work hard for every day. It's time to touch them, experience them, love them.» *(26/11)*. Le parole del cliente sul punto di partenza: DATI NON TROVATI.
+
+## Perché questo percorso
+
+Raccontare la mobilità elettrica non basta: l'evento la fa toccare con mano. *(26/11)* Il piano 2023 si regge su tre pilastri: **be innovative** (qualcosa di nuovo che catturi l'attenzione fin dalla prima comunicazione: ED), **our people in front line** (i dipendenti sono i protagonisti degli eventi), **think global, act local** (un piano coerente in tutta la regione, adattabile ai bisogni locali). Per questo il piano è modulare: una comunicazione di lancio per tutta la regione e un kit di contenuti per le singole attività locali. Il claim è «The event of all of us», «L'evento di tutti noi».
+
+## Cosa è stato fatto
+
+Concept e strategia, identità visiva, produzione di contenuti online e offline, coordinamento del progetto, uso dell'AI (slide 37).
+
+*(26/11)* **Il ruolo di Domino** (Orsola Di Donato): Domino non ha creato gli Electrification Days da zero, ne ha ampliato il progetto per Enlarged Europe; la sua identità visiva è diventata quella globale del programma. Poi: identità visiva, concept e ideazione delle iniziative; coordinamento delle attività editoriali e di comunicazione; ED; UX, design e copy delle aree digitali. Il «coordinamento del progetto» della slide 37 è questo: Domino ha coordinato la comunicazione, non l'evento. Gli eventi li ha organizzati Stellantis, e il booking tool è di Stellantis.
+
+Gli elenchi qui sotto descrivono il programma come appare nei piani: le esperienze (BEV Exhibition, visite, test drive) le ha organizzate Stellantis; Domino ne ha curato ideazione, identità, comunicazione ed esperienza digitale.
+
+*(26/11)* **2023, edizione pilota** (piano di giugno 2023):
+- **Lancio «big bang» per una costellazione di eventi:** teaser il 15-16 giugno (video, news, notifica, billboard con QR code, banner in home); il 19 giugno il video di apertura del COO Enlarged Europe Uwe Hochgeschurtz (news, mail, billboard, messaggio WhatsApp); dal 20 giugno l'area su The Hub e l'avvio delle attività locali.
+- **Un video di lancio emozionale di un minuto**, per spiegare perché gli Electrification Days sono più di un evento.
+- **ED, l'host virtuale creato da Domino con uno strumento di AI** (nome dello strumento: DATI NON TROVATI), una figura ricorrente e riconoscibile che accompagna i dipendenti in ogni passo del programma (presentazione generale, BEV Exhibition, formazione).
+- **Area su The Hub e area web pubblica** per chi non ha accesso a The Hub: UX, design e copy di Domino, sviluppo non di Domino. Il **booking tool**, che ogni paese può usare per gestire le prenotazioni, è di Stellantis.
+- **Gioco a quiz** con l'app Learn'in («Join the game!»): 20 domande sulle tecnologie per i veicoli elettrici e la ricarica, con classifica. È un'iniziativa di Stellantis global, non di Domino *(26/11)*: il piano EE la rilancia con news e billboard.
+- **Materiali per le sedi**, in inglese e in italiano: adesivi, impronte a terra («Segui la strada degli Electrification Days»), segnatavolo, flyer A5, roll-up verticali, billboard con QR code verso l'area.
+- **Mirafiori, BEV Exhibition** dal 21 al 28 giugno 2023: un percorso in cinque stazioni guidato dagli ingegneri di Product & Development, con veicoli, batterie e componenti, visite di circa un'ora per gruppi di 30, fino a tre accompagnatori.
+
+*(26/11)* **2024, seconda edizione: il piano Torino** (bozza «seconda versione»):
+- **ED torna** e lancia il programma di Torino con un video in news, mail, People Corner e billboard digitali; un video di ED per ogni evento.
+- **Cinque esperienze:** il ritorno della BEV Exhibition (3-15 giugno, corso Settembrini porta 9); la visita al nuovo plant eDCT, dove si producono i cambi elettrificati a doppia frizione, parte del Mirafiori Automotive Park 2030 (6, 13, 20, 27 giugno); il Centro Stile (13-14 giugno); il Circular Economy Hub SUSTAINera e la strategia delle 4R (13, 14, 27, 28 giugno); i test drive della gamma elettrificata da Stellantis &You, in pausa pranzo e solo per i dipendenti (19, 20, 26, 27 giugno).
+- **Per ogni evento:** news, mail a tutti, billboard digitale, messaggio WhatsApp e prenotazione con il booking tool, QR code all'ingresso e lista d'attesa; per i test drive, le card auto con QR code.
+
+Il piano Torino 2024 è una bozza di lavoro, con date da confermare e alcune incongruenze (per la BEV Exhibition 3-15 giugno nella news, 5-13 giugno nel testo di ED): quello che è stato davvero realizzato va confermato. Edizioni in altri paesi: DATI NON TROVATI.
+
+## Output consegnati
+
+L'identità visiva dell'evento («Electrification Days 2023»), i contenuti video e di comunicazione online e offline, il coordinamento editoriale e della comunicazione delle edizioni locali *(precisato il 26/11: non l'organizzazione degli eventi)*. *(26/11)* Dai piani: piano di comunicazione pilota 2023 con kit per i paesi; video teaser e video di lancio; ED e i suoi video; testi per news, mail, billboard e WhatsApp; materiali di stampa; piano di comunicazione Torino 2024 con un kit per ogni evento. UX, design e copy dell'area su The Hub e dell'area web pubblica. Non sono output di Domino gli eventi, il booking tool, il quiz Learn'in e lo sviluppo dei siti. *(26/11)* L'identità visiva, nata per Enlarged Europe, è diventata quella globale del programma. Elenco puntuale dei materiali effettivamente prodotti: DATI NON TROVATI.
+
+## Cosa è successo, in concreto
+
+Le prime due manifestazioni locali sono andate sold-out in poche ore. *(26/11)* L'identità visiva creata da Domino per Enlarged Europe è diventata quella globale del programma (Orsola Di Donato, 26/11/2026). Il programma è tornato nel 2024 con una seconda edizione, con cinque esperienze nel piano Torino (nel piano 2023, per Mirafiori, c'era la BEV Exhibition) e con lo stesso ED. Esito dell'evento complessivo, numeri e feedback dei partecipanti: DATI NON TROVATI.
+
+## Argomenti di pitch derivati
+
+**Per l'engagement di prodotto:** un evento che fa toccare la tecnologia ai dipendenti e alle loro famiglie crea un legame che un'e-mail non crea. **Per gli eventi ibridi:** formato globale con edizioni locali e contenuti online e offline. **Per l'identità** *(26/11)*: un'identità nata per una regione, Enlarged Europe, che il gruppo ha adottato a livello globale. **Per l'AI:** *(26/11)* ED, l'host virtuale che Domino ha creato con l'AI, è un uso documentato: una figura ricorrente che dà riconoscibilità al programma e accompagna i dipendenti da un evento all'altro, per due edizioni. **Per i programmi che tornano** *(26/11)*: un piano modulare, «think global, act local», con un kit che ogni paese adatta, regge una seconda edizione più ricca senza ripartire da zero. **Per l'inclusione** *(26/11)*: l'area web pubblica, di cui Domino ha curato UX, design e copy, porta il programma anche a chi non ha accesso alla intranet.
+
+**Ponte** *(26/11)*: con il case Paris Motor Show 2026 (`case_stellantis_paris_motor_show_2026.md`, in attesa di entrare nel Brain) condivide l'idea del prodotto vissuto dai dipendenti: qui un evento creato per loro, a Parigi un evento esterno portato dentro l'azienda.
+
+## Note di ingaggio
+
+Esiste già una voce breve in `04_domino_case_history.md`: questa scheda la estende. Il «sold-out» riguarda le prime due manifestazioni locali, non l'evento intero; quali siano, e di quale edizione: DATI NON TROVATI. Nel fotogramma c'è ED, l'host virtuale creato da Domino con l'AI *(26/11)*: uso consentito (Andrea Bosso, 25/11/2026). *(26/11)* In pitch non si dice che Domino ha creato o ideato gli Electrification Days: esistevano già a livello global e Domino ne ha ampliato il progetto per Enlarged Europe; sull'origine si resta generici. Si dice che Domino ne ha curato identità (poi adottata a livello globale), comunicazione ed esperienza digitale e ha coordinato le attività editoriali e di comunicazione, non che ha organizzato gli eventi. Il booking tool e il quiz Learn'in sono di Stellantis e i siti non li ha sviluppati Domino. Il piano Torino 2024 è una bozza: prima di citare date o eventi del 2024 va confermato cosa è stato realizzato. Nei piani 2023 il COO EE è Uwe Hochgeschurtz *(26/11)*. Per l'autorizzazione: Direzione Clienti Stellantis (Andrea Bosso).
+
+**GTM:** Settore Automotive, Sales Play **SP4** (Employee experience: «Dobbiamo connettere e coinvolgere decine di migliaia di dipendenti in tutto il mondo»), prodotto d'ingresso Core Sprint! come da SP4; il progetto è un proof point, non l'apertura (l'apertura resta Stellantis Employee Portal).
