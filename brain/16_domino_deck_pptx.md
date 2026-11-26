@@ -4,7 +4,7 @@
 >
 > **Regola di produzione (dal 26 novembre 2026):** ogni presentazione (pitch deck, sales deck, deck interno, talk) nasce in **Claude Slides** (artifact) secondo queste regole; il **.pptx** e il PDF si esportano da lì. Il **.pptx nativo** costruito per script resta per i casi in cui serve espressamente. Sostituisce la regola del 7 luglio 2026 (".pptx nativo come flusso primario"). La deck skill HTML (`Claude Design/deck-skill/`) è la sorgente di token, componenti, font e asset, non più un canale di produzione.
 >
-> **Come leggere i valori:** i punti (pt) valgono per il .pptx (slide 20″ × 11,25″ = 1440 × 810 pt); Claude Slides usa la tela 1920 × 1080 px (1 pt = 1,333 px). La tabella del §4 dà entrambi.
+> **Come leggere i valori:** dalla scala v3 il **px è la misura di riferimento** (tela Claude Slides 1920 × 1080 px); i punti per il .pptx (slide 20″ × 11,25″ = 1440 × 810 pt) si ricavano con **pt = px × 0,75**. Le tabelle del §1 e del §4 danno entrambi, px prima.
 >
 > **Riferimenti canonici:**
 > 1. **`Presentazioni/Presentazione Domino - Novembre 2026.pptx`** (22 slide, 4 novembre 2026) — il più recente: riferimento per i layout (DARK, SMOKE_A/B/C, PAPER, RED). **In caso di disaccordo vince questo.**
@@ -27,18 +27,18 @@ Lo shader animato `flow-bg` diventa il **fondo fumo**: in Claude Slides l'immagi
 
 ## 1. Slide e griglia
 
-| Token | Valore pptx | Origine (px) |
+| Token | px (tela Slides) | pt (.pptx) |
 | --- | --- | --- |
-| Slide | **20″ × 11,25″** (1440 × 810 pt) | 1920×1080 |
-| Gutter orizzontale (`pad-x`) | 96 pt dai bordi sx/dx | 128 |
-| Inset alto contenuto (`pad-top`) | ~82 pt | 110 |
-| Inset basso contenuto (`pad-bottom`) | ~112 pt | 150 |
-| Chrome top (dall'alto) | 30 pt | 40 |
-| Chrome bottom (dal basso) | ~24–27 pt | 36 |
-| Gap titolo → contenuto (`gap-title`) | 42 pt | 56 |
-| Gap tra card/item (`gap-item`) | 21 pt | 28 |
+| Slide | 1920 × 1080 | **20″ × 11,25″** (1440 × 810 pt) |
+| Gutter orizzontale (`pad-x`) | 128 | 96 pt dai bordi sx/dx |
+| Inset alto contenuto (`pad-top`) | 112 | 84 pt |
+| Inset basso contenuto (`pad-bottom`) | 152 | 114 pt |
+| Chrome top (dall'alto) | 40 | 30 pt |
+| Chrome bottom (dal basso) | 36 | 27 pt |
+| Gap titolo → contenuto (`gap-title`) | 56 | 42 pt |
+| Gap tra card/item (`gap-item`) | 28 | 21 pt |
 
-Il contenuto sta dentro il frame (96 pt laterali, ~82 pt sopra, ~112 pt sotto): non sfora mai, non tocca mai la chrome.
+Il contenuto sta dentro il frame (96 pt laterali, 84 pt sopra, 114 pt sotto): non sfora mai, non tocca mai la chrome.
 
 ---
 
