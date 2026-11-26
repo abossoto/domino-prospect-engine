@@ -1,6 +1,9 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-11-26
+- Direttori Clienti (Emiliano Cianci, 26/11/2026): in vTiger il Direttore Clienti è il campo «Assegnato a» delle opportunità. Antonio Rossi risulta Direttore Clienti di Fondazione Aquileia, Edizioni Studium, Consiglio Regionale Veneto, MMV – Medicines for Malaria Venture e Creanova (opportunità degli ultimi 12 mesi), più clienti con soli canoni e servizi tecnologici: CLAUDE.md §2 aggiornato, finora diceva «nessun cliente ancora assegnato». La Biennale di Venezia, assegnata ad Antonio in vTiger, non è stata riportata: probabilmente di Andrea Bosso, da verificare. Release non cambiata.
+
 ## 2026-11-25
 - Asset Rollon: restano solo 6 visual della home del prototipo (slide 38 e 40-44 di `PRES_Rollon_DS_Report_Proposal.pptx`); eliminati gli altri 12 visual (decisione di Andrea Bosso). Aggiornati `INDICE_immagini.md` (v1.9), `descrizioni_case_PRES008.md`, `case_rollon_design_build_sprint.md`, `04_domino_case_history.md` e il Brain cliente Rollon.
 - Case Rollon (Andrea Bosso, con domino-case-history): dal deck di restituzione `PRES_Rollon_DS_Report_Proposal.pptx` (78 slide) e dal racconto di Andrea Bosso, scheda `case_rollon_design_build_sprint.md` (Design Sprint! Website e Build Sprint!, sito consegnato praticamente identico al prototipo); scheda breve unica in `04_domino_case_history.md` (B2B Industriale), riga unica in `case_history_per_metodo.md` (documentati; tolta la riga retrospettiva), 11 visual del prototipo in `assets_case_history/b2b_industriale/` e righe in `INDICE_immagini.md` (v1.8). Unificato con il case IKA 2023 «Il prodotto diventa esperienza» (conferma di Andrea Bosso, 25/11/2026): un solo case, con IKA 2023, 17 mercati e +48% di traffico organico US già presenti nel Brain. Per scelta di Andrea Bosso, per il percorso senza date, tempi né frase del cliente.
