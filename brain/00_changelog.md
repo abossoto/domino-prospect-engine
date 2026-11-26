@@ -2,6 +2,7 @@
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
 ## 2026-11-26
+- Regole vTiger in vigore (Emiliano Cianci, 26/11/2026): la bozza del 26/11 passa da `Claude outputs/` a `Offerte/01_regole_vtiger.md`, con il vademecum `vtiger_vademecum_stati.png`. Nuovo §0, controllo prima di ogni scrittura e comportamento quando il connettore rifiuta un valore (Outcome Awarded richiede un ruolo riservato: Claude dà i valori al Direttore Clienti, non aggira il blocco). Richiamate da CLAUDE.md §2 (nuovo paragrafo «Scritture in vTiger»), §3 (mappa) e §7 (Trattative e offerte), e da `Offerte/00_procedura_offerte.md`. Copie di prima in `_health_check/prima_delle_correzioni/2026-11-26/`. Da fare: richiamo nelle skill che scrivono in vTiger e controllo nell'health check (§12 delle regole). Release non cambiata.
 - Direttori Clienti (Emiliano Cianci, 26/11/2026): in vTiger il Direttore Clienti è il campo «Assegnato a» delle opportunità. Antonio Rossi risulta Direttore Clienti di Fondazione Aquileia, Edizioni Studium, Consiglio Regionale Veneto, MMV – Medicines for Malaria Venture e Creanova (opportunità degli ultimi 12 mesi), più clienti con soli canoni e servizi tecnologici: CLAUDE.md §2 aggiornato, finora diceva «nessun cliente ancora assegnato». Release non cambiata.
 - La Biennale di Venezia (Emiliano Cianci, 26/11/2026): confermato Antonio Rossi come Direttore Clienti, come in vTiger; aggiunta alla sua riga nel CLAUDE.md §2.
 
