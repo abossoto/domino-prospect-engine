@@ -2,6 +2,7 @@
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
 ## 2026-11-27
+- Case Stellantis Parts & Services EE (Gianluca Pelissetti con domino-case-history, 27/11/2026, per la presentazione di Andrea Bosso a un prospect; inserito con l'ok di Gianluca Pelissetti, approvazione del case ad Andrea Bosso): nuova scheda `case_stellantis_parts_services.md` (manualistica, presentazioni interne, produzione materiali; frase della referente operativa sugli uffici di Rivalta, uso riservato; risultati misurati DATI NON TROVATI), voce breve in `04_domino_case_history.md` (Automotive), 32 visual in `assets_case_history/automotive/` e righe in `INDICE_immagini.md` (v1.11). Nessuna riga in `case_history_per_metodo.md`: non è un percorso Sprint!. Citabilità: uso riservato fino a decisione di Andrea Bosso. Release non cambiata.
 - Frascold: esito della call del 25/11 (Emiliano Cianci): proposta Brain Sprint apprezzata, Frascold verifica un incontro con l'IT; problema dei redirect tra mercati sul sito e Drupal 10 a fine supporto, Antonio Rossi prepara la proposta. Scheda proposta, `00_cliente.md` e riga del §6 aggiornati.
 - Frascold: evolutive 2027 del sito suggerite da Emiliano Cianci a Giovanni Borgna (GEO, restyling leggero senza toccare il database prodotti, motore di ricerca AI, chat AI), annotate in `00_cliente.md`; la chat AI collegata al Brain Sprint nella scheda proposta.
 

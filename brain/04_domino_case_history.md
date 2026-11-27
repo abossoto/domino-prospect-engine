@@ -133,6 +133,11 @@ I due case di riferimento per pitch del Core Sprint! e del Design Sprint!. Sono 
 **Video:** tre video di brand, file su SharePoint (sito «Proposte ed Offerte», cartella `Stellantis_Video_2526_source`), non nel Brain: [Peugeot, «Restez connecté à votre véhicule»](https://dominoitalia.sharepoint.com/sites/ProposteedOfferte/Documenti%20condivisi/Forms/DispForm.aspx?ID=4135) · [Jeep, «Connect ONE essential connectivity for your JEEP»](https://dominoitalia.sharepoint.com/sites/ProposteedOfferte/Documenti%20condivisi/Forms/DispForm.aspx?ID=4133) · [Fiat, «Stellantis EasySmartUseful Worklife», 16x9 EN](https://dominoitalia.sharepoint.com/sites/ProposteedOfferte/Documenti%20condivisi/Forms/DispForm.aspx?ID=4132).
 **Da completare:** numero di video e risultati: DATI NON TROVATI.
 
+### Stellantis — Parts & Services EE: manualistica, presentazioni interne e materiali
+**Progetto:** Dal 2025 Domino è partner di Stellantis Parts & Services Enlarged Europe per la comunicazione a clienti finali, rete e dipendenti: Accessories Handbook a ogni lancio di modello (tra gli altri Jeep Avenger, Lancia Gamma, Citroën Ami), linee guida e template DEM per tutti i brand in 10 mercati, campagne cashback e POS per la rete, town hall e format interni («Unlock the Role»), loghi di programmi (Supply Chain Lab, Fleet Services), gadget per le fiere, pellicolatura dei veicoli, identità e allestimento degli spazi (uffici di Rivalta con il logo 3D sulla parete blu, EE Diagnostics Mirafiori).
+**Risultato:** perimetro allargato dal 2025 al 2026 e richiesto in continuità per il 2027; sugli uffici di Rivalta la referente operativa del cliente ha scritto «Bellissimo lavoro» (WhatsApp, uso riservato). Risultati misurati: DATI NON TROVATI.
+**Scheda estesa:** `case_stellantis_parts_services.md` · **Visual:** `assets_case_history/automotive/automotive_stellantis_partsservices_01.png` → `_32.png` (uso riservato: presentazioni a prospect e clienti).
+
 ### Fiat — Sito internazionale EMEA
 **Progetto:** Nuovo sito Fiat in **20 mercati**, primo grande progetto di rollout internazionale Domino. Strategia, produzione, governance (mercati e lingue), gestione della campagna internazionale *(slide 68)*.
 **Risultato:** In 9 mesi **oltre il 40% di visite in più** e **+120% di richieste di test drive**.
