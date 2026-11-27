@@ -1,6 +1,10 @@
 # Domino Brain — Changelog
 > Una riga per release, la più recente in alto. Lo scrive il Brain Owner. La release corrente è anche nella prima riga del CLAUDE.md.
 
+## 2026-11-27
+- Frascold: esito della call del 25/11 (Emiliano Cianci): proposta Brain Sprint apprezzata, Frascold verifica un incontro con l'IT; problema dei redirect tra mercati sul sito e Drupal 10 a fine supporto, Antonio Rossi prepara la proposta. Scheda proposta, `00_cliente.md` e riga del §6 aggiornati.
+- Frascold: evolutive 2027 del sito suggerite da Emiliano Cianci a Giovanni Borgna (GEO, restyling leggero senza toccare il database prodotti, motore di ricerca AI, chat AI), annotate in `00_cliente.md`; la chat AI collegata al Brain Sprint nella scheda proposta.
+
 ## 2026-11-26
 - Skill (Andrea Bosso, 26/11/2026): `domino-case-history` allineata alla versione corretta: nella scheda case non c'è il campo «Periodo»; citabilità con default «presentazioni a prospect e clienti, uso riservato» quando manca l'indicazione (refuso corretto, regola esplicitata anche tra i principi). Zip rifatto.
 - Deck, margini del contenuto in multipli di 4 (Andrea Bosso, 26/11/2026, con Claude): `--pad-top` da 110 a 112 px (84 pt), `--pad-bottom` da 150 a 152 px (114 pt), come chiede la scala v3. Aggiornati `deck-tokens.css`, SKILL.md, README del document layer e file 16 (§1 e testo sotto la tabella). Release non cambiata.
